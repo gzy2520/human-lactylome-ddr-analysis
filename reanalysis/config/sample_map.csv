@@ -1,0 +1,22 @@
+PXD,SourceToken,SampleName,CellType,ExperimentalGroup,Replicate,EnrichmentStatus,AcquisitionMode
+PXD014870,MCF7_DCA,MCF7_DCA,MCF7,DCA,DCA condition,Enriched,DDA
+PXD014870,MCF7_Hypoxia,MCF7_Hypoxia,MCF7,Hypoxia,Hypoxia condition,Enriched,DDA
+PXD014870,MCF7_Rotenone,MCF7_Rotenone,MCF7,Rotenone,Rotenone condition,Enriched,DDA
+PXD014870,MCF7_U13C6_Glucose,MCF7_U13C6_Glucose,MCF7,U-13C6 glucose,U-13C6 glucose condition,Enriched,DDA
+PXD028488,HCT116-Enrichment,HCT116-Enrichment,HCT116,HCT116 enrichment,NA,Enriched,DDA
+PXD028488,TALL-NALAC,TALL-NALAC,T-ALL,NaLAC enrichment,NA,Enriched,DDA
+PXD028488,TALL-Nonenrichment,TALL-Nonenrichment,T-ALL,NaLAC non-enrichment,NA,Unenriched,DDA
+PXD060185,A,MCF7,MCF7,MCF7,A,Enriched,DDA
+PXD060185,B,MDA-MB-468,MDA-MB-468,MDA-MB-468,B,Enriched,DDA
+PXD060185,C,MCF10A,MCF10A,MCF10A,C,Enriched,DDA
+PXD060185,D,T-47D,T-47D,T-47D,D,Enriched,DDA
+PXD078013,sg_1,RKO_GSK3B_WT_1,RKO,GSK3B WT,1,Enriched,DDA
+PXD078013,sg_2,RKO_GSK3B_WT_2,RKO,GSK3B WT,2,Enriched,DDA
+PXD078013,sg737_1,RKO_GSK3B_KO_1,RKO,GSK3B KO,1,Enriched,DDA
+PXD078013,sg737_2,RKO_GSK3B_KO_2,RKO,GSK3B KO,2,Enriched,DDA
+PXD078736,ctr_1,HK2_ctrl_1,HK-2,ctrl,1,Enriched,DDA
+PXD078736,ctr_2,HK2_ctrl_2,HK-2,ctrl,2,Enriched,DDA
+PXD078736,ctr_3,HK2_ctrl_3,HK-2,ctrl,3,Enriched,DDA
+PXD078736,man_1,HK2_man_1,HK-2,man,1,Enriched,DDA
+PXD078736,man_2,HK2_man_2,HK-2,man,2,Enriched,DDA
+PXD078736,man_3,HK2_man_3,HK-2,man,3,Enriched,DDA

@@ -1,0 +1,25 @@
+.DS_Store
+**/.DS_Store
+.Rhistory
+**/.Rhistory
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Large source data and historical archives remain on disk but outside Git.
+archive/
+tmp/
+data/*
+!data/README.md
+!data/annotations/
+!data/annotations/**
+!data/identifier/
+!data/identifier/**
+data/identifier/.DS_Store
+
+# Reproducible generated artifacts are covered by reports and SHA256 manifests.
+reanalysis/intermediate/
+reanalysis/logs/
+reanalysis/results/
+previous_umap/results/
+previous_umap/figures/

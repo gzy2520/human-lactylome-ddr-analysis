@@ -1,0 +1,38 @@
+"PXD","SampleGroup","ReferencePXD","WholeProteomeSource","EnsemblMappingApplied","EnsemblMappingFile","WholeProteomeFeatureCount","WholeProteomeMappedRegulatorCount"
+"PXD014870","MCF7","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3098,15
+"PXD028488","HEK293T","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",7817,28
+"PXD028488","HCT116","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",4004,21
+"PXD028488","TALL-104","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3374,18
+"PXD028737","HMC3","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/brain/P013129_brain_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",9092,33
+"PXD033146","pathological rotator cuff tendon","PXD033146","data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3336,7
+"PXD036307","normal human lung","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",9629,36
+"PXD046800","hypertrophic scar","PXD046800","data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",2017,6
+"PXD046800","adjacent skin","PXD046800","data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",2015,6
+"PXD050147","HepG2 WT and SIRT1 or SIRT3 KO","PXD050147","data/PXD050147/search_results/SIRT_proteinGroups.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",6529,31
+"PXD050470","human hippocampus","PXD043880","data/PXD043880/supplementary/13024_2023_650_MOESM1_ESM.xlsx",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",2092,6
+"PXD053474","HCT116","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",4004,21
+"PXD054919","A549","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3442,15
+"PXD055230","human fibroblasts mock and HCMV or HSV-1","PXD055230","data/PXD055230/search_results/WP_HSV1_DIA.tsv",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",9409,36
+"PXD057709","human fibroblasts mock and HCMV","PXD057709","data/PXD057709/search_results/WP_report.tsv",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",8472,36
+"PXD058534","pretreated HK-2","PXD072220","data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",4791,28
+"PXD060185","MCF10A","PXD002400","data/PXD002400/search_results/msms.zip",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",5120,15
+"PXD060185","MCF7","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3098,15
+"PXD060185","MDA-MB-468","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3753,19
+"PXD060185","T-47D","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3514,15
+"PXD062720","bladder cancer cells treated with EPI","PXD062720","data/PXD062720/search_results/extracted_pairing/txt/proteinGroups.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",487,3
+"PXD063047","normal pregnancy placenta","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",8286,30
+"PXD063047","severe preeclampsia placenta","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",8286,30
+"PXD063266","PC-3M","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3464,15
+"PXD064038","MEC and NEC ESCC groups","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/esophagus/P013198_esophagus_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",6955,27
+"PXD064912","human sperm","PXD066517","data/PXD066517/search_results/20240275.tsv",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",9309,25
+"PXD066054","BPH","PXD066054","data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",8049,33
+"PXD066054","prostate cancer","PXD066054","data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",8085,33
+"PXD066351","HCT116 control and Roseburia co-culture","PXD066351","data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",7987,34
+"PXD070007","glioblastoma stem cells","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/brain/P013129_brain_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",9092,33
+"PXD070007","neural stem cells","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/brain/P013129_brain_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",9092,33
+"PXD073311","HUVEC control and Pg infection","PXD073311","data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",7709,32
+"PXD075014","AC16 control and hypoxia","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/heart/P013201_heart_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",6557,23
+"PXD075377","HCC","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/liver/P012502_liver_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",7708,29
+"PXD075377","adjacent liver","PXD010154","data/PXD010154/search_results/extracted_healthy_tissues/liver/P012502_liver_proteinGroups.txt",TRUE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",7708,29
+"PXD078013","RKO WT and GSK3B KO","PXD030304","data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",3609,15
+"PXD078736","HK-2 control and mannitol","PXD072220","data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt",FALSE,"reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv",4791,28

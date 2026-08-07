@@ -1,0 +1,4 @@
+ArchiveBatch,OriginalRelativePath,ArchivedRelativePath,Reason
+2026-08-07_git_baseline_cleanup,reanalysis/scripts/build_final_manifest.py,archive/2026-08-07_git_baseline_cleanup/scripts/build_final_manifest.py,R version produced a byte-identical 552-row SHA256 manifest and is now the maintained entry point
+2026-08-07_git_baseline_cleanup,reanalysis/reports/.Rhistory,archive/2026-08-07_git_baseline_cleanup/reports/.Rhistory,Interactive session history is not a reproducible project input or result
+

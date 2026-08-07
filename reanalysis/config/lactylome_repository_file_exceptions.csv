@@ -1,0 +1,2 @@
+PXD,FileURL,LocalStatusOverride,LocalMatchesOverride,RepositoryFileNote
+PXD063047,http://download.iprox.org/IPX0011731000/IPX0011731002/combined.rar,verified_repository_duplicate_not_redownloaded,data/PXD063047/search_results/combined_IPX0011731001.rar,"两个 combined.rar 长度相同；前 50 MiB、首 1 MiB 和末 1 MiB 均一致，因此保留一份并登记两个来源。"

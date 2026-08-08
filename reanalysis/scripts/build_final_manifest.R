@@ -40,6 +40,16 @@ for (f in c("PROJECT_INDEX.md", "NEW_CHAT_PROJECT_PROMPT.md")) {
   p <- file.path(ROOT, f)
   if (file.exists(p)) paths <- c(paths, p)
 }
+# Small, analysis-critical evidence and migration manifests outside the
+# standard trees are included explicitly without hashing large raw archives.
+for (f in c(
+  "data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx",
+  "archive/2026-08-08_pre_material_granularity_fix/MIGRATION_MANIFEST.csv",
+  "archive/2026-08-08_pre_material_granularity_fix/README.md"
+)) {
+  p <- file.path(ROOT, f)
+  if (file.exists(p)) paths <- c(paths, p)
+}
 # Full trees
 paths <- c(paths, collect_tree(file.path(ROOT, "reanalysis")))
 paths <- c(paths, collect_tree(file.path(ROOT, "previous_umap")))

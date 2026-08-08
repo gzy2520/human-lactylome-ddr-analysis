@@ -36,11 +36,6 @@ existing_reference_path <- file.path(
 go_path <- file.path(
   project_root, "data", "annotations", "GO-repair+damage(human).tsv"
 )
-reviewed_uniprot_path <- file.path(
-  project_root, "reanalysis", "config",
-  "uniprot_human_reviewed_2026-08-05.tsv"
-)
-
 base_accession <- function(values) {
   values <- trimws(as.character(values))
   values <- sub("^.*\\|([^|]+)\\|.*$", "\\1", values)
@@ -198,151 +193,34 @@ mapped_accessions_for <- function(values) {
   }, character(1))
 }
 
-if (!file.exists(reviewed_uniprot_path)) {
-  stop("Missing reviewed human UniProt mapping: ", reviewed_uniprot_path)
-}
-reviewed_uniprot <- fread(
-  reviewed_uniprot_path,
-  sep = "\t",
-  quote = "",
-  data.table = FALSE,
-  check.names = FALSE
-)
-reviewed_primary_map <- reviewed_uniprot |>
-  transmute(
-    BaseAccession = base_accession(Entry),
-    Symbols = `Gene Names (primary)`
-  ) |>
-  separate_rows(Symbols, sep = "[;[:space:]]+") |>
-  transmute(
-    GeneSymbol = toupper(trimws(Symbols)),
-    BaseAccession
-  ) |>
-  filter(nzchar(GeneSymbol), is_uniprot(BaseAccession)) |>
-  distinct()
-reviewed_alias_map <- reviewed_uniprot |>
-  transmute(
-    BaseAccession = base_accession(Entry),
-    Symbols = `Gene Names`
-  ) |>
-  separate_rows(Symbols, sep = "[;[:space:]]+") |>
-  transmute(
-    GeneSymbol = toupper(trimws(Symbols)),
-    BaseAccession
-  ) |>
-  filter(nzchar(GeneSymbol), is_uniprot(BaseAccession)) |>
-  distinct()
-reviewed_primary_summary <- reviewed_primary_map |>
-  group_by(GeneSymbol) |>
-  summarise(
-    PrimaryCandidateCount = n_distinct(BaseAccession),
-    PrimaryCandidates = paste(sort(unique(BaseAccession)), collapse = ";"),
-    .groups = "drop"
-  )
-reviewed_alias_summary <- reviewed_alias_map |>
-  group_by(GeneSymbol) |>
-  summarise(
-    AliasCandidateCount = n_distinct(BaseAccession),
-    AliasCandidates = paste(sort(unique(BaseAccession)), collapse = ";"),
-    .groups = "drop"
-  )
-
-hippocampus_symbol_mapping_records <- data.frame()
-
-extract_pxd043880_reference <- function(path) {
+extract_pxd050470_reference <- function(path) {
   data <- read_excel(
     path,
-    sheet = "Source Data Proteins",
-    col_names = FALSE,
-    col_types = "text",
-    .name_repair = "minimal"
+    sheet = "Sheet1",
+    skip = 5
   )
-  if (nrow(data) < 3 || ncol(data) < 9) {
-    stop("Unexpected PXD043880 protein matrix layout: ", path)
+  required_columns <- c(
+    "Protein accession",
+    "Intensity_H072",
+    "Intensity_H081",
+    "Intensity_H187"
+  )
+  if (!all(required_columns %in% names(data))) {
+    stop("Unexpected PXD050470 Table S4 layout: ", path)
   }
-  source_features <- trimws(as.character(
-    unlist(data[2, 9:ncol(data)], use.names = FALSE)
-  ))
-  intensity <- as.matrix(data[3:nrow(data), 9:ncol(data), drop = FALSE])
-  detected <- apply(
-    intensity,
-    2,
-    function(values) any(
-      suppressWarnings(as.numeric(values)) > 0,
-      na.rm = TRUE
-    )
-  )
-  source_features <- sort(unique(
-    source_features[
-      detected &
-        !is.na(source_features) &
-        nzchar(source_features)
-    ]
-  ))
-  source_symbol_map <- data.frame(
-    SourceFeature = source_features,
-    stringsAsFactors = FALSE
-  ) |>
-    mutate(
-      SourceSymbol = strsplit(SourceFeature, "_", fixed = TRUE)
-    ) |>
-    unnest(SourceSymbol) |>
-    transmute(
-      SourceFeature,
-      SourceSymbol = toupper(trimws(SourceSymbol))
-    ) |>
-    filter(nzchar(SourceSymbol)) |>
-    distinct()
-
-  mapping <- source_symbol_map |>
-    left_join(reviewed_primary_summary, by = c("SourceSymbol" = "GeneSymbol")) |>
-    left_join(reviewed_alias_summary, by = c("SourceSymbol" = "GeneSymbol")) |>
-    mutate(
-      MappingMode = case_when(
-        !is.na(PrimaryCandidateCount) & PrimaryCandidateCount == 1 ~
-          "reviewed_primary_symbol",
-        is.na(PrimaryCandidateCount) & AliasCandidateCount == 1 ~
-          "reviewed_unique_alias",
-        !is.na(PrimaryCandidateCount) & PrimaryCandidateCount > 1 ~
-          "ambiguous_reviewed_primary",
-        AliasCandidateCount > 1 ~ "ambiguous_reviewed_alias",
-        TRUE ~ "unmapped"
-      ),
-      BaseAccession = case_when(
-        MappingMode == "reviewed_primary_symbol" ~ PrimaryCandidates,
-        MappingMode == "reviewed_unique_alias" ~ AliasCandidates,
-        TRUE ~ ""
-      ),
-      CandidateCount = case_when(
-        !is.na(PrimaryCandidateCount) ~ PrimaryCandidateCount,
-        !is.na(AliasCandidateCount) ~ AliasCandidateCount,
-        TRUE ~ 0L
-      ),
-      CandidateAccessions = case_when(
-        !is.na(PrimaryCandidateCount) ~ PrimaryCandidates,
-        !is.na(AliasCandidateCount) ~ AliasCandidates,
-        TRUE ~ ""
-      ),
-      SourceFile = relative_path(path),
-      MappingSource =
-        "UniProtKB reviewed Homo sapiens snapshot 2026-08-05"
-    ) |>
-    select(
-      SourceFeature,
-      SourceSymbol,
-      MappingMode,
-      BaseAccession,
-      CandidateCount,
-      CandidateAccessions,
-      SourceFile,
-      MappingSource
-    ) |>
-    arrange(SourceFeature, SourceSymbol)
-  hippocampus_symbol_mapping_records <<- mapping
-  sort(unique(mapping$BaseAccession[
-    nzchar(mapping$BaseAccession) &
-      is_uniprot(mapping$BaseAccession)
-  ]))
+  intensity_columns <- required_columns[-1]
+  keep <- rowSums(
+    sapply(data[intensity_columns], function(values) {
+      values <- suppressWarnings(as.numeric(values))
+      is.finite(values) & values > 0
+    }),
+    na.rm = TRUE
+  ) > 0
+  accessions <- split_accessions(data$`Protein accession`[keep])
+  if (length(accessions) != 6082) {
+    stop("Expected 6082 unique UniProt accessions in PXD050470 Table S4")
+  }
+  accessions
 }
 
 valid_maxquant_rows <- function(data) {
@@ -1084,8 +962,11 @@ reference_set <- function(row) {
   if (pxd == "PXD014870") {
     return(extract_pxd030304_row("SIDM00148;MCF7"))
   }
-  if (reference_pxd == "PXD043880") {
-    return(extract_pxd043880_reference(file.path(
+  if (
+    reference_pxd == "PXD050470" &&
+      group == "human hippocampus"
+  ) {
+    return(extract_pxd050470_reference(file.path(
       project_root,
       row$常规蛋白组证据文件
     )))
@@ -1236,11 +1117,7 @@ for (i in seq_len(nrow(pairing))) {
   }
   reference_pxd <- if (paired_included) row$常规蛋白组PXD else NA_character_
   reference_note <- if (paired_included) row$匹配质量 else row$注意事项
-  match_mode <- if (paired_included && reference_pxd == "PXD043880") {
-    "BaseAccession_after_reviewed_UniProt_symbol_conversion"
-  } else {
-    "BaseAccession_only"
-  }
+  match_mode <- "BaseAccession_only"
   reference_protein_count <- if (paired_included) length(reference) else NA_integer_
   reference_ddr_count <- if (paired_included) length(reference_ddr) else NA_integer_
   reference_fraction <- if (paired_included) {
@@ -1285,12 +1162,7 @@ for (i in seq_len(nrow(pairing))) {
     SampleGroup = group,
     Included = TRUE,
     ReferenceIncluded = paired_included,
-    Reason = if (paired_included && reference_pxd == "PXD043880") {
-      paste0(
-        "PXD043880蛋白特征symbol先映射为人源reviewed UniProt ",
-        "BaseAccession，再与GO-DDR表按ID匹配"
-      )
-    } else if (!paired_included) {
+    Reason = if (!paired_included) {
       row$注意事项
     } else {
       ""
@@ -1649,25 +1521,6 @@ write.csv(
   ),
   row.names = FALSE
 )
-write.csv(
-  hippocampus_symbol_mapping_records,
-  file.path(
-    intermediate_dir,
-    "PXD043880_hippocampus_symbol_to_reviewed_uniprot_mapping.csv"
-  ),
-  row.names = FALSE,
-  na = ""
-)
-write.csv(
-  hippocampus_symbol_mapping_records,
-  file.path(
-    table_dir,
-    "PXD043880_hippocampus_symbol_to_reviewed_uniprot_mapping_audit.csv"
-  ),
-  row.names = FALSE,
-  na = ""
-)
-
 paired_statistics <- statistics |>
   filter(PairedAnalysisIncluded)
 plot_data_base <- paired_statistics |>
@@ -1819,13 +1672,13 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       caption = if (is_zh) {
         paste0(
           "柱端为DDR蛋白数/总蛋白数。PXD037371的3组因TMT通道映射不明而排除；",
-          "PXD050470使用精确CA1参照PXD043880，symbol经人源reviewed UniProt映射后再匹配DDR。"
+          "PXD050470使用同研究同三份海马样本的普通全蛋白Table S4，并按UniProt BaseAccession直接匹配DDR。"
         )
       } else {
         paste0(
           "Bar labels show DDR proteins/total proteins. Three PXD037371 groups are excluded ",
-          "because TMT channels cannot be reliably mapped; PXD050470 uses the exact CA1 ",
-          "reference PXD043880 after reviewed human UniProt ID conversion."
+          "because TMT channels cannot be reliably mapped; PXD050470 uses same-study ",
+          "ordinary whole-proteome Table S4 for the same three hippocampus samples."
         )
       }
     ) +

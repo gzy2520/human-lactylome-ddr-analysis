@@ -18,6 +18,10 @@
   `STRICT_REFERENCE_UPDATE_2026-08-08.md` 替代并移入本轮归档。
 - `reanalysis/logs/workbook_inspection/*.inspect.ndjson`：旧工作簿检查缓存共约
   191 MB，当前工作簿已重建并重新检查，缓存移入本轮归档以保持主目录清晰。
+- `reanalysis/scripts/analyze_reference_proteome_ddr.py`：旧流程固定使用
+  PXD043880 CA1 海马参照，已被当前按 BaseAccession 分析的 R 流程取代；
+  于 2026-08-08 移入
+  `archive/2026-08-08_pre_material_granularity_fix/reanalysis/scripts/`。
 
 迁移记录：
 
@@ -31,7 +35,6 @@
 | 文件或类别 | 当前判断 |
 |---|---|
 | `run_pipeline.py`、`extractors.py`、`common.py` | 旧 Python 主流程；仍被 `test_pipeline.py` 使用 |
-| `analyze_reference_proteome_ddr.py` | 旧参照蛋白组 DDR 流程；历史报告仍引用 |
 | 旧 `build_*workbook.mjs` | 多数功能已并入 `build_workbooks.R`，但旧交付仍可追溯 |
 | `build_project_metadata.py`、`audit_target_sources.py` | 旧项目盘点与来源审计；保留用于历史复现 |
 

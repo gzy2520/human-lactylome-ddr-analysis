@@ -39,7 +39,7 @@
 
 | 当前模型 | 推荐对照 | 使用子集 | 对照蛋白数 | 匹配等级 |
 |---|---|---|---:|---|
-| Human hippocampus | PXD043880 | 74 名神经学正常的 CA1 海马供者 | 2,092 | A，精确组织匹配 |
+| Human hippocampus | PXD050470 Table S4 | 与Kla完全相同的H072、H081、H0187三份海马样本 | 6,082 | A，同研究同样本精确匹配 |
 | HEK293T | PXD030304 | Control_HEK293T_lys；排除 standard-QC | 6,441 | B，精确细胞系匹配 |
 | HK-2 | PXD072220 | Control_1、Control_3、Control_4 | 4,897 | A，精确细胞系匹配 |
 | MCF10A | PXD002400 | 未处理 MCF-10A；20 个分级/技术进样 raw | 4,839 | B，精确细胞系匹配 |
@@ -50,9 +50,9 @@
 | T-47D | PXD030304 | T47D / SIDM00097 | 3,516 | A，精确细胞系匹配 |
 | RKO | PXD030304 | RKO / SIDM01090 | 3,615 | A，精确细胞系匹配 |
 
-4 个主要参考 PXD 覆盖全部 10 类：
+4 个主要参考来源覆盖全部 10 类：
 
-- PXD043880：Human hippocampus
+- PXD050470 Table S4：Human hippocampus
 - PXD072220：HK-2
 - PXD002400：MCF10A
 - PXD030304：HEK293T、MCF7、HCT116、T-ALL 替代、MDA-MB-468、T-47D、RKO
@@ -106,8 +106,8 @@ PXD028488 中的 TALL-104 non-enrichment 数据仍经历乳酸暴露，
 - PXD030304：https://proteomecentral.proteomexchange.org/?pxid=PXD030304
 - PXD030304 处理矩阵：https://doi.org/10.6084/m9.figshare.19345397
 - PXD030304 论文：https://doi.org/10.1016/j.ccell.2022.06.010
-- PXD043880：https://proteomecentral.proteomexchange.org/?pxid=PXD043880
-- PXD043880 论文：https://doi.org/10.1186/s13024-023-00650-3
+- PXD050470：https://proteomecentral.proteomexchange.org/?pxid=PXD050470
+- PXD050470 论文及同研究 Table S4：https://doi.org/10.1002/prca.202400061
 - PXD072220：https://proteomecentral.proteomexchange.org/?pxid=PXD072220
 - PXD072220 论文：https://doi.org/10.1152/ajpcell.00311.2026
 - PXD002400：https://proteomecentral.proteomexchange.org/?pxid=PXD002400

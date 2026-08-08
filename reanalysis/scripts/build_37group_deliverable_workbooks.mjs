@@ -196,6 +196,9 @@ async function buildDdrWorkbook() {
   const audit = await readCsv(
     "reanalysis/results/tables/cell_type_kla_vs_reference_ddr_accession_only_audit.csv",
   );
+  const materialAudit = await readCsv(
+    "reanalysis/results/tables/strict_reference_material_identity_audit_zh.csv",
+  );
   const workbook = Workbook.create();
   addReadme(workbook, "37组 Kla 与33组严格普通全蛋白参照 DDR 占比统计", [
     "Kla最终范围为定量可用的37个 PXD+样本组；PXD037371 三组已排除。",
@@ -203,6 +206,7 @@ async function buildDdrWorkbook() {
     "Kla 与普通全蛋白的 DDR 交集均按去除 isoform 后缀的 UniProt BaseAccession 计算；GeneSymbol 回退数为0。",
     "HUVEC 普通全蛋白参照为 PXD073311 同研究 A0h_1/A0h_2/A0h_3 PG矩阵；A6h不进入基线。",
     "两个 HK-2 组均使用 PXD072220 的 amostra1/amostra3/amostra4 未处理对照。",
+    "人海马使用 PXD050470 同研究 Table S4 的 H072/H081/H0187，不再使用独立 CA1 参照。",
   ]);
   const zhSheet = addDataSheet(workbook, "统计_中文", statsZh, {
     freezeColumns: 2,
@@ -250,6 +254,11 @@ async function buildDdrWorkbook() {
     maxWidth: 38,
     headerFill: "#8F2D1D",
   });
+  addDataSheet(workbook, "材料粒度审计", materialAudit, {
+    freezeColumns: 2,
+    maxWidth: 46,
+    headerFill: "#6F3D2E",
+  });
   await verifyAndExport(
     workbook,
     path.join(tableRoot, "cell_type_kla_vs_reference_ddr_statistics.xlsx"),
@@ -267,12 +276,17 @@ async function buildPairingWorkbook() {
   const summary = await readCsv(
     "reanalysis/results/tables/lactylome_reference_pairing_summary_zh.csv",
   );
+  const materialAudit = await readCsv(
+    "reanalysis/results/tables/strict_reference_material_identity_audit_zh.csv",
+  );
   const workbook = Workbook.create();
   addReadme(workbook, "乳酸化数据与普通全蛋白参照配对", [
     "本工作簿记录乳酸化证据、普通全蛋白参照、健康组织基线、蛋白数和匹配限制。",
     "普通全蛋白参照必须是非Kla富集数据；不能用乳酸化富集强度替代。",
     "最终37组Kla中，33组进入严格普通全蛋白配对分析；4组因没有完全匹配且可定量的参照而排除普通全蛋白分析。",
     "PXD073311 HUVEC 已更换为同研究 A0h 普通全蛋白矩阵，唯一 BaseAccession 数为7,794。",
+    "PXD050470 海马使用同研究同三份样本的 Table S4，唯一 BaseAccession 数为6,082。",
+    "共享同一PXD或文件的组织/细胞已逐行记录实际读取子集；材料身份与实验状态分别审计。",
     "分析身份键为稳定蛋白ID；GeneSymbol只用于显示和人工审计。",
   ]);
   addDataSheet(workbook, "配对明细", pairing, {
@@ -289,6 +303,11 @@ async function buildPairingWorkbook() {
     freezeColumns: 1,
     maxWidth: 42,
     headerFill: "#8F2D1D",
+  });
+  addDataSheet(workbook, "材料粒度审计", materialAudit, {
+    freezeColumns: 2,
+    maxWidth: 46,
+    headerFill: "#6F3D2E",
   });
   await verifyAndExport(
     workbook,

@@ -33,7 +33,7 @@
 - PXD016999：GTEx 32种正常组织定量图谱；本项目使用乳腺、未暴露皮肤、脾脏、主动脉和阴道组织列。
 - PXD018212：40个健康人跟腱/胫骨前肌腱mzTab文件，唯一BaseAccession并集为648。
 - PXD037660：4名健康口腔黏膜对照的MaxQuant蛋白组，唯一leading BaseAccession为1050。
-- PXD043880：正常人CA1海马组织；PXD066517：正常人精子DIA蛋白组。
+- PXD050470 Table S4：同研究同三份正常人海马普通全蛋白组；PXD066517：正常人精子DIA蛋白组。
 - PXD073311：同研究非PTM普通全蛋白PG矩阵；仅使用A0h_1、A0h_2、A0h_3基线重复，A6h不进入参照，共7794个唯一UniProt BaseAccession。
 
 ## 计数规则补充

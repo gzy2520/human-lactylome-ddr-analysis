@@ -815,20 +815,20 @@ pairing <- pairing |>
   )
 
 hippocampus_rows <- pairing$SampleGroup == "human hippocampus"
-pairing$HealthyBaselineName[hippocampus_rows] <- "神经系统正常人CA1海马组织"
-pairing$HealthyBaselinePXD[hippocampus_rows] <- "PXD043880"
-pairing$HealthyBaselineArchive[hippocampus_rows] <- "13024_2023_650_MOESM1_ESM.xlsx"
+pairing$HealthyBaselineName[hippocampus_rows] <- "同研究同三份正常人海马组织"
+pairing$HealthyBaselinePXD[hippocampus_rows] <- "PXD050470"
+pairing$HealthyBaselineArchive[hippocampus_rows] <- "prca2331-sup-0006-tables4.xlsx"
 pairing$HealthyBaselineProteinGroupsPath[hippocampus_rows] <-
-  "data/PXD043880/supplementary/13024_2023_650_MOESM1_ESM.xlsx"
-pairing$HealthyBaselineProteinCount[hippocampus_rows] <- 2092
+  "data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx"
+pairing$HealthyBaselineProteinCount[hippocampus_rows] <- 6082
 pairing$HealthyBaselineAcquisitionStatus[hippocampus_rows] <- "downloaded_and_counted"
 pairing$HealthyBaselineSourceURL[hippocampus_rows] <-
-  "https://proteomecentral.proteomexchange.org/?pxid=PXD043880"
-pairing$HealthyBaselineMatchQuality[hippocampus_rows] <- "exact_organ_subregion"
+  "https://doi.org/10.1002/prca.202400061"
+pairing$HealthyBaselineMatchQuality[hippocampus_rows] <- "exact_same_biospecimen"
 pairing$HealthyBaselineCaveat[hippocampus_rows] <-
-  "神经系统正常人CA1海马组织；与原乳酸化海马样本的供体和实验平台不同"
+  "同研究Table S4；H072、H081、H0187与Kla Table S3为同一批海马样本"
 pairing$HealthyBaselineCountBasis[hippocampus_rows] <-
-  "作者补充表中的海马CA1蛋白数"
+  "Table S4中6082个唯一有效UniProt BaseAccession"
 
 sperm_rows <- pairing$SampleGroup == "human sperm"
 pairing$HealthyBaselineName[sperm_rows] <- "正常人精子常规DIA蛋白组"
@@ -1386,7 +1386,7 @@ report <- c(
   "- PXD016999：GTEx 32种正常组织定量图谱；本项目使用乳腺、未暴露皮肤、脾脏、主动脉和阴道组织列。",
   "- PXD018212：40个健康人跟腱/胫骨前肌腱mzTab文件，唯一BaseAccession并集为648。",
   "- PXD037660：4名健康口腔黏膜对照的MaxQuant蛋白组，唯一leading BaseAccession为1050。",
-  "- PXD043880：正常人CA1海马组织；PXD066517：正常人精子DIA蛋白组。",
+  "- PXD050470 Table S4：同研究同三份正常人海马普通全蛋白组；PXD066517：正常人精子DIA蛋白组。",
   "- PXD073311：同研究非PTM普通全蛋白PG矩阵；仅使用A0h_1、A0h_2、A0h_3基线重复，A6h不进入参照，共7794个唯一UniProt BaseAccession。",
   "",
   "## 计数规则补充",

@@ -152,32 +152,21 @@ stopifnot(any(
 ))
 stopifnot(any(stats$PXD == "PXD050470"))
 stopifnot(
-  stats$ReferenceProteinCount[stats$PXD == "PXD050470"] == 2105
+  stats$ReferenceProteinCount[stats$PXD == "PXD050470"] == 6082
 )
 stopifnot(
-  stats$ReferenceDdrProteinCount[stats$PXD == "PXD050470"] == 83
+  stats$ReferenceDdrProteinCount[stats$PXD == "PXD050470"] == 219
 )
 stopifnot(
   stats$MatchMode[stats$PXD == "PXD050470"] ==
-    "BaseAccession_after_reviewed_UniProt_symbol_conversion"
+    "BaseAccession_only"
 )
-hippocampus_mapping_path <- file.path(
-  table_dir,
-  "PXD043880_hippocampus_symbol_to_reviewed_uniprot_mapping_audit.csv"
-)
-stopifnot(file.exists(hippocampus_mapping_path))
-hippocampus_mapping <- read.csv(
-  hippocampus_mapping_path,
-  check.names = FALSE,
-  stringsAsFactors = FALSE
-)
-stopifnot(nrow(hippocampus_mapping) > 2000)
 stopifnot(
-  length(unique(
-    hippocampus_mapping$BaseAccession[
-      nzchar(hippocampus_mapping$BaseAccession)
-    ]
-  )) == 2105
+  stats$ReferencePXD[stats$PXD == "PXD050470"] == "PXD050470"
+)
+stopifnot(
+  stats$ReferenceEvidenceFile[stats$PXD == "PXD050470"] ==
+    "data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx"
 )
 ensembl_rows <- reference_members$IdentifierType == "ENSEMBLPROT"
 stopifnot(sum(ensembl_rows) > 10000)

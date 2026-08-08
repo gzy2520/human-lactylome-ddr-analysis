@@ -112,6 +112,28 @@ replacements <- data.frame(
   IncludeInStrictReferenceAnalysis = TRUE,
   stringsAsFactors = FALSE
 )
+replacements <- bind_rows(
+  replacements,
+  data.frame(
+    LactylomePXD = "PXD050470",
+    SampleGroup = "human hippocampus",
+    ReferenceStrategy = "same_study_same_biospecimen_non_ptm_proteome",
+    ReferencePXD = "PXD050470",
+    ReferenceSampleSubset = "H072;H081;H0187",
+    ReferenceEvidenceLocator =
+      "data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx",
+    ReferenceProteinCount = 6082L,
+    ReferenceAcquisitionStatus = "downloaded_and_counted",
+    MatchQuality = "exact_same_biospecimen",
+    Caveat = paste0(
+      "Same-study Table S4 ordinary whole-proteome intensities for the same ",
+      "three hippocampus samples; no CA1 substitution and no GeneSymbol conversion"
+    ),
+    IncludeInPairedAnalysis = TRUE,
+    IncludeInStrictReferenceAnalysis = TRUE,
+    stringsAsFactors = FALSE
+  )
+)
 
 for (index in seq_len(nrow(replacements))) {
   replacement <- replacements[index, ]
@@ -178,6 +200,8 @@ selected_audit <- replacements |>
       ReferencePXD == "PXD022005" ~ "Intensity H",
       ReferencePXD == "PXD069969" ~ "LFQ intensity by named cell model",
       ReferencePXD == "PXD065775" ~ "iTRAQ Non-rec1-4 and Rec1-4",
+      LactylomePXD == "PXD050470" ~
+        "Table S4 relative intensity H072 H081 H0187",
       TRUE ~ ""
     ),
     MatchQuality,

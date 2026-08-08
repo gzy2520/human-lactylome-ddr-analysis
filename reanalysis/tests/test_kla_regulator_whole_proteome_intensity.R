@@ -86,9 +86,9 @@ assert(all(file.exists(required_figures)), "Whole-proteome heatmap files are mis
 assert(all(file.info(required_figures)$size > 10000), "Whole-proteome figures are unexpectedly small")
 assert(file.exists(script_path), "Whole-proteome analysis script is missing")
 assert(
-  nrow(algorithm_audit) == 14 &&
+  nrow(algorithm_audit) == 15 &&
     algorithm_audit$Value[algorithm_audit$Field == "AlgorithmVersion"] ==
-      "whole_proteome_regulator_rank_v4_exact_reference",
+      "whole_proteome_regulator_rank_v5_exact_reference_four_class_order",
   "Whole-proteome algorithm audit is missing or outdated"
 )
 assert(
@@ -99,6 +99,28 @@ assert(
 )
 
 assert(nrow(audit) == 33, "Expected exactly 33 strict-reference sample groups in the audit")
+category_order <- c(
+  "normal_tissue",
+  "cancer_tissue",
+  "normal_cells",
+  "cancer_cells"
+)
+assert(
+  all(c("Category", "CategoryZh", "HeatmapRowOrder") %in% names(audit)),
+  "Whole-proteome heatmap audit must record four-class row grouping"
+)
+ordered_audit <- audit[order(audit$HeatmapRowOrder), ]
+assert(
+  identical(unique(ordered_audit$Category), category_order),
+  "Heatmap rows must be ordered as normal tissue, cancer tissue, normal cells, cancer cells"
+)
+assert(
+  identical(
+    as.integer(table(factor(audit$Category, levels = category_order))),
+    c(9L, 2L, 9L, 13L)
+  ),
+  "Strict-reference heatmap category counts must be 9, 2, 9, and 13"
+)
 assert(
   all(audit$WholeProteomeQuantAvailable),
   "Every strict-reference sample group must have whole-proteome quantification"
@@ -264,17 +286,16 @@ assert(
 hippocampus <- audit[audit$PXD == "PXD050470", ]
 assert(
   nrow(hippocampus) == 1 &&
-    hippocampus$WholeProteomeSampleCount == 74 &&
-    hippocampus$WholeProteomeFeatureCount == 2092 &&
+    hippocampus$ReferencePXD == "PXD050470" &&
+    hippocampus$WholeProteomeSampleCount == 3 &&
+    hippocampus$WholeProteomeFeatureCount == 6082 &&
     hippocampus$WholeProteomeMappedRegulatorCount > 0,
-  "PXD050470 must use the 74-donor PXD043880 CA1 whole-proteome reference"
+  "PXD050470 must use same-study Table S4 for H072/H081/H0187"
 )
 assert(
-  file.exists(file.path(
-    table_dir,
-    "kla_regulator_whole_proteome_hippocampus_id_mapping_audit.csv"
-  )),
-  "Hippocampus whole-proteome ID mapping audit is missing"
+  hippocampus$WholeProteomeSource ==
+    "data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx",
+  "PXD050470 must use direct UniProt IDs from the same-study Table S4"
 )
 assert(
   file.exists(file.path(
@@ -318,6 +339,10 @@ assert(
   !grepl("#2166AC", script_text, fixed = TRUE) &&
     !grepl("#2C7FB8", script_text, fixed = TRUE),
   "Whole-proteome heatmap must not use a cool low-value palette"
+)
+assert(
+  grepl("CategoryZh ~ Role", script_text, fixed = TRUE),
+  "Whole-proteome heatmap must visibly facet rows by the four sample classes"
 )
 
 message("Whole-proteome regulator intensity tests passed.")

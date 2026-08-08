@@ -34,9 +34,9 @@ detection_path <- file.path(
 kla_scope_path <- file.path(
   table_dir, "kla_regulator_intensity_availability_audit.csv"
 )
-reviewed_uniprot_path <- file.path(
+four_class_path <- file.path(
   project_root, "reanalysis", "config",
-  "uniprot_human_reviewed_2026-08-05.tsv"
+  "four_class_sample_grouping.csv"
 )
 
 required_files <- c(
@@ -45,7 +45,7 @@ required_files <- c(
   ensembl_mapping_path,
   detection_path,
   kla_scope_path,
-  reviewed_uniprot_path
+  four_class_path
 )
 missing_files <- required_files[!file.exists(required_files)]
 if (length(missing_files)) {
@@ -166,11 +166,35 @@ pairing <- read.csv(
     !is.na(LactylomePXD),
     !is.na(SampleGroup)
   )
+category_order <- c(
+  "normal_tissue",
+  "cancer_tissue",
+  "normal_cells",
+  "cancer_cells"
+)
+category_labels_zh <- c(
+  normal_tissue = "正常/非肿瘤组织",
+  cancer_tissue = "癌症组织",
+  normal_cells = "正常/非肿瘤细胞",
+  cancer_cells = "癌症细胞"
+)
+four_class <- read.csv(
+  four_class_path,
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+) |>
+  filter(
+    !is.na(PXD),
+    !is.na(SampleGroup),
+    Category %in% category_order
+  ) |>
+  distinct(PXD, SampleGroup, .keep_all = TRUE)
 sample_catalog_all <- detection |>
   distinct(
     PXD, SampleGroup, SampleGroupID, RowLabel,
     BiologicalMaterial, GeneLevelAuditStatus
   ) |>
+  mutate(OriginalRowOrder = row_number()) |>
   inner_join(kla_scope, by = c("PXD", "SampleGroup")) |>
   left_join(
     pairing |>
@@ -184,9 +208,23 @@ sample_catalog_all <- detection |>
       ),
     by = c("PXD", "SampleGroup")
   ) |>
-  mutate(RowOrder = row_number())
+  left_join(four_class, by = c("PXD", "SampleGroup")) |>
+  mutate(
+    CategoryOrder = match(Category, category_order),
+    CategoryZh = unname(category_labels_zh[Category])
+  )
 if (nrow(sample_catalog_all) != 37) {
   stop("Kla-derived candidate scope must contain exactly 37 sample groups")
+}
+if (any(is.na(sample_catalog_all$CategoryOrder))) {
+  missing_categories <- sample_catalog_all |>
+    filter(is.na(CategoryOrder)) |>
+    transmute(Key = paste(PXD, SampleGroup, sep = "__")) |>
+    pull(Key)
+  stop(
+    "Missing four-class grouping for: ",
+    paste(missing_categories, collapse = ", ")
+  )
 }
 write.csv(
   sample_catalog_all |>
@@ -213,7 +251,9 @@ sample_catalog <- sample_catalog_all |>
     PairingInclude %in% c(TRUE, "TRUE", "True", 1, "1"),
     !is.na(ReferencePXD),
     nzchar(ReferencePXD)
-  )
+  ) |>
+  arrange(CategoryOrder, OriginalRowOrder) |>
+  mutate(RowOrder = row_number())
 if (nrow(sample_catalog) != 33) {
   stop(
     "Strict whole-proteome heatmap scope must contain 33 sample groups, found ",
@@ -290,115 +330,15 @@ relative_path <- function(path) {
   sub(paste0("^", project_root, "/"), "", normalizePath(path))
 }
 
-reviewed_uniprot <- data.table::fread(
-  reviewed_uniprot_path,
-  sep = "\t",
-  quote = "",
-  data.table = FALSE,
-  check.names = FALSE,
-  showProgress = FALSE
-)
-reviewed_primary_summary <- reviewed_uniprot |>
-  transmute(
-    BaseAccession = base_accession(Entry),
-    Symbols = `Gene Names (primary)`
-  ) |>
-  separate_rows(Symbols, sep = "[;[:space:]]+") |>
-  transmute(
-    SourceSymbol = toupper(trimws(Symbols)),
-    BaseAccession
-  ) |>
-  filter(nzchar(SourceSymbol)) |>
-  distinct() |>
-  group_by(SourceSymbol) |>
-  summarise(
-    CandidateCount = n_distinct(BaseAccession),
-    CandidateAccessions = paste(
-      sort(unique(BaseAccession)),
-      collapse = ";"
-    ),
-    .groups = "drop"
-  )
-reviewed_alias_summary <- reviewed_uniprot |>
-  transmute(
-    BaseAccession = base_accession(Entry),
-    Symbols = `Gene Names`
-  ) |>
-  separate_rows(Symbols, sep = "[;[:space:]]+") |>
-  transmute(
-    SourceSymbol = toupper(trimws(Symbols)),
-    BaseAccession
-  ) |>
-  filter(nzchar(SourceSymbol)) |>
-  distinct() |>
-  group_by(SourceSymbol) |>
-  summarise(
-    CandidateCount = n_distinct(BaseAccession),
-    CandidateAccessions = paste(
-      sort(unique(BaseAccession)),
-      collapse = ";"
-    ),
-    .groups = "drop"
-  )
-
-map_reviewed_symbol_features <- function(source_features) {
-  data.frame(
-    SourceFeature = as.character(source_features),
-    stringsAsFactors = FALSE
-  ) |>
-    mutate(SourceSymbol = strsplit(SourceFeature, "_", fixed = TRUE)) |>
-    unnest(SourceSymbol) |>
-    mutate(SourceSymbol = toupper(trimws(SourceSymbol))) |>
-    filter(nzchar(SourceSymbol)) |>
-    distinct() |>
-    left_join(
-      reviewed_primary_summary |>
-        rename(
-          PrimaryCandidateCount = CandidateCount,
-          PrimaryCandidates = CandidateAccessions
-        ),
-      by = "SourceSymbol"
-    ) |>
-    left_join(
-      reviewed_alias_summary |>
-        rename(
-          AliasCandidateCount = CandidateCount,
-          AliasCandidates = CandidateAccessions
-        ),
-      by = "SourceSymbol"
-    ) |>
-    mutate(
-      MappingMode = case_when(
-        !is.na(PrimaryCandidateCount) & PrimaryCandidateCount == 1 ~
-          "reviewed_primary_symbol",
-        is.na(PrimaryCandidateCount) & AliasCandidateCount == 1 ~
-          "reviewed_unique_alias",
-        !is.na(PrimaryCandidateCount) & PrimaryCandidateCount > 1 ~
-          "ambiguous_reviewed_primary",
-        AliasCandidateCount > 1 ~ "ambiguous_reviewed_alias",
-        TRUE ~ "unmapped"
-      ),
-      BaseAccession = case_when(
-        MappingMode == "reviewed_primary_symbol" ~ PrimaryCandidates,
-        MappingMode == "reviewed_unique_alias" ~ AliasCandidates,
-        TRUE ~ ""
-      ),
-      TargetAccession = ifelse(
-        BaseAccession %in% target_accessions,
-        BaseAccession,
-        NA_character_
-      ),
-      MappingSource =
-        "UniProtKB reviewed Homo sapiens snapshot 2026-08-05"
-    )
-}
-
 quant_parts <- list()
 quant_audit <- sample_catalog |>
   transmute(
     PXD,
     SampleGroup,
     SampleGroupID,
+    Category,
+    CategoryZh,
+    HeatmapRowOrder = RowOrder,
     WholeProteomeQuantAvailable = FALSE,
     WholeProteomeSource = "",
     WholeProteomeMeasurement = "",
@@ -763,114 +703,45 @@ add_peaks_proteins <- function(paths, pxd, sample_group) {
   }
 }
 
-add_pxd043880_hippocampus <- function(path) {
+add_pxd050470_hippocampus <- function(path) {
   if (!file.exists(path)) return(invisible(NULL))
   data <- read_excel(
     path,
-    sheet = "Source Data Proteins",
-    col_names = FALSE,
-    col_types = "text",
-    .name_repair = "minimal"
+    sheet = "Sheet1",
+    skip = 5
   )
-  if (nrow(data) < 3 || ncol(data) < 9) {
-    stop("Unexpected PXD043880 protein matrix layout: ", path)
-  }
-
-  donor_rows <- 3:nrow(data)
-  donor_ids <- trimws(as.character(data[[1]][donor_rows]))
-  donor_keep <- !is.na(donor_ids) &
-    nzchar(donor_ids) &
-    !grepl("\\((removed|outlier)\\)", donor_ids, ignore.case = TRUE)
-  donor_rows <- donor_rows[donor_keep]
-  donor_ids <- donor_ids[donor_keep]
-  if (length(donor_ids) != 74) {
-    stop("Expected 74 retained PXD043880 donors, found ", length(donor_ids))
-  }
-
-  source_features <- trimws(as.character(
-    unlist(data[2, 9:ncol(data)], use.names = FALSE)
-  ))
-  feature_keep <- !is.na(source_features) & nzchar(source_features)
-  source_features <- source_features[feature_keep]
-  intensity <- as.matrix(
-    data[donor_rows, 9:ncol(data), drop = FALSE]
-  )[, feature_keep, drop = FALSE]
-  quant_data <- as.data.frame(
-    t(intensity),
-    check.names = FALSE,
-    stringsAsFactors = FALSE
+  required_columns <- c(
+    "Protein accession",
+    "Intensity_H072",
+    "Intensity_H081",
+    "Intensity_H187"
   )
-  sample_labels <- make.unique(paste0("CA1_", donor_ids))
-  names(quant_data) <- sample_labels
-
-  mapping <- map_reviewed_symbol_features(source_features)
-  target_by_feature <- mapping |>
-    group_by(SourceFeature) |>
-    summarise(
-      TargetHitCount = n_distinct(TargetAccession[!is.na(TargetAccession)]),
-      TargetAccession = paste(
-        sort(unique(TargetAccession[!is.na(TargetAccession)])),
-        collapse = ";"
-      ),
-      .groups = "drop"
-    )
-  if (any(target_by_feature$TargetHitCount > 1)) {
-    stop(
-      "PXD043880 source feature maps to multiple regulator accessions: ",
-      paste(
-        target_by_feature$SourceFeature[
-          target_by_feature$TargetHitCount > 1
-        ],
-        collapse = ", "
-      )
-    )
+  if (!all(required_columns %in% names(data))) {
+    stop("Unexpected PXD050470 Table S4 layout: ", path)
   }
-  feature_targets <- target_by_feature$TargetAccession[
-    match(source_features, target_by_feature$SourceFeature)
-  ]
-  feature_targets[!nzchar(feature_targets)] <- NA_character_
-
-  mapping |>
-    mutate(
-      SourceFile = relative_path(path),
-      RetainedDonorCount = length(donor_ids),
-      TargetRegulatorMatch = !is.na(TargetAccession)
-    ) |>
-    write.csv(
-      file.path(
-        table_dir,
-        "kla_regulator_whole_proteome_hippocampus_id_mapping_audit.csv"
-      ),
-      row.names = FALSE,
-      na = ""
-    )
+  accessions <- base_accession(data$`Protein accession`)
+  keep <- is_uniprot(accessions)
+  if (sum(keep) != 6082 || n_distinct(accessions[keep]) != 6082) {
+    stop("Expected 6082 unique UniProt accessions in PXD050470 Table S4")
+  }
 
   add_total_quant(
-    quant_data,
+    data[keep, ],
     "PXD050470",
     "human hippocampus",
-    paste0("PXD043880_SYMBOL_FEATURE:", source_features),
-    feature_targets,
-    sample_labels,
-    sample_labels,
-    paste0(
-      "PXD043880 CA1 LFQ intensity after reviewed UniProt ",
-      "symbol conversion"
-    ),
+    accession_feature(accessions[keep]),
+    match_target_accession(accessions[keep]),
+    required_columns[-1],
+    c("H072", "H081", "H0187"),
+    "same-study ordinary whole-proteome relative intensity; direct UniProt ID",
     path
   )
   update_audit(
     "PXD050470",
     "human hippocampus",
     relative_path(path),
-    paste0(
-      "PXD043880 CA1 LFQ intensity after reviewed UniProt ",
-      "symbol conversion"
-    ),
-    paste0(
-      "独立正常CA1海马全蛋白参照；74名供体；",
-      "symbol先转换为人源reviewed UniProt BaseAccession"
-    )
+    "same-study ordinary whole-proteome relative intensity; direct UniProt ID",
+    "同研究Table S4；与Kla完全相同的H072、H081、H0187三份人海马样本；按UniProt BaseAccession直接匹配"
   )
 }
 
@@ -1257,8 +1128,11 @@ for (i in seq_len(nrow(reference_rows))) {
     if (!is.null(project_id)) {
       add_procan_average(path, pxd, group, project_id)
     }
-  } else if (ref$ReferencePXD == "PXD043880") {
-    add_pxd043880_hippocampus(path)
+  } else if (
+    ref$ReferencePXD == "PXD050470" &&
+      group == "human hippocampus"
+  ) {
+    add_pxd050470_hippocampus(path)
   } else if (ref$ReferencePXD == "PXD002400") {
     add_mcf10a_reference(path, pxd, group)
   } else if (ref$ReferencePXD == "PXD010154") {
@@ -1602,10 +1476,11 @@ algorithm_audit <- data.frame(
     "IdentityKey",
     "EnsemblProteinMapping",
     "GeneSymbolRole",
-    "KlaSignalSubstitution"
+    "KlaSignalSubstitution",
+    "HeatmapRowGrouping"
   ),
   Value = c(
-    "whole_proteome_regulator_rank_v4_exact_reference",
+    "whole_proteome_regulator_rank_v5_exact_reference_four_class_order",
     "ordinary whole-proteome quantitative files or selected normal whole-proteome references",
     "finite Signal > 0; reverse/contaminant/only-identified-by-site rows excluded when available",
     "log2(Signal + 1)",
@@ -1615,10 +1490,11 @@ algorithm_audit <- data.frame(
     "median percentile across QuantSample replicates/conditions within PXD and SampleGroup",
     "0 percentile for a regulator not detected in an otherwise usable whole-proteome sample",
     "sample group excluded from the ordinary-proteome heatmap when no exact per-protein quantitative reference exists",
-    "UniProt human reviewed BaseAccession after isoform suffix removal; Ensembl protein IDs are converted to UniProt by the project mapping table",
+    "UniProt BaseAccession after isoform suffix removal; Ensembl protein IDs are converted to UniProt by the project mapping table; reviewed status is annotation only",
     "ENSP(_RNA/version) -> UniProt BaseAccession via ensembl_protein_to_uniprot_biomart.tsv; GeneSymbol is never used as a fallback",
     "display/audit only; never used for matching or aggregation",
-    "never; Kla-enriched intensity is not used as a fallback"
+    "never; Kla-enriched intensity is not used as a fallback",
+    "normal_tissue -> cancer_tissue -> normal_cells -> cancer_cells; original order retained within each class"
   ),
   stringsAsFactors = FALSE
 )
@@ -1638,7 +1514,10 @@ available_sample_groups <- paste(
   sep = "__"
 )
 plot_data <- sample_catalog |>
-  select(PXD, SampleGroup, SampleGroupID, RowLabel, RowOrder) |>
+  select(
+    PXD, SampleGroup, SampleGroupID, RowLabel, RowOrder,
+    Category, CategoryZh
+  ) |>
   crossing(
     regulators |>
       select(Role, GeneSymbol, BaseAccession, RoleEntryOrder) |>
@@ -1659,6 +1538,10 @@ plot_data <- sample_catalog |>
     Role = factor(
       Role,
       levels = c("Writer", "Eraser", "Writer-Eraser", "Reader")
+    ),
+    CategoryZh = factor(
+      CategoryZh,
+      levels = unname(category_labels_zh[category_order])
     ),
     GeneSymbol = factor(
       GeneSymbol,
@@ -1681,7 +1564,11 @@ main_plot <- ggplot(
     fontface = "bold",
     family = plot_font
   ) +
-  facet_grid(. ~ Role, scales = "free_x", space = "free_x") +
+  facet_grid(
+    CategoryZh ~ Role,
+    scales = "free",
+    space = "free"
+  ) +
   scale_fill_gradientn(
     colours = c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B"),
     values = scales::rescale(c(0, 20, 50, 80, 100)),
@@ -1693,19 +1580,20 @@ main_plot <- ggplot(
     title = "乳酸化调控蛋白在全蛋白组中的相对信号",
     subtitle = paste(
       "仅纳入生物材料匹配且具有逐蛋白强度的普通全蛋白定量文件，不使用Kla富集信号；",
-      "颜色由白色向暖色递增。"
+      "样本按正常组织、癌症组织、正常细胞、癌症细胞分组；颜色由白色向暖色递增。"
     ),
     x = NULL,
     y = NULL,
     caption = paste0(
-      "身份按人源UniProt reviewed BaseAccession匹配；",
+      "身份按UniProt BaseAccession匹配；reviewed状态不参与纳入或排除；",
       "全蛋白组百分位只在各自样本内计算，不是Log FC。"
     )
   ) +
   theme_minimal(base_size = 8.5, base_family = plot_font) +
   theme(
     panel.grid = element_blank(),
-    strip.text = element_text(face = "bold", size = 9),
+    strip.text.x = element_text(face = "bold", size = 9),
+    strip.text.y = element_text(face = "bold", size = 8),
     strip.background = element_rect(fill = "#F2F2F2", color = NA),
     axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
     axis.text.y = element_text(size = 7.2),

@@ -1,0 +1,41 @@
+PXD,SampleGroup,Category
+PXD014870,MCF7,cancer_cells
+PXD028488,HEK293T,normal_cells
+PXD028488,HCT116,cancer_cells
+PXD028488,TALL-104,cancer_cells
+PXD028737,HMC3,normal_cells
+PXD033146,pathological rotator cuff tendon,normal_tissue
+PXD036307,normal human lung,normal_tissue
+PXD037371,normal liver,normal_tissue
+PXD037371,nonmetastatic HCC,cancer_tissue
+PXD037371,lung-metastatic HCC,cancer_tissue
+PXD046800,hypertrophic scar,normal_tissue
+PXD046800,adjacent skin,normal_tissue
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells
+PXD050470,human hippocampus,normal_tissue
+PXD053474,HCT116,cancer_cells
+PXD054919,A549,cancer_cells
+PXD055230,human fibroblasts mock and HCMV or HSV-1,normal_cells
+PXD057709,human fibroblasts mock and HCMV,normal_cells
+PXD058534,pretreated HK-2,normal_cells
+PXD060185,MCF10A,normal_cells
+PXD060185,MCF7,cancer_cells
+PXD060185,MDA-MB-468,cancer_cells
+PXD060185,T-47D,cancer_cells
+PXD062720,bladder cancer cells treated with EPI,cancer_cells
+PXD063047,normal pregnancy placenta,normal_tissue
+PXD063047,severe preeclampsia placenta,normal_tissue
+PXD063266,PC-3M,cancer_cells
+PXD064038,MEC and NEC ESCC groups,cancer_tissue
+PXD064912,human sperm,normal_tissue
+PXD066054,BPH,normal_tissue
+PXD066054,prostate cancer,cancer_tissue
+PXD066351,HCT116 control and Roseburia co-culture,cancer_cells
+PXD070007,glioblastoma stem cells,cancer_cells
+PXD070007,neural stem cells,normal_cells
+PXD073311,HUVEC control and Pg infection,normal_cells
+PXD075014,AC16 control and hypoxia,normal_cells
+PXD075377,HCC,cancer_tissue
+PXD075377,adjacent liver,normal_tissue
+PXD078013,RKO WT and GSK3B KO,cancer_cells
+PXD078736,HK-2 control and mannitol,normal_cells

@@ -11,7 +11,9 @@ PYTHONPATH=reanalysis/scripts python3 -m unittest discover -s reanalysis/tests -
 Reference-proteome DDR comparison added on 2026-07-30:
 
 ```bash
-PYTHONPATH=reanalysis/scripts python3 reanalysis/scripts/analyze_reference_proteome_ddr.py
+# Historical command only. The script is archived because it used the retired
+# PXD043880 CA1 hippocampus reference:
+# PYTHONPATH=reanalysis/scripts python3 reanalysis/scripts/analyze_reference_proteome_ddr.py
 
 # Spreadsheet builders use the bundled @oai/artifact-tool runtime.
 node reanalysis/scripts/build_reference_proteome_selection_workbook.mjs
@@ -140,3 +142,26 @@ PYTHONPATH=reanalysis/scripts /Users/gzy2520/miniconda3/bin/python3 \
 
 结果：Kla 定量 37/40 组；严格普通全蛋白参照 33/37 组；
 6 个 R 测试和 19 个 Python 测试全部通过。
+
+严格材料身份和取材粒度审计于 2026-08-08 运行：
+
+```bash
+Rscript reanalysis/scripts/apply_exact_reference_policy.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/build_lactylome_reference_pairing.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/build_strict_reference_material_identity_audit.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/analyze_kla_regulator_whole_proteome_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/analyze_expanded_ddr_fraction_by_accession.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/plot_four_class_area_proportional_venn.R \
+  /Users/gzy2520/Desktop/Research/kla
+
+Rscript reanalysis/tests/test_strict_reference_material_identity.R .
+```
+
+PXD050470 使用同研究 Table S4 的 H072、H081、H0187 普通全蛋白强度；
+旧 PXD043880 CA1 参照不再进入活动分析。HCC 与癌旁肝分别读取
+PXD065775 的 CISs 和 ANTs 工作表。

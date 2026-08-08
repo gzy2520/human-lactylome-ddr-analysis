@@ -42,3 +42,7 @@
 /Users/gzy2520/Desktop/Research/kla/archive/2026-08-07_git_baseline_cleanup/MIGRATION_MANIFEST.csv
 /Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
 /Users/gzy2520/Desktop/Research/kla/archive/2026-08-08_pre_material_granularity_fix/MIGRATION_MANIFEST.csv
+/Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_and_reference_teacher_review_zh.csv
+/Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_and_reference_teacher_review_focus_zh.csv
+/Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_and_reference_teacher_review_zh.xlsx
+/Users/gzy2520/Desktop/Research/kla/reanalysis/reports/TEACHER_REVIEW_TABLE_2026-08-08.md

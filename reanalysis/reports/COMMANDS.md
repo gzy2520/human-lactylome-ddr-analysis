@@ -165,3 +165,28 @@ Rscript reanalysis/tests/test_strict_reference_material_identity.R .
 PXD050470 使用同研究 Table S4 的 H072、H081、H0187 普通全蛋白强度；
 旧 PXD043880 CA1 参照不再进入活动分析。HCC 与癌旁肝分别读取
 PXD065775 的 CISs 和 ANTs 工作表。
+
+老师审阅总表于 2026-08-08 生成并复核：
+
+```bash
+Rscript reanalysis/scripts/build_lactylome_reference_pairing.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/build_strict_reference_material_identity_audit.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/build_teacher_review_table.R \
+  /Users/gzy2520/Desktop/Research/kla
+
+/Users/gzy2520/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node \
+  reanalysis/scripts/build_teacher_review_workbook.mjs \
+  /Users/gzy2520/Desktop/Research/kla
+
+Rscript reanalysis/tests/test_teacher_review_table.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/build_final_manifest.R \
+  /Users/gzy2520/Desktop/Research/kla
+```
+
+老师审阅总表固定为37个Kla组，其中33组有严格材料匹配且可定量的
+普通全蛋白参照，4组不进入普通全蛋白配对分析。两个HK-2组实际读取
+PXD072220 的 `amostra1/amostra3/amostra4 PG.Log2Quantity`，并跳过
+文件前两行说明。

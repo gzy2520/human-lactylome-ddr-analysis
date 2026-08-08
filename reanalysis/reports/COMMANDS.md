@@ -190,3 +190,46 @@ Rscript reanalysis/scripts/build_final_manifest.R \
 普通全蛋白参照，4组不进入普通全蛋白配对分析。两个HK-2组实际读取
 PXD072220 的 `amostra1/amostra3/amostra4 PG.Log2Quantity`，并跳过
 文件前两行说明。
+
+DDR占比柱状图按老师要求进行细胞系内聚类及参照显示去重：
+
+```bash
+Rscript reanalysis/scripts/analyze_expanded_ddr_fraction_by_accession.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/tests/test_expanded_ddr_fraction_by_accession.R \
+  /Users/gzy2520/Desktop/Research/kla
+
+/Users/gzy2520/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node \
+  reanalysis/scripts/build_37group_deliverable_workbooks.mjs \
+  /Users/gzy2520/Desktop/Research/kla
+```
+
+33个Kla研究组全部保留。普通全蛋白参照按参照PXD、来源文件、总蛋白数
+和DDR数生成唯一显示键，共显示30根蓝柱。HK-2、MCF7和HCT116各有一组
+完全重复的共享参照，分别只显示一次；统计表中的样本级配对关系不删除。
+
+普通全蛋白调控因子热图按老师意见去重并补充GCN5显示名：
+
+```bash
+Rscript reanalysis/scripts/analyze_kla_regulator_whole_proteome_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/tests/test_kla_regulator_whole_proteome_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+```
+
+33条严格Kla到普通全蛋白配对仍保留；最终热图显示30个唯一普通全蛋白
+参照行。HK-2、MCF7和HCT116各合并一条重复显示行。identifier中的KAT2A
+即GCN5，分析仍使用UniProt Q92830，图上显示为`GCN5 (KAT2A)`。
+
+最终回归测试：
+
+```bash
+for test_file in $(rg --files reanalysis/tests | rg 'test_.*\.R$' | sort); do
+  Rscript "$test_file" /Users/gzy2520/Desktop/Research/kla || exit 1
+done
+
+PYTHONPATH=reanalysis/scripts /Users/gzy2520/miniconda3/bin/python3 \
+  -m unittest discover -s reanalysis/tests -p 'test_*.py' -v
+```
+
+结果：8个R测试和19个Python测试全部通过。

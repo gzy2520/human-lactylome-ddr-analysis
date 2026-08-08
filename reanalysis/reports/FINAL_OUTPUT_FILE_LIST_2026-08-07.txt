@@ -23,6 +23,8 @@
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_regulator_intensity_pure_white_audit.csv
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_regulator_whole_proteome_normalized_long.csv
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_regulator_whole_proteome_intensity_availability_audit.csv
+/Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_regulator_whole_proteome_heatmap_rows.csv
+/Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_regulator_whole_proteome_heatmap_display_long.csv
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/strict_reference_exclusion_audit.csv
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/exact_reference_selection_audit.csv
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/strict_reference_material_identity_audit.csv
@@ -46,3 +48,6 @@
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_and_reference_teacher_review_focus_zh.csv
 /Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/kla_and_reference_teacher_review_zh.xlsx
 /Users/gzy2520/Desktop/Research/kla/reanalysis/reports/TEACHER_REVIEW_TABLE_2026-08-08.md
+/Users/gzy2520/Desktop/Research/kla/reanalysis/results/tables/cell_type_kla_vs_reference_ddr_plot_rows.csv
+/Users/gzy2520/Desktop/Research/kla/reanalysis/reports/DDR_REFERENCE_DISPLAY_DEDUP_2026-08-08.md
+/Users/gzy2520/Desktop/Research/kla/reanalysis/reports/WHOLE_PROTEOME_HEATMAP_REFERENCE_DEDUP_GCN5_2026-08-09.md

@@ -199,6 +199,9 @@ async function buildDdrWorkbook() {
   const materialAudit = await readCsv(
     "reanalysis/results/tables/strict_reference_material_identity_audit_zh.csv",
   );
+  const plotRows = await readCsv(
+    "reanalysis/results/tables/cell_type_kla_vs_reference_ddr_plot_rows.csv",
+  );
   const workbook = Workbook.create();
   addReadme(workbook, "37组 Kla 与33组严格普通全蛋白参照 DDR 占比统计", [
     "Kla最终范围为定量可用的37个 PXD+样本组；PXD037371 三组已排除。",
@@ -258,6 +261,11 @@ async function buildDdrWorkbook() {
     freezeColumns: 2,
     maxWidth: 46,
     headerFill: "#6F3D2E",
+  });
+  addDataSheet(workbook, "绘图显示去重", plotRows, {
+    freezeColumns: 4,
+    maxWidth: 46,
+    headerFill: "#7A4A35",
   });
   await verifyAndExport(
     workbook,

@@ -1522,45 +1522,39 @@ write.csv(
   row.names = FALSE
 )
 paired_statistics <- statistics |>
-  filter(PairedAnalysisIncluded)
-plot_data_base <- paired_statistics |>
-  select(
-    DisplayLabel,
-    EnglishDisplayLabel,
-    Category,
-    CategoryZh,
-    CategoryEn,
-    RowOrder,
-    KlaProteinCount,
-    KlaDdrProteinCount,
-    KlaDdrFraction,
-    ReferenceProteinCount,
-    ReferenceDdrProteinCount,
-    ReferenceDdrFraction
-  ) |>
-  pivot_longer(
-    cols = c(KlaDdrFraction, ReferenceDdrFraction),
-    names_to = "Dataset",
-    values_to = "DdrFraction"
-  ) |>
+  filter(PairedAnalysisIncluded) |>
   mutate(
-    Dataset = recode(
-      Dataset,
-      ReferenceDdrFraction = "reference",
-      KlaDdrFraction = "kla"
+    SampleLabelZh = sub(" ·.*$", "", DisplayLabel),
+    SampleLabelEn = sub(" ·.*$", "", EnglishDisplayLabel),
+    MaterialCluster = case_when(
+      grepl("HK-2", SampleGroup, fixed = TRUE) ~ "HK-2",
+      SampleGroup == "MCF7" ~ "MCF7",
+      grepl("^HCT116", SampleGroup) ~ "HCT116",
+      grepl("^human fibroblasts", SampleGroup) ~ "human_fibroblasts",
+      TRUE ~ paste(PXD, SampleGroup, sep = "__")
     ),
-    Total = ifelse(
-      Dataset == "reference",
+    MaterialClusterZh = case_when(
+      MaterialCluster == "HK-2" ~ "HK-2",
+      MaterialCluster == "MCF7" ~ "MCF7",
+      MaterialCluster == "HCT116" ~ "HCT116",
+      MaterialCluster == "human_fibroblasts" ~ "人成纤维细胞",
+      TRUE ~ SampleLabelZh
+    ),
+    MaterialClusterEn = case_when(
+      MaterialCluster == "human_fibroblasts" ~ "Human fibroblasts",
+      TRUE ~ ifelse(
+        MaterialCluster %in% c("HK-2", "MCF7", "HCT116"),
+        MaterialCluster,
+        SampleLabelEn
+      )
+    ),
+    ReferenceDisplayKey = paste(
+      ReferencePXD,
+      ReferenceEvidenceFile,
       ReferenceProteinCount,
-      KlaProteinCount
-    ),
-    Ddr = ifelse(
-      Dataset == "reference",
       ReferenceDdrProteinCount,
-      KlaDdrProteinCount
-    ),
-    LabelZh = sprintf("%s/%s（%.1f%%）", Ddr, Total, DdrFraction * 100),
-    LabelEn = sprintf("%s/%s (%.1f%%)", Ddr, Total, DdrFraction * 100)
+      sep = "||"
+    )
   )
 
 font_family <- "Arial Unicode MS"
@@ -1569,6 +1563,148 @@ category_order <- c(
   "cancer_tissue",
   "normal_cells",
   "cancer_cells"
+)
+
+cluster_order <- paired_statistics |>
+  group_by(Category, MaterialCluster) |>
+  summarise(ClusterOrder = min(RowOrder), .groups = "drop")
+reference_order <- paired_statistics |>
+  group_by(Category, MaterialCluster, ReferenceDisplayKey) |>
+  summarise(ReferenceOrder = min(RowOrder), .groups = "drop")
+paired_statistics <- paired_statistics |>
+  left_join(cluster_order, by = c("Category", "MaterialCluster")) |>
+  left_join(
+    reference_order,
+    by = c("Category", "MaterialCluster", "ReferenceDisplayKey")
+  )
+
+reference_plot_rows <- paired_statistics |>
+  group_by(
+    Category,
+    CategoryZh,
+    CategoryEn,
+    MaterialCluster,
+    MaterialClusterZh,
+    MaterialClusterEn,
+    ClusterOrder,
+    ReferenceDisplayKey,
+    ReferenceOrder,
+    ReferencePXD,
+    ReferenceEvidenceFile,
+    ReferenceProteinCount,
+    ReferenceDdrProteinCount,
+    ReferenceDdrFraction
+  ) |>
+  summarise(
+    LinkedKlaPXD = paste(unique(PXD), collapse = ";"),
+    LinkedKlaStudyCount = n(),
+    .groups = "drop"
+  ) |>
+  transmute(
+    Category,
+    CategoryZh,
+    CategoryEn,
+    MaterialCluster,
+    MaterialClusterZh,
+    MaterialClusterEn,
+    ClusterOrder,
+    ReferenceOrder,
+    BarPriority = 0L,
+    StudyOrder = ReferenceOrder,
+    BarType = "reference",
+    PXD = NA_character_,
+    SampleGroup = "ordinary whole-proteome reference",
+    ReferencePXD,
+    ReferenceEvidenceFile,
+    ReferenceDisplayKey,
+    LinkedKlaPXD,
+    LinkedKlaStudyCount,
+    DdrFraction = ReferenceDdrFraction,
+    Ddr = ReferenceDdrProteinCount,
+    Total = ReferenceProteinCount,
+    DisplayLabelZh = paste0(
+      MaterialClusterZh,
+      " · 普通全蛋白 Ref:",
+      ReferencePXD
+    ),
+    DisplayLabelEn = paste0(
+      MaterialClusterEn,
+      " · whole proteome Ref:",
+      ReferencePXD
+    )
+  )
+
+kla_plot_rows <- paired_statistics |>
+  transmute(
+    Category,
+    CategoryZh,
+    CategoryEn,
+    MaterialCluster,
+    MaterialClusterZh,
+    MaterialClusterEn,
+    ClusterOrder,
+    ReferenceOrder,
+    BarPriority = 1L,
+    StudyOrder = RowOrder,
+    BarType = "kla",
+    PXD,
+    SampleGroup,
+    ReferencePXD,
+    ReferenceEvidenceFile,
+    ReferenceDisplayKey,
+    LinkedKlaPXD = PXD,
+    LinkedKlaStudyCount = 1L,
+    DdrFraction = KlaDdrFraction,
+    Ddr = KlaDdrProteinCount,
+    Total = KlaProteinCount,
+    DisplayLabelZh = paste0(SampleLabelZh, " · Kla:", PXD),
+    DisplayLabelEn = paste0(SampleLabelEn, " · Kla:", PXD)
+  )
+
+plot_data_base <- bind_rows(reference_plot_rows, kla_plot_rows) |>
+  arrange(
+    match(Category, category_order),
+    ClusterOrder,
+    ReferenceOrder,
+    BarPriority,
+    StudyOrder
+  ) |>
+  mutate(
+    BarOrder = row_number(),
+    LabelZh = sprintf("%s/%s（%.1f%%）", Ddr, Total, DdrFraction * 100),
+    LabelEn = sprintf("%s/%s (%.1f%%)", Ddr, Total, DdrFraction * 100)
+  )
+
+write.csv(
+  plot_data_base |>
+    select(
+      BarOrder,
+      Category,
+      CategoryZh,
+      CategoryEn,
+      MaterialCluster,
+      MaterialClusterZh,
+      MaterialClusterEn,
+      BarType,
+      PXD,
+      SampleGroup,
+      ReferencePXD,
+      ReferenceEvidenceFile,
+      ReferenceDisplayKey,
+      LinkedKlaPXD,
+      LinkedKlaStudyCount,
+      Ddr,
+      Total,
+      DdrFraction,
+      DisplayLabelZh,
+      DisplayLabelEn
+    ),
+  file.path(
+    table_dir,
+    "cell_type_kla_vs_reference_ddr_plot_rows.csv"
+  ),
+  row.names = FALSE,
+  na = ""
 )
 
 make_ddr_plot <- function(language = c("zh", "en")) {
@@ -1587,18 +1723,20 @@ make_ddr_plot <- function(language = c("zh", "en")) {
   }
   plot_data <- plot_data_base |>
     mutate(
-      PlotLabel = if (is_zh) DisplayLabel else EnglishDisplayLabel,
+      PlotLabel = if (is_zh) DisplayLabelZh else DisplayLabelEn,
       CategoryLabel = if (is_zh) CategoryZh else CategoryEn,
       BarLabel = if (is_zh) LabelZh else LabelEn,
       Dataset = factor(
-        Dataset,
-        levels = c("kla", "reference"),
-        labels = unname(dataset_labels[c("kla", "reference")])
+        BarType,
+        levels = c("reference", "kla"),
+        labels = unname(dataset_labels[c("reference", "kla")])
       ),
       PlotLabel = factor(
         PlotLabel,
-        levels = rev(if (is_zh) unique(paired_statistics$DisplayLabel) else
-          unique(paired_statistics$EnglishDisplayLabel))
+        levels = rev(
+          if (is_zh) plot_data_base$DisplayLabelZh else
+            plot_data_base$DisplayLabelEn
+        )
       ),
       CategoryLabel = factor(
         Category,
@@ -1616,14 +1754,12 @@ make_ddr_plot <- function(language = c("zh", "en")) {
     aes(x = DdrFraction * 100, y = PlotLabel, fill = Dataset)
   ) +
     geom_col(
-      position = position_dodge(width = 0.72),
-      width = 0.64,
+      width = 0.68,
       color = "white",
       linewidth = 0.2
     ) +
     geom_text(
       aes(label = BarLabel),
-      position = position_dodge(width = 0.72),
       hjust = -0.04,
       size = if (is_zh) 2.65 else 2.45,
       family = font_family,
@@ -1653,16 +1789,17 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       },
       subtitle = if (is_zh) {
         paste0(
-          "纳入", nrow(paired_statistics),
-          "个具有完全匹配逐蛋白强度参照的样本组；GO-DDR交集按去isoform后的BaseAccession计算；",
-          "蓝色为普通全蛋白组参照，位于橙色Kla柱上方"
+          "纳入", nrow(paired_statistics), "个Kla研究组和",
+          nrow(reference_plot_rows), "个唯一普通全蛋白参照；",
+          "同一参照只显示一次，蓝色参照位于其橙色Kla研究上方；",
+          "GO-DDR交集按去isoform后的BaseAccession计算"
         )
       } else {
         paste0(
-          nrow(paired_statistics),
-          " sample groups with exact per-protein quantitative references; ",
-          "GO-DDR overlap uses isoform-stripped BaseAccession; ",
-          "blue reference bars are placed above orange Kla bars"
+          nrow(paired_statistics), " Kla study groups and ",
+          nrow(reference_plot_rows), " unique whole-proteome references; ",
+          "each reference is displayed once above its linked Kla studies; ",
+          "GO-DDR overlap uses isoform-stripped BaseAccession"
         )
       },
       x = if (is_zh) "DDR 注释蛋白占比（%）" else
@@ -1672,13 +1809,14 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       caption = if (is_zh) {
         paste0(
           "柱端为DDR蛋白数/总蛋白数。PXD037371的3组因TMT通道映射不明而排除；",
-          "PXD050470使用同研究同三份海马样本的普通全蛋白Table S4，并按UniProt BaseAccession直接匹配DDR。"
+          "HK-2、MCF7和HCT116的共享参照蓝柱不重复；",
+          "相同细胞系的不同Kla研究在组内相邻显示。"
         )
       } else {
         paste0(
           "Bar labels show DDR proteins/total proteins. Three PXD037371 groups are excluded ",
-          "because TMT channels cannot be reliably mapped; PXD050470 uses same-study ",
-          "ordinary whole-proteome Table S4 for the same three hippocampus samples."
+          "because TMT channels cannot be reliably mapped; shared HK-2, MCF7, and HCT116 ",
+          "reference bars are not duplicated, and Kla studies of the same cell line are adjacent."
         )
       }
     ) +
@@ -1715,7 +1853,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
 
 plot_zh <- make_ddr_plot("zh")
 plot_en <- make_ddr_plot("en")
-figure_height <- max(12, nrow(paired_statistics) * 0.42 + 4.2)
+figure_height <- max(12, nrow(plot_data_base) * 0.28 + 4.2)
 
 for (path in c(
   "cell_type_kla_vs_reference_ddr_fraction_accession_only.png",

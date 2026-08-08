@@ -71,6 +71,22 @@ scope_exclusions <- read.csv(
   stringsAsFactors = FALSE,
   check.names = FALSE
 )
+heatmap_rows <- read.csv(
+  file.path(
+    table_dir,
+    "kla_regulator_whole_proteome_heatmap_rows.csv"
+  ),
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+heatmap_long <- read.csv(
+  file.path(
+    table_dir,
+    "kla_regulator_whole_proteome_heatmap_display_long.csv"
+  ),
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
 
 required_figures <- c(
   file.path(
@@ -88,7 +104,7 @@ assert(file.exists(script_path), "Whole-proteome analysis script is missing")
 assert(
   nrow(algorithm_audit) == 15 &&
     algorithm_audit$Value[algorithm_audit$Field == "AlgorithmVersion"] ==
-      "whole_proteome_regulator_rank_v5_exact_reference_four_class_order",
+      "whole_proteome_regulator_rank_v6_unique_reference_display",
   "Whole-proteome algorithm audit is missing or outdated"
 )
 assert(
@@ -99,6 +115,11 @@ assert(
 )
 
 assert(nrow(audit) == 33, "Expected exactly 33 strict-reference sample groups in the audit")
+assert(
+  nrow(heatmap_rows) == 30 &&
+    !anyDuplicated(heatmap_rows$ReferenceDisplayKey),
+  "Whole-proteome heatmap must contain exactly 30 unique reference rows"
+)
 category_order <- c(
   "normal_tissue",
   "cancer_tissue",
@@ -120,6 +141,30 @@ assert(
     c(9L, 2L, 9L, 13L)
   ),
   "Strict-reference heatmap category counts must be 9, 2, 9, and 13"
+)
+assert(
+  identical(
+    as.integer(table(factor(heatmap_rows$Category, levels = category_order))),
+    c(9L, 2L, 8L, 11L)
+  ),
+  "Unique-reference heatmap category counts must be 9, 2, 8, and 11"
+)
+shared_reference_expectations <- list(
+  "PXD058534;PXD078736",
+  "PXD014870;PXD060185",
+  "PXD028488;PXD053474"
+)
+for (linked_pxd in shared_reference_expectations) {
+  shared_row <- heatmap_rows[heatmap_rows$LinkedKlaPXD == linked_pxd, ]
+  assert(
+    nrow(shared_row) == 1 && shared_row$LinkedKlaStudyCount == 2,
+    paste("Missing unique shared-reference heatmap row for", linked_pxd)
+  )
+}
+assert(
+  sum(heatmap_rows$LinkedKlaStudyCount == 2) == 3 &&
+    sum(heatmap_rows$LinkedKlaStudyCount == 1) == 27,
+  "Only HK-2, MCF7, and HCT116 may share a displayed reference row"
 )
 assert(
   all(audit$WholeProteomeQuantAvailable),
@@ -282,6 +327,31 @@ assert(
 assert(
   !any(is.na(normalized$WholeProteomeRelativePercentile)),
   "All 33 strict-reference rows must have plottable regulator percentiles"
+)
+gcn5 <- heatmap_long[
+  heatmap_long$RegulatorBaseAccession == "Q92830" &
+    heatmap_long$Role == "Writer",
+]
+assert(
+  nrow(gcn5) == 30 &&
+    all(gcn5$GeneSymbol == "KAT2A") &&
+    all(gcn5$RegulatorDisplayName == "GCN5 (KAT2A)"),
+  "GCN5 must be displayed once per unique reference row as Writer Q92830/KAT2A"
+)
+assert(
+  !anyDuplicated(
+    paste(
+      heatmap_long$ReferenceDisplayKey,
+      heatmap_long$Role,
+      heatmap_long$RegulatorBaseAccession,
+      sep = "__"
+    )
+  ),
+  "Heatmap display table must not duplicate a regulator within a role/reference row"
+)
+assert(
+  all(heatmap_long$IdentityMatchMode == "UniProt_BaseAccession_only"),
+  "Heatmap display rows must retain accession-only matching"
 )
 hippocampus <- audit[audit$PXD == "PXD050470", ]
 assert(

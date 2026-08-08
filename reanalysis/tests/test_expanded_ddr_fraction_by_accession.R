@@ -38,6 +38,16 @@ evidence_audit <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
+plot_rows_path <- file.path(
+  table_dir,
+  "cell_type_kla_vs_reference_ddr_plot_rows.csv"
+)
+stopifnot(file.exists(plot_rows_path))
+plot_rows <- read.csv(
+  plot_rows_path,
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
 stopifnot(file.exists(file.path(
   table_dir,
   "cell_type_kla_vs_reference_ddr_statistics_accession_only_zh.csv"
@@ -48,6 +58,28 @@ stopifnot(sum(audit$Included) == 37)
 stopifnot(nrow(audit) == 37)
 stopifnot(!any(audit$PXD == "PXD037371"))
 stopifnot(sum(stats$PairedAnalysisIncluded) == 33)
+stopifnot(sum(plot_rows$BarType == "kla") == 33)
+stopifnot(sum(plot_rows$BarType == "reference") == 30)
+stopifnot(!anyDuplicated(
+  plot_rows$ReferenceDisplayKey[plot_rows$BarType == "reference"]
+))
+for (sample_groups in list(
+  c("PXD058534__pretreated HK-2", "PXD078736__HK-2 control and mannitol"),
+  c("PXD014870__MCF7", "PXD060185__MCF7"),
+  c("PXD028488__HCT116", "PXD053474__HCT116")
+)) {
+  keys <- paste(plot_rows$PXD, plot_rows$SampleGroup, sep = "__")
+  special <- plot_rows[
+    plot_rows$BarType == "kla" & keys %in% sample_groups,
+  ]
+  stopifnot(nrow(special) == 2)
+  stopifnot(length(unique(special$ReferenceDisplayKey)) == 1)
+  shared_key <- unique(special$ReferenceDisplayKey)
+  stopifnot(sum(
+    plot_rows$BarType == "reference" &
+      plot_rows$ReferenceDisplayKey == shared_key
+  ) == 1)
+}
 stopifnot(setequal(
   stats$PXD[!stats$PairedAnalysisIncluded],
   c("PXD062720", "PXD063047", "PXD064038", "PXD075014")

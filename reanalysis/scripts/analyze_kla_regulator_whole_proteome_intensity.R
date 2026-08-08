@@ -76,7 +76,14 @@ accession_map <- read.csv(
   )
 accession_to_gene <- setNames(accession_map$GeneSymbol, accession_map$BaseAccession)
 regulators <- regulators |>
-  left_join(accession_map, by = "GeneSymbol")
+  left_join(accession_map, by = "GeneSymbol") |>
+  mutate(
+    RegulatorDisplayName = ifelse(
+      BaseAccession == "Q92830",
+      "GCN5 (KAT2A)",
+      GeneSymbol
+    )
+  )
 if (any(is.na(regulators$BaseAccession))) {
   stop(
     "Missing UniProt mapping for: ",
@@ -1405,11 +1412,155 @@ quant_audit <- quant_audit |>
     )
   )
 
+display_members <- sample_catalog |>
+  select(
+    PXD, SampleGroup, SampleGroupID, Category, CategoryZh,
+    RowOrder, ReferencePXD
+  ) |>
+  left_join(
+    quant_audit |>
+      select(
+        PXD,
+        SampleGroup,
+        WholeProteomeSource,
+        WholeProteomeMeasurement,
+        WholeProteomeFeatureCount,
+        ReferenceProteinCount
+      ),
+    by = c("PXD", "SampleGroup")
+  ) |>
+  mutate(
+    MaterialCluster = case_when(
+      grepl("HK-2", SampleGroup, fixed = TRUE) ~ "HK-2",
+      SampleGroup == "MCF7" ~ "MCF7",
+      grepl("^HCT116", SampleGroup) ~ "HCT116",
+      grepl("^human fibroblasts", SampleGroup) ~ "human_fibroblasts",
+      TRUE ~ paste(PXD, SampleGroup, sep = "__")
+    ),
+    MaterialDisplayName = case_when(
+      MaterialCluster == "HK-2" ~ "HK-2",
+      MaterialCluster == "MCF7" ~ "MCF7",
+      MaterialCluster == "HCT116" ~ "HCT116",
+      MaterialCluster == "human_fibroblasts" ~ "human fibroblasts",
+      TRUE ~ SampleGroup
+    ),
+    ReferenceDisplayKey = paste(
+      MaterialCluster,
+      ReferencePXD,
+      WholeProteomeSource,
+      WholeProteomeFeatureCount,
+      ReferenceProteinCount,
+      sep = "||"
+    )
+  )
+
+cluster_order <- display_members |>
+  group_by(Category, MaterialCluster) |>
+  summarise(ClusterOrder = min(RowOrder), .groups = "drop")
+reference_order <- display_members |>
+  group_by(Category, MaterialCluster, ReferenceDisplayKey) |>
+  summarise(ReferenceOrder = min(RowOrder), .groups = "drop")
+
+heatmap_rows <- display_members |>
+  left_join(cluster_order, by = c("Category", "MaterialCluster")) |>
+  left_join(
+    reference_order,
+    by = c("Category", "MaterialCluster", "ReferenceDisplayKey")
+  ) |>
+  arrange(RowOrder) |>
+  group_by(
+    Category,
+    CategoryZh,
+    MaterialCluster,
+    MaterialDisplayName,
+    ClusterOrder,
+    ReferenceOrder,
+    ReferenceDisplayKey,
+    ReferencePXD,
+    WholeProteomeSource,
+    WholeProteomeMeasurement,
+    WholeProteomeFeatureCount,
+    ReferenceProteinCount
+  ) |>
+  summarise(
+    RepresentativePXD = first(PXD),
+    RepresentativeSampleGroup = first(SampleGroup),
+    LinkedKlaPXD = paste(unique(PXD), collapse = ";"),
+    LinkedKlaSampleGroup = paste(unique(SampleGroup), collapse = ";"),
+    LinkedKlaStudyCount = n(),
+    .groups = "drop"
+  ) |>
+  arrange(
+    match(Category, category_order),
+    ClusterOrder,
+    ReferenceOrder
+  ) |>
+  mutate(
+    HeatmapDisplayRowOrder = row_number(),
+    RowLabel = paste0(
+      MaterialDisplayName,
+      " · Ref:", ReferencePXD,
+      " · Kla:", gsub(";", "/", LinkedKlaPXD, fixed = TRUE)
+    )
+  )
+
+if (nrow(heatmap_rows) != 30) {
+  stop(
+    "Unique whole-proteome reference heatmap must contain 30 rows, found ",
+    nrow(heatmap_rows)
+  )
+}
+
+display_reference_values <- display_members |>
+  select(ReferenceDisplayKey, PXD, SampleGroup) |>
+  left_join(
+    group_summary,
+    by = c("PXD", "SampleGroup")
+  )
+display_consistency <- display_reference_values |>
+  group_by(ReferenceDisplayKey, RegulatorBaseAccession) |>
+  summarise(
+    UniquePercentileCount = n_distinct(
+      round(WholeProteomeRelativePercentile, 10)
+    ),
+    .groups = "drop"
+  )
+if (any(display_consistency$UniquePercentileCount != 1)) {
+  stop(
+    "Shared whole-proteome references produced inconsistent regulator ",
+    "percentiles across linked Kla studies"
+  )
+}
+display_reference_summary <- display_reference_values |>
+  arrange(ReferenceDisplayKey, RegulatorBaseAccession, PXD, SampleGroup) |>
+  group_by(ReferenceDisplayKey, RegulatorBaseAccession) |>
+  summarise(
+    WholeProteomeRelativePercentile = first(
+      WholeProteomeRelativePercentile
+    ),
+    DetectedSampleCount = first(DetectedSampleCount),
+    QuantSampleCount = first(QuantSampleCount),
+    DetectedSampleFraction = first(DetectedSampleFraction),
+    MedianLog2SignalDetected = first(MedianLog2SignalDetected),
+    Measurement = first(Measurement),
+    SourceFile = first(SourceFile),
+    .groups = "drop"
+  )
+
 write.csv(
   quant_audit,
   file.path(
     table_dir,
     "kla_regulator_whole_proteome_intensity_availability_audit.csv"
+  ),
+  row.names = FALSE,
+  na = ""
+)
+write.csv(
+  heatmap_rows,
+  file.path(
+    table_dir,
+    "kla_regulator_whole_proteome_heatmap_rows.csv"
   ),
   row.names = FALSE,
   na = ""
@@ -1480,10 +1631,10 @@ algorithm_audit <- data.frame(
     "HeatmapRowGrouping"
   ),
   Value = c(
-    "whole_proteome_regulator_rank_v5_exact_reference_four_class_order",
+    "whole_proteome_regulator_rank_v6_unique_reference_display",
     "ordinary whole-proteome quantitative files or selected normal whole-proteome references",
     "finite Signal > 0; reverse/contaminant/only-identified-by-site rows excluded when available",
-    "log2(Signal + 1)",
+    "raw intensity uses log2(Signal + 1); pre-log2 quantities are ranked directly",
     "all retained whole-proteome features within each QuantSample",
     "100 * (average_rank - 1) / (n_features - 1)",
     "average rank for ties",
@@ -1494,7 +1645,11 @@ algorithm_audit <- data.frame(
     "ENSP(_RNA/version) -> UniProt BaseAccession via ensembl_protein_to_uniprot_biomart.tsv; GeneSymbol is never used as a fallback",
     "display/audit only; never used for matching or aggregation",
     "never; Kla-enriched intensity is not used as a fallback",
-    "normal_tissue -> cancer_tissue -> normal_cells -> cancer_cells; original order retained within each class"
+    paste0(
+      "normal_tissue -> cancer_tissue -> normal_cells -> cancer_cells; ",
+      "same material/treatment rows are adjacent; exact shared references ",
+      "for HK-2, MCF7, and HCT116 are displayed once"
+    )
   ),
   stringsAsFactors = FALSE
 )
@@ -1508,33 +1663,43 @@ write.csv(
   na = ""
 )
 
-available_sample_groups <- paste(
-  quant_audit$PXD[quant_audit$WholeProteomeQuantAvailable],
-  quant_audit$SampleGroup[quant_audit$WholeProteomeQuantAvailable],
-  sep = "__"
-)
-plot_data <- sample_catalog |>
-  select(
-    PXD, SampleGroup, SampleGroupID, RowLabel, RowOrder,
-    Category, CategoryZh
-  ) |>
+plot_data_raw <- heatmap_rows |>
   crossing(
     regulators |>
-      select(Role, GeneSymbol, BaseAccession, RoleEntryOrder) |>
+      select(
+        Role,
+        GeneSymbol,
+        RegulatorDisplayName,
+        BaseAccession,
+        RoleEntryOrder
+      ) |>
       rename(RegulatorBaseAccession = BaseAccession)
   ) |>
   left_join(
-    group_summary,
-    by = c("PXD", "SampleGroup", "GeneSymbol", "RegulatorBaseAccession")
+    display_reference_summary,
+    by = c("ReferenceDisplayKey", "RegulatorBaseAccession")
   ) |>
   mutate(
-    QuantificationAvailable = paste(PXD, SampleGroup, sep = "__") %in%
-      available_sample_groups,
-    WholeProteomeRelativePercentile = ifelse(
-      QuantificationAvailable,
-      replace_na(WholeProteomeRelativePercentile, 0),
-      NA_real_
+    QuantificationAvailable = TRUE,
+    WholeProteomeRelativePercentile = replace_na(
+      WholeProteomeRelativePercentile,
+      0
     ),
+    IdentityMatchMode = "UniProt_BaseAccession_only"
+  )
+
+write.csv(
+  plot_data_raw,
+  file.path(
+    table_dir,
+    "kla_regulator_whole_proteome_heatmap_display_long.csv"
+  ),
+  row.names = FALSE,
+  na = ""
+)
+
+plot_data <- plot_data_raw |>
+  mutate(
     Role = factor(
       Role,
       levels = c("Writer", "Eraser", "Writer-Eraser", "Reader")
@@ -1543,17 +1708,19 @@ plot_data <- sample_catalog |>
       CategoryZh,
       levels = unname(category_labels_zh[category_order])
     ),
-    GeneSymbol = factor(
-      GeneSymbol,
-      levels = unique(regulators$GeneSymbol[order(regulators$RoleEntryOrder)])
+    RegulatorDisplayName = factor(
+      RegulatorDisplayName,
+      levels = unique(
+        regulators$RegulatorDisplayName[order(regulators$RoleEntryOrder)]
+      )
     ),
-    RowLabel = factor(RowLabel, levels = rev(sample_catalog$RowLabel))
+    RowLabel = factor(RowLabel, levels = rev(heatmap_rows$RowLabel))
   )
 
 plot_font <- "Arial Unicode MS"
 main_plot <- ggplot(
   plot_data,
-  aes(GeneSymbol, RowLabel, fill = WholeProteomeRelativePercentile)
+  aes(RegulatorDisplayName, RowLabel, fill = WholeProteomeRelativePercentile)
 ) +
   geom_tile(color = "white", linewidth = 0.22) +
   geom_text(
@@ -1580,7 +1747,8 @@ main_plot <- ggplot(
     title = "乳酸化调控蛋白在全蛋白组中的相对信号",
     subtitle = paste(
       "仅纳入生物材料匹配且具有逐蛋白强度的普通全蛋白定量文件，不使用Kla富集信号；",
-      "样本按正常组织、癌症组织、正常细胞、癌症细胞分组；颜色由白色向暖色递增。"
+      "33条严格配对显示为30个唯一参照行，并按正常组织、癌症组织、正常细胞、癌症细胞分组；",
+      "颜色由白色向暖色递增。"
     ),
     x = NULL,
     y = NULL,
@@ -1633,5 +1801,7 @@ message(
   sum(quant_audit$WholeProteomeQuantAvailable),
   "/",
   nrow(quant_audit),
-  " sample groups with usable total-proteome intensity."
+  " paired sample groups with usable total-proteome intensity; ",
+  nrow(heatmap_rows),
+  " unique reference rows displayed."
 )

@@ -11,8 +11,9 @@ Proteome Discoverer 乳酸化修饰肽 normalized abundance，以及作者补充
 PXD037371 的三个组织组因无法可靠拆分 TMT 通道而从图中排除，但仍保留原始文件和审计记录。
 
 调控蛋白身份统一使用
-`reanalysis/config/lactylation_regulator_uniprot_mapping.csv` 中的人源 reviewed
-UniProt BaseAccession。GeneSymbol 只作为图上的显示标签，不参与蛋白命中、强度汇总或缺失判断。
+`reanalysis/config/lactylation_regulator_uniprot_mapping.csv` 中的人源
+UniProt BaseAccession。reviewed 状态只作注释，不参与纳入或排除；
+GeneSymbol 只作为图上的显示标签，不参与蛋白命中、强度汇总或缺失判断。
 当前身份匹配流程的 GeneSymbol 回退数为 0。
 
 ## 跨研究热图
@@ -69,7 +70,7 @@ UniProt BaseAccession。GeneSymbol 只作为图上的显示标签，不参与蛋
 
 第二张热图不使用 Kla 富集信号，而读取同研究普通全蛋白定量文件或独立匹配的正常组织
 全蛋白参照。每个样本内部先对全部普通蛋白信号计算 `log2(signal + 1)` 和百分位，再提取
-identifier 表中调控蛋白的百分位。蛋白命中仅按人源 reviewed UniProt BaseAccession；
+identifier 表中调控蛋白的百分位。蛋白命中仅按人源 UniProt BaseAccession；
 普通蛋白源文件中的 `ENSP...`、`ENSP..._RNA` 和带版本号的 Ensembl protein ID
 先通过 `config/ensembl_protein_to_uniprot_biomart.tsv` 转换为 UniProt
 BaseAccession；GeneSymbol 只用于显示，不能作为命中回退。
@@ -94,7 +95,8 @@ BaseAccession；GeneSymbol 只用于显示，不能作为命中回退。
 会把整组百分位错误地压成同一个数。当前版本已改为逐组 `if (...) ... else ...`，
 并在自动测试中检查同一样本内的百分位不能全部塌缩为一个值。
 
-最终37个乳酸化样本组全部具备可追溯且可解析的普通全蛋白强度。
+最终37个乳酸化定量样本组中，33组具有材料身份严格匹配且可解析的普通全蛋白强度；
+另外4组保留在排除审计中，不进入普通全蛋白热图。
 此前有10行整行纯白，原因是PXD010154健康组织参照使用Ensembl protein ID，
 旧脚本没有执行Ensembl到UniProt转换，并非这些组织没有普通蛋白。当前版本已补入该映射，
 并输出 `results/tables/kla_regulator_whole_proteome_ensembl_mapping_audit.csv`。
@@ -107,16 +109,24 @@ BaseAccession；GeneSymbol 只用于显示，不能作为命中回退。
 必须先进入待处理审计表，不能用 Kla 信号替代。
 
 例如 PXD014870 的 MCF7 乳酸化数据使用 PXD030304 的 MCF7 普通全蛋白矩阵；
-图中左侧标签写为 `MCF7 · Ref:PXD030304 · Kla:PXD014870`。
+PXD060185 的 MCF7 使用同一参照。显示层将两行合并为
+`MCF7 · Ref:PXD030304 · Kla:PXD014870/PXD060185`，但样本级配对表仍保留
+两条记录。HK-2 和 HCT116 的共享参照采用相同规则；因此33条严格配对在热图中
+显示为30个唯一普通全蛋白参照行。
+
+identifier 表中的 `KAT2A` 即常用名 `GCN5`，稳定分析 ID 为 UniProt
+`Q92830`。为避免老师按常用名审图时误判为遗漏，热图显示名改为
+`GCN5 (KAT2A)`；没有重复添加第二个蛋白，也没有改用 GeneSymbol 分析。
+
 PXD073311 的 HUVEC 参照已改为同研究的普通全蛋白 PG 矩阵，仅使用
 `A0h_1`、`A0h_2`、`A0h_3`，A6h不混入正常参照；该矩阵有 7,709 个阳性蛋白组行，
 去重后得到 7,794 个 UniProt BaseAccession。
-PXD050470 的海马全蛋白参照为 PXD043880：
+PXD050470 的海马普通全蛋白参照为同研究 Supplementary Table S4：
 
-- 保留 74 名正常 CA1 海马供体。
-- 使用 2,092 个普通全蛋白特征的 LFQ intensity。
-- 原表 symbol 先转换为人源 reviewed UniProt BaseAccession。
-- identifier 表中的调控蛋白按 ID 命中 6 个。
+- 使用 H072、H081、H0187 三个样本。
+- 使用 6,082 个普通全蛋白特征的强度。
+- 表内直接提供 UniProt accession，不使用 symbol 回退。
+- 旧 PXD043880 CA1 参照不再进入活动分析。
 
 该图采用白色到暖色的连续色阶，只表示调控蛋白在各自普通全蛋白样本中的相对信号百分位，
 不是 Kla 水平、跨研究表达量或 Log FC。
@@ -170,4 +180,6 @@ MaxQuant 搜索时使用，不是当前计数和热图的必要输入。
 - `results/tables/kla_regulator_within_pxd_zscore_long.csv`
 - `results/tables/kla_regulator_whole_proteome_intensity_availability_audit.csv`
 - `results/tables/kla_regulator_whole_proteome_normalized_long.csv`
+- `results/tables/kla_regulator_whole_proteome_heatmap_rows.csv`
+- `results/tables/kla_regulator_whole_proteome_heatmap_display_long.csv`
 - `results/tables/kla_regulator_whole_proteome_hippocampus_id_mapping_audit.csv`

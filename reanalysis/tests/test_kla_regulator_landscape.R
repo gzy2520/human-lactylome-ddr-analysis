@@ -22,7 +22,7 @@ summary <- read.csv(
   check.names = FALSE
 )
 
-assert(nrow(long) == 45 * 40, "Expected 45 role entries across 40 cell/tissue groups")
+assert(nrow(long) == 49 * 40, "Expected 49 role entries across 40 cell/tissue groups")
 assert(
   length(unique(long$SampleGroupID)) == 40,
   "The expanded plot must retain all 40 pair-ready lactylome groups"
@@ -42,7 +42,18 @@ assert(
   ),
   "Only the three PXD037371 groups should remain unavailable"
 )
-assert(length(unique(long$GeneSymbol)) == 39, "Expected 39 unique regulator genes")
+assert(length(unique(long$GeneSymbol)) == 48, "Expected 48 unique regulator genes")
+assert(
+  any(
+    long$GeneSymbol == "HDAC8" &
+      long$Role == "Eraser"
+  ) &&
+    any(
+      long$GeneSymbol == "HDAC8" &
+        long$Role == "Writer-Eraser"
+    ),
+  "A regulator assigned to multiple mechanisms must retain every distinct role"
+)
 assert(
   all(is.na(long$ExactSiteCount) | long$ExactSiteCount >= 0),
   "Exact Kla site counts must be non-negative when available"

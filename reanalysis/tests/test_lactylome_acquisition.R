@@ -211,33 +211,55 @@ acquired_global <- pairing[
     c("可用的全局乳酸化数据", "同研究可用乳酸化组件") &
     !is.na(pairing$乳酸化蛋白数),
 ]
+strict_acquired <- acquired_global[
+  acquired_global$配置要求进入严格参照分析,
+]
+strict_excluded <- acquired_global[
+  !acquired_global$配置要求进入严格参照分析,
+]
 assert(
   nrow(acquired_global) > 0 &&
-    all(acquired_global$常规蛋白数 > 0) &&
+    all(strict_acquired$常规蛋白数 > 0) &&
+    all(
+      is.na(strict_excluded$常规蛋白数) |
+        strict_excluded$常规蛋白数 <= 0
+    ) &&
     all(acquired_global$健康组织蛋白数 > 0),
   paste(
-    "Every acquired global lactylome group must have both a countable",
-    "ordinary-proteome reference and a countable healthy-tissue baseline"
+    "Strictly paired groups must have countable ordinary proteomes;",
+    "excluded groups must not retain a surrogate ordinary proteome;"
+    ,"all groups must retain a countable healthy-tissue baseline"
   )
 )
-proxy_groups <- c(
-  "HMC3",
+strict_excluded_groups <- c(
+  "normal liver",
   "nonmetastatic HCC",
   "lung-metastatic HCC",
+  "bladder cancer cells treated with EPI",
   "severe preeclampsia placenta",
   "MEC and NEC ESCC groups",
-  "glioblastoma stem cells",
-  "neural stem cells",
-  "AC16 control and hypoxia",
-  "HCC",
-  "adjacent liver"
+  "AC16 control and hypoxia"
 )
 assert(
   all(
-    pairing$匹配质量[pairing$样本组 %in% proxy_groups] ==
-      "健康器官代理"
+    pairing$匹配质量[pairing$样本组 %in% strict_excluded_groups] ==
+      "未找到精确参考"
   ),
-  "Healthy-organ surrogate references must remain explicitly labelled"
+  "Strictly excluded groups must remain explicitly labelled as lacking an exact reference"
+)
+assert(
+  all(
+    pairing$匹配质量[
+      pairing$样本组 %in%
+        c("HMC3", "glioblastoma stem cells", "neural stem cells", "HCC", "adjacent liver")
+    ] %in% c(
+      "同研究同样本精确匹配",
+      "同一生物样本精确匹配",
+      "疾病组织精确匹配",
+      "邻近组织精确匹配"
+    )
+  ),
+  "Resolved exact references must not remain labelled as healthy-organ surrogates"
 )
 
 compact_pairing <- file.path(

@@ -183,6 +183,7 @@ async function verifyAndExport(workbook, outputPath, previewPrefix) {
 
   const output = await SpreadsheetFile.exportXlsx(workbook);
   await output.save(outputPath);
+  await fs.rm(`${outputPath}.inspect.ndjson`, { force: true });
 }
 
 async function buildDdrWorkbook() {
@@ -196,8 +197,9 @@ async function buildDdrWorkbook() {
     "reanalysis/results/tables/cell_type_kla_vs_reference_ddr_accession_only_audit.csv",
   );
   const workbook = Workbook.create();
-  addReadme(workbook, "37组 Kla 与普通全蛋白 DDR 占比统计", [
-    "最终范围严格为 Kla 定量可用的37个 PXD+样本组；PXD037371 三组已排除。",
+  addReadme(workbook, "37组 Kla 与33组严格普通全蛋白参照 DDR 占比统计", [
+    "Kla最终范围为定量可用的37个 PXD+样本组；PXD037371 三组已排除。",
+    "其中33组具有生物材料匹配且可审计的逐蛋白强度参照，进入柱状图和普通全蛋白分析；其余4组只保留Kla结果和排除原因。",
     "Kla 与普通全蛋白的 DDR 交集均按去除 isoform 后缀的 UniProt BaseAccession 计算；GeneSymbol 回退数为0。",
     "HUVEC 普通全蛋白参照为 PXD073311 同研究 A0h_1/A0h_2/A0h_3 PG矩阵；A6h不进入基线。",
     "两个 HK-2 组均使用 PXD072220 的 amostra1/amostra3/amostra4 未处理对照。",
@@ -269,6 +271,7 @@ async function buildPairingWorkbook() {
   addReadme(workbook, "乳酸化数据与普通全蛋白参照配对", [
     "本工作簿记录乳酸化证据、普通全蛋白参照、健康组织基线、蛋白数和匹配限制。",
     "普通全蛋白参照必须是非Kla富集数据；不能用乳酸化富集强度替代。",
+    "最终37组Kla中，33组进入严格普通全蛋白配对分析；4组因没有完全匹配且可定量的参照而排除普通全蛋白分析。",
     "PXD073311 HUVEC 已更换为同研究 A0h 普通全蛋白矩阵，唯一 BaseAccession 数为7,794。",
     "分析身份键为稳定蛋白ID；GeneSymbol只用于显示和人工审计。",
   ]);
@@ -298,8 +301,8 @@ async function buildVennWorkbook() {
   const workbook = Workbook.create();
   addReadme(workbook, "四分类 Kla 与普通全蛋白 Venn/Euler 审计表", [
     "四分类顺序：正常/非肿瘤组织、癌症组织、正常/非肿瘤细胞、癌症细胞。",
-    "最终样本组数量依次为10、3、10、14，总计37组。",
-    "Kla集合与修复前完全一致；普通全蛋白集合因HUVEC参照从旧鉴定XML改为PXD073311 A0h定量矩阵而更新。",
+    "Kla样本组数量依次为10、3、10、14，总计37组；普通全蛋白严格参照组数量依次为9、2、9、13，总计33组。",
+    "Kla集合与修复前完全一致；普通全蛋白集合仅使用完全匹配且具有逐蛋白定量强度的33组参照。",
     "membership表以UniProt BaseAccession为分析键，GeneSymbol和ProteinName仅用于人工审计。",
   ]);
   const analyses = [

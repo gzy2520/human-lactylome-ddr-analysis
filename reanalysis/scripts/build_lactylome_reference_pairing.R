@@ -19,6 +19,10 @@ pairing <- read.csv(
   check.names = FALSE,
   na.strings = c("", "NA")
 )
+if (!"IncludeInStrictReferenceAnalysis" %in% names(pairing)) {
+  pairing$IncludeInStrictReferenceAnalysis <- pairing$IncludeInPairedAnalysis
+}
+pairing_config_columns <- names(pairing)
 decisions <- read.csv(
   file.path(config_dir, "lactylome_dataset_decisions.csv"),
   stringsAsFactors = FALSE,
@@ -86,6 +90,15 @@ healthy_manifest <- if (file.exists(healthy_manifest_path)) {
     stringsAsFactors = FALSE
   )
 }
+strict_reference_path <- file.path(
+  config_dir,
+  "strict_reference_exclusions.csv"
+)
+strict_reference_exclusions <- read.csv(
+  strict_reference_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
 
 primary_path <- file.path(
   project_root,
@@ -616,7 +629,11 @@ for (i in seq_len(nrow(pairing))) {
   pairing$LactylomeProteinCount[[i]] <- value
   pairing$LactylomeProteinCountBasis[[i]] <- if (is.na(value)) "not_yet_counted" else basis
 
-  if (pairing$ReferencePXD[[i]] == "PXD030304" && is.na(pairing$ReferenceProteinCount[[i]])) {
+  if (
+    !is.na(pairing$ReferencePXD[[i]]) &&
+      pairing$ReferencePXD[[i]] == "PXD030304" &&
+      is.na(pairing$ReferenceProteinCount[[i]])
+  ) {
     pairing$ReferenceProteinCount[[i]] <- count_matrix_sample(pairing$ReferenceSampleSubset[[i]])
     if (!is.na(pairing$ReferenceProteinCount[[i]])) {
       pairing$ReferenceAcquisitionStatus[[i]] <- "downloaded_and_counted"
@@ -692,7 +709,9 @@ ordinary_paths <- c(
 )
 for (pxd in names(ordinary_paths)) {
   count <- count_simple_protein_table(file.path(project_root, ordinary_paths[[pxd]]))
-  rows <- pairing$ReferencePXD == pxd & is.na(pairing$ReferenceProteinCount)
+  rows <- !is.na(pairing$ReferencePXD) &
+    pairing$ReferencePXD == pxd &
+    is.na(pairing$ReferenceProteinCount)
   if (!is.na(count) && any(rows)) {
     pairing$ReferenceProteinCount[rows] <- count
     pairing$ReferenceAcquisitionStatus[rows] <- "downloaded_and_counted"
@@ -706,7 +725,9 @@ extracted_reference_patterns <- c(
 )
 for (pxd in names(extracted_reference_patterns)) {
   count <- count_first_table(pxd, extracted_reference_patterns[[pxd]])
-  rows <- pairing$ReferencePXD == pxd & is.na(pairing$ReferenceProteinCount)
+  rows <- !is.na(pairing$ReferencePXD) &
+    pairing$ReferencePXD == pxd &
+    is.na(pairing$ReferenceProteinCount)
   if (!is.na(count) && any(rows)) {
     pairing$ReferenceProteinCount[rows] <- count
     pairing$ReferenceAcquisitionStatus[rows] <- "downloaded_and_counted"
@@ -856,12 +877,65 @@ download_summary <- downloads |>
 pairing <- pairing |>
   left_join(remote_summary, by = c("LactylomePXD" = "PXD")) |>
   left_join(download_summary, by = c("LactylomePXD" = "PXD")) |>
+  left_join(
+    strict_reference_exclusions |>
+      rename(StrictReferenceExclusionReason = Reason),
+    by = c("LactylomePXD", "SampleGroup")
+  ) |>
   mutate(
     across(
       c(RemoteProcessedFileCount, RemoteProcessedSizeMiB, DownloadedPairFileCount, DownloadedPairSizeMiB),
       ~ coalesce(.x, 0)
     ),
-    PairReady = IncludeInPairedAnalysis &
+    ReferenceStrategy = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      "unresolved_reference",
+      ReferenceStrategy
+    ),
+    ReferencePXD = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      NA_character_,
+      ReferencePXD
+    ),
+    ReferenceSampleSubset = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      NA_character_,
+      ReferenceSampleSubset
+    ),
+    ReferenceEvidenceLocator = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      NA_character_,
+      ReferenceEvidenceLocator
+    ),
+    ReferenceProteinCount = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      NA_real_,
+      ReferenceProteinCount
+    ),
+    ReferenceAcquisitionStatus = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      "not_selected",
+      ReferenceAcquisitionStatus
+    ),
+    MatchQuality = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      "no_exact_reference_found",
+      MatchQuality
+    ),
+    Caveat = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      StrictReferenceExclusionReason,
+      Caveat
+    ),
+    IncludeInStrictReferenceAnalysis = ifelse(
+      !is.na(StrictReferenceExclusionReason),
+      FALSE,
+      IncludeInStrictReferenceAnalysis
+    ),
+    KlaReady = IncludeInPairedAnalysis &
+      !is.na(LactylomeProteinCount) &
+      LactylomeProteinCount > 0,
+    PairReady = IncludeInStrictReferenceAnalysis &
       !is.na(LactylomeProteinCount) &
       LactylomeProteinCount > 0 &
       !is.na(ReferenceProteinCount) &
@@ -873,6 +947,41 @@ pairing <- pairing |>
       DatasetURL
     )
   )
+
+# Persist the reviewed reference decisions so downstream scripts cannot
+# accidentally keep using a stale surrogate reference from the config file.
+write.csv(
+  pairing |>
+    select(all_of(pairing_config_columns)),
+  file.path(config_dir, "lactylome_reference_pairing.csv"),
+  row.names = FALSE,
+  na = ""
+)
+
+write.csv(
+  pairing |>
+    filter(!is.na(StrictReferenceExclusionReason)) |>
+    transmute(
+      LactylomePXD,
+      SampleGroup,
+      BiologicalMaterial,
+      ReferenceStrategy,
+      ReferencePXD,
+      ReferenceSampleSubset,
+      ReferenceEvidenceLocator,
+      ReferenceProteinCount,
+      ReferenceAcquisitionStatus,
+      MatchQuality,
+      IncludeInPairedAnalysis,
+      IncludeInStrictReferenceAnalysis,
+      KlaReady,
+      PairReady,
+      DecisionReason = StrictReferenceExclusionReason
+    ),
+  file.path(table_dir, "strict_reference_exclusion_audit.csv"),
+  row.names = FALSE,
+  na = ""
+)
 
 translate_values <- function(values, dictionary) {
   translated <- unname(dictionary[values])
@@ -930,6 +1039,10 @@ match_quality_zh <- c(
   exact_tissue = "精确组织匹配",
   exact_biospecimen = "精确生物样本匹配",
   exact_same_study = "同研究同样本精确匹配",
+  exact_same_biospecimen = "同一生物样本精确匹配",
+  exact_disease_tissue = "疾病组织精确匹配",
+  exact_adjacent_tissue = "邻近组织精确匹配",
+  exact_organ_tissue = "器官组织精确匹配",
   disease_matched_surrogate = "疾病类别替代，不是精确细胞系",
   related_not_exact_cell_line = "相关细胞系但并非精确匹配",
   healthy_organ_surrogate = "健康器官代理",
@@ -1005,7 +1118,10 @@ zh <- pairing |>
     `健康组织匹配等级` = HealthyBaselineMatchQuality,
     `健康组织基线限制` = HealthyBaselineCaveat,
     `健康组织基线来源` = HealthyBaselineSourceURL,
-    `配置要求进入成对分析` = IncludeInPairedAnalysis,
+    `配置要求纳入Kla分析` = IncludeInPairedAnalysis,
+    `当前Kla证据可分析` = KlaReady,
+    `配置要求进入严格参照分析` = IncludeInStrictReferenceAnalysis,
+    `配置要求进入成对分析` = IncludeInStrictReferenceAnalysis,
     `当前已具备成对计数条件` = PairReady,
     `远程处理结果文件数` = RemoteProcessedFileCount,
     `远程处理结果总大小MiB` = round(RemoteProcessedSizeMiB, 1),
@@ -1168,14 +1284,14 @@ summary <- data.frame(
     nrow(pairing),
     sum(!is.na(pairing$ReferenceProteinCount) & pairing$ReferenceProteinCount > 0),
     sum(pairing$PairReady),
-    sum(pairing$IncludeInPairedAnalysis & !pairing$PairReady),
+    sum(pairing$IncludeInStrictReferenceAnalysis & !pairing$PairReady),
     sum(
-      pairing$IncludeInPairedAnalysis &
+      pairing$IncludeInStrictReferenceAnalysis &
         !is.na(pairing$HealthyBaselineProteinCount) &
         pairing$HealthyBaselineProteinCount > 0
     ),
     sum(
-      pairing$IncludeInPairedAnalysis &
+      pairing$IncludeInStrictReferenceAnalysis &
         (
           is.na(pairing$HealthyBaselineProteinCount) |
             pairing$HealthyBaselineProteinCount <= 0
@@ -1197,7 +1313,7 @@ acquired_global <- pairing$LactylomeDatasetStatus %in%
   pairing$LactylomeProteinCount > 0
 remaining_kla_pxd <- unique(
   pairing$LactylomePXD[
-    pairing$IncludeInPairedAnalysis &
+    pairing$IncludeInStrictReferenceAnalysis &
       !pairing$PairReady
   ]
 )
@@ -1221,11 +1337,21 @@ report <- c(
   paste0(
     "- 已取得全局 Kla 蛋白明细的 ",
     sum(acquired_global),
-    " 个样本组，普通非富集蛋白组和健康组织基线两列均已补齐并可计数。"
+    " 个样本组；Kla 是否可分析与普通全蛋白参照是否合格分别记录。"
+  ),
+  paste0(
+    "- 其中 ",
+    sum(pairing$PairReady),
+    " 个样本组同时具有生物材料匹配的逐蛋白强度普通全蛋白参照。"
+  ),
+  paste0(
+    "- 严格参照排除表共 ",
+    nrow(strict_reference_exclusions),
+    " 行；排除普通参照不会删除对应 Kla 证据。"
   ),
   paste0(
     "- ",
-    sum(pairing$IncludeInPairedAnalysis & !pairing$PairReady),
+    sum(pairing$IncludeInStrictReferenceAnalysis & !pairing$PairReady),
     " 个纳入样本组仍缺可审计 Kla 蛋白明细，涉及 ",
     length(remaining_kla_pxd),
     " 个 PXD：",
@@ -1235,7 +1361,7 @@ report <- c(
   paste0(
     "- ",
     sum(
-      pairing$IncludeInPairedAnalysis &
+      pairing$IncludeInStrictReferenceAnalysis &
         !is.na(pairing$HealthyBaselineProteinCount) &
         pairing$HealthyBaselineProteinCount > 0
     ),

@@ -63,6 +63,14 @@ regulator_sample <- read.csv(
   stringsAsFactors = FALSE,
   check.names = FALSE
 )
+scope_exclusions <- read.csv(
+  file.path(
+    table_dir,
+    "kla_regulator_whole_proteome_strict_scope_exclusions.csv"
+  ),
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
 
 required_figures <- c(
   file.path(
@@ -80,7 +88,7 @@ assert(file.exists(script_path), "Whole-proteome analysis script is missing")
 assert(
   nrow(algorithm_audit) == 14 &&
     algorithm_audit$Value[algorithm_audit$Field == "AlgorithmVersion"] ==
-      "whole_proteome_regulator_rank_v3",
+      "whole_proteome_regulator_rank_v4_exact_reference",
   "Whole-proteome algorithm audit is missing or outdated"
 )
 assert(
@@ -90,10 +98,10 @@ assert(
   "Whole-proteome heatmap must not fall back to Kla signal"
 )
 
-assert(nrow(audit) == 37, "Expected exactly 37 sample groups in the audit")
+assert(nrow(audit) == 33, "Expected exactly 33 strict-reference sample groups in the audit")
 assert(
   all(audit$WholeProteomeQuantAvailable),
-  "Every one of the 37 final sample groups must have whole-proteome quantification"
+  "Every strict-reference sample group must have whole-proteome quantification"
 )
 kla_scope_keys <- with(
   kla_scope[kla_scope$定量可用 %in% c(TRUE, "TRUE", "True", 1, "1"), ],
@@ -101,9 +109,24 @@ kla_scope_keys <- with(
 )
 whole_proteome_keys <- with(audit, paste(PXD, SampleGroup, sep = "__"))
 assert(
-  !length(setdiff(kla_scope_keys, whole_proteome_keys)) &&
-    !length(setdiff(whole_proteome_keys, kla_scope_keys)),
-  "Kla and whole-proteome heatmaps must use exactly the same 37 PXD/sample groups"
+  !length(setdiff(whole_proteome_keys, kla_scope_keys)) &&
+    setequal(
+      setdiff(kla_scope_keys, whole_proteome_keys),
+      paste(
+        scope_exclusions$PXD,
+        scope_exclusions$SampleGroup,
+        sep = "__"
+      )
+    ),
+  "Whole-proteome heatmap must be the exact-reference subset of the 37 Kla groups"
+)
+assert(
+  nrow(scope_exclusions) == 4 &&
+    setequal(
+      scope_exclusions$PXD,
+      c("PXD062720", "PXD063047", "PXD064038", "PXD075014")
+    ),
+  "Strict-reference exclusions must contain the four unsupported sample groups"
 )
 assert(
   !any(audit$PXD == "PXD037371"),
@@ -150,13 +173,13 @@ assert(
   "Every available whole-proteome group must contain quantified features"
 )
 assert(
-  nrow(ensembl_audit) == 37 &&
-    sum(ensembl_audit$EnsemblMappingApplied) == 10 &&
+  nrow(ensembl_audit) == 33 &&
+    sum(ensembl_audit$EnsemblMappingApplied) == 2 &&
     all(
       ensembl_audit$EnsemblMappingFile ==
         "reanalysis/config/ensembl_protein_to_uniprot_biomart.tsv"
     ),
-  "Ensembl-to-UniProt mapping audit must cover the ten PXD010154 reference groups"
+  "Ensembl-to-UniProt mapping audit must cover the two PXD010154 reference groups"
 )
 assert(
   all(audit$WholeProteomeMappedRegulatorCount > 0),
@@ -236,7 +259,7 @@ assert(
 )
 assert(
   !any(is.na(normalized$WholeProteomeRelativePercentile)),
-  "All 37 final rows must have plottable whole-proteome regulator percentiles"
+  "All 33 strict-reference rows must have plottable regulator percentiles"
 )
 hippocampus <- audit[audit$PXD == "PXD050470", ]
 assert(
@@ -259,6 +282,30 @@ assert(
     "kla_regulator_whole_proteome_ensembl_mapping_audit.csv"
   )),
   "Ensembl mapping audit is missing"
+)
+
+pxd062720_path <- file.path(
+  project_root,
+  "data/PXD062720/search_results/extracted_pairing/txt/proteinGroups.txt"
+)
+pxd062720 <- read.delim(
+  pxd062720_path,
+  check.names = FALSE,
+  stringsAsFactors = FALSE,
+  quote = "",
+  comment.char = ""
+)
+pxd062720_valid <- pxd062720$Reverse != "+" &
+  pxd062720$`Potential contaminant` != "+" &
+  pxd062720$`Only identified by site` != "+"
+pxd062720_kla <- pxd062720_valid &
+  !is.na(pxd062720$`La (K) site IDs`) &
+  nzchar(pxd062720$`La (K) site IDs`)
+assert(
+  sum(pxd062720_valid) == 2223 &&
+    sum(pxd062720_kla) == 2060 &&
+    !any(audit$PXD == "PXD062720"),
+  "PXD062720 Kla-enriched proteinGroups must never enter the whole-proteome heatmap"
 )
 
 script_text <- paste(readLines(script_path, warn = FALSE), collapse = "\n")

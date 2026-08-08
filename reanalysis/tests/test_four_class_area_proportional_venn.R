@@ -226,5 +226,25 @@ assert(
   ),
   "Four-class Venn input category counts must be 10/3/10/14"
 )
+assert(
+  sum(stats$PairedAnalysisIncluded) == 33,
+  "Reference-proteome Venn input must contain 33 exact-reference groups"
+)
+reference_by_group <- read.csv(
+  file.path(
+    project_root,
+    "reanalysis",
+    "intermediate",
+    "expanded_ddr_by_accession",
+    "reference_proteins_by_sample_group.csv"
+  ),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+assert(
+  nrow(unique(reference_by_group[c("PXD", "SampleGroup")])) == 33 &&
+    !any(reference_by_group$PXD == "PXD062720"),
+  "Reference Venn membership must use only the 33 exact-reference groups"
+)
 
 message("Four-class area-proportional Venn tests passed.")

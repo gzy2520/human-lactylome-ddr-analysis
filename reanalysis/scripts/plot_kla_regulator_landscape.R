@@ -47,10 +47,11 @@ regulators <- read_excel(regulator_path) |>
     RoleEntryOrder = row_number()
   ) |>
   filter(
-    Role %in% c("Writer", "Eraser", "Reader"),
+    Role %in% c("Writer", "Eraser", "Writer-Eraser", "Reader"),
     !is.na(GeneSymbol),
     nzchar(GeneSymbol)
-  )
+  ) |>
+  distinct(Role, GeneSymbol, .keep_all = TRUE)
 target_genes <- unique(regulators$GeneSymbol)
 
 accession_map <- read.csv(
@@ -71,7 +72,7 @@ pairing <- read.csv(
   na.strings = c("", "NA")
 )
 sample_catalog <- pairing |>
-  filter(当前已具备成对计数条件) |>
+  filter(当前Kla证据可分析) |>
   transmute(
     PXD = 乳酸化PXD,
     SampleGroup = 样本组,
@@ -841,6 +842,7 @@ write.csv(
 role_colors <- c(
   Writer = "#1976B9",
   Eraser = "#2A9D4B",
+  `Writer-Eraser` = "#C83E4D",
   Reader = "#E85D0F"
 )
 state_colors <- c(
@@ -954,11 +956,13 @@ make_role_panel <- function(role, show_y_axis) {
 combined_plot <- (
   make_role_panel("Writer", TRUE) +
     make_role_panel("Eraser", FALSE) +
+    make_role_panel("Writer-Eraser", FALSE) +
     make_role_panel("Reader", FALSE) +
     plot_layout(
       widths = c(
         sum(regulators$Role == "Writer"),
         sum(regulators$Role == "Eraser"),
+        sum(regulators$Role == "Writer-Eraser"),
         sum(regulators$Role == "Reader")
       ),
       guides = "collect"
@@ -972,7 +976,7 @@ combined_plot <- (
     ),
     caption = paste0(
       "数据范围：40个候选样本组中37个具有逐蛋白证据；PXD037371的3组因TMT通道映射不明而排除。",
-      "主分析定位阈值为>0；多重角色蛋白在相应Writer/Eraser/Reader分区重复展示。"
+      "主分析定位阈值为>0；保留老师表中的多重角色记录，Reader分区置于最后。"
     ),
     theme = theme(
       text = element_text(family = font_family, color = "#20252B"),

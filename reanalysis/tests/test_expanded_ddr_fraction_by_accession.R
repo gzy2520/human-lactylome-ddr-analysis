@@ -45,8 +45,28 @@ stopifnot(file.exists(file.path(
 
 stopifnot(nrow(stats) == 37)
 stopifnot(sum(audit$Included) == 37)
-stopifnot(sum(!audit$Included) == 3)
-stopifnot(all(unique(audit$PXD[!audit$Included]) == "PXD037371"))
+stopifnot(nrow(audit) == 37)
+stopifnot(!any(audit$PXD == "PXD037371"))
+stopifnot(sum(stats$PairedAnalysisIncluded) == 33)
+stopifnot(setequal(
+  stats$PXD[!stats$PairedAnalysisIncluded],
+  c("PXD062720", "PXD063047", "PXD064038", "PXD075014")
+))
+stopifnot(all(
+  is.na(stats$ReferenceProteinCount[!stats$PairedAnalysisIncluded])
+))
+paired_stats <- stats[stats$PairedAnalysisIncluded, ]
+stopifnot(identical(
+  as.integer(table(factor(
+    paired_stats$Category,
+    levels = c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells")
+  ))),
+  c(9L, 2L, 9L, 13L)
+))
+stopifnot(
+  nrow(unique(reference_members[c("PXD", "SampleGroup")])) == 33
+)
+stopifnot(!any(reference_members$PXD == "PXD062720"))
 stopifnot(identical(
   unique(stats$Category),
   c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells")
@@ -92,9 +112,14 @@ all_source_files <- unique(unlist(strsplit(
 )))
 stopifnot(all(file.exists(file.path(project_root, all_source_files))))
 stopifnot(all(stats$KlaDdrProteinCount <= stats$KlaProteinCount))
-stopifnot(all(stats$ReferenceDdrProteinCount <= stats$ReferenceProteinCount))
+stopifnot(all(
+  paired_stats$ReferenceDdrProteinCount <= paired_stats$ReferenceProteinCount
+))
 stopifnot(all(stats$KlaDdrFraction >= 0 & stats$KlaDdrFraction <= 1))
-stopifnot(all(stats$ReferenceDdrFraction >= 0 & stats$ReferenceDdrFraction <= 1))
+stopifnot(all(
+  paired_stats$ReferenceDdrFraction >= 0 &
+    paired_stats$ReferenceDdrFraction <= 1
+))
 stopifnot(any(stats$PXD == "PXD028737"))
 stopifnot(any(stats$PXD == "PXD073311"))
 stopifnot(any(stats$PXD == "PXD075014"))

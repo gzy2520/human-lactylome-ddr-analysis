@@ -59,10 +59,11 @@ regulators <- read_excel(regulator_path) |>
     RoleEntryOrder = row_number()
   ) |>
   filter(
-    Role %in% c("Writer", "Eraser", "Reader"),
+    Role %in% c("Writer", "Eraser", "Writer-Eraser", "Reader"),
     !is.na(GeneSymbol),
     nzchar(GeneSymbol)
-  )
+  ) |>
+  distinct(Role, GeneSymbol, .keep_all = TRUE)
 
 accession_map <- read.csv(
   mapping_path,
@@ -162,11 +163,10 @@ pairing <- read.csv(
   na.strings = c("", "NA")
 ) |>
   filter(
-    IncludeInPairedAnalysis == "TRUE",
     !is.na(LactylomePXD),
     !is.na(SampleGroup)
   )
-sample_catalog <- detection |>
+sample_catalog_all <- detection |>
   distinct(
     PXD, SampleGroup, SampleGroupID, RowLabel,
     BiologicalMaterial, GeneLevelAuditStatus
@@ -177,13 +177,48 @@ sample_catalog <- detection |>
       transmute(
         PXD = LactylomePXD,
         SampleGroup,
-        ReferencePXD
+        ReferencePXD,
+        PairingInclude = IncludeInStrictReferenceAnalysis,
+        ReferenceMatchQuality = MatchQuality,
+        ReferenceCaveat = Caveat
       ),
     by = c("PXD", "SampleGroup")
   ) |>
   mutate(RowOrder = row_number())
-if (nrow(sample_catalog) != 37) {
-  stop("Whole-proteome heatmap scope must contain exactly 37 sample groups")
+if (nrow(sample_catalog_all) != 37) {
+  stop("Kla-derived candidate scope must contain exactly 37 sample groups")
+}
+write.csv(
+  sample_catalog_all |>
+    filter(
+      PairingInclude %in% c(FALSE, "FALSE", "False", 0, "0") |
+        is.na(ReferencePXD) |
+        !nzchar(ReferencePXD)
+    ) |>
+    transmute(
+      PXD,
+      SampleGroup,
+      Decision = "excluded_no_exact_quantitative_reference",
+      Reason = ReferenceCaveat
+    ),
+  file.path(
+    table_dir,
+    "kla_regulator_whole_proteome_strict_scope_exclusions.csv"
+  ),
+  row.names = FALSE,
+  na = ""
+)
+sample_catalog <- sample_catalog_all |>
+  filter(
+    PairingInclude %in% c(TRUE, "TRUE", "True", 1, "1"),
+    !is.na(ReferencePXD),
+    nzchar(ReferencePXD)
+  )
+if (nrow(sample_catalog) != 33) {
+  stop(
+    "Strict whole-proteome heatmap scope must contain 33 sample groups, found ",
+    nrow(sample_catalog)
+  )
 }
 sample_catalog$RowLabel <- ifelse(
   !is.na(sample_catalog$ReferencePXD) &
@@ -193,7 +228,11 @@ sample_catalog$RowLabel <- ifelse(
     " · Ref:", sample_catalog$ReferencePXD,
     " · Kla:", sample_catalog$PXD
   ),
-  sample_catalog$RowLabel
+  paste0(
+    sample_catalog$SampleGroup,
+    " · Ref:未找到严格参照",
+    " · Kla:", sample_catalog$PXD
+  )
 )
 
 base_accession <- function(values) {
@@ -240,6 +279,11 @@ accession_feature <- function(values) {
 
 safe_numeric <- function(values) {
   suppressWarnings(as.numeric(gsub(",", "", as.character(values), fixed = TRUE)))
+}
+
+safe_max <- function(values) {
+  values <- values[is.finite(values)]
+  if (length(values)) max(values) else NA_real_
 }
 
 relative_path <- function(path) {
@@ -373,10 +417,14 @@ quant_audit <- sample_catalog |>
         ReferenceProteinCount,
         ReferenceMatchQuality = MatchQuality,
         ReferenceCaveat = Caveat,
-        PairingInclude = IncludeInPairedAnalysis
+        PairingInclude = IncludeInStrictReferenceAnalysis
       ),
     by = c("PXD", "SampleGroup")
   )
+quant_audit$WholeProteomeReason[
+  quant_audit$PairingInclude %in% c(FALSE, "FALSE", "False", 0, "0") &
+    quant_audit$ReferenceMatchQuality == "no_exact_reference_found"
+] <- "未找到同组织、同细胞系或同生物状态的严格普通全蛋白参照；按老师要求留空"
 
 update_audit <- function(
   pxd,
@@ -647,7 +695,7 @@ add_spectronaut_standard_report <- function(
         Quantity = safe_numeric(.data[[column]])
       ) |>
       group_by(ProteinAccessions) |>
-      summarise(Quantity = max(Quantity, na.rm = TRUE), .groups = "drop")
+      summarise(Quantity = safe_max(Quantity), .groups = "drop")
     add_total_quant(
       subset,
       pxd,
@@ -1013,6 +1061,155 @@ add_mcf10a_reference <- function(path, pxd, sample_group) {
   )
 }
 
+add_maxquant_zip_proteome <- function(
+  zip_path,
+  pxd,
+  sample_group,
+  sample_columns,
+  sample_labels = sample_columns,
+  measurement = "ordinary MaxQuant proteinGroups; no PTM enrichment"
+) {
+  if (!file.exists(zip_path)) return(invisible(NULL))
+  data <- read.delim(
+    unz(zip_path, "proteinGroups.txt"),
+    check.names = FALSE,
+    stringsAsFactors = FALSE,
+    quote = "",
+    comment.char = ""
+  )
+  accession_col <- intersect(
+    c("Majority protein IDs", "Protein IDs"),
+    names(data)
+  )
+  if (!length(accession_col)) return(invisible(NULL))
+  accession_col <- accession_col[[1]]
+  keep <- rep(TRUE, nrow(data))
+  for (flag in c("Reverse", "Potential contaminant", "Only identified by site")) {
+    if (flag %in% names(data)) keep <- keep & data[[flag]] != "+"
+  }
+  if ("id" %in% names(data)) keep <- keep & !is.na(data$id)
+  data <- data[keep, , drop = FALSE]
+  sample_columns <- intersect(sample_columns, names(data))
+  if (!length(sample_columns)) return(invisible(NULL))
+  if (length(sample_labels) != length(sample_columns)) {
+    stop("sample_labels and sample_columns length mismatch for ", zip_path)
+  }
+  for (index in seq_along(sample_columns)) {
+    add_total_quant(
+      data,
+      pxd,
+      sample_group,
+      accession_feature(data[[accession_col]]),
+      match_target_accession(data[[accession_col]]),
+      sample_columns[[index]],
+      sample_labels[[index]],
+      measurement,
+      zip_path
+    )
+  }
+}
+
+add_pxd069969_proteome <- function(path, pxd, sample_group, sample_names) {
+  if (!file.exists(path)) return(invisible(NULL))
+  data <- read_excel(path, sheet = "Annotation_Combine")
+  columns <- paste0("LFQ intensity ", sample_names)
+  columns <- intersect(columns, names(data))
+  if (!length(columns) || !"Protein accession" %in% names(data)) {
+    return(invisible(NULL))
+  }
+  add_total_quant(
+    data,
+    pxd,
+    sample_group,
+    accession_feature(data$`Protein accession`),
+    match_target_accession(data$`Protein accession`),
+    columns,
+    sub("^LFQ intensity ", "", columns),
+    "ordinary protein LFQ; no PTM enrichment",
+    path
+  )
+}
+
+add_pxd055025_proteome <- function(path, pxd, sample_group) {
+  if (!file.exists(path)) return(invisible(NULL))
+  data <- read_excel(path, sheet = "B VS A")
+  columns <- paste0("Abundances B", 1:3)
+  columns <- intersect(columns, names(data))
+  if (!length(columns) || !"Accession" %in% names(data)) {
+    return(invisible(NULL))
+  }
+  add_total_quant(
+    data,
+    pxd,
+    sample_group,
+    accession_feature(data$Accession),
+    match_target_accession(data$Accession),
+    columns,
+    paste0("EOPE_", seq_along(columns)),
+    "ordinary TMT proteome; early-onset preeclampsia placenta",
+    path
+  )
+}
+
+add_pxd065775_proteome <- function(path, pxd, sample_group, sheet_name) {
+  if (!file.exists(path)) return(invisible(NULL))
+  data <- read_excel(path, sheet = sheet_name)
+  sample_columns <- c(
+    "Non-rec1", "Non-rec2", "Non-rec3", "Non-rec4",
+    "Rec1", "Rec2", "Rec3", "Rec4"
+  )
+  sample_columns <- intersect(sample_columns, names(data))
+  if (!length(sample_columns) || !"Accession" %in% names(data)) {
+    return(invisible(NULL))
+  }
+  add_total_quant(
+    data,
+    pxd,
+    sample_group,
+    accession_feature(data$Accession),
+    match_target_accession(data$Accession),
+    sample_columns,
+    paste0(sheet_name, "_", sample_columns),
+    "ordinary iTRAQ clinical liver proteome",
+    path
+  )
+}
+
+add_pxd059985_ac16 <- function(path, pxd, sample_group) {
+  if (!file.exists(path)) return(invisible(NULL))
+  data <- read.delim(
+    path,
+    check.names = FALSE,
+    stringsAsFactors = FALSE,
+    quote = "",
+    comment.char = ""
+  )
+  quantity_columns <- grep(
+    "\\.PG\\.Quantity$",
+    names(data),
+    value = TRUE
+  )
+  quantity_columns <- quantity_columns[
+    grepl("AC16|V8", quantity_columns)
+  ]
+  if (!length(quantity_columns) || !"PG.ProteinGroups" %in% names(data)) {
+    return(invisible(NULL))
+  }
+  labels <- sub("^\\[[0-9]+\\] ", "", quantity_columns)
+  labels <- sub("\\.htrms\\.PG\\.Quantity$", "", labels)
+  add_total_quant(
+    data,
+    pxd,
+    sample_group,
+    accession_feature(data$PG.ProteinGroups),
+    match_target_accession(data$PG.ProteinGroups),
+    quantity_columns,
+    labels,
+    "ordinary Spectronaut DIA protein quantity; AC16 study",
+    path
+  )
+}
+
 reference_rows <- pairing |>
   inner_join(
     sample_catalog |>
@@ -1023,8 +1220,26 @@ for (i in seq_len(nrow(reference_rows))) {
   ref <- reference_rows[i, ]
   pxd <- ref$LactylomePXD
   group <- ref$SampleGroup
+  if (
+    is.na(ref$ReferencePXD) ||
+      !nzchar(ref$ReferencePXD) ||
+      ref$IncludeInStrictReferenceAnalysis %in%
+        c(FALSE, "FALSE", "False", 0, "0")
+  ) {
+    next
+  }
   path <- file.path(project_root, ref$ReferenceEvidenceLocator)
-  if (ref$ReferencePXD == "PXD030304" && group == "HEK293T") {
+  if (ref$ReferencePXD == "PXD028488" && group == "TALL-104") {
+    add_peaks_proteins(path, pxd, group)
+  } else if (ref$ReferencePXD == "PXD028737" && group == "HMC3") {
+    add_maxquant_proteome(
+      path,
+      pxd,
+      group,
+      list(c("H0", "H0"), c("H24", "H24")),
+      "same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24"
+    )
+  } else if (ref$ReferencePXD == "PXD030304" && group == "HEK293T") {
     add_procan_hek293t_counts(path, pxd, group)
   } else if (ref$ReferencePXD == "PXD030304") {
     project_id <- c(
@@ -1145,6 +1360,45 @@ for (i in seq_len(nrow(reference_rows))) {
       pxd,
       group,
       "ordinary Spectronaut PG.Quantity"
+    )
+  } else if (ref$ReferencePXD == "PXD022005" && group == "PC-3M") {
+    add_maxquant_zip_proteome(
+      path,
+      pxd,
+      group,
+      "Intensity H",
+      "PC-3M_SILAC_proteome",
+      "ordinary PC-3M heavy-channel SILAC proteome protein intensity"
+    )
+  } else if (
+    ref$ReferencePXD == "PXD055025" &&
+      group == "severe preeclampsia placenta"
+  ) {
+    add_pxd055025_proteome(path, pxd, group)
+  } else if (
+    ref$ReferencePXD == "PXD069969" &&
+      group %in% c("glioblastoma stem cells", "neural stem cells")
+  ) {
+    samples <- if (group == "glioblastoma stem cells") {
+      c("G2907", "G3028", "G3264", "GSC23", "MES28", "RKI")
+    } else {
+      c("ENSA", "HMP1")
+    }
+    add_pxd069969_proteome(path, pxd, group, samples)
+  } else if (
+    ref$ReferencePXD == "PXD059985" &&
+      group == "AC16 control and hypoxia"
+  ) {
+    add_pxd059985_ac16(path, pxd, group)
+  } else if (
+    ref$ReferencePXD == "PXD065775" &&
+      group %in% c("HCC", "adjacent liver")
+  ) {
+    add_pxd065775_proteome(
+      path,
+      pxd,
+      group,
+      ifelse(group == "HCC", "CISs", "ANTs")
     )
   }
 }
@@ -1351,7 +1605,7 @@ algorithm_audit <- data.frame(
     "KlaSignalSubstitution"
   ),
   Value = c(
-    "whole_proteome_regulator_rank_v3",
+    "whole_proteome_regulator_rank_v4_exact_reference",
     "ordinary whole-proteome quantitative files or selected normal whole-proteome references",
     "finite Signal > 0; reverse/contaminant/only-identified-by-site rows excluded when available",
     "log2(Signal + 1)",
@@ -1360,7 +1614,7 @@ algorithm_audit <- data.frame(
     "average rank for ties",
     "median percentile across QuantSample replicates/conditions within PXD and SampleGroup",
     "0 percentile for a regulator not detected in an otherwise usable whole-proteome sample",
-    "NA in tables and '?' in the figure when no usable whole-proteome source exists for the sample group",
+    "sample group excluded from the ordinary-proteome heatmap when no exact per-protein quantitative reference exists",
     "UniProt human reviewed BaseAccession after isoform suffix removal; Ensembl protein IDs are converted to UniProt by the project mapping table",
     "ENSP(_RNA/version) -> UniProt BaseAccession via ensembl_protein_to_uniprot_biomart.tsv; GeneSymbol is never used as a fallback",
     "display/audit only; never used for matching or aggregation",
@@ -1402,7 +1656,10 @@ plot_data <- sample_catalog |>
       replace_na(WholeProteomeRelativePercentile, 0),
       NA_real_
     ),
-    Role = factor(Role, levels = c("Writer", "Eraser", "Reader")),
+    Role = factor(
+      Role,
+      levels = c("Writer", "Eraser", "Writer-Eraser", "Reader")
+    ),
     GeneSymbol = factor(
       GeneSymbol,
       levels = unique(regulators$GeneSymbol[order(regulators$RoleEntryOrder)])
@@ -1435,8 +1692,8 @@ main_plot <- ggplot(
   labs(
     title = "乳酸化调控蛋白在全蛋白组中的相对信号",
     subtitle = paste(
-      "信号来自对应的普通全蛋白定量文件（同研究或独立正常参照），不使用Kla富集信号；",
-      "颜色由白色向暖色递增；?表示没有可对应的全蛋白强度。"
+      "仅纳入生物材料匹配且具有逐蛋白强度的普通全蛋白定量文件，不使用Kla富集信号；",
+      "颜色由白色向暖色递增。"
     ),
     x = NULL,
     y = NULL,

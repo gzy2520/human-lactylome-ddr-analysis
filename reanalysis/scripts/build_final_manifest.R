@@ -85,9 +85,9 @@ df <- data.frame(
   stringsAsFactors = FALSE
 )
 dir.create(dirname(OUTPUT), recursive = TRUE, showWarnings = FALSE)
-# eol = "\r\n" matches Python csv module's default line terminator;
+# Use repository-native LF endings so git whitespace checks remain clean.
 # quote = FALSE matches QUOTE_MINIMAL output (no field here needs quoting).
-write.csv(df, OUTPUT, row.names = FALSE, quote = FALSE, eol = "\r\n",
+write.csv(df, OUTPUT, row.names = FALSE, quote = FALSE, eol = "\n",
           fileEncoding = "UTF-8")
 
 cat(sprintf("Final files hashed: %d\n", length(paths)))

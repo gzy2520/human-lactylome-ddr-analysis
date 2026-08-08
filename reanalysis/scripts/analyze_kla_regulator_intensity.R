@@ -38,10 +38,11 @@ regulators <- read_excel(regulator_path) |>
     RoleEntryOrder = row_number()
   ) |>
   filter(
-    Role %in% c("Writer", "Eraser", "Reader"),
+    Role %in% c("Writer", "Eraser", "Writer-Eraser", "Reader"),
     !is.na(GeneSymbol),
     nzchar(GeneSymbol)
-  )
+  ) |>
+  distinct(Role, GeneSymbol, .keep_all = TRUE)
 target_genes <- unique(regulators$GeneSymbol)
 plot_font <- "Arial Unicode MS"
 
@@ -1080,7 +1081,7 @@ write.csv(
 )
 
 # Main cross-study heatmap.
-role_levels <- c("Writer", "Eraser", "Reader")
+role_levels <- c("Writer", "Eraser", "Writer-Eraser", "Reader")
 gene_levels <- regulators |>
   arrange(factor(Role, levels = role_levels), RoleEntryOrder) |>
   pull(GeneSymbol) |>

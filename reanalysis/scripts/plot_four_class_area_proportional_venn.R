@@ -95,7 +95,7 @@ category_labels_en <- c(
 base_accession <- function(values) {
   values <- trimws(as.character(values))
   values <- sub("^.*\\|([^|]+)\\|.*$", "\\1", values)
-  values <- sub("^[^|;]+\\|.*$", "", values)
+  values <- sub("^([^|;]+)\\|.*$", "\\1", values)
   values <- sub("-[0-9]+$", "", values)
   values
 }
@@ -111,7 +111,15 @@ stats <- read_csv(stats_path, show_col_types = FALSE) |>
     SampleGroupKey = paste(PXD, SampleGroup, sep = "__")
   )
 if (nrow(stats) != 37) {
-  stop("Expected 37 paired sample groups, found ", nrow(stats))
+  stop("Expected 37 Kla sample groups, found ", nrow(stats))
+}
+paired_stats <- stats |>
+  filter(PairedAnalysisIncluded %in% c(TRUE, "TRUE", "True", 1, "1"))
+if (nrow(paired_stats) != 33) {
+  stop(
+    "Expected 33 exact quantitative reference groups, found ",
+    nrow(paired_stats)
+  )
 }
 if (!identical(
   unique(stats$Category),
@@ -347,6 +355,18 @@ reference <- read_csv(reference_path, show_col_types = FALSE) |>
   mutate(BaseAccession = base_accession(MappedBaseAccessions)) |>
   filter(!is.na(BaseAccession), nzchar(BaseAccession)) |>
   distinct(PXD, SampleGroup, Category, BaseAccession)
+reference_group_keys <- unique(paste(reference$PXD, reference$SampleGroup, sep = "__"))
+expected_reference_group_keys <- unique(paired_stats$SampleGroupKey)
+if (
+  length(reference_group_keys) != 33 ||
+    length(setdiff(reference_group_keys, expected_reference_group_keys)) ||
+    length(setdiff(expected_reference_group_keys, reference_group_keys))
+) {
+  stop(
+    "Reference Venn membership does not match the 33 exact quantitative ",
+    "reference groups"
+  )
+}
 
 make_sets <- function(data, ddr_only = FALSE) {
   if (ddr_only) data <- data |> filter(BaseAccession %in% go_ddr_ids)
@@ -553,16 +573,22 @@ draw_area_proportional <- function(
     par(family = font_family, mar = c(1, 1, 4, 1))
     diagram <- plot(
       fit,
-      labels = labels,
-      quantities = TRUE,
+      labels = FALSE,
+      legend = list(
+        labels = labels,
+        side = "bottom",
+        nrow = 1,
+        ncol = 4,
+        byrow = TRUE,
+        cex = 0.9
+      ),
+      quantities = list(cex = 0.9),
       fills = list(fill = colors, alpha = 0.52),
       edges = list(col = "#4B4B4B", lwd = 1.2),
-      main = title,
+      main = list(label = title, cex = 1.15),
       sub = subtitle,
-      main.cex = 1.35,
       sub.cex = 0.85,
-      quantities.cex = 1.05,
-      labels.cex = 1.0
+      quantities.cex = 1.0
     )
     print(diagram)
     dev.off()
@@ -576,16 +602,22 @@ draw_area_proportional <- function(
     par(family = font_family, mar = c(1, 1, 4, 1))
     diagram <- plot(
       fit,
-      labels = labels,
-      quantities = TRUE,
+      labels = FALSE,
+      legend = list(
+        labels = labels,
+        side = "bottom",
+        nrow = 1,
+        ncol = 4,
+        byrow = TRUE,
+        cex = 0.9
+      ),
+      quantities = list(cex = 0.9),
       fills = list(fill = colors, alpha = 0.52),
       edges = list(col = "#4B4B4B", lwd = 1.2),
-      main = title,
+      main = list(label = title, cex = 1.15),
       sub = subtitle,
-      main.cex = 1.35,
       sub.cex = 0.85,
-      quantities.cex = 1.05,
-      labels.cex = 1.0
+      quantities.cex = 1.0
     )
     print(diagram)
     dev.off()

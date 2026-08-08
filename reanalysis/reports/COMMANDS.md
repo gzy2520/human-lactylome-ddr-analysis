@@ -24,6 +24,17 @@ Rscript reanalysis/tests/test_expanded_ddr_fraction_by_accession.R .
 
 PYTHONPATH=reanalysis/scripts /Users/gzy2520/miniconda3/bin/python3 \
   -m unittest discover -s reanalysis/tests -p 'test_*.py' -v
+
+# 交付工作簿使用 Codex bundled @oai/artifact-tool 运行时
+CODEX_DEPS=/Users/gzy2520/.cache/codex-runtimes/codex-primary-runtime/dependencies
+ln -s "$CODEX_DEPS/node/node_modules" node_modules
+"$CODEX_DEPS/node/bin/node" \
+  reanalysis/scripts/build_37group_deliverable_workbooks.mjs \
+  /Users/gzy2520/Desktop/Research/kla
+unlink node_modules
+
+Rscript reanalysis/scripts/build_final_manifest.R \
+  /Users/gzy2520/Desktop/Research/kla
 ```
 
 Final pipeline summary:
@@ -97,3 +108,35 @@ Rscript reanalysis/tests/test_kla_regulator_whole_proteome_intensity.R \
 Rscript reanalysis/scripts/build_final_manifest.R \
   /Users/gzy2520/Desktop/Research/kla
 ```
+
+严格普通全蛋白参照策略于 2026-08-08 运行：
+
+```bash
+Rscript reanalysis/scripts/apply_exact_reference_policy.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/build_lactylome_reference_pairing.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/plot_kla_regulator_landscape.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/analyze_kla_regulator_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/analyze_kla_regulator_whole_proteome_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/analyze_expanded_ddr_fraction_by_accession.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/plot_four_class_area_proportional_venn.R \
+  /Users/gzy2520/Desktop/Research/kla
+
+Rscript reanalysis/tests/test_lactylome_acquisition.R .
+Rscript reanalysis/tests/test_expanded_ddr_fraction_by_accession.R .
+Rscript reanalysis/tests/test_four_class_area_proportional_venn.R .
+Rscript reanalysis/tests/test_kla_regulator_intensity.R .
+Rscript reanalysis/tests/test_kla_regulator_landscape.R .
+Rscript reanalysis/tests/test_kla_regulator_whole_proteome_intensity.R .
+
+PYTHONPATH=reanalysis/scripts /Users/gzy2520/miniconda3/bin/python3 \
+  -m unittest discover -s reanalysis/tests -p 'test_*.py' -v
+```
+
+结果：Kla 定量 37/40 组；严格普通全蛋白参照 33/37 组；
+6 个 R 测试和 19 个 Python 测试全部通过。

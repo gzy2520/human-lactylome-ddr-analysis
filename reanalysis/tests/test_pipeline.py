@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 import sys
 import tempfile
@@ -224,42 +223,36 @@ class PipelineOutputTests(unittest.TestCase):
         self.assertTrue(original["SourceKlaTargetRows"].astype(int).eq(0).all())
 
     def test_reference_ddr_statistics_use_selected_protein_denominators(self) -> None:
-        reference = pd.read_csv(self.tables / "cell_type_reference_ddr_statistics.csv")
         comparison = pd.read_csv(
-            self.tables / "cell_type_kla_vs_reference_ddr_statistics.csv"
+            self.tables
+            / "cell_type_kla_vs_reference_ddr_statistics_accession_only.csv"
         )
-        control_information = pd.read_csv(
-            self.tables / "cell_type_reference_control_information.csv"
+        paired = comparison[comparison["PairedAnalysisIncluded"]]
+        excluded = comparison[~comparison["PairedAnalysisIncluded"]]
+
+        self.assertEqual(len(comparison), 37)
+        self.assertEqual(len(paired), 33)
+        self.assertEqual(
+            set(excluded["PXD"]),
+            {"PXD062720", "PXD063047", "PXD064038", "PXD075014"},
         )
-        config = json.loads(
-            (PROJECT_ROOT / "reanalysis/config/reference_proteome_selection.json").read_text()
-        )
-        expected = {
-            row["cell_type"]: int(row["reference_protein_count_main"]) for row in config
-        }
-        self.assertEqual(len(reference), 10)
-        self.assertEqual(set(reference["CellOrTissueType"]), set(expected))
-        for row in reference.itertuples(index=False):
-            self.assertEqual(row.ReferenceProteinCount, expected[row.CellOrTissueType])
+        self.assertTrue(excluded["ReferenceProteinCount"].isna().all())
+        self.assertTrue((comparison["SymbolFallbackCount"] == 0).all())
+        for row in paired.itertuples(index=False):
             self.assertLessEqual(row.ReferenceDdrProteinCount, row.ReferenceProteinCount)
             self.assertAlmostEqual(
                 row.ReferenceDdrFraction,
                 row.ReferenceDdrProteinCount / row.ReferenceProteinCount,
             )
-        self.assertEqual(len(comparison), 10)
-        self.assertEqual(len(control_information), 10)
-        self.assertFalse(control_information["选择理由"].fillna("").eq("").any())
-        self.assertTrue(
-            control_information["年份"].astype(int).between(2015, 2026).all()
-        )
         self.assertTrue(
             (
                 comparison["DdrFractionPercentagePointDifference"]
                 - (
-                    comparison["KlaGoDdrFraction"]
+                    comparison["KlaDdrFraction"]
                     - comparison["ReferenceDdrFraction"]
                 )
             )
+            .dropna()
             .abs()
             .lt(1e-12)
             .all()

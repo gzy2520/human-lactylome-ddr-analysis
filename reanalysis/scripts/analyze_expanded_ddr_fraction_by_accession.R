@@ -23,6 +23,9 @@ dir.create(intermediate_dir, recursive = TRUE, showWarnings = FALSE)
 pairing_path <- file.path(
   table_dir, "lactylome_and_reference_proteome_pairing_zh.csv"
 )
+kla_scope_path <- file.path(
+  table_dir, "kla_regulator_intensity_availability_audit.csv"
+)
 primary_path <- file.path(
   project_root, "reanalysis", "intermediate", "kla_by_dataset",
   "all_primary_sample_level_kla_sites.csv"
@@ -41,6 +44,7 @@ reviewed_uniprot_path <- file.path(
 base_accession <- function(values) {
   values <- trimws(as.character(values))
   values <- sub("^.*\\|([^|]+)\\|.*$", "\\1", values)
+  values <- sub("^([^|;]+)\\|.*$", "\\1", values)
   values <- sub("^NX_", "", values)
   values <- sub("-[0-9]+$", "", values)
   values
@@ -582,6 +586,124 @@ extract_pxd073311_huvec_reference <- function(path) {
   split_accessions(data$Protein.Group[detected])
 }
 
+extract_peaks_reference <- function(path) {
+  data <- read.csv(path, check.names = FALSE, stringsAsFactors = FALSE)
+  if (!"Accession" %in% names(data)) return(character())
+  area_columns <- grep("^Area", names(data), value = TRUE)
+  keep <- if (length(area_columns)) {
+    rowSums(
+      sapply(data[area_columns], function(values) {
+        values <- suppressWarnings(as.numeric(values))
+        !is.na(values) & values > 0
+      }),
+      na.rm = TRUE
+    ) > 0
+  } else {
+    rep(TRUE, nrow(data))
+  }
+  split_accessions(data$Accession[keep])
+}
+
+extract_maxquant_zip_proteins <- function(
+  zip_path,
+  abundance_pattern = NULL
+) {
+  data <- read.delim(
+    unz(zip_path, "proteinGroups.txt"),
+    check.names = FALSE,
+    stringsAsFactors = FALSE,
+    quote = "",
+    comment.char = ""
+  )
+  keep <- valid_maxquant_rows(data)
+  if (!is.null(abundance_pattern)) {
+    columns <- grep(abundance_pattern, names(data), value = TRUE)
+    if (!length(columns)) return(character())
+    present <- rowSums(
+      sapply(data[columns], function(values) {
+        values <- suppressWarnings(as.numeric(values))
+        !is.na(values) & values > 0
+      }),
+      na.rm = TRUE
+    ) > 0
+    keep <- keep & present
+  }
+  accession_column <- intersect(
+    c("Majority protein IDs", "Protein IDs"),
+    names(data)
+  )[[1]]
+  split_accessions(data[[accession_column]][keep])
+}
+
+extract_pxd069969_reference <- function(path, sample_names) {
+  data <- read_excel(path, sheet = "Annotation_Combine")
+  columns <- intersect(
+    paste0("LFQ intensity ", sample_names),
+    names(data)
+  )
+  if (!length(columns)) return(character())
+  keep <- rowSums(
+    sapply(data[columns], function(values) {
+      values <- suppressWarnings(as.numeric(values))
+      !is.na(values) & values > 0
+    }),
+    na.rm = TRUE
+  ) > 0
+  split_accessions(data$`Protein accession`[keep])
+}
+
+extract_pxd055025_reference <- function(path) {
+  data <- read_excel(path, sheet = "B VS A")
+  columns <- intersect(paste0("Abundances B", 1:3), names(data))
+  keep <- rowSums(
+    sapply(data[columns], function(values) {
+      values <- suppressWarnings(as.numeric(values))
+      !is.na(values) & values > 0
+    }),
+    na.rm = TRUE
+  ) > 0
+  split_accessions(data$Accession[keep])
+}
+
+extract_pxd065775_reference <- function(path, sheet_name) {
+  data <- read_excel(path, sheet = sheet_name)
+  columns <- intersect(
+    c(
+      "Non-rec1", "Non-rec2", "Non-rec3", "Non-rec4",
+      "Rec1", "Rec2", "Rec3", "Rec4"
+    ),
+    names(data)
+  )
+  keep <- rowSums(
+    sapply(data[columns], function(values) {
+      values <- suppressWarnings(as.numeric(values))
+      !is.na(values) & values > 0
+    }),
+    na.rm = TRUE
+  ) > 0
+  split_accessions(data$Accession[keep])
+}
+
+extract_pxd059985_reference <- function(path) {
+  data <- read.delim(
+    path,
+    check.names = FALSE,
+    stringsAsFactors = FALSE,
+    quote = "",
+    comment.char = ""
+  )
+  columns <- grep("\\.PG\\.Quantity$", names(data), value = TRUE)
+  columns <- columns[grepl("AC16|V8", columns)]
+  keep <- rowSums(
+    sapply(data[columns], function(values) {
+      values <- suppressWarnings(as.numeric(values))
+      !is.na(values) & values > 0
+    }),
+    na.rm = TRUE
+  ) > 0
+  split_accessions(data$PG.ProteinGroups[keep])
+}
+
 go <- read.delim(
   go_path,
   check.names = FALSE,
@@ -594,17 +716,36 @@ go_keep <- (is.na(go$`TAXON ID`) | go$`TAXON ID` == 9606) &
   go$`GENE PRODUCT DB` == "UniProtKB"
 ddr_accessions <- split_accessions(go$`GENE PRODUCT ID`[go_keep])
 
+kla_scope <- read.csv(
+  kla_scope_path,
+  check.names = FALSE,
+  stringsAsFactors = FALSE,
+  na.strings = c("", "NA")
+) |>
+  filter(`定量可用` %in% c(TRUE, "TRUE", "True", 1, "1")) |>
+  transmute(
+    乳酸化PXD = PXD,
+    样本组,
+    KlaRowOrder = row_number()
+  )
+if (nrow(kla_scope) != 37) {
+  stop("Kla quantitative scope must contain exactly 37 sample groups")
+}
+
 pairing <- read.csv(
   pairing_path,
   check.names = FALSE,
   stringsAsFactors = FALSE,
   na.strings = c("", "NA")
 ) |>
-  filter(当前已具备成对计数条件) |>
+  inner_join(kla_scope, by = c("乳酸化PXD", "样本组")) |>
   mutate(
     SampleGroupID = paste(乳酸化PXD, 样本组, sep = "__"),
-    RowOrder = row_number()
+    RowOrder = KlaRowOrder
   )
+if (nrow(pairing) != 37) {
+  stop("Reference comparison scope must retain all 37 Kla sample groups")
+}
 
 primary <- read.csv(
   primary_path,
@@ -863,7 +1004,6 @@ reference_set <- function(row) {
   existing_alias <- c(
     "PXD028488__HEK293T" = "HEK293T",
     "PXD028488__HCT116" = "HCT116",
-    "PXD028488__TALL-104" = "T-ALL",
     "PXD053474__HCT116" = "HCT116",
     "PXD058534__pretreated HK-2" = "HK-2",
     "PXD060185__MCF10A" = "MCF10A",
@@ -874,6 +1014,65 @@ reference_set <- function(row) {
     "PXD078736__HK-2 control and mannitol" = "HK-2"
   )
   key <- paste(pxd, group, sep = "__")
+  if (pxd == "PXD028488" && group == "TALL-104") {
+    return(extract_peaks_reference(file.path(
+      project_root,
+      row$常规蛋白组证据文件
+    )))
+  }
+  if (pxd == "PXD028737" && group == "HMC3") {
+    return(extract_maxquant_proteins(
+      file.path(project_root, row$常规蛋白组证据文件),
+      "LFQ intensity H0|LFQ intensity H24"
+    ))
+  }
+  if (
+    reference_pxd == "PXD055025" &&
+      group == "severe preeclampsia placenta"
+  ) {
+    return(extract_pxd055025_reference(file.path(
+      project_root,
+      row$常规蛋白组证据文件
+    )))
+  }
+  if (reference_pxd == "PXD022005" && group == "PC-3M") {
+    return(extract_maxquant_zip_proteins(
+      file.path(project_root, row$常规蛋白组证据文件),
+      "^Intensity H$"
+    ))
+  }
+  if (
+    reference_pxd == "PXD069969" &&
+      group %in% c("glioblastoma stem cells", "neural stem cells")
+  ) {
+    samples <- if (group == "glioblastoma stem cells") {
+      c("G2907", "G3028", "G3264", "GSC23", "MES28", "RKI")
+    } else {
+      c("ENSA", "HMP1")
+    }
+    return(extract_pxd069969_reference(
+      file.path(project_root, row$常规蛋白组证据文件),
+      samples
+    ))
+  }
+  if (
+    reference_pxd == "PXD059985" &&
+      group == "AC16 control and hypoxia"
+  ) {
+    return(extract_pxd059985_reference(file.path(
+      project_root,
+      row$常规蛋白组证据文件
+    )))
+  }
+  if (
+    reference_pxd == "PXD065775" &&
+      group %in% c("HCC", "adjacent liver")
+  ) {
+    return(extract_pxd065775_reference(
+      file.path(project_root, row$常规蛋白组证据文件),
+      ifelse(group == "HCC", "CISs", "ANTs")
+    ))
+  }
   if (key %in% names(existing_alias)) {
     return(split_accessions(
       existing_reference$BaseAccession[
@@ -1010,53 +1209,44 @@ for (i in seq_len(nrow(pairing))) {
   group <- row$样本组
   key <- row$SampleGroupID
 
-  if (pxd == "PXD037371") {
-    audit[[length(audit) + 1]] <- data.frame(
-      PXD = pxd,
-      SampleGroup = group,
-      Included = FALSE,
-      Reason = "TMT通道无法可靠映射到三个临床组",
-      KlaAccessionCount = 0L,
-      ReferenceAccessionCount = 0L,
-      MatchMode = "BaseAccession_only",
-      stringsAsFactors = FALSE
-    )
-    next
-  }
   kla <- kla_set(pxd, group)
-  reference <- reference_set(row)
-  if (!length(kla) || !length(reference)) {
-    reason <- if (!length(kla)) {
-      "无法从Kla证据文件提取有效UniProt accession"
-    } else {
-      "无法从常规蛋白组提取有效UniProt accession"
-    }
-    audit[[length(audit) + 1]] <- data.frame(
-      PXD = pxd,
-      SampleGroup = group,
-      Included = FALSE,
-      Reason = reason,
-      KlaAccessionCount = length(kla),
-      ReferenceAccessionCount = length(reference),
-      MatchMode = "BaseAccession_only",
-      stringsAsFactors = FALSE
-    )
-    next
+  if (!length(kla)) {
+    stop("Unable to extract Kla accessions for ", pxd, " / ", group)
   }
 
+  reference_configured <-
+    row$配置要求进入严格参照分析 %in%
+      c(TRUE, "TRUE", "True", 1, "1") &&
+    !is.na(row$常规蛋白组PXD) &&
+    nzchar(row$常规蛋白组PXD) &&
+    !is.na(row$常规蛋白组证据文件) &&
+    nzchar(row$常规蛋白组证据文件)
+  reference <- if (reference_configured) reference_set(row) else character()
+  paired_included <- reference_configured && length(reference) > 0
   kla_ddr <- ddr_matching_identifiers(kla)
-  reference_ddr <- ddr_matching_identifiers(reference)
+  reference_ddr <- if (paired_included) {
+    ddr_matching_identifiers(reference)
+  } else {
+    character()
+  }
   display <- if (group %in% names(display_names)) {
     unname(display_names[[group]])
   } else {
     group
   }
-  reference_pxd <- row$常规蛋白组PXD
-  reference_note <- row$匹配质量
-  match_mode <- if (reference_pxd == "PXD043880") {
+  reference_pxd <- if (paired_included) row$常规蛋白组PXD else NA_character_
+  reference_note <- if (paired_included) row$匹配质量 else row$注意事项
+  match_mode <- if (paired_included && reference_pxd == "PXD043880") {
     "BaseAccession_after_reviewed_UniProt_symbol_conversion"
   } else {
     "BaseAccession_only"
+  }
+  reference_protein_count <- if (paired_included) length(reference) else NA_integer_
+  reference_ddr_count <- if (paired_included) length(reference_ddr) else NA_integer_
+  reference_fraction <- if (paired_included) {
+    length(reference_ddr) / length(reference)
+  } else {
+    NA_real_
   }
 
   statistics[[length(statistics) + 1]] <- data.frame(
@@ -1068,14 +1258,22 @@ for (i in seq_len(nrow(pairing))) {
     KlaProteinCount = length(kla),
     KlaDdrProteinCount = length(kla_ddr),
     KlaDdrFraction = length(kla_ddr) / length(kla),
+    PairedAnalysisIncluded = paired_included,
     ReferencePXD = reference_pxd,
-    ReferenceEvidenceFile = row$常规蛋白组证据文件,
-    ReferenceProteinCount = length(reference),
-    ReferenceDdrProteinCount = length(reference_ddr),
-    ReferenceDdrFraction = length(reference_ddr) / length(reference),
+    ReferenceEvidenceFile = if (paired_included) {
+      row$常规蛋白组证据文件
+    } else {
+      NA_character_
+    },
+    ReferenceProteinCount = reference_protein_count,
+    ReferenceDdrProteinCount = reference_ddr_count,
+    ReferenceDdrFraction = reference_fraction,
     DdrFractionPercentagePointDifference =
-      length(kla_ddr) / length(kla) -
-      length(reference_ddr) / length(reference),
+      if (paired_included) {
+        length(kla_ddr) / length(kla) - reference_fraction
+      } else {
+        NA_real_
+      },
     ReferenceMatchNote = reference_note,
     MatchMode = match_mode,
     SymbolFallbackCount = 0L,
@@ -1086,16 +1284,23 @@ for (i in seq_len(nrow(pairing))) {
     PXD = pxd,
     SampleGroup = group,
     Included = TRUE,
-    Reason = ifelse(
-      reference_pxd == "PXD043880",
+    ReferenceIncluded = paired_included,
+    Reason = if (paired_included && reference_pxd == "PXD043880") {
       paste0(
         "PXD043880蛋白特征symbol先映射为人源reviewed UniProt ",
         "BaseAccession，再与GO-DDR表按ID匹配"
-      ),
+      )
+    } else if (!paired_included) {
+      row$注意事项
+    } else {
       ""
-    ),
+    },
     KlaAccessionCount = length(kla),
-    ReferenceAccessionCount = length(reference),
+    ReferenceAccessionCount = ifelse(
+      paired_included,
+      length(reference),
+      0L
+    ),
     MatchMode = match_mode,
     stringsAsFactors = FALSE
   )
@@ -1106,16 +1311,18 @@ for (i in seq_len(nrow(pairing))) {
     IsDdr = kla %in% ddr_accessions,
     stringsAsFactors = FALSE
   )
-  reference_members[[length(reference_members) + 1]] <- data.frame(
-    PXD = pxd,
-    SampleGroup = group,
-    ReferencePXD = reference_pxd,
-    SourceProteinID = reference,
-    IdentifierType = identifier_type(reference),
-    MappedBaseAccessions = mapped_accessions_for(reference),
-    IsDdr = reference %in% reference_ddr,
-    stringsAsFactors = FALSE
-  )
+  if (paired_included) {
+    reference_members[[length(reference_members) + 1]] <- data.frame(
+      PXD = pxd,
+      SampleGroup = group,
+      ReferencePXD = reference_pxd,
+      SourceProteinID = reference,
+      IdentifierType = identifier_type(reference),
+      MappedBaseAccessions = mapped_accessions_for(reference),
+      IsDdr = reference %in% reference_ddr,
+      stringsAsFactors = FALSE
+    )
+  }
 }
 
 core_source_alias <- data.frame(
@@ -1242,22 +1449,31 @@ statistics <- bind_rows(statistics) |>
     Category = unname(category_map[paste(PXD, SampleGroup, sep = "__")]),
     CategoryZh = unname(category_labels_zh[Category]),
     CategoryEn = unname(category_labels_en[Category]),
+    ReferenceDisplay = ifelse(
+      PairedAnalysisIncluded,
+      ReferencePXD,
+      "未纳入：无完全匹配强度参照"
+    ),
     DisplayLabel = paste0(
       DisplayLabel,
       " · Kla:",
       PXD,
       " / Ref:",
-      ReferencePXD
+      ReferenceDisplay
     ),
     EnglishDisplayLabel = paste0(
       unname(english_display_names[SampleGroup]),
       " · Kla: ",
       PXD,
       " / Ref: ",
-      ReferencePXD
+      ifelse(
+        PairedAnalysisIncluded,
+        ReferencePXD,
+        "excluded: no exact quantitative reference"
+      )
     )
   ) |>
-  select(-PrimaryEvidenceFiles) |>
+  select(-PrimaryEvidenceFiles, -ReferenceDisplay) |>
   arrange(
     match(Category, c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells")),
     RowOrder
@@ -1294,6 +1510,7 @@ statistics_zh <- statistics |>
     `乳酸化蛋白ID数` = KlaProteinCount,
     `乳酸化DDR蛋白ID数` = KlaDdrProteinCount,
     `乳酸化DDR占比` = KlaDdrFraction,
+    `纳入严格配对分析` = PairedAnalysisIncluded,
     `常规蛋白组PXD` = ReferencePXD,
     `常规蛋白组证据文件` = ReferenceEvidenceFile,
     `常规蛋白ID数` = ReferenceProteinCount,
@@ -1451,7 +1668,9 @@ write.csv(
   na = ""
 )
 
-plot_data_base <- statistics |>
+paired_statistics <- statistics |>
+  filter(PairedAnalysisIncluded)
+plot_data_base <- paired_statistics |>
   select(
     DisplayLabel,
     EnglishDisplayLabel,
@@ -1525,8 +1744,8 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       ),
       PlotLabel = factor(
         PlotLabel,
-        levels = rev(if (is_zh) unique(statistics$DisplayLabel) else
-          unique(statistics$EnglishDisplayLabel))
+        levels = rev(if (is_zh) unique(paired_statistics$DisplayLabel) else
+          unique(paired_statistics$EnglishDisplayLabel))
       ),
       CategoryLabel = factor(
         Category,
@@ -1538,7 +1757,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       )
     )
   max_fraction <- max(plot_data$DdrFraction, na.rm = TRUE)
-  figure_height <- max(12, nrow(statistics) * 0.42 + 4.2)
+  figure_height <- max(12, nrow(paired_statistics) * 0.42 + 4.2)
   ggplot(
     plot_data,
     aes(x = DdrFraction * 100, y = PlotLabel, fill = Dataset)
@@ -1581,14 +1800,15 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       },
       subtitle = if (is_zh) {
         paste0(
-          "纳入", nrow(statistics),
-          "个可解析样本组；GO-DDR交集按去isoform后的BaseAccession计算；",
+          "纳入", nrow(paired_statistics),
+          "个具有完全匹配逐蛋白强度参照的样本组；GO-DDR交集按去isoform后的BaseAccession计算；",
           "蓝色为普通全蛋白组参照，位于橙色Kla柱上方"
         )
       } else {
         paste0(
-          nrow(statistics),
-          " analyzable sample groups; GO-DDR overlap uses isoform-stripped BaseAccession; ",
+          nrow(paired_statistics),
+          " sample groups with exact per-protein quantitative references; ",
+          "GO-DDR overlap uses isoform-stripped BaseAccession; ",
           "blue reference bars are placed above orange Kla bars"
         )
       },
@@ -1642,7 +1862,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
 
 plot_zh <- make_ddr_plot("zh")
 plot_en <- make_ddr_plot("en")
-figure_height <- max(12, nrow(statistics) * 0.42 + 4.2)
+figure_height <- max(12, nrow(paired_statistics) * 0.42 + 4.2)
 
 for (path in c(
   "cell_type_kla_vs_reference_ddr_fraction_accession_only.png",

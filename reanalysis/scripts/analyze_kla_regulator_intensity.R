@@ -24,8 +24,11 @@ mapping_path <- file.path(
   project_root, "reanalysis", "config",
   "lactylation_regulator_uniprot_mapping.csv"
 )
-
-required_files <- c(regulator_path, detection_path, mapping_path)
+required_files <- c(
+  regulator_path,
+  detection_path,
+  mapping_path
+)
 missing_files <- required_files[!file.exists(required_files)]
 if (length(missing_files)) {
   stop("Missing required files: ", paste(missing_files, collapse = ", "))
@@ -1463,10 +1466,6 @@ save_heatmap <- function(plot, stem) {
     bg = "white"
   )
 }
-save_heatmap(
-  main_plot_zh,
-  "kla_regulator_cross_study_relative_intensity_heatmap"
-)
 save_heatmap(
   main_plot_zh,
   "kla_regulator_cross_study_relative_intensity_heatmap_zh"

@@ -65,6 +65,9 @@ All analytical matching, deduplication, merging, GO intersection, and Venn
 membership used human UniProt `BaseAccession`. Database prefixes and UniProt
 isoform suffixes were removed. Ensembl protein identifiers in whole-proteome
 sources were converted through the cached project Ensembl-to-UniProt mapping.
+One-to-many mappings were expanded and then deduplicated by BaseAccession;
+unmapped Ensembl identifiers were retained in the mapping audit but were not
+included in the accession-based denominator.
 Reviewed status, gene symbols, and protein names were retained only for display
 and manual audit and were never used for matching or missing-value fallback.
 The final GeneSymbol fallback count was zero.

@@ -49,7 +49,9 @@ ion 只能增强来源可信度，不能单独把未修饰肽判为 Kla。
 全部分析、去重、合并、GO 交集和 Venn 集合均使用人源 UniProt
 `BaseAccession`。首先去除数据库前缀和 UniProt isoform 后缀，例如
 `P12345-2` 转换为 `P12345`。来源为 Ensembl protein ID 的普通全蛋白数据先
-通过项目缓存的 Ensembl-to-UniProt 映射表转换。reviewed/non-reviewed 状态、
+通过项目缓存的 Ensembl-to-UniProt 映射表转换；一对多映射先展开，再按
+BaseAccession 去重。未映射的 Ensembl ID 保留在映射审计中，但不进入基于
+accession 的主分析分母。reviewed/non-reviewed 状态、
 GeneSymbol 和 Protein name 仅保留用于显示和人工审计，不参与命中、合并、
 去重或缺失回退。最终分析的 GeneSymbol 回退数为 0。
 

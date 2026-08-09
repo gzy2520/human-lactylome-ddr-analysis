@@ -632,10 +632,7 @@ draw_area_proportional <- function(
     }
     output_stems <- file.path(
       figure_root,
-      c(
-        paste0(analysis_name, "_", language),
-        paste0(analysis_name, "_33groups_", language)
-      )
+      paste0(analysis_name, "_33groups_", language)
     )
     for (output_stem in output_stems) {
       png(

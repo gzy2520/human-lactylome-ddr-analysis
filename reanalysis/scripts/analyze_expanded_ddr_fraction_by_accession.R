@@ -1103,10 +1103,17 @@ for (i in seq_len(nrow(pairing))) {
     !is.na(row$常规蛋白组证据文件) &&
     nzchar(row$常规蛋白组证据文件)
   reference <- if (reference_configured) reference_set(row) else character()
-  paired_included <- reference_configured && length(reference) > 0
+  reference_mapped <- if (reference_configured && length(reference)) {
+    mapped_accessions_for(reference)
+  } else {
+    character()
+  }
+  reference_base_accessions <- split_accessions(reference_mapped)
+  paired_included <-
+    reference_configured && length(reference_base_accessions) > 0
   kla_ddr <- ddr_matching_identifiers(kla)
   reference_ddr <- if (paired_included) {
-    ddr_matching_identifiers(reference)
+    intersect(reference_base_accessions, ddr_accessions)
   } else {
     character()
   }
@@ -1118,10 +1125,14 @@ for (i in seq_len(nrow(pairing))) {
   reference_pxd <- if (paired_included) row$常规蛋白组PXD else NA_character_
   reference_note <- if (paired_included) row$匹配质量 else row$注意事项
   match_mode <- "BaseAccession_only"
-  reference_protein_count <- if (paired_included) length(reference) else NA_integer_
+  reference_protein_count <- if (paired_included) {
+    length(reference_base_accessions)
+  } else {
+    NA_integer_
+  }
   reference_ddr_count <- if (paired_included) length(reference_ddr) else NA_integer_
   reference_fraction <- if (paired_included) {
-    length(reference_ddr) / length(reference)
+    length(reference_ddr) / length(reference_base_accessions)
   } else {
     NA_real_
   }
@@ -1170,7 +1181,7 @@ for (i in seq_len(nrow(pairing))) {
     KlaAccessionCount = length(kla),
     ReferenceAccessionCount = ifelse(
       paired_included,
-      length(reference),
+      length(reference_base_accessions),
       0L
     ),
     MatchMode = match_mode,
@@ -1190,8 +1201,12 @@ for (i in seq_len(nrow(pairing))) {
       ReferencePXD = reference_pxd,
       SourceProteinID = reference,
       IdentifierType = identifier_type(reference),
-      MappedBaseAccessions = mapped_accessions_for(reference),
-      IsDdr = reference %in% reference_ddr,
+      MappedBaseAccessions = reference_mapped,
+      IsDdr = vapply(
+        strsplit(reference_mapped, ";", fixed = TRUE),
+        function(values) any(values %in% ddr_accessions),
+        logical(1)
+      ),
       stringsAsFactors = FALSE
     )
   }
@@ -1679,9 +1694,9 @@ plot_data_base <- bind_rows(reference_plot_rows, kla_plot_rows) |>
     StudyOrder
   ) |>
   mutate(
-    BarOrder = row_number(),
     LabelZh = sprintf("%s/%s（%.1f%%）", Ddr, Total, DdrFraction * 100),
-    LabelEn = sprintf("%s/%s (%.1f%%)", Ddr, Total, DdrFraction * 100)
+    LabelEn = sprintf("%s/%s (%.1f%%)", Ddr, Total, DdrFraction * 100),
+    BarOrder = row_number()
   )
 
 write.csv(
@@ -1811,6 +1826,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
           nrow(paired_statistics), " Kla study groups and ",
           nrow(reference_plot_rows), " unique whole-proteome references; ",
           "each reference is displayed once above its linked Kla studies; ",
+          "\n",
           "GO-DDR overlap uses isoform-stripped BaseAccession"
         )
       },
@@ -1867,63 +1883,38 @@ plot_zh <- make_ddr_plot("zh")
 plot_en <- make_ddr_plot("en")
 figure_height <- max(12, nrow(plot_data_base) * 0.28 + 4.2)
 
-for (path in c(
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only.png",
-  "cell_type_kla_vs_reference_ddr_fraction.png",
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.png",
-  "cell_type_kla_vs_reference_ddr_fraction_zh.png"
-)) {
-  ggsave(
-    file.path(figure_dir, path),
-    plot_zh,
-    width = 13.5,
-    height = figure_height,
-    dpi = 350,
-    bg = "white"
-  )
-}
-for (path in c(
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction_zh.pdf"
-)) {
-  ggsave(
-    file.path(figure_dir, path),
-    plot_zh,
-    width = 13.5,
-    height = figure_height,
-    device = cairo_pdf,
-    bg = "white"
-  )
-}
-for (path in c(
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_en.png",
-  "cell_type_kla_vs_reference_ddr_fraction_en.png"
-)) {
-  ggsave(
-    file.path(figure_dir, path),
-    plot_en,
-    width = 13.5,
-    height = figure_height,
-    dpi = 350,
-    bg = "white"
-  )
-}
-for (path in c(
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_en.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction_en.pdf"
-)) {
-  ggsave(
-    file.path(figure_dir, path),
-    plot_en,
-    width = 13.5,
-    height = figure_height,
-    device = cairo_pdf,
-    bg = "white"
-  )
-}
-
+ggsave(
+  file.path(figure_dir, "cell_type_kla_vs_reference_ddr_fraction_zh.png"),
+  plot_zh,
+  width = 13.5,
+  height = figure_height,
+  dpi = 350,
+  bg = "white"
+)
+ggsave(
+  file.path(figure_dir, "cell_type_kla_vs_reference_ddr_fraction_zh.pdf"),
+  plot_zh,
+  width = 13.5,
+  height = figure_height,
+  device = cairo_pdf,
+  bg = "white"
+)
+ggsave(
+  file.path(figure_dir, "cell_type_kla_vs_reference_ddr_fraction_en.png"),
+  plot_en,
+  width = 13.5,
+  height = figure_height,
+  dpi = 350,
+  bg = "white"
+)
+ggsave(
+  file.path(figure_dir, "cell_type_kla_vs_reference_ddr_fraction_en.pdf"),
+  plot_en,
+  width = 13.5,
+  height = figure_height,
+  device = cairo_pdf,
+  bg = "white"
+)
 message(
   "Expanded accession-only DDR comparison: ",
   nrow(statistics),

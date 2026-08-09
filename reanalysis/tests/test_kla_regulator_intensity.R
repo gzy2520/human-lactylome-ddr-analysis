@@ -21,8 +21,6 @@ required <- c(
     table_dir,
     "kla_regulator_whole_proteome_heatmap_display_long.csv"
   ),
-  file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap.png"),
-  file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap.pdf"),
   file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap_zh.png"),
   file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap_zh.pdf"),
   file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap_en.png"),

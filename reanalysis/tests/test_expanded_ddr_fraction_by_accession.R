@@ -60,6 +60,7 @@ stopifnot(!any(audit$PXD == "PXD037371"))
 stopifnot(sum(stats$PairedAnalysisIncluded) == 33)
 stopifnot(sum(plot_rows$BarType == "kla") == 33)
 stopifnot(sum(plot_rows$BarType == "reference") == 30)
+stopifnot(identical(plot_rows$BarOrder, seq_len(63)))
 stopifnot(all(c(
   "LinkedKlaSampleGroup",
   "LinkedKlaLabelZh",
@@ -226,6 +227,40 @@ stopifnot(
   mean(nzchar(reference_members$MappedBaseAccessions[ensembl_rows])) >= 0.85
 )
 
+# Every reference-side DDR denominator and numerator must use mapped, unique
+# UniProt BaseAccessions. Source ENSP identifiers remain only for provenance.
+go <- read.delim(
+  file.path(
+    project_root,
+    "data", "annotations", "GO-repair+damage(human).tsv"
+  ),
+  check.names = FALSE,
+  stringsAsFactors = FALSE,
+  quote = "",
+  comment.char = ""
+)
+go_ids <- sub("-[0-9]+$", "", as.character(go$`GENE PRODUCT ID`))
+go_keep <- (is.na(go$`TAXON ID`) | go$`TAXON ID` == 9606) &
+  !grepl("(^|\\|)NOT($|\\|)", go$QUALIFIER) &
+  go$`GENE PRODUCT DB` == "UniProtKB"
+go_ids <- unique(go_ids[go_keep & nzchar(go_ids)])
+
+for (i in seq_len(nrow(paired_stats))) {
+  row <- paired_stats[i, ]
+  member_rows <- reference_members[
+    reference_members$PXD == row$PXD &
+      reference_members$SampleGroup == row$SampleGroup,
+  ]
+  mapped_ids <- unique(unlist(strsplit(
+    member_rows$MappedBaseAccessions,
+    ";",
+    fixed = TRUE
+  )))
+  mapped_ids <- mapped_ids[nzchar(mapped_ids)]
+  stopifnot(row$ReferenceProteinCount == length(mapped_ids))
+  stopifnot(row$ReferenceDdrProteinCount == sum(mapped_ids %in% go_ids))
+}
+
 huvec_stats <- stats[
   stats$PXD == "PXD073311" &
     stats$SampleGroup == "HUVEC control and Pg infection",
@@ -295,16 +330,8 @@ if (file.exists(archive_stats_path)) {
 }
 
 for (name in c(
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only.png",
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction.png",
-  "cell_type_kla_vs_reference_ddr_fraction.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_en.png",
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_en.pdf",
   "cell_type_kla_vs_reference_ddr_fraction_en.png",
   "cell_type_kla_vs_reference_ddr_fraction_en.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.png",
-  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.pdf",
   "cell_type_kla_vs_reference_ddr_fraction_zh.png",
   "cell_type_kla_vs_reference_ddr_fraction_zh.pdf"
 )) {

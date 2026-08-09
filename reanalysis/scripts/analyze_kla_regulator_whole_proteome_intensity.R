@@ -38,7 +38,6 @@ four_class_path <- file.path(
   project_root, "reanalysis", "config",
   "four_class_sample_grouping.csv"
 )
-
 required_files <- c(
   regulator_path,
   mapping_path,
@@ -1864,10 +1863,6 @@ save_heatmap <- function(plot, stem) {
     bg = "white"
   )
 }
-save_heatmap(
-  main_plot_zh,
-  "kla_regulator_whole_proteome_relative_intensity_heatmap"
-)
 save_heatmap(
   main_plot_zh,
   "kla_regulator_whole_proteome_relative_intensity_heatmap_zh"

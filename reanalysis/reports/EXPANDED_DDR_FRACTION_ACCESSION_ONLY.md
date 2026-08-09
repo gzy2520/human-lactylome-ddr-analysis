@@ -24,9 +24,12 @@ UniProt BaseAccession 与 GO-DDR 表匹配；不再使用旧的 CA1 替代参照
 - 25,726 个 Ensembl protein ID 中有 24,462 个获得 UniProt 映射。
 - 未映射 ID 保存在：
   `reanalysis/config/ensembl_protein_unmapped_biomart.tsv`
-- 分母保留原始蛋白 ID 数，避免多个 Ensembl isoform 汇总到一个 UniProt
-  accession 后人为缩小总蛋白数。
-- DDR 分子由蛋白 ID 显式映射到 GO 表中的 UniProt BaseAccession 后判定。
+- 主分析将一对多映射展开后按 UniProt BaseAccession 去重；普通全蛋白总数和
+  DDR 数均使用映射后的唯一 BaseAccession。
+- 未映射 Ensembl protein ID 仅保留在映射审计中，不进入 accession-only 主分析
+  分母；源 Ensembl ID 与全部映射关系仍保留在逐蛋白明细表中。
+- DDR 分子由映射后的 BaseAccession 与 GO 表中的 UniProt BaseAccession
+  显式取交集判定。
 - PXD043880 的 2,092 个蛋白特征拆分为 2,153 个 symbol token；唯一映射到
   2,105 个 reviewed UniProt BaseAccession。歧义和未映射 symbol 不进入 ID 分母，
   但全部保存在映射审计表中。
@@ -49,14 +52,12 @@ UniProt BaseAccession 与 GO-DDR 表匹配；不再使用旧的 CA1 替代参照
 
 ## 输出
 
-- 主图：
-  `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction.png`
 - 中文主图：
   `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_zh.png`
 - 英文主图：
   `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_en.png`
-- 独立命名图：
-  `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_accession_only.png`
+- 同名 PDF 用于矢量交付；不再生成内容完全相同的无语言后缀或
+  `accession_only` 图像别名。
 - 37组来源审计统计表：
   `reanalysis/results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only.csv`
 - 37组来源审计中文表：

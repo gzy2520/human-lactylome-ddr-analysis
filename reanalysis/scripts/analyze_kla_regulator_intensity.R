@@ -58,7 +58,14 @@ accession_map <- read.csv(
   filter(GeneSymbol %in% target_genes)
 accession_to_gene <- setNames(accession_map$GeneSymbol, accession_map$BaseAccession)
 regulators <- regulators |>
-  left_join(accession_map, by = "GeneSymbol")
+  left_join(accession_map, by = "GeneSymbol") |>
+  mutate(
+    RegulatorDisplayName = ifelse(
+      BaseAccession == "Q92830",
+      "GCN5 (KAT2A)",
+      GeneSymbol
+    )
+  )
 if (any(is.na(regulators$BaseAccession))) {
   stop(
     "Missing UniProt mapping for regulator genes: ",
@@ -83,6 +90,106 @@ sample_catalog <- detection |>
 if (nrow(sample_catalog) != 40) {
   stop("Expected 40 sample groups, found ", nrow(sample_catalog))
 }
+
+whole_heatmap_rows_path <- file.path(
+  table_dir,
+  "kla_regulator_whole_proteome_heatmap_rows.csv"
+)
+four_class_path <- file.path(
+  project_root,
+  "reanalysis",
+  "config",
+  "four_class_sample_grouping.csv"
+)
+category_order <- c(
+  "normal_tissue",
+  "cancer_tissue",
+  "normal_cells",
+  "cancer_cells"
+)
+category_labels_zh <- c(
+  normal_tissue = "正常/非肿瘤组织",
+  cancer_tissue = "癌症组织",
+  normal_cells = "正常/非肿瘤细胞",
+  cancer_cells = "癌症细胞"
+)
+missing_axis_files <- c(whole_heatmap_rows_path, four_class_path)[!file.exists(
+  c(whole_heatmap_rows_path, four_class_path)
+)]
+if (length(missing_axis_files)) {
+  stop(
+    "Missing whole-proteome heatmap axis inputs; run the whole-proteome " ,
+    "analysis first: ",
+    paste(missing_axis_files, collapse = ", ")
+  )
+}
+whole_heatmap_rows <- read.csv(
+  whole_heatmap_rows_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+if (nrow(whole_heatmap_rows) != 30) {
+  stop(
+    "Expected 30 unique whole-proteome heatmap rows, found ",
+    nrow(whole_heatmap_rows)
+  )
+}
+whole_axis_members <- bind_rows(lapply(seq_len(nrow(whole_heatmap_rows)), function(i) {
+  data.frame(
+    PXD = strsplit(
+      whole_heatmap_rows$LinkedKlaPXD[[i]],
+      ";",
+      fixed = TRUE
+    )[[1]],
+    SampleGroup = strsplit(
+      whole_heatmap_rows$LinkedKlaSampleGroup[[i]],
+      ";",
+      fixed = TRUE
+    )[[1]],
+    WholeProteomeDisplayRowOrder = whole_heatmap_rows$HeatmapDisplayRowOrder[[i]],
+    stringsAsFactors = FALSE
+  )
+}))
+four_class <- read.csv(
+  four_class_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) |>
+  transmute(
+    PXD,
+    SampleGroup,
+    Category,
+    CategoryZh = unname(category_labels_zh[Category]),
+    CategoryOrder = match(Category, category_order)
+  )
+category_max_order <- whole_heatmap_rows |>
+  group_by(Category) |>
+  summarise(
+    MaxWholeProteomeDisplayRowOrder = max(HeatmapDisplayRowOrder),
+    .groups = "drop"
+  )
+sample_catalog <- sample_catalog |>
+  left_join(four_class, by = c("PXD", "SampleGroup")) |>
+  left_join(
+    whole_axis_members,
+    by = c("PXD", "SampleGroup")
+  ) |>
+  left_join(category_max_order, by = "Category") |>
+  group_by(Category) |>
+  arrange(RowOrder, .by_group = TRUE) |>
+  mutate(
+    UnmatchedWithinCategory = cumsum(
+      is.na(WholeProteomeDisplayRowOrder)
+    ),
+    ComparisonRowOrder = ifelse(
+      !is.na(WholeProteomeDisplayRowOrder),
+      WholeProteomeDisplayRowOrder,
+      MaxWholeProteomeDisplayRowOrder +
+        UnmatchedWithinCategory / 100
+    )
+  ) |>
+  ungroup() |>
+  arrange(CategoryOrder, ComparisonRowOrder, RowOrder)
 
 base_accession <- function(values) {
   values <- sub("^.*\\|([^|]+)\\|.*$", "\\1", as.character(values))
@@ -875,6 +982,18 @@ target_sample_grid <- sample_registry |>
     )
   )
 
+paired_sample_keys <- sample_catalog |>
+  filter(!is.na(WholeProteomeDisplayRowOrder)) |>
+  select(PXD, SampleGroup)
+if (nrow(paired_sample_keys) != 33) {
+  stop(
+    "Expected 33 Kla sample groups with exact whole-proteome references, found ",
+    nrow(paired_sample_keys)
+  )
+}
+paired_target_sample_grid <- target_sample_grid |>
+  semi_join(paired_sample_keys, by = c("PXD", "SampleGroup"))
+
 group_quant <- target_sample_grid |>
   group_by(PXD, SampleGroup, RegulatorBaseAccession, GeneSymbol) |>
   summarise(
@@ -901,9 +1020,27 @@ heatmap_data <- detection |>
   rename(IdentificationDetected = Detected) |>
   left_join(
     regulators |>
-      select(Role, GeneSymbol, BaseAccession) |>
+      select(
+        Role,
+        GeneSymbol,
+        BaseAccession,
+        RegulatorDisplayName,
+        RoleEntryOrder
+      ) |>
       rename(RegulatorBaseAccession = BaseAccession),
     by = c("Role", "GeneSymbol")
+  ) |>
+  left_join(
+    sample_catalog |>
+      select(
+        PXD,
+        SampleGroup,
+        Category,
+        CategoryZh,
+        ComparisonRowOrder,
+        WholeProteomeDisplayRowOrder
+      ),
+    by = c("PXD", "SampleGroup")
   ) |>
   left_join(
     group_quant,
@@ -923,8 +1060,19 @@ heatmap_data <- detection |>
     )
   )
 
+heatmap_data <- heatmap_data |>
+  semi_join(paired_sample_keys, by = c("PXD", "SampleGroup")) |>
+  arrange(
+    match(
+      Category,
+      category_order
+    ),
+    ComparisonRowOrder,
+    RoleEntryOrder
+  )
+
 write.csv(
-  target_sample_grid,
+  paired_target_sample_grid,
   file.path(table_dir, "kla_regulator_intensity_sample_level_long.csv"),
   row.names = FALSE,
   na = ""
@@ -936,6 +1084,7 @@ write.csv(
   na = ""
 )
 id_mapping_audit <- target_sample_grid |>
+  semi_join(paired_sample_keys, by = c("PXD", "SampleGroup")) |>
   group_by(GeneSymbol, RegulatorBaseAccession) |>
   summarise(
     QuantitativeSampleRows = n(),
@@ -992,6 +1141,12 @@ audit <- sample_catalog |>
       ""
     ),
     可做PXD内Z分数 = 定量可用 & 定量样本数 >= 2,
+    严格配对分析纳入 = !is.na(WholeProteomeDisplayRowOrder),
+    严格配对排除原因 = case_when(
+      !is.na(WholeProteomeDisplayRowOrder) ~ "",
+      定量可用 ~ "没有完全匹配且可审计的普通全蛋白参照；保留Kla原始审计，但不进入配对热图和后续对照分析。",
+      TRUE ~ "Kla本身没有可用的逐组定量值；保留原始审计，但不进入配对分析。"
+    ),
     限制或不可用原因 = ifelse(
       定量可用,
       case_when(
@@ -1019,12 +1174,43 @@ audit <- sample_catalog |>
     GeneSymbol回退数,
     跨研究热图数值,
     可做PXD内Z分数,
+    严格配对分析纳入,
+    严格配对排除原因,
     限制或不可用原因,
     定量来源文件
   )
 write.csv(
   audit,
   file.path(table_dir, "kla_regulator_intensity_availability_audit.csv"),
+  row.names = FALSE,
+  na = ""
+)
+axis_audit <- sample_catalog |>
+  filter(!is.na(WholeProteomeDisplayRowOrder)) |>
+  left_join(
+    audit |>
+      transmute(
+        PXD,
+        SampleGroup = 样本组,
+        QuantificationAvailable = 定量可用
+      ),
+    by = c("PXD", "SampleGroup")
+  ) |>
+  transmute(
+    PXD,
+    SampleGroup,
+    Category,
+    CategoryZh,
+    ComparisonRowOrder,
+    WholeProteomeDisplayRowOrder,
+    QuantificationAvailable,
+    RowLabel,
+    OriginalRowOrder = RowOrder
+  ) |>
+  arrange(ComparisonRowOrder, OriginalRowOrder)
+write.csv(
+  axis_audit,
+  file.path(table_dir, "kla_regulator_heatmap_axis_order.csv"),
   row.names = FALSE,
   na = ""
 )
@@ -1073,8 +1259,16 @@ write.csv(
 
 write.csv(
   audit |>
-    filter(!定量可用) |>
-    select(PXD, 样本组, 限制或不可用原因, 定量来源文件),
+    filter(!严格配对分析纳入) |>
+    select(
+      PXD,
+      样本组,
+      定量可用,
+      严格配对分析纳入,
+      严格配对排除原因,
+      限制或不可用原因,
+      定量来源文件
+    ),
   file.path(table_dir, "kla_regulator_intensity_plot_exclusions.csv"),
   row.names = FALSE,
   na = ""
@@ -1084,18 +1278,32 @@ write.csv(
 role_levels <- c("Writer", "Eraser", "Writer-Eraser", "Reader")
 gene_levels <- regulators |>
   arrange(factor(Role, levels = role_levels), RoleEntryOrder) |>
-  pull(GeneSymbol) |>
+  pull(RegulatorDisplayName) |>
   unique()
-row_levels <- rev(sample_catalog$RowLabel)
+plot_sample_catalog <- sample_catalog |>
+  inner_join(
+    axis_audit |>
+      filter(QuantificationAvailable) |>
+      select(PXD, SampleGroup),
+    by = c("PXD", "SampleGroup")
+  ) |>
+  arrange(ComparisonRowOrder, RowOrder)
+row_levels <- rev(plot_sample_catalog$RowLabel)
 plot_data <- heatmap_data |>
   filter(QuantificationAvailable) |>
   mutate(
     Role = factor(Role, levels = role_levels),
-    GeneSymbol = factor(GeneSymbol, levels = gene_levels),
+    RegulatorDisplayName = factor(
+      RegulatorDisplayName,
+      levels = gene_levels
+    ),
     RowLabel = factor(RowLabel, levels = row_levels)
   )
 
-main_plot <- ggplot(plot_data, aes(GeneSymbol, RowLabel, fill = RelativeKlaPercentile)) +
+main_plot <- ggplot(
+  plot_data,
+  aes(RegulatorDisplayName, RowLabel, fill = RelativeKlaPercentile)
+) +
   geom_tile(color = "white", linewidth = 0.22) +
   geom_text(
     data = plot_data |> filter(!QuantificationAvailable),
@@ -1161,6 +1369,16 @@ ggsave(
 
 # Within-PXD gene-wise z-scores are valid only across samples from the same PXD.
 zscore_data <- target_sample_grid |>
+  semi_join(paired_sample_keys, by = c("PXD", "SampleGroup")) |>
+  left_join(
+    regulators |>
+      distinct(
+        GeneSymbol,
+        RegulatorBaseAccession = BaseAccession,
+        RegulatorDisplayName
+      ),
+    by = c("GeneSymbol", "RegulatorBaseAccession")
+  ) |>
   group_by(PXD, GeneSymbol) |>
   mutate(
     WithinPXDZ = {
@@ -1203,10 +1421,20 @@ for (pxd in z_pxd) {
   data <- zscore_data |>
     filter(PXD == pxd) |>
     mutate(
-      GeneSymbol = factor(GeneSymbol, levels = gene_levels),
+      RegulatorDisplayName = factor(
+        RegulatorDisplayName,
+        levels = gene_levels
+      ),
       QuantSample = factor(QuantSample, levels = rev(unique(QuantSample)))
     )
-  p <- ggplot(data, aes(GeneSymbol, QuantSample, fill = pmax(-2.5, pmin(2.5, WithinPXDZ)))) +
+  p <- ggplot(
+    data,
+    aes(
+      RegulatorDisplayName,
+      QuantSample,
+      fill = pmax(-2.5, pmin(2.5, WithinPXDZ))
+    )
+  ) +
     geom_tile(color = "white", linewidth = 0.25) +
     scale_fill_gradient2(
       low = "#2166AC", mid = "#F7F7F7", high = "#B2182B",

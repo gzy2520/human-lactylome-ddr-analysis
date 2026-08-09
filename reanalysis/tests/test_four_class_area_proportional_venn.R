@@ -179,6 +179,57 @@ assert(
   "Reference DDR IDs must be a subset of reference proteome IDs"
 )
 
+scope <- read.csv(
+  file.path(table_root, "venn_sample_group_scope.csv"),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+assert(nrow(scope) == 37, "Venn scope audit must retain the 37-group source audit")
+assert(sum(scope$KlaIncludedInVenn) == 33, "Kla Venn must use 33 strict-reference groups")
+assert(sum(scope$ReferenceIncludedInVenn) == 33, "Reference Venn must use 33 groups")
+excluded_keys <- c(
+  "PXD062720__bladder cancer cells treated with EPI",
+  "PXD063047__severe preeclampsia placenta",
+  "PXD064038__MEC and NEC ESCC groups",
+  "PXD075014__AC16 control and hypoxia"
+)
+assert(
+  setequal(scope$SampleGroupKey[!scope$KlaIncludedInVenn], excluded_keys),
+  "Venn scope must exclude exactly the four no-reference Kla groups"
+)
+assert(
+  !any(scope$KlaIncludedInVenn & scope$SampleGroupKey %in% excluded_keys),
+  "Excluded Kla groups entered the Venn scope"
+)
+paired_stats <- read.csv(
+  file.path(
+    project_root,
+    "reanalysis",
+    "results",
+    "tables",
+    "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33.csv"
+  ),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+paired_stats_zh <- read.csv(
+  file.path(
+    project_root,
+    "reanalysis",
+    "results",
+    "tables",
+    "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33_zh.csv"
+  ),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+assert(nrow(paired_stats) == 33, "Strict paired English table must contain 33 groups")
+assert(nrow(paired_stats_zh) == 33, "Strict paired Chinese table must contain 33 groups")
+assert(
+  !any(paste(paired_stats$PXD, paired_stats$SampleGroup, sep = "__") %in% excluded_keys),
+  "Strict paired table contains an excluded Kla group"
+)
+
 archive_root <- file.path(
   project_root,
   "archive",
@@ -199,11 +250,9 @@ for (analysis in c(
     stringsAsFactors = FALSE
   )
   current <- memberships[[analysis]]
-  archived <- archived[match(current$BaseAccession, archived$BaseAccession), ]
   assert(
-    setequal(current$BaseAccession, archived$BaseAccession) &&
-      identical(current$Region, archived$Region),
-    paste("Kla membership or region changed unexpectedly for", analysis)
+    !length(setdiff(current$BaseAccession, archived$BaseAccession)),
+    paste("Current Kla Venn added proteins outside the archived baseline for", analysis)
   )
 }
 
@@ -218,7 +267,7 @@ stats <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
-assert(nrow(stats) == 37, "Four-class Venn input must contain 37 groups")
+assert(nrow(stats) == 37, "Four-class Venn source audit must contain 37 groups")
 assert(
   identical(
     as.integer(table(factor(stats$Category, levels = categories))),

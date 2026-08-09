@@ -2,15 +2,17 @@
 
 ## 分析范围
 
-新版图从现有 40 个候选样本组中纳入 37 个。纳入条件为：
+新版图的来源审计从现有 40 个候选样本组中保留 37 个；当前严格配对比较和四分类
+Venn 使用其中 33 个。纳入严格配对的条件为：
 
 1. Kla 证据文件能提取蛋白 ID。
 2. 对应常规蛋白组能提取蛋白 ID。
-3. 两侧都能通过 ID 映射与 GO repair/damage 注释比较。
+3. 两侧都能通过 ID 映射与 GO repair/damage 注释比较，并且普通全蛋白参照与 Kla
+   材料和处理状态严格匹配。
 
 GO-DDR 的最终交集判定没有使用 GeneSymbol 回退。PXD050470 对应的正常
-CA1 海马参照 PXD043880 原表只有 symbol，因此先使用人源 reviewed UniProt
-映射快照将 symbol 转换为 BaseAccession，再按 ID 与 GO-DDR 表匹配。
+PXD050470 海马使用同研究 Table S4 的 H072/H081/H0187 普通全蛋白强度，按
+UniProt BaseAccession 与 GO-DDR 表匹配；不再使用旧的 CA1 替代参照。
 
 ## ID 处理
 
@@ -33,13 +35,16 @@ CA1 海马参照 PXD043880 原表只有 symbol，因此先使用人源 reviewed 
 
 - PXD037371 的 normal liver、nonmetastatic HCC 和 lung-metastatic HCC：
   TMT 通道无法可靠对应到三个临床组。
+- PXD062720、PXD063047/severe preeclampsia placenta、PXD064038 和 PXD075014：
+  没有完全匹配且可审计的普通全蛋白强度参照，因此不进入当前 DDR 对照和 Venn；
+  原始数据与排除审计仍保留。
 
 ## 海马结果
 
 - Kla PXD050470：853 个 UniProt BaseAccession，其中 29 个属于 GO-DDR，
   占 3.40%。
-- 正常 CA1 参照 PXD043880：2,105 个映射后的 reviewed UniProt
-  BaseAccession，其中 83 个属于 GO-DDR，占 3.94%。
+- 同研究普通全蛋白参照 PXD050470：6,082 个 UniProt BaseAccession，其中 219 个
+  属于 GO-DDR，占 3.60%。
 - 两侧最终均按 BaseAccession 与去除 `NOT` 注释后的人源 GO-DDR 表匹配。
 
 ## 输出
@@ -48,18 +53,24 @@ CA1 海马参照 PXD043880 原表只有 symbol，因此先使用人源 reviewed 
   `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction.png`
 - 独立命名图：
   `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_accession_only.png`
-- 英文统计表：
+- 37组来源审计统计表：
   `reanalysis/results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only.csv`
-- 中文统计表：
+- 37组来源审计中文表：
   `reanalysis/results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_zh.csv`
+- 33组严格配对英文表：
+  `reanalysis/results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33.csv`
+- 33组严格配对中文表：
+  `reanalysis/results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33_zh.csv`
 - 纳入和排除审计：
   `reanalysis/results/tables/cell_type_kla_vs_reference_ddr_accession_only_audit.csv`
 - Kla 蛋白 ID 明细：
   `reanalysis/intermediate/expanded_ddr_by_accession/kla_proteins_by_sample_group.csv`
 - 常规蛋白组 ID 与映射明细：
   `reanalysis/intermediate/expanded_ddr_by_accession/reference_proteins_by_sample_group.csv`
-- 海马 symbol 到 reviewed UniProt 的映射审计：
-  `reanalysis/results/tables/PXD043880_hippocampus_symbol_to_reviewed_uniprot_mapping_audit.csv`
+- 四分类 Venn 样本范围审计：
+  `reanalysis/results/tables/four_class_venn/venn_sample_group_scope.csv`
+- 四分类 Venn 集合、区域和 membership 表：
+  `reanalysis/results/tables/four_class_venn/`
 
 ## 运行命令
 

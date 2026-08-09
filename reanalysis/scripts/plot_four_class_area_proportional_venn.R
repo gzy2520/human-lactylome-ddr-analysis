@@ -340,6 +340,11 @@ kla <- read_csv(kla_path, show_col_types = FALSE) |>
     !is.na(BaseAccession),
     nzchar(BaseAccession)
   ) |>
+  semi_join(
+    paired_stats |>
+      select(SampleGroupKey),
+    by = "SampleGroupKey"
+  ) |>
   distinct(PXD, SampleGroup, Category, BaseAccession)
 
 reference <- read_csv(reference_path, show_col_types = FALSE) |>
@@ -361,12 +366,64 @@ if (
   length(reference_group_keys) != 33 ||
     length(setdiff(reference_group_keys, expected_reference_group_keys)) ||
     length(setdiff(expected_reference_group_keys, reference_group_keys))
-) {
+  ) {
   stop(
     "Reference Venn membership does not match the 33 exact quantitative ",
     "reference groups"
   )
 }
+venn_sample_scope <- stats |>
+  transmute(
+    PXD,
+    SampleGroup,
+    SampleGroupKey,
+    Category,
+    KlaIncludedInVenn = SampleGroupKey %in% paired_stats$SampleGroupKey,
+    ReferenceIncludedInVenn = SampleGroupKey %in% expected_reference_group_keys,
+    ExclusionReason = ifelse(
+      KlaIncludedInVenn,
+      "",
+      "没有完全匹配且可审计的普通全蛋白参照；不进入当前Kla/参照Venn"
+    )
+  )
+write_csv(
+  venn_sample_scope,
+  file.path(table_root, "venn_sample_group_scope.csv")
+)
+write_csv(
+  paired_stats |>
+    select(-SampleGroupKey),
+  file.path(
+    project_root,
+    "reanalysis",
+    "results",
+    "tables",
+    "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33.csv"
+  )
+)
+paired_stats_zh <- read_csv(
+  file.path(
+    project_root,
+    "reanalysis",
+    "results",
+    "tables",
+    "cell_type_kla_vs_reference_ddr_statistics_accession_only_zh.csv"
+  ),
+  show_col_types = FALSE
+) |>
+  mutate(SampleGroupKey = paste(`乳酸化PXD`, `样本组`, sep = "__")) |>
+  semi_join(paired_stats |> select(SampleGroupKey), by = "SampleGroupKey") |>
+  select(-SampleGroupKey)
+write_csv(
+  paired_stats_zh,
+  file.path(
+    project_root,
+    "reanalysis",
+    "results",
+    "tables",
+    "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33_zh.csv"
+  )
+)
 
 make_sets <- function(data, ddr_only = FALSE) {
   if (ddr_only) data <- data |> filter(BaseAccession %in% go_ddr_ids)

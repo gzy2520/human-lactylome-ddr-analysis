@@ -6,9 +6,11 @@
 PEAKS 修饰肽段 `Area`、Spectronaut `PTM.Quantity`/`Precursor.Quantity`、
 Proteome Discoverer 乳酸化修饰肽 normalized abundance，以及作者补充表中的位点强度。
 
-40 个候选样本组中，37 个可以把定量值可靠关联到 Kla 蛋白或位点；最终热图范围固定为这
-37 个 `定量可用=TRUE` 的 PXD+样本组。
-PXD037371 的三个组织组因无法可靠拆分 TMT 通道而从图中排除，但仍保留原始文件和审计记录。
+40 个候选样本组中，37 个可以把定量值可靠关联到 Kla 蛋白或位点；其中 4 个没有完全匹配且
+可审计的普通全蛋白强度参照，因此不进入配对 Kla 热图、普通全蛋白热图或后续对照比较。
+最终配对热图范围为 33 个 PXD+样本组，并按普通全蛋白热图的行、列顺序排列。
+PXD037371 的三个组织组因无法可靠拆分 TMT 通道而从配对图中排除；四个无参照组和这三个
+无定量组均保留原始文件及审计记录，不从磁盘删除。
 
 调控蛋白身份统一使用
 `reanalysis/config/lactylation_regulator_uniprot_mapping.csv` 中的人源
@@ -95,8 +97,8 @@ BaseAccession；GeneSymbol 只用于显示，不能作为命中回退。
 会把整组百分位错误地压成同一个数。当前版本已改为逐组 `if (...) ... else ...`，
 并在自动测试中检查同一样本内的百分位不能全部塌缩为一个值。
 
-最终37个乳酸化定量样本组中，33组具有材料身份严格匹配且可解析的普通全蛋白强度；
-另外4组保留在排除审计中，不进入普通全蛋白热图。
+37个乳酸化定量样本组中，33组具有材料身份严格匹配且可解析的普通全蛋白强度；
+另外4组保留在排除审计中，不进入配对热图、普通全蛋白热图或DDR对照比较。
 此前有10行整行纯白，原因是PXD010154健康组织参照使用Ensembl protein ID，
 旧脚本没有执行Ensembl到UniProt转换，并非这些组织没有普通蛋白。当前版本已补入该映射，
 并输出 `results/tables/kla_regulator_whole_proteome_ensembl_mapping_audit.csv`。
@@ -163,6 +165,16 @@ MaxQuant 搜索时使用，不是当前计数和热图的必要输入。
 
 - PXD037371 三个肝组织组：位点表包含 TMT reporter intensity，但缺少临床组与通道的可靠映射，
   因此不能拆分到 normal liver、nonmetastatic HCC 和 lung-metastatic HCC。
+- PXD062720 / bladder cancer cells treated with EPI：当前 Kla 结果不能提供与该组严格匹配的
+  普通全蛋白强度参照。
+- PXD063047 / severe preeclampsia placenta：没有同时满足该具体胎盘状态和逐蛋白强度的严格参照；
+  同一 PXD 的 normal pregnancy placenta 仍保留。
+- PXD064038 / MEC and NEC ESCC groups：当前候选文件未提供可审计的逐蛋白绝对强度。
+- PXD075014 / AC16 control and hypoxia：现有候选参照与该研究的处理状态不严格匹配。
+
+四个有 Kla 定量但无严格普通全蛋白参照的组，在
+`results/tables/kla_regulator_intensity_availability_audit.csv` 中标记为
+`严格配对分析纳入=FALSE`，并在 `kla_regulator_intensity_plot_exclusions.csv` 集中列出。
 
 ## 输出
 
@@ -177,6 +189,9 @@ MaxQuant 搜索时使用，不是当前计数和热图的必要输入。
 - `results/tables/kla_regulator_intensity_pure_white_audit.csv`
 - `results/tables/kla_regulator_intensity_sample_level_long.csv`
 - `results/tables/kla_regulator_normalized_intensity_long.csv`
+- `results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33.csv`
+- `results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33_zh.csv`
+- `results/tables/four_class_venn/venn_sample_group_scope.csv`
 - `results/tables/kla_regulator_within_pxd_zscore_long.csv`
 - `results/tables/kla_regulator_whole_proteome_intensity_availability_audit.csv`
 - `results/tables/kla_regulator_whole_proteome_normalized_long.csv`

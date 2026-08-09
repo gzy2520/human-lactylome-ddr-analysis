@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+suppressPackageStartupMessages(library(dplyr))
+
 args <- commandArgs(trailingOnly = TRUE)
 project_root <- if (length(args) >= 1) normalizePath(args[[1]]) else normalizePath(".")
 table_dir <- file.path(project_root, "reanalysis", "results", "tables")
@@ -13,6 +15,11 @@ required <- c(
   file.path(table_dir, "kla_regulator_intensity_plot_exclusions.csv"),
   file.path(table_dir, "kla_regulator_intensity_id_mapping_audit.csv"),
   file.path(table_dir, "kla_regulator_intensity_pure_white_audit.csv"),
+  file.path(table_dir, "kla_regulator_heatmap_axis_order.csv"),
+  file.path(
+    table_dir,
+    "kla_regulator_whole_proteome_heatmap_display_long.csv"
+  ),
   file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap.png"),
   file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap.pdf"),
   file.path(figure_dir, "kla_regulator_within_pxd_zscore_heatmaps.pdf")
@@ -25,15 +32,44 @@ sample_level <- read.csv(required[[2]], check.names = FALSE, stringsAsFactors = 
 zscore <- read.csv(required[[4]], check.names = FALSE, stringsAsFactors = FALSE)
 id_audit <- read.csv(required[[6]], check.names = FALSE, stringsAsFactors = FALSE)
 pure_white_audit <- read.csv(required[[7]], check.names = FALSE, stringsAsFactors = FALSE)
+axis_audit <- read.csv(required[[8]], check.names = FALSE, stringsAsFactors = FALSE)
+whole_display <- read.csv(
+  required[[9]],
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
 
 stopifnot(nrow(audit) == 40)
 stopifnot(sum(audit$定量可用) == 37)
+stopifnot("严格配对分析纳入" %in% names(audit))
+stopifnot("严格配对排除原因" %in% names(audit))
+stopifnot(sum(audit$严格配对分析纳入) == 33)
+stopifnot(sum(audit$定量可用 & !audit$严格配对分析纳入) == 4)
+stopifnot(nrow(axis_audit) == 33)
+stopifnot(all(axis_audit$QuantificationAvailable))
+stopifnot(all(!is.na(axis_audit$WholeProteomeDisplayRowOrder)))
 stopifnot(audit$定量可用[audit$PXD == "PXD050470"])
 stopifnot(audit$定量可用[audit$PXD == "PXD028737"])
 stopifnot(audit$定量可用[audit$PXD == "PXD073311"])
 stopifnot(audit$定量可用[audit$PXD == "PXD075014"])
 stopifnot(all(audit$PXD[!audit$定量可用] == "PXD037371"))
-stopifnot(nrow(normalized) == 40 * nrow(unique(normalized[c("Role", "GeneSymbol")])))
+stopifnot(nrow(normalized) == 33 * nrow(unique(normalized[c("Role", "GeneSymbol")])))
+sample_keys <- unique(sample_level[c("PXD", "SampleGroup", "QuantSample")])
+regulator_keys <- unique(
+  sample_level[c("GeneSymbol", "RegulatorBaseAccession")]
+)
+stopifnot(nrow(sample_level) == nrow(sample_keys) * nrow(regulator_keys))
+excluded_keys <- c(
+  "PXD062720::bladder cancer cells treated with EPI",
+  "PXD063047::severe preeclampsia placenta",
+  "PXD064038::MEC and NEC ESCC groups",
+  "PXD075014::AC16 control and hypoxia"
+)
+normalized_keys <- paste(normalized$PXD, normalized$SampleGroup, sep = "::")
+axis_keys <- paste(axis_audit$PXD, axis_audit$SampleGroup, sep = "::")
+stopifnot(length(intersect(normalized_keys, excluded_keys)) == 0)
+stopifnot(length(intersect(axis_keys, excluded_keys)) == 0)
+stopifnot("PXD063047::normal pregnancy placenta" %in% axis_keys)
 stopifnot(all(
   normalized$RelativeKlaPercentile[
     !is.na(normalized$RelativeKlaPercentile)
@@ -47,6 +83,26 @@ stopifnot(all(sample_level$WithinSamplePercentile >= 0))
 stopifnot(all(sample_level$WithinSamplePercentile <= 100))
 stopifnot("RegulatorBaseAccession" %in% names(sample_level))
 stopifnot("IdentityMatchMode" %in% names(sample_level))
+row_order_check <- normalized |>
+  group_by(PXD, SampleGroup) |>
+  summarise(
+    ComparisonRowOrderCount = n_distinct(ComparisonRowOrder),
+    .groups = "drop"
+  )
+stopifnot(all(row_order_check$ComparisonRowOrderCount == 1L))
+stopifnot("RegulatorDisplayName" %in% names(normalized))
+stopifnot(all(
+  normalized$RegulatorDisplayName[normalized$RegulatorBaseAccession == "Q92830"] ==
+    "GCN5 (KAT2A)"
+))
+role_levels <- c("Writer", "Eraser", "Writer-Eraser", "Reader")
+kla_columns <- normalized |>
+  arrange(match(Role, role_levels), RoleEntryOrder) |>
+  distinct(Role, RegulatorDisplayName, RoleEntryOrder)
+whole_columns <- whole_display |>
+  arrange(match(Role, role_levels), RoleEntryOrder) |>
+  distinct(Role, RegulatorDisplayName, RoleEntryOrder)
+stopifnot(identical(kla_columns, whole_columns))
 stopifnot(all(
   sample_level$IdentityMatchMode[sample_level$Detected] == "BaseAccession"
 ))

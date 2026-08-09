@@ -233,3 +233,22 @@ PYTHONPATH=reanalysis/scripts /Users/gzy2520/miniconda3/bin/python3 \
 ```
 
 结果：8个R测试和19个Python测试全部通过。
+
+四个无严格普通全蛋白参照的Kla组于 2026-08-09 从配对Venn和对应比较集合中排除：
+
+```bash
+Rscript reanalysis/scripts/analyze_kla_regulator_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/plot_four_class_area_proportional_venn.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/tests/test_kla_regulator_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/tests/test_four_class_area_proportional_venn.R \
+  /Users/gzy2520/Desktop/Research/kla
+```
+
+本次保留 37 组来源审计，但严格配对及 Venn 使用 33 组；排除的具体组为
+PXD062720、PXD063047/severe preeclampsia placenta、PXD064038 和 PXD075014。
+PXD063047/normal pregnancy placenta 不在排除列表中。Venn 四类数量改为
+9、2、9、13；`venn_sample_group_scope.csv` 保存了 37 组审计范围与 33 组实际纳入范围。
+Venn 集合、区域表、membership 表和 `four_class_venn_tables.xlsx` 已重新生成。

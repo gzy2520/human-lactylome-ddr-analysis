@@ -193,6 +193,18 @@ async function buildDdrWorkbook() {
   const statsZh = await readCsv(
     "reanalysis/results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_zh.csv",
   );
+  const pairedStats = [
+    stats[0],
+    ...stats.slice(1).filter(
+      (row) => row[stats[0].indexOf("PairedAnalysisIncluded")] === "TRUE",
+    ),
+  ];
+  const pairedStatsZh = [
+    statsZh[0],
+    ...statsZh.slice(1).filter(
+      (row) => row[statsZh[0].indexOf("纳入严格配对分析")] === "TRUE",
+    ),
+  ];
   const audit = await readCsv(
     "reanalysis/results/tables/cell_type_kla_vs_reference_ddr_accession_only_audit.csv",
   );
@@ -203,9 +215,9 @@ async function buildDdrWorkbook() {
     "reanalysis/results/tables/cell_type_kla_vs_reference_ddr_plot_rows.csv",
   );
   const workbook = Workbook.create();
-  addReadme(workbook, "37组 Kla 与33组严格普通全蛋白参照 DDR 占比统计", [
+  addReadme(workbook, "33组严格配对 Kla 与普通全蛋白 DDR 占比统计", [
     "Kla最终范围为定量可用的37个 PXD+样本组；PXD037371 三组已排除。",
-    "其中33组具有生物材料匹配且可审计的逐蛋白强度参照，进入柱状图和普通全蛋白分析；其余4组只保留Kla结果和排除原因。",
+    "当前严格配对表和柱状图只使用33组；PXD062720、PXD063047重度子痫前期胎盘、PXD064038和PXD075014只保留在来源审计中。",
     "Kla 与普通全蛋白的 DDR 交集均按去除 isoform 后缀的 UniProt BaseAccession 计算；GeneSymbol 回退数为0。",
     "HUVEC 普通全蛋白参照为 PXD073311 同研究 A0h_1/A0h_2/A0h_3 PG矩阵；A6h不进入基线。",
     "两个 HK-2 组均使用 PXD072220 的 amostra1/amostra3/amostra4 未处理对照。",
@@ -232,6 +244,12 @@ async function buildDdrWorkbook() {
   zhSheet.sheet.getRange(`I2:I${zhLastRow}`).format.numberFormat = "0.0%";
   zhSheet.sheet.getRange(`N2:O${zhLastRow}`).format.numberFormat = "0.0%";
 
+  addDataSheet(workbook, "严格配对33_中文", pairedStatsZh, {
+    freezeColumns: 2,
+    maxWidth: 42,
+    headerFill: "#6F3D2E",
+  });
+
   const enSheet = addDataSheet(workbook, "Statistics_EN", stats, {
     freezeColumns: 2,
     maxWidth: 42,
@@ -252,6 +270,11 @@ async function buildDdrWorkbook() {
   );
   enSheet.sheet.getRange(`H2:H${enLastRow}`).format.numberFormat = "0.0%";
   enSheet.sheet.getRange(`M2:N${enLastRow}`).format.numberFormat = "0.0%";
+  addDataSheet(workbook, "Strict_paired33_EN", pairedStats, {
+    freezeColumns: 2,
+    maxWidth: 42,
+    headerFill: "#7A4A35",
+  });
   addDataSheet(workbook, "纳入审计", audit, {
     freezeColumns: 2,
     maxWidth: 38,
@@ -328,10 +351,20 @@ async function buildVennWorkbook() {
   const workbook = Workbook.create();
   addReadme(workbook, "四分类 Kla 与普通全蛋白 Venn/Euler 审计表", [
     "四分类顺序：正常/非肿瘤组织、癌症组织、正常/非肿瘤细胞、癌症细胞。",
-    "Kla样本组数量依次为10、3、10、14，总计37组；普通全蛋白严格参照组数量依次为9、2、9、13，总计33组。",
-    "Kla集合与修复前完全一致；普通全蛋白集合仅使用完全匹配且具有逐蛋白定量强度的33组参照。",
+    "当前Venn严格使用33组有完全匹配普通全蛋白参照的Kla样本组，四类数量依次为9、2、9、13。",
+    "PXD062720、PXD063047重度子痫前期胎盘、PXD064038和PXD075014保留在审计中，但不进入当前Kla或普通全蛋白Venn。",
     "membership表以UniProt BaseAccession为分析键，GeneSymbol和ProteinName仅用于人工审计。",
   ]);
+  addDataSheet(
+    workbook,
+    "Venn样本范围",
+    await readCsv("reanalysis/results/tables/four_class_venn/venn_sample_group_scope.csv"),
+    {
+      freezeColumns: 3,
+      maxWidth: 46,
+      headerFill: "#6F3D2E",
+    },
+  );
   const analyses = [
     ["all_kla_four_class_venn", "Kla全部"],
     ["kla_ddr_four_class_venn", "Kla_DDR"],
@@ -357,7 +390,7 @@ async function buildVennWorkbook() {
   await verifyAndExport(
     workbook,
     path.join(tableRoot, "four_class_venn_tables.xlsx"),
-    "venn37",
+    "venn33",
   );
 }
 
@@ -365,4 +398,4 @@ await fs.mkdir(tableRoot, { recursive: true });
 await buildDdrWorkbook();
 await buildPairingWorkbook();
 await buildVennWorkbook();
-console.log("Built 37-group deliverable workbooks.");
+console.log("Built 33-group strict-pair deliverable workbooks.");

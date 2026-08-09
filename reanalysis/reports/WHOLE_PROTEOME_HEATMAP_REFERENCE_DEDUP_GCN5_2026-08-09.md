@@ -20,6 +20,12 @@ HCT116/Roseburia 共培养使用 PXD066351 的独立普通全蛋白参照，因�
 同一 HCT116 簇中的另一行。两个人成纤维细胞研究同样相邻显示，但因参照文件
 不同而不合并。
 
+材料聚类字段只负责排序，热图行名由该参照关联的全部原始样本组名称生成。
+因此两个人成纤维细胞感染方案分别显示，HCT116/Roseburia 共培养保留完整
+处理名；共享 HK-2 行同时显示 `pretreated HK-2` 和
+`HK-2 control and mannitol`。自动测试逐行验证所有原始样本组名称均可从
+热图标签追溯。
+
 ## GCN5
 
 原 identifier 表中已经存在官方基因名 `KAT2A`，对应 UniProt BaseAccession

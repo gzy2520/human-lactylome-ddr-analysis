@@ -166,6 +166,47 @@ assert(
     sum(heatmap_rows$LinkedKlaStudyCount == 1) == 27,
   "Only HK-2, MCF7, and HCT116 may share a displayed reference row"
 )
+fibroblast_rows <- heatmap_rows[
+  heatmap_rows$MaterialCluster == "human_fibroblasts",
+]
+assert(
+  nrow(fibroblast_rows) == 2 &&
+    setequal(
+      fibroblast_rows$MaterialDisplayName,
+      c(
+        "human fibroblasts mock and HCMV or HSV-1",
+        "human fibroblasts mock and HCMV"
+      )
+    ) &&
+    diff(sort(fibroblast_rows$HeatmapDisplayRowOrder)) == 1,
+  paste(
+    "The two fibroblast studies must remain adjacent while retaining",
+    "their distinct infection labels"
+  )
+)
+display_labels_preserve_sample_groups <- mapply(
+  function(linked_groups, row_label) {
+    sample_groups <- unique(strsplit(
+      linked_groups,
+      ";",
+      fixed = TRUE
+    )[[1]])
+    all(vapply(
+      sample_groups,
+      function(sample_group) grepl(sample_group, row_label, fixed = TRUE),
+      logical(1)
+    ))
+  },
+  heatmap_rows$LinkedKlaSampleGroup,
+  heatmap_rows$RowLabel
+)
+assert(
+  all(display_labels_preserve_sample_groups),
+  paste(
+    "Every original sample/treatment name must remain visible in its",
+    "deduplicated heatmap row label"
+  )
+)
 assert(
   all(audit$WholeProteomeQuantAvailable),
   "Every strict-reference sample group must have whole-proteome quantification"

@@ -1597,6 +1597,9 @@ reference_plot_rows <- paired_statistics |>
   ) |>
   summarise(
     LinkedKlaPXD = paste(unique(PXD), collapse = ";"),
+    LinkedKlaSampleGroup = paste(unique(SampleGroup), collapse = ";"),
+    LinkedKlaLabelZh = paste(unique(SampleLabelZh), collapse = " / "),
+    LinkedKlaLabelEn = paste(unique(SampleLabelEn), collapse = " / "),
     LinkedKlaStudyCount = n(),
     .groups = "drop"
   ) |>
@@ -1618,17 +1621,20 @@ reference_plot_rows <- paired_statistics |>
     ReferenceEvidenceFile,
     ReferenceDisplayKey,
     LinkedKlaPXD,
+    LinkedKlaSampleGroup,
+    LinkedKlaLabelZh,
+    LinkedKlaLabelEn,
     LinkedKlaStudyCount,
     DdrFraction = ReferenceDdrFraction,
     Ddr = ReferenceDdrProteinCount,
     Total = ReferenceProteinCount,
     DisplayLabelZh = paste0(
-      MaterialClusterZh,
+      LinkedKlaLabelZh,
       " · 普通全蛋白 Ref:",
       ReferencePXD
     ),
     DisplayLabelEn = paste0(
-      MaterialClusterEn,
+      LinkedKlaLabelEn,
       " · whole proteome Ref:",
       ReferencePXD
     )
@@ -1653,6 +1659,9 @@ kla_plot_rows <- paired_statistics |>
     ReferenceEvidenceFile,
     ReferenceDisplayKey,
     LinkedKlaPXD = PXD,
+    LinkedKlaSampleGroup = SampleGroup,
+    LinkedKlaLabelZh = SampleLabelZh,
+    LinkedKlaLabelEn = SampleLabelEn,
     LinkedKlaStudyCount = 1L,
     DdrFraction = KlaDdrFraction,
     Ddr = KlaDdrProteinCount,
@@ -1692,6 +1701,9 @@ write.csv(
       ReferenceEvidenceFile,
       ReferenceDisplayKey,
       LinkedKlaPXD,
+      LinkedKlaSampleGroup,
+      LinkedKlaLabelZh,
+      LinkedKlaLabelEn,
       LinkedKlaStudyCount,
       Ddr,
       Total,

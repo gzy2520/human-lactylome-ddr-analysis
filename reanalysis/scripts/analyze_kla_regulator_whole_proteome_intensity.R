@@ -1437,13 +1437,6 @@ display_members <- sample_catalog |>
       grepl("^human fibroblasts", SampleGroup) ~ "human_fibroblasts",
       TRUE ~ paste(PXD, SampleGroup, sep = "__")
     ),
-    MaterialDisplayName = case_when(
-      MaterialCluster == "HK-2" ~ "HK-2",
-      MaterialCluster == "MCF7" ~ "MCF7",
-      MaterialCluster == "HCT116" ~ "HCT116",
-      MaterialCluster == "human_fibroblasts" ~ "human fibroblasts",
-      TRUE ~ SampleGroup
-    ),
     ReferenceDisplayKey = paste(
       MaterialCluster,
       ReferencePXD,
@@ -1472,7 +1465,6 @@ heatmap_rows <- display_members |>
     Category,
     CategoryZh,
     MaterialCluster,
-    MaterialDisplayName,
     ClusterOrder,
     ReferenceOrder,
     ReferenceDisplayKey,
@@ -1497,6 +1489,12 @@ heatmap_rows <- display_members |>
   ) |>
   mutate(
     HeatmapDisplayRowOrder = row_number(),
+    MaterialDisplayName = gsub(
+      ";",
+      " / ",
+      LinkedKlaSampleGroup,
+      fixed = TRUE
+    ),
     RowLabel = paste0(
       MaterialDisplayName,
       " · Ref:", ReferencePXD,

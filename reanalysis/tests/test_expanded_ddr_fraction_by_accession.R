@@ -60,6 +60,26 @@ stopifnot(!any(audit$PXD == "PXD037371"))
 stopifnot(sum(stats$PairedAnalysisIncluded) == 33)
 stopifnot(sum(plot_rows$BarType == "kla") == 33)
 stopifnot(sum(plot_rows$BarType == "reference") == 30)
+stopifnot(all(c(
+  "LinkedKlaSampleGroup",
+  "LinkedKlaLabelZh",
+  "LinkedKlaLabelEn"
+) %in% names(plot_rows)))
+reference_plot_rows <- plot_rows[plot_rows$BarType == "reference", ]
+stopifnot(all(mapply(
+  function(linked_label, display_label) {
+    grepl(linked_label, display_label, fixed = TRUE)
+  },
+  reference_plot_rows$LinkedKlaLabelZh,
+  reference_plot_rows$DisplayLabelZh
+)))
+stopifnot(all(mapply(
+  function(linked_label, display_label) {
+    grepl(linked_label, display_label, fixed = TRUE)
+  },
+  reference_plot_rows$LinkedKlaLabelEn,
+  reference_plot_rows$DisplayLabelEn
+)))
 stopifnot(!anyDuplicated(
   plot_rows$ReferenceDisplayKey[plot_rows$BarType == "reference"]
 ))

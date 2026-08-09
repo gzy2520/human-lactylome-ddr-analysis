@@ -252,3 +252,24 @@ PXD062720、PXD063047/severe preeclampsia placenta、PXD064038 和 PXD075014。
 PXD063047/normal pregnancy placenta 不在排除列表中。Venn 四类数量改为
 9、2、9、13；`venn_sample_group_scope.csv` 保存了 37 组审计范围与 33 组实际纳入范围。
 Venn 集合、区域表、membership 表和 `four_class_venn_tables.xlsx` 已重新生成。
+
+2026-08-09 双语热图、33组显式Venn和交接文档更新：
+
+```bash
+Rscript reanalysis/scripts/analyze_kla_regulator_whole_proteome_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/analyze_kla_regulator_intensity.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/analyze_expanded_ddr_fraction_by_accession.R \
+  /Users/gzy2520/Desktop/Research/kla
+Rscript reanalysis/scripts/plot_four_class_area_proportional_venn.R \
+  /Users/gzy2520/Desktop/Research/kla
+```
+
+Kla 与普通全蛋白热图均输出 `_zh` 和 `_en` PNG/PDF。Kla 热图33行按普通
+全蛋白30行唯一参照轴排列，并显示9/2/9/13四分类分区。四套Venn同时输出
+`_33groups_zh` 和 `_33groups_en`，标题直接注明33组严格配对范围。
+
+当前项目交接Prompt：
+
+`/Users/gzy2520/Desktop/Research/kla/NEW_CHAT_PROJECT_PROMPT.md`

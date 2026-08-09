@@ -611,73 +611,92 @@ draw_area_proportional <- function(
     }
     title <- if (language == "zh") title_zh else title_en
     font_family <- if (language == "zh") "PingFang SC" else "Arial"
-    subtitle <- if (language == "zh") {
-      "四个集合均按 UniProt BaseAccession 去重；椭圆面积按集合数量比例拟合"
+    scope_title <- if (language == "zh") {
+      "严格配对33组（9/2/9/13；排除4组）"
     } else {
-      "All sets are deduplicated by UniProt BaseAccession; ellipse areas are fitted proportional to set sizes"
+      "33 strict pairs (9/2/9/13; 4 unpaired groups excluded)"
     }
-    output_stem <- file.path(
+    visible_title <- paste(title, scope_title, sep = " | ")
+    subtitle <- if (language == "zh") {
+      paste0(
+        "严格配对范围：33组（正常组织9、癌症组织2、正常细胞9、癌症细胞13）；",
+        "4组无严格参照已排除\n",
+        "按 UniProt BaseAccession 去重；椭圆面积按集合数量比例拟合"
+      )
+    } else {
+      paste0(
+        "Strict paired scope: 33 groups (normal tissue 9, cancer tissue 2, ",
+        "normal cells 9, cancer cells 13); 4 groups without exact references excluded\n",
+        "Deduplicated by UniProt BaseAccession; ellipse areas are fitted proportional to set sizes"
+      )
+    }
+    output_stems <- file.path(
       figure_root,
-      paste0(analysis_name, "_", language)
+      c(
+        paste0(analysis_name, "_", language),
+        paste0(analysis_name, "_33groups_", language)
+      )
     )
-    png(
-      paste0(output_stem, ".png"),
-      width = 2400,
-      height = 2100,
-      res = 300,
-      type = "cairo"
-    )
-    par(family = font_family, mar = c(1, 1, 4, 1))
-    diagram <- plot(
-      fit,
-      labels = FALSE,
-      legend = list(
-        labels = labels,
-        side = "bottom",
-        nrow = 1,
-        ncol = 4,
-        byrow = TRUE,
-        cex = 0.9
-      ),
-      quantities = list(cex = 0.9),
-      fills = list(fill = colors, alpha = 0.52),
-      edges = list(col = "#4B4B4B", lwd = 1.2),
-      main = list(label = title, cex = 1.15),
-      sub = subtitle,
-      sub.cex = 0.85,
-      quantities.cex = 1.0
-    )
-    print(diagram)
-    dev.off()
+    for (output_stem in output_stems) {
+      png(
+        paste0(output_stem, ".png"),
+        width = 2400,
+        height = 2300,
+        res = 300,
+        type = "cairo"
+      )
+      par(family = font_family, mar = c(1, 1, 8, 1))
+      diagram <- plot(
+        fit,
+        labels = FALSE,
+        legend = list(
+          labels = labels,
+          side = "bottom",
+          nrow = 1,
+          ncol = 4,
+          byrow = TRUE,
+          cex = 0.9
+        ),
+        quantities = list(cex = 0.9),
+        fills = list(fill = colors, alpha = 0.52),
+        edges = list(col = "#4B4B4B", lwd = 1.2),
+        main = list(label = visible_title, cex = 0.85),
+        sub = subtitle,
+        sub.cex = 0.78,
+        quantities.cex = 1.0
+      )
+      print(diagram)
+      dev.off()
 
-    cairo_pdf(
-      paste0(output_stem, ".pdf"),
-      width = 8.5,
-      height = 7.5,
-      family = font_family
-    )
-    par(family = font_family, mar = c(1, 1, 4, 1))
-    diagram <- plot(
-      fit,
-      labels = FALSE,
-      legend = list(
-        labels = labels,
-        side = "bottom",
-        nrow = 1,
-        ncol = 4,
-        byrow = TRUE,
-        cex = 0.9
-      ),
-      quantities = list(cex = 0.9),
-      fills = list(fill = colors, alpha = 0.52),
-      edges = list(col = "#4B4B4B", lwd = 1.2),
-      main = list(label = title, cex = 1.15),
-      sub = subtitle,
-      sub.cex = 0.85,
-      quantities.cex = 1.0
-    )
-    print(diagram)
-    dev.off()
+      cairo_pdf(
+        paste0(output_stem, ".pdf"),
+        width = 8.5,
+        height = 8.0,
+        family = font_family
+      )
+      par(family = font_family, mar = c(1, 1, 8, 1))
+      diagram <- plot(
+        fit,
+        labels = FALSE,
+        legend = list(
+          labels = labels,
+          side = "bottom",
+          nrow = 1,
+          ncol = 4,
+          byrow = TRUE,
+          cex = 0.9
+        ),
+        quantities = list(cex = 0.9),
+        fills = list(fill = colors, alpha = 0.52),
+        edges = list(col = "#4B4B4B", lwd = 1.2),
+        main = list(label = visible_title, cex = 0.85),
+        sub = subtitle,
+        sub.cex = 0.78,
+        quantities.cex = 1.0
+      )
+      print(diagram)
+      dev.off()
+    }
     invisible(NULL)
   }
   render("zh")

@@ -155,12 +155,14 @@ for (analysis in analyses) {
 
   for (language in c("zh", "en")) {
     for (extension in c("png", "pdf")) {
-      path <- file.path(
-        figure_root,
-        paste0(analysis, "_", language, ".", extension)
-      )
-      assert(file.exists(path), paste("Missing figure", path))
-      assert(file.info(path)$size > 10000, paste("Figure is unexpectedly small", path))
+      for (stem in c(
+        paste0(analysis, "_", language),
+        paste0(analysis, "_33groups_", language)
+      )) {
+        path <- file.path(figure_root, paste0(stem, ".", extension))
+        assert(file.exists(path), paste("Missing figure", path))
+        assert(file.info(path)$size > 10000, paste("Figure is unexpectedly small", path))
+      }
     }
   }
 }

@@ -96,8 +96,32 @@ required_figures <- c(
   file.path(
     figure_dir,
     "kla_regulator_whole_proteome_relative_intensity_heatmap.pdf"
+  ),
+  file.path(
+    figure_dir,
+    "kla_regulator_whole_proteome_relative_intensity_heatmap_zh.png"
+  ),
+  file.path(
+    figure_dir,
+    "kla_regulator_whole_proteome_relative_intensity_heatmap_zh.pdf"
+  ),
+  file.path(
+    figure_dir,
+    "kla_regulator_whole_proteome_relative_intensity_heatmap_en.png"
+  ),
+  file.path(
+    figure_dir,
+    "kla_regulator_whole_proteome_relative_intensity_heatmap_en.pdf"
   )
 )
+assert(all(file.exists(required_figures)), "Missing bilingual whole-proteome heatmap files")
+assert(all(file.info(required_figures)$size > 10000), "Whole-proteome heatmap file is unexpectedly small")
+assert(nrow(heatmap_rows) == 30, "Whole-proteome heatmap must contain 30 unique reference rows")
+assert(
+  identical(heatmap_rows$HeatmapDisplayRowOrder, seq_len(30)),
+  "Whole-proteome row order is invalid"
+)
+assert(all(c("CategoryEn", "RowLabelZh", "RowLabelEn") %in% names(heatmap_rows)))
 assert(all(file.exists(required_figures)), "Whole-proteome heatmap files are missing")
 assert(all(file.info(required_figures)$size > 10000), "Whole-proteome figures are unexpectedly small")
 assert(file.exists(script_path), "Whole-proteome analysis script is missing")

@@ -302,7 +302,11 @@ for (name in c(
   "cell_type_kla_vs_reference_ddr_fraction_accession_only_en.png",
   "cell_type_kla_vs_reference_ddr_fraction_accession_only_en.pdf",
   "cell_type_kla_vs_reference_ddr_fraction_en.png",
-  "cell_type_kla_vs_reference_ddr_fraction_en.pdf"
+  "cell_type_kla_vs_reference_ddr_fraction_en.pdf",
+  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.png",
+  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.pdf",
+  "cell_type_kla_vs_reference_ddr_fraction_zh.png",
+  "cell_type_kla_vs_reference_ddr_fraction_zh.pdf"
 )) {
   path <- file.path(figure_dir, name)
   stopifnot(file.exists(path))

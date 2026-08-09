@@ -16,12 +16,17 @@ required <- c(
   file.path(table_dir, "kla_regulator_intensity_id_mapping_audit.csv"),
   file.path(table_dir, "kla_regulator_intensity_pure_white_audit.csv"),
   file.path(table_dir, "kla_regulator_heatmap_axis_order.csv"),
+  file.path(table_dir, "kla_vs_whole_proteome_heatmap_axis_alignment.csv"),
   file.path(
     table_dir,
     "kla_regulator_whole_proteome_heatmap_display_long.csv"
   ),
   file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap.png"),
   file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap.pdf"),
+  file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap_zh.png"),
+  file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap_zh.pdf"),
+  file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap_en.png"),
+  file.path(figure_dir, "kla_regulator_cross_study_relative_intensity_heatmap_en.pdf"),
   file.path(figure_dir, "kla_regulator_within_pxd_zscore_heatmaps.pdf")
 )
 stopifnot(all(file.exists(required)))
@@ -33,8 +38,9 @@ zscore <- read.csv(required[[4]], check.names = FALSE, stringsAsFactors = FALSE)
 id_audit <- read.csv(required[[6]], check.names = FALSE, stringsAsFactors = FALSE)
 pure_white_audit <- read.csv(required[[7]], check.names = FALSE, stringsAsFactors = FALSE)
 axis_audit <- read.csv(required[[8]], check.names = FALSE, stringsAsFactors = FALSE)
+axis_alignment <- read.csv(required[[9]], check.names = FALSE, stringsAsFactors = FALSE)
 whole_display <- read.csv(
-  required[[9]],
+  required[[10]],
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
@@ -46,8 +52,22 @@ stopifnot("严格配对排除原因" %in% names(audit))
 stopifnot(sum(audit$严格配对分析纳入) == 33)
 stopifnot(sum(audit$定量可用 & !audit$严格配对分析纳入) == 4)
 stopifnot(nrow(axis_audit) == 33)
+stopifnot(nrow(axis_alignment) == 33)
 stopifnot(all(axis_audit$QuantificationAvailable))
 stopifnot(all(!is.na(axis_audit$WholeProteomeDisplayRowOrder)))
+stopifnot(identical(axis_audit$KlaDisplayRowOrder, seq_len(33)))
+stopifnot(all(axis_audit$OrderAlignedToWholeProteome))
+stopifnot(identical(
+  as.integer(table(factor(
+    axis_audit$Category,
+    levels = c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells")
+  ))),
+  c(9L, 2L, 9L, 13L)
+))
+stopifnot(all(c(
+  "CategoryEn", "RowLabelZh", "RowLabelEn",
+  "WholeProteomeReferencePXD", "WholeProteomeRowLabel"
+) %in% names(axis_audit)))
 stopifnot(audit$定量可用[audit$PXD == "PXD050470"])
 stopifnot(audit$定量可用[audit$PXD == "PXD028737"])
 stopifnot(audit$定量可用[audit$PXD == "PXD073311"])

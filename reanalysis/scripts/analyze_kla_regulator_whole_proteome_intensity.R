@@ -185,6 +185,12 @@ category_labels_zh <- c(
   normal_cells = "正常/非肿瘤细胞",
   cancer_cells = "癌症细胞"
 )
+category_labels_en <- c(
+  normal_tissue = "Normal/non-tumor tissues",
+  cancer_tissue = "Cancer tissues",
+  normal_cells = "Normal/non-tumor cells",
+  cancer_cells = "Cancer cells"
+)
 four_class <- read.csv(
   four_class_path,
   check.names = FALSE,
@@ -218,7 +224,8 @@ sample_catalog_all <- detection |>
   left_join(four_class, by = c("PXD", "SampleGroup")) |>
   mutate(
     CategoryOrder = match(Category, category_order),
-    CategoryZh = unname(category_labels_zh[Category])
+    CategoryZh = unname(category_labels_zh[Category]),
+    CategoryEn = unname(category_labels_en[Category])
   )
 if (nrow(sample_catalog_all) != 37) {
   stop("Kla-derived candidate scope must contain exactly 37 sample groups")
@@ -1414,8 +1421,8 @@ quant_audit <- quant_audit |>
 
 display_members <- sample_catalog |>
   select(
-    PXD, SampleGroup, SampleGroupID, Category, CategoryZh,
-    RowOrder, ReferencePXD
+    PXD, SampleGroup, SampleGroupID, Category, CategoryZh, CategoryEn,
+    KlaRowLabel, RowOrder, ReferencePXD
   ) |>
   left_join(
     quant_audit |>
@@ -1430,6 +1437,7 @@ display_members <- sample_catalog |>
     by = c("PXD", "SampleGroup")
   ) |>
   mutate(
+    KlaMaterialLabelZh = sub(" · PXD[0-9]+$", "", KlaRowLabel),
     MaterialCluster = case_when(
       grepl("HK-2", SampleGroup, fixed = TRUE) ~ "HK-2",
       SampleGroup == "MCF7" ~ "MCF7",
@@ -1464,6 +1472,7 @@ heatmap_rows <- display_members |>
   group_by(
     Category,
     CategoryZh,
+    CategoryEn,
     MaterialCluster,
     ClusterOrder,
     ReferenceOrder,
@@ -1479,6 +1488,10 @@ heatmap_rows <- display_members |>
     RepresentativeSampleGroup = first(SampleGroup),
     LinkedKlaPXD = paste(unique(PXD), collapse = ";"),
     LinkedKlaSampleGroup = paste(unique(SampleGroup), collapse = ";"),
+    LinkedKlaMaterialLabelZh = paste(
+      unique(KlaMaterialLabelZh),
+      collapse = ";"
+    ),
     LinkedKlaStudyCount = n(),
     .groups = "drop"
   ) |>
@@ -1495,11 +1508,23 @@ heatmap_rows <- display_members |>
       LinkedKlaSampleGroup,
       fixed = TRUE
     ),
-    RowLabel = paste0(
+    MaterialDisplayNameZh = gsub(
+      ";",
+      " / ",
+      LinkedKlaMaterialLabelZh,
+      fixed = TRUE
+    ),
+    RowLabelEn = paste0(
       MaterialDisplayName,
       " · Ref:", ReferencePXD,
       " · Kla:", gsub(";", "/", LinkedKlaPXD, fixed = TRUE)
-    )
+    ),
+    RowLabelZh = paste0(
+      MaterialDisplayNameZh,
+      " · Ref:", ReferencePXD,
+      " · Kla:", gsub(";", "/", LinkedKlaPXD, fixed = TRUE)
+    ),
+    RowLabel = RowLabelEn
   )
 
 if (nrow(heatmap_rows) != 30) {
@@ -1696,102 +1721,160 @@ write.csv(
   na = ""
 )
 
-plot_data <- plot_data_raw |>
+role_levels <- c("Writer", "Eraser", "Writer-Eraser", "Reader")
+role_labels_zh <- c(
+  Writer = "写入因子",
+  Eraser = "去除因子",
+  `Writer-Eraser` = "写入/去除因子",
+  Reader = "读取因子"
+)
+role_labels_en <- c(
+  Writer = "Writer",
+  Eraser = "Eraser",
+  `Writer-Eraser` = "Writer-Eraser",
+  Reader = "Reader"
+)
+plot_data_base <- plot_data_raw |>
   mutate(
     Role = factor(
       Role,
-      levels = c("Writer", "Eraser", "Writer-Eraser", "Reader")
-    ),
-    CategoryZh = factor(
-      CategoryZh,
-      levels = unname(category_labels_zh[category_order])
+      levels = role_levels
     ),
     RegulatorDisplayName = factor(
       RegulatorDisplayName,
       levels = unique(
         regulators$RegulatorDisplayName[order(regulators$RoleEntryOrder)]
       )
-    ),
-    RowLabel = factor(RowLabel, levels = rev(heatmap_rows$RowLabel))
+    )
   )
 
 plot_font <- "Arial Unicode MS"
-main_plot <- ggplot(
-  plot_data,
-  aes(RegulatorDisplayName, RowLabel, fill = WholeProteomeRelativePercentile)
-) +
-  geom_tile(color = "white", linewidth = 0.22) +
-  geom_text(
-    data = plot_data |> filter(!QuantificationAvailable),
-    aes(label = "?"),
-    color = "#4D4D4D",
-    size = 2.3,
-    fontface = "bold",
-    family = plot_font
-  ) +
-  facet_grid(
-    CategoryZh ~ Role,
-    scales = "free",
-    space = "free"
-  ) +
-  scale_fill_gradientn(
-    colours = c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B"),
-    values = scales::rescale(c(0, 20, 50, 80, 100)),
-    limits = c(0, 100),
-    na.value = "#D9D9D9",
-    name = "全蛋白组信号\n百分位"
-  ) +
-  labs(
-    title = "乳酸化调控蛋白在全蛋白组中的相对信号",
-    subtitle = paste(
-      "仅纳入生物材料匹配且具有逐蛋白强度的普通全蛋白定量文件，不使用Kla富集信号；",
-      "33条严格配对显示为30个唯一参照行，并按正常组织、癌症组织、正常细胞、癌症细胞分组；",
-      "颜色由白色向暖色递增。"
-    ),
-    x = NULL,
-    y = NULL,
-    caption = paste0(
-      "身份按UniProt BaseAccession匹配；reviewed状态不参与纳入或排除；",
-      "全蛋白组百分位只在各自样本内计算，不是Log FC。"
+make_main_plot <- function(language = c("zh", "en")) {
+  language <- match.arg(language)
+  is_zh <- language == "zh"
+  category_labels <- if (is_zh) category_labels_zh else category_labels_en
+  role_labels <- if (is_zh) role_labels_zh else role_labels_en
+  row_levels <- if (is_zh) {
+    rev(heatmap_rows$RowLabelZh)
+  } else {
+    rev(heatmap_rows$RowLabelEn)
+  }
+  data <- plot_data_base |>
+    mutate(
+      CategoryLabel = factor(
+        unname(category_labels[Category]),
+        levels = unname(category_labels[category_order])
+      ),
+      RoleLabel = factor(
+        unname(role_labels[as.character(Role)]),
+        levels = unname(role_labels[role_levels])
+      ),
+      PlotRowLabel = factor(
+        if (is_zh) RowLabelZh else RowLabelEn,
+        levels = row_levels
+      )
+    )
+
+  ggplot(
+    data,
+    aes(
+      RegulatorDisplayName,
+      PlotRowLabel,
+      fill = WholeProteomeRelativePercentile
     )
   ) +
-  theme_minimal(base_size = 8.5, base_family = plot_font) +
-  theme(
-    panel.grid = element_blank(),
-    strip.text.x = element_text(face = "bold", size = 9),
-    strip.text.y = element_text(face = "bold", size = 8),
-    strip.background = element_rect(fill = "#F2F2F2", color = NA),
-    axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
-    axis.text.y = element_text(size = 7.2),
-    plot.title = element_text(face = "bold", size = 13),
-    plot.subtitle = element_text(size = 8.2, lineheight = 1.12),
-    plot.caption = element_text(size = 7.5, hjust = 0, color = "#5C626A"),
-    legend.position = "bottom",
-    legend.key.width = grid::unit(35, "mm"),
-    plot.margin = margin(8, 10, 8, 8)
-  )
+    geom_tile(color = "white", linewidth = 0.22) +
+    facet_grid(
+      CategoryLabel ~ RoleLabel,
+      scales = "free",
+      space = "free"
+    ) +
+    scale_fill_gradientn(
+      colours = c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B"),
+      values = scales::rescale(c(0, 20, 50, 80, 100)),
+      limits = c(0, 100),
+      na.value = "#D9D9D9",
+      name = if (is_zh) "全蛋白组信号\n百分位" else "Whole-proteome\npercentile"
+    ) +
+    labs(
+      title = if (is_zh) {
+        "乳酸化调控蛋白在普通全蛋白组中的相对信号"
+      } else {
+        "Relative whole-proteome signals of lactylation regulators"
+      },
+      subtitle = if (is_zh) {
+        paste0(
+          "33条严格配对显示为30个唯一普通全蛋白参照行；",
+          "按正常组织、癌症组织、正常细胞、癌症细胞分区。颜色由白色向暖色递增。"
+        )
+      } else {
+        paste0(
+          "Thirty-three strict Kla-reference pairs are displayed as 30 unique whole-proteome reference rows and divided into ",
+          "normal tissues, cancer tissues, normal cells, and cancer cells. Warmer colors indicate higher percentiles."
+        )
+      },
+      x = NULL,
+      y = NULL,
+      caption = if (is_zh) {
+        paste0(
+          "仅使用非Kla富集的普通全蛋白强度；身份按UniProt BaseAccession匹配；",
+          "百分位只在各自样本内计算，不是Log FC。"
+        )
+      } else {
+        paste0(
+          "Only non-Kla-enriched whole-proteome intensities are used. Protein identity is matched by UniProt BaseAccession, ",
+          "and percentiles are calculated within each sample rather than interpreted as log fold changes."
+        )
+      }
+    ) +
+    theme_minimal(base_size = 8.5, base_family = plot_font) +
+    theme(
+      panel.grid = element_blank(),
+      strip.text.x = element_text(face = "bold", size = 9),
+      strip.text.y = element_text(face = "bold", size = 8),
+      strip.background = element_rect(fill = "#F2F2F2", color = NA),
+      axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
+      axis.text.y = element_text(size = 7.2),
+      plot.title = element_text(face = "bold", size = 13),
+      plot.subtitle = element_text(size = 8.2, lineheight = 1.12),
+      plot.caption = element_text(size = 7.5, hjust = 0, color = "#5C626A"),
+      legend.position = "bottom",
+      legend.key.width = grid::unit(35, "mm"),
+      plot.margin = margin(8, 10, 8, 8)
+    )
+}
 
-ggsave(
-  file.path(
-    figure_dir,
-    "kla_regulator_whole_proteome_relative_intensity_heatmap.png"
-  ),
-  main_plot,
-  width = 15.5,
-  height = 11.5,
-  dpi = 320,
-  bg = "white"
+main_plot_zh <- make_main_plot("zh")
+main_plot_en <- make_main_plot("en")
+save_heatmap <- function(plot, stem) {
+  ggsave(
+    file.path(figure_dir, paste0(stem, ".png")),
+    plot,
+    width = 15.5,
+    height = 11.5,
+    dpi = 320,
+    bg = "white"
+  )
+  ggsave(
+    file.path(figure_dir, paste0(stem, ".pdf")),
+    plot,
+    width = 15.5,
+    height = 11.5,
+    device = cairo_pdf,
+    bg = "white"
+  )
+}
+save_heatmap(
+  main_plot_zh,
+  "kla_regulator_whole_proteome_relative_intensity_heatmap"
 )
-ggsave(
-  file.path(
-    figure_dir,
-    "kla_regulator_whole_proteome_relative_intensity_heatmap.pdf"
-  ),
-  main_plot,
-  width = 15.5,
-  height = 11.5,
-  device = cairo_pdf,
-  bg = "white"
+save_heatmap(
+  main_plot_zh,
+  "kla_regulator_whole_proteome_relative_intensity_heatmap_zh"
+)
+save_heatmap(
+  main_plot_en,
+  "kla_regulator_whole_proteome_relative_intensity_heatmap_en"
 )
 
 message(

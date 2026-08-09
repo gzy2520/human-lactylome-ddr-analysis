@@ -1869,7 +1869,9 @@ figure_height <- max(12, nrow(plot_data_base) * 0.28 + 4.2)
 
 for (path in c(
   "cell_type_kla_vs_reference_ddr_fraction_accession_only.png",
-  "cell_type_kla_vs_reference_ddr_fraction.png"
+  "cell_type_kla_vs_reference_ddr_fraction.png",
+  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.png",
+  "cell_type_kla_vs_reference_ddr_fraction_zh.png"
 )) {
   ggsave(
     file.path(figure_dir, path),
@@ -1882,7 +1884,9 @@ for (path in c(
 }
 for (path in c(
   "cell_type_kla_vs_reference_ddr_fraction_accession_only.pdf",
-  "cell_type_kla_vs_reference_ddr_fraction.pdf"
+  "cell_type_kla_vs_reference_ddr_fraction.pdf",
+  "cell_type_kla_vs_reference_ddr_fraction_accession_only_zh.pdf",
+  "cell_type_kla_vs_reference_ddr_fraction_zh.pdf"
 )) {
   ggsave(
     file.path(figure_dir, path),

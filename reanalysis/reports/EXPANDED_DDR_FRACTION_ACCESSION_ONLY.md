@@ -51,6 +51,10 @@ UniProt BaseAccession 与 GO-DDR 表匹配；不再使用旧的 CA1 替代参照
 
 - 主图：
   `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction.png`
+- 中文主图：
+  `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_zh.png`
+- 英文主图：
+  `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_en.png`
 - 独立命名图：
   `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_accession_only.png`
 - 37组来源审计统计表：
@@ -71,11 +75,20 @@ UniProt BaseAccession 与 GO-DDR 表匹配；不再使用旧的 CA1 替代参照
   `reanalysis/results/tables/four_class_venn/venn_sample_group_scope.csv`
 - 四分类 Venn 集合、区域和 membership 表：
   `reanalysis/results/tables/four_class_venn/`
+- 四套 33 组中文 Venn：
+  `reanalysis/results/figures/four_class_venn/*_33groups_zh.png`
+- 四套 33 组英文 Venn：
+  `reanalysis/results/figures/four_class_venn/*_33groups_en.png`
 
 ## 运行命令
 
 ```bash
 Rscript reanalysis/scripts/build_ensembl_uniprot_mapping.R .
 Rscript reanalysis/scripts/analyze_expanded_ddr_fraction_by_accession.R .
+Rscript reanalysis/scripts/plot_four_class_area_proportional_venn.R .
 Rscript reanalysis/tests/test_expanded_ddr_fraction_by_accession.R .
+Rscript reanalysis/tests/test_four_class_area_proportional_venn.R .
 ```
+
+Venn 图标题直接标明严格配对 33 组、四分类数量 9/2/9/13 和排除 4 个无严格
+参照组。四套分析分别为全部 Kla、Kla DDR、普通全蛋白、普通全蛋白 DDR。

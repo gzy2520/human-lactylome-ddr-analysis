@@ -180,8 +180,16 @@ MaxQuant 搜索时使用，不是当前计数和热图的必要输入。
 
 - `results/figures/kla_regulator_cross_study_relative_intensity_heatmap.png`
 - `results/figures/kla_regulator_cross_study_relative_intensity_heatmap.pdf`
+- `results/figures/kla_regulator_cross_study_relative_intensity_heatmap_zh.png`
+- `results/figures/kla_regulator_cross_study_relative_intensity_heatmap_zh.pdf`
+- `results/figures/kla_regulator_cross_study_relative_intensity_heatmap_en.png`
+- `results/figures/kla_regulator_cross_study_relative_intensity_heatmap_en.pdf`
 - `results/figures/kla_regulator_whole_proteome_relative_intensity_heatmap.png`
 - `results/figures/kla_regulator_whole_proteome_relative_intensity_heatmap.pdf`
+- `results/figures/kla_regulator_whole_proteome_relative_intensity_heatmap_zh.png`
+- `results/figures/kla_regulator_whole_proteome_relative_intensity_heatmap_zh.pdf`
+- `results/figures/kla_regulator_whole_proteome_relative_intensity_heatmap_en.png`
+- `results/figures/kla_regulator_whole_proteome_relative_intensity_heatmap_en.pdf`
 - `results/figures/kla_regulator_within_pxd_zscore_heatmaps.pdf`
 - `results/tables/kla_regulator_intensity_availability_audit.csv`
 - `results/tables/kla_regulator_intensity_plot_exclusions.csv`
@@ -198,3 +206,16 @@ MaxQuant 搜索时使用，不是当前计数和热图的必要输入。
 - `results/tables/kla_regulator_whole_proteome_heatmap_rows.csv`
 - `results/tables/kla_regulator_whole_proteome_heatmap_display_long.csv`
 - `results/tables/kla_regulator_whole_proteome_hippocampus_id_mapping_audit.csv`
+- `results/tables/kla_regulator_heatmap_axis_order.csv`
+- `results/tables/kla_vs_whole_proteome_heatmap_axis_alignment.csv`
+
+## 2026-08-09 最终轴和双语版本
+
+最终配对热图只使用 33 个有严格普通全蛋白参照的 Kla 组，四类数量为
+9/2/9/13。普通全蛋白图显示 30 条唯一参照行；Kla 图显示 33 条研究行，并按
+普通全蛋白 `HeatmapDisplayRowOrder` 排列。共享 HK-2、MCF7、HCT116 参照的
+Kla 行在相应普通全蛋白行位置连续展开。
+
+中英文图均显式显示正常/非肿瘤组织、癌症组织、正常/非肿瘤细胞和癌症细胞
+四个分区。`kla_vs_whole_proteome_heatmap_axis_alignment.csv` 保存逐行对齐
+结果，33 行的 `OrderAlignedToWholeProteome` 均为 `TRUE`。

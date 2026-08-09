@@ -273,3 +273,15 @@ Kla 与普通全蛋白热图均输出 `_zh` 和 `_en` PNG/PDF。Kla 热图33行�
 当前项目交接Prompt：
 
 `/Users/gzy2520/Desktop/Research/kla/NEW_CHAT_PROJECT_PROMPT.md`
+
+当前正文方法稿：
+
+- 中文：`reanalysis/reports/METHODS_CURRENT_33GROUP_ZH.md`
+- 英文：`reanalysis/reports/METHODS_CURRENT_33GROUP_EN.md`
+- 写作结构参考：`reanalysis/reports/METHODS_STYLE_REFERENCE.md`
+
+写作结构参考文献：
+
+Hu Y, Xie M, Li Y, et al. Benchmarking clustering, alignment, and integration
+methods for spatial transcriptomics. Genome Biology. 2024;25:212.
+doi:10.1186/s13059-024-03361-0.

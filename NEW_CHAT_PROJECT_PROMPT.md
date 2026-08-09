@@ -13,6 +13,7 @@
 4. `reanalysis/results/tables/kla_and_reference_teacher_review_zh.csv`
 5. `reanalysis/reports/KLA_REGULATOR_INTENSITY_HEATMAP_METHODS.md`
 6. `reanalysis/reports/EXPANDED_DDR_FRACTION_ACCESSION_ONLY.md`
+7. `reanalysis/reports/METHODS_CURRENT_33GROUP_ZH.md`
 
 ## 不可改变的分析规则
 
@@ -187,3 +188,10 @@ ID 映射审计位于 `reanalysis/results/tables/four_class_venn/<analysis>/`。
 5. `GeneSymbolFallbackCount=0`。
 6. 全部 R 和 Python 测试通过。
 7. 重新生成 `reanalysis/reports/final_file_manifest_sha256.csv`。
+
+可直接用于论文/汇报的方法稿：
+
+- 中文：`reanalysis/reports/METHODS_CURRENT_33GROUP_ZH.md`
+- 英文：`reanalysis/reports/METHODS_CURRENT_33GROUP_EN.md`
+- Genome Biology 范文结构说明：
+  `reanalysis/reports/METHODS_STYLE_REFERENCE.md`

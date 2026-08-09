@@ -74,6 +74,9 @@ GO-DDR 输入：
 
 方法细节：
 
+- `reanalysis/reports/METHODS_CURRENT_33GROUP_ZH.md`
+- `reanalysis/reports/METHODS_CURRENT_33GROUP_EN.md`
+- `reanalysis/reports/METHODS_STYLE_REFERENCE.md`
 - `reanalysis/reports/KLA_REGULATOR_INTENSITY_HEATMAP_METHODS.md`
 - `reanalysis/reports/EXPANDED_DDR_FRACTION_ACCESSION_ONLY.md`
 - `reanalysis/reports/DATA_SOURCE_AND_ANALYSIS_ALGORITHM.md`

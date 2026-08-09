@@ -476,8 +476,10 @@ assert(
   "Whole-proteome heatmap must not use a cool low-value palette"
 )
 assert(
-  grepl("CategoryZh ~ Role", script_text, fixed = TRUE),
-  "Whole-proteome heatmap must visibly facet rows by the four sample classes"
+  grepl("CategoryLabel ~ RoleLabel", script_text, fixed = TRUE) &&
+    grepl("category_labels_zh", script_text, fixed = TRUE) &&
+    grepl("category_labels_en", script_text, fixed = TRUE),
+  "Whole-proteome heatmap must visibly facet rows by four classes in both languages"
 )
 
 message("Whole-proteome regulator intensity tests passed.")

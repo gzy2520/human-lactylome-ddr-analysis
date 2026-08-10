@@ -183,7 +183,7 @@ scope <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
-assert(nrow(scope) == 37, "Venn scope audit must retain the 37-group source audit")
+assert(nrow(scope) == 33, "Venn scope audit must contain the final 33 groups")
 assert(sum(scope$KlaIncludedInVenn) == 33, "Kla Venn must use 33 strict-reference groups")
 assert(sum(scope$ReferenceIncludedInVenn) == 33, "Reference Venn must use 33 groups")
 excluded_keys <- c(
@@ -193,12 +193,12 @@ excluded_keys <- c(
   "PXD075014__AC16 control and hypoxia"
 )
 assert(
-  setequal(scope$SampleGroupKey[!scope$KlaIncludedInVenn], excluded_keys),
-  "Venn scope must exclude exactly the four no-reference Kla groups"
+  !any(scope$SampleGroupKey %in% excluded_keys),
+  "Deleted sample groups must be absent from the Venn scope"
 )
 assert(
-  !any(scope$KlaIncludedInVenn & scope$SampleGroupKey %in% excluded_keys),
-  "Excluded Kla groups entered the Venn scope"
+  all(scope$KlaIncludedInVenn),
+  "Every final sample group must enter the Kla Venn scope"
 )
 paired_stats <- read.csv(
   file.path(
@@ -266,13 +266,13 @@ stats <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
-assert(nrow(stats) == 37, "Four-class Venn source audit must contain 37 groups")
+assert(nrow(stats) == 33, "Four-class Venn source audit must contain 33 groups")
 assert(
   identical(
     as.integer(table(factor(stats$Category, levels = categories))),
-    c(10L, 3L, 10L, 14L)
+    c(9L, 2L, 9L, 13L)
   ),
-  "Four-class Venn input category counts must be 10/3/10/14"
+  "Four-class Venn input category counts must be 9/2/9/13"
 )
 assert(
   sum(stats$PairedAnalysisIncluded) == 33,

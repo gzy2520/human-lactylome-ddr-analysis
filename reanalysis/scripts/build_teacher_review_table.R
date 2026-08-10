@@ -34,19 +34,19 @@ audit <- read_project_csv(
 )
 
 key <- function(data) paste(data$乳酸化PXD, data$样本组, sep = "\r")
-if (nrow(statistics) != 37 || anyDuplicated(key(statistics))) {
-  stop("Teacher review table requires exactly 37 unique Kla PXD + sample groups")
+if (nrow(statistics) != 33 || anyDuplicated(key(statistics))) {
+  stop("Teacher review table requires exactly 33 unique Kla PXD + sample groups")
 }
 if (anyDuplicated(key(pairing)) || anyDuplicated(key(audit))) {
   stop("Pairing and material-audit inputs must have unique PXD + sample-group keys")
 }
 if (!setequal(key(statistics), key(audit))) {
-  stop("The 37-row statistics and strict material audit do not have the same scope")
+  stop("The 33-row statistics and strict material audit do not have the same scope")
 }
 
-pairing_37 <- pairing[match(key(statistics), key(pairing)), , drop = FALSE]
-audit_37 <- audit[match(key(statistics), key(audit)), , drop = FALSE]
-if (any(is.na(pairing_37$乳酸化PXD)) || any(is.na(audit_37$乳酸化PXD))) {
+pairing_33 <- pairing[match(key(statistics), key(pairing)), , drop = FALSE]
+audit_33 <- audit[match(key(statistics), key(audit)), , drop = FALSE]
+if (any(is.na(pairing_33$乳酸化PXD)) || any(is.na(audit_33$乳酸化PXD))) {
   stop("Not every final sample group has pairing and audit metadata")
 }
 
@@ -135,18 +135,18 @@ clean_text <- function(value, fallback) {
 
 included <- statistics$纳入严格配对分析 %in%
   c(TRUE, "TRUE", "True", 1, "1")
-material_match <- audit_37$材料身份是否严格匹配 %in%
+material_match <- audit_33$材料身份是否严格匹配 %in%
   c(TRUE, "TRUE", "True", 1, "1")
 if (!identical(included, material_match)) {
   stop("Statistics inclusion disagrees with strict material-identity audit")
 }
 
-status_note <- translate_state(audit_37$实验状态匹配情况)
-original_note <- clean_text(audit_37$原注意事项, "")
+status_note <- translate_state(audit_33$实验状态匹配情况)
+original_note <- clean_text(audit_33$原注意事项, "")
 attention <- ifelse(
   included,
   paste0(status_note, ifelse(original_note == "", "", paste0("；", original_note))),
-  clean_text(audit_37$决定依据, original_note)
+  clean_text(audit_33$决定依据, original_note)
 )
 attention <- gsub("；；+", "；", attention)
 
@@ -155,11 +155,11 @@ review <- data.frame(
   四分类 = statistics$四分类,
   乳酸化PXD = statistics$乳酸化PXD,
   样本组 = statistics$样本组,
-  Kla材料 = audit_37$Kla材料,
-  Kla取材粒度 = translate_granularity(audit_37$Kla取材粒度),
+  Kla材料 = audit_33$Kla材料,
+  Kla取材粒度 = translate_granularity(audit_33$Kla取材粒度),
   Kla实际使用文件 = statistics$乳酸化证据文件,
-  Kla证据形式 = pairing_37$乳酸化数据判定,
-  Kla获取状态 = pairing_37$乳酸化获取状态,
+  Kla证据形式 = pairing_33$乳酸化数据判定,
+  Kla获取状态 = pairing_33$乳酸化获取状态,
   Kla蛋白数 = as.integer(statistics$乳酸化蛋白ID数),
   Kla_DDR蛋白数 = as.integer(statistics$乳酸化DDR蛋白ID数),
   Kla_DDR占比 = as.numeric(statistics$乳酸化DDR占比),
@@ -170,32 +170,32 @@ review <- data.frame(
   ),
   参照材料 = ifelse(
     included,
-    audit_37$参照材料,
+    audit_33$参照材料,
     "未纳入：无完全匹配且可定量参照"
   ),
   参照取材粒度 = ifelse(
     included,
-    translate_granularity(audit_37$参照取材粒度),
+    translate_granularity(audit_33$参照取材粒度),
     "未纳入"
   ),
   普通全蛋白实际使用文件 = ifelse(
     included,
-    audit_37$普通全蛋白文件,
+    audit_33$普通全蛋白文件,
     "未纳入"
   ),
   实际读取样本_工作表_列 = ifelse(
     included,
-    audit_37$实际读取子集,
+    audit_33$实际读取子集,
     "未纳入"
   ),
   普通全蛋白证据形式 = ifelse(
     included,
-    translate_reference_strategy(pairing_37$常规蛋白组策略),
+    translate_reference_strategy(pairing_33$常规蛋白组策略),
     "未纳入"
   ),
   普通全蛋白获取状态 = ifelse(
     included,
-    pairing_37$常规蛋白组获取状态,
+    pairing_33$常规蛋白组获取状态,
     "未纳入"
   ),
   普通全蛋白蛋白数 = as.integer(statistics$常规蛋白ID数),
@@ -203,14 +203,14 @@ review <- data.frame(
   普通全蛋白DDR占比 = as.numeric(statistics$常规DDR占比),
   材料身份严格匹配 = ifelse(material_match, "是", "否"),
   实验状态匹配情况 = status_note,
-  是否纳入配对分析 = translate_decision(audit_37$分析决定),
+  是否纳入配对分析 = translate_decision(audit_33$分析决定),
   参照关系说明 = clean_text(statistics$参照匹配说明, "未记录"),
   需要老师注意的问题 = clean_text(attention, "无额外重大问题"),
   论文DOI = clean_text(
-    sub("\\.$", "", trimws(pairing_37$论文DOI)),
+    sub("\\.$", "", trimws(pairing_33$论文DOI)),
     "元数据未记录或尚未核实"
   ),
-  ProteomeXchange链接 = pairing_37$数据集链接,
+  ProteomeXchange链接 = pairing_33$数据集链接,
   check.names = FALSE
 )
 
@@ -221,12 +221,12 @@ category_levels <- c(
   "癌症细胞"
 )
 category_counts <- table(factor(review$四分类, levels = category_levels))
-if (!identical(as.integer(category_counts), c(10L, 3L, 10L, 14L))) {
+if (!identical(as.integer(category_counts), c(9L, 2L, 9L, 13L))) {
   stop("Unexpected four-class group counts: ", paste(category_counts, collapse = ", "))
 }
 if (sum(review$是否纳入配对分析 == "是") != 33 ||
-    sum(review$是否纳入配对分析 == "否") != 4) {
-  stop("Teacher review table must contain 33 included and 4 excluded rows")
+    sum(review$是否纳入配对分析 == "否") != 0) {
+  stop("Teacher review table must contain exactly 33 included rows")
 }
 
 write.csv(review, output_csv, row.names = FALSE, na = "")

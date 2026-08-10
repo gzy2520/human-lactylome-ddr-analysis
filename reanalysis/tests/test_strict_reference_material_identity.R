@@ -10,10 +10,10 @@ audit <- read.csv(
   stringsAsFactors = FALSE
 )
 
-stopifnot(nrow(audit) == 37)
+stopifnot(nrow(audit) == 33)
 stopifnot(!anyDuplicated(audit[c("KlaPXD", "SampleGroup")]))
 stopifnot(sum(audit$MaterialIdentityMatch) == 33)
-stopifnot(sum(audit$AnalysisDecision == "excluded_no_exact_material_reference") == 4)
+stopifnot(sum(audit$AnalysisDecision == "excluded_no_exact_material_reference") == 0)
 
 hippocampus <- audit[
   audit$KlaPXD == "PXD050470" &

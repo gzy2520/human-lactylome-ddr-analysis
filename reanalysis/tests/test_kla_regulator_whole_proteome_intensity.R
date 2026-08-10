@@ -236,24 +236,12 @@ kla_scope_keys <- with(
 )
 whole_proteome_keys <- with(audit, paste(PXD, SampleGroup, sep = "__"))
 assert(
-  !length(setdiff(whole_proteome_keys, kla_scope_keys)) &&
-    setequal(
-      setdiff(kla_scope_keys, whole_proteome_keys),
-      paste(
-        scope_exclusions$PXD,
-        scope_exclusions$SampleGroup,
-        sep = "__"
-      )
-    ),
-  "Whole-proteome heatmap must be the exact-reference subset of the 37 Kla groups"
+  setequal(whole_proteome_keys, kla_scope_keys),
+  "Whole-proteome and Kla heatmaps must use the same final 33 groups"
 )
 assert(
-  nrow(scope_exclusions) == 4 &&
-    setequal(
-      scope_exclusions$PXD,
-      c("PXD062720", "PXD063047", "PXD064038", "PXD075014")
-    ),
-  "Strict-reference exclusions must contain the four unsupported sample groups"
+  nrow(scope_exclusions) == 0,
+  "No deleted sample group may remain in the active strict-reference exclusions"
 )
 assert(
   !any(audit$PXD == "PXD037371"),

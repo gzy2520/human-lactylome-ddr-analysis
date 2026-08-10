@@ -1,0 +1,27 @@
+Kla/DDR group-meeting deck QA
+Date: 2026-08-09
+
+Final deck
+- reanalysis/reports/Kla_DDR_组会汇报_2026-08-09.pptx
+- SHA256: eb14eede917805368ec9f032bcffa52bbf19119a086dbee1bc63ef3f3ae14645
+
+Content scope
+- 19 slides copied from /Users/gzy2520/Desktop/Research/2026.04.04.pptx
+- 37 Kla PXD+sample groups; 33 strict ordinary-proteome reference pairs
+- Three DDR comparison chart views: tissues, normal/non-tumor cells, cancer cells
+- Three four-class set figures: all Kla, Kla-DDR, reference-proteome DDR
+- Two regulator heatmaps: Kla signal percentile and ordinary whole-proteome signal percentile
+
+Checks
+- Artifact Tool export: passed
+- Slide overflow test: passed; no overflow detected
+- Template fidelity check: passed; issueCount=0
+- Each slide includes a [Sources] speaker-note block
+- Repeated source-slide media was replaced with unique inherited image frames so result figures do not overwrite one another
+
+Supporting build files
+- tmp/ppt_20260809/template-frame-map.json
+- tmp/ppt_20260809/template-audit.txt
+- tmp/ppt_20260809/deviation-log.txt
+- tmp/ppt_20260809/build_deck.mjs
+- tmp/ppt_20260809/final-contact-sheet.png

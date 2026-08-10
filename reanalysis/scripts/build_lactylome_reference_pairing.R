@@ -97,7 +97,8 @@ strict_reference_path <- file.path(
 strict_reference_exclusions <- read.csv(
   strict_reference_path,
   stringsAsFactors = FALSE,
-  check.names = FALSE
+  check.names = FALSE,
+  colClasses = "character"
 )
 
 primary_path <- file.path(

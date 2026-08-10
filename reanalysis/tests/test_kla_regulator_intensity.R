@@ -43,12 +43,12 @@ whole_display <- read.csv(
   stringsAsFactors = FALSE
 )
 
-stopifnot(nrow(audit) == 40)
-stopifnot(sum(audit$定量可用) == 37)
+stopifnot(nrow(audit) == 33)
+stopifnot(sum(audit$定量可用) == 33)
 stopifnot("严格配对分析纳入" %in% names(audit))
 stopifnot("严格配对排除原因" %in% names(audit))
 stopifnot(sum(audit$严格配对分析纳入) == 33)
-stopifnot(sum(audit$定量可用 & !audit$严格配对分析纳入) == 4)
+stopifnot(sum(audit$定量可用 & !audit$严格配对分析纳入) == 0)
 stopifnot(nrow(axis_audit) == 33)
 stopifnot(nrow(axis_alignment) == 33)
 stopifnot(all(axis_audit$QuantificationAvailable))
@@ -69,8 +69,8 @@ stopifnot(all(c(
 stopifnot(audit$定量可用[audit$PXD == "PXD050470"])
 stopifnot(audit$定量可用[audit$PXD == "PXD028737"])
 stopifnot(audit$定量可用[audit$PXD == "PXD073311"])
-stopifnot(audit$定量可用[audit$PXD == "PXD075014"])
-stopifnot(all(audit$PXD[!audit$定量可用] == "PXD037371"))
+stopifnot(!any(audit$PXD == "PXD075014"))
+stopifnot(all(audit$定量可用))
 stopifnot(nrow(normalized) == 33 * nrow(unique(normalized[c("Role", "GeneSymbol")])))
 sample_keys <- unique(sample_level[c("PXD", "SampleGroup", "QuantSample")])
 regulator_keys <- unique(
@@ -85,8 +85,10 @@ excluded_keys <- c(
 )
 normalized_keys <- paste(normalized$PXD, normalized$SampleGroup, sep = "::")
 axis_keys <- paste(axis_audit$PXD, axis_audit$SampleGroup, sep = "::")
+audit_keys <- paste(audit$PXD, audit$样本组, sep = "::")
 stopifnot(length(intersect(normalized_keys, excluded_keys)) == 0)
 stopifnot(length(intersect(axis_keys, excluded_keys)) == 0)
+stopifnot(length(intersect(audit_keys, excluded_keys)) == 0)
 stopifnot("PXD063047::normal pregnancy placenta" %in% axis_keys)
 stopifnot(all(
   normalized$RelativeKlaPercentile[

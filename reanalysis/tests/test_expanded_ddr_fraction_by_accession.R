@@ -53,11 +53,12 @@ stopifnot(file.exists(file.path(
   "cell_type_kla_vs_reference_ddr_statistics_accession_only_zh.csv"
 )))
 
-stopifnot(nrow(stats) == 37)
-stopifnot(sum(audit$Included) == 37)
-stopifnot(nrow(audit) == 37)
+stopifnot(nrow(stats) == 33)
+stopifnot(sum(audit$Included) == 33)
+stopifnot(nrow(audit) == 33)
 stopifnot(!any(audit$PXD == "PXD037371"))
 stopifnot(sum(stats$PairedAnalysisIncluded) == 33)
+stopifnot(all(stats$PairedAnalysisIncluded))
 stopifnot(sum(plot_rows$BarType == "kla") == 33)
 stopifnot(sum(plot_rows$BarType == "reference") == 30)
 stopifnot(identical(plot_rows$BarOrder, seq_len(63)))
@@ -101,13 +102,6 @@ for (sample_groups in list(
       plot_rows$ReferenceDisplayKey == shared_key
   ) == 1)
 }
-stopifnot(setequal(
-  stats$PXD[!stats$PairedAnalysisIncluded],
-  c("PXD062720", "PXD063047", "PXD064038", "PXD075014")
-))
-stopifnot(all(
-  is.na(stats$ReferenceProteinCount[!stats$PairedAnalysisIncluded])
-))
 paired_stats <- stats[stats$PairedAnalysisIncluded, ]
 stopifnot(identical(
   as.integer(table(factor(
@@ -129,7 +123,7 @@ stopifnot(identical(
     stats$Category,
     levels = c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells")
   ))),
-  c(10L, 3L, 10L, 14L)
+  c(9L, 2L, 9L, 13L)
 ))
 stopifnot(all(stats$MatchMode %in% c(
   "BaseAccession_only",
@@ -175,7 +169,7 @@ stopifnot(all(
 ))
 stopifnot(any(stats$PXD == "PXD028737"))
 stopifnot(any(stats$PXD == "PXD073311"))
-stopifnot(any(stats$PXD == "PXD075014"))
+stopifnot(!any(stats$PXD == "PXD075014"))
 stopifnot(
   stats$KlaProteinCount[
     stats$PXD == "PXD046800" &

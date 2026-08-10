@@ -143,9 +143,9 @@ function buildSummarySheet(workbook) {
     ["GeneSymbol回退"],
   ];
   sheet.getRange("B3:B7").formulas = [
-    ["=COUNTA('老师审阅总表'!$C$2:$C$38)"],
-    ["=COUNTIF('老师审阅总表'!$Y$2:$Y$38,\"是\")"],
-    ["=COUNTIF('老师审阅总表'!$Y$2:$Y$38,\"否\")"],
+    ["=COUNTA('老师审阅总表'!$C$2:$C$34)"],
+    ["=COUNTIF('老师审阅总表'!$Y$2:$Y$34,\"是\")"],
+    ["=COUNTIF('老师审阅总表'!$Y$2:$Y$34,\"否\")"],
     ['="UniProt BaseAccession"'],
     ['="0（禁止参与分析命中）"'],
   ];
@@ -170,10 +170,10 @@ function buildSummarySheet(workbook) {
     ["癌症细胞"],
   ];
   sheet.getRange("E4:E7").formulas = [4, 5, 6, 7].map((row) => [
-    `=COUNTIF('老师审阅总表'!$B$2:$B$38,D${row})`,
+    `=COUNTIF('老师审阅总表'!$B$2:$B$34,D${row})`,
   ]);
   sheet.getRange("F4:F7").formulas = [4, 5, 6, 7].map((row) => [
-    `=COUNTIFS('老师审阅总表'!$B$2:$B$38,D${row},'老师审阅总表'!$Y$2:$Y$38,"是")`,
+    `=COUNTIFS('老师审阅总表'!$B$2:$B$34,D${row},'老师审阅总表'!$Y$2:$Y$34,"是")`,
   ]);
   sheet.getRange("D3:F7").format = {
     borders: { preset: "outside", style: "thin", color: "#D6B7A3" },
@@ -190,10 +190,10 @@ function buildSummarySheet(workbook) {
   const notes = [
     "阅读口径：每行是一组最终Kla样本。Kla与普通全蛋白均按去除isoform后缀的UniProt BaseAccession计数；GeneSymbol只用于显示或人工核对。",
     "“材料身份严格匹配=是”表示细胞/组织身份及取材粒度可对应，不等同于同一供体、同一处理或同一时间点。实验状态限制已单独列出。",
-    "33组进入普通全蛋白配对分析；4组因缺少完全匹配且有逐蛋白定量强度的参照而保留Kla、排除普通全蛋白侧。",
+    "最终正式分析固定为33组，且33组均进入普通全蛋白配对分析；已删除的4组不再保留在活动Kla数据中。",
     "同一PXD或同一文件被多个组使用时，必须查看“实际读取样本/工作表/列”。例如HCC读取CISs，邻近肝读取ANTs；两组没有混用。",
     "两个HK-2组读取PXD072220的amostra1、amostra3、amostra4 PG.Log2Quantity，文件表头前两行跳过。海马读取PXD050470同研究Table S4的H072/H081/H0187。",
-    "需老师重点确认的情况集中在“需重点确认”页，包括基线参照、独立队列、独立实验和4个排除组。",
+    "需老师重点确认的情况集中在“需重点确认”页，包括基线参照、独立队列和独立实验；已删除组不再显示。",
   ];
   sheet.getRange("A10:H10").merge();
   sheet.getRange("A10").values = [["审阅说明"]];

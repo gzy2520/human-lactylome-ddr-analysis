@@ -32,8 +32,15 @@ primary_path <- file.path(
   project_root, "reanalysis", "intermediate", "kla_by_dataset",
   "all_primary_sample_level_kla_sites.csv"
 )
+scope_exclusion_path <- file.path(
+  project_root, "reanalysis", "config",
+  "final_sample_group_exclusions.csv"
+)
 
-required_files <- c(regulator_path, mapping_path, pairing_path, primary_path)
+required_files <- c(
+  regulator_path, mapping_path, pairing_path, primary_path,
+  scope_exclusion_path
+)
 missing_files <- required_files[!file.exists(required_files)]
 if (length(missing_files)) {
   stop("Missing required input files: ", paste(missing_files, collapse = ", "))
@@ -71,6 +78,13 @@ pairing <- read.csv(
   check.names = FALSE,
   na.strings = c("", "NA")
 )
+scope_exclusions <- read.csv(
+  scope_exclusion_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) |>
+  select(PXD, SampleGroup) |>
+  distinct()
 sample_catalog <- pairing |>
   filter(当前Kla证据可分析) |>
   transmute(
@@ -81,9 +95,10 @@ sample_catalog <- pairing |>
     LactylomeProteinCount = 乳酸化蛋白数,
     RowOrder = row_number(),
     SampleGroupID = paste(PXD, SampleGroup, sep = "__")
-  )
-if (nrow(sample_catalog) != 40) {
-  stop("Expected 40 pair-ready sample groups, found ", nrow(sample_catalog))
+  ) |>
+  anti_join(scope_exclusions, by = c("PXD", "SampleGroup"))
+if (nrow(sample_catalog) != 33) {
+  stop("Expected 33 final sample groups, found ", nrow(sample_catalog))
 }
 
 display_names <- c(
@@ -732,6 +747,7 @@ if (any(audit$Parser == "pending")) {
 
 all_evidence <- bind_rows(evidence_parts) |>
   filter(GeneSymbol %in% target_genes) |>
+  semi_join(sample_catalog, by = c("PXD", "SampleGroup")) |>
   distinct()
 
 evidence_summary <- all_evidence |>
@@ -969,13 +985,13 @@ combined_plot <- (
     )
 ) +
   plot_annotation(
-    title = "乳酸化调控因子在37个可审计细胞系与组织样本组中的Kla证据图谱",
+    title = "乳酸化调控因子在33个正式细胞系与组织样本组中的Kla证据图谱",
     subtitle = paste0(
       "数字为可定位的唯一Kla位点数；P表示蛋白/修饰肽层面检出但无法得到精确位点数；",
       "无法可靠拆分的样本组不进入本图。颜色不代表表达量或Log2 FC。"
     ),
     caption = paste0(
-      "数据范围：40个候选样本组中37个具有逐蛋白证据；PXD037371的3组因TMT通道映射不明而排除。",
+      "数据范围：最终正式分析固定为33个样本组；已删除的7个样本组不进入活动数据、图表或后续分析。",
       "主分析定位阈值为>0；保留老师表中的多重角色记录，Reader分区置于最后。"
     ),
     theme = theme(

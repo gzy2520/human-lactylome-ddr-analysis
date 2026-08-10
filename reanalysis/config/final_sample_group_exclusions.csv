@@ -1,0 +1,8 @@
+PXD,SampleGroup,ExclusionStatus,DecisionDate,Reason
+PXD037371,normal liver,excluded_from_final_kla_scope,2026-08-08,TMT channels cannot be mapped reliably to this clinical group
+PXD037371,nonmetastatic HCC,excluded_from_final_kla_scope,2026-08-08,TMT channels cannot be mapped reliably to this clinical group
+PXD037371,lung-metastatic HCC,excluded_from_final_kla_scope,2026-08-08,TMT channels cannot be mapped reliably to this clinical group
+PXD062720,bladder cancer cells treated with EPI,removed_from_final_33group_scope,2026-08-10,User confirmed that this group must not be treated as usable in the final analysis
+PXD063047,severe preeclampsia placenta,removed_from_final_33group_scope,2026-08-10,User confirmed that this group must not be treated as usable in the final analysis; normal-pregnancy placenta remains retained
+PXD064038,MEC and NEC ESCC groups,removed_from_final_33group_scope,2026-08-10,User confirmed that this group must not be treated as usable in the final analysis
+PXD075014,AC16 control and hypoxia,removed_from_final_33group_scope,2026-08-10,User confirmed that this group must not be treated as usable in the final analysis

@@ -38,7 +38,8 @@ if (!"IncludeInStrictReferenceAnalysis" %in% names(pairing)) {
 exclusions <- read.csv(
   exclusion_path,
   check.names = FALSE,
-  stringsAsFactors = FALSE
+  stringsAsFactors = FALSE,
+  colClasses = "character"
 )
 
 replacements <- data.frame(

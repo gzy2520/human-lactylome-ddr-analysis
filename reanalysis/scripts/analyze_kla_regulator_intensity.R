@@ -24,10 +24,15 @@ mapping_path <- file.path(
   project_root, "reanalysis", "config",
   "lactylation_regulator_uniprot_mapping.csv"
 )
+scope_exclusion_path <- file.path(
+  project_root, "reanalysis", "config",
+  "final_sample_group_exclusions.csv"
+)
 required_files <- c(
   regulator_path,
   detection_path,
-  mapping_path
+  mapping_path,
+  scope_exclusion_path
 )
 missing_files <- required_files[!file.exists(required_files)]
 if (length(missing_files)) {
@@ -83,6 +88,15 @@ detection <- read.csv(
   check.names = FALSE,
   na.strings = c("", "NA")
 )
+scope_exclusions <- read.csv(
+  scope_exclusion_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) |>
+  select(PXD, SampleGroup) |>
+  distinct()
+detection <- detection |>
+  anti_join(scope_exclusions, by = c("PXD", "SampleGroup"))
 sample_catalog <- detection |>
   distinct(
     PXD, SampleGroup, SampleGroupID, RowLabel,
@@ -90,8 +104,8 @@ sample_catalog <- detection |>
     GeneLevelAuditStatus, Parser, AuditReason
   ) |>
   mutate(RowOrder = row_number())
-if (nrow(sample_catalog) != 40) {
-  stop("Expected 40 sample groups, found ", nrow(sample_catalog))
+if (nrow(sample_catalog) != 33) {
+  stop("Expected 33 final sample groups, found ", nrow(sample_catalog))
 }
 
 whole_heatmap_rows_path <- file.path(
@@ -916,6 +930,7 @@ rm(data)
 
 if (!length(quant_parts)) stop("No quantitative data were extracted")
 quant_features <- bind_rows(quant_parts) |>
+  anti_join(scope_exclusions, by = c("PXD", "SampleGroup")) |>
   group_by(
     PXD, SampleGroup, QuantSample, CanonicalFeature,
     TargetAccession, TargetGene,

@@ -5,7 +5,7 @@ PXD028737,usable_global_lactylome,eligible,hmc3_hypoxia_lactylome,PXD028737,Inde
 PXD033146,usable_global_lactylome,eligible,rotator_cuff_lactylome,PXD033146,Same study provides TPLa lactylome and TQ conventional proteome
 PXD033454,usable_method_specific,method_specific_only,ynlac_chemical_reporter,PXD033454,Bioorthogonal YnLac reporter is not directly equivalent to endogenous antibody-enriched Kla
 PXD036307,usable_global_lactylome,eligible,normal_human_lung_lactylome,PXD036307,Normal human lung global lactylome with usable MaxQuant results
-PXD037371,usable_global_lactylome,eligible,hcc_lactylome,PXD037371,Normal liver; nonmetastatic HCC; and metastatic HCC lactylome
+PXD037371,hold,excluded_hold,hcc_lactylome,PXD037371,Three clinical groups remain excluded from the final Kla scope because TMT channels cannot be mapped reliably
 PXD037530,usable_global_lactylome,eligible,cirrhosis_msc_lactylome,PXD037530,Same study provides TPLa lactylome and TQ conventional proteome
 PXD038880,hold,excluded_hold,nbs1_ags_cisplatin_resistance,PXD050906,iProX record is incomplete and mirrors PXD050906; teacher requested hold
 PXD045967,processed_result_unavailable,pending_processed_result,hela_global_lactylome,PXD045967,Global HeLa lactylome is valid but repository currently exposes raw files and mqpar only
@@ -26,11 +26,11 @@ PXD057709,same_study_component,eligible_component,herpesvirus_lactylation,PXD055
 PXD058173,targeted_not_global,excluded_targeted,ythdc1_achn_hypoxia,PXD053029,YTHDC1 K82 PRM validation is targeted rather than a global lactylome
 PXD058534,usable_global_lactylome,eligible,hk2_pretreated_lactylome,PXD058534,Global pretreated HK-2 lactylome with compact MaxQuant results
 PXD060185,usable_global_lactylome,eligible,breast_cancer_lactylome,PXD060185,Global lactylomes for MCF10A; MCF7; MDA-MB-468; and T-47D
-PXD062720,usable_global_lactylome,eligible,bladder_cancer_lactylome,PXD062720,Same study includes ordinary proteome and Kla-enriched raw components in one processed txt archive
-PXD063047,usable_global_lactylome,eligible,placenta_preeclampsia_lactylome,PXD063047,Normal pregnancy and severe preeclampsia placenta global lactylome
+PXD062720,hold,excluded_hold,bladder_cancer_lactylome,PXD062720,Removed from the final 33-group scope on 2026-08-10; do not reintroduce into active analysis
+PXD063047,usable_global_lactylome,eligible,placenta_preeclampsia_lactylome,PXD063047,Only the normal-pregnancy placenta group is retained; severe preeclampsia was removed from the final scope on 2026-08-10
 PXD063266,usable_global_lactylome,eligible,pc3m_lactylome,PXD063266,Global PC-3M prostate cancer cell lactylome with author site spreadsheet
 PXD063945,usable_global_lactylome,eligible,escc_neoadjuvant_lactylome,PXD063945,Same study provides Lac_combined and pro_combined results
-PXD064038,usable_global_lactylome,eligible,escc_lactylome,PXD064038,ESCC global lactylome with MaxQuant txt and clinical sample information
+PXD064038,hold,excluded_hold,escc_lactylome,PXD064038,Removed from the final 33-group scope on 2026-08-10; do not reintroduce into active analysis
 PXD064912,usable_global_lactylome,eligible,human_sperm_lactylome,PXD064912,Three human sperm samples with a checksum-validated Spectronaut result
 PXD065104,targeted_not_global,excluded_targeted,stat1_k193_mechanism,PXD065104,Conventional proteome after STAT1 K193 mutation; not a global Kla discovery dataset
 PXD065831,usable_global_lactylome,eligible,endometrioid_cancer_lactylome,PXD065831,Normal endometrium and three tumor grades with lactylome and proteome components
@@ -40,7 +40,7 @@ PXD068838,unresolved_species_component,pending_species_resolution,zcwpw2_meiosis
 PXD070007,usable_global_lactylome,eligible,gsc_nsc_lactylome,PXD070007,Six glioblastoma stem-cell and two neural stem-cell global lactylomes
 PXD070427,unresolved_species_component,pending_species_resolution,zcwpw2_meiosis_lactylome,PXD068838,Same human and mouse study family as PXD068838; do not count independently until resolved
 PXD073311,usable_global_lactylome,eligible,huvec_infection_lactylome,PXD073311,HUVEC control and Porphyromonas gingivalis infection global lactylome
-PXD075014,usable_global_lactylome,eligible,ac16_hypoxia_lactylome,PXD075014,Global AC16 Kla-enrichment pdResult is distinct from the PFKP IP validation files
+PXD075014,hold,excluded_hold,ac16_hypoxia_lactylome,PXD075014,Removed from the final 33-group scope on 2026-08-10; do not reintroduce into active analysis
 PXD075377,usable_global_lactylome,eligible,hcc_adjacent_lactylome,PXD075377,Paired HCC and adjacent tissue lactylome; adjacent tissue is not healthy normal
 PXD077426,duplicate_mirror,excluded_duplicate,hk2_aki_ckd_lactylome,PXD078736,Repository URLs resolve to PXD078736 and represent a mirror
 PXD078013,usable_global_lactylome,eligible,rko_gsk3b_lactylome,PXD078013,RKO GSK3B WT and KO global lactylome

@@ -1,8 +1,1 @@
 LactylomePXD,SampleGroup,Reason
-PXD037371,normal liver,PXD037371三个临床组已从最终Kla定量范围排除
-PXD037371,nonmetastatic HCC,该组已从最终Kla定量范围排除
-PXD037371,lung-metastatic HCC,该组已从最终Kla定量范围排除
-PXD062720,bladder cancer cells treated with EPI,已下载的proteinGroups.txt为Kla富集检索结果：2223条有效蛋白中2060条具有La(K) site IDs，且仅487条具有A_1/A_3强度；不能作为普通全蛋白强度参照
-PXD063047,severe preeclampsia placenta,未找到同时满足重度子痫前期胎盘且具有逐蛋白强度的完全匹配普通蛋白组；PXD055025为早发型子痫前期，不能静默等同于重度子痫前期
-PXD064038,MEC and NEC ESCC groups,已核查的ESCC候选中可解析小文件仅提供蛋白鉴定或肿瘤/正常比值，89对队列文件不可解析，未获得可审计的逐蛋白绝对强度
-PXD075014,AC16 control and hypoxia,PXD059985的质谱定量比较为AC16增殖/分化状态，不能等同于PXD075014的对照/低氧状态；PXD075014补充表为Kla富集肽段而非普通全蛋白

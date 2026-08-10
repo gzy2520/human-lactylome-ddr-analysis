@@ -19,11 +19,11 @@ statistics <- read_table(
 )
 
 key <- function(data) paste(data$乳酸化PXD, data$样本组, sep = "\r")
-stopifnot(nrow(review) == 37)
+stopifnot(nrow(review) == 33)
 stopifnot(!anyDuplicated(key(review)))
 stopifnot(identical(key(review), key(statistics)))
 stopifnot(sum(review$是否纳入配对分析 == "是") == 33)
-stopifnot(sum(review$是否纳入配对分析 == "否") == 4)
+stopifnot(sum(review$是否纳入配对分析 == "否") == 0)
 stopifnot(!any(review$乳酸化PXD == "PXD037371"))
 stopifnot(all(review$Kla蛋白数 == statistics$乳酸化蛋白ID数))
 stopifnot(all(review$Kla_DDR蛋白数 == statistics$乳酸化DDR蛋白ID数))

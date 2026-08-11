@@ -3,7 +3,7 @@
 suppressPackageStartupMessages(library(data.table))
 
 project_root <- normalizePath(".", mustWork = TRUE)
-analysis_name <- "kla_ddr_four_category_three_embedding_pathway_grids_33groups_v1"
+analysis_name <- "kla_ddr_five_set_three_embedding_pathway_grids_33groups_v1"
 table_dir <- file.path(project_root, "reanalysis/results/tables", analysis_name)
 figure_dir <- file.path(project_root, "reanalysis/results/figures", analysis_name)
 v4_table_dir <- file.path(
@@ -14,10 +14,10 @@ v4_table_dir <- file.path(
 required_tables <- c(
   "embedding_coordinates_507.csv",
   "embedding_parameters.csv",
-  "category_membership_507_long.csv",
-  "category_pathway_plot_data.csv",
-  "category_pathway_summary.csv",
-  "figure_manifest_12_grids.csv",
+  "embedding_set_membership_507_long.csv",
+  "embedding_set_pathway_plot_data.csv",
+  "embedding_set_pathway_summary.csv",
+  "figure_manifest_15_grids.csv",
   "input_file_audit.csv",
   "session_info.txt"
 )
@@ -37,10 +37,10 @@ assert <- function(condition, message) {
 
 coordinates <- fread(file.path(table_dir, "embedding_coordinates_507.csv"))
 parameters <- fread(file.path(table_dir, "embedding_parameters.csv"))
-membership <- fread(file.path(table_dir, "category_membership_507_long.csv"))
-plot_data <- fread(file.path(table_dir, "category_pathway_plot_data.csv"))
-summary_table <- fread(file.path(table_dir, "category_pathway_summary.csv"))
-manifest <- fread(file.path(table_dir, "figure_manifest_12_grids.csv"))
+membership <- fread(file.path(table_dir, "embedding_set_membership_507_long.csv"))
+plot_data <- fread(file.path(table_dir, "embedding_set_pathway_plot_data.csv"))
+summary_table <- fread(file.path(table_dir, "embedding_set_pathway_summary.csv"))
+manifest <- fread(file.path(table_dir, "figure_manifest_15_grids.csv"))
 raw_umap <- fread(
   file.path(v4_table_dir, "umap_raw_coordinates_v4_bp_semantic.csv")
 )
@@ -85,21 +85,28 @@ category_counts <- membership[
 ][order(CategoryOrder)]
 assert(
   identical(category_counts$Category, c(
+    "all_507",
     "normal_tissue",
     "normal_cells",
     "cancer_tissue",
     "cancer_cells"
   )) &&
-    identical(category_counts$N, c(183L, 471L, 178L, 383L)),
-  "Four-category counts or requested category order are incorrect."
+    identical(category_counts$N, c(507L, 183L, 471L, 178L, 383L)),
+  "Five-set counts or requested set order are incorrect."
+)
+assert(
+  membership[Category == "all_507", .N] == 507L &&
+    membership[Category == "all_507", all(DetectedInCategory)] &&
+    plot_data[Category == "all_507", all(Status != "Outside category")],
+  "The all_507 set must contain every protein and no outside-category points."
 )
 
 assert(
-  nrow(plot_data) == 507L * 4L * 9L &&
+  nrow(plot_data) == 507L * 5L * 9L &&
     uniqueN(plot_data$BaseAccession) == 507L &&
-    uniqueN(plot_data$Category) == 4L &&
+    uniqueN(plot_data$Category) == 5L &&
     uniqueN(plot_data$DisplayLabel) == 9L,
-  "Expected a complete 507 x four-category x nine-pathway plotting table."
+  "Expected a complete 507 x five-set x nine-pathway plotting table."
 )
 assert(
   plot_data[
@@ -150,10 +157,10 @@ assert(
 )
 
 assert(
-  nrow(manifest) == 12L &&
-    uniqueN(manifest$Category) == 4L &&
+  nrow(manifest) == 15L &&
+    uniqueN(manifest$Category) == 5L &&
     uniqueN(manifest$Method) == 3L,
-  "Expected exactly four categories x three methods = 12 figure entries."
+  "Expected exactly five sets x three methods = 15 figure entries."
 )
 figure_paths <- unlist(
   lapply(
@@ -163,15 +170,15 @@ figure_paths <- unlist(
   use.names = FALSE
 )
 assert(
-  length(figure_paths) == 36L &&
+  length(figure_paths) == 45L &&
     all(file.exists(figure_paths)) &&
     all(file.info(figure_paths)$size > 0),
-  "Expected 36 nonempty files for 12 figures in PNG/PDF/SVG formats."
+  "Expected 45 nonempty files for 15 figures in PNG/PDF/SVG formats."
 )
 
 cat(
   paste0(
-    "PASS: 12 category-by-embedding pathway grids reuse one coordinate set per ",
-    "method, preserve the four fixed category counts, and record seed 25.\n"
+    "PASS: 15 set-by-embedding pathway grids reuse one coordinate set per ",
+    "method, preserve 507/183/471/178/383 proteins, and record seed 25.\n"
   )
 )

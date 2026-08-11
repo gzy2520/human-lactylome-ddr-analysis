@@ -14,7 +14,7 @@ script_path <- if (length(file_arg) > 0L) {
   normalizePath(
     paste0(
       "reanalysis/scripts/",
-      "plot_kla_ddr_four_category_three_embedding_pathway_grids_v1.R"
+      "plot_kla_ddr_five_set_three_embedding_pathway_grids_v1.R"
     ),
     mustWork = TRUE
   )
@@ -49,14 +49,14 @@ assignment_path <- file.path(v3_table_dir, "pathway_assignment_long_v3.csv")
 metadata_path <- file.path(v3_table_dir, "pathway_umap_plot_data_v3_all_go.csv")
 color_path <- file.path(v4_table_dir, "pathway_color_key_v4.csv")
 
-analysis_name <- "kla_ddr_four_category_three_embedding_pathway_grids_33groups_v1"
+analysis_name <- "kla_ddr_five_set_three_embedding_pathway_grids_33groups_v1"
 table_dir <- file.path(project_root, "reanalysis/results/tables", analysis_name)
 figure_dir <- file.path(project_root, "reanalysis/results/figures", analysis_name)
 report_path <- file.path(
   project_root,
   paste0(
     "reanalysis/reports/",
-    "FOUR_CATEGORY_UMAP_TSNE_PCA_PATHWAY_GRIDS_33GROUP_V1.md"
+    "FIVE_SET_UMAP_TSNE_PCA_PATHWAY_GRIDS_33GROUP_V1.md"
   )
 )
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
@@ -94,30 +94,34 @@ relative_path <- function(path) {
 random_seed <- 25L
 category_info <- data.table(
   Category = c(
+    "all_507",
     "normal_tissue",
     "normal_cells",
     "cancer_tissue",
     "cancer_cells"
   ),
   MembershipColumn = c(
+    "In_all_507",
     "In_normal_tissue",
     "In_normal_cells",
     "In_cancer_tissue",
     "In_cancer_cells"
   ),
   CategoryLabel = c(
+    "All Kla-DDR proteins",
     "Normal/non-tumor tissues",
     "Normal/non-tumor cells",
     "Cancer tissues",
     "Cancer cells"
   ),
   CategoryLabelZh = c(
+    "全部Kla∩DDR蛋白",
     "正常/非肿瘤组织",
     "正常/非肿瘤细胞",
     "癌症组织",
     "癌症细胞"
   ),
-  CategoryOrder = 1:4
+  CategoryOrder = 1:5
 )
 
 feature_table <- fread(feature_matrix_path)
@@ -130,6 +134,7 @@ rm(feature_table)
 raw_umap <- fread(umap_coordinate_path)
 umap_parameters <- fread(umap_parameter_path)
 membership <- fread(membership_path)
+membership[, In_all_507 := TRUE]
 set_counts <- fread(set_count_path)
 assignment_long <- fread(assignment_path)
 protein_metadata <- fread(metadata_path)[
@@ -205,13 +210,20 @@ observed_category_counts <- membership_long[
   )
 ][order(CategoryOrder)]
 expected_counts <- setNames(set_counts$ProteinCount, set_counts$Category)
+expected_counts <- c(all_507 = 507L, expected_counts)
 assert(
   identical(
     observed_category_counts$ProteinCount,
     as.integer(expected_counts[observed_category_counts$Category])
   ) &&
-    identical(observed_category_counts$ProteinCount, c(183L, 471L, 178L, 383L)),
-  "The fixed four-category protein counts are not 183/471/178/383 in requested order."
+    identical(
+      observed_category_counts$ProteinCount,
+      c(507L, 183L, 471L, 178L, 383L)
+    ),
+  paste0(
+    "The five fixed protein-set counts are not ",
+    "507/183/471/178/383 in requested order."
+  )
 )
 
 # All three embeddings use the same 507 x 3,008 binary BP semantic matrix.
@@ -500,12 +512,12 @@ setorder(
 )
 
 assert(
-  nrow(category_pathway_grid) == 507L * 4L * 9L &&
+  nrow(category_pathway_grid) == 507L * 5L * 9L &&
     all(!is.na(category_pathway_grid$DetectedInCategory)) &&
     all(is.finite(category_pathway_grid$UMAP_1)) &&
     all(is.finite(category_pathway_grid$TSNE_1)) &&
     all(is.finite(category_pathway_grid$PCA_1)),
-  "The complete four-category pathway plotting grid is invalid."
+  "The complete five-set pathway plotting grid is invalid."
 )
 
 category_pathway_summary <- category_pathway_grid[
@@ -621,6 +633,19 @@ for (category_index in seq_len(nrow(category_info))) {
     ProteinCount
   ]
   category_data <- category_pathway_grid[Category == category_key]
+  legend_status <- levels(droplevels(category_data$Status))
+  legend_color_values <- c(
+    "Outside category" = "#D8D8D8",
+    "Detected, not assigned (0)" = "#8F8F8F",
+    "Promoting (+1)" = "#333333",
+    "Suppressing (-1)" = "#333333"
+  )
+  legend_size_values <- c(
+    "Outside category" = 1.8,
+    "Detected, not assigned (0)" = 2.1,
+    "Promoting (+1)" = 2.5,
+    "Suppressing (-1)" = 2.9
+  )
   for (method_index in seq_len(nrow(method_info))) {
     method_name <- method_info$Method[[method_index]]
     method_key <- method_info$MethodKey[[method_index]]
@@ -644,7 +669,7 @@ for (category_index in seq_len(nrow(category_info))) {
       scale_shape_manual(
         values = shape_values,
         name = "Category/pathway status",
-        drop = FALSE
+        drop = TRUE
       ) +
       scale_size_manual(values = size_values, guide = "none") +
       scale_alpha_manual(values = alpha_values, guide = "none") +
@@ -664,15 +689,15 @@ for (category_index in seq_len(nrow(category_info))) {
           "assigned to the displayed pathway.\nVery light gray: not detected in ",
           "this biological category. The same ",
           method_name,
-          " coordinates are reused in all four category figures."
+          " coordinates are reused in all five protein-set figures."
         )
       ) +
       guides(
         shape = guide_legend(
           order = 1,
           override.aes = list(
-            color = c("#D8D8D8", "#8F8F8F", "#333333", "#333333"),
-            size = c(1.8, 2.1, 2.5, 2.9),
+            color = unname(legend_color_values[legend_status]),
+            size = unname(legend_size_values[legend_status]),
             alpha = 1
           )
         )
@@ -745,10 +770,10 @@ figure_manifest <- rbindlist(figure_manifest_rows)
 
 coordinate_output_path <- file.path(table_dir, "embedding_coordinates_507.csv")
 parameter_output_path <- file.path(table_dir, "embedding_parameters.csv")
-membership_output_path <- file.path(table_dir, "category_membership_507_long.csv")
-plot_data_output_path <- file.path(table_dir, "category_pathway_plot_data.csv")
-summary_output_path <- file.path(table_dir, "category_pathway_summary.csv")
-manifest_output_path <- file.path(table_dir, "figure_manifest_12_grids.csv")
+membership_output_path <- file.path(table_dir, "embedding_set_membership_507_long.csv")
+plot_data_output_path <- file.path(table_dir, "embedding_set_pathway_plot_data.csv")
+summary_output_path <- file.path(table_dir, "embedding_set_pathway_summary.csv")
+manifest_output_path <- file.path(table_dir, "figure_manifest_15_grids.csv")
 input_audit_path <- file.path(table_dir, "input_file_audit.csv")
 session_info_path <- file.path(table_dir, "session_info.txt")
 
@@ -803,7 +828,7 @@ fwrite(
       "507 x 3,008 BP semantic feature matrix",
       "audited raw UMAP coordinates",
       "audited UMAP parameters",
-      "fixed 33-group four-category Kla-DDR membership",
+      "fixed 33-group four-category Kla-DDR membership plus all-507 set",
       "fixed four-category counts",
       "signed pathway assignment long table",
       "protein display metadata",
@@ -817,13 +842,13 @@ fwrite(
 writeLines(capture.output(sessionInfo()), session_info_path, useBytes = TRUE)
 
 report_lines <- c(
-  "# 四类别 × 三种降维 × 九通路图（固定33组，V1）",
+  "# 五集合 × 三种降维 × 九通路图（固定33组，V1）",
   "",
   "## 固定分析范围",
   "",
   "- 使用固定33组产生的507个Kla∩DDR蛋白。",
   "- 分析键为去isoform的UniProt `BaseAccession`；GeneSymbol仅用于显示。",
-  "- 四类成员来自现有`kla_ddr_four_class_venn/membership.csv`：正常/非肿瘤组织183、正常/非肿瘤细胞471、癌症组织178、癌症细胞383；同一蛋白可在多个类别中被检出。",
+  "- 五个展示集合为全部507、正常/非肿瘤组织183、正常/非肿瘤细胞471、癌症组织178、癌症细胞383；四类成员来自现有`kla_ddr_four_class_venn/membership.csv`，同一蛋白可在多个类别中被检出。",
   "- 三种降维均使用完全相同的507 × 3,008二元BP语义特征矩阵。通路评分和类别检出均不参与坐标计算。",
   "",
   "## 降维配置",
@@ -831,7 +856,7 @@ report_lines <- c(
   "- UMAP：复用已审计的V4原始坐标；cosine、`n_neighbors = 8`、`min_dist = 0.2`、`spread = 1.5`、1,000轮、seed 25。",
   "- t-SNE：同一矩阵的预计算cosine距离；perplexity 30、theta 0.5、1,000轮、单线程、seed 25。",
   "- PCA：同一二元矩阵中心化但不按方差缩放；PC符号按最大绝对蛋白得分确定性定向。PCA本身无随机性，流程仍记录seed 25。",
-  "- 每种算法只计算一套507蛋白坐标，四类和九个通路面板全部复用；因此同一算法内可直接比较四类别。",
+  "- 每种算法只计算一套507蛋白坐标，全部507和四个类别的九通路面板均复用；因此同一算法内可直接比较五个集合。",
   "",
   "## 图形编码",
   "",
@@ -842,18 +867,18 @@ report_lines <- c(
   "",
   "## 产物",
   "",
-  paste0("- 12张九宫格图清单：`", relative_path(manifest_output_path), "`"),
+  paste0("- 15张九宫格图清单：`", relative_path(manifest_output_path), "`"),
   paste0("- 三种降维坐标：`", relative_path(coordinate_output_path), "`"),
   paste0("- 降维配置：`", relative_path(parameter_output_path), "`"),
-  paste0("- 四类别成员长表：`", relative_path(membership_output_path), "`"),
-  paste0("- 18,252行类别×通路绘图表：`", relative_path(plot_data_output_path), "`"),
-  paste0("- 类别×通路计数：`", relative_path(summary_output_path), "`"),
+  paste0("- 五集合成员长表：`", relative_path(membership_output_path), "`"),
+  paste0("- 22,815行集合×通路绘图表：`", relative_path(plot_data_output_path), "`"),
+  paste0("- 集合×通路计数：`", relative_path(summary_output_path), "`"),
   paste0("- 输入文件审计：`", relative_path(input_audit_path), "`")
 )
 writeLines(report_lines, report_path, useBytes = TRUE)
 
 message("Coordinates: ", coordinate_output_path)
 message("Parameters: ", parameter_output_path)
-message("12-grid manifest: ", manifest_output_path)
+message("15-grid manifest: ", manifest_output_path)
 message("Figure root: ", figure_dir)
 message("Report: ", report_path)

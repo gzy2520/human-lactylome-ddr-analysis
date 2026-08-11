@@ -88,10 +88,57 @@ assert(
     all(manifest$EdgeCount == 4458L),
   "The Cytoscape network manifest does not contain the three comparison versions."
 )
+expected_styles <- data.table(
+  Version = c(
+    "string_mcl_i3_shared_string_topology",
+    "pathway_score_k7_seed25_shared_string_topology",
+    "pathway_score_k9_seed25_shared_string_topology"
+  ),
+  StyleName = c(
+    "Kla_DDR_STRING_MCL_i3_overview_v4",
+    "Kla_DDR_pathway_score_k7_seed25_overview_v4",
+    "Kla_DDR_pathway_score_k9_seed25_overview_v4"
+  )
+)
+assert(
+  nrow(merge(
+    manifest[, .(Version, StyleName)],
+    expected_styles,
+    by = c("Version", "StyleName")
+  )) == 3L,
+  "The manifest does not assign a distinct expected style to each network."
+)
 assert(
   color_key[Version == "PathwayScore_k7_seed25", uniqueN(Cluster)] == 7L &&
     color_key[Version == "PathwayScore_k9_seed25", uniqueN(Cluster)] == 9L,
   "The saved cluster color key is incomplete."
+)
+
+k7_svg <- paste(
+  readLines(
+    file.path(
+      figure_dir,
+      "kla_ddr_507_pathway_score_k7_seed25_shared_string_topology.svg"
+    ),
+    warn = FALSE
+  ),
+  collapse = "\n"
+)
+k9_svg <- paste(
+  readLines(
+    file.path(
+      figure_dir,
+      "kla_ddr_507_pathway_score_k9_seed25_shared_string_topology.svg"
+    ),
+    warn = FALSE
+  ),
+  collapse = "\n"
+)
+assert(
+  !grepl("#7f3c8d|#999999", k7_svg, ignore.case = TRUE) &&
+    grepl("#7f3c8d", k9_svg, ignore.case = TRUE) &&
+    grepl("#999999", k9_svg, ignore.case = TRUE),
+  "The seven- and nine-pathway SVG exports do not use their distinct palettes."
 )
 
 layout_files <- required_tables[grepl("cytoscape_layout_", required_tables)]

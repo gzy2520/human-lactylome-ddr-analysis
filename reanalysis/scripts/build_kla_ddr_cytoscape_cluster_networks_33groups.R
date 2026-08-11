@@ -723,18 +723,37 @@ create_style <- function(style) {
   response$title
 }
 
-apply_style <- function(style_name, network_id) {
-  response <- GET(
-    paste0(
+get_current_style <- function(network_id) {
+  view_id <- get_only_view_id(network_id)
+  style <- get_json(
+    sprintf(
+      "%s/networks/%d/views/%d/currentStyle",
       api_base,
-      "/apply/styles/",
-      URLencode(style_name, reserved = TRUE),
-      "/",
-      network_id
-    ),
-    identity_header
+      network_id,
+      view_id
+    )
   )
-  stop_for_status(response)
+  safe_value(style, "title", "")
+}
+
+apply_style <- function(style_name, network_id, network_name) {
+  run_command(
+    "vizmap",
+    "apply",
+    list(
+      network = network_name,
+      styles = style_name
+    )
+  )
+  assert(
+    identical(get_current_style(network_id), style_name),
+    paste(
+      "Cytoscape did not apply visual style",
+      style_name,
+      "to",
+      network_name
+    )
+  )
   invisible(TRUE)
 }
 
@@ -772,7 +791,7 @@ network_specs <- list(
 created_networks <- lapply(network_specs, function(spec) {
   network_id <- create_network(spec$name)
   style_name <- create_style(spec$style)
-  apply_style(style_name, network_id)
+  apply_style(style_name, network_id, spec$name)
   list(spec = spec, network_id = network_id, style_name = style_name)
 })
 

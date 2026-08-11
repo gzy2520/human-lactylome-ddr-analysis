@@ -60,6 +60,30 @@ The earlier `Group Attributes Layout` views are retained only as
 `*_grouped_circle_layout` comparisons. They intentionally arrange clusters as
 circles and must not be used as the topology-preserving primary result.
 
+## How to read the network figure
+
+- Each node is one of the 507 Kla-intersection-DDR proteins.
+- Each edge is a STRING interaction with combined confidence at least 0.70.
+  Higher-confidence edges are drawn slightly wider and less transparent.
+- Node position is determined only by the shared STRING topology layout. It is
+  not recalculated from the seven- or nine-pathway scores.
+- Node fill color represents a K-means pathway-score pattern cluster, rather
+  than one mutually exclusive biological pathway.
+- In the seven-pathway view, the seven colors represent the HR+, HR+/NHEJ+,
+  NHEJ+, BER+/AEJ+, BER+/NER+/HR+, NER+ and low-assignment patterns.
+- In the nine-pathway view, adding `Chromatin interaction` and `Other support`
+  splits the proteins into nine finer score patterns.
+- A diamond marks a protein whose score is zero in every pathway used for that
+  particular model. Other proteins are circles.
+
+The seven- and nine-pathway figures intentionally have the same geometry, so
+their global outlines should match. Their node assignments are not identical:
+the adjusted Rand index between the two clusterings is 0.374, while the
+normalized mutual information is 0.545. The seven-pathway model has 189
+all-zero proteins; all 22 nine-pathway all-zero proteins are a subset of these,
+and the additional two features assign the other 167 proteins to non-zero
+nine-pathway patterns.
+
 ## Files
 
 - Cytoscape session:

@@ -16,6 +16,7 @@ data/*
 !data/identifier/
 !data/identifier/**
 data/identifier/.DS_Store
+data/identifier/.~*.xlsx
 
 # Reproducible generated artifacts are covered by reports and SHA256 manifests.
 reanalysis/intermediate/

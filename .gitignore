@@ -5,6 +5,7 @@
 __pycache__/
 **/__pycache__/
 *.pyc
+.worktrees/
 
 # Large source data and historical archives remain on disk but outside Git.
 archive/

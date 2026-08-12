@@ -1,83 +1,63 @@
-# Kla 项目索引
+# Human Kla proteomics publication repository
 
-更新时间：2026-08-09
-项目根目录：`/Users/gzy2520/Desktop/Research/kla`
+更新时间：2026-08-12
+
+本仓库以33组严格配对分析和固定507个Kla∩DDR蛋白为发表版主线。旧分析、
+探索图和V1/V2版本不再位于当前代码树，必要时通过Git历史追溯。
 
 ## 目录
 
-| 目录 | 当前用途 |
+| 目录 | 用途 |
 |---|---|
-| `data/` | PXD 原始文件、检索结果、补充表、文章、元数据和 GO/identifier 输入 |
-| `previous_umap/` | 保留的最新纯 GO repair/damage 版本 |
-| `reanalysis/` | 当前有效代码、配置、中间表、结果、报告、日志和测试 |
-| `archive/` | 已弃用脚本、旧结果和迁移清单；不得永久删除 |
+| `data/` | 本地原始数据、检索结果、补充表和人工评分表；大型文件不进入Git |
+| `config/` | 固定样本范围、参照配对、ID映射和UniProt注释缓存 |
+| `python/` | 7个核心PXD异构原始表解析，仅负责基础Kla证据层 |
+| `R/data_preparation/` | 40/37/33组目录和507蛋白功能输入准备 |
+| `R/analysis/` | 强度、DDR占比和五集合降维参数分析 |
+| `R/figures/` | 论文图和补充图 |
+| `workflow/` | 统一运行、环境记录和SHA256清单 |
+| `tests/` | 发表版结果合同 |
+| `manuscript/` | 中英文Methods与审计说明 |
+| `docs/` | 数据来源和分析决策记录 |
+| `results/` | 可重新生成的表、图和报告；Git忽略 |
+| `work/` | 可重新生成的中间表与日志；Git忽略 |
 
-## 当前最终分析范围
+## 固定分析口径
 
-- 37 个样本组具有可审计 Kla 定量。
-- 33 个样本组具有完全匹配且可定量的普通全蛋白参照，进入最终热图、DDR
-  对照和四分类 Venn。
-- 四分类数量：正常组织 9、癌症组织 2、正常细胞 9、癌症细胞 13。
-- 普通全蛋白热图为 30 条唯一参照行；Kla 热图为 33 行，顺序按普通全蛋白轴展开。
-- 排除的四个无严格参照组为 PXD062720、PXD063047/severe preeclampsia、
-  PXD064038、PXD075014。
-- PXD037371 三个临床组因 TMT 通道映射不可靠，不进入 Kla 定量范围。
+- 40个来源样本组进入可审计目录，其中37组具有Kla定量。
+- 33组具有可用普通全蛋白参照，四分类为9/2/9/13。
+- 33个Kla组对应30条唯一普通全蛋白参照展示行。
+- 配对分析排除PXD062720、PXD063047重度子痫前期胎盘、PXD064038和
+  PXD075014。
+- PXD037371三个临床组因TMT通道无法可靠映射，不进入Kla定量范围。
+- 固定507个Kla∩DDR蛋白；五集合为183/471/178/383/507。
+- 分析键为去isoform的UniProt `BaseAccession`；GeneSymbol仅展示和审计。
+- 所有随机步骤使用种子25。
 
-范围依据：
+## 一键运行
 
-- `reanalysis/config/lactylome_reference_pairing.csv`
-- `reanalysis/results/tables/kla_regulator_intensity_availability_audit.csv`
-- `reanalysis/results/tables/four_class_venn/venn_sample_group_scope.csv`
+```bash
+cd "/Users/gzy2520/Desktop/Research/kla"
+python3 -m pip install -r requirements.txt
+Rscript workflow/install_r_dependencies.R
+Rscript workflow/run_pipeline.R all
+Rscript workflow/record_environment.R .
+Rscript workflow/build_manifest.R .
+```
 
-## 分析主键
+分阶段运行：
 
-蛋白分析统一使用去除 isoform 后缀的 UniProt `BaseAccession`。GeneSymbol 和
-Protein name 只用于显示/审计，禁止参与命中、去重、合并或 GO 回退。
+```bash
+Rscript workflow/run_pipeline.R core
+Rscript workflow/run_pipeline.R embeddings
+Rscript workflow/run_pipeline.R figures
+Rscript workflow/run_pipeline.R validate
+```
 
-GO-DDR 输入：
+## 发表版入口
 
-`data/annotations/GO-repair+damage(human).tsv`
-
-排除 `NOT` 注释；主分析暂不按 evidence code 缩减。
-
-## 当前主流程
-
-1. `run_pipeline.py` 与 `extractors.py` 从检索结果/作者补充表提取 Kla。
-2. `build_lactylome_reference_pairing.R` 和
-   `build_strict_reference_material_identity_audit.R` 固定一一对应的普通全蛋白参照。
-3. `analyze_kla_regulator_whole_proteome_intensity.R` 生成 30 行全蛋白热图轴。
-4. `analyze_kla_regulator_intensity.R` 按该轴生成 33 行 Kla 热图。
-5. `analyze_expanded_ddr_fraction_by_accession.R` 计算 Kla/普通全蛋白 DDR 占比。
-6. `plot_four_class_area_proportional_venn.R` 生成四套 33 组面积比例 Venn。
-7. `build_final_manifest.R` 生成 SHA256 清单。
-
-完整交接说明和重跑命令：
-
-`NEW_CHAT_PROJECT_PROMPT.md`
-
-## 当前正式结果
-
-- 双语 Kla 热图：
-  `reanalysis/results/figures/kla_regulator_cross_study_relative_intensity_heatmap_{zh,en}.png`
-- 双语普通全蛋白热图：
-  `reanalysis/results/figures/kla_regulator_whole_proteome_relative_intensity_heatmap_{zh,en}.png`
-- 双语 DDR 柱状图：
-  `reanalysis/results/figures/cell_type_kla_vs_reference_ddr_fraction_{zh,en}.png`
-- 双语 33 组 Venn：
-  `reanalysis/results/figures/four_class_venn/*_33groups_{zh,en}.png`
-- 33 组统计表：
-  `reanalysis/results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33{,_zh}.csv`
-- 老师审阅表：
-  `reanalysis/results/tables/kla_and_reference_teacher_review_zh.csv`
-- 最终 SHA256：
-  `reanalysis/reports/final_file_manifest_sha256.csv`
-
-方法细节：
-
-- `reanalysis/reports/METHODS_CURRENT_33GROUP_ZH.md`
-- `reanalysis/reports/METHODS_CURRENT_33GROUP_EN.md`
-- `reanalysis/reports/METHODS_STYLE_REFERENCE.md`
-- `reanalysis/reports/KLA_REGULATOR_INTENSITY_HEATMAP_METHODS.md`
-- `reanalysis/reports/EXPANDED_DDR_FRACTION_ACCESSION_ONLY.md`
-- `reanalysis/reports/DATA_SOURCE_AND_ANALYSIS_ALGORITHM.md`
-- `reanalysis/reports/COMMANDS.md`
+- 中文Methods：`manuscript/methods/METHODS_ZH.md`
+- 英文Methods：`manuscript/methods/METHODS_EN.md`
+- 数据来源：`docs/DATA_PROVENANCE.md`
+- 结果合同：`tests/validate_publication_contract.R`
+- 完整交接：`NEW_CHAT_PROJECT_PROMPT.md`

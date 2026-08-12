@@ -1,0 +1,25 @@
+Package: klaPublicationAnalysis
+Type: Project
+Title: Integrated Human Kla Proteomics and DNA Damage Response Analysis
+Version: 1.0.0
+Authors@R: person("Project", "Team", role = c("aut", "cre"), email = "not-used@example.invalid")
+Description: Reproducible analysis workflow for 33 paired human Kla sample
+    groups and 507 Kla-intersecting DDR proteins.
+License: file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.4.0)
+Imports:
+    data.table,
+    digest,
+    dplyr,
+    eulerr,
+    ggplot2,
+    GO.db,
+    Matrix,
+    patchwork,
+    readr,
+    readxl,
+    Rtsne,
+    stringr,
+    tidyr,
+    uwot

@@ -20,8 +20,7 @@ data/identifier/.DS_Store
 data/identifier/.~*.xlsx
 
 # Reproducible generated artifacts are covered by reports and SHA256 manifests.
-reanalysis/intermediate/
-reanalysis/logs/
-reanalysis/results/
-previous_umap/results/
-previous_umap/figures/
+results/
+work/
+
+# Local R dependency library.

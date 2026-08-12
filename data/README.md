@@ -20,5 +20,5 @@
 ## metadata
 
 保存数据集年份、样本类型、处理方法、数据库记录和下载清单。实际分析分组
-以 `../03_reanalysis/config/dataset_groups.csv` 为准。
-
+以 `../config/sample_group_catalog.csv`、`../config/lactylome_reference_pairing.csv`
+和 `../config/four_class_sample_grouping.csv` 为准。

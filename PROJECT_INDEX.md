@@ -2,7 +2,7 @@
 
 更新时间：2026-08-12
 
-本仓库以33组严格配对分析和固定507个Kla∩DDR蛋白为发表版主线。旧分析、
+本仓库以老师确认的30组配对分析和399个Kla∩DDR蛋白为当前发表版主线。旧分析、
 探索图和V1/V2版本不再位于当前代码树，必要时通过Git历史追溯。
 
 ## 目录
@@ -12,7 +12,7 @@
 | `data/` | 本地原始数据、检索结果、补充表和人工评分表；大型文件不进入Git |
 | `config/` | 固定样本范围、参照配对、ID映射和UniProt注释缓存 |
 | `python/` | 7个核心PXD异构原始表解析，仅负责基础Kla证据层 |
-| `R/data_preparation/` | 40/37/33组目录和507蛋白功能输入准备 |
+| `R/data_preparation/` | 40/37/30组目录和通路功能输入准备 |
 | `R/analysis/` | 强度、DDR占比和五集合降维参数分析 |
 | `R/figures/` | 论文图和补充图 |
 | `workflow/` | 统一运行、环境记录和SHA256清单 |
@@ -25,12 +25,13 @@
 ## 固定分析口径
 
 - 40个来源样本组进入可审计目录，其中37组具有Kla定量。
-- 33组具有可用普通全蛋白参照，四分类为9/2/9/13。
-- 33个Kla组对应30条唯一普通全蛋白参照展示行。
+- 30组具有可用普通全蛋白参照，四分类为9/2/7/12。
+- 30个Kla组对应28条唯一普通全蛋白参照展示行。
 - 配对分析排除PXD062720、PXD063047重度子痫前期胎盘、PXD064038和
   PXD075014。
 - PXD037371三个临床组因TMT通道无法可靠映射，不进入Kla定量范围。
-- 固定507个Kla∩DDR蛋白；五集合为183/471/178/383/507。
+- 老师要求排除PXD055230、PXD057709和PXD014870。
+- 当前399个Kla∩DDR蛋白；五集合为183/292/178/381/399。
 - 分析键为去isoform的UniProt `BaseAccession`；GeneSymbol仅展示和审计。
 - 所有随机步骤使用种子25。
 
@@ -40,7 +41,7 @@
 cd "/Users/gzy2520/Desktop/Research/kla"
 python3 -m pip install -r requirements.txt
 Rscript workflow/install_r_dependencies.R
-Rscript workflow/run_pipeline.R all
+Rscript workflow/run_pipeline.R selected_figures
 Rscript workflow/record_environment.R .
 Rscript workflow/build_manifest.R .
 ```
@@ -49,8 +50,6 @@ Rscript workflow/build_manifest.R .
 
 ```bash
 Rscript workflow/run_pipeline.R core
-Rscript workflow/run_pipeline.R embeddings
-Rscript workflow/run_pipeline.R figures
 Rscript workflow/run_pipeline.R validate
 ```
 

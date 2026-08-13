@@ -1,5 +1,5 @@
 PXD,DatasetClass,AnalysisEligibility,IndependentStudyUnit,CanonicalLactylomePXD,DecisionReason
-PXD014870,usable_global_lactylome,eligible,cyclic_immonium_widespread_lactylation,PXD014870,Local MCF7 search results are usable; repository file URLs are incorrectly mapped to PXD028737
+PXD014870,excluded_teacher_qc,excluded_teacher_qc,cyclic_immonium_widespread_lactylation,PXD014870,Teacher-directed exclusion: experiment considered unsuccessful and captured only 193 Kla proteins
 PXD028488,usable_global_lactylome,eligible,cyclic_immonium_widespread_lactylation,PXD028488,Human PEAKS directories are usable after excluding mouse BV2 and RAW samples
 PXD028737,usable_global_lactylome,eligible,hmc3_hypoxia_lactylome,PXD028737,Independent HMC3 global lactylome with MaxQuant processed results
 PXD033146,usable_global_lactylome,eligible,rotator_cuff_lactylome,PXD033146,Same study provides TPLa lactylome and TQ conventional proteome
@@ -21,8 +21,8 @@ PXD052772,same_study_reference_component,reference_only,ythdc1_achn_hypoxia,PXD0
 PXD053029,usable_global_lactylome,eligible,ythdc1_achn_hypoxia,PXD053029,Global ACHN lactylome component paired with PXD052772 conventional proteome
 PXD053474,usable_global_lactylome,eligible,hct116_subcellular_lactylome,PXD053474,Four DDA and DIA search suites plus author supplementary table are available
 PXD054919,usable_global_lactylome,eligible,hat1_rpa1_lung_adenocarcinoma,PXD054919,Repository archive is invalid but author supplementary Kla table is usable
-PXD055230,usable_global_lactylome,eligible,herpesvirus_lactylation,PXD055230,LaIP and whole-proteome reports are available in the same study
-PXD057709,same_study_component,eligible_component,herpesvirus_lactylation,PXD055230,Same publication family as PXD055230; retain evidence but do not count as an independent study
+PXD055230,excluded_teacher_virus_study,excluded_teacher,herpesvirus_lactylation,PXD055230,Teacher-directed exclusion because herpesvirus infection perturbs lactate biology and the study dominates the normal-cell union
+PXD057709,excluded_teacher_virus_study,excluded_teacher,herpesvirus_lactylation,PXD055230,Teacher-directed exclusion of the same herpesvirus publication family as PXD055230
 PXD058173,targeted_not_global,excluded_targeted,ythdc1_achn_hypoxia,PXD053029,YTHDC1 K82 PRM validation is targeted rather than a global lactylome
 PXD058534,usable_global_lactylome,eligible,hk2_pretreated_lactylome,PXD058534,Global pretreated HK-2 lactylome with compact MaxQuant results
 PXD060185,usable_global_lactylome,eligible,breast_cancer_lactylome,PXD060185,Global lactylomes for MCF10A; MCF7; MDA-MB-468; and T-47D

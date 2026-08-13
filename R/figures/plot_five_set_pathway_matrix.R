@@ -75,14 +75,14 @@ set_info <- data.table(
     "normal_cells",
     "cancer_tissue",
     "cancer_cells",
-    "all_507"
+    "all_kla_ddr"
   ),
   MembershipColumn = c(
     "In_normal_tissue",
     "In_normal_cells",
     "In_cancer_tissue",
     "In_cancer_cells",
-    "In_all_507"
+    "In_all_kla_ddr"
   ),
   SetOrder = 1:5,
   SetLabelEn = c(
@@ -120,10 +120,9 @@ scores <- score_raw[
 ]
 scores[, BaseAccession := trimws(BaseAccession)]
 assert(
-  nrow(scores) == 507L &&
-    uniqueN(scores$BaseAccession) == 507L &&
+  uniqueN(scores$BaseAccession) == nrow(scores) &&
     all(as.matrix(scores[, pathway_order, with = FALSE]) %in% c(-1, 0, 1)),
-  "The score workbook does not contain the expected 507-protein seven-pathway matrix."
+  "The score workbook does not contain a valid unique seven-pathway matrix."
 )
 recalculated_score <- as.numeric(
   as.matrix(scores[, pathway_order, with = FALSE]) %*% weights
@@ -136,15 +135,16 @@ assert(
 scores[, SignedScore := recalculated_score]
 
 membership <- fread(membership_path)
-membership_columns <- set_info$MembershipColumn[set_info$Set != "all_507"]
+membership_columns <- set_info$MembershipColumn[set_info$Set != "all_kla_ddr"]
 assert(
-  nrow(membership) == 507L &&
-    uniqueN(membership$BaseAccession) == 507L &&
+  nrow(membership) > 0L &&
+    uniqueN(membership$BaseAccession) == nrow(membership) &&
     all(membership_columns %in% names(membership)) &&
-    setequal(membership$BaseAccession, scores$BaseAccession),
-  "The fixed four-category membership does not match the 507 scored proteins."
+    all(membership$BaseAccession %in% scores$BaseAccession),
+  "One or more proteins in the current membership lack pathway scores."
 )
-membership[, In_all_507 := TRUE]
+scores <- scores[BaseAccession %in% membership$BaseAccession]
+membership[, In_all_kla_ddr := TRUE]
 membership_long <- melt(
   membership[
     ,
@@ -202,10 +202,18 @@ observed_set_counts <- protein_by_set[
     SetLabelZh
   )
 ][order(SetOrder)]
-expected_counts <- c(183L, 471L, 178L, 383L, 507L)
+expected_counts <- c(
+  vapply(
+    membership_columns,
+    function(column) sum(membership[[column]] %in% c(TRUE, "TRUE", 1, "1")),
+    integer(1),
+    USE.NAMES = FALSE
+  ),
+  nrow(membership)
+)
 assert(
   identical(observed_set_counts$ProteinCount, expected_counts),
-  "The five protein-set counts are not 183/471/178/383/507."
+  "The five protein-set counts do not match the current membership table."
 )
 
 color_key <- fread(color_key_path)
@@ -309,7 +317,7 @@ fwrite(
 )
 fwrite(
   matrix_long,
-  file.path(table_dir, "linear_matrix_plot_data_12054.csv")
+  file.path(table_dir, "linear_matrix_plot_data.csv")
 )
 fwrite(
   pathway_summary,
@@ -327,7 +335,7 @@ fwrite(
 input_audit <- data.table(
   Input = c(
     "Revised DDR score workbook",
-    "Fixed four-category membership",
+    "Current four-category membership",
     "Existing pathway color key"
   ),
   Path = c(
@@ -341,7 +349,7 @@ input_audit <- data.table(
   ),
   MD5 = unname(tools::md5sum(required_inputs)),
   Role = c(
-    "507 proteins, seven signed pathway states, score ordering key",
+    paste0(nrow(scores), " current proteins, seven signed pathway states, score ordering key"),
     "normal tissue, normal cells, cancer tissue, cancer cells membership",
     "stable pathway colors reused from previous figures"
   )
@@ -508,12 +516,12 @@ make_matrix_figure <- function(set_key, language) {
   }
   caption <- if (is_zh) {
     paste0(
-      "颜色仅编码原始−1/0/+1通路状态。分类来自固定33组分析的既有成员表；不同分类之间可以重叠。"
+      "颜色仅编码原始−1/0/+1通路状态。分类来自当前30组分析的成员表；不同分类之间可以重叠。"
     )
   } else {
     paste0(
       "Colors encode only the original −1/0/+1 pathway states. Set membership ",
-      "reuses the fixed 33-group classification; sets can overlap."
+      "reuses the current 30-group classification; sets can overlap."
     )
   }
 

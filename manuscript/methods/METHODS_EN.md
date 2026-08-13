@@ -12,11 +12,10 @@ reproducibility. All procedures and wording below describe the present
 proteomics study.
 
 The analysis unit was a unique `PXD+SampleGroup`. Thirty-seven sample groups
-had traceable Kla quantification. Of these, 33 also had an exact, quantitative
-whole-proteome reference and were retained for paired heatmaps, DDR fraction
-comparisons, and four-set Venn analyses. The final scope comprised nine
-normal/non-tumor tissues, two cancer tissues, nine normal/non-tumor cell
-groups, and 13 cancer cell groups.
+had traceable Kla quantification. Of these, 30 were retained for paired
+heatmaps, DDR fraction comparisons, and four-set Venn analyses. The final
+scope comprised nine normal/non-tumor tissues, two cancer tissues, seven
+normal/non-tumor cell groups, and 12 cancer cell groups.
 
 ## Public data acquisition and organization
 
@@ -55,9 +54,9 @@ evidence but could not independently classify an unmodified peptide as Kla.
 
 No universal localization-probability threshold was imposed across
 heterogeneous author outputs. Valid author-reported Kla evidence was retained
-after the quality controls above. For PXD014870, the primary analysis used the
-teacher-specified additional localization threshold of 0; a separate 0.75
-sensitivity analysis was generated and was not pooled with the primary set.
+after the quality controls above. PXD014870 was excluded from the final main
+analysis because the experiment was considered technically unsuccessful and
+yielded only 193 Kla proteins, far fewer than the other MCF7 Kla dataset.
 
 ## Protein identifier harmonization
 
@@ -89,10 +88,15 @@ audits were retained. Three PXD037371 clinical liver groups were excluded from
 Kla quantification because TMT channels could not be reliably assigned to the
 clinical groups.
 
-The 33 Kla groups mapped to 30 unique whole-proteome display rows. Pairs of
-HK-2, MCF7, and HCT116 Kla studies shared identical reference matrices.
-Sample-level pairing remained at 33 rows, whereas the whole-proteome heatmap
-displayed each identical reference once. The 33-row Kla heatmap was ordered by
+In addition, PXD055230 and PXD057709 were excluded together because they
+belonged to the same herpesvirus-infection publication family, infection
+strongly perturbed lactate biology, and these deep datasets dominated the
+normal-cell Kla union. Their raw and processed files were retained for audit.
+
+The 30 Kla groups mapped to 28 unique whole-proteome display rows. Pairs of
+HK-2 and HCT116 Kla studies shared identical reference matrices.
+Sample-level pairing remained at 30 rows, whereas the whole-proteome heatmap
+displayed each identical reference once. The 30-row Kla heatmap was ordered by
 the corresponding whole-proteome reference axis.
 
 ## GO-DDR annotation and fractions
@@ -168,6 +172,16 @@ came from exact membership tables; ellipse geometry was an approximate
 area-proportional representation. Each analysis exported membership, region
 count, and set count tables for independent reconstruction.
 
+## Linear pathway-state matrices
+
+The union of Kla-DDR proteins retained in the 30-group analysis contained 399
+unique BaseAccessions. Four category-specific sets and the 399-protein union
+were visualized separately. Seven manually curated DDR pathway states (BER,
+NER, MMR, FA, HR, AEJ, and NHEJ) were retained from the score workbook.
+State values of +1, -1, and 0 were displayed as solid pathway color, dark
+charcoal, and light gray, respectively. A weighted score was used only to sort
+proteins within each panel and did not alter pathway state or color.
+
 ## Software and reproducibility
 
 The main analyses used R 4.4.3 with dplyr 1.2.0, readr 2.2.0, tidyr 1.3.2,
@@ -176,11 +190,13 @@ extraction of heterogeneous search outputs used Python 3.12.10. Project
 configuration, source provenance, intermediate tables, commands, and automated
 tests were retained.
 
-Tests verified the 33-row Kla axis, 30-row unique reference axis, category
-counts of 9/2/9/13, exclusion of four unpaired groups, zero GeneSymbol
+Tests verified the 30-row Kla axis, 28-row unique reference axis, category
+counts of 9/2/7/12, exclusion of seven groups, zero GeneSymbol
 fallbacks, non-collapsed within-sample percentiles, deduplicated shared
 references, and exact reconstruction of all Venn counts from membership and
-region tables. Final deliverables were recorded in a SHA256 manifest.
+region tables. UMAP, t-SNE, PCA, and Cytoscape outputs were not regenerated
+for this analysis revision. Final deliverables were recorded in a SHA256
+manifest.
 
 ## Data and code availability
 

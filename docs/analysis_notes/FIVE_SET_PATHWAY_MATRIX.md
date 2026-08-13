@@ -1,4 +1,4 @@
-# Final separate 4+1 linear pathway-state figures for the fixed 33-group analysis
+# Final separate 4+1 linear pathway-state figures for the current 30-group analysis
 
 ## Final figure choice
 
@@ -6,19 +6,19 @@ The linear layout is selected as the final display. The earlier circular layout
 is retained as a versioned comparison but is not part of this final 4+1 output.
 The linear state matrix and pathway summary are exported as separate figures.
 In addition, the four biological categories are not combined into one
-multi-panel figure: each category is exported independently, and the all-507
+multi-panel figure: each category is exported independently, and the all-protein
 set is exported as a fifth independent figure.
 
 ## Five protein sets
 
 1. Normal/non-tumor tissues, n = 183.
-2. Normal/non-tumor cells, n = 471.
+2. Normal/non-tumor cells, n = 292.
 3. Cancer tissues, n = 178.
-4. Cancer cells, n = 383.
-5. All fixed Kla-intersection-DDR proteins, n = 507.
+4. Cancer cells, n = 381.
+5. All current Kla-intersection-DDR proteins, n = 399.
 
 The four biological categories reuse the fixed membership from the existing
-33-group analysis and can overlap. Every set is keyed by isoform-stripped
+30-group analysis and can overlap. Every set is keyed by isoform-stripped
 UniProt `BaseAccession`.
 
 ## Independent ordering within each panel
@@ -45,7 +45,7 @@ both figure types.
 
 For each set key
 `normal_tissue`, `normal_cells`, `cancer_tissue`, `cancer_cells`, and
-`all_507`, the independent linear matrix is:
+`all_kla_ddr`, the independent linear matrix is:
 
 - `kla_ddr_linear_pathway_matrix_<set>_en.{png,pdf,svg}`
 - `kla_ddr_linear_pathway_matrix_<set>_zh.{png,pdf,svg}`

@@ -267,9 +267,17 @@ sample_catalog <- sample_catalog_all |>
   ) |>
   arrange(CategoryOrder, OriginalRowOrder) |>
   mutate(RowOrder = row_number())
-if (nrow(sample_catalog) != 33) {
+expected_paired_groups <- sum(
+  sample_catalog_all$PairingInclude %in%
+    c(TRUE, "TRUE", "True", 1, "1") &
+    !is.na(sample_catalog_all$ReferencePXD) &
+    nzchar(sample_catalog_all$ReferencePXD)
+)
+if (nrow(sample_catalog) != expected_paired_groups) {
   stop(
-    "Strict whole-proteome heatmap scope must contain 33 sample groups, found ",
+    "Strict whole-proteome heatmap scope must contain ",
+    expected_paired_groups,
+    " configured sample groups, found ",
     nrow(sample_catalog)
   )
 }
@@ -1526,9 +1534,9 @@ heatmap_rows <- display_members |>
     RowLabel = RowLabelEn
   )
 
-if (nrow(heatmap_rows) != 30) {
+if (!nrow(heatmap_rows)) {
   stop(
-    "Unique whole-proteome reference heatmap must contain 30 rows, found ",
+    "Unique whole-proteome reference heatmap contains no rows: ",
     nrow(heatmap_rows)
   )
 }
@@ -1803,12 +1811,14 @@ make_main_plot <- function(language = c("zh", "en")) {
       },
       subtitle = if (is_zh) {
         paste0(
-          "33条严格配对显示为30个唯一普通全蛋白参照行；",
+          nrow(sample_catalog), "条严格配对显示为",
+          nrow(heatmap_rows), "个唯一普通全蛋白参照行；",
           "按正常组织、癌症组织、正常细胞、癌症细胞分区。颜色由白色向暖色递增。"
         )
       } else {
         paste0(
-          "Thirty-three strict Kla-reference pairs are displayed as 30 unique whole-proteome reference rows and divided into ",
+          nrow(sample_catalog), " strict Kla-reference pairs are displayed as ",
+          nrow(heatmap_rows), " unique whole-proteome reference rows and divided into ",
           "normal tissues, cancer tissues, normal cells, and cancer cells. Warmer colors indicate higher percentiles."
         )
       },

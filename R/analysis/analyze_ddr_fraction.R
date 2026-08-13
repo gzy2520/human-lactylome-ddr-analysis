@@ -23,6 +23,9 @@ dir.create(intermediate_dir, recursive = TRUE, showWarnings = FALSE)
 pairing_path <- file.path(
   project_root, "config", "sample_group_catalog.csv"
 )
+scope_exclusion_path <- file.path(
+  project_root, "config", "main_analysis_scope_exclusions.csv"
+)
 kla_scope_path <- file.path(
   table_dir, "kla_regulator_intensity_availability_audit.csv"
 )
@@ -621,6 +624,16 @@ pairing <- read.csv(
     SampleGroupID = paste(乳酸化PXD, 样本组, sep = "__"),
     RowOrder = KlaRowOrder
   )
+scope_exclusions <- read.csv(
+  scope_exclusion_path,
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+excluded_sample_keys <- paste(
+  scope_exclusions$PXD,
+  scope_exclusions$SampleGroup,
+  sep = "__"
+)
 if (nrow(pairing) != 37) {
   stop("Reference comparison scope must retain all 37 Kla sample groups")
 }
@@ -1098,6 +1111,7 @@ for (i in seq_len(nrow(pairing))) {
   reference_configured <-
     row$配置要求进入严格参照分析 %in%
       c(TRUE, "TRUE", "True", 1, "1") &&
+    !key %in% excluded_sample_keys &&
     !is.na(row$常规蛋白组PXD) &&
     nzchar(row$常规蛋白组PXD) &&
     !is.na(row$常规蛋白组证据文件) &&

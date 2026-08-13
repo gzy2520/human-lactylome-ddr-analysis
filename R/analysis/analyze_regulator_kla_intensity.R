@@ -133,9 +133,9 @@ whole_heatmap_rows <- read.csv(
   stringsAsFactors = FALSE,
   check.names = FALSE
 )
-if (nrow(whole_heatmap_rows) != 30) {
+if (!nrow(whole_heatmap_rows)) {
   stop(
-    "Expected 30 unique whole-proteome heatmap rows, found ",
+    "The whole-proteome heatmap axis contains no rows: ",
     nrow(whole_heatmap_rows)
   )
 }
@@ -995,12 +995,7 @@ target_sample_grid <- sample_registry |>
 paired_sample_keys <- sample_catalog |>
   filter(!is.na(WholeProteomeDisplayRowOrder)) |>
   select(PXD, SampleGroup)
-if (nrow(paired_sample_keys) != 33) {
-  stop(
-    "Expected 33 Kla sample groups with exact whole-proteome references, found ",
-    nrow(paired_sample_keys)
-  )
-}
+if (!nrow(paired_sample_keys)) stop("No paired Kla-reference sample groups remain.")
 paired_target_sample_grid <- target_sample_grid |>
   semi_join(paired_sample_keys, by = c("PXD", "SampleGroup"))
 
@@ -1402,12 +1397,14 @@ make_main_plot <- function(language = c("zh", "en")) {
       },
       subtitle = if (is_zh) {
         paste0(
-          "严格配对范围为33个Kla样本组；行顺序完全跟随普通全蛋白热图，",
+          "严格配对范围为", nrow(paired_sample_keys),
+          "个Kla样本组；行顺序完全跟随普通全蛋白热图，",
           "并按正常组织、癌症组织、正常细胞、癌症细胞分区。颜色由白色向暖色递增。"
         )
       } else {
         paste0(
-          "The strict paired scope contains 33 Kla sample groups. Row order follows the whole-proteome heatmap and is divided into ",
+          "The strict paired scope contains ", nrow(paired_sample_keys),
+          " Kla sample groups. Row order follows the whole-proteome heatmap and is divided into ",
           "normal tissues, cancer tissues, normal cells, and cancer cells. Warmer colors indicate higher within-sample percentiles."
         )
       },

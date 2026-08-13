@@ -10,12 +10,13 @@
 ## 当前范围
 
 项目整合人源蛋白乳酸化质谱数据，并以普通全蛋白组作参照评估DDR相关蛋白。
-来源目录含40个样本组，37组具有Kla定量，33组进入严格配对分析；四分类为
-正常组织9、癌组织2、正常细胞9、癌细胞13。普通全蛋白热图为30条唯一参照行。
+来源目录含40个样本组，37组具有Kla定量，30组进入当前配对分析；四分类为
+正常组织9、癌组织2、正常细胞7、癌细胞12。普通全蛋白热图为28条唯一参照行。
 
 排除的4个无可用配对参照组为PXD062720、PXD063047重度子痫前期胎盘、
 PXD064038和PXD075014。PXD037371三个临床组因TMT通道无法可靠映射，只保留
-来源审计。下游固定使用507个Kla∩DDR蛋白，五集合为183/471/178/383/507。
+来源审计。老师另要求排除PXD055230、PXD057709和PXD014870。当前Kla∩DDR
+蛋白并集为399，五集合为183/292/178/381/399。
 
 ## 不可改变的规则
 
@@ -34,18 +35,15 @@ PXD064038和PXD075014。PXD037371三个临床组因TMT通道无法可靠映射�
 1. `python/data_preparation/build_core_kla_inputs.py` 解析7个核心PXD，生成
    `work/intermediate/kla_by_dataset/all_primary_sample_level_kla_sites.csv`。
 2. `R/data_preparation/build_kla_regulator_landscape.R` 建立40/37组Kla目录。
-3. 两个 `R/analysis/analyze_regulator_*_intensity.R` 生成30行普通全蛋白轴和
-   33行Kla轴。
-4. `R/data_preparation/build_reference_material_audit.R` 固定33/4参照状态。
+3. 两个 `R/analysis/analyze_regulator_*_intensity.R` 生成28行普通全蛋白轴和
+   30行Kla轴。
+4. `R/data_preparation/build_reference_material_audit.R` 固定30/7参照状态。
 5. `R/analysis/analyze_ddr_fraction.R` 与
    `R/figures/plot_four_class_venn.R` 生成DDR统计和四类集合。
-6. `R/data_preparation/prepare_protein_function_inputs.R` 生成稳定的507蛋白
-   GO、评分和颜色表。
-7. `R/figures/plot_bp_semantic_umap.R` 生成507×3,008 BP语义矩阵和UMAP。
-8. `R/analysis/tune_five_set_embeddings.R` 与
-   `R/figures/plot_five_set_embeddings.R` 生成15套独立UMAP/t-SNE/PCA九宫格。
-9. `R/figures/plot_pathway_specific_umap.R` 和
-   `R/figures/plot_five_set_pathway_matrix.R` 生成最终通路展示。
+6. `R/data_preparation/prepare_protein_function_inputs.R` 保留人工评分、GO和颜色底表。
+7. `R/figures/plot_five_set_pathway_matrix.R` 从当前membership筛出399蛋白，
+   生成最终4+1线性通路展示。
+8. 本轮不运行UMAP、t-SNE、PCA和Cytoscape。
 
 统一入口：
 
@@ -53,7 +51,7 @@ PXD064038和PXD075014。PXD037371三个临床组因TMT通道无法可靠映射�
 cd "/Users/gzy2520/Desktop/Research/kla"
 python3 -m pip install -r requirements.txt
 Rscript workflow/install_r_dependencies.R
-Rscript workflow/run_pipeline.R all
+Rscript workflow/run_pipeline.R selected_figures
 ```
 
 完成后必须运行：
@@ -64,5 +62,5 @@ Rscript workflow/run_pipeline.R validate
 Rscript workflow/build_manifest.R .
 ```
 
-发表前必须确认37/33/30、9/2/9/13、507、183/471/178/383/507和3,008个BP特征
-均通过结果合同，并同时人工查看中英文图是否截断。
+发表前必须确认37/30/28、9/2/7/12、399和183/292/178/381/399均通过结果合同，
+并同时人工查看中英文柱状图、热图、Venn图和线性图是否截断。

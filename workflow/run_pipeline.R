@@ -1,16 +1,18 @@
 #!/usr/bin/env Rscript
 
-# Publication workflow for the 33-group human Kla proteomics analysis.
+# Publication workflow for the configured human Kla proteomics analysis.
 #
 # Usage:
-#   Rscript workflow/run_pipeline.R [all|core|embeddings|figures|validate]
+#   Rscript workflow/run_pipeline.R [all|core|embeddings|figures|selected_figures|validate]
 #
 # The default is "all". Set KLA_DATA_ROOT only when the raw data directory is
 # stored outside the repository. All stochastic steps use seed 25 internally.
 
 args <- commandArgs(trailingOnly = TRUE)
-target <- if (length(args)) args[[1L]] else "all"
-valid_targets <- c("all", "core", "embeddings", "figures", "validate")
+target <- if (length(args)) args[[1L]] else "selected_figures"
+valid_targets <- c(
+  "all", "core", "embeddings", "figures", "selected_figures", "validate"
+)
 if (!target %in% valid_targets) {
   stop("Target must be one of: ", paste(valid_targets, collapse = ", "))
 }
@@ -77,6 +79,11 @@ figure_steps <- list(
   c("R/analysis/summarize_four_class_venn_counts.R", "15 four-Venn set-count summary")
 )
 
+selected_figure_steps <- list(
+  c("R/figures/plot_five_set_pathway_matrix.R", "11 selected 4+1 pathway matrices"),
+  c("R/analysis/summarize_four_class_venn_counts.R", "12 four-Venn set-count summary")
+)
+
 if (target %in% c("all", "core")) {
   run_python_script(
     "python/data_preparation/build_core_kla_inputs.py",
@@ -90,7 +97,23 @@ if (target %in% c("all", "embeddings")) {
 if (target %in% c("all", "figures")) {
   for (step in figure_steps) run_r_script(step[[1L]], step[[2L]])
 }
-if (target %in% c("all", "validate")) {
+if (target == "selected_figures") {
+  run_python_script(
+    "python/data_preparation/build_core_kla_inputs.py",
+    "01 core Kla evidence"
+  )
+  run_python_script(
+    "python/data_preparation/build_reference_proteome_membership.py",
+    "02 reference-proteome membership"
+  )
+  for (step in core_steps[seq_len(8L)]) {
+    run_r_script(step[[1L]], step[[2L]])
+  }
+  for (step in selected_figure_steps) {
+    run_r_script(step[[1L]], step[[2L]])
+  }
+}
+if (target %in% c("all", "selected_figures", "validate")) {
   run_r_script("tests/validate_publication_contract.R", "16 publication contract")
 }
 

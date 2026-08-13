@@ -106,12 +106,7 @@ if (nrow(stats) != 37) {
 }
 paired_stats <- stats |>
   filter(PairedAnalysisIncluded %in% c(TRUE, "TRUE", "True", 1, "1"))
-if (nrow(paired_stats) != 33) {
-  stop(
-    "Expected 33 exact quantitative reference groups, found ",
-    nrow(paired_stats)
-  )
-}
+if (!nrow(paired_stats)) stop("No exact quantitative reference groups remain.")
 if (!identical(
   unique(stats$Category),
   category_order
@@ -347,16 +342,21 @@ reference <- read_csv(reference_path, show_col_types = FALSE) |>
   separate_rows(MappedBaseAccessions, sep = ";") |>
   mutate(BaseAccession = base_accession(MappedBaseAccessions)) |>
   filter(!is.na(BaseAccession), nzchar(BaseAccession)) |>
+  semi_join(
+    paired_stats |>
+      select(SampleGroupKey),
+    by = "SampleGroupKey"
+  ) |>
   distinct(PXD, SampleGroup, Category, BaseAccession)
 reference_group_keys <- unique(paste(reference$PXD, reference$SampleGroup, sep = "__"))
 expected_reference_group_keys <- unique(paired_stats$SampleGroupKey)
 if (
-  length(reference_group_keys) != 33 ||
+  length(reference_group_keys) != length(expected_reference_group_keys) ||
     length(setdiff(reference_group_keys, expected_reference_group_keys)) ||
     length(setdiff(expected_reference_group_keys, reference_group_keys))
   ) {
   stop(
-    "Reference Venn membership does not match the 33 exact quantitative ",
+    "Reference Venn membership does not match the configured exact quantitative ",
     "reference groups"
   )
 }
@@ -384,7 +384,10 @@ write_csv(
   file.path(
     project_root,
     "results", "tables",
-    "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33.csv"
+    paste0(
+      "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_",
+      nrow(paired_stats), ".csv"
+    )
   )
 )
 paired_stats_zh <- read_csv(
@@ -403,7 +406,10 @@ write_csv(
   file.path(
     project_root,
     "results", "tables",
-    "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_33_zh.csv"
+    paste0(
+      "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_",
+      nrow(paired_stats), "_zh.csv"
+    )
   )
 )
 
@@ -593,22 +599,39 @@ draw_area_proportional <- function(
     }
     title <- if (language == "zh") title_zh else title_en
     font_family <- if (language == "zh") "PingFang SC" else "Arial"
+    category_counts <- vapply(
+      category_order,
+      function(category) sum(paired_stats$Category == category),
+      integer(1)
+    )
     scope_title <- if (language == "zh") {
-      "严格配对33组（9/2/9/13；排除4组）"
+      paste0(
+        "严格配对", nrow(paired_stats), "组（",
+        paste(category_counts, collapse = "/"), "）"
+      )
     } else {
-      "33 strict pairs (9/2/9/13; 4 unpaired groups excluded)"
+      paste0(
+        nrow(paired_stats), " strict pairs (",
+        paste(category_counts, collapse = "/"), ")"
+      )
     }
     visible_title <- paste(title, scope_title, sep = " | ")
     subtitle <- if (language == "zh") {
       paste0(
-        "严格配对范围：33组（正常组织9、癌症组织2、正常细胞9、癌症细胞13）；",
-        "4组无严格参照已排除\n",
+        "严格配对范围：", nrow(paired_stats), "组（正常组织",
+        category_counts[["normal_tissue"]], "、癌症组织",
+        category_counts[["cancer_tissue"]], "、正常细胞",
+        category_counts[["normal_cells"]], "、癌症细胞",
+        category_counts[["cancer_cells"]], "）\n",
         "按 UniProt BaseAccession 去重；椭圆面积按集合数量比例拟合"
       )
     } else {
       paste0(
-        "Strict paired scope: 33 groups (normal tissue 9, cancer tissue 2, ",
-        "normal cells 9, cancer cells 13); 4 groups without exact references excluded\n",
+        "Strict paired scope: ", nrow(paired_stats), " groups (normal tissue ",
+        category_counts[["normal_tissue"]], ", cancer tissue ",
+        category_counts[["cancer_tissue"]], ", normal cells ",
+        category_counts[["normal_cells"]], ", cancer cells ",
+        category_counts[["cancer_cells"]], ")\n",
         "Deduplicated by UniProt BaseAccession; ellipse areas are fitted proportional to set sizes"
       )
     }
@@ -616,7 +639,7 @@ draw_area_proportional <- function(
       figure_root,
       c(
         paste0(analysis_name, "_", language),
-        paste0(analysis_name, "_33groups_", language)
+        paste0(analysis_name, "_", nrow(paired_stats), "groups_", language)
       )
     )
     for (output_stem in output_stems) {

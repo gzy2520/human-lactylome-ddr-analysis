@@ -75,7 +75,14 @@ translate_decision <- function(value) {
   ifelse(
     value == "included_exact_material_identity",
     "是",
-    ifelse(value == "excluded_no_exact_material_reference", "否", value)
+    ifelse(
+      value %in% c(
+        "excluded_no_exact_material_reference",
+        "excluded_by_teacher_scope_decision"
+      ),
+      "否",
+      value
+    )
   )
 }
 
@@ -137,8 +144,9 @@ included <- statistics$纳入严格配对分析 %in%
   c(TRUE, "TRUE", "True", 1, "1")
 material_match <- audit_37$材料身份是否严格匹配 %in%
   c(TRUE, "TRUE", "True", 1, "1")
-if (!identical(included, material_match)) {
-  stop("Statistics inclusion disagrees with strict material-identity audit")
+audit_included <- audit_37$分析决定 == "included_exact_material_identity"
+if (!identical(included, audit_included)) {
+  stop("Statistics inclusion disagrees with the final material-audit decision")
 }
 
 status_note <- translate_state(audit_37$实验状态匹配情况)
@@ -224,9 +232,9 @@ category_counts <- table(factor(review$四分类, levels = category_levels))
 if (!identical(as.integer(category_counts), c(10L, 3L, 10L, 14L))) {
   stop("Unexpected four-class group counts: ", paste(category_counts, collapse = ", "))
 }
-if (sum(review$是否纳入配对分析 == "是") != 33 ||
-    sum(review$是否纳入配对分析 == "否") != 4) {
-  stop("Teacher review table must contain 33 included and 4 excluded rows")
+if (sum(review$是否纳入配对分析 == "是") != sum(included) ||
+    sum(review$是否纳入配对分析 != "是") != sum(!included)) {
+  stop("Teacher review inclusion counts disagree with the statistics table")
 }
 
 write.csv(review, output_csv, row.names = FALSE, na = "")

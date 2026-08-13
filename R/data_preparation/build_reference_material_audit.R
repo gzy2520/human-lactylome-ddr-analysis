@@ -72,10 +72,10 @@ if (any(vapply(audit[review_columns], function(values) any(is.na(values)), logic
 configured <- audit$ConfigStrictInclude %in% c(TRUE, "TRUE", "True", 1, "1")
 material_match <- audit$MaterialIdentityMatch %in%
   c(TRUE, "TRUE", "True", 1, "1")
-if (!identical(configured, material_match)) {
+if (any(configured & !material_match)) {
   bad <- paste(
-    audit$KlaPXD[configured != material_match],
-    audit$SampleGroup[configured != material_match],
+    audit$KlaPXD[configured & !material_match],
+    audit$SampleGroup[configured & !material_match],
     sep = "__"
   )
   stop(
@@ -142,15 +142,16 @@ audit <- audit |>
         SampleGroup == "neural stem cells" ~ "ENSA_HMP1_only",
       TRUE ~ paste0("named_subset:", ReferenceSubset)
     ),
-    AnalysisDecision = ifelse(
-      configured & material_match,
-      "included_exact_material_identity",
-      "excluded_no_exact_material_reference"
+    AnalysisDecision = case_when(
+      configured & material_match ~ "included_exact_material_identity",
+      !configured & material_match ~ "excluded_by_teacher_scope_decision",
+      TRUE ~ "excluded_no_exact_material_reference"
     ),
-    DecisionBasis = ifelse(
-      configured & material_match,
-      "Biological material identity/granularity is exact; experimental-state limitations are reported separately",
-      PairingCaveat
+    DecisionBasis = case_when(
+      configured & material_match ~
+        "Biological material identity/granularity is exact; experimental-state limitations are reported separately",
+      !configured & material_match ~ PairingCaveat,
+      TRUE ~ PairingCaveat
     )
   ) |>
   arrange(ScopeOrder) |>
@@ -202,6 +203,6 @@ write.csv(
 
 message(
   "Wrote strict material-identity audit: ",
-  sum(material_match), " included and ",
-  sum(!material_match), " excluded."
+  sum(configured & material_match), " included and ",
+  sum(!(configured & material_match)), " excluded."
 )

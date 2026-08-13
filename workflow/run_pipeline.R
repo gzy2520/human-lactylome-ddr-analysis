@@ -73,7 +73,8 @@ embedding_steps <- list(
 
 figure_steps <- list(
   c("R/figures/plot_pathway_specific_umap.R", "13 pathway-specific UMAP"),
-  c("R/figures/plot_five_set_pathway_matrix.R", "14 five-set pathway matrix")
+  c("R/figures/plot_five_set_pathway_matrix.R", "14 five-set pathway matrix"),
+  c("R/analysis/summarize_four_class_venn_counts.R", "15 four-Venn set-count summary")
 )
 
 if (target %in% c("all", "core")) {
@@ -90,7 +91,7 @@ if (target %in% c("all", "figures")) {
   for (step in figure_steps) run_r_script(step[[1L]], step[[2L]])
 }
 if (target %in% c("all", "validate")) {
-  run_r_script("tests/validate_publication_contract.R", "15 publication contract")
+  run_r_script("tests/validate_publication_contract.R", "16 publication contract")
 }
 
 message("\nWorkflow target completed: ", target)

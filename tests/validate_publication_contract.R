@@ -109,6 +109,18 @@ pathway_summary <- read_table(
 )
 assert(nrow(pathway_summary) == 35L, "Expected 35 five-set pathway summary rows.")
 
+venn_summary <- read_table(
+  "results", "tables", "four_class_venn", "four_venn_set_counts_4x4.csv"
+)
+assert(
+  nrow(venn_summary) == 4L &&
+    identical(as.integer(venn_summary$正常组织), c(3423L, 183L, 18468L, 649L)) &&
+    identical(as.integer(venn_summary$正常细胞), c(7553L, 471L, 13285L, 631L)) &&
+    identical(as.integer(venn_summary$癌组织), c(2714L, 178L, 8756L, 426L)) &&
+    identical(as.integer(venn_summary$癌细胞), c(4222L, 383L, 14989L, 616L)),
+  "The four-Venn 4x4 set-count summary changed."
+)
+
 required_figures <- c(
   file.path(
     "results", "figures", "kla_regulator_cross_study_relative_intensity_heatmap_en.png"

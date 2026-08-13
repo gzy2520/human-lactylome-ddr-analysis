@@ -12,6 +12,7 @@ The repository is considered reproducible only when
 - 507 by 3,008 BP semantic feature matrix.
 - 1,175 signed nonzero pathway assignments: 1,108 promoting and 67 suppressing.
 - 35 five-set by seven-pathway summary rows.
+- A 4 x 4 set-count summary for the four Venn analyses, without intersection counts.
 - Required bilingual heatmaps, DDR figures, pathway-specific UMAP, and
   five-set pathway matrices.
 

@@ -1783,7 +1783,10 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       )
     )
   max_fraction <- max(plot_data$DdrFraction, na.rm = TRUE)
-  axis_upper <- ceiling((max_fraction * 100 + 1.5) * 2) / 2
+  axis_upper <- 15
+  if (max_fraction * 100 > axis_upper) {
+    stop("The plotted DDR fraction exceeds the fixed 15% axis limit.")
+  }
   figure_height <- max(12, nrow(paired_statistics) * 0.42 + 4.2)
   ggplot(
     plot_data,
@@ -1815,6 +1818,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
     ) +
     scale_x_continuous(
       limits = c(0, axis_upper),
+      breaks = c(0, 5, 10, 15),
       expand = expansion(mult = c(0, 0))
     ) +
     guides(
@@ -1858,7 +1862,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       strip.background = element_rect(fill = "#DCEAF5", color = NA),
       panel.spacing.y = grid::unit(0.72, "lines"),
       legend.position = "inside",
-      legend.position.inside = c(0.975, 0.992),
+      legend.position.inside = c(0.965, 0.992),
       legend.justification.inside = c(1, 1),
       legend.direction = "vertical",
       legend.text = element_text(

@@ -1277,8 +1277,8 @@ category_labels_zh <- c(
 category_labels_en <- c(
   normal_tissue = "Normal/non-tumor tissues",
   cancer_tissue = "Cancer tissues",
-  normal_cells = "Normal/non-tumor cells",
-  cancer_cells = "Cancer cells"
+  normal_cells = "Non-tumor cell models",
+  cancer_cells = "Cancer cell lines"
 )
 english_display_names <- c(
   "pathological rotator cuff tendon" = "Pathological rotator cuff tendon",
@@ -1581,7 +1581,16 @@ category_order <- c(
 
 cluster_order <- paired_statistics |>
   group_by(Category, MaterialCluster) |>
-  summarise(ClusterOrder = min(RowOrder), .groups = "drop")
+  summarise(ClusterOrder = min(RowOrder), .groups = "drop") |>
+  mutate(
+    ClusterOrder = case_when(
+      Category == "cancer_tissue" &
+        MaterialCluster == "PXD075377__HCC" ~ 1,
+      Category == "cancer_tissue" &
+        MaterialCluster == "PXD066054__prostate cancer" ~ 2,
+      TRUE ~ ClusterOrder
+    )
+  )
 reference_order <- paired_statistics |>
   group_by(Category, MaterialCluster, ReferenceDisplayKey) |>
   summarise(ReferenceOrder = min(RowOrder), .groups = "drop")
@@ -1743,7 +1752,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
     )
   } else {
     c(
-      reference = "Reference whole proteome",
+      reference = "Whole proteome",
       kla = "Lactylome (Kla)"
     )
   }
@@ -1774,11 +1783,44 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       )
     )
   max_fraction <- max(plot_data$DdrFraction, na.rm = TRUE)
+  axis_upper <- ceiling((max_fraction * 100 + 1.5) * 2) / 2
+  background_data <- plot_data |>
+    distinct(Category, CategoryLabel) |>
+    mutate(
+      BackgroundXMin = -Inf,
+      BackgroundXMax = Inf,
+      BackgroundYMin = -Inf,
+      BackgroundYMax = Inf
+    )
   figure_height <- max(12, nrow(paired_statistics) * 0.42 + 4.2)
   ggplot(
     plot_data,
     aes(x = DdrFraction * 100, y = PlotLabel, fill = Dataset)
   ) +
+    geom_rect(
+      data = background_data |>
+        filter(Category %in% c("normal_tissue", "normal_cells")),
+      aes(
+        xmin = BackgroundXMin,
+        xmax = BackgroundXMax,
+        ymin = BackgroundYMin,
+        ymax = BackgroundYMax
+      ),
+      inherit.aes = FALSE,
+      fill = "#F3F7FB"
+    ) +
+    geom_rect(
+      data = background_data |>
+        filter(Category %in% c("cancer_tissue", "cancer_cells")),
+      aes(
+        xmin = BackgroundXMin,
+        xmax = BackgroundXMax,
+        ymin = BackgroundYMin,
+        ymax = BackgroundYMax
+      ),
+      inherit.aes = FALSE,
+      fill = "#FFF7EF"
+    ) +
     geom_col(
       width = 0.68,
       color = "white",
@@ -1804,47 +1846,25 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       )
     ) +
     scale_x_continuous(
-      limits = c(0, max_fraction * 100 + 5.2),
+      limits = c(0, axis_upper),
       expand = expansion(mult = c(0, 0))
     ) +
+    guides(
+      fill = guide_legend(
+        ncol = 1,
+        byrow = TRUE,
+        keyheight = grid::unit(0.58, "cm"),
+        keywidth = grid::unit(0.72, "cm")
+      )
+    ) +
     labs(
-      title = if (is_zh) {
-        "正常组织、癌症组织、正常细胞与癌症细胞中的 DDR 蛋白占比"
-      } else {
-        "DDR protein fraction in normal tissues, cancer tissues, normal cells, and cancer cells"
-      },
-      subtitle = if (is_zh) {
-        paste0(
-          "纳入", nrow(paired_statistics), "个Kla研究组和",
-          nrow(reference_plot_rows), "个唯一普通全蛋白参照；",
-          "同一参照只显示一次，蓝色参照位于其橙色Kla研究上方；",
-          "GO-DDR交集按去isoform后的BaseAccession计算"
-        )
-      } else {
-        paste0(
-          nrow(paired_statistics), " Kla study groups and ",
-          nrow(reference_plot_rows), " unique whole-proteome references; ",
-          "each reference is displayed once above its linked Kla studies; ",
-          "GO-DDR overlap uses isoform-stripped BaseAccession"
-        )
-      },
+      title = NULL,
+      subtitle = NULL,
       x = if (is_zh) "DDR 注释蛋白占比（%）" else
         "GO-DDR annotated protein fraction (%)",
       y = NULL,
       fill = NULL,
-      caption = if (is_zh) {
-        paste0(
-          "柱端为DDR蛋白数/总蛋白数。PXD037371的3组因TMT通道映射不明而排除；",
-          "HK-2、MCF7和HCT116的共享参照蓝柱不重复；",
-          "相同细胞系的不同Kla研究在组内相邻显示。"
-        )
-      } else {
-        paste0(
-          "Bar labels show DDR proteins/total proteins. Three PXD037371 groups are excluded ",
-          "because TMT channels cannot be reliably mapped; shared HK-2, MCF7, and HCT116 ",
-          "reference bars are not duplicated, and Kla studies of the same cell line are adjacent."
-        )
-      }
+      caption = NULL
     ) +
     theme_minimal(base_size = 10, base_family = font_family) +
     theme(
@@ -1852,28 +1872,30 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       panel.grid.minor = element_blank(),
       panel.grid.major.x = element_line(color = "#D9DDE3", linewidth = 0.45),
       axis.text.y = element_text(size = if (is_zh) 7.2 else 6.8, color = "#30343B"),
-      axis.text.x = element_text(color = "#30343B"),
+      axis.text.x = element_text(size = 10, color = "#30343B"),
+      axis.title.x = element_text(
+        size = if (is_zh) 13 else 12.5,
+        face = "bold",
+        color = "#20252B",
+        hjust = 0.5,
+        margin = margin(t = 12)
+      ),
       strip.placement = "outside",
       strip.text.y.left = element_text(
-        size = 9,
+        size = if (is_zh) 11.5 else 11,
         face = "bold",
         color = "#30343B",
         angle = 90
       ),
-      strip.background = element_rect(fill = "#F2F2F2", color = NA),
-      panel.spacing.y = grid::unit(0.28, "lines"),
-      plot.title = element_text(
-        size = if (is_zh) 17 else 15, face = "bold",
-        color = "#20252B", hjust = 0
-      ),
-      plot.subtitle = element_text(size = 9.5, color = "#525A64"),
-      plot.caption = element_text(
-        size = 7.8, color = "#5C626A", hjust = 0, margin = margin(t = 10)
-      ),
+      strip.background = element_rect(fill = "#EEF1F4", color = NA),
+      panel.spacing.y = grid::unit(0.72, "lines"),
       legend.position = "top",
       legend.justification = "right",
-      legend.text = element_text(size = 9),
-      plot.margin = margin(14, 28, 12, 12)
+      legend.direction = "vertical",
+      legend.box.just = "right",
+      legend.text = element_text(size = 11.5, color = "#20252B"),
+      legend.spacing.y = grid::unit(0.12, "cm"),
+      plot.margin = margin(8, 16, 12, 12)
     )
 }
 

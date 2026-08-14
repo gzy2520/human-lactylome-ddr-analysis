@@ -1821,8 +1821,8 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       fill = guide_legend(
         ncol = 1,
         byrow = TRUE,
-        keyheight = grid::unit(0.58, "cm"),
-        keywidth = grid::unit(0.72, "cm")
+        keyheight = grid::unit(0.84, "cm"),
+        keywidth = grid::unit(1.02, "cm")
       )
     ) +
     labs(
@@ -1858,17 +1858,22 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       strip.background = element_rect(fill = "#DCEAF5", color = NA),
       panel.spacing.y = grid::unit(0.72, "lines"),
       legend.position = "inside",
-      legend.position.inside = c(0.985, 0.995),
+      legend.position.inside = c(0.975, 0.992),
       legend.justification.inside = c(1, 1),
       legend.direction = "vertical",
-      legend.text = element_text(size = 15, color = "#20252B"),
-      legend.spacing.y = grid::unit(0.12, "cm"),
+      legend.text = element_text(
+        size = 17.5,
+        color = "#20252B",
+        lineheight = 1.12
+      ),
+      legend.key.spacing.y = grid::unit(0.24, "cm"),
+      legend.spacing.y = grid::unit(0.24, "cm"),
       legend.background = element_rect(
         fill = scales::alpha("white", 0.92),
         color = "#C8CED6",
-        linewidth = 0.35
+        linewidth = 0.45
       ),
-      legend.margin = margin(7, 9, 7, 9),
+      legend.margin = margin(11, 14, 11, 14),
       plot.margin = margin(8, 16, 12, 12)
     )
 }

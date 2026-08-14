@@ -1784,43 +1784,11 @@ make_ddr_plot <- function(language = c("zh", "en")) {
     )
   max_fraction <- max(plot_data$DdrFraction, na.rm = TRUE)
   axis_upper <- ceiling((max_fraction * 100 + 1.5) * 2) / 2
-  background_data <- plot_data |>
-    distinct(Category, CategoryLabel) |>
-    mutate(
-      BackgroundXMin = -Inf,
-      BackgroundXMax = Inf,
-      BackgroundYMin = -Inf,
-      BackgroundYMax = Inf
-    )
   figure_height <- max(12, nrow(paired_statistics) * 0.42 + 4.2)
   ggplot(
     plot_data,
     aes(x = DdrFraction * 100, y = PlotLabel, fill = Dataset)
   ) +
-    geom_rect(
-      data = background_data |>
-        filter(Category %in% c("normal_tissue", "normal_cells")),
-      aes(
-        xmin = BackgroundXMin,
-        xmax = BackgroundXMax,
-        ymin = BackgroundYMin,
-        ymax = BackgroundYMax
-      ),
-      inherit.aes = FALSE,
-      fill = "#F3F7FB"
-    ) +
-    geom_rect(
-      data = background_data |>
-        filter(Category %in% c("cancer_tissue", "cancer_cells")),
-      aes(
-        xmin = BackgroundXMin,
-        xmax = BackgroundXMax,
-        ymin = BackgroundYMin,
-        ymax = BackgroundYMax
-      ),
-      inherit.aes = FALSE,
-      fill = "#FFF7EF"
-    ) +
     geom_col(
       width = 0.68,
       color = "white",
@@ -1874,7 +1842,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       axis.text.y = element_text(size = if (is_zh) 7.2 else 6.8, color = "#30343B"),
       axis.text.x = element_text(size = 10, color = "#30343B"),
       axis.title.x = element_text(
-        size = if (is_zh) 13 else 12.5,
+        size = if (is_zh) 17 else 16.5,
         face = "bold",
         color = "#20252B",
         hjust = 0.5,
@@ -1882,25 +1850,72 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       ),
       strip.placement = "outside",
       strip.text.y.left = element_text(
-        size = if (is_zh) 11.5 else 11,
+        size = if (is_zh) 15.5 else 15,
         face = "bold",
         color = "#30343B",
         angle = 90
       ),
-      strip.background = element_rect(fill = "#EEF1F4", color = NA),
+      strip.background = element_rect(fill = "#DCEAF5", color = NA),
       panel.spacing.y = grid::unit(0.72, "lines"),
-      legend.position = "top",
-      legend.justification = "right",
+      legend.position = "inside",
+      legend.position.inside = c(0.985, 0.995),
+      legend.justification.inside = c(1, 1),
       legend.direction = "vertical",
-      legend.box.just = "right",
-      legend.text = element_text(size = 11.5, color = "#20252B"),
+      legend.text = element_text(size = 15, color = "#20252B"),
       legend.spacing.y = grid::unit(0.12, "cm"),
+      legend.background = element_rect(
+        fill = scales::alpha("white", 0.92),
+        color = "#C8CED6",
+        linewidth = 0.35
+      ),
+      legend.margin = margin(7, 9, 7, 9),
       plot.margin = margin(8, 16, 12, 12)
     )
 }
 
-plot_zh <- make_ddr_plot("zh")
-plot_en <- make_ddr_plot("en")
+apply_category_strip_fills <- function(plot) {
+  metric_device <- tempfile(fileext = ".png")
+  grDevices::png(
+    metric_device,
+    width = 1600,
+    height = 2400,
+    res = 144,
+    type = "cairo"
+  )
+  plot_grob <- tryCatch(
+    ggplotGrob(plot),
+    finally = {
+      grDevices::dev.off()
+      unlink(metric_device)
+    }
+  )
+  strip_ids <- grep("^strip-l", plot_grob$layout$name)
+  strip_ids <- strip_ids[order(plot_grob$layout$t[strip_ids])]
+  strip_fills <- c("#DCEAF5", "#FCE7D4", "#DCEAF5", "#FCE7D4")
+  if (length(strip_ids) != length(strip_fills)) {
+    stop(
+      "Expected four left category strips, found ",
+      length(strip_ids)
+    )
+  }
+  for (i in seq_along(strip_ids)) {
+    strip_grob <- plot_grob$grobs[[strip_ids[[i]]]]$grobs[[1]]
+    background_id <- grep(
+      "^strip.background",
+      strip_grob$childrenOrder
+    )
+    if (length(background_id) != 1L) {
+      stop("Unable to identify the category-strip background grob.")
+    }
+    strip_grob$children[[background_id]]$gp$fill <- strip_fills[[i]]
+    strip_grob$children[[background_id]]$gp$col <- NA
+    plot_grob$grobs[[strip_ids[[i]]]]$grobs[[1]] <- strip_grob
+  }
+  plot_grob
+}
+
+plot_zh <- apply_category_strip_fills(make_ddr_plot("zh"))
+plot_en <- apply_category_strip_fills(make_ddr_plot("en"))
 figure_height <- max(12, nrow(plot_data_base) * 0.28 + 4.2)
 
 for (path in c(

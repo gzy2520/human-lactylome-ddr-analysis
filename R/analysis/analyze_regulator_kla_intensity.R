@@ -1453,7 +1453,7 @@ make_main_plot <- function(language = c("zh", "en")) {
       strip.text.y.right = element_text(
         face = "bold",
         size = 11,
-        angle = 180
+        angle = 90
       ),
       strip.background = element_rect(fill = "#F2F2F2", color = NA),
       axis.text.x = element_text(

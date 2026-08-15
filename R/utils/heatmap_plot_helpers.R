@@ -1,9 +1,8 @@
 heatmap_publication_font <- "Arial Unicode MS"
 heatmap_figure_width_in <- 19.5
-heatmap_figure_height_in <- 12.5
+heatmap_figure_height_in <- 13.5
 heatmap_left_axis_width_mm <- 112
 heatmap_right_strip_width_mm <- 48
-heatmap_min_facet_height_null <- 3.6
 
 align_heatmap_gtable <- function(plot) {
   metric_device <- tempfile(fileext = ".png")
@@ -40,23 +39,6 @@ align_heatmap_gtable <- function(plot) {
       heatmap_right_strip_width_mm,
       "mm"
     )
-  }
-
-  strip_right_rows <- unique(
-    gtable$layout$t[grepl("^strip-r", gtable$layout$name)]
-  )
-  for (strip_row in strip_right_rows) {
-    row_height <- gtable$heights[strip_row]
-    if (
-      length(row_height) == 1L &&
-        identical(grid::unitType(row_height), "null") &&
-        as.numeric(row_height) < heatmap_min_facet_height_null
-    ) {
-      gtable$heights[strip_row] <- grid::unit(
-        heatmap_min_facet_height_null,
-        "null"
-      )
-    }
   }
 
   gtable

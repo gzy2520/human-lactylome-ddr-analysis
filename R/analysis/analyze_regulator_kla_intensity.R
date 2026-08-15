@@ -1419,6 +1419,9 @@ make_main_plot <- function(language = c("zh", "en")) {
       scales = "free",
       space = "free"
     ) +
+    scale_y_discrete(
+      expand = expansion(add = c(1.2, 1.2))
+    ) +
     scale_fill_gradientn(
       colours = c("#FFFFFF", "#E8F3FA", "#9ECAE1", "#4292C6", "#08519C"),
       values = scales::rescale(c(0, 20, 50, 80, 100)),

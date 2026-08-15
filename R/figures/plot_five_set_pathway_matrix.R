@@ -3,7 +3,6 @@
 suppressPackageStartupMessages({
   library(data.table)
   library(ggplot2)
-  library(patchwork)
   library(readxl)
 })
 
@@ -71,32 +70,32 @@ pathway_order <- names(weights)
 
 set_info <- data.table(
   Set = c(
-    "normal_tissue",
-    "normal_cells",
     "cancer_tissue",
     "cancer_cells",
+    "normal_tissue",
+    "normal_cells",
     "all_kla_ddr"
   ),
   MembershipColumn = c(
-    "In_normal_tissue",
-    "In_normal_cells",
     "In_cancer_tissue",
     "In_cancer_cells",
+    "In_normal_tissue",
+    "In_normal_cells",
     "In_all_kla_ddr"
   ),
   SetOrder = 1:5,
   SetLabelEn = c(
-    "Normal/non-tumor tissues",
-    "Normal/non-tumor cells",
-    "Cancer tissues",
-    "Cancer cells",
+    "tumor tissues",
+    "cancer cell lines",
+    "non-tumor tissues",
+    "normal cell lines",
     "All Kla-DDR proteins"
   ),
   SetLabelZh = c(
-    "正常/非肿瘤组织",
-    "正常/非肿瘤细胞",
-    "癌症组织",
-    "癌症细胞",
+    "肿瘤组织",
+    "癌细胞系",
+    "非肿瘤组织",
+    "正常细胞系",
     "全部Kla∩DDR蛋白"
   )
 )
@@ -350,7 +349,7 @@ input_audit <- data.table(
   MD5 = unname(tools::md5sum(required_inputs)),
   Role = c(
     paste0(nrow(scores), " current proteins, seven signed pathway states, score ordering key"),
-    "normal tissue, normal cells, cancer tissue, cancer cells membership",
+    "tumor tissues, non-tumor tissues, cancer cell lines, normal cell lines membership",
     "stable pathway colors reused from previous figures"
   )
 )
@@ -359,53 +358,6 @@ fwrite(input_audit, file.path(table_dir, "input_file_audit.csv"))
 zero_fill <- "#F1F3F5"
 suppressing_fill <- "#2F3437"
 guide_color <- "#4B5563"
-
-make_legend <- function(language) {
-  is_zh <- identical(language, "zh")
-  base_family <- if (is_zh) "PingFang SC" else "Helvetica"
-  legend_labels <- if (is_zh) {
-    c(
-      "+1 促进：通路实色",
-      "−1 抑制：深炭灰",
-      "0 未分配：浅灰"
-    )
-  } else {
-    c(
-      "+1 promoting: solid pathway color",
-      "−1 suppressing: dark charcoal",
-      "0 unassigned: light gray"
-    )
-  }
-  legend_data <- data.table(
-    X = 1:3,
-    Label = legend_labels,
-    Fill = c("#3C5488", suppressing_fill, zero_fill)
-  )
-
-  ggplot() +
-    geom_rect(
-      data = legend_data,
-      aes(
-        xmin = X - 0.31,
-        xmax = X + 0.31,
-        ymin = 0.38,
-        ymax = 0.68,
-        fill = Fill
-      ),
-      colour = NA
-    ) +
-    geom_text(
-      data = legend_data,
-      aes(x = X, y = 0.18, label = Label),
-      family = base_family,
-      size = 3.8,
-      colour = "#374151"
-    ) +
-    scale_fill_identity() +
-    coord_cartesian(xlim = c(0.45, 3.55), ylim = c(0.05, 0.78), clip = "off") +
-    theme_void(base_family = base_family) +
-    theme(plot.margin = margin(0, 10, 0, 10))
-}
 
 matrix_breaks <- function(n) {
   unique(as.integer(round(c(1, (n + 1) / 2, n))))
@@ -417,8 +369,6 @@ make_matrix_panel <- function(set_key, language, show_x_title = FALSE) {
   panel <- matrix_long[Set == set_key]
   n <- unique(panel[, uniqueN(BaseAccession)])
   set_row <- set_info[Set == set_key]
-  panel_title <- if (is_zh) set_row$SetLabelZh else set_row$SetLabelEn
-
   ggplot() +
     geom_rect(
       data = panel[State == 0],
@@ -456,7 +406,7 @@ make_matrix_panel <- function(set_key, language, show_x_title = FALSE) {
       expand = c(0, 0)
     ) +
     labs(
-      title = paste0(panel_title, "  |  n = ", n),
+      title = NULL,
       x = if (show_x_title) {
         if (is_zh) {
           "蛋白排名（各面板内按得分升序；得分仅用于排序）"
@@ -478,66 +428,14 @@ make_matrix_panel <- function(set_key, language, show_x_title = FALSE) {
         colour = "#374151",
         size = 9.8
       ),
-      axis.text.x = element_text(colour = "#4B5563", size = 8.5),
-      axis.title.x = element_text(colour = "#374151", size = 9.5),
-      plot.title = element_text(face = "bold", size = 11.5, colour = "#111827"),
+      axis.text.x = element_text(colour = "#4B5563", size = 12.5),
+      axis.title.x = element_text(colour = "#374151", size = 10.5),
       plot.margin = margin(7, 12, 7, 10)
     )
 }
 
 make_matrix_figure <- function(set_key, language) {
-  is_zh <- identical(language, "zh")
-  base_family <- if (is_zh) "PingFang SC" else "Helvetica"
-  set_row <- set_info[Set == set_key]
-  body <- make_matrix_panel(
-    set_key,
-    language,
-    show_x_title = TRUE
-  ) / make_legend(language) +
-    plot_layout(heights = c(1, 0.23))
-
-  title <- if (is_zh) {
-    paste0(set_row$SetLabelZh, "：Kla∩DDR蛋白7通路线性状态矩阵")
-  } else {
-    paste0(
-      set_row$SetLabelEn,
-      ": linear seven-pathway state matrix of Kla-DDR proteins"
-    )
-  }
-  subtitle <- if (is_zh) {
-    paste0(
-      "本分类内独立按得分升序排列蛋白；得分只决定顺序，不参与颜色或状态计算"
-    )
-  } else {
-    paste0(
-      "Proteins are independently score-ranked within this set; score is used ",
-      "only for ordering and does not determine color or state"
-    )
-  }
-  caption <- if (is_zh) {
-    paste0(
-      "颜色仅编码原始−1/0/+1通路状态。分类来自当前30组分析的成员表；不同分类之间可以重叠。"
-    )
-  } else {
-    paste0(
-      "Colors encode only the original −1/0/+1 pathway states. Set membership ",
-      "reuses the current 30-group classification; sets can overlap."
-    )
-  }
-
-  body +
-    plot_annotation(
-      title = title,
-      subtitle = subtitle,
-      caption = caption,
-      theme = theme(
-        text = element_text(family = base_family, colour = "#111827"),
-        plot.title = element_text(face = "bold", size = 17),
-        plot.subtitle = element_text(size = 10.5, colour = "#4B5563"),
-        plot.caption = element_text(size = 8.8, colour = "#6B7280", hjust = 0),
-        plot.margin = margin(10, 16, 8, 16)
-      )
-    )
+  make_matrix_panel(set_key, language, show_x_title = TRUE)
 }
 
 make_summary_panel <- function(set_key, language, show_y = TRUE) {
@@ -556,10 +454,6 @@ make_summary_panel <- function(set_key, language, show_y = TRUE) {
     100 * SuppressingFraction
   )]
   panel[, ZeroLabel := paste0("0: ", UnassignedCount)]
-  set_row <- set_info[Set == set_key]
-  panel_title <- if (is_zh) set_row$SetLabelZh else set_row$SetLabelEn
-  n <- unique(panel$ProteinCount)
-
   ggplot() +
     geom_rect(
       data = panel,
@@ -636,7 +530,7 @@ make_summary_panel <- function(set_key, language, show_y = TRUE) {
       expand = c(0, 0)
     ) +
     labs(
-      title = paste0(panel_title, "\nn = ", n),
+      title = NULL,
       x = if (is_zh) "蛋白比例" else "Protein fraction",
       y = NULL
     ) +
@@ -650,56 +544,14 @@ make_summary_panel <- function(set_key, language, show_y = TRUE) {
         colour = "#374151",
         size = 8.8
       ),
-      axis.text.x = element_text(colour = "#4B5563", size = 7.8),
-      axis.title.x = element_text(colour = "#374151", size = 8.5),
-      plot.title = element_text(face = "bold", size = 10.5, colour = "#111827"),
+      axis.text.x = element_text(colour = "#4B5563", size = 11),
+      axis.title.x = element_text(colour = "#374151", size = 9.5),
       plot.margin = margin(8, 13, 8, 8)
     )
 }
 
 make_summary_figure <- function(set_key, language) {
-  is_zh <- identical(language, "zh")
-  base_family <- if (is_zh) "PingFang SC" else "Helvetica"
-  set_row <- set_info[Set == set_key]
-  body <- make_summary_panel(
-    set_key,
-    language,
-    show_y = TRUE
-  ) / make_legend(language) +
-    plot_layout(heights = c(1, 0.17))
-
-  title <- if (is_zh) {
-    paste0(set_row$SetLabelZh, "：7条DDR通路状态比例汇总")
-  } else {
-    paste0(set_row$SetLabelEn, ": seven-pathway state summary")
-  }
-  subtitle <- if (is_zh) {
-    "左侧深炭灰为−1抑制，右侧通路实色为+1促进；标签为n（组内比例）；0列给出未分配数"
-  } else {
-    "−1 suppressing (left); +1 promoting (right); labels: n (within-set %); 0: unassigned count"
-  }
-  caption <- if (is_zh) {
-    "所有分类的独立summary使用相同百分比范围，便于跨图比较；本图为描述性汇总，不等同于统计富集。"
-  } else {
-    paste0(
-      "All separate summaries use the same percentage scale for cross-figure ",
-      "comparison. This is descriptive, not a statistical enrichment test."
-    )
-  }
-
-  body +
-    plot_annotation(
-      title = title,
-      subtitle = subtitle,
-      caption = caption,
-      theme = theme(
-        text = element_text(family = base_family, colour = "#111827"),
-        plot.title = element_text(face = "bold", size = 17),
-        plot.subtitle = element_text(size = 10.5, colour = "#4B5563"),
-        plot.caption = element_text(size = 8.8, colour = "#6B7280", hjust = 0),
-        plot.margin = margin(10, 16, 8, 16)
-      )
-    )
+  make_summary_panel(set_key, language, show_y = TRUE)
 }
 
 save_figure <- function(plot, stem, width, height) {

@@ -101,22 +101,22 @@ four_class_path <- file.path(
   "four_class_sample_grouping.csv"
 )
 category_order <- c(
-  "normal_tissue",
   "cancer_tissue",
-  "normal_cells",
-  "cancer_cells"
+  "normal_tissue",
+  "cancer_cells",
+  "normal_cells"
 )
 category_labels_zh <- c(
-  normal_tissue = "正常/非肿瘤组织",
-  cancer_tissue = "癌症组织",
-  normal_cells = "正常/非肿瘤细胞",
-  cancer_cells = "癌症细胞"
+  normal_tissue = "非肿瘤组织",
+  cancer_tissue = "肿瘤组织",
+  normal_cells = "正常细胞系",
+  cancer_cells = "癌细胞系"
 )
 category_labels_en <- c(
-  normal_tissue = "Normal/non-tumor tissues",
-  cancer_tissue = "Cancer tissues",
-  normal_cells = "Normal/non-tumor cells",
-  cancer_cells = "Cancer cells"
+  normal_tissue = "non-tumor tissues",
+  cancer_tissue = "tumor tissues",
+  normal_cells = "normal cell lines",
+  cancer_cells = "cancer cell lines"
 )
 missing_axis_files <- c(whole_heatmap_rows_path, four_class_path)[!file.exists(
   c(whole_heatmap_rows_path, four_class_path)
@@ -1390,37 +1390,11 @@ make_main_plot <- function(language = c("zh", "en")) {
       name = if (is_zh) "组内Kla信号\n百分位" else "Within-sample Kla\npercentile"
     ) +
     labs(
-      title = if (is_zh) {
-        "乳酸化调控蛋白在细胞系与组织中的相对Kla信号"
-      } else {
-        "Relative Kla signals of lactylation regulators across tissues and cell lines"
-      },
-      subtitle = if (is_zh) {
-        paste0(
-          "严格配对范围为", nrow(paired_sample_keys),
-          "个Kla样本组；行顺序完全跟随普通全蛋白热图，",
-          "并按正常组织、癌症组织、正常细胞、癌症细胞分区。颜色由白色向暖色递增。"
-        )
-      } else {
-        paste0(
-          "The strict paired scope contains ", nrow(paired_sample_keys),
-          " Kla sample groups. Row order follows the whole-proteome heatmap and is divided into ",
-          "normal tissues, cancer tissues, normal cells, and cancer cells. Warmer colors indicate higher within-sample percentiles."
-        )
-      },
+      title = NULL,
+      subtitle = NULL,
       x = NULL,
       y = NULL,
-      caption = if (is_zh) {
-        paste0(
-          "每个定量样本内按全部Kla特征计算百分位，再在样本组内取中位数；",
-          "0表示未检出。身份仅按人源UniProt BaseAccession匹配，GeneSymbol只用于显示。"
-        )
-      } else {
-        paste0(
-          "Percentiles are calculated among all Kla features within each quantitative sample and aggregated by the median; 0 denotes not detected. ",
-          "Protein matching uses human UniProt BaseAccession only; gene symbols are display-only."
-        )
-      }
+      caption = NULL
     ) +
     theme_minimal(base_size = 8.5, base_family = plot_font) +
     theme(
@@ -1430,9 +1404,6 @@ make_main_plot <- function(language = c("zh", "en")) {
       strip.background = element_rect(fill = "#F2F2F2", color = NA),
       axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
       axis.text.y = element_text(size = 7.2),
-      plot.title = element_text(face = "bold", size = 13),
-      plot.subtitle = element_text(size = 8.2, lineheight = 1.12),
-      plot.caption = element_text(size = 7.5, hjust = 0, color = "#5C626A"),
       legend.position = "bottom",
       legend.key.width = grid::unit(35, "mm"),
       plot.margin = margin(8, 10, 8, 8)
@@ -1547,17 +1518,17 @@ for (pxd in z_pxd) {
       name = "PXD内Z分数"
     ) +
     labs(
-      title = paste0(pxd, "：乳酸化调控蛋白的PXD内相对变化"),
-      subtitle = "log2(signal+1)后先做样本中位数中心化，再对每个蛋白跨本PXD样本计算Z分数；不跨PXD比较。",
+      title = NULL,
+      subtitle = NULL,
       x = NULL,
-      y = NULL
+      y = NULL,
+      caption = NULL
     ) +
     theme_minimal(base_size = 9, base_family = plot_font) +
     theme(
       panel.grid = element_blank(),
       axis.text.x = element_text(angle = 55, hjust = 1, size = 7),
       axis.text.y = element_text(size = 7),
-      plot.title = element_text(face = "bold"),
       legend.position = "bottom"
     )
   print(p)

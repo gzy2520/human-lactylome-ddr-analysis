@@ -78,15 +78,15 @@ assert(
   "Expected 399 unique Kla-DDR proteins."
 )
 set_counts <- c(
-  normal_tissue = sum(membership$In_normal_tissue),
-  normal_cells = sum(membership$In_normal_cells),
   cancer_tissue = sum(membership$In_cancer_tissue),
   cancer_cells = sum(membership$In_cancer_cells),
+  normal_tissue = sum(membership$In_normal_tissue),
+  normal_cells = sum(membership$In_normal_cells),
   all_kla_ddr = nrow(membership)
 )
 assert(
-  identical(as.integer(set_counts), c(183L, 292L, 178L, 381L, 399L)),
-  "Expected five protein-set sizes 183/292/178/381/399."
+  identical(as.integer(set_counts), c(178L, 381L, 183L, 292L, 399L)),
+  "Expected five protein-set sizes 178/381/183/292/399."
 )
 
 pathway_counts <- read_table(
@@ -95,7 +95,7 @@ pathway_counts <- read_table(
 assert(
   identical(
     pathway_counts$ProteinCount,
-    c(183L, 292L, 178L, 381L, 399L)
+    c(178L, 381L, 183L, 292L, 399L)
   ),
   "The 4+1 linear pathway-matrix set counts changed."
 )
@@ -111,10 +111,10 @@ venn_summary <- read_table(
 )
 assert(
   nrow(venn_summary) == 4L &&
-    identical(as.integer(venn_summary$正常组织), c(3423L, 183L, 18468L, 649L)) &&
-    identical(as.integer(venn_summary$正常细胞), c(3234L, 292L, 11678L, 592L)) &&
-    identical(as.integer(venn_summary$癌组织), c(2714L, 178L, 8756L, 426L)) &&
-    identical(as.integer(venn_summary$癌细胞), c(4183L, 381L, 14989L, 616L)),
+    identical(as.integer(venn_summary$肿瘤组织), c(2714L, 178L, 8756L, 426L)) &&
+    identical(as.integer(venn_summary$癌细胞系), c(4183L, 381L, 14989L, 616L)) &&
+    identical(as.integer(venn_summary$非肿瘤组织), c(3423L, 183L, 18468L, 649L)) &&
+    identical(as.integer(venn_summary$正常细胞系), c(3234L, 292L, 11678L, 592L)),
   "The current four-Venn 4x4 set-count summary changed."
 )
 
@@ -144,6 +144,6 @@ assert(
 )
 
 message(
-  "PASS: 40/37/30/28 scope, four classes 9/2/7/12, 399 Kla-DDR proteins, ",
-  "183/292/178/381/399 sets, and selected publication figures."
+  "PASS: 40/37/30/28 scope, four classes 2/9/12/7 in display order, 399 Kla-DDR proteins, ",
+  "178/381/183/292/399 sets, and selected publication figures."
 )

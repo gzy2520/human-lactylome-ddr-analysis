@@ -14,8 +14,8 @@ proteomics study.
 The analysis unit was a unique `PXD+SampleGroup`. Thirty-seven sample groups
 had traceable Kla quantification. Of these, 30 were retained for paired
 heatmaps, DDR fraction comparisons, and four-set Venn analyses. The final
-scope comprised nine normal/non-tumor tissues, two cancer tissues, seven
-normal/non-tumor cell groups, and 12 cancer cell groups.
+scope comprised two tumor tissues, nine non-tumor tissues, 12 cancer cell
+lines, and seven normal cell lines.
 
 ## Public data acquisition and organization
 
@@ -156,8 +156,9 @@ controls or technical replicates. An undetected regulator in a usable
 whole-proteome sample was assigned 0. Kla-enriched intensities were never used
 as substitutes.
 
-Both heatmaps were ordered as normal tissues, cancer tissues, normal cells, and
-cancer cells, with Writer, Eraser, Writer-Eraser, and Reader column facets.
+Both heatmaps were ordered as tumor tissues, non-tumor tissues, cancer cell
+lines, and normal cell lines, with Writer, Eraser, Writer-Eraser, and Reader
+column facets.
 The color scale ranged from white through yellow and orange to dark red, with
 warmer colors indicating higher percentiles. Chinese and English figures used
 identical data and axis orders.
@@ -191,7 +192,7 @@ configuration, source provenance, intermediate tables, commands, and automated
 tests were retained.
 
 Tests verified the 30-row Kla axis, 28-row unique reference axis, category
-counts of 9/2/7/12, exclusion of seven groups, zero GeneSymbol
+counts of 2/9/12/7 in display order, exclusion of seven groups, zero GeneSymbol
 fallbacks, non-collapsed within-sample percentiles, deduplicated shared
 references, and exact reconstruction of all Venn counts from membership and
 region tables. UMAP, t-SNE, PCA, and Cytoscape outputs were not regenerated

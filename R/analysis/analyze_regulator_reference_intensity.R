@@ -173,22 +173,22 @@ pairing <- read.csv(
     !is.na(SampleGroup)
   )
 category_order <- c(
-  "normal_tissue",
   "cancer_tissue",
-  "normal_cells",
-  "cancer_cells"
+  "normal_tissue",
+  "cancer_cells",
+  "normal_cells"
 )
 category_labels_zh <- c(
-  normal_tissue = "正常/非肿瘤组织",
-  cancer_tissue = "癌症组织",
-  normal_cells = "正常/非肿瘤细胞",
-  cancer_cells = "癌症细胞"
+  normal_tissue = "非肿瘤组织",
+  cancer_tissue = "肿瘤组织",
+  normal_cells = "正常细胞系",
+  cancer_cells = "癌细胞系"
 )
 category_labels_en <- c(
-  normal_tissue = "Normal/non-tumor tissues",
-  cancer_tissue = "Cancer tissues",
-  normal_cells = "Normal/non-tumor cells",
-  cancer_cells = "Cancer cells"
+  normal_tissue = "non-tumor tissues",
+  cancer_tissue = "tumor tissues",
+  normal_cells = "normal cell lines",
+  cancer_cells = "cancer cell lines"
 )
 four_class <- read.csv(
   four_class_path,
@@ -1676,7 +1676,7 @@ algorithm_audit <- data.frame(
     "display/audit only; never used for matching or aggregation",
     "never; Kla-enriched intensity is not used as a fallback",
     paste0(
-      "normal_tissue -> cancer_tissue -> normal_cells -> cancer_cells; ",
+      "cancer_tissue -> normal_tissue -> cancer_cells -> normal_cells; ",
       "same material/treatment rows are adjacent; exact shared references ",
       "for HK-2, MCF7, and HCT116 are displayed once"
     )
@@ -1804,37 +1804,11 @@ make_main_plot <- function(language = c("zh", "en")) {
       name = if (is_zh) "全蛋白组信号\n百分位" else "Whole-proteome\npercentile"
     ) +
     labs(
-      title = if (is_zh) {
-        "乳酸化调控蛋白在普通全蛋白组中的相对信号"
-      } else {
-        "Relative whole-proteome signals of lactylation regulators"
-      },
-      subtitle = if (is_zh) {
-        paste0(
-          nrow(sample_catalog), "条严格配对显示为",
-          nrow(heatmap_rows), "个唯一普通全蛋白参照行；",
-          "按正常组织、癌症组织、正常细胞、癌症细胞分区。颜色由白色向暖色递增。"
-        )
-      } else {
-        paste0(
-          nrow(sample_catalog), " strict Kla-reference pairs are displayed as ",
-          nrow(heatmap_rows), " unique whole-proteome reference rows and divided into ",
-          "normal tissues, cancer tissues, normal cells, and cancer cells. Warmer colors indicate higher percentiles."
-        )
-      },
+      title = NULL,
+      subtitle = NULL,
       x = NULL,
       y = NULL,
-      caption = if (is_zh) {
-        paste0(
-          "仅使用非Kla富集的普通全蛋白强度；身份按UniProt BaseAccession匹配；",
-          "百分位只在各自样本内计算，不是Log FC。"
-        )
-      } else {
-        paste0(
-          "Only non-Kla-enriched whole-proteome intensities are used. Protein identity is matched by UniProt BaseAccession, ",
-          "and percentiles are calculated within each sample rather than interpreted as log fold changes."
-        )
-      }
+      caption = NULL
     ) +
     theme_minimal(base_size = 8.5, base_family = plot_font) +
     theme(
@@ -1844,9 +1818,6 @@ make_main_plot <- function(language = c("zh", "en")) {
       strip.background = element_rect(fill = "#F2F2F2", color = NA),
       axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
       axis.text.y = element_text(size = 7.2),
-      plot.title = element_text(face = "bold", size = 13),
-      plot.subtitle = element_text(size = 8.2, lineheight = 1.12),
-      plot.caption = element_text(size = 7.5, hjust = 0, color = "#5C626A"),
       legend.position = "bottom",
       legend.key.width = grid::unit(35, "mm"),
       plot.margin = margin(8, 10, 8, 8)

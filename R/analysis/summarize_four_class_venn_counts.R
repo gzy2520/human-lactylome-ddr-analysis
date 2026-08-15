@@ -16,7 +16,12 @@ analyses <- data.table(
   ),
   AnalysisZh = c("全部Kla蛋白", "Kla∩DDR蛋白", "普通全蛋白", "普通全蛋白∩DDR蛋白")
 )
-categories <- c(normal_tissue = "正常组织", normal_cells = "正常细胞", cancer_tissue = "癌组织", cancer_cells = "癌细胞")
+categories <- c(
+  cancer_tissue = "肿瘤组织",
+  normal_tissue = "非肿瘤组织",
+  cancer_cells = "癌细胞系",
+  normal_cells = "正常细胞系"
+)
 
 rows <- lapply(seq_len(nrow(analyses)), function(i) {
   path <- file.path(table_root, analyses$Analysis[i], "set_counts.csv")

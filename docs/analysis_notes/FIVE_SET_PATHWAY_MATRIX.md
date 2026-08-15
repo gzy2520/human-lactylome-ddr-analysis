@@ -11,10 +11,10 @@ set is exported as a fifth independent figure.
 
 ## Five protein sets
 
-1. Normal/non-tumor tissues, n = 183.
-2. Normal/non-tumor cells, n = 292.
-3. Cancer tissues, n = 178.
-4. Cancer cells, n = 381.
+1. tumor tissues, n = 178.
+2. non-tumor tissues, n = 183.
+3. cancer cell lines, n = 381.
+4. normal cell lines, n = 292.
 5. All current Kla-intersection-DDR proteins, n = 399.
 
 The four biological categories reuse the fixed membership from the existing
@@ -44,7 +44,7 @@ both figure types.
 ## Fully separate outputs
 
 For each set key
-`normal_tissue`, `normal_cells`, `cancer_tissue`, `cancer_cells`, and
+`cancer_tissue`, `normal_tissue`, `cancer_cells`, `normal_cells`, and
 `all_kla_ddr`, the independent linear matrix is:
 
 - `kla_ddr_linear_pathway_matrix_<set>_en.{png,pdf,svg}`

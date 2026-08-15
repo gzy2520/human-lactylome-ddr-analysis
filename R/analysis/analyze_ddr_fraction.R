@@ -1269,16 +1269,16 @@ category_map <- c(
   "PXD078013__RKO WT and GSK3B KO" = "cancer_cells"
 )
 category_labels_zh <- c(
-  normal_tissue = "正常/非肿瘤组织",
-  cancer_tissue = "癌症组织",
-  normal_cells = "正常/非肿瘤细胞",
-  cancer_cells = "癌症细胞"
+  normal_tissue = "非肿瘤组织",
+  cancer_tissue = "肿瘤组织",
+  normal_cells = "正常细胞系",
+  cancer_cells = "癌细胞系"
 )
 category_labels_en <- c(
-  normal_tissue = "Normal/non-tumor tissues",
-  cancer_tissue = "Cancer tissues",
-  normal_cells = "Non-tumor cell models",
-  cancer_cells = "Cancer cell lines"
+  normal_tissue = "non-tumor tissues",
+  cancer_tissue = "tumor tissues",
+  normal_cells = "normal cell lines",
+  cancer_cells = "cancer cell lines"
 )
 english_display_names <- c(
   "pathological rotator cuff tendon" = "Pathological rotator cuff tendon",
@@ -1361,7 +1361,7 @@ statistics <- bind_rows(statistics) |>
   ) |>
   select(-PrimaryEvidenceFiles, -ReferenceDisplay) |>
   arrange(
-    match(Category, c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells")),
+    match(Category, c("cancer_tissue", "normal_tissue", "cancer_cells", "normal_cells")),
     RowOrder
   )
 if (any(is.na(statistics$Category))) {
@@ -1573,10 +1573,10 @@ paired_statistics <- statistics |>
 
 font_family <- "Arial Unicode MS"
 category_order <- c(
-  "normal_tissue",
   "cancer_tissue",
-  "normal_cells",
-  "cancer_cells"
+  "normal_tissue",
+  "cancer_cells",
+  "normal_cells"
 )
 
 cluster_order <- paired_statistics |>

@@ -1,5 +1,5 @@
-﻿Analysis,AnalysisZh,正常组织,正常细胞,癌组织,癌细胞
-all_kla_four_class_venn,全部Kla蛋白,3423,3234,2714,4183
-kla_ddr_four_class_venn,Kla∩DDR蛋白,183,292,178,381
-reference_proteome_four_class_venn,普通全蛋白,18468,11678,8756,14989
-reference_proteome_ddr_four_class_venn,普通全蛋白∩DDR蛋白,649,592,426,616
+﻿Analysis,AnalysisZh,肿瘤组织,非肿瘤组织,癌细胞系,正常细胞系
+all_kla_four_class_venn,全部Kla蛋白,2714,3423,4183,3234
+kla_ddr_four_class_venn,Kla∩DDR蛋白,178,183,381,292
+reference_proteome_four_class_venn,普通全蛋白,8756,18468,14989,11678
+reference_proteome_ddr_four_class_venn,普通全蛋白∩DDR蛋白,426,649,616,592

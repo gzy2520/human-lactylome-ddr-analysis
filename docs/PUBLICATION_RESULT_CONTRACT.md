@@ -5,10 +5,10 @@ The repository is considered reproducible only when
 
 - 40 catalogued source groups and 37 quantifiable Kla groups.
 - 30 paired groups and 28 unique whole-proteome display rows.
-- Paired four-class counts of 9 normal tissues, 2 cancer tissues, 7 normal
-  cells, and 12 cancer cells.
+- Paired four-class counts in display order: 2 tumor tissues, 9 non-tumor
+  tissues, 12 cancer cell lines, and 7 normal cell lines.
 - 399 unique Kla-DDR BaseAccessions.
-- Five protein sets of 183, 292, 178, 381, and 399 proteins.
+- Five protein sets in display order of 178, 183, 381, 292, and 399 proteins.
 - 35 five-set by seven-pathway summary rows.
 - A 4 x 4 set-count summary for the four Venn analyses, without intersection counts.
 - Required bilingual heatmaps, DDR bar/Venn figures, and five-set linear

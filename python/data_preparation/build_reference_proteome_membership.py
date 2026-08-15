@@ -15,6 +15,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+# The workflow invokes this file by path, so Python places the script's
+# directory (rather than the repository root) on sys.path. Add the project
+# root before importing the shared utility module.
+import sys
+
+DEFAULT_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(DEFAULT_PROJECT_ROOT))
+
 from python.utils.reference_proteome_utils import (
     base_accession,
     best_annotation,
@@ -23,8 +31,6 @@ from python.utils.reference_proteome_utils import (
     unique_join,
 )
 
-
-DEFAULT_PROJECT_ROOT = Path(__file__).resolve().parents[2]
 parser = argparse.ArgumentParser()
 parser.add_argument("--project-root", type=Path, default=DEFAULT_PROJECT_ROOT)
 PROJECT_ROOT = parser.parse_known_args()[0].project_root.resolve()

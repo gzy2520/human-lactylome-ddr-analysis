@@ -65,22 +65,22 @@ if (length(missing)) {
 }
 
 category_order <- c(
-  "normal_tissue",
   "cancer_tissue",
-  "normal_cells",
-  "cancer_cells"
+  "normal_tissue",
+  "cancer_cells",
+  "normal_cells"
 )
 category_labels_zh <- c(
-  normal_tissue = "正常/非肿瘤组织",
-  cancer_tissue = "癌症组织",
-  normal_cells = "正常/非肿瘤细胞",
-  cancer_cells = "癌症细胞"
+  normal_tissue = "非肿瘤组织",
+  cancer_tissue = "肿瘤组织",
+  normal_cells = "正常细胞系",
+  cancer_cells = "癌细胞系"
 )
 category_labels_en <- c(
-  normal_tissue = "Normal/non-tumor tissues",
-  cancer_tissue = "Cancer tissues",
-  normal_cells = "Normal/non-tumor cells",
-  cancer_cells = "Cancer cells"
+  normal_tissue = "non-tumor tissues",
+  cancer_tissue = "tumor tissues",
+  normal_cells = "normal cell lines",
+  cancer_cells = "cancer cell lines"
 )
 
 base_accession <- function(values) {
@@ -585,10 +585,10 @@ draw_area_proportional <- function(
   )
 
   colors <- c(
-    "#E69F00",
-    "#D55E00",
-    "#009E73",
-    "#CC79A7"
+    "#E69F00", # tumor tissues: orange
+    "#0072B2", # non-tumor tissues: blue
+    "#CC79A7", # cancer cell lines: reddish purple
+    "#009E73"  # normal cell lines: bluish green
   )
   render <- function(language = c("zh", "en")) {
     language <- match.arg(language)
@@ -597,44 +597,7 @@ draw_area_proportional <- function(
     } else {
       unname(category_labels_en[category_order])
     }
-    title <- if (language == "zh") title_zh else title_en
     font_family <- if (language == "zh") "PingFang SC" else "Arial"
-    category_counts <- vapply(
-      category_order,
-      function(category) sum(paired_stats$Category == category),
-      integer(1)
-    )
-    scope_title <- if (language == "zh") {
-      paste0(
-        "严格配对", nrow(paired_stats), "组（",
-        paste(category_counts, collapse = "/"), "）"
-      )
-    } else {
-      paste0(
-        nrow(paired_stats), " strict pairs (",
-        paste(category_counts, collapse = "/"), ")"
-      )
-    }
-    visible_title <- paste(title, scope_title, sep = " | ")
-    subtitle <- if (language == "zh") {
-      paste0(
-        "严格配对范围：", nrow(paired_stats), "组（正常组织",
-        category_counts[["normal_tissue"]], "、癌症组织",
-        category_counts[["cancer_tissue"]], "、正常细胞",
-        category_counts[["normal_cells"]], "、癌症细胞",
-        category_counts[["cancer_cells"]], "）\n",
-        "按 UniProt BaseAccession 去重；椭圆面积按集合数量比例拟合"
-      )
-    } else {
-      paste0(
-        "Strict paired scope: ", nrow(paired_stats), " groups (normal tissue ",
-        category_counts[["normal_tissue"]], ", cancer tissue ",
-        category_counts[["cancer_tissue"]], ", normal cells ",
-        category_counts[["normal_cells"]], ", cancer cells ",
-        category_counts[["cancer_cells"]], ")\n",
-        "Deduplicated by UniProt BaseAccession; ellipse areas are fitted proportional to set sizes"
-      )
-    }
     output_stems <- file.path(
       figure_root,
       c(
@@ -650,25 +613,23 @@ draw_area_proportional <- function(
         res = 300,
         type = "cairo"
       )
-      par(family = font_family, mar = c(1, 1, 8, 1))
+      par(family = font_family, mar = c(9, 1, 1, 1))
       diagram <- plot(
         fit,
         labels = FALSE,
         legend = list(
           labels = labels,
           side = "bottom",
-          nrow = 1,
-          ncol = 4,
-          byrow = TRUE,
-          cex = 0.9
+          nrow = 4,
+          ncol = 1,
+          cex = 1.1,
+          fontsize = 14,
+          pch = 21
         ),
-        quantities = list(cex = 0.9),
-        fills = list(fill = colors, alpha = 0.52),
+        quantities = list(cex = 1.25, fontsize = 17, font = 2),
+        fills = list(fill = colors, alpha = 0.5),
         edges = list(col = "#4B4B4B", lwd = 1.2),
-        main = list(label = visible_title, cex = 0.85),
-        sub = subtitle,
-        sub.cex = 0.78,
-        quantities.cex = 1.0
+        main = NULL
       )
       print(diagram)
       dev.off()
@@ -679,25 +640,23 @@ draw_area_proportional <- function(
         height = 8.0,
         family = font_family
       )
-      par(family = font_family, mar = c(1, 1, 8, 1))
+      par(family = font_family, mar = c(9, 1, 1, 1))
       diagram <- plot(
         fit,
         labels = FALSE,
         legend = list(
           labels = labels,
           side = "bottom",
-          nrow = 1,
-          ncol = 4,
-          byrow = TRUE,
-          cex = 0.9
+          nrow = 4,
+          ncol = 1,
+          cex = 1.1,
+          fontsize = 14,
+          pch = 21
         ),
-        quantities = list(cex = 0.9),
-        fills = list(fill = colors, alpha = 0.52),
+        quantities = list(cex = 1.25, fontsize = 17, font = 2),
+        fills = list(fill = colors, alpha = 0.5),
         edges = list(col = "#4B4B4B", lwd = 1.2),
-        main = list(label = visible_title, cex = 0.85),
-        sub = subtitle,
-        sub.cex = 0.78,
-        quantities.cex = 1.0
+        main = NULL
       )
       print(diagram)
       dev.off()

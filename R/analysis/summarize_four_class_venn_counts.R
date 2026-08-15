@@ -17,8 +17,8 @@ analyses <- data.table(
   AnalysisZh = c("全部Kla蛋白", "Kla∩DDR蛋白", "普通全蛋白", "普通全蛋白∩DDR蛋白")
 )
 categories <- c(
-  cancer_tissue = "肿瘤组织",
   normal_tissue = "非肿瘤组织",
+  cancer_tissue = "肿瘤组织",
   cancer_cells = "癌细胞系",
   normal_cells = "正常细胞系"
 )

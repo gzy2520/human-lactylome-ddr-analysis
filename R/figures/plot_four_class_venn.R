@@ -65,8 +65,8 @@ if (length(missing)) {
 }
 
 category_order <- c(
-  "cancer_tissue",
   "normal_tissue",
+  "cancer_tissue",
   "cancer_cells",
   "normal_cells"
 )
@@ -585,8 +585,8 @@ draw_area_proportional <- function(
   )
 
   colors <- c(
-    "#E69F00", # tumor tissues: orange
     "#0072B2", # non-tumor tissues: blue
+    "#E69F00", # tumor tissues: orange
     "#CC79A7", # cancer cell lines: reddish purple
     "#009E73"  # normal cell lines: bluish green
   )
@@ -597,7 +597,7 @@ draw_area_proportional <- function(
     } else {
       unname(category_labels_en[category_order])
     }
-    font_family <- if (language == "zh") "PingFang SC" else "Arial"
+    font_family <- "Arial Unicode MS"
     output_stems <- file.path(
       figure_root,
       c(

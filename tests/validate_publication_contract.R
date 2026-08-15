@@ -78,15 +78,15 @@ assert(
   "Expected 399 unique Kla-DDR proteins."
 )
 set_counts <- c(
+  normal_tissue = sum(membership$In_normal_tissue),
   cancer_tissue = sum(membership$In_cancer_tissue),
   cancer_cells = sum(membership$In_cancer_cells),
-  normal_tissue = sum(membership$In_normal_tissue),
   normal_cells = sum(membership$In_normal_cells),
   all_kla_ddr = nrow(membership)
 )
 assert(
-  identical(as.integer(set_counts), c(178L, 381L, 183L, 292L, 399L)),
-  "Expected five protein-set sizes 178/381/183/292/399."
+  identical(as.integer(set_counts), c(183L, 178L, 381L, 292L, 399L)),
+  "Expected five protein-set sizes 183/178/381/292/399."
 )
 
 pathway_counts <- read_table(
@@ -95,7 +95,7 @@ pathway_counts <- read_table(
 assert(
   identical(
     pathway_counts$ProteinCount,
-    c(178L, 381L, 183L, 292L, 399L)
+    c(183L, 178L, 381L, 292L, 399L)
   ),
   "The 4+1 linear pathway-matrix set counts changed."
 )
@@ -144,6 +144,6 @@ assert(
 )
 
 message(
-  "PASS: 40/37/30/28 scope, four classes 2/9/12/7 in display order, 399 Kla-DDR proteins, ",
-  "178/381/183/292/399 sets, and selected publication figures."
+  "PASS: 40/37/30/28 scope, four classes 9/2/12/7 in display order, 399 Kla-DDR proteins, ",
+  "183/178/381/292/399 sets, and selected publication figures."
 )

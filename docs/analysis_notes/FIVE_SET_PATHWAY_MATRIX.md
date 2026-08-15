@@ -44,7 +44,7 @@ both figure types.
 ## Fully separate outputs
 
 For each set key
-`cancer_tissue`, `normal_tissue`, `cancer_cells`, `normal_cells`, and
+`normal_tissue`, `cancer_tissue`, `cancer_cells`, `normal_cells`, and
 `all_kla_ddr`, the independent linear matrix is:
 
 - `kla_ddr_linear_pathway_matrix_<set>_en.{png,pdf,svg}`

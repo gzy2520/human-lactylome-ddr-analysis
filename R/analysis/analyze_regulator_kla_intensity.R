@@ -14,6 +14,7 @@ table_dir <- file.path(project_root, "results", "tables")
 figure_dir <- file.path(project_root, "results", "figures")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
+source(file.path(project_root, "R", "utils", "heatmap_plot_helpers.R"))
 
 regulator_path <- file.path(
   project_root, "data", "identifier",
@@ -24,8 +25,17 @@ mapping_path <- file.path(
   project_root, "config",
   "lactylation_regulator_uniprot_mapping.csv"
 )
+display_names_path <- file.path(
+  project_root, "config",
+  "heatmap_display_names.csv"
+)
 
-required_files <- c(regulator_path, detection_path, mapping_path)
+required_files <- c(
+  regulator_path,
+  detection_path,
+  mapping_path,
+  display_names_path
+)
 missing_files <- required_files[!file.exists(required_files)]
 if (length(missing_files)) {
   stop("Missing required files: ", paste(missing_files, collapse = ", "))
@@ -44,7 +54,6 @@ regulators <- read_excel(regulator_path) |>
   ) |>
   distinct(Role, GeneSymbol, .keep_all = TRUE)
 target_genes <- unique(regulators$GeneSymbol)
-plot_font <- "Arial Unicode MS"
 
 accession_map <- read.csv(
   mapping_path,
@@ -101,8 +110,8 @@ four_class_path <- file.path(
   "four_class_sample_grouping.csv"
 )
 category_order <- c(
-  "cancer_tissue",
   "normal_tissue",
+  "cancer_tissue",
   "cancer_cells",
   "normal_cells"
 )
@@ -168,6 +177,17 @@ four_class <- read.csv(
     CategoryEn = unname(category_labels_en[Category]),
     CategoryOrder = match(Category, category_order)
   )
+display_names <- read.csv(
+  display_names_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+if (
+  nrow(display_names) != 30L ||
+    anyDuplicated(display_names[c("PXD", "SampleGroup")])
+) {
+  stop("Heatmap display-name configuration must contain 30 unique paired groups")
+}
 category_max_order <- whole_heatmap_rows |>
   group_by(Category) |>
   summarise(
@@ -176,6 +196,7 @@ category_max_order <- whole_heatmap_rows |>
   )
 sample_catalog <- sample_catalog |>
   left_join(four_class, by = c("PXD", "SampleGroup")) |>
+  left_join(display_names, by = c("PXD", "SampleGroup")) |>
   left_join(
     whole_axis_members,
     by = c("PXD", "SampleGroup")
@@ -197,8 +218,16 @@ sample_catalog <- sample_catalog |>
   ungroup() |>
   arrange(CategoryOrder, ComparisonRowOrder, RowOrder) |>
   mutate(
-    RowLabelZh = RowLabel,
-    RowLabelEn = paste0(SampleGroup, " · Kla:", PXD)
+    RowLabelZh = ifelse(
+      is.na(KlaLabelZh),
+      RowLabel,
+      paste0(KlaLabelZh, " · ", PXD)
+    ),
+    RowLabelEn = ifelse(
+      is.na(KlaLabelEn),
+      paste0(SampleGroup, " · ", PXD),
+      paste0(KlaLabelEn, " · ", PXD)
+    )
   )
 
 base_accession <- function(values) {
@@ -996,6 +1025,14 @@ paired_sample_keys <- sample_catalog |>
   filter(!is.na(WholeProteomeDisplayRowOrder)) |>
   select(PXD, SampleGroup)
 if (!nrow(paired_sample_keys)) stop("No paired Kla-reference sample groups remain.")
+paired_display_names <- sample_catalog |>
+  semi_join(paired_sample_keys, by = c("PXD", "SampleGroup"))
+if (
+  any(is.na(paired_display_names$KlaLabelEn)) ||
+    any(is.na(paired_display_names$KlaLabelZh))
+) {
+  stop("Missing curated Kla display name for a paired heatmap row")
+}
 paired_target_sample_grid <- target_sample_grid |>
   semi_join(paired_sample_keys, by = c("PXD", "SampleGroup"))
 
@@ -1383,11 +1420,21 @@ make_main_plot <- function(language = c("zh", "en")) {
       space = "free"
     ) +
     scale_fill_gradientn(
-      colours = c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B"),
+      colours = c("#FFFFFF", "#E8F3FA", "#9ECAE1", "#4292C6", "#08519C"),
       values = scales::rescale(c(0, 20, 50, 80, 100)),
       limits = c(0, 100),
       na.value = "#D9D9D9",
-      name = if (is_zh) "组内Kla信号\n百分位" else "Within-sample Kla\npercentile"
+      name = if (is_zh) {
+        "乳酸化蛋白组（Kla）百分位"
+      } else {
+        "Lactylome (Kla) percentile"
+      },
+      guide = guide_colourbar(
+        title.position = "left",
+        title.hjust = 1,
+        barwidth = grid::unit(76, "mm"),
+        barheight = grid::unit(4.2, "mm")
+      )
     ) +
     labs(
       title = NULL,
@@ -1396,50 +1443,49 @@ make_main_plot <- function(language = c("zh", "en")) {
       y = NULL,
       caption = NULL
     ) +
-    theme_minimal(base_size = 8.5, base_family = plot_font) +
+    theme_minimal(
+      base_size = 10.5,
+      base_family = heatmap_publication_font
+    ) +
     theme(
       panel.grid = element_blank(),
-      strip.text.x = element_text(face = "bold", size = 9),
-      strip.text.y = element_text(face = "bold", size = 8),
+      strip.text.x = element_text(face = "bold", size = 12),
+      strip.text.y.right = element_text(
+        face = "bold",
+        size = 11,
+        angle = 180
+      ),
       strip.background = element_rect(fill = "#F2F2F2", color = NA),
-      axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
-      axis.text.y = element_text(size = 7.2),
+      axis.text.x = element_text(
+        angle = 55,
+        hjust = 1,
+        vjust = 1,
+        size = 10.2
+      ),
+      axis.text.y = element_text(size = 9.6),
       legend.position = "bottom",
-      legend.key.width = grid::unit(35, "mm"),
-      plot.margin = margin(8, 10, 8, 8)
+      legend.direction = "horizontal",
+      legend.title = element_text(size = 10.8),
+      legend.text = element_text(size = 9.8),
+      plot.margin = margin(10, 12, 10, 10)
     )
 }
 
 main_plot_zh <- make_main_plot("zh")
 main_plot_en <- make_main_plot("en")
-save_heatmap <- function(plot, stem) {
-  ggsave(
-    file.path(figure_dir, paste0(stem, ".png")),
-    plot,
-    width = 15.5,
-    height = 11.5,
-    dpi = 320,
-    bg = "white"
-  )
-  ggsave(
-    file.path(figure_dir, paste0(stem, ".pdf")),
-    plot,
-    width = 15.5,
-    height = 11.5,
-    device = cairo_pdf,
-    bg = "white"
-  )
-}
-save_heatmap(
+save_aligned_heatmap(
   main_plot_zh,
+  figure_dir,
   "kla_regulator_cross_study_relative_intensity_heatmap"
 )
-save_heatmap(
+save_aligned_heatmap(
   main_plot_zh,
+  figure_dir,
   "kla_regulator_cross_study_relative_intensity_heatmap_zh"
 )
-save_heatmap(
+save_aligned_heatmap(
   main_plot_en,
+  figure_dir,
   "kla_regulator_cross_study_relative_intensity_heatmap_en"
 )
 
@@ -1524,7 +1570,7 @@ for (pxd in z_pxd) {
       y = NULL,
       caption = NULL
     ) +
-    theme_minimal(base_size = 9, base_family = plot_font) +
+    theme_minimal(base_size = 9, base_family = heatmap_publication_font) +
     theme(
       panel.grid = element_blank(),
       axis.text.x = element_text(angle = 55, hjust = 1, size = 7),

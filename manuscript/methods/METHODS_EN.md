@@ -156,12 +156,15 @@ controls or technical replicates. An undetected regulator in a usable
 whole-proteome sample was assigned 0. Kla-enriched intensities were never used
 as substitutes.
 
-Both heatmaps were ordered as tumor tissues, non-tumor tissues, cancer cell
+Both heatmaps were ordered as non-tumor tissues, tumor tissues, cancer cell
 lines, and normal cell lines, with Writer, Eraser, Writer-Eraser, and Reader
-column facets.
-The color scale ranged from white through yellow and orange to dark red, with
-warmer colors indicating higher percentiles. Chinese and English figures used
-identical data and axis orders.
+column facets. Kla rows were labelled with the biological material and
+experimental condition of the Kla dataset, whereas whole-proteome rows were
+labelled independently using the material and condition of the reference
+dataset, followed by the corresponding PXD accession. The Kla heatmap used a
+white-to-blue scale and the whole-proteome heatmap used a white-to-orange-red
+scale, with darker colors indicating higher percentiles. Chinese and English
+figures used identical data and axis orders.
 
 ## Four-set Venn/Euler analyses
 
@@ -192,7 +195,7 @@ configuration, source provenance, intermediate tables, commands, and automated
 tests were retained.
 
 Tests verified the 30-row Kla axis, 28-row unique reference axis, category
-counts of 2/9/12/7 in display order, exclusion of seven groups, zero GeneSymbol
+counts of 9/2/12/7 in display order, exclusion of seven groups, zero GeneSymbol
 fallbacks, non-collapsed within-sample percentiles, deduplicated shared
 references, and exact reconstruction of all Venn counts from membership and
 region tables. UMAP, t-SNE, PCA, and Cytoscape outputs were not regenerated

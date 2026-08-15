@@ -223,13 +223,13 @@ review <- data.frame(
 )
 
 category_levels <- c(
-  "肿瘤组织",
   "非肿瘤组织",
+  "肿瘤组织",
   "癌细胞系",
   "正常细胞系"
 )
 category_counts <- table(factor(review$四分类, levels = category_levels))
-if (!identical(as.integer(category_counts), c(3L, 10L, 14L, 10L))) {
+if (!identical(as.integer(category_counts), c(10L, 3L, 14L, 10L))) {
   stop("Unexpected four-class group counts: ", paste(category_counts, collapse = ", "))
 }
 if (sum(review$是否纳入配对分析 == "是") != sum(included) ||

@@ -70,31 +70,31 @@ pathway_order <- names(weights)
 
 set_info <- data.table(
   Set = c(
+    "normal_tissue",
     "cancer_tissue",
     "cancer_cells",
-    "normal_tissue",
     "normal_cells",
     "all_kla_ddr"
   ),
   MembershipColumn = c(
+    "In_normal_tissue",
     "In_cancer_tissue",
     "In_cancer_cells",
-    "In_normal_tissue",
     "In_normal_cells",
     "In_all_kla_ddr"
   ),
   SetOrder = 1:5,
   SetLabelEn = c(
+    "non-tumor tissues",
     "tumor tissues",
     "cancer cell lines",
-    "non-tumor tissues",
     "normal cell lines",
     "All Kla-DDR proteins"
   ),
   SetLabelZh = c(
+    "非肿瘤组织",
     "肿瘤组织",
     "癌细胞系",
-    "非肿瘤组织",
     "正常细胞系",
     "全部Kla∩DDR蛋白"
   )
@@ -349,7 +349,7 @@ input_audit <- data.table(
   MD5 = unname(tools::md5sum(required_inputs)),
   Role = c(
     paste0(nrow(scores), " current proteins, seven signed pathway states, score ordering key"),
-    "tumor tissues, non-tumor tissues, cancer cell lines, normal cell lines membership",
+    "non-tumor tissues, tumor tissues, cancer cell lines, normal cell lines membership",
     "stable pathway colors reused from previous figures"
   )
 )
@@ -365,7 +365,7 @@ matrix_breaks <- function(n) {
 
 make_matrix_panel <- function(set_key, language, show_x_title = FALSE) {
   is_zh <- identical(language, "zh")
-  base_family <- if (is_zh) "PingFang SC" else "Helvetica"
+  base_family <- "Arial Unicode MS"
   panel <- matrix_long[Set == set_key]
   n <- unique(panel[, uniqueN(BaseAccession)])
   set_row <- set_info[Set == set_key]
@@ -440,7 +440,7 @@ make_matrix_figure <- function(set_key, language) {
 
 make_summary_panel <- function(set_key, language, show_y = TRUE) {
   is_zh <- identical(language, "zh")
-  base_family <- if (is_zh) "PingFang SC" else "Helvetica"
+  base_family <- "Arial Unicode MS"
   panel <- copy(pathway_summary[Set == set_key])
   panel[, Y := 8 - PathwayOrder]
   panel[, PositiveLabel := sprintf(

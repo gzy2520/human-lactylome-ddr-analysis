@@ -39,6 +39,9 @@ existing_reference_path <- file.path(
 go_path <- file.path(
   project_root, "data", "annotations", "GO-repair+damage(human).tsv"
 )
+display_names_path <- file.path(
+  project_root, "config", "heatmap_display_names.csv"
+)
 base_accession <- function(values) {
   values <- trimws(as.character(values))
   values <- sub("^.*\\|([^|]+)\\|.*$", "\\1", values)
@@ -636,6 +639,18 @@ excluded_sample_keys <- paste(
 )
 if (nrow(pairing) != 37) {
   stop("Reference comparison scope must retain all 37 Kla sample groups")
+}
+heatmap_display_names <- read.csv(
+  display_names_path,
+  check.names = FALSE,
+  stringsAsFactors = FALSE,
+  na.strings = c("", "NA")
+)
+if (
+  nrow(heatmap_display_names) != 30L ||
+    anyDuplicated(heatmap_display_names[c("PXD", "SampleGroup")])
+) {
+  stop("Heatmap display-name configuration must contain 30 unique paired groups")
 }
 
 primary <- read.csv(
@@ -1322,6 +1337,7 @@ english_display_names <- c(
 
 statistics <- bind_rows(statistics) |>
   left_join(primary_source_map, by = c("PXD", "SampleGroup")) |>
+  left_join(heatmap_display_names, by = c("PXD", "SampleGroup")) |>
   mutate(
     KlaEvidenceFile = case_when(
       !is.na(PrimaryEvidenceFiles) & nzchar(PrimaryEvidenceFiles) ~
@@ -1341,27 +1357,35 @@ statistics <- bind_rows(statistics) |>
       "未纳入：无完全匹配强度参照"
     ),
     DisplayLabel = paste0(
-      DisplayLabel,
-      " · Kla:",
+      ifelse(!is.na(KlaLabelZh), KlaLabelZh, sub(" ·.*$", "", DisplayLabel)),
+      " · ",
       PXD,
-      " / Ref:",
-      ReferenceDisplay
-    ),
-    EnglishDisplayLabel = paste0(
-      unname(english_display_names[SampleGroup]),
-      " · Kla: ",
-      PXD,
-      " / Ref: ",
+      " / ",
       ifelse(
         PairedAnalysisIncluded,
-        ReferencePXD,
-        "excluded: no exact quantitative reference"
+        paste0(ReferenceLabelZh, " · ", ReferencePXD),
+        "未纳入严格参照比较"
+      )
+    ),
+    EnglishDisplayLabel = paste0(
+      ifelse(
+        !is.na(KlaLabelEn),
+        KlaLabelEn,
+        unname(english_display_names[SampleGroup])
+      ),
+      " · ",
+      PXD,
+      " / ",
+      ifelse(
+        PairedAnalysisIncluded,
+        paste0(ReferenceLabelEn, " · ", ReferencePXD),
+        "not included in strict reference comparison"
       )
     )
   ) |>
   select(-PrimaryEvidenceFiles, -ReferenceDisplay) |>
   arrange(
-    match(Category, c("cancer_tissue", "normal_tissue", "cancer_cells", "normal_cells")),
+    match(Category, c("normal_tissue", "cancer_tissue", "cancer_cells", "normal_cells")),
     RowOrder
   )
 if (any(is.na(statistics$Category))) {
@@ -1538,8 +1562,8 @@ write.csv(
 paired_statistics <- statistics |>
   filter(PairedAnalysisIncluded) |>
   mutate(
-    SampleLabelZh = sub(" ·.*$", "", DisplayLabel),
-    SampleLabelEn = sub(" ·.*$", "", EnglishDisplayLabel),
+    SampleLabelZh = KlaLabelZh,
+    SampleLabelEn = KlaLabelEn,
     MaterialCluster = case_when(
       grepl("HK-2", SampleGroup, fixed = TRUE) ~ "HK-2",
       SampleGroup == "MCF7" ~ "MCF7",
@@ -1573,8 +1597,8 @@ paired_statistics <- statistics |>
 
 font_family <- "Arial Unicode MS"
 category_order <- c(
-  "cancer_tissue",
   "normal_tissue",
+  "cancer_tissue",
   "cancer_cells",
   "normal_cells"
 )
@@ -1613,6 +1637,8 @@ reference_plot_rows <- paired_statistics |>
     ReferenceDisplayKey,
     ReferenceOrder,
     ReferencePXD,
+    ReferenceLabelZh,
+    ReferenceLabelEn,
     ReferenceEvidenceFile,
     ReferenceProteinCount,
     ReferenceDdrProteinCount,
@@ -1641,6 +1667,8 @@ reference_plot_rows <- paired_statistics |>
     PXD = NA_character_,
     SampleGroup = "ordinary whole-proteome reference",
     ReferencePXD,
+    ReferenceLabelZh,
+    ReferenceLabelEn,
     ReferenceEvidenceFile,
     ReferenceDisplayKey,
     LinkedKlaPXD,
@@ -1651,16 +1679,8 @@ reference_plot_rows <- paired_statistics |>
     DdrFraction = ReferenceDdrFraction,
     Ddr = ReferenceDdrProteinCount,
     Total = ReferenceProteinCount,
-    DisplayLabelZh = paste0(
-      LinkedKlaLabelZh,
-      " · 普通全蛋白 Ref:",
-      ReferencePXD
-    ),
-    DisplayLabelEn = paste0(
-      LinkedKlaLabelEn,
-      " · whole proteome Ref:",
-      ReferencePXD
-    )
+    DisplayLabelZh = paste0(ReferenceLabelZh, " · ", ReferencePXD),
+    DisplayLabelEn = paste0(ReferenceLabelEn, " · ", ReferencePXD)
   )
 
 kla_plot_rows <- paired_statistics |>
@@ -1678,6 +1698,8 @@ kla_plot_rows <- paired_statistics |>
     BarType = "kla",
     PXD,
     SampleGroup,
+    KlaLabelZh,
+    KlaLabelEn,
     ReferencePXD,
     ReferenceEvidenceFile,
     ReferenceDisplayKey,
@@ -1689,8 +1711,8 @@ kla_plot_rows <- paired_statistics |>
     DdrFraction = KlaDdrFraction,
     Ddr = KlaDdrProteinCount,
     Total = KlaProteinCount,
-    DisplayLabelZh = paste0(SampleLabelZh, " · Kla:", PXD),
-    DisplayLabelEn = paste0(SampleLabelEn, " · Kla:", PXD)
+    DisplayLabelZh = paste0(KlaLabelZh, " · ", PXD),
+    DisplayLabelEn = paste0(KlaLabelEn, " · ", PXD)
   )
 
 plot_data_base <- bind_rows(reference_plot_rows, kla_plot_rows) |>
@@ -1759,19 +1781,16 @@ make_ddr_plot <- function(language = c("zh", "en")) {
   plot_data <- plot_data_base |>
     mutate(
       PlotLabel = if (is_zh) DisplayLabelZh else DisplayLabelEn,
+      PlotRowKey = factor(
+        as.character(BarOrder),
+        levels = rev(as.character(plot_data_base$BarOrder))
+      ),
       CategoryLabel = if (is_zh) CategoryZh else CategoryEn,
       BarLabel = if (is_zh) LabelZh else LabelEn,
       Dataset = factor(
         BarType,
         levels = c("reference", "kla"),
         labels = unname(dataset_labels[c("reference", "kla")])
-      ),
-      PlotLabel = factor(
-        PlotLabel,
-        levels = rev(
-          if (is_zh) plot_data_base$DisplayLabelZh else
-            plot_data_base$DisplayLabelEn
-        )
       ),
       CategoryLabel = factor(
         Category,
@@ -1790,7 +1809,7 @@ make_ddr_plot <- function(language = c("zh", "en")) {
   figure_height <- max(12, nrow(paired_statistics) * 0.42 + 4.2)
   ggplot(
     plot_data,
-    aes(x = DdrFraction * 100, y = PlotLabel, fill = Dataset)
+    aes(x = DdrFraction * 100, y = PlotRowKey, fill = Dataset)
   ) +
     geom_col(
       width = 0.68,
@@ -1820,6 +1839,16 @@ make_ddr_plot <- function(language = c("zh", "en")) {
       limits = c(0, axis_upper),
       breaks = c(0, 5, 10, 15),
       expand = expansion(mult = c(0, 0))
+    ) +
+    scale_y_discrete(
+      labels = setNames(
+        if (is_zh) {
+          plot_data_base$DisplayLabelZh
+        } else {
+          plot_data_base$DisplayLabelEn
+        },
+        as.character(plot_data_base$BarOrder)
+      )
     ) +
     guides(
       fill = guide_legend(

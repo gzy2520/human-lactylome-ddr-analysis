@@ -15,6 +15,7 @@ table_dir <- file.path(project_root, "results", "tables")
 figure_dir <- file.path(project_root, "results", "figures")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
+source(file.path(project_root, "R", "utils", "heatmap_plot_helpers.R"))
 
 regulator_path <- file.path(
   project_root, "data", "identifier",
@@ -38,6 +39,10 @@ four_class_path <- file.path(
   project_root, "config",
   "four_class_sample_grouping.csv"
 )
+display_names_path <- file.path(
+  project_root, "config",
+  "heatmap_display_names.csv"
+)
 
 required_files <- c(
   regulator_path,
@@ -45,7 +50,8 @@ required_files <- c(
   ensembl_mapping_path,
   detection_path,
   kla_scope_path,
-  four_class_path
+  four_class_path,
+  display_names_path
 )
 missing_files <- required_files[!file.exists(required_files)]
 if (length(missing_files)) {
@@ -173,8 +179,8 @@ pairing <- read.csv(
     !is.na(SampleGroup)
   )
 category_order <- c(
-  "cancer_tissue",
   "normal_tissue",
+  "cancer_tissue",
   "cancer_cells",
   "normal_cells"
 )
@@ -201,6 +207,17 @@ four_class <- read.csv(
     Category %in% category_order
   ) |>
   distinct(PXD, SampleGroup, .keep_all = TRUE)
+display_names <- read.csv(
+  display_names_path,
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+if (
+  nrow(display_names) != 30L ||
+    anyDuplicated(display_names[c("PXD", "SampleGroup")])
+) {
+  stop("Heatmap display-name configuration must contain 30 unique sample groups")
+}
 sample_catalog_all <- detection |>
   distinct(
     PXD, SampleGroup, SampleGroupID, RowLabel,
@@ -266,7 +283,14 @@ sample_catalog <- sample_catalog_all |>
     nzchar(ReferencePXD)
   ) |>
   arrange(CategoryOrder, OriginalRowOrder) |>
-  mutate(RowOrder = row_number())
+  mutate(RowOrder = row_number()) |>
+  left_join(display_names, by = c("PXD", "SampleGroup"))
+if (
+  any(is.na(sample_catalog$KlaLabelEn)) ||
+    any(is.na(sample_catalog$ReferenceLabelEn))
+) {
+  stop("Missing curated heatmap display name for a paired sample group")
+}
 expected_paired_groups <- sum(
   sample_catalog_all$PairingInclude %in%
     c(TRUE, "TRUE", "True", 1, "1") &
@@ -281,19 +305,10 @@ if (nrow(sample_catalog) != expected_paired_groups) {
     nrow(sample_catalog)
   )
 }
-sample_catalog$RowLabel <- ifelse(
-  !is.na(sample_catalog$ReferencePXD) &
-    nzchar(sample_catalog$ReferencePXD),
-  paste0(
-    sample_catalog$SampleGroup,
-    " · Ref:", sample_catalog$ReferencePXD,
-    " · Kla:", sample_catalog$PXD
-  ),
-  paste0(
-    sample_catalog$SampleGroup,
-    " · Ref:未找到严格参照",
-    " · Kla:", sample_catalog$PXD
-  )
+sample_catalog$RowLabel <- paste0(
+  sample_catalog$ReferenceLabelEn,
+  " · ",
+  sample_catalog$ReferencePXD
 )
 
 base_accession <- function(values) {
@@ -1429,7 +1444,9 @@ quant_audit <- quant_audit |>
 display_members <- sample_catalog |>
   select(
     PXD, SampleGroup, SampleGroupID, Category, CategoryZh, CategoryEn,
-    KlaRowLabel, RowOrder, ReferencePXD
+    KlaRowLabel, RowOrder, ReferencePXD,
+    KlaLabelEn, KlaLabelZh, ReferenceLabelEn, ReferenceLabelZh,
+    NamingBasis
   ) |>
   left_join(
     quant_audit |>
@@ -1485,6 +1502,8 @@ heatmap_rows <- display_members |>
     ReferenceOrder,
     ReferenceDisplayKey,
     ReferencePXD,
+    ReferenceLabelEn,
+    ReferenceLabelZh,
     WholeProteomeSource,
     WholeProteomeMeasurement,
     WholeProteomeFeatureCount,
@@ -1509,27 +1528,17 @@ heatmap_rows <- display_members |>
   ) |>
   mutate(
     HeatmapDisplayRowOrder = row_number(),
-    MaterialDisplayName = gsub(
-      ";",
-      " / ",
-      LinkedKlaSampleGroup,
-      fixed = TRUE
-    ),
-    MaterialDisplayNameZh = gsub(
-      ";",
-      " / ",
-      LinkedKlaMaterialLabelZh,
-      fixed = TRUE
-    ),
+    MaterialDisplayName = ReferenceLabelEn,
+    MaterialDisplayNameZh = ReferenceLabelZh,
     RowLabelEn = paste0(
-      MaterialDisplayName,
-      " · Ref:", ReferencePXD,
-      " · Kla:", gsub(";", "/", LinkedKlaPXD, fixed = TRUE)
+      ReferenceLabelEn,
+      " · ",
+      ReferencePXD
     ),
     RowLabelZh = paste0(
-      MaterialDisplayNameZh,
-      " · Ref:", ReferencePXD,
-      " · Kla:", gsub(";", "/", LinkedKlaPXD, fixed = TRUE)
+      ReferenceLabelZh,
+      " · ",
+      ReferencePXD
     ),
     RowLabel = RowLabelEn
   )
@@ -1676,7 +1685,7 @@ algorithm_audit <- data.frame(
     "display/audit only; never used for matching or aggregation",
     "never; Kla-enriched intensity is not used as a fallback",
     paste0(
-      "cancer_tissue -> normal_tissue -> cancer_cells -> normal_cells; ",
+      "normal_tissue -> cancer_tissue -> cancer_cells -> normal_cells; ",
       "same material/treatment rows are adjacent; exact shared references ",
       "for HK-2, MCF7, and HCT116 are displayed once"
     )
@@ -1755,7 +1764,6 @@ plot_data_base <- plot_data_raw |>
     )
   )
 
-plot_font <- "Arial Unicode MS"
 make_main_plot <- function(language = c("zh", "en")) {
   language <- match.arg(language)
   is_zh <- language == "zh"
@@ -1801,7 +1809,13 @@ make_main_plot <- function(language = c("zh", "en")) {
       values = scales::rescale(c(0, 20, 50, 80, 100)),
       limits = c(0, 100),
       na.value = "#D9D9D9",
-      name = if (is_zh) "全蛋白组信号\n百分位" else "Whole-proteome\npercentile"
+      name = if (is_zh) "全蛋白组信号百分位" else "Whole-proteome percentile",
+      guide = guide_colourbar(
+        title.position = "left",
+        title.hjust = 1,
+        barwidth = grid::unit(76, "mm"),
+        barheight = grid::unit(4.2, "mm")
+      )
     ) +
     labs(
       title = NULL,
@@ -1810,50 +1824,49 @@ make_main_plot <- function(language = c("zh", "en")) {
       y = NULL,
       caption = NULL
     ) +
-    theme_minimal(base_size = 8.5, base_family = plot_font) +
+    theme_minimal(
+      base_size = 10.5,
+      base_family = heatmap_publication_font
+    ) +
     theme(
       panel.grid = element_blank(),
-      strip.text.x = element_text(face = "bold", size = 9),
-      strip.text.y = element_text(face = "bold", size = 8),
+      strip.text.x = element_text(face = "bold", size = 12),
+      strip.text.y.right = element_text(
+        face = "bold",
+        size = 11,
+        angle = 180
+      ),
       strip.background = element_rect(fill = "#F2F2F2", color = NA),
-      axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
-      axis.text.y = element_text(size = 7.2),
+      axis.text.x = element_text(
+        angle = 55,
+        hjust = 1,
+        vjust = 1,
+        size = 10.2
+      ),
+      axis.text.y = element_text(size = 9.6),
       legend.position = "bottom",
-      legend.key.width = grid::unit(35, "mm"),
-      plot.margin = margin(8, 10, 8, 8)
+      legend.direction = "horizontal",
+      legend.title = element_text(size = 10.8),
+      legend.text = element_text(size = 9.8),
+      plot.margin = margin(10, 12, 10, 10)
     )
 }
 
 main_plot_zh <- make_main_plot("zh")
 main_plot_en <- make_main_plot("en")
-save_heatmap <- function(plot, stem) {
-  ggsave(
-    file.path(figure_dir, paste0(stem, ".png")),
-    plot,
-    width = 15.5,
-    height = 11.5,
-    dpi = 320,
-    bg = "white"
-  )
-  ggsave(
-    file.path(figure_dir, paste0(stem, ".pdf")),
-    plot,
-    width = 15.5,
-    height = 11.5,
-    device = cairo_pdf,
-    bg = "white"
-  )
-}
-save_heatmap(
+save_aligned_heatmap(
   main_plot_zh,
+  figure_dir,
   "kla_regulator_whole_proteome_relative_intensity_heatmap"
 )
-save_heatmap(
+save_aligned_heatmap(
   main_plot_zh,
+  figure_dir,
   "kla_regulator_whole_proteome_relative_intensity_heatmap_zh"
 )
-save_heatmap(
+save_aligned_heatmap(
   main_plot_en,
+  figure_dir,
   "kla_regulator_whole_proteome_relative_intensity_heatmap_en"
 )
 

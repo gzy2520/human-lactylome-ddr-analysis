@@ -21,16 +21,24 @@ project_root <- normalizePath(
   mustWork = TRUE
 )
 
-analysis_name <- "five_set_pathway_matrix"
+analysis_name <- Sys.getenv(
+  "KLA_SCORE_ANALYSIS_NAME",
+  unset = "five_set_pathway_matrix"
+)
 table_dir <- file.path(project_root, "results/tables", analysis_name)
 figure_dir <- file.path(project_root, "results/figures", analysis_name)
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
-score_workbook_path <- file.path(
-  project_root,
-  "data/identifier/260810乳酸化DDR基因评分表.xlsx"
+score_workbook_relative <- Sys.getenv(
+  "KLA_SCORE_WORKBOOK_PATH",
+  unset = "data/identifier/260810乳酸化DDR基因评分表.xlsx"
 )
+score_workbook_path <- if (grepl("^/", score_workbook_relative)) {
+  score_workbook_relative
+} else {
+  file.path(project_root, score_workbook_relative)
+}
 membership_path <- file.path(
   project_root,
   "results/tables/four_class_venn/",
@@ -41,6 +49,22 @@ color_key_path <- file.path(
   "results", "tables", "protein_function_inputs",
   "pathway_colors.csv"
 )
+display_override_relative <- Sys.getenv(
+  "KLA_SCORE_PATHWAY_DISPLAY",
+  unset = ""
+)
+display_override_path <- if (!nzchar(display_override_relative)) {
+  ""
+} else if (grepl("^/", display_override_relative)) {
+  display_override_relative
+} else {
+  file.path(project_root, display_override_relative)
+}
+display_input_path <- if (nzchar(display_override_path)) {
+  display_override_path
+} else {
+  color_key_path
+}
 
 assert <- function(condition, message) {
   if (!isTRUE(condition)) {
@@ -48,7 +72,11 @@ assert <- function(condition, message) {
   }
 }
 
-required_inputs <- c(score_workbook_path, membership_path, color_key_path)
+required_inputs <- c(
+  score_workbook_path,
+  membership_path,
+  display_input_path
+)
 assert(
   all(file.exists(required_inputs)),
   paste(
@@ -66,7 +94,7 @@ weights <- c(
   AEJ = 6,
   NHEJ = 7
 )
-pathway_order <- names(weights)
+score_columns <- names(weights)
 
 set_info <- data.table(
   Set = c(
@@ -107,7 +135,7 @@ required_score_columns <- c(
   "BaseAccession",
   "GeneSymbol",
   "ProteinName",
-  pathway_order,
+  score_columns,
   "score"
 )
 assert(
@@ -120,11 +148,11 @@ scores <- score_raw[
 scores[, BaseAccession := trimws(BaseAccession)]
 assert(
   uniqueN(scores$BaseAccession) == nrow(scores) &&
-    all(as.matrix(scores[, pathway_order, with = FALSE]) %in% c(-1, 0, 1)),
+    all(as.matrix(scores[, score_columns, with = FALSE]) %in% c(-1, 0, 1)),
   "The score workbook does not contain a valid unique seven-pathway matrix."
 )
 recalculated_score <- as.numeric(
-  as.matrix(scores[, pathway_order, with = FALSE]) %*% weights
+  as.matrix(scores[, score_columns, with = FALSE]) %*% weights
 )
 assert(
   !anyNA(scores$score) &&
@@ -132,6 +160,7 @@ assert(
   "The workbook score does not match the seven-pathway weighted formula."
 )
 scores[, SignedScore := recalculated_score]
+scored_input_count <- nrow(scores)
 
 membership <- fread(membership_path)
 membership_columns <- set_info$MembershipColumn[set_info$Set != "all_kla_ddr"]
@@ -141,6 +170,22 @@ assert(
     all(membership_columns %in% names(membership)) &&
     all(membership$BaseAccession %in% scores$BaseAccession),
   "One or more proteins in the current membership lack pathway scores."
+)
+score_scope_audit <- scores[
+  ,
+  .(
+    BaseAccession,
+    GeneSymbol,
+    ProteinName,
+    WorkbookScore = as.numeric(score),
+    RecalculatedSignedScore = SignedScore,
+    InCurrent399 = BaseAccession %in% membership$BaseAccession
+  )
+]
+assert(
+  scored_input_count == 507L &&
+    sum(score_scope_audit$InCurrent399) == 399L,
+  "Expected 507 scored proteins with complete coverage of the current 399."
 )
 scores <- scores[BaseAccession %in% membership$BaseAccession]
 membership[, In_all_kla_ddr := TRUE]
@@ -162,6 +207,40 @@ membership_long <- merge(
   sort = FALSE
 )
 membership_long <- membership_long[Included == TRUE]
+
+if (nzchar(display_override_path)) {
+  pathway_info <- fread(display_override_path)
+  assert(
+    all(c("Pathway", "PathwayOrder", "Color", "ColorName") %in%
+      names(pathway_info)),
+    "The pathway display override is missing required columns."
+  )
+  pathway_info[, Coefficient := as.numeric(weights[Pathway])]
+  setorder(pathway_info, PathwayOrder)
+} else {
+  color_key <- fread(color_key_path)
+  pathway_info <- data.table(
+    Pathway = score_columns,
+    Coefficient = as.numeric(weights),
+    PathwayOrder = seq_along(score_columns)
+  )
+  pathway_info <- merge(
+    pathway_info,
+    color_key[, .(Pathway = DisplayLabel, Color, ColorName)],
+    by = "Pathway",
+    all.x = TRUE,
+    sort = FALSE
+  )
+  setorder(pathway_info, PathwayOrder)
+}
+pathway_order <- pathway_info$Pathway
+assert(
+  nrow(pathway_info) == 7L &&
+    !anyNA(pathway_info$Color) &&
+    setequal(pathway_info$Pathway, score_columns) &&
+    !anyNA(pathway_info$Coefficient),
+  "The seven fixed pathway colors could not be recovered."
+)
 
 protein_by_set <- merge(
   membership_long,
@@ -213,27 +292,6 @@ expected_counts <- c(
 assert(
   identical(observed_set_counts$ProteinCount, expected_counts),
   "The five protein-set counts do not match the current membership table."
-)
-
-color_key <- fread(color_key_path)
-pathway_info <- data.table(
-  Pathway = pathway_order,
-  Coefficient = as.numeric(weights),
-  PathwayOrder = seq_along(pathway_order)
-)
-pathway_info <- merge(
-  pathway_info,
-  color_key[, .(Pathway = DisplayLabel, Color, ColorName)],
-  by = "Pathway",
-  all.x = TRUE,
-  sort = FALSE
-)
-setorder(pathway_info, PathwayOrder)
-assert(
-  nrow(pathway_info) == 7L &&
-    !anyNA(pathway_info$Color) &&
-    identical(pathway_info$Pathway, pathway_order),
-  "The seven fixed pathway colors could not be recovered."
 )
 
 matrix_long <- melt(
@@ -327,6 +385,10 @@ fwrite(
   file.path(table_dir, "protein_set_counts.csv")
 )
 fwrite(
+  score_scope_audit,
+  file.path(table_dir, "score_workbook_scope_audit_507_to_399.csv")
+)
+fwrite(
   pathway_info,
   file.path(table_dir, "pathway_order_and_colors.csv")
 )
@@ -335,7 +397,7 @@ input_audit <- data.table(
   Input = c(
     "Revised DDR score workbook",
     "Current four-category membership",
-    "Existing pathway color key"
+    "Pathway display configuration"
   ),
   Path = c(
     file.path("data/identifier", basename(score_workbook_path)),
@@ -344,11 +406,24 @@ input_audit <- data.table(
       "kla_ddr_four_class_venn/",
       basename(membership_path)
     ),
-    file.path("results", "tables", "protein_function_inputs", basename(color_key_path))
+    sub(paste0("^", project_root, "/?"), "", display_input_path)
   ),
-  MD5 = unname(tools::md5sum(required_inputs)),
+  SHA256 = vapply(
+    required_inputs,
+    function(path) digest::digest(
+      file = path,
+      algo = "sha256",
+      serialize = FALSE
+    ),
+    character(1)
+  ),
   Role = c(
-    paste0(nrow(scores), " current proteins, seven signed pathway states, score ordering key"),
+    paste0(
+      scored_input_count,
+      " scored proteins; filtered to ",
+      nrow(scores),
+      " current proteins; seven signed pathway states and score ordering key"
+    ),
     "non-tumor tissues, tumor tissues, cancer cell lines, normal cell lines membership",
     "stable pathway colors reused from previous figures"
   )

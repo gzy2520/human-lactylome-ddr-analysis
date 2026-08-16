@@ -47,6 +47,8 @@ t-SNE、PCA、Cytoscape、V1/V2/V3或manual score的材料仅供追溯，不是�
 - Venn图使用固定四集合几何，面积不表达数量；数字来自精确membership。
 - 通路评分使用399蛋白的全部直接BP、CC、MF GO term。term可同时属于多条通路；
   不命中七通路的term归`Others`。旧人工±1评分表和系数不参与当前结果。
+- 老师于2026-08-16提供的修订评分表只用于独立试绘。它不会覆盖直接GO-term版本，
+  不进入当前发表合同或发表SHA256清单。
 
 ## 当前代码入口
 
@@ -59,6 +61,7 @@ t-SNE、PCA、Cytoscape、V1/V2/V3或manual score的材料仅供追溯，不是�
 | `R/figures/plot_four_class_venn.R` | 生成四套精确membership Venn图与审计表 |
 | `R/data_preparation/build_go_term_pathway_scores.R` | 生成399蛋白的直接GO term通路计数 |
 | `R/figures/plot_five_set_pathway_matrix_go_term.R` | 生成4+1线性图和summary |
+| `R/figures/plot_five_set_pathway_matrix_revised_excel.R` | 生成老师修订评分表独立试绘版 |
 | `workflow/run_pipeline.R` | 统一运行入口 |
 | `tests/validate_publication_contract.R` | 当前结果合同 |
 
@@ -90,3 +93,11 @@ Rscript workflow/build_manifest.R .
 ```
 
 当前发表范围不运行UMAP、t-SNE、PCA或Cytoscape。
+
+老师修订评分表试绘版单独运行：
+
+```bash
+Rscript workflow/run_pipeline.R revised_score_preview
+```
+
+试绘说明见`docs/REVISED_SCORE_WORKBOOK_PREVIEW_20260816.md`；当前正式GO版本不受影响。

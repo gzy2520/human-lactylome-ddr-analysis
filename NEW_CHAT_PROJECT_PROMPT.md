@@ -38,6 +38,8 @@ Cytoscape、V1/V2/V3、manual score字样的文件当成当前项目状态。
 - 单蛋白的通路得分是该通路的不同直接GO term数；七通路term数之和只用于排序。
 - 当前图形范围仅为柱状图、两份热图、四套Venn和4+1线性图/summary。
   不重跑UMAP、t-SNE、PCA或Cytoscape。
+- `乳酸化DDR基因评分表_Revised_20260816.xlsx`对应的4+1图只是老师评分的
+  独立试绘版；不能用它覆盖当前直接GO-term线性图、Methods或发表合同。
 
 ## 当前数据流
 
@@ -53,6 +55,14 @@ Cytoscape、V1/V2/V3、manual score字样的文件当成当前项目状态。
 10. `R/figures/plot_five_set_pathway_matrix_go_term.R`
 11. `R/analysis/summarize_four_class_venn_counts.R`
 12. `tests/validate_publication_contract.R`
+
+独立评分表试绘入口：
+
+```bash
+Rscript workflow/run_pipeline.R revised_score_preview
+```
+
+其说明为`docs/REVISED_SCORE_WORKBOOK_PREVIEW_20260816.md`。
 
 统一命令：
 

@@ -22,3 +22,7 @@
 
 当前合同不要求UMAP、t-SNE、PCA或Cytoscape；这些历史结果不进入当前SHA256
 发表清单。
+
+老师修订人工评分表生成的
+`five_set_pathway_matrix_revised_excel_20260816`属于独立预览，同样不进入本合同
+或发表SHA256清单。其完整性由`tests/validate_revised_score_preview.R`单独验证。

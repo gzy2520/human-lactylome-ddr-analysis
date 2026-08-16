@@ -3,7 +3,8 @@
 # Publication workflow for the configured human Kla proteomics analysis.
 #
 # Usage:
-#   Rscript workflow/run_pipeline.R [all|core|embeddings|figures|selected_figures|validate]
+#   Rscript workflow/run_pipeline.R
+#     [all|core|embeddings|figures|selected_figures|revised_score_preview|validate]
 #
 # The default is "all". Set KLA_DATA_ROOT only when the raw data directory is
 # stored outside the repository. All stochastic steps use seed 25 internally.
@@ -11,7 +12,8 @@
 args <- commandArgs(trailingOnly = TRUE)
 target <- if (length(args)) args[[1L]] else "selected_figures"
 valid_targets <- c(
-  "all", "core", "embeddings", "figures", "selected_figures", "validate"
+  "all", "core", "embeddings", "figures", "selected_figures",
+  "revised_score_preview", "validate"
 )
 if (!target %in% valid_targets) {
   stop("Target must be one of: ", paste(valid_targets, collapse = ", "))
@@ -119,6 +121,16 @@ if (target == "selected_figures") {
   for (step in selected_figure_steps) {
     run_r_script(step[[1L]], step[[2L]])
   }
+}
+if (target == "revised_score_preview") {
+  run_r_script(
+    "R/figures/plot_five_set_pathway_matrix_revised_excel.R",
+    "01 revised-score exploratory 4+1 pathway matrices"
+  )
+  run_r_script(
+    "tests/validate_revised_score_preview.R",
+    "02 revised-score preview contract"
+  )
 }
 if (target %in% c("all", "selected_figures", "validate")) {
   run_r_script("tests/validate_publication_contract.R", "16 publication contract")

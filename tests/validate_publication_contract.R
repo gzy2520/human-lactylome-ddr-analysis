@@ -90,7 +90,8 @@ assert(
 )
 
 pathway_counts <- read_table(
-  "results", "tables", "five_set_pathway_matrix", "protein_set_counts.csv"
+  "results", "tables", "five_set_pathway_matrix_go_term_30groups",
+  "protein_set_counts.csv"
 )
 assert(
   identical(
@@ -101,10 +102,73 @@ assert(
 )
 
 pathway_summary <- read_table(
-  "results", "tables", "five_set_pathway_matrix",
-  "pathway_state_summary_5sets_35rows.csv"
+  "results", "tables", "five_set_pathway_matrix_go_term_30groups",
+  "pathway_presence_summary_5sets_35rows.csv"
 )
 assert(nrow(pathway_summary) == 35L, "Expected 35 pathway summary rows.")
+assert(
+  all(
+    pathway_summary$AssignedProteinCount +
+      pathway_summary$UnassignedProteinCount ==
+      pathway_summary$ProteinCount
+  ),
+  "Assigned and unassigned pathway counts do not sum to each protein set."
+)
+
+direct_go <- read_table(
+  "results", "tables", "go_term_pathway_scoring_30groups",
+  "direct_go_annotations_399proteins.csv"
+)
+assert(
+  nrow(direct_go) == 10605L &&
+    uniqueN(direct_go$GO_ID) == 2785L &&
+    uniqueN(direct_go$BaseAccession) == 399L,
+  "Expected 10,605 direct protein-GO pairs, 2,785 terms, and 399 proteins."
+)
+
+term_decisions <- read_table(
+  "results", "tables", "go_term_pathway_scoring_30groups",
+  "go_term_decision_audit_2785.csv"
+)
+assert(
+  nrow(term_decisions) == 2785L &&
+    uniqueN(term_decisions$GO_ID) == 2785L &&
+    all(term_decisions$SevenPathwayCount >= 0L) &&
+    sum(term_decisions$SevenPathwayCount > 0L) == 103L &&
+    sum(term_decisions$SevenPathwayCount > 1L) == 8L,
+  "The direct GO-term pathway-decision contract changed."
+)
+
+term_mapping <- read_table(
+  "results", "tables", "go_term_pathway_scoring_30groups",
+  "go_term_to_pathway_long.csv"
+)
+seven_pathway_ids <- unique(term_mapping[Pathway != "Others", GO_ID])
+others_ids <- unique(term_mapping[Pathway == "Others", GO_ID])
+assert(
+  !length(intersect(seven_pathway_ids, others_ids)) &&
+    setequal(
+      union(seven_pathway_ids, others_ids),
+      term_decisions$GO_ID
+    ),
+  "Others must be exhaustive and mutually exclusive with seven-pathway terms."
+)
+
+go_score_matrix <- read_table(
+  "results", "tables", "go_term_pathway_scoring_30groups",
+  "protein_pathway_direct_term_count_matrix.csv"
+)
+seven_pathways <- c("BER", "NER", "MMR", "FA", "HR", "NHEJ", "AEJ")
+assert(
+  nrow(go_score_matrix) == 399L &&
+    uniqueN(go_score_matrix$BaseAccession) == 399L &&
+    all(seven_pathways %in% names(go_score_matrix)) &&
+    identical(
+      as.integer(go_score_matrix$SevenPathwayTermScore),
+      as.integer(rowSums(go_score_matrix[, ..seven_pathways]))
+    ),
+  "The protein pathway score must equal the sum of distinct direct GO terms across seven pathways."
+)
 
 venn_summary <- read_table(
   "results", "tables", "four_class_venn", "four_venn_set_counts_4x4.csv"
@@ -133,8 +197,8 @@ required_figures <- c(
     "kla_ddr_four_class_venn_30groups_en.png"
   ),
   file.path(
-    "results", "figures", "five_set_pathway_matrix",
-    "kla_ddr_linear_pathway_matrix_all_kla_ddr_en.png"
+    "results", "figures", "five_set_pathway_matrix_go_term_30groups",
+    "kla_ddr_go_term_linear_pathway_matrix_all_kla_ddr_en.png"
   )
 )
 missing_figures <- required_figures[!file.exists(file.path(project_root, required_figures))]
@@ -145,5 +209,6 @@ assert(
 
 message(
   "PASS: 40/37/30/28 scope, four classes 9/2/12/7 in display order, 399 Kla-DDR proteins, ",
+  "2,785 direct GO terms with exhaustive seven-pathway/Others decisions, ",
   "183/178/381/292/399 sets, and selected publication figures."
 )

@@ -80,7 +80,10 @@ figure_steps <- list(
 )
 
 selected_figure_steps <- list(
-  c("R/figures/plot_five_set_pathway_matrix.R", "11 selected 4+1 pathway matrices"),
+  c(
+    "R/figures/plot_five_set_pathway_matrix_go_term.R",
+    "11 selected GO-term-derived 4+1 pathway matrices"
+  ),
   c("R/analysis/summarize_four_class_venn_counts.R", "12 four-Venn set-count summary")
 )
 
@@ -106,9 +109,13 @@ if (target == "selected_figures") {
     "python/data_preparation/build_reference_proteome_membership.py",
     "02 reference-proteome membership"
   )
-  for (step in core_steps[seq_len(8L)]) {
+  for (step in core_steps[seq_len(7L)]) {
     run_r_script(step[[1L]], step[[2L]])
   }
+  run_r_script(
+    "R/data_preparation/build_go_term_pathway_scores.R",
+    "10 direct-GO-term pathway scoring"
+  )
   for (step in selected_figure_steps) {
     run_r_script(step[[1L]], step[[2L]])
   }

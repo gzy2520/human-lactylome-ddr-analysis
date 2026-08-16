@@ -56,27 +56,20 @@ for (dir in c(
 # Small versioned scientific inputs; raw PXD files remain outside the manifest.
 for (f in c(
   "data/annotations/GO-repair+damage(human).tsv",
-  "data/identifier/260810乳酸化DDR基因评分表.xlsx",
   "data/identifier/乳酸化调控因子_Writer-Eraser-Reader.xlsx"
 )) {
   p <- file.path(ROOT, f)
   if (file.exists(p)) paths <- c(paths, p)
 }
 
-# Publication results only. Historical exploratory results are intentionally
-# excluded even if they remain available in a local archive.
+# Teacher-selected publication results only. Historical embeddings, UMAPs and
+# manual-score outputs remain local but are intentionally excluded.
 result_trees <- c(
-  "results/figures/bp_semantic_umap",
-  "results/figures/five_set_embeddings",
-  "results/figures/five_set_pathway_matrix",
+  "results/figures/five_set_pathway_matrix_go_term_30groups",
   "results/figures/four_class_venn",
-  "results/figures/pathway_specific_umap",
-  "results/tables/bp_semantic_umap",
-  "results/tables/five_set_embeddings",
-  "results/tables/five_set_pathway_matrix",
+  "results/tables/five_set_pathway_matrix_go_term_30groups",
   "results/tables/four_class_venn",
-  "results/tables/pathway_specific_umap",
-  "results/tables/protein_function_inputs",
+  "results/tables/go_term_pathway_scoring_30groups",
   "results/provenance"
 )
 for (dir in result_trees) {
@@ -103,10 +96,7 @@ result_files <- c(
   "results/tables/kla_regulator_intensity_availability_audit.csv",
   "results/tables/kla_regulator_whole_proteome_heatmap_rows.csv",
   "results/tables/strict_reference_material_identity_audit.csv",
-  "results/tables/strict_reference_material_identity_audit_zh.csv",
-  "results/reports/FIVE_SET_UMAP_TSNE_PCA_PATHWAY_GRIDS_33GROUP_V3.md",
-  "results/reports/UMAP_PATHWAY_PIE_33GROUP_V4_BP_SEMANTIC.md",
-  "results/reports/UMAP_PATHWAY_SPECIFIC_33GROUP_V1.md"
+  "results/tables/strict_reference_material_identity_audit_zh.csv"
 )
 for (f in result_files) {
   p <- file.path(ROOT, f)

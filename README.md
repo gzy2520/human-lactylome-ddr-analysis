@@ -1,9 +1,21 @@
 # Integrated human lysine lactylation proteomics and DNA-damage response
 
-This repository contains the publication workflow for a cross-study human
-lysine lactylation (Kla) proteomics analysis. The current teacher-approved
-comparison uses 30 sample groups with whole-proteome references and 399
-Kla-intersecting DDR proteins.
+This repository contains the current publication workflow for a cross-study
+human lysine lactylation (Kla) proteomics analysis. The active teacher-approved
+scope contains 30 paired sample groups and 399 unique Kla-intersecting DDR
+proteins.
+
+The current publication outputs are:
+
+- a DDR-fraction bar chart;
+- two regulator percentile heatmaps;
+- four exact-membership, four-category Venn diagrams;
+- separate 4+1 direct-GO-term pathway matrices and summaries.
+
+The Venn geometry is schematic and not area proportional. All displayed
+numbers come from exact membership and region tables. The pathway matrices no
+longer use the former manual ±1 workbook: direct BP, CC, and MF GO terms are
+mapped to BER, NER, MMR, FA, HR, NHEJ, AEJ, or `Others`.
 
 ## Reproduce
 
@@ -15,15 +27,21 @@ Rscript workflow/record_environment.R .
 Rscript workflow/build_manifest.R .
 ```
 
-Raw and processed PXD files are kept under `data/` locally and are not tracked
-by Git. Analysis code uses isoform-stripped UniProt `BaseAccession`; gene
-symbols are display and audit annotations only. All stochastic analyses use
-seed 25. Exact R versions used for each run are written to
-`results/provenance/`; `DESCRIPTION` declares the required packages.
+The analytical key is the isoform-stripped human UniProt `BaseAccession`.
+Gene symbols and protein names are display/audit annotations only. Randomized
+steps use seed 25.
 
-The selected workflow regenerates the DDR fraction bar chart, regulator
-heatmaps, four-class Venn/Euler diagrams, and 4+1 linear pathway-state figures.
-UMAP, t-SNE, PCA, and Cytoscape outputs are intentionally not rerun.
+Raw and processed PXD files remain under `data/` locally and are not tracked by
+Git. Generated `results/` and historical `archive/` contents are also outside
+Git. Archived 33-group, 507-protein, UMAP, t-SNE, PCA, Cytoscape, circular
+matrix, and manual-score materials are historical only and must not be used to
+describe the current analysis.
 
-See `PROJECT_INDEX.md` for the directory map and
-`NEW_CHAT_PROJECT_PROMPT.md` for the full analysis contract.
+Current entry points:
+
+- `PROJECT_INDEX.md`: authoritative project map and scope;
+- `NEW_CHAT_PROJECT_PROMPT.md`: copy-paste project handoff;
+- `manuscript/methods/METHODS_EN.md` and `METHODS_ZH.md`: active Methods;
+- `docs/DATA_PROVENANCE.md`: current provenance and inclusion logic;
+- `docs/GO_TERM_PATHWAY_SCORING_30GROUPS.md`: pathway-scoring contract;
+- `tests/validate_publication_contract.R`: executable result contract.

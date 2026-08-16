@@ -1,41 +1,84 @@
-# Human Kla proteomics publication repository
+# Human Kla蛋白组发表项目：当前项目索引
 
-更新时间：2026-08-12
+更新时间：2026-08-16
 
-本仓库以老师确认的30组配对分析和399个Kla∩DDR蛋白为当前发表版主线。旧分析、
-探索图和V1/V2版本不再位于当前代码树，必要时通过Git历史追溯。
+本文件是当前项目状态的主要入口。判定分析范围时，优先级依次为：
 
-## 目录
+1. `config/`中的范围和配对配置；
+2. 当前执行脚本；
+3. `tests/validate_publication_contract.R`；
+4. 本文件、双语Methods和当前审计文档；
+5. 可重新生成的`results/`。
+
+`archive/`、Git历史、旧`results/reports/`以及文件名含33group、507、UMAP、
+t-SNE、PCA、Cytoscape、V1/V2/V3或manual score的材料仅供追溯，不是当前依据。
+
+## 当前固定范围
+
+- 来源目录：40个候选`PXD+SampleGroup`。
+- 可进行Kla逐蛋白定量：37组。
+- 在老师最后范围调整前具有参照的配对组：33组。
+- 当前主分析：30组、28条唯一普通全蛋白参照展示行。
+- 四分类顺序：non-tumor tissues 9组、tumor tissues 2组、
+  cancer cell lines 12组、normal cell lines 7组。
+- 当前Kla∩DDR并集：399个唯一`BaseAccession`。
+- 4+1集合顺序与大小：183、178、381、292、399。
+
+老师明确从原33组中排除：
+
+- `PXD055230 / human fibroblasts mock and HCMV or HSV-1`；
+- `PXD057709 / human fibroblasts mock and HCMV`；
+- `PXD014870 / MCF7`。
+
+另外，40组目录中有3个PXD037371临床组无法可靠拆分TMT通道，4个定量组缺少
+可接受的普通全蛋白参照。这些状态由配置和审计表保存，不应与老师最后排除的3组
+混为一类。
+
+## 当前分析规则
+
+- 匹配、去重、GO交集和集合运算只使用去isoform的UniProt
+  `BaseAccession`。
+- GeneSymbol和ProteinName仅用于显示和审计。
+- GO-DDR来自`data/annotations/GO-repair+damage(human).tsv`，排除`NOT`，
+  主分析不按evidence code进一步缩减。
+- 普通全蛋白必须来自非Kla富集数据。材料身份、同批样本、实验状态和独立队列
+  关系分别记录，不能把所有参照统称为同条件对照。
+- Kla和普通全蛋白DDR比例使用各自独立分母。
+- Venn图使用固定四集合几何，面积不表达数量；数字来自精确membership。
+- 通路评分使用399蛋白的全部直接BP、CC、MF GO term。term可同时属于多条通路；
+  不命中七通路的term归`Others`。旧人工±1评分表和系数不参与当前结果。
+
+## 当前代码入口
+
+| 路径 | 当前用途 |
+|---|---|
+| `python/data_preparation/build_core_kla_inputs.py` | 构建可审计的核心Kla证据层 |
+| `R/data_preparation/build_kla_regulator_landscape.R` | 建立40/37组目录和Kla热图输入 |
+| `R/analysis/analyze_regulator_*_intensity.R` | 生成30行Kla和28行普通全蛋白热图数据 |
+| `R/analysis/analyze_ddr_fraction.R` | 计算30组Kla与参照DDR比例 |
+| `R/figures/plot_four_class_venn.R` | 生成四套精确membership Venn图与审计表 |
+| `R/data_preparation/build_go_term_pathway_scores.R` | 生成399蛋白的直接GO term通路计数 |
+| `R/figures/plot_five_set_pathway_matrix_go_term.R` | 生成4+1线性图和summary |
+| `workflow/run_pipeline.R` | 统一运行入口 |
+| `tests/validate_publication_contract.R` | 当前结果合同 |
+
+## 当前目录
 
 | 目录 | 用途 |
 |---|---|
-| `data/` | 本地原始数据、检索结果、补充表和人工评分表；大型文件不进入Git |
-| `config/` | 固定样本范围、参照配对、ID映射和UniProt注释缓存 |
-| `python/` | 7个核心PXD异构原始表解析，仅负责基础Kla证据层 |
-| `R/data_preparation/` | 40/37/30组目录和通路功能输入准备 |
-| `R/analysis/` | 强度、DDR占比和五集合降维参数分析 |
-| `R/figures/` | 论文图和补充图 |
-| `workflow/` | 统一运行、环境记录和SHA256清单 |
+| `config/` | 样本范围、参照关系、ID映射、GO规则和显示配置 |
+| `data/` | 本地原始/处理数据及少量Git跟踪注释输入 |
+| `python/` | 异构Kla证据解析 |
+| `R/` | 数据准备、统计和论文图 |
+| `workflow/` | 执行、依赖、环境记录和SHA256清单 |
 | `tests/` | 发表版结果合同 |
-| `manuscript/` | 中英文Methods与审计说明 |
-| `docs/` | 数据来源和分析决策记录 |
-| `results/` | 可重新生成的表、图和报告；Git忽略 |
-| `work/` | 可重新生成的中间表与日志；Git忽略 |
+| `manuscript/` | 当前双语Methods和审计说明 |
+| `docs/` | 当前来源、评分和复现说明 |
+| `results/` | 可重新生成结果，Git忽略 |
+| `work/` | 可重新生成中间表，Git忽略 |
+| `archive/` | 历史材料，Git忽略，不是当前分析入口 |
 
-## 固定分析口径
-
-- 40个来源样本组进入可审计目录，其中37组具有Kla定量。
-- 30组具有可用普通全蛋白参照，四分类显示顺序为非肿瘤组织9、肿瘤组织2、癌细胞系12、正常细胞系7。
-- 30个Kla组对应28条唯一普通全蛋白参照展示行。
-- 配对分析排除PXD062720、PXD063047重度子痫前期胎盘、PXD064038和
-  PXD075014。
-- PXD037371三个临床组因TMT通道无法可靠映射，不进入Kla定量范围。
-- 老师要求排除PXD055230、PXD057709和PXD014870。
-- 当前399个Kla∩DDR蛋白；五集合按显示顺序为183/178/381/292/399。
-- 分析键为去isoform的UniProt `BaseAccession`；GeneSymbol仅展示和审计。
-- 所有随机步骤使用种子25。
-
-## 一键运行
+## 运行和验证
 
 ```bash
 cd "/Users/gzy2520/Desktop/Research/kla"
@@ -46,17 +89,4 @@ Rscript workflow/record_environment.R .
 Rscript workflow/build_manifest.R .
 ```
 
-分阶段运行：
-
-```bash
-Rscript workflow/run_pipeline.R core
-Rscript workflow/run_pipeline.R validate
-```
-
-## 发表版入口
-
-- 中文Methods：`manuscript/methods/METHODS_ZH.md`
-- 英文Methods：`manuscript/methods/METHODS_EN.md`
-- 数据来源：`docs/DATA_PROVENANCE.md`
-- 结果合同：`tests/validate_publication_contract.R`
-- 完整交接：`NEW_CHAT_PROJECT_PROMPT.md`
+当前发表范围不运行UMAP、t-SNE、PCA或Cytoscape。

@@ -1,24 +1,28 @@
-# 数据目录
+# 本地数据目录
 
-## datasets
+`data/`保存公开质谱项目的原始文件、作者检索结果、补充表和本项目的小型注释输入。
+大型PXD文件不进入Git。某个PXD存在于本目录，不代表其进入当前30组主分析。
 
-每个 PXD 使用独立子目录，保留原始压缩包、已解压检索结果和论文补充表。
+当前样本范围只能由以下配置确定：
 
-- PXD014870、PXD028488、PXD050470、PXD053474：此前文章数据。
-- PXD060185、PXD078013、PXD078736：本次纳入重分析的数据。
-- PXD038880、PXD050906：数据保留，但因记录关系尚需确认，本次明确排除。
+- `../config/sample_group_catalog.csv`
+- `../config/four_class_sample_grouping.csv`
+- `../config/lactylome_reference_pairing.csv`
+- `../config/main_analysis_scope_exclusions.csv`
 
-## articles
+## 跟踪的小型输入
 
-按 PXD 保存对应论文 PDF。PXD078013 和 PXD078736 尚无正式论文 PDF。
+- `annotations/GO-repair+damage(human).tsv`：人源GO-DDR集合，分析时排除`NOT`。
+- `identifier/乳酸化调控因子_Writer-Eraser-Reader.xlsx`：调控蛋白显示列表。
 
-## annotations
+`identifier/260810乳酸化DDR基因评分表.xlsx`属于旧人工评分版本，保留仅供历史
+审计，不参与当前GO-term七通路评分或图形。
 
-`GO-repair+damage(human).tsv` 是本次 Kla 蛋白取 GO repair/damage 交集的
-唯一 GO 输入文件，不按 GO evidence code 额外过滤。
+## 数据使用原则
 
-## metadata
-
-保存数据集年份、样本类型、处理方法、数据库记录和下载清单。实际分析分组
-以 `../config/sample_group_catalog.csv`、`../config/lactylome_reference_pairing.csv`
-和 `../config/four_class_sample_grouping.csv` 为准。
+- 原始谱图用于来源追溯，不直接等同于Kla证据。
+- 主分析读取作者检索后的Kla位点、修饰肽段、蛋白定量或作者补充表。
+- 普通全蛋白参照必须来自非Kla/PTM富集矩阵。
+- 所有蛋白集合分析使用去isoform的UniProt`BaseAccession`。
+- 实际使用的文件、字段、样本列和配对关系保存在结果审计表及
+  `../docs/DATA_PROVENANCE.md`。

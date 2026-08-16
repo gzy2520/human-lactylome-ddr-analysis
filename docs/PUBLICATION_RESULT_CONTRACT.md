@@ -1,20 +1,24 @@
-# Publication result contract
+# 当前发表结果合同
 
-The repository is considered reproducible only when
-`tests/validate_publication_contract.R` passes all of the following:
+项目只有在`tests/validate_publication_contract.R`通过时，才可描述为当前可复现版本。
 
-- 40 catalogued source groups and 37 quantifiable Kla groups.
-- 30 paired groups and 28 unique whole-proteome display rows.
-- Paired four-class counts in display order: 2 tumor tissues, 9 non-tumor
-  tissues, 12 cancer cell lines, and 7 normal cell lines.
-- 399 unique Kla-DDR BaseAccessions.
-- Five protein sets in display order of 178, 183, 381, 292, and 399 proteins.
-- 35 five-set by seven-pathway summary rows.
-- A 4 x 4 set-count summary for the four Venn analyses, without intersection counts.
-- Required bilingual heatmaps, DDR bar/Venn figures, and five-set linear
-  pathway matrices. Embeddings and Cytoscape are outside this revision.
+合同固定：
 
-The contract checks stable identifiers and analytical counts. It does not
-compare raster image bytes because font rendering may vary across operating
-systems. Figure existence is supplemented by manual visual inspection of both
-language variants.
+- 40个候选组、37个Kla定量组、30个当前配对组和28条唯一参照展示行；
+- 四分类显示顺序为non-tumor tissues 9组、tumor tissues 2组、
+  cancer cell lines 12组、normal cell lines 7组；
+- 当前Kla∩DDR并集为399个唯一`BaseAccession`；
+- 4+1集合大小依次为183、178、381、292和399；
+- 四套Venn分析均可由membership和region表精确重建；
+- Venn最终几何不按面积拟合，15个逻辑区域均保留，数字是唯一数量编码；
+- 399蛋白含10,605条直接蛋白–GO配对和2,785个唯一直接term；
+- 103个term命中至少一条七通路规则，8个term同时命中两条通路；
+- `Others`与七通路互斥且共同覆盖全部2,785个term；
+- 4+1乘7条通路产生35行summary；
+- 中英文柱状图、两份热图、四套Venn、4+1线性图和summary均存在。
+
+合同不比较PNG字节，因为字体渲染可随操作系统变化。仍需目视检查双语图是否存在
+文字截断、字号异常、标签错位或意外标题。
+
+当前合同不要求UMAP、t-SNE、PCA或Cytoscape；这些历史结果不进入当前SHA256
+发表清单。

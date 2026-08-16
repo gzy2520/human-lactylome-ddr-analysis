@@ -4,7 +4,7 @@
 # Exact versions used for a run are recorded by workflow/record_environment.R.
 
 cran_packages <- c(
-  "data.table", "digest", "dplyr", "eulerr", "ggplot2", "Matrix",
+  "data.table", "digest", "dplyr", "eulerr", "ggplot2", "ggVennDiagram", "Matrix",
   "patchwork", "readr", "readxl", "Rtsne", "stringr", "tidyr", "uwot"
 )
 missing_cran <- cran_packages[

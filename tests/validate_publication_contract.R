@@ -89,6 +89,41 @@ assert(
   "Expected five protein-set sizes 183/178/381/292/399."
 )
 
+venn_analyses <- c(
+  "all_kla_four_class_venn",
+  "kla_ddr_four_class_venn",
+  "reference_proteome_four_class_venn",
+  "reference_proteome_ddr_four_class_venn"
+)
+for (analysis_name in venn_analyses) {
+  venn_membership <- read_table(
+    "results", "tables", "four_class_venn",
+    analysis_name, "membership.csv"
+  )
+  venn_regions <- read_table(
+    "results", "tables", "four_class_venn",
+    analysis_name, "region_counts.csv"
+  )
+  reconstructed_regions <- venn_membership[, .N, by = Region]
+  reconstructed_counts <- reconstructed_regions$N[
+    match(venn_regions$Region, reconstructed_regions$Region)
+  ]
+  reconstructed_counts[is.na(reconstructed_counts)] <- 0L
+  assert(
+    nrow(venn_regions) == 15L &&
+      uniqueN(venn_regions$Region) == 15L &&
+      sum(venn_regions$ProteinCount) == nrow(venn_membership) &&
+      identical(
+        as.integer(venn_regions$ProteinCount),
+        as.integer(reconstructed_counts)
+      ),
+    paste(
+      "Expected 15 exhaustive exact-membership Venn regions for",
+      analysis_name
+    )
+  )
+}
+
 pathway_counts <- read_table(
   "results", "tables", "five_set_pathway_matrix_go_term_30groups",
   "protein_set_counts.csv"
@@ -194,7 +229,11 @@ required_figures <- c(
   ),
   file.path(
     "results", "figures", "four_class_venn",
-    "kla_ddr_four_class_venn_30groups_en.png"
+    as.vector(outer(
+      venn_analyses,
+      c("_30groups_en.png", "_30groups_zh.png"),
+      paste0
+    ))
   ),
   file.path(
     "results", "figures", "five_set_pathway_matrix_go_term_30groups",

@@ -6,7 +6,7 @@ output_dir <- file.path(project_root, "results", "provenance")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 packages <- c(
-  "data.table", "digest", "dplyr", "eulerr", "ggplot2", "GO.db", "Matrix",
+  "data.table", "digest", "dplyr", "eulerr", "ggplot2", "ggVennDiagram", "GO.db", "Matrix",
   "patchwork", "readr", "readxl", "Rtsne", "stringr", "tidyr", "uwot"
 )
 versions <- data.frame(

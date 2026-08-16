@@ -3,6 +3,8 @@
 suppressPackageStartupMessages({
   library(dplyr)
   library(eulerr)
+  library(ggVennDiagram)
+  library(ggplot2)
   library(readr)
   library(stringr)
   library(tidyr)
@@ -554,11 +556,9 @@ write_analysis_tables <- function(sets, membership, analysis_name) {
   invisible(set_counts)
 }
 
-draw_area_proportional <- function(
+draw_exact_membership_venn <- function(
   sets,
-  analysis_name,
-  title_zh,
-  title_en
+  analysis_name
 ) {
   fit <- euler(sets)
   membership <- build_membership(sets)
@@ -590,14 +590,98 @@ draw_area_proportional <- function(
     "#CC79A7", # cancer cell lines: reddish purple
     "#009E73"  # normal cell lines: bluish green
   )
-  render <- function(language = c("zh", "en")) {
+  # Use light, colour-blind-friendly fills for the exact membership regions.
+  # A region containing more than one set receives the lightened mean of the
+  # corresponding set colours.  The fill therefore identifies the membership
+  # combination, while the printed number remains the only quantitative
+  # encoding.  This is deliberately independent of region size/count.
+  lighten_region_colour <- function(region_id, strength = 0.42) {
+    set_ids <- as.integer(strsplit(region_id, "/", fixed = TRUE)[[1]])
+    rgb_values <- grDevices::col2rgb(colors[set_ids])
+    base_rgb <- rowMeans(rgb_values)
+    mixed_rgb <- (1 - strength) * 255 + strength * base_rgb
+    grDevices::rgb(
+      mixed_rgb[1], mixed_rgb[2], mixed_rgb[3],
+      maxColorValue = 255
+    )
+  }
+  font_family <- "Arial Unicode MS"
+  # ggVennDiagram uses the exact membership table to label all 15 logical
+  # four-set regions, including zero-count regions. This avoids eulerr's
+  # area-fit behaviour, which can
+  # collapse small but real regions to zero area and make one set look
+  # like a complete subset of another. Region area is not quantitative.
+  draw_exact_venn <- function(language = c("zh", "en")) {
     language <- match.arg(language)
     labels <- if (language == "zh") {
-      unname(category_labels_zh[category_order])
+      c(
+        normal_tissue = "非肿瘤\n组织",
+        cancer_tissue = "肿瘤\n组织",
+        cancer_cells = "癌细胞\n系",
+        normal_cells = "正常细胞\n系"
+      )
     } else {
-      unname(category_labels_en[category_order])
+      c(
+        normal_tissue = "non-tumor\ntissues",
+        cancer_tissue = "tumor\ntissues",
+        cancer_cells = "cancer cell\nlines",
+        normal_cells = "normal\ncell lines"
+      )
     }
-    font_family <- "Arial Unicode MS"
+    exact_sets <- lapply(
+      category_order,
+      function(category) {
+        membership$BaseAccession[
+          membership[[paste0("In_", category)]] %in%
+            c(TRUE, "TRUE", "True", 1, "1")
+        ]
+      }
+    )
+    names(exact_sets) <- unname(labels[category_order])
+    plot_data <- ggVennDiagram(
+      exact_sets,
+      label = "count",
+      label_geom = "text",
+      label_size = 5.5,
+      label_color = "#1D1D1F",
+      label_alpha = 1,
+      label_font = font_family,
+      set_color = colors,
+      set_size = 5.5,
+      edge_size = 0.7,
+      force_upset = FALSE
+    )
+    # ggVennDiagram's first layer contains one polygon for each of the 15
+    # possible four-set membership combinations (including zero-count ones).
+    # Replace its count-based fill with a deterministic pastel membership
+    # colour so large regions do not become visually dominant.
+    region_ids <- as.character(plot_data$layers[[1]]$data$id)
+    plot_data$layers[[1]]$data$region_fill <- vapply(
+      region_ids,
+      lighten_region_colour,
+      character(1)
+    )
+    plot_data$layers[[1]]$mapping <- aes(
+      x = .data$X,
+      y = .data$Y,
+      fill = .data$region_fill,
+      group = .data$id
+    )
+    plot_data <- plot_data +
+      scale_fill_identity(guide = "none") +
+      theme_void(base_family = font_family) +
+      theme(
+        plot.background = element_rect(fill = "white", colour = NA),
+        panel.background = element_rect(fill = "white", colour = NA),
+        plot.margin = margin(40, 120, 40, 120),
+        text = element_text(family = font_family),
+        plot.title = element_blank()
+      )
+    plot_data$coordinates$clip <- "off"
+    plot_data
+  }
+  render <- function(language = c("zh", "en")) {
+    language <- match.arg(language)
     output_stems <- file.path(
       figure_root,
       c(
@@ -606,60 +690,24 @@ draw_area_proportional <- function(
       )
     )
     for (output_stem in output_stems) {
-      png(
+      plot_data <- draw_exact_venn(language)
+      ggsave(
         paste0(output_stem, ".png"),
-        width = 2400,
-        height = 2300,
-        res = 300,
-        type = "cairo"
+        plot_data,
+        width = 11,
+        height = 8.5,
+        dpi = 300,
+        bg = "white"
       )
-      par(family = font_family, mar = c(9, 1, 1, 1))
-      diagram <- plot(
-        fit,
-        labels = FALSE,
-        legend = list(
-          labels = labels,
-          side = "bottom",
-          nrow = 4,
-          ncol = 1,
-          cex = 1.1,
-          fontsize = 14,
-          pch = 21
-        ),
-        quantities = list(cex = 1.25, fontsize = 17, font = 2),
-        fills = list(fill = colors, alpha = 0.5),
-        edges = list(col = "#4B4B4B", lwd = 1.2),
-        main = NULL
-      )
-      print(diagram)
-      dev.off()
-
-      cairo_pdf(
+      ggsave(
         paste0(output_stem, ".pdf"),
-        width = 8.5,
-        height = 8.0,
-        family = font_family
+        plot_data,
+        width = 11,
+        height = 8.5,
+        device = cairo_pdf,
+        family = font_family,
+        bg = "white"
       )
-      par(family = font_family, mar = c(9, 1, 1, 1))
-      diagram <- plot(
-        fit,
-        labels = FALSE,
-        legend = list(
-          labels = labels,
-          side = "bottom",
-          nrow = 4,
-          ncol = 1,
-          cex = 1.1,
-          fontsize = 14,
-          pch = 21
-        ),
-        quantities = list(cex = 1.25, fontsize = 17, font = 2),
-        fills = list(fill = colors, alpha = 0.5),
-        edges = list(col = "#4B4B4B", lwd = 1.2),
-        main = NULL
-      )
-      print(diagram)
-      dev.off()
     }
     invisible(NULL)
   }
@@ -668,32 +716,24 @@ draw_area_proportional <- function(
   invisible(fit)
 }
 
-draw_area_proportional(
+draw_exact_membership_venn(
   make_sets(kla, ddr_only = FALSE),
-  "all_kla_four_class_venn",
-  "四类组织/细胞中的全部乳酸化蛋白（Kla）",
-  "All Kla proteins across four tissue and cell categories"
+  "all_kla_four_class_venn"
 )
-draw_area_proportional(
+draw_exact_membership_venn(
   make_sets(kla, ddr_only = TRUE),
-  "kla_ddr_four_class_venn",
-  "四类组织/细胞中的乳酸化 DDR 蛋白",
-  "Kla and DDR proteins across four tissue and cell categories"
+  "kla_ddr_four_class_venn"
 )
-draw_area_proportional(
+draw_exact_membership_venn(
   make_sets(reference, ddr_only = FALSE),
-  "reference_proteome_four_class_venn",
-  "四类组织/细胞中的普通全蛋白组蛋白",
-  "Reference whole-proteome proteins across four tissue and cell categories"
+  "reference_proteome_four_class_venn"
 )
-draw_area_proportional(
+draw_exact_membership_venn(
   make_sets(reference, ddr_only = TRUE),
-  "reference_proteome_ddr_four_class_venn",
-  "四类组织/细胞中的普通全蛋白组 DDR 蛋白",
-  "Reference whole-proteome DDR proteins across four tissue and cell categories"
+  "reference_proteome_ddr_four_class_venn"
 )
 
 message(
-  "Generated four area-proportional Venn/Euler analyses in ",
+  "Generated four exact-membership Venn analyses in ",
   figure_root
 )

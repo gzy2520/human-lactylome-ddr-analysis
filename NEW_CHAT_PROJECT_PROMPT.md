@@ -1,66 +1,68 @@
-# Kla项目交接Prompt（发表版结构）
+# Kla项目新对话交接Prompt
 
 继续处理项目：
 
 `/Users/gzy2520/Desktop/Research/kla`
 
-先阅读 `PROJECT_INDEX.md`、`manuscript/methods/METHODS_ZH.md`、
-`docs/DATA_PROVENANCE.md` 和 `tests/validate_publication_contract.R`。
+首先阅读：
 
-## 当前范围
+1. `PROJECT_INDEX.md`
+2. `manuscript/methods/METHODS_ZH.md`
+3. `docs/DATA_PROVENANCE.md`
+4. `docs/GO_TERM_PATHWAY_SCORING_30GROUPS.md`
+5. `tests/validate_publication_contract.R`
 
-项目整合人源蛋白乳酸化质谱数据，并以普通全蛋白组作参照评估DDR相关蛋白。
-来源目录含40个样本组，37组具有Kla定量，30组进入当前配对分析；四分类显示顺序为
-非肿瘤组织9、肿瘤组织2、癌细胞系12、正常细胞系7。普通全蛋白热图为28条唯一参照行。
+不要把`archive/`、旧`results/reports/`或含33group、507、UMAP、t-SNE、PCA、
+Cytoscape、V1/V2/V3、manual score字样的文件当成当前项目状态。
 
-排除的4个无可用配对参照组为PXD062720、PXD063047重度子痫前期胎盘、
-PXD064038和PXD075014。PXD037371三个临床组因TMT通道无法可靠映射，只保留
-来源审计。老师另要求排除PXD055230、PXD057709和PXD014870。当前Kla∩DDR
-蛋白并集为399，五集合按显示顺序为183/178/381/292/399。
+## 当前不可擅自改变的范围
 
-## 不可改变的规则
+- 40个候选样本组，37组有Kla定量，原有33个可配对组，当前主分析30组。
+- 当前30组由non-tumor tissues 9组、tumor tissues 2组、
+  cancer cell lines 12组、normal cell lines 7组构成。
+- 普通全蛋白热图显示28条唯一参照行。
+- 当前Kla∩DDR并集为399个唯一`BaseAccession`。
+- 4+1集合按上述四类加全集排列，大小为183/178/381/292/399。
+- 老师最后排除`PXD055230`、`PXD057709`和`PXD014870/MCF7`。
 
-- 匹配、去重、GO交集和集合运算只使用去isoform的UniProt `BaseAccession`。
-- GeneSymbol和ProteinName仅用于显示或审计，不能作为命中回退。
-- Ensembl protein ID必须经显式表转换至UniProt。
-- GO-DDR输入为 `data/annotations/GO-repair+damage(human).tsv`，排除NOT；
-  主分析不按evidence code缩减。
-- 普通全蛋白信号不得由Kla/PTM富集信号替代。
-- 随机种子固定25。
-- 不移动或删除 `data/` 下大型原始数据。
-- 旧V1/V2、碰撞比较、圆形矩阵和Cytoscape试验不属于当前发表流程。
+## 当前分析合同
 
-## 代码层次
+- `BaseAccession`是唯一分析键；GeneSymbol和ProteinName只用于显示/审计。
+- GO-DDR输入为`data/annotations/GO-repair+damage(human).tsv`，排除`NOT`。
+- 普通全蛋白和Kla使用各自分母；Kla信号不能替代普通全蛋白信号。
+- 参照的材料身份、实验状态、同批样本或独立队列关系必须分别表述。
+- 四套Venn分别为全部Kla、Kla-DDR、普通全蛋白、普通全蛋白-DDR。
+  最终图为固定几何、非面积比例图；图中数字来自精确membership和region表。
+- 通路评分不再读取旧人工评分Excel。对399蛋白的全部直接BP、CC、MF GO term
+  分配BER、NER、MMR、FA、HR、NHEJ、AEJ或`Others`；一个term允许多通路。
+- 单蛋白的通路得分是该通路的不同直接GO term数；七通路term数之和只用于排序。
+- 当前图形范围仅为柱状图、两份热图、四套Venn和4+1线性图/summary。
+  不重跑UMAP、t-SNE、PCA或Cytoscape。
 
-1. `python/data_preparation/build_core_kla_inputs.py` 解析7个核心PXD，生成
-   `work/intermediate/kla_by_dataset/all_primary_sample_level_kla_sites.csv`。
-2. `R/data_preparation/build_kla_regulator_landscape.R` 建立40/37组Kla目录。
-3. 两个 `R/analysis/analyze_regulator_*_intensity.R` 生成28行普通全蛋白轴和
-   30行Kla轴。
-4. `R/data_preparation/build_reference_material_audit.R` 固定30/7参照状态。
-5. `R/analysis/analyze_ddr_fraction.R` 与
-   `R/figures/plot_four_class_venn.R` 生成DDR统计和四类集合。
-6. `R/data_preparation/prepare_protein_function_inputs.R` 保留人工评分、GO和颜色底表。
-7. `R/figures/plot_five_set_pathway_matrix.R` 从当前membership筛出399蛋白，
-   生成最终4+1线性通路展示。
-8. 本轮不运行UMAP、t-SNE、PCA和Cytoscape。
+## 当前数据流
 
-统一入口：
+1. `python/data_preparation/build_core_kla_inputs.py`
+2. `R/data_preparation/build_kla_regulator_landscape.R`
+3. `R/analysis/analyze_regulator_reference_intensity.R`
+4. `R/analysis/analyze_regulator_kla_intensity.R`
+5. `R/data_preparation/build_reference_material_audit.R`
+6. `R/analysis/analyze_ddr_fraction.R`
+7. `R/figures/plot_four_class_venn.R`
+8. `R/data_preparation/build_teacher_review_table.R`
+9. `R/data_preparation/build_go_term_pathway_scores.R`
+10. `R/figures/plot_five_set_pathway_matrix_go_term.R`
+11. `R/analysis/summarize_four_class_venn_counts.R`
+12. `tests/validate_publication_contract.R`
+
+统一命令：
 
 ```bash
-cd "/Users/gzy2520/Desktop/Research/kla"
-python3 -m pip install -r requirements.txt
-Rscript workflow/install_r_dependencies.R
 Rscript workflow/run_pipeline.R selected_figures
-```
-
-完成后必须运行：
-
-```bash
 Rscript workflow/record_environment.R .
-Rscript workflow/run_pipeline.R validate
 Rscript workflow/build_manifest.R .
 ```
 
-发表前必须确认37/30/28、9/2/12/7、399和183/178/381/292/399均通过结果合同，
-并同时人工查看中英文柱状图、热图、Venn图和线性图是否截断。
+完成修改后必须核对：40/37/30/28、9/2/12/7、399、
+183/178/381/292/399、10,605个蛋白–GO配对、2,785个唯一term、
+103个七通路term、8个多通路term以及35行summary。对PNG进行人工目视检查，
+再执行`git diff --check`、精确暂存、提交并推送。

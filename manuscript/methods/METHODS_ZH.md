@@ -160,7 +160,7 @@ Writer、Eraser、Writer-Eraser 和 Reader 分面。Kla 热图的行名按 Kla �
 肿瘤组织、癌细胞系、正常细胞系以及399蛋白全集，共4+1张独立线性图。保留
 399个蛋白的全部直接UniProt BP、CC和MF注释，共10,605个唯一蛋白–term配对和
 2,785个唯一直接GO term。根据人工审阅的GO种子及其通路特异后代，将每个term
-分配至BER、NER、MMR、FA、HR、NHEJ、AEJ或`Others`。一个term允许同时属于
+分配至BER、NER、MMR、FA、HR、AEJ、NHEJ或`Others`。一个term允许同时属于
 多条通路；缺乏通路特异证据的宽泛DNA repair、damage response或binding term
 保留为`Others`。
 

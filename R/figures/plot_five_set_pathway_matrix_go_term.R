@@ -91,7 +91,7 @@ pathway_info <- fread(display_path)
 setorder(pathway_info, PathwayOrder)
 pathway_order <- pathway_info$Pathway
 assert(
-  identical(pathway_order, c("BER", "NER", "MMR", "FA", "HR", "NHEJ", "AEJ")) &&
+  identical(pathway_order, c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")) &&
     !anyNA(pathway_info$Color),
   "The seven-pathway display contract changed."
 )

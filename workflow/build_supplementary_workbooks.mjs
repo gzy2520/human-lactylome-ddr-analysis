@@ -923,7 +923,7 @@ async function buildDataS3Workbook() {
     [
       ["Analysis scope", "399 unique BaseAccessions in the current 30-group Kla-DDR union"],
       ["Direct annotations", "10,605 unique protein-GO pairs and 2,785 unique direct GO terms from UniProt release 2026_02"],
-      ["Pathways", "BER, NER, MMR, FA, HR, NHEJ and AEJ; unmatched direct terms are retained as Others"],
+      ["Pathways", "BER, NER, MMR, FA, HR, AEJ and NHEJ; unmatched direct terms are retained as Others"],
       ["Analytical identifier", "Isoform-stripped UniProt BaseAccession"],
     ],
     sources.map(([sheetName, source], index) => [

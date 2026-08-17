@@ -185,11 +185,23 @@ required_rule_columns <- c(
   "RuleLabel",
   "Rationale"
 )
+expected_pathway_order <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
+expected_pathway_order_by_name <- setNames(
+  seq_along(expected_pathway_order),
+  expected_pathway_order
+)
 assert(
   all(required_rule_columns %in% names(rules)) &&
-    setequal(unique(rules$Pathway), c("BER", "NER", "MMR", "FA", "HR", "NHEJ", "AEJ")) &&
+    setequal(unique(rules$Pathway), expected_pathway_order) &&
+    all(
+      rules$PathwayOrder ==
+        expected_pathway_order_by_name[rules$Pathway]
+    ) &&
     !anyDuplicated(rules[, .(Pathway, SeedGOID)]),
-  "The seed-rule table must define seven pathways with unique pathway-seed pairs."
+  paste(
+    "The seed-rule table must define seven pathways in ascending coefficient",
+    "order with unique pathway-seed pairs."
+  )
 )
 
 go_descendants <- function(go_id) {
@@ -318,7 +330,7 @@ protein_term_pathway <- unique(
 )
 setorder(protein_term_pathway, BaseAccession, PathwayOrder, GO_ID)
 
-pathway_order <- c("BER", "NER", "MMR", "FA", "HR", "NHEJ", "AEJ", "Others")
+pathway_order <- c(expected_pathway_order, "Others")
 protein_pathway_counts_long <- protein_term_pathway[
   ,
   .(DirectTermCount = uniqueN(GO_ID)),

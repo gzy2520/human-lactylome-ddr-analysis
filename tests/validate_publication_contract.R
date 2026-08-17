@@ -193,11 +193,20 @@ go_score_matrix <- read_table(
   "results", "tables", "go_term_pathway_scoring_30groups",
   "protein_pathway_direct_term_count_matrix.csv"
 )
-seven_pathways <- c("BER", "NER", "MMR", "FA", "HR", "NHEJ", "AEJ")
+seven_pathways <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
+go_pathway_display <- read_table(
+  "results", "tables", "five_set_pathway_matrix_go_term_30groups",
+  "pathway_order_and_colors.csv"
+)
 assert(
   nrow(go_score_matrix) == 399L &&
     uniqueN(go_score_matrix$BaseAccession) == 399L &&
     all(seven_pathways %in% names(go_score_matrix)) &&
+    identical(go_pathway_display$Pathway, seven_pathways) &&
+    identical(
+      as.integer(go_pathway_display$PathwayOrder),
+      seq_along(seven_pathways)
+    ) &&
     identical(
       as.integer(go_score_matrix$SevenPathwayTermScore),
       as.integer(rowSums(go_score_matrix[, ..seven_pathways]))

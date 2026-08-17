@@ -4,25 +4,26 @@
 项目真实文件路径。编号仍为投稿前占位编号；最终投稿时可将同一编号下的多个
 CSV/TSV合并为一个含多个工作表的Excel文件，并统一改为英文列名。
 
+## 已生成的当前30组工作簿
+
+- `results/supplementary/Supplementary_Tables_S1-S6_Draft_20260817.xlsx`
+- `results/supplementary/Supplementary_Data_S1_Kla_Evidence_Draft_20260817.xlsx`
+- `results/supplementary/Supplementary_Data_S2_Human_GO_DDR_Draft_20260817.xlsx`
+- `results/supplementary/Supplementary_Data_S3_GO_Pathway_Draft_20260817.xlsx`
+- `results/supplementary/supplementary_workbook_manifest.csv`
+
 ## Methods中暂定的补充表
 
-### Supplementary Table S1 — dataset catalogue and inclusion decisions
+### Supplementary Table S1 — dataset catalogue and quantitative summary
 
 主来源：
 
-- `config/sample_group_catalog.csv`：40个候选样本组的数据集目录、材料、
-  Kla证据、参照蛋白组和来源信息。
-- `config/lactylome_dataset_decisions.csv`：数据集层面的纳入、排除及独立
-  研究单元判定。
-- `config/main_analysis_scope_exclusions.csv`：从原33组到当前30组的最终范围
-  排除记录。
+- `results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_30.csv`：
+  当前30组的类别、材料、Kla与DDR蛋白数、普通全蛋白参照及对应比例。
+- `config/sample_group_catalog.csv`：仅用于补充当前30组的论文年份、DOI、
+  数据集标题和ProteomeXchange链接。
 
-综合审计表：
-
-- `results/tables/kla_and_reference_teacher_review_zh.csv`
-
-投稿处理建议：将上述来源合并为一张英文工作簿，保留候选范围、定量可用性、
-最终30组纳入状态、DOI和ProteomeXchange链接；删除内部的“teacher”措辞。
+生成表只保留当前30组，并使用英文列名。
 
 ### Supplementary Table S2 — whole-proteome reference pairing and audit
 
@@ -35,7 +36,7 @@ CSV/TSV合并为一个含多个工作表的Excel文件，并统一改为英文�
 - `results/tables/strict_reference_material_identity_audit.csv`：程序生成的完整
   参照配对审计结果。
 
-投稿处理建议：以生成的审计结果为主表，按当前30组范围过滤；保留
+生成表以程序审计结果为主表，仅保留当前30组；保留
 `MaterialIdentityMatch`、`ExperimentalStateMatch`、参照PXD、实际文件和样本
 子集，避免把独立队列或基线参照写成严格条件匹配对照。
 
@@ -98,31 +99,25 @@ CSV/TSV合并为一个含多个工作表的Excel文件，并统一改为英文�
 
 ### Supplementary Table S6 — revised manually curated signed pathway annotations
 
-当前老师修订版本：
+当前评分表：
 
 - `data/identifier/乳酸化DDR基因评分表_Revised_20260816.xlsx`
 
-保留的旧版本：
-
-- `data/identifier/260810乳酸化DDR基因评分表.xlsx`
-
 当前399蛋白及4+1作图结果：
 
-- `results/tables/five_set_pathway_matrix_revised_excel_20260816/score_workbook_scope_audit_507_to_399.csv`
 - `results/tables/five_set_pathway_matrix_revised_excel_20260816/protein_order_and_seven_pathway_matrix_5sets.csv`
 - `results/tables/five_set_pathway_matrix_revised_excel_20260816/pathway_state_summary_5sets_35rows.csv`
 
-投稿时应以老师修订版本为S6来源；旧版本仅用于版本比较，不作为投稿主表。
+S6只输出当前30组Kla-DDR并集中的399个蛋白。
 
 ## Methods中暂定的补充数据
 
 ### Supplementary Data S1 — sample-level Kla evidence
 
-- `work/intermediate/kla_by_dataset/all_included_and_audit_kla_evidence.csv`：
-  全部纳入候选记录及审计状态。
-- `work/intermediate/kla_by_dataset/all_primary_sample_level_kla_sites.csv`：
-  当前主分析使用的样本级Kla证据。
-- `results/tables/core_kla_exclusion_log.csv`：解析和质量控制排除日志。
+- `results/tables/cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_30.csv`：
+  当前30组概览。
+- `work/intermediate/expanded_ddr_by_accession/kla_proteins_by_sample_group.csv`：
+  按当前30个`PXD+SampleGroup`过滤后生成Kla蛋白成员表和Kla-DDR成员表。
 
 ### Supplementary Data S2 — human GO-DDR annotations
 

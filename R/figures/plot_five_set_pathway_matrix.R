@@ -668,6 +668,7 @@ save_figure <- function(plot, stem, width, height) {
 figure_paths <- character()
 manifest_rows <- list()
 manifest_index <- 0L
+summary_height_inches <- 5.2
 
 for (set_key in set_info$Set) {
   for (language in c("en", "zh")) {
@@ -693,7 +694,7 @@ for (set_key in set_info$Set) {
       make_summary_figure(set_key, language),
       summary_stem,
       width = 8.8,
-      height = 7.2
+      height = summary_height_inches
     )
     figure_paths <- c(figure_paths, matrix_paths, summary_paths)
 
@@ -716,7 +717,7 @@ for (set_key in set_info$Set) {
       Format = c("png", "pdf", "svg"),
       File = basename(summary_paths),
       WidthInches = 8.8,
-      HeightInches = 7.2,
+      HeightInches = summary_height_inches,
       PNGDPI = c(600L, NA_integer_, NA_integer_)
     )
   }

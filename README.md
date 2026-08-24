@@ -1,9 +1,10 @@
 # Human lactylome DDR publication reproduction package
 
 This repository reproduces only the analyses reported in the final manuscript
-on human lactylation (Kla) and the DNA-damage response (DDR). It is a frozen
-publication package: it does not discover new data, download public
-repositories, or rerun exploratory analyses.
+on human lactylation (Kla) and the DNA-damage response (DDR). It supports two
+routes that converge at the same validated 30-group publication input: direct
+use of the frozen release tables, or source-file processing followed by the
+same strict table comparison. It does not retain exploratory analyses.
 
 All biological joins, deduplication and set membership use isoform-stripped
 human UniProt `BaseAccession`. Gene symbols and protein names are display-only
@@ -65,6 +66,24 @@ successful run ends with `PASS: final 30-group publication workflow completed.`
 The installation step restores the locked project library; it does not upgrade
 packages to current CRAN releases.
 
+### Rebuild from processed public source files
+
+Download the processed search-result/supplementary files for the final 30
+groups into PXD folders (raw spectra are not required), then run:
+
+```bash
+Rscript workflow/run_pipeline.R source /absolute/path/to/source_cache
+```
+
+The source route rebuilds the 30-group summaries, Kla/reference memberships,
+and analytical fields of all four Venn tables. Each is compared exactly to the
+frozen release before the shared figure and supplementary-table steps begin.
+S4 pathway ranking, S5 regulator annotations, regulator percentiles, pathway
+display settings, and Venn display annotations are fixed author-provided
+inputs; they are not regenerated. Some author supplements are hosted behind
+publisher browser-download controls, so those processed files must be placed
+in their recorded PXD paths before the source route is run.
+
 ### Verified rendering environment
 
 The release was verified on **macOS 15.6 (arm64)** with R 4.4.3, the committed
@@ -90,10 +109,10 @@ source-file locators remain in `group_summary_30.csv` and Table S1.
 ```text
 data/publication_input/     frozen final inputs and integrity manifest
 R/publication/              manuscript-figure generation
-workflow/                   one command entry point; builds S1–S3/S6 and copies S4/S5
+workflow/                   direct/source entry points; source-to-table validation; builds S1–S3/S6 and copies S4/S5
 tests/                      executable publication contract
 results/                    regenerated outputs (ignored by Git)
 ```
 
-Historical scopes, raw-download parsers, exploratory embeddings, alternative
-pathway analyses and superseded score sources are intentionally absent.
+Historical scopes, exploratory embeddings, alternative pathway analyses and
+superseded score sources are intentionally absent.

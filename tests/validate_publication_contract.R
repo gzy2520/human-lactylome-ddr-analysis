@@ -7,7 +7,10 @@ suppressPackageStartupMessages({
 
 args <- commandArgs(trailingOnly = TRUE)
 project_root <- if (length(args)) normalizePath(args[[1]], mustWork = TRUE) else normalizePath(".", mustWork = TRUE)
-input_dir <- file.path(project_root, "data", "publication_input")
+input_dir <- normalizePath(
+  Sys.getenv("KLA_PUBLICATION_INPUT", unset = file.path(project_root, "data", "publication_input")),
+  mustWork = TRUE
+)
 figure_dir <- file.path(project_root, "results", "figures")
 supplementary_dir <- file.path(project_root, "results", "supplementary")
 

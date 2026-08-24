@@ -21,7 +21,10 @@ project_root <- if (length(args)) {
 } else {
   normalizePath(".", mustWork = TRUE)
 }
-input_dir <- file.path(project_root, "data", "publication_input")
+input_dir <- normalizePath(
+  Sys.getenv("KLA_PUBLICATION_INPUT", unset = file.path(project_root, "data", "publication_input")),
+  mustWork = TRUE
+)
 figure_dir <- file.path(project_root, "results", "figures")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 publication_font <- "Arial Unicode MS"

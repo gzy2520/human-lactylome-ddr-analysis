@@ -1,60 +1,99 @@
-# Integrated human lysine lactylation proteomics and DNA-damage response
+# Human lactylome DDR publication reproduction package
 
-This repository contains the current publication workflow for a cross-study
-human lysine lactylation (Kla) proteomics analysis. The active teacher-approved
-scope contains 30 paired sample groups and 399 unique Kla-intersecting DDR
-proteins.
+This repository reproduces only the analyses reported in the final manuscript
+on human lactylation (Kla) and the DNA-damage response (DDR). It is a frozen
+publication package: it does not discover new data, download public
+repositories, or rerun exploratory analyses.
 
-The current publication outputs are:
+All biological joins, deduplication and set membership use isoform-stripped
+human UniProt `BaseAccession`. Gene symbols and protein names are display-only
+annotations.
 
-- a DDR-fraction bar chart;
-- two regulator percentile heatmaps;
-- four exact-membership, four-category Venn diagrams;
-- separate 4+1 direct-GO-term pathway matrices and summaries.
+## Fixed study scope
 
-The Venn geometry is schematic and not area proportional. All displayed
-numbers come from exact membership and region tables. The pathway matrices no
-longer use the former manual ±1 workbook: direct BP, CC, and MF GO terms are
-mapped to BER, NER, MMR, FA, HR, NHEJ, AEJ, or `Others`.
+The input boundary starts with exactly 30 pan-Kla-enriched groups and their
+whole-proteome references.
 
-An optional supervisor-score preview is retained separately and does not
-replace the direct-GO-term publication result:
+| Biological category | Groups |
+| --- | ---: |
+| Non-tumor tissues | 9 |
+| Tumor tissues | 2 |
+| Cancer cell lines | 12 |
+| Normal cell lines | 7 |
 
-```bash
-Rscript workflow/run_pipeline.R revised_score_preview
-```
+The Kla-DDR union contains 399 `BaseAccession` values. The curated seven-pathway
+score table uses `-1`, `0` and `+1` states for BER, NER, MMR, FA, HR, A-EJ and
+NHEJ. Its four reported set sizes are 183, 178, 381 and 292 proteins.
 
-It reads the revised 2026-08-16 workbook, filters its 507 scored proteins to
-the current 399-protein membership, and writes to a dedicated preview
-directory.
+## Exact output contract
+
+Each publication run first removes only `results/figures/` and
+`results/supplementary/`, then creates the following files and no others. Every
+panel is exported as both PNG and PDF. Tables S1–S3 and S6 are rebuilt as XLSX;
+the author-approved S4 ranking workbook and S5 regulator workbook are copied
+byte-for-byte from the frozen input boundary.
+
+| Manuscript item | Rebuilt output |
+| --- | --- |
+| Figure 1 | Kla and whole-proteome DDR fractions |
+| Figure 2a–b | Whole-proteome DDR and Kla-DDR four-category Venn diagrams |
+| Figure 2c–e | Tissue pathway matrices and tumor/non-tumor pathway summaries |
+| Figure 3a–b | Reference-proteome and Kla regulator percentile heatmaps |
+| Figure S1a–b | Whole-proteome and Kla four-category Venn diagrams |
+| Figure S2a–c | Cell-line pathway matrices and cancer/normal cell-line summaries |
+| Tables S1–S3, S6 | Kla data, reference data, human DDR GO annotations and Venn membership |
+| Tables S4–S5 | Frozen pathway-ranking and regulator workbooks, preserved unchanged |
+
+The final validation checks the input manifest, 30-group scope, 9/2/12/7
+category counts, 399-protein union, 183/178/381/292 pathway panels, all 15
+Venn regions for each analysis, all figure filenames and the exact S1–S6
+workbook layouts.
 
 ## Reproduce
 
+Use **R 4.4.3**. The committed `renv.lock` fixes the exact package versions
+used for this release, including the figure and spreadsheet writers. From the
+repository root:
+
 ```bash
-python3 -m pip install -r requirements.txt
 Rscript workflow/install_r_dependencies.R
-Rscript workflow/run_pipeline.R selected_figures
-Rscript workflow/record_environment.R .
-Rscript workflow/build_manifest.R .
+Rscript workflow/run_pipeline.R publication
 ```
 
-The analytical key is the isoform-stripped human UniProt `BaseAccession`.
-Gene symbols and protein names are display/audit annotations only. Randomized
-steps use seed 25.
+Outputs are written to `results/figures/` and `results/supplementary/`. A
+successful run ends with `PASS: final 30-group publication workflow completed.`
+The installation step restores the locked project library; it does not upgrade
+packages to current CRAN releases.
 
-Raw and processed PXD files remain under `data/` locally and are not tracked by
-Git. Generated `results/` and historical `archive/` contents are also outside
-Git. Archived 33-group, 507-protein, UMAP, t-SNE, PCA, Cytoscape, circular
-matrix, and manual-score materials are historical only and must not be used to
-describe the current analysis.
+### Verified rendering environment
 
-Current entry points:
+The release was verified on **macOS 15.6 (arm64)** with R 4.4.3, the committed
+lockfile and the system font **Arial Unicode MS**. This font is mandatory: the
+workflow stops before creating figures if it is absent. Other operating systems
+or font substitutions have not been validated and can change figure typography
+or pixels; they are outside this release's exact-reproduction claim.
 
-- `PROJECT_INDEX.md`: authoritative project map and scope;
-- `NEW_CHAT_PROJECT_PROMPT.md`: copy-paste project handoff;
-- `manuscript/methods/METHODS_EN.md` and `METHODS_ZH.md`: active Methods;
-- `docs/DATA_PROVENANCE.md`: current provenance and inclusion logic;
-- `docs/GO_TERM_PATHWAY_SCORING_30GROUPS.md`: pathway-scoring contract;
-- `docs/REVISED_SCORE_WORKBOOK_PREVIEW_20260816.md`: separate exploratory
-  supervisor-score preview;
-- `tests/validate_publication_contract.R`: executable result contract.
+## Frozen input boundary and provenance
+
+`data/publication_input/` is the complete versioned input boundary. Its
+`INPUT_MANIFEST.csv` records an MD5 checksum and byte count for every frozen
+file; the workflow refuses changed, missing or extra-input substitutions.
+
+The package retains standardized final evidence, sample-level memberships,
+regulator percentiles, exact Venn memberships, the author-approved S4/S5
+workbooks and frozen human DDR GO annotations. Original public PXD files are
+not committed because of their size. Their ProteomeXchange accessions and
+source-file locators remain in `group_summary_30.csv` and Table S1.
+
+## Repository layout
+
+```text
+data/publication_input/     frozen final inputs and integrity manifest
+R/publication/              manuscript-figure generation
+workflow/                   one command entry point; builds S1–S3/S6 and copies S4/S5
+tests/                      executable publication contract
+results/                    regenerated outputs (ignored by Git)
+```
+
+Historical scopes, raw-download parsers, exploratory embeddings, alternative
+pathway analyses and superseded score sources are intentionally absent.

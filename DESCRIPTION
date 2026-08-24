@@ -1,26 +1,23 @@
 Package: klaPublicationAnalysis
 Type: Project
-Title: Integrated Human Kla Proteomics and DNA Damage Response Analysis
+Title: Frozen 30-Group Human Lactylome DDR Publication Analysis
 Version: 1.0.0
 Authors@R: person("Project", "Team", role = c("aut", "cre"), email = "not-used@example.invalid")
-Description: Reproducible analysis workflow for 33 paired human Kla sample
-    groups and 507 Kla-intersecting DDR proteins.
+Description: Rebuilds only the manuscript figures and variable Supplementary
+    Tables S1-S3 and S6 from frozen, BaseAccession-keyed publication inputs;
+    preserves author-approved S4 and S5 workbooks unchanged.
 License: file LICENSE
 Encoding: UTF-8
-Depends: R (>= 4.4.0)
+Depends: R (>= 4.4.3)
 Imports:
     data.table,
     digest,
     dplyr,
-    eulerr,
     ggplot2,
     ggVennDiagram,
-    GO.db,
-    Matrix,
-    patchwork,
-    readr,
+    openxlsx2,
     readxl,
-    Rtsne,
-    stringr,
-    tidyr,
-    uwot
+    ragg,
+    scales,
+    systemfonts,
+    tidyr

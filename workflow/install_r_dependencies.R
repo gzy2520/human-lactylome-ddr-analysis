@@ -1,32 +1,40 @@
 #!/usr/bin/env Rscript
 
-# Install the R dependencies declared by the publication workflow.
-# Exact versions used for a run are recorded by workflow/record_environment.R.
+# Restore the exact R package environment used for this frozen publication
+# release.  Installing current CRAN package versions is intentionally avoided:
+# a package update may change a figure layout or workbook serialization.
+args <- commandArgs(trailingOnly = FALSE)
+file_arg <- grep("^--file=", args, value = TRUE)
+script_path <- if (length(file_arg)) {
+  normalizePath(sub("^--file=", "", file_arg[[1L]]), mustWork = TRUE)
+} else {
+  normalizePath("workflow/install_r_dependencies.R", mustWork = TRUE)
+}
+project_root <- normalizePath(file.path(dirname(script_path), ".."), mustWork = TRUE)
 
-cran_packages <- c(
-  "data.table", "digest", "dplyr", "eulerr", "ggplot2", "ggVennDiagram", "Matrix",
-  "patchwork", "readr", "readxl", "Rtsne", "stringr", "tidyr", "uwot"
-)
-missing_cran <- cran_packages[
-  !vapply(cran_packages, requireNamespace, logical(1), quietly = TRUE)
-]
-if (length(missing_cran)) {
-  install.packages(missing_cran, repos = "https://cloud.r-project.org")
+required_r <- "4.4.3"
+if (as.character(getRversion()) != required_r) {
+  stop("This release requires R ", required_r, "; found R ", getRversion(), ".", call. = FALSE)
 }
 
-if (!requireNamespace("GO.db", quietly = TRUE)) {
-  if (!requireNamespace("BiocManager", quietly = TRUE)) {
-    install.packages("BiocManager", repos = "https://cloud.r-project.org")
-  }
-  BiocManager::install("GO.db", ask = FALSE, update = FALSE)
+required_renv <- "1.1.8"
+if (!requireNamespace("renv", quietly = TRUE) ||
+    as.character(utils::packageVersion("renv")) != required_renv) {
+  install.packages(
+    "https://cran.r-project.org/src/contrib/Archive/renv/renv_1.1.8.tar.gz",
+    repos = NULL,
+    type = "source"
+  )
+}
+if (!requireNamespace("renv", quietly = TRUE) ||
+    as.character(utils::packageVersion("renv")) != required_renv) {
+  stop("Unable to install renv ", required_renv, ".", call. = FALSE)
 }
 
-required <- c(cran_packages, "GO.db")
-missing <- required[
-  !vapply(required, requireNamespace, logical(1), quietly = TRUE)
-]
-if (length(missing)) {
-  stop("R package installation incomplete: ", paste(missing, collapse = ", "))
+renv::restore(project = project_root, prompt = FALSE)
+renv::activate(project = project_root)
+status <- renv::status(project = project_root)
+if (!isTRUE(status$synchronized)) {
+  stop("The locked publication environment did not restore cleanly.", call. = FALSE)
 }
-
-message("All R dependencies are available.")
+message("Locked R 4.4.3 publication environment restored.")

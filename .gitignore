@@ -5,22 +5,15 @@
 __pycache__/
 **/__pycache__/
 *.pyc
+node_modules
 .worktrees/
 
-# Large source data and historical archives remain on disk but outside Git.
-archive/
-tmp/
+# Local source downloads and scratch intermediates are not part of this frozen
+# publication package.
 data/*
 !data/README.md
-!data/annotations/
-!data/annotations/**
-!data/identifier/
-!data/identifier/**
-data/identifier/.DS_Store
-data/identifier/.~*.xlsx
-
-# Reproducible generated artifacts are covered by reports and SHA256 manifests.
+!data/publication_input/
+!data/publication_input/**
 results/
 work/
-
-# Local R dependency library.
+outputs/

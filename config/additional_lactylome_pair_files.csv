@@ -1,6 +1,0 @@
-PXD,FileName,FileRole,LocalRelativePath,SourceURL
-PXD055230,LaIP_HSV1_DIA.tsv,lactylome_search_result,data/PXD055230/search_results/LaIP_HSV1_DIA.tsv,https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/11/PXD055230/LaIP_HSV1_DIA.tsv
-PXD055230,WP_HSV1_DIA.tsv,conventional_proteome_search_result,data/PXD055230/search_results/WP_HSV1_DIA.tsv,https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/11/PXD055230/WP_HSV1_DIA.tsv
-PXD055230,WP_TB40-HCMV_DIA.tsv,conventional_proteome_search_result,data/PXD055230/search_results/WP_TB40-HCMV_DIA.tsv,https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/11/PXD055230/WP_TB40-HCMV_DIA.tsv
-PXD057709,LaIP_report.tsv,lactylome_search_result,data/PXD057709/search_results/LaIP_report.tsv,https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/11/PXD057709/LaIP_report.tsv
-PXD057709,WP_report.tsv,conventional_proteome_search_result,data/PXD057709/search_results/WP_report.tsv,https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/11/PXD057709/WP_report.tsv

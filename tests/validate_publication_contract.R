@@ -1,262 +1,168 @@
 #!/usr/bin/env Rscript
 
-suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages({
+  library(data.table)
+  library(readxl)
+})
 
 args <- commandArgs(trailingOnly = TRUE)
-project_root <- if (length(args)) normalizePath(args[[1]]) else normalizePath(".")
+project_root <- if (length(args)) normalizePath(args[[1]], mustWork = TRUE) else normalizePath(".", mustWork = TRUE)
+input_dir <- file.path(project_root, "data", "publication_input")
+figure_dir <- file.path(project_root, "results", "figures")
+supplementary_dir <- file.path(project_root, "results", "supplementary")
 
 assert <- function(condition, message) {
   if (!isTRUE(condition)) stop(message, call. = FALSE)
 }
+is_true <- function(x) as.character(x) %in% c("TRUE", "True", "true", "T", "1")
+md5_file <- function(path) digest::digest(file = path, algo = "md5", serialize = FALSE)
 
-read_table <- function(...) {
-  path <- file.path(project_root, ...)
-  assert(file.exists(path), paste("Missing publication output:", path))
-  fread(path)
+manifest <- fread(file.path(input_dir, "INPUT_MANIFEST.csv"))
+assert(identical(names(manifest), c("File", "Bytes", "MD5")), "The frozen input manifest has an unexpected schema.")
+actual_input_files <- list.files(input_dir, recursive = TRUE, full.names = FALSE, no.. = TRUE)
+assert(
+  setequal(actual_input_files, c("INPUT_MANIFEST.csv", manifest$File)),
+  "The frozen publication input contains an unmanifested or missing file."
+)
+for (index in seq_len(nrow(manifest))) {
+  filename <- manifest$File[[index]]
+  path <- file.path(input_dir, filename)
+  assert(file.exists(path), paste("Frozen input is missing:", filename))
+  assert(file.info(path)$size == manifest$Bytes[[index]], paste("Frozen input byte count changed:", filename))
+  assert(md5_file(path) == manifest$MD5[[index]], paste("Frozen input checksum changed:", filename))
 }
 
-catalog <- read_table("config", "sample_group_catalog.csv")
-assert(nrow(catalog) == 40L, "Expected 40 catalogued sample groups.")
-
-excluded <- read_table("config", "main_analysis_scope_exclusions.csv")
-assert(
-  nrow(excluded) == 3L &&
-    setequal(excluded$PXD, c("PXD014870", "PXD055230", "PXD057709")),
-  "The teacher-directed three-dataset exclusion contract changed."
-)
-
-grouping <- read_table("config", "four_class_sample_grouping.csv")
-paired_scope <- merge(
-  grouping,
-  catalog[
-    配置要求进入成对分析 %in% c(TRUE, "TRUE", "True", 1, "1"),
-    .(PXD = 乳酸化PXD, SampleGroup = 样本组)
-  ],
-  by = c("PXD", "SampleGroup")
-)
-paired_scope <- paired_scope[
-  !paste(PXD, SampleGroup, sep = "__") %in%
-    paste(excluded$PXD, excluded$SampleGroup, sep = "__")
-]
-class_counts <- paired_scope[, .N, by = Category][order(Category)]
-expected_class_counts <- data.table(
-  Category = c(
-    "cancer_cells", "cancer_tissue", "normal_cells", "normal_tissue"
-  ),
+groups <- fread(file.path(input_dir, "group_summary_30.csv"))
+assert(nrow(groups) == 30L, "The project must begin with exactly 30 publication groups.")
+assert(!anyDuplicated(groups[, .(PXD, SampleGroup)]), "Publication groups must be unique.")
+expected_categories <- data.table(
+  Category = c("cancer_cells", "cancer_tissue", "normal_cells", "normal_tissue"),
   N = c(12L, 2L, 7L, 9L)
 )
-assert(
-  identical(class_counts, expected_class_counts),
-  "Expected paired four-class counts 12/2/7/9."
-)
+observed_categories <- groups[, .N, by = Category][order(Category)]
+assert(identical(observed_categories, expected_categories), "Publication category counts must remain 12/2/7/9.")
 
-group_scope <- read_table(
-  "results", "tables", "kla_regulator_intensity_availability_audit.csv"
-)
-assert(
-  sum(group_scope[["定量可用"]] %in% c(TRUE, "TRUE", "True", 1, "1")) == 37L,
-  "Expected 37 quantifiable Kla groups."
-)
-
-reference_rows <- read_table(
-  "results", "tables", "kla_regulator_whole_proteome_heatmap_rows.csv"
-)
-assert(nrow(reference_rows) == 28L, "Expected 28 unique reference heatmap rows.")
-
-paired_stats <- read_table(
-  "results", "tables",
-  "cell_type_kla_vs_reference_ddr_statistics_accession_only_paired_30.csv"
-)
-assert(nrow(paired_stats) == 30L, "Expected 30 paired analysis groups.")
-
-membership <- read_table(
-  "results", "tables", "four_class_venn",
-  "kla_ddr_four_class_venn", "membership.csv"
-)
-assert(
-  nrow(membership) == 399L && uniqueN(membership$BaseAccession) == 399L,
-  "Expected 399 unique Kla-DDR proteins."
-)
-set_counts <- c(
-  normal_tissue = sum(membership$In_normal_tissue),
-  cancer_tissue = sum(membership$In_cancer_tissue),
-  cancer_cells = sum(membership$In_cancer_cells),
-  normal_cells = sum(membership$In_normal_cells),
-  all_kla_ddr = nrow(membership)
-)
-assert(
-  identical(as.integer(set_counts), c(183L, 178L, 381L, 292L, 399L)),
-  "Expected five protein-set sizes 183/178/381/292/399."
-)
-
-venn_analyses <- c(
-  "all_kla_four_class_venn",
-  "kla_ddr_four_class_venn",
-  "reference_proteome_four_class_venn",
-  "reference_proteome_ddr_four_class_venn"
-)
-for (analysis_name in venn_analyses) {
-  venn_membership <- read_table(
-    "results", "tables", "four_class_venn",
-    analysis_name, "membership.csv"
-  )
-  venn_regions <- read_table(
-    "results", "tables", "four_class_venn",
-    analysis_name, "region_counts.csv"
-  )
-  reconstructed_regions <- venn_membership[, .N, by = Region]
-  reconstructed_counts <- reconstructed_regions$N[
-    match(venn_regions$Region, reconstructed_regions$Region)
-  ]
-  reconstructed_counts[is.na(reconstructed_counts)] <- 0L
-  assert(
-    nrow(venn_regions) == 15L &&
-      uniqueN(venn_regions$Region) == 15L &&
-      sum(venn_regions$ProteinCount) == nrow(venn_membership) &&
-      identical(
-        as.integer(venn_regions$ProteinCount),
-        as.integer(reconstructed_counts)
-      ),
-    paste(
-      "Expected 15 exhaustive exact-membership Venn regions for",
-      analysis_name
-    )
-  )
+group_keys <- paste(groups$PXD, groups$SampleGroup, sep = "__")
+for (filename in c("kla_protein_membership_30.csv", "reference_protein_membership_30.csv", "regulator_kla_percentiles_30.csv", "regulator_reference_percentiles_30.csv")) {
+  data <- fread(file.path(input_dir, filename))
+  keys <- unique(paste(data$PXD, data$SampleGroup, sep = "__"))
+  assert(setequal(keys, group_keys), paste("Frozen input contains a non-final group:", filename))
 }
 
-pathway_counts <- read_table(
-  "results", "tables", "five_set_pathway_matrix_go_term_30groups",
-  "protein_set_counts.csv"
+kla_ddr <- fread(file.path(input_dir, "venn_kla_ddr.csv"))
+assert(nrow(kla_ddr) == 399L && uniqueN(kla_ddr$BaseAccession) == 399L, "The final Kla-DDR union must contain 399 BaseAccessions.")
+set_sizes <- c(
+  normal_tissue = sum(is_true(kla_ddr$In_normal_tissue)),
+  cancer_tissue = sum(is_true(kla_ddr$In_cancer_tissue)),
+  cancer_cells = sum(is_true(kla_ddr$In_cancer_cells)),
+  normal_cells = sum(is_true(kla_ddr$In_normal_cells))
 )
-assert(
-  identical(
-    pathway_counts$ProteinCount,
-    c(183L, 178L, 381L, 292L, 399L)
-  ),
-  "The 4+1 linear pathway-matrix set counts changed."
-)
+assert(identical(as.integer(set_sizes), c(183L, 178L, 381L, 292L)), "Final pathway panels must contain 183/178/381/292 proteins.")
 
-pathway_summary <- read_table(
-  "results", "tables", "five_set_pathway_matrix_go_term_30groups",
-  "pathway_presence_summary_5sets_35rows.csv"
+pathways <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
+s4_input <- file.path(input_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
+s4_specs <- list(
+  list(key = "normal_tissue", sheet = "NonTumorTissues", rows = 183L),
+  list(key = "cancer_tissue", sheet = "TumorTissues", rows = 178L),
+  list(key = "cancer_cells", sheet = "CancerCellLines", rows = 381L),
+  list(key = "normal_cells", sheet = "NormalCellLines", rows = 292L)
 )
-assert(nrow(pathway_summary) == 35L, "Expected 35 pathway summary rows.")
-assert(
-  all(
-    pathway_summary$AssignedProteinCount +
-      pathway_summary$UnassignedProteinCount ==
-      pathway_summary$ProteinCount
-  ),
-  "Assigned and unassigned pathway counts do not sum to each protein set."
-)
+for (spec in s4_specs) {
+  panel <- as.data.table(read_excel(s4_input, sheet = spec$sheet))
+  panel <- panel[!is.na(BaseAccession) & nzchar(trimws(BaseAccession))]
+  panel[, BaseAccession := trimws(as.character(BaseAccession))]
+  assert(nrow(panel) == spec$rows && !anyDuplicated(panel$BaseAccession), paste("Frozen S4 has an invalid panel:", spec$sheet))
+  assert(all(c("BaseAccession", "SignedScore", pathways) %in% names(panel)), paste("Frozen S4 is missing columns:", spec$sheet))
+  expected_ids <- kla_ddr$BaseAccession[is_true(kla_ddr[[paste0("In_", spec$key)]])]
+  assert(setequal(panel$BaseAccession, expected_ids), paste("Frozen S4 membership changed:", spec$sheet))
+  states <- as.matrix(panel[, ..pathways])
+  storage.mode(states) <- "numeric"
+  assert(all(states %in% c(-1, 0, 1)), paste("Frozen S4 states changed:", spec$sheet))
+  expected_scores <- as.numeric(states %*% seq_along(pathways))
+  assert(identical(as.numeric(panel$SignedScore), expected_scores), paste("Frozen S4 scores changed:", spec$sheet))
+  assert(identical(order(panel$SignedScore, panel$BaseAccession), seq_len(nrow(panel))), paste("Frozen S4 order changed:", spec$sheet))
+}
+s5_input <- file.path(input_dir, "Supplementary_Table_S5_Lactylation_Regulators.xlsx")
+s5_annotations <- as.data.table(read_excel(s5_input, sheet = "Regulator_Annotations"))
+assert(all(c("Role", "GeneSymbol", "BaseAccession") %in% names(s5_annotations)), "Frozen S5 lacks accession-keyed regulator annotations.")
+s5_role_map <- unique(s5_annotations[!is.na(BaseAccession) & nzchar(trimws(BaseAccession)), .(Role, BaseAccession)])
+assert(nrow(s5_role_map) == 49L, "Frozen S5 must retain its 49 unique role/BaseAccession display mappings.")
 
-direct_go <- read_table(
-  "results", "tables", "go_term_pathway_scoring_30groups",
-  "direct_go_annotations_399proteins.csv"
+figure_stems <- c(
+  "Figure_1_DDR_fraction",
+  "Figure_2a_whole_proteome_DDR_Venn",
+  "Figure_2b_Kla_DDR_Venn",
+  "Figure_2c_DDR_pathway_matrices_tissues",
+  "Figure_2d_DDR_pathway_summary_tumor_tissue",
+  "Figure_2e_DDR_pathway_summary_non_tumor_tissue",
+  "Figure_3a_reference_regulator_percentiles",
+  "Figure_3b_Kla_regulator_percentiles",
+  "Supplementary_Figure_S1a_whole_proteome_Venn",
+  "Supplementary_Figure_S1b_Kla_proteome_Venn",
+  "Supplementary_Figure_S2a_DDR_pathway_matrices_cell_lines",
+  "Supplementary_Figure_S2b_DDR_pathway_summary_cancer_cell_lines",
+  "Supplementary_Figure_S2c_DDR_pathway_summary_normal_cell_lines"
 )
-assert(
-  nrow(direct_go) == 10605L &&
-    uniqueN(direct_go$GO_ID) == 2785L &&
-    uniqueN(direct_go$BaseAccession) == 399L,
-  "Expected 10,605 direct protein-GO pairs, 2,785 terms, and 399 proteins."
-)
+expected_figures <- as.vector(outer(figure_stems, c(".png", ".pdf"), paste0))
+actual_figures <- list.files(figure_dir, recursive = TRUE, full.names = FALSE)
+assert(setequal(actual_figures, expected_figures), "Results contain a figure not described by the final manuscript, or a required figure is missing.")
+assert(all(file.info(file.path(figure_dir, expected_figures))$size > 0L), "A required figure is empty.")
 
-term_decisions <- read_table(
-  "results", "tables", "go_term_pathway_scoring_30groups",
-  "go_term_decision_audit_2785.csv"
+expected_workbooks <- c(
+  "Supplementary_Table_S1_Kla_Data.xlsx",
+  "Supplementary_Table_S2_Reference_Data.xlsx",
+  "Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx",
+  "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx",
+  "Supplementary_Table_S5_Lactylation_Regulators.xlsx",
+  "Supplementary_Table_S6_Venn_Membership.xlsx"
 )
-assert(
-  nrow(term_decisions) == 2785L &&
-    uniqueN(term_decisions$GO_ID) == 2785L &&
-    all(term_decisions$SevenPathwayCount >= 0L) &&
-    sum(term_decisions$SevenPathwayCount > 0L) == 103L &&
-    sum(term_decisions$SevenPathwayCount > 1L) == 8L,
-  "The direct GO-term pathway-decision contract changed."
-)
+actual_workbooks <- list.files(supplementary_dir, recursive = TRUE, full.names = FALSE)
+assert(setequal(actual_workbooks, expected_workbooks), "Results contain a supplementary workbook outside Tables S1-S6, or a required table is missing.")
+assert(all(file.info(file.path(supplementary_dir, expected_workbooks))$size > 0L), "A supplementary workbook is empty.")
 
-term_mapping <- read_table(
-  "results", "tables", "go_term_pathway_scoring_30groups",
-  "go_term_to_pathway_long.csv"
+expected_sheets <- list(
+  Supplementary_Table_S1_Kla_Data.xlsx = c("Group_Summary", "Kla_Protein_Membership", "Kla_DDR_Membership"),
+  Supplementary_Table_S2_Reference_Data.xlsx = c("Reference_Group_Summary", "Reference_Protein_Membership", "Reference_DDR_Membership"),
+  Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx = "Human_DDR_GO_Annotations",
+  Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx = c("NonTumorTissues", "TumorTissues", "CancerCellLines", "NormalCellLines"),
+  Supplementary_Table_S5_Lactylation_Regulators.xlsx = c("Regulator_Annotations", "Regulator_ID_Mapping"),
+  Supplementary_Table_S6_Venn_Membership.xlsx = c("AllKla_Members", "KlaDDR_Members", "Reference_Members", "ReferenceDDR_Members", "Set_Counts", "Region_Counts")
 )
-seven_pathway_ids <- unique(term_mapping[Pathway != "Others", GO_ID])
-others_ids <- unique(term_mapping[Pathway == "Others", GO_ID])
-assert(
-  !length(intersect(seven_pathway_ids, others_ids)) &&
-    setequal(
-      union(seven_pathway_ids, others_ids),
-      term_decisions$GO_ID
-    ),
-  "Others must be exhaustive and mutually exclusive with seven-pathway terms."
-)
+for (filename in names(expected_sheets)) {
+  assert(identical(excel_sheets(file.path(supplementary_dir, filename)), expected_sheets[[filename]]), paste("Unexpected workbook sheet layout:", filename))
+}
 
-go_score_matrix <- read_table(
-  "results", "tables", "go_term_pathway_scoring_30groups",
-  "protein_pathway_direct_term_count_matrix.csv"
-)
-seven_pathways <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
-go_pathway_display <- read_table(
-  "results", "tables", "five_set_pathway_matrix_go_term_30groups",
-  "pathway_order_and_colors.csv"
-)
-assert(
-  nrow(go_score_matrix) == 399L &&
-    uniqueN(go_score_matrix$BaseAccession) == 399L &&
-    all(seven_pathways %in% names(go_score_matrix)) &&
-    identical(go_pathway_display$Pathway, seven_pathways) &&
-    identical(
-      as.integer(go_pathway_display$PathwayOrder),
-      seq_along(seven_pathways)
-    ) &&
-    identical(
-      as.integer(go_score_matrix$SevenPathwayTermScore),
-      as.integer(rowSums(go_score_matrix[, ..seven_pathways]))
-    ),
-  "The protein pathway score must equal the sum of distinct direct GO terms across seven pathways."
-)
+s1_path <- file.path(supplementary_dir, "Supplementary_Table_S1_Kla_Data.xlsx")
+s2_path <- file.path(supplementary_dir, "Supplementary_Table_S2_Reference_Data.xlsx")
+s3_path <- file.path(supplementary_dir, "Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx")
+s4_path <- file.path(supplementary_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
+s5_path <- file.path(supplementary_dir, "Supplementary_Table_S5_Lactylation_Regulators.xlsx")
+kla_membership <- fread(file.path(input_dir, "kla_protein_membership_30.csv"))
+reference_membership <- fread(file.path(input_dir, "reference_protein_membership_30.csv"))
+assert(nrow(read_excel(s1_path, sheet = "Group_Summary")) == 30L, "S1 Group_Summary must have 30 rows.")
+assert(nrow(read_excel(s1_path, sheet = "Kla_Protein_Membership")) == nrow(kla_membership), "S1 Kla membership row count changed.")
+assert(nrow(read_excel(s1_path, sheet = "Kla_DDR_Membership")) == sum(is_true(kla_membership$IsDdr)), "S1 Kla-DDR membership row count changed.")
+assert(nrow(read_excel(s2_path, sheet = "Reference_Group_Summary")) == 30L, "S2 Reference_Group_Summary must have 30 rows.")
+assert(nrow(read_excel(s2_path, sheet = "Reference_Protein_Membership")) == nrow(reference_membership), "S2 reference membership row count changed.")
+assert(nrow(read_excel(s2_path, sheet = "Reference_DDR_Membership")) == sum(is_true(reference_membership$IsDdr)), "S2 reference DDR membership row count changed.")
+assert(nrow(read_excel(s3_path, sheet = "Human_DDR_GO_Annotations", col_types = "text")) == nrow(fread(file.path(input_dir, "human_ddr_go_annotations.tsv"), sep = "\t", quote = "")), "S3 GO annotation row count changed.")
+assert(md5_file(s4_path) == md5_file(s4_input), "S4 must be copied unchanged from its frozen release asset.")
+assert(md5_file(s5_path) == md5_file(s5_input), "S5 must be copied unchanged from its frozen release asset.")
 
-venn_summary <- read_table(
-  "results", "tables", "four_class_venn", "four_venn_set_counts_4x4.csv"
-)
-assert(
-  nrow(venn_summary) == 4L &&
-    identical(as.integer(venn_summary$肿瘤组织), c(2714L, 178L, 8756L, 426L)) &&
-    identical(as.integer(venn_summary$癌细胞系), c(4183L, 381L, 14989L, 616L)) &&
-    identical(as.integer(venn_summary$非肿瘤组织), c(3423L, 183L, 18468L, 649L)) &&
-    identical(as.integer(venn_summary$正常细胞系), c(3234L, 292L, 11678L, 592L)),
-  "The current four-Venn 4x4 set-count summary changed."
-)
+s6_path <- file.path(supplementary_dir, "Supplementary_Table_S6_Venn_Membership.xlsx")
+s6_regions <- as.data.table(read_excel(s6_path, sheet = "Region_Counts"))
+assert(nrow(s6_regions) == 60L, "S6 must retain all 15 Venn regions for each of its four analyses.")
+assert(all(s6_regions[, .N, by = Analysis]$N == 15L) && uniqueN(s6_regions[, .(Analysis, Region)]) == 60L, "Each S6 analysis must contain exactly 15 unique Venn regions, including zero-count regions.")
+venn_sources <- c(AllKla = "venn_all_kla.csv", KlaDDR = "venn_kla_ddr.csv", Reference = "venn_reference.csv", ReferenceDDR = "venn_reference_ddr.csv")
+for (analysis_name in names(venn_sources)) {
+  membership <- fread(file.path(input_dir, venn_sources[[analysis_name]]))
+  output_membership <- read_excel(s6_path, sheet = paste0(analysis_name, "_Members"))
+  expected_regions <- membership[, .N, by = Region]
+  observed_regions <- s6_regions[Analysis == analysis_name]
+  reconstructed <- expected_regions$N[match(observed_regions$Region, expected_regions$Region)]
+  reconstructed[is.na(reconstructed)] <- 0L
+  assert(nrow(output_membership) == nrow(membership), paste("S6 membership row count changed for", analysis_name))
+  assert(identical(as.integer(observed_regions$ProteinCount), as.integer(reconstructed)), paste("S6 region counts changed for", analysis_name))
+}
 
-required_figures <- c(
-  file.path(
-    "results", "figures", "kla_regulator_cross_study_relative_intensity_heatmap_en.png"
-  ),
-  file.path(
-    "results", "figures", "kla_regulator_whole_proteome_relative_intensity_heatmap_en.png"
-  ),
-  file.path(
-    "results", "figures", "cell_type_kla_vs_reference_ddr_fraction_en.png"
-  ),
-  file.path(
-    "results", "figures", "four_class_venn",
-    as.vector(outer(
-      venn_analyses,
-      c("_30groups_en.png", "_30groups_zh.png"),
-      paste0
-    ))
-  ),
-  file.path(
-    "results", "figures", "five_set_pathway_matrix_go_term_30groups",
-    "kla_ddr_go_term_linear_pathway_matrix_all_kla_ddr_en.png"
-  )
-)
-missing_figures <- required_figures[!file.exists(file.path(project_root, required_figures))]
-assert(
-  !length(missing_figures),
-  paste("Missing required figure(s):", paste(missing_figures, collapse = "; "))
-)
-
-message(
-  "PASS: 40/37/30/28 scope, four classes 9/2/12/7 in display order, 399 Kla-DDR proteins, ",
-  "2,785 direct GO terms with exhaustive seven-pathway/Others decisions, ",
-  "183/178/381/292/399 sets, and selected publication figures."
-)
+message("PASS: exact 30-group scope, 399 BaseAccessions, four signed pathway panels, manuscript figures, and Tables S1-S6 only.")

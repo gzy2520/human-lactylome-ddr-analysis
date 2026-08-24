@@ -1,0 +1,1441 @@
+PXD,SampleGroup,RegulatorBaseAccession,GeneSymbol,WholeProteomeRelativePercentile,DetectedSampleCount,QuantSampleCount,DetectedSampleFraction,MedianLog2SignalDetected,Measurement,SourceFile
+PXD028488,HCT116,O14929,HAT1,37.2970272295778,1,1,1,2.09942734747767,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,O15379,HDAC3,0,0,1,0,,"",""
+PXD028488,HCT116,O60885,BRD4,14.2393205096178,1,1,1,1.75101576555873,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,O75607,NPM3,81.0392205845616,1,1,1,2.75093837403743,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,O95251,KAT7,14.4641518860854,1,1,1,1.75508404224598,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,P05783,KRT18,99.8501124156882,1,1,1,3.65672279136954,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,P41227,NAA10,57.1571321508868,1,1,1,2.37625601612132,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,P42568,MLLT3,0,0,1,0,,"",""
+PXD028488,HCT116,P49588,AARS1,89.7826630027479,1,1,1,2.94928284165894,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,P51532,SMARCA4,60.0299775168624,1,1,1,2.41571671098902,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,P56524,HDAC4,0,0,1,0,,"",""
+PXD028488,HCT116,Q09472,EP300,0,0,1,0,,"",""
+PXD028488,HCT116,Q13547,HDAC1,42.5680739445416,1,1,1,2.1729550140873,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD028488,HCT116,Q5JTZ9,AARS2,19.1356482638021,1,1,1,1.84285868684643,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q5SQI0,ATAT1,3.19760179865101,1,1,1,1.28206431140378,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD028488,HCT116,Q8N6T7,SIRT6,6.64501623782163,1,1,1,1.50837176696959,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD028488,HCT116,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD028488,HCT116,Q92769,HDAC2,21.2340744441669,1,1,1,1.87859697040786,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q92785,DPF2,46.9897576817387,1,1,1,2.23795487420944,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q92793,CREBBP,0,0,1,0,,"",""
+PXD028488,HCT116,Q92794,KAT6A,0,0,1,0,,"",""
+PXD028488,HCT116,Q92830,KAT2A,0,0,1,0,,"",""
+PXD028488,HCT116,Q92831,KAT2B,0,0,1,0,,"",""
+PXD028488,HCT116,Q92993,KAT5,0,0,1,0,,"",""
+PXD028488,HCT116,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD028488,HCT116,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD028488,HCT116,Q96EB6,SIRT1,22.2083437421934,1,1,1,1.89031617465466,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q99497,PARK7,97.1271546340245,1,1,1,3.25110281248246,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9BWD1,ACAT2,61.7037222083437,1,1,1,2.44116753454694,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD028488,HCT116,Q9H7Z6,KAT8,15.0637022233325,1,1,1,1.7678337415889,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD028488,HCT116,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD028488,HCT116,Q9H9T3,ELP3,41.1441418935798,1,1,1,2.15074970715721,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD028488,HCT116,Q9NTG7,SIRT3,12.6655008743442,1,1,1,1.71597272727568,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9NXA8,SIRT5,6.74494129402948,1,1,1,1.51314730058706,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD028488,HCT116,Q9UKN8,GTF3C4,31.8261304021984,1,1,1,2.03638996743793,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD028488,HCT116,Q9ULM3,YEATS2,0,0,1,0,,"",""
+PXD028488,HCT116,Q9UPN9,TRIM33,40.7944041968524,1,1,1,2.14501548623678,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD028488,HCT116,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD028488,HCT116,Q9Y232,CDYL,0,0,1,0,,"",""
+PXD028488,HCT116,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD028488,HEK293T,O14929,HAT1,58.3947368421053,385,401,0.960099750623441,2.32192809488736,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,O15379,HDAC3,0,6,401,0.0149625935162095,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,O60885,BRD4,65.3104359313078,386,401,0.962593516209476,2.58496250072116,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,O75607,NPM3,59.0741168321404,401,401,1,2.32192809488736,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,O95251,KAT7,17.047583364556,354,401,0.882793017456359,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,P05783,KRT18,55.4054054054054,371,401,0.925187032418953,2.32192809488736,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,P41227,NAA10,68.630214205186,400,401,0.997506234413965,2.8073549220576,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,P42568,MLLT3,0,0,401,0,,"",""
+PXD028488,HEK293T,P49588,AARS1,97.8344438749359,401,401,1,4.90689059560852,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,P51532,SMARCA4,65.7550535077289,388,401,0.967581047381546,2.58496250072116,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,P56524,HDAC4,0,13,401,0.0324189526184539,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q09472,EP300,0,0,401,0,,"",""
+PXD028488,HEK293T,Q13547,HDAC1,42.385978137957,361,401,0.900249376558603,2,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q56NI9,ESCO2,0,0,401,0,,"",""
+PXD028488,HEK293T,Q5JTZ9,AARS2,81.2929061784897,399,401,0.99501246882793,3.32192809488736,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q5SQI0,ATAT1,0,106,401,0.264339152119701,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q8IXJ6,SIRT2,14.7432701894317,287,401,0.71571072319202,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q8N6T7,SIRT6,0,124,401,0.309226932668329,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q8WUI4,HDAC7,0,27,401,0.0673316708229426,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q8WYB5,KAT6B,0,0,401,0,,"",""
+PXD028488,HEK293T,Q92769,HDAC2,35.1737451737452,329,401,0.820448877805486,1.58496250072116,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q92785,DPF2,15.3516057585825,263,401,0.655860349127182,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q92793,CREBBP,0,64,401,0.159600997506234,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q92794,KAT6A,0,0,401,0,,"",""
+PXD028488,HEK293T,Q92830,KAT2A,0,0,401,0,,"",""
+PXD028488,HEK293T,Q92831,KAT2B,0,0,401,0,,"",""
+PXD028488,HEK293T,Q92993,KAT5,0,0,401,0,,"",""
+PXD028488,HEK293T,Q969S8,HDAC10,0,0,401,0,,"",""
+PXD028488,HEK293T,Q96DB2,HDAC11,0,0,401,0,,"",""
+PXD028488,HEK293T,Q96EB6,SIRT1,14.3735498839907,235,401,0.586034912718205,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q99497,PARK7,90.780047758026,401,401,1,3.90689059560852,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9BWD1,ACAT2,92.0553716521216,401,401,1,4.08746284125034,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9BY41,HDAC8,0,0,401,0,,"",""
+PXD028488,HEK293T,Q9H7Z6,KAT8,0,185,401,0.461346633416459,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9H8E8,CSRP2BP,0,0,401,0,,"",""
+PXD028488,HEK293T,Q9H8M2,BRD9,0,19,401,0.0473815461346633,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9H9T3,ELP3,0,192,401,0.478802992518703,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9NRC8,SIRT7,0,0,401,0,,"",""
+PXD028488,HEK293T,Q9NTG7,SIRT3,0,100,401,0.249376558603491,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9NXA8,SIRT5,0,108,401,0.269326683291771,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9UBN7,HDAC6,0,81,401,0.201995012468828,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9UKN8,GTF3C4,39.4197498003726,342,401,0.85286783042394,1.58496250072116,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9UKV0,HDAC9,0,0,401,0,,"",""
+PXD028488,HEK293T,Q9ULM3,YEATS2,14.2600143919405,246,401,0.613466334164589,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9UPN9,TRIM33,50.3924866834875,371,401,0.925187032418953,2,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9UQL6,HDAC5,0,0,401,0,,"",""
+PXD028488,HEK293T,Q9Y232,CDYL,0,154,401,0.384039900249377,1,ordinary proteome peptide-count abundance proxy; no PTM enrichment,data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt
+PXD028488,HEK293T,Q9Y6E7,SIRT4,0,0,401,0,,"",""
+PXD028488,TALL-104,O14929,HAT1,89.6692913385827,3,3,1,29.0163769597854,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,O15379,HDAC3,0,0,3,0,,"",""
+PXD028488,TALL-104,O60885,BRD4,40.0771952396269,3,3,1,23.6649230184113,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,O75607,NPM3,79.954954954955,3,3,1,27.6320082944013,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,O95251,KAT7,5.61273721453844,2,3,0.666666666666667,20.2776493942822,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,P05783,KRT18,0,0,3,0,,"",""
+PXD028488,TALL-104,P41227,NAA10,28.5984251968504,3,3,1,22.5638370175164,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,P42568,MLLT3,0,0,3,0,,"",""
+PXD028488,TALL-104,P49588,AARS1,91.6220472440945,3,3,1,29.3827796832175,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,P51532,SMARCA4,27.259842519685,3,3,1,22.4450595675734,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,P56524,HDAC4,0,0,3,0,,"",""
+PXD028488,TALL-104,Q09472,EP300,0,0,3,0,,"",""
+PXD028488,TALL-104,Q13547,HDAC1,72.4903474903475,3,3,1,26.8740830863926,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q56NI9,ESCO2,0,0,3,0,,"",""
+PXD028488,TALL-104,Q5JTZ9,AARS2,0,1,3,0.333333333333333,23.1855579867808,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q5SQI0,ATAT1,0,0,3,0,,"",""
+PXD028488,TALL-104,Q8IXJ6,SIRT2,0,1,3,0.333333333333333,17.0532577339252,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q8N6T7,SIRT6,0,0,3,0,,"",""
+PXD028488,TALL-104,Q8WUI4,HDAC7,0,0,3,0,,"",""
+PXD028488,TALL-104,Q8WYB5,KAT6B,0,0,3,0,,"",""
+PXD028488,TALL-104,Q92769,HDAC2,71.541184041184,3,3,1,26.7259844486715,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q92785,DPF2,48.2952717915729,3,3,1,24.4169954609004,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q92793,CREBBP,0,0,3,0,,"",""
+PXD028488,TALL-104,Q92794,KAT6A,0,0,3,0,,"",""
+PXD028488,TALL-104,Q92830,KAT2A,0,0,3,0,,"",""
+PXD028488,TALL-104,Q92831,KAT2B,0,0,3,0,,"",""
+PXD028488,TALL-104,Q92993,KAT5,0,0,3,0,,"",""
+PXD028488,TALL-104,Q969S8,HDAC10,0,0,3,0,,"",""
+PXD028488,TALL-104,Q96DB2,HDAC11,0,0,3,0,,"",""
+PXD028488,TALL-104,Q96EB6,SIRT1,0,0,3,0,,"",""
+PXD028488,TALL-104,Q99497,PARK7,97.024766806047,3,3,1,30.7691965032839,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q9BWD1,ACAT2,94.5641685429399,3,3,1,30.0863866796418,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q9BY41,HDAC8,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9H7Z6,KAT8,0,1,3,0.333333333333333,21.3321070453832,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q9H8E8,CSRP2BP,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9H8M2,BRD9,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9H9T3,ELP3,4.59842519685039,2,3,0.666666666666667,20.1597100613961,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q9NRC8,SIRT7,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9NTG7,SIRT3,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9NXA8,SIRT5,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9UBN7,HDAC6,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9UKN8,GTF3C4,14.7522522522523,2,3,0.666666666666667,21.9920020223268,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q9UKV0,HDAC9,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9ULM3,YEATS2,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9UPN9,TRIM33,23.4480540366677,2,3,0.666666666666667,22.1552791307551,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q9UQL6,HDAC5,0,0,3,0,,"",""
+PXD028488,TALL-104,Q9Y232,CDYL,0,1,3,0.333333333333333,20.9024229597334,PEAKS non-enriched protein Area,data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv
+PXD028488,TALL-104,Q9Y6E7,SIRT4,0,0,3,0,,"",""
+PXD028737,HMC3,O14929,HAT1,84.0772628165707,2,2,1,21.2012103666618,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,O15379,HDAC3,15.9802551310679,2,2,1,15.9681442962873,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,O60885,BRD4,56.6240187582832,2,2,1,18.9207390047554,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,O75607,NPM3,71.885102226724,2,2,1,20.0792943816882,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,O95251,KAT7,54.3856201842284,2,2,1,18.779688726759,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,P05783,KRT18,98.7474307663469,2,2,1,24.4737226747868,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,P41227,NAA10,73.4245705885642,2,2,1,20.1944784917957,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,P42568,MLLT3,0,0,2,0,,"",""
+PXD028737,HMC3,P49588,AARS1,94.4104657013473,2,2,1,22.8058247269882,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,P51532,SMARCA4,72.4442332420194,2,2,1,20.1045041439419,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,P56524,HDAC4,0,0,2,0,,"",""
+PXD028737,HMC3,Q09472,EP300,0.79696394686907,1,2,0.5,14.2533304561691,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q13547,HDAC1,84.4756132452422,2,2,1,21.259147499265,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q56NI9,ESCO2,0,0,2,0,,"",""
+PXD028737,HMC3,Q5JTZ9,AARS2,47.273603241263,2,2,1,18.2728870379964,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q5SQI0,ATAT1,0.0606585788561525,1,2,0.5,12.0242393277457,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q8IXJ6,SIRT2,2.39168110918544,1,2,0.5,14.1799090900149,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q8N6T7,SIRT6,5.37051226819346,2,2,1,14.680739602846,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q8WUI4,HDAC7,3.79549393414211,1,2,0.5,14.6610543423578,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q8WYB5,KAT6B,0,0,2,0,,"",""
+PXD028737,HMC3,Q92769,HDAC2,66.0857540310248,2,2,1,19.5998693588165,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q92785,DPF2,44.5653267736345,2,2,1,18.1107662271254,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q92793,CREBBP,44.9342605046715,2,2,1,18.1223210814059,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q92794,KAT6A,1.25649913344887,1,2,0.5,13.5758937318785,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q92830,KAT2A,0,0,2,0,,"",""
+PXD028737,HMC3,Q92831,KAT2B,0,0,2,0,,"",""
+PXD028737,HMC3,Q92993,KAT5,2.64298093587522,1,2,0.5,14.2614338503543,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q969S8,HDAC10,0,0,2,0,,"",""
+PXD028737,HMC3,Q96DB2,HDAC11,0,0,2,0,,"",""
+PXD028737,HMC3,Q96EB6,SIRT1,26.4645042900036,2,2,1,16.864738699004,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q99497,PARK7,94.0940183307627,2,2,1,22.7016907660439,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9BWD1,ACAT2,86.471837910543,2,2,1,21.5190916972447,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9BY41,HDAC8,0,0,2,0,,"",""
+PXD028737,HMC3,Q9H7Z6,KAT8,0,0,2,0,,"",""
+PXD028737,HMC3,Q9H8E8,CSRP2BP,0,0,2,0,,"",""
+PXD028737,HMC3,Q9H8M2,BRD9,0,0,2,0,,"",""
+PXD028737,HMC3,Q9H9T3,ELP3,43.8603126161294,2,2,1,18.0558647765126,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9NRC8,SIRT7,0,0,2,0,,"",""
+PXD028737,HMC3,Q9NTG7,SIRT3,2.93327556325823,1,2,0.5,14.3583764803282,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9NXA8,SIRT5,28.6692849555543,2,2,1,17.03073014164,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9UBN7,HDAC6,20.816613445848,2,2,1,16.4105431794069,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9UKN8,GTF3C4,75.768040542096,2,2,1,20.4161933164268,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9UKV0,HDAC9,0,0,2,0,,"",""
+PXD028737,HMC3,Q9ULM3,YEATS2,0,0,2,0,,"",""
+PXD028737,HMC3,Q9UPN9,TRIM33,49.1718599442908,2,2,1,18.4286257582883,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9UQL6,HDAC5,0,0,2,0,,"",""
+PXD028737,HMC3,Q9Y232,CDYL,37.0717642454757,2,2,1,17.6221305921875,same-study ordinary MaxQuant protein LFQ; HMC3 H0/H24,data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt
+PXD028737,HMC3,Q9Y6E7,SIRT4,0,0,2,0,,"",""
+PXD033146,pathological rotator cuff tendon,O14929,HAT1,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,O15379,HDAC3,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,O60885,BRD4,33.5532233883058,6,6,1,14.3035892053378,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+PXD033146,pathological rotator cuff tendon,O75607,NPM3,3.32833583208396,6,6,1,11.3918724814476,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+PXD033146,pathological rotator cuff tendon,O95251,KAT7,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,P05783,KRT18,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,P41227,NAA10,29.0404797601199,6,6,1,14.0233052719646,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+PXD033146,pathological rotator cuff tendon,P42568,MLLT3,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,P49588,AARS1,90.2098950524738,6,6,1,17.7677663331454,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+PXD033146,pathological rotator cuff tendon,P51532,SMARCA4,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,P56524,HDAC4,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q09472,EP300,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q13547,HDAC1,28.6356821589205,6,6,1,14.0017682418849,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+PXD033146,pathological rotator cuff tendon,Q56NI9,ESCO2,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q5JTZ9,AARS2,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q5SQI0,ATAT1,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q8IXJ6,SIRT2,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q8N6T7,SIRT6,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q8WUI4,HDAC7,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q8WYB5,KAT6B,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q92769,HDAC2,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q92785,DPF2,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q92793,CREBBP,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q92794,KAT6A,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q92830,KAT2A,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q92831,KAT2B,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q92993,KAT5,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q969S8,HDAC10,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q96DB2,HDAC11,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q96EB6,SIRT1,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q99497,PARK7,96.671664167916,6,6,1,18.745255477727,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+PXD033146,pathological rotator cuff tendon,Q9BWD1,ACAT2,53.4782608695652,6,6,1,15.4318749849219,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+PXD033146,pathological rotator cuff tendon,Q9BY41,HDAC8,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9H7Z6,KAT8,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9H8E8,CSRP2BP,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9H8M2,BRD9,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9H9T3,ELP3,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9NRC8,SIRT7,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9NTG7,SIRT3,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9NXA8,SIRT5,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9UBN7,HDAC6,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9UKN8,GTF3C4,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9UKV0,HDAC9,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9ULM3,YEATS2,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9UPN9,TRIM33,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9UQL6,HDAC5,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9Y232,CDYL,0,0,6,0,,"",""
+PXD033146,pathological rotator cuff tendon,Q9Y6E7,SIRT4,0,0,6,0,,"",""
+PXD036307,normal human lung,O14929,HAT1,63.9488990444537,1,1,1,29.5151403050029,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,O15379,HDAC3,50.6024096385542,1,1,1,28.3083017425168,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,O60885,BRD4,84.8047361861238,1,1,1,31.7398490314987,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,O75607,NPM3,65.0186954715413,1,1,1,29.6037817364269,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,O95251,KAT7,46.1985874532613,1,1,1,27.9408933504762,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,P05783,KRT18,97.4553385957624,1,1,1,34.6728775416809,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,P41227,NAA10,73.6186123805567,1,1,1,30.4337042129765,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,P42568,MLLT3,23.0785209804736,1,1,1,25.6782844438893,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,P49588,AARS1,96.9879518072289,1,1,1,34.4712726510659,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,P51532,SMARCA4,45.0093477357707,1,1,1,27.8450564160231,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,P56524,HDAC4,0,0,1,0,,"",""
+PXD036307,normal human lung,Q09472,EP300,78.4586622351475,1,1,1,30.9405573532515,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q13547,HDAC1,90.9846281678438,1,1,1,32.7224464732417,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD036307,normal human lung,Q5JTZ9,AARS2,67.085583714167,1,1,1,29.7957237560732,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q5SQI0,ATAT1,53.2820938928126,1,1,1,28.5293976708747,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q8IXJ6,SIRT2,60.88491898629,1,1,1,29.2194886843111,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q8N6T7,SIRT6,26.6929788117989,1,1,1,26.0677394645032,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q8WUI4,HDAC7,51.6618196925634,1,1,1,28.395705859686,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q8WYB5,KAT6B,23.8678853344412,1,1,1,25.7686287983202,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q92769,HDAC2,77.6692978811799,1,1,1,30.8502082319053,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q92785,DPF2,67.5529705027005,1,1,1,29.8327824289708,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q92793,CREBBP,43.1761528874117,1,1,1,27.7017368960364,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q92794,KAT6A,37.6090569173245,1,1,1,27.1730274501329,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q92830,KAT2A,24.6053178230162,1,1,1,25.832362963062,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q92831,KAT2B,0,0,1,0,,"",""
+PXD036307,normal human lung,Q92993,KAT5,5.75405068550062,1,1,1,22.9175791352865,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q969S8,HDAC10,32.8209389281263,1,1,1,26.6867232258573,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD036307,normal human lung,Q96EB6,SIRT1,28.4171167428334,1,1,1,26.249234442028,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q99497,PARK7,98.24470294973,1,1,1,35.1563616390179,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9BWD1,ACAT2,90.9326963024512,1,1,1,32.7099948284529,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9BY41,HDAC8,18.6227669297881,1,1,1,25.1790784380387,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9H7Z6,KAT8,35.4279185708351,1,1,1,26.9431313073963,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9H8E8,CSRP2BP,13.9592854175322,1,1,1,24.5323735837694,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9H8M2,BRD9,23.9509763190694,1,1,1,25.773516561597,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9H9T3,ELP3,49.9065226422933,1,1,1,28.2484836207723,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9NRC8,SIRT7,19.4952222683839,1,1,1,25.2746921242674,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9NTG7,SIRT3,33.5375986705442,1,1,1,26.7527685601388,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9NXA8,SIRT5,52.7212297465725,1,1,1,28.4772667204608,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9UBN7,HDAC6,63.0868300789364,1,1,1,29.4300787495498,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9UKN8,GTF3C4,69.5886996260906,1,1,1,30.0580149353903,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD036307,normal human lung,Q9ULM3,YEATS2,33.6414624013295,1,1,1,26.7666083809553,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9UPN9,TRIM33,54.7777316161197,1,1,1,28.671787830061,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9UQL6,HDAC5,17.3348566680515,1,1,1,25.0012278204652,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9Y232,CDYL,31.7719152471957,1,1,1,26.5927766151411,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt
+PXD036307,normal human lung,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD046800,adjacent skin,O14929,HAT1,0,0,4,0,,"",""
+PXD046800,adjacent skin,O15379,HDAC3,0,0,4,0,,"",""
+PXD046800,adjacent skin,O60885,BRD4,0,0,4,0,,"",""
+PXD046800,adjacent skin,O75607,NPM3,0,0,4,0,,"",""
+PXD046800,adjacent skin,O95251,KAT7,0,0,4,0,,"",""
+PXD046800,adjacent skin,P05783,KRT18,63.6555179537832,4,4,1,22.5232978816652,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,adjacent skin,P41227,NAA10,0,0,4,0,,"",""
+PXD046800,adjacent skin,P42568,MLLT3,0,0,4,0,,"",""
+PXD046800,adjacent skin,P49588,AARS1,48.804468585244,4,4,1,21.5115494420664,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,adjacent skin,P51532,SMARCA4,0,0,4,0,,"",""
+PXD046800,adjacent skin,P56524,HDAC4,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q09472,EP300,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q13547,HDAC1,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q56NI9,ESCO2,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q5JTZ9,AARS2,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q5SQI0,ATAT1,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q8IXJ6,SIRT2,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q8N6T7,SIRT6,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q8WUI4,HDAC7,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q8WYB5,KAT6B,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q92769,HDAC2,0,1,4,0.25,18.7226906621856,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,adjacent skin,Q92785,DPF2,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q92793,CREBBP,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q92794,KAT6A,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q92830,KAT2A,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q92831,KAT2B,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q92993,KAT5,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q969S8,HDAC10,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q96DB2,HDAC11,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q96EB6,SIRT1,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q99497,PARK7,69.5931223681091,4,4,1,23.0175063428598,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,adjacent skin,Q9BWD1,ACAT2,19.7174778230338,4,4,1,19.2248215742583,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,adjacent skin,Q9BY41,HDAC8,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9H7Z6,KAT8,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9H8E8,CSRP2BP,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9H8M2,BRD9,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9H9T3,ELP3,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9NRC8,SIRT7,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9NTG7,SIRT3,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9NXA8,SIRT5,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9UBN7,HDAC6,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9UKN8,GTF3C4,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9UKV0,HDAC9,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9ULM3,YEATS2,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9UPN9,TRIM33,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9UQL6,HDAC5,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9Y232,CDYL,0,0,4,0,,"",""
+PXD046800,adjacent skin,Q9Y6E7,SIRT4,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,O14929,HAT1,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,O15379,HDAC3,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,O60885,BRD4,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,O75607,NPM3,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,O95251,KAT7,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,P05783,KRT18,53.8853310423301,4,4,1,21.7550104492714,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,hypertrophic scar,P41227,NAA10,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,P42568,MLLT3,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,P49588,AARS1,61.6317524283008,4,4,1,22.5047196354818,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,hypertrophic scar,P51532,SMARCA4,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,P56524,HDAC4,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q09472,EP300,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q13547,HDAC1,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q56NI9,ESCO2,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q5JTZ9,AARS2,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q5SQI0,ATAT1,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q8IXJ6,SIRT2,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q8N6T7,SIRT6,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q8WUI4,HDAC7,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q8WYB5,KAT6B,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q92769,HDAC2,0,1,4,0.25,19.4115867758818,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,hypertrophic scar,Q92785,DPF2,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q92793,CREBBP,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q92794,KAT6A,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q92830,KAT2A,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q92831,KAT2B,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q92993,KAT5,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q969S8,HDAC10,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q96DB2,HDAC11,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q96EB6,SIRT1,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q99497,PARK7,75.2406731381534,4,4,1,23.7174013921986,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,hypertrophic scar,Q9BWD1,ACAT2,24.31281618493,3,4,0.75,20.0890038824112,Proteome Discoverer normalized total-protein abundance,data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt
+PXD046800,hypertrophic scar,Q9BY41,HDAC8,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9H7Z6,KAT8,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9H8E8,CSRP2BP,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9H8M2,BRD9,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9H9T3,ELP3,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9NRC8,SIRT7,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9NTG7,SIRT3,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9NXA8,SIRT5,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9UBN7,HDAC6,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9UKN8,GTF3C4,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9UKV0,HDAC9,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9ULM3,YEATS2,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9UPN9,TRIM33,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9UQL6,HDAC5,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9Y232,CDYL,0,0,4,0,,"",""
+PXD046800,hypertrophic scar,Q9Y6E7,SIRT4,0,0,4,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,O14929,HAT1,80.3629515493922,9,9,1,30.5567294503756,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,O15379,HDAC3,26.4350195878045,9,9,1,26.2753317092366,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,O60885,BRD4,71.3166411173565,9,9,1,29.6691877383067,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,O75607,NPM3,75.7241379310345,9,9,1,30.066636516385,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,O95251,KAT7,25.8430774445009,9,9,1,26.2516560724529,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,P05783,KRT18,99.8614718614719,9,9,1,36.4298100858514,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,P41227,NAA10,72.8117607299763,9,9,1,29.8061042889286,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,P42568,MLLT3,12.4327140128495,7,9,0.777777777777778,25.1930242014984,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,P49588,AARS1,93.6163045309079,9,9,1,32.4400566464773,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,P51532,SMARCA4,89.0429720938196,9,9,1,31.6434505981063,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,P56524,HDAC4,13.2004769204565,9,9,1,25.0931741732162,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q09472,EP300,1.54083204930663,5,9,0.555555555555556,23.7355189421598,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q13547,HDAC1,64.716096544539,9,9,1,29.1031457149771,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q56NI9,ESCO2,2.56896551724138,6,9,0.666666666666667,23.916506043061,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q5JTZ9,AARS2,60.7099567099567,9,9,1,28.6789559723339,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q5SQI0,ATAT1,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q8IXJ6,SIRT2,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q8N6T7,SIRT6,15.9175397093613,9,9,1,25.3765668893057,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q8WUI4,HDAC7,43.2130147432639,9,9,1,27.5434048922942,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q8WYB5,KAT6B,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92769,HDAC2,85.8793103448276,9,9,1,31.1579205488108,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92785,DPF2,55.9204985683005,9,9,1,28.5028661556218,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92793,CREBBP,37.1592290328182,8,9,0.888888888888889,27.1737071598934,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92794,KAT6A,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92830,KAT2A,0,3,9,0.333333333333333,23.6138048613924,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92831,KAT2B,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92993,KAT5,47.1551724137931,8,9,0.888888888888889,27.9194500758454,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q969S8,HDAC10,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q96DB2,HDAC11,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q96EB6,SIRT1,25.0553568386987,6,9,0.666666666666667,26.2801701156289,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q99497,PARK7,93.4718614718615,9,9,1,32.3976705290718,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9BWD1,ACAT2,88.551724137931,9,9,1,31.5399158100109,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9BY41,HDAC8,0,3,9,0.333333333333333,24.1624633231602,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9H7Z6,KAT8,0,2,9,0.222222222222222,26.1850680444888,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9H8E8,CSRP2BP,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9H8M2,BRD9,1.2031859006948,6,9,0.666666666666667,23.6005464859718,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9H9T3,ELP3,58.3608265323841,9,9,1,28.5053672166997,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9NRC8,SIRT7,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9NTG7,SIRT3,0,3,9,0.333333333333333,25.2506445602281,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9NXA8,SIRT5,13.7647663071392,9,9,1,25.148760541682,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9UBN7,HDAC6,22.4344504254211,9,9,1,25.9181160535231,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9UKN8,GTF3C4,64.3958651076089,9,9,1,29.0826612404098,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9UKV0,HDAC9,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9ULM3,YEATS2,1.45454545454545,8,9,0.888888888888889,23.6235096315573,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9UPN9,TRIM33,53.1936465021967,9,9,1,28.2563791772441,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9UQL6,HDAC5,0,0,9,0,,"",""
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9Y232,CDYL,42.2585590189065,9,9,1,27.5547184768624,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD050147/search_results/SIRT_proteinGroups.txt
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9Y6E7,SIRT4,0,0,9,0,,"",""
+PXD050470,human hippocampus,O14929,HAT1,0,0,3,0,,"",""
+PXD050470,human hippocampus,O15379,HDAC3,0,0,3,0,,"",""
+PXD050470,human hippocampus,O60885,BRD4,0,0,3,0,,"",""
+PXD050470,human hippocampus,O75607,NPM3,0,0,3,0,,"",""
+PXD050470,human hippocampus,O95251,KAT7,0,0,3,0,,"",""
+PXD050470,human hippocampus,P05783,KRT18,35.684920243381,3,3,1,0.543638812513094,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,P41227,NAA10,52.0802499588883,3,3,1,0.945754273173732,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,P42568,MLLT3,0,0,3,0,,"",""
+PXD050470,human hippocampus,P49588,AARS1,93.2247985528696,3,3,1,4.54280139489903,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,P51532,SMARCA4,0,0,3,0,,"",""
+PXD050470,human hippocampus,P56524,HDAC4,24.8314421970071,3,3,1,0.313541850970088,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q09472,EP300,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q13547,HDAC1,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q56NI9,ESCO2,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q5JTZ9,AARS2,48.1335306692978,3,3,1,0.906825928682511,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q5SQI0,ATAT1,68.9689195855945,3,3,1,1.90868470328989,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q8IXJ6,SIRT2,97.2372964972866,3,3,1,5.54619938691807,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q8N6T7,SIRT6,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q8WUI4,HDAC7,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q8WYB5,KAT6B,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q92769,HDAC2,47.7553034040454,3,3,1,0.895813727950222,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q92785,DPF2,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q92793,CREBBP,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q92794,KAT6A,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q92830,KAT2A,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q92831,KAT2B,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q92993,KAT5,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q969S8,HDAC10,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q96DB2,HDAC11,70.9587238940964,3,3,1,2.03837825298517,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q96EB6,SIRT1,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q99497,PARK7,97.3359644795264,3,3,1,5.58734673147152,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9BWD1,ACAT2,85.972701858247,3,3,1,3.23807989017017,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9BY41,HDAC8,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9H7Z6,KAT8,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9H8E8,CSRP2BP,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9H8M2,BRD9,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9H9T3,ELP3,36.1618154908732,3,3,1,0.408712719970774,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9NRC8,SIRT7,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9NTG7,SIRT3,54.300279559283,3,3,1,1.04343261404726,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9NXA8,SIRT5,68.5742476566354,3,3,1,1.81010520062061,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9UBN7,HDAC6,39.8618648248643,3,3,1,0.498548710732262,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9UKN8,GTF3C4,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9UKV0,HDAC9,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9ULM3,YEATS2,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9UPN9,TRIM33,5.73918763361289,3,3,1,0.0676411739030843,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9UQL6,HDAC5,25.2261141259661,3,3,1,0.224593642409273,same-study ordinary whole-proteome relative intensity; direct UniProt ID,data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx
+PXD050470,human hippocampus,Q9Y232,CDYL,0,0,3,0,,"",""
+PXD050470,human hippocampus,Q9Y6E7,SIRT4,0,0,3,0,,"",""
+PXD053474,HCT116,O14929,HAT1,37.2970272295778,1,1,1,2.09942734747767,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,O15379,HDAC3,0,0,1,0,,"",""
+PXD053474,HCT116,O60885,BRD4,14.2393205096178,1,1,1,1.75101576555873,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,O75607,NPM3,81.0392205845616,1,1,1,2.75093837403743,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,O95251,KAT7,14.4641518860854,1,1,1,1.75508404224598,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,P05783,KRT18,99.8501124156882,1,1,1,3.65672279136954,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,P41227,NAA10,57.1571321508868,1,1,1,2.37625601612132,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,P42568,MLLT3,0,0,1,0,,"",""
+PXD053474,HCT116,P49588,AARS1,89.7826630027479,1,1,1,2.94928284165894,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,P51532,SMARCA4,60.0299775168624,1,1,1,2.41571671098902,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,P56524,HDAC4,0,0,1,0,,"",""
+PXD053474,HCT116,Q09472,EP300,0,0,1,0,,"",""
+PXD053474,HCT116,Q13547,HDAC1,42.5680739445416,1,1,1,2.1729550140873,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD053474,HCT116,Q5JTZ9,AARS2,19.1356482638021,1,1,1,1.84285868684643,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q5SQI0,ATAT1,3.19760179865101,1,1,1,1.28206431140378,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD053474,HCT116,Q8N6T7,SIRT6,6.64501623782163,1,1,1,1.50837176696959,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD053474,HCT116,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD053474,HCT116,Q92769,HDAC2,21.2340744441669,1,1,1,1.87859697040786,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q92785,DPF2,46.9897576817387,1,1,1,2.23795487420944,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q92793,CREBBP,0,0,1,0,,"",""
+PXD053474,HCT116,Q92794,KAT6A,0,0,1,0,,"",""
+PXD053474,HCT116,Q92830,KAT2A,0,0,1,0,,"",""
+PXD053474,HCT116,Q92831,KAT2B,0,0,1,0,,"",""
+PXD053474,HCT116,Q92993,KAT5,0,0,1,0,,"",""
+PXD053474,HCT116,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD053474,HCT116,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD053474,HCT116,Q96EB6,SIRT1,22.2083437421934,1,1,1,1.89031617465466,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q99497,PARK7,97.1271546340245,1,1,1,3.25110281248246,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9BWD1,ACAT2,61.7037222083437,1,1,1,2.44116753454694,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD053474,HCT116,Q9H7Z6,KAT8,15.0637022233325,1,1,1,1.7678337415889,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD053474,HCT116,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD053474,HCT116,Q9H9T3,ELP3,41.1441418935798,1,1,1,2.15074970715721,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD053474,HCT116,Q9NTG7,SIRT3,12.6655008743442,1,1,1,1.71597272727568,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9NXA8,SIRT5,6.74494129402948,1,1,1,1.51314730058706,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD053474,HCT116,Q9UKN8,GTF3C4,31.8261304021984,1,1,1,2.03638996743793,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD053474,HCT116,Q9ULM3,YEATS2,0,0,1,0,,"",""
+PXD053474,HCT116,Q9UPN9,TRIM33,40.7944041968524,1,1,1,2.14501548623678,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD053474,HCT116,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD053474,HCT116,Q9Y232,CDYL,0,0,1,0,,"",""
+PXD053474,HCT116,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD054919,A549,O14929,HAT1,22.5806451612903,1,1,1,1.98774449529568,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,O15379,HDAC3,0,0,1,0,,"",""
+PXD054919,A549,O60885,BRD4,12.9032258064516,1,1,1,1.81321718011915,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,O75607,NPM3,47.9802383028189,1,1,1,2.30135899620221,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,O95251,KAT7,0,0,1,0,,"",""
+PXD054919,A549,P05783,KRT18,100,1,1,1,3.84615689195757,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,P41227,NAA10,8.83464109270561,1,1,1,1.69447955541493,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,P42568,MLLT3,0,0,1,0,,"",""
+PXD054919,A549,P49588,AARS1,87.5617553036908,1,1,1,2.92606557680733,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,P51532,SMARCA4,0,0,1,0,,"",""
+PXD054919,A549,P56524,HDAC4,0,0,1,0,,"",""
+PXD054919,A549,Q09472,EP300,0,0,1,0,,"",""
+PXD054919,A549,Q13547,HDAC1,0,0,1,0,,"",""
+PXD054919,A549,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD054919,A549,Q5JTZ9,AARS2,2.7317640220866,1,1,1,1.35673927564419,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q5SQI0,ATAT1,0,0,1,0,,"",""
+PXD054919,A549,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD054919,A549,Q8N6T7,SIRT6,0,0,1,0,,"",""
+PXD054919,A549,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD054919,A549,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD054919,A549,Q92769,HDAC2,15.6640511479221,1,1,1,1.87183860157553,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q92785,DPF2,8.57308921825051,1,1,1,1.68665509109219,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q92793,CREBBP,0,0,1,0,,"",""
+PXD054919,A549,Q92794,KAT6A,0,0,1,0,,"",""
+PXD054919,A549,Q92830,KAT2A,0,0,1,0,,"",""
+PXD054919,A549,Q92831,KAT2B,0,0,1,0,,"",""
+PXD054919,A549,Q92993,KAT5,0,0,1,0,,"",""
+PXD054919,A549,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD054919,A549,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD054919,A549,Q96EB6,SIRT1,16.5940133682069,1,1,1,1.89119172762927,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q99497,PARK7,95.6117407730311,1,1,1,3.18043798302871,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q9BWD1,ACAT2,52.8044173205463,1,1,1,2.35808790013176,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD054919,A549,Q9H7Z6,KAT8,0,0,1,0,,"",""
+PXD054919,A549,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD054919,A549,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD054919,A549,Q9H9T3,ELP3,31.2118570183086,1,1,1,2.10906525035249,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD054919,A549,Q9NTG7,SIRT3,9.41586748038361,1,1,1,1.71080854694849,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q9NXA8,SIRT5,1.7727404824179,1,1,1,1.25264526687977,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD054919,A549,Q9UKN8,GTF3C4,17.9308340598663,1,1,1,1.91755456548423,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD054919,A549,Q9ULM3,YEATS2,0,0,1,0,,"",""
+PXD054919,A549,Q9UPN9,TRIM33,24.8183667538506,1,1,1,2.02596198784338,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD054919,A549,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD054919,A549,Q9Y232,CDYL,0,0,1,0,,"",""
+PXD054919,A549,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD058534,pretreated HK-2,O14929,HAT1,48.823016564952,3,3,1,4.00802281125114,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,O15379,HDAC3,36.1843563040106,3,3,1,3.98488603474205,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,O60885,BRD4,67.0729005096388,3,3,1,4.09290789964188,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,O75607,NPM3,44.0565431569929,3,3,1,3.99415501157148,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,O95251,KAT7,42.9856500321268,3,3,1,3.99077061012375,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,P05783,KRT18,69.9721567787535,3,3,1,4.09627252224812,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,P41227,NAA10,81.5378025273078,3,3,1,4.16382007935414,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,P42568,MLLT3,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,P49588,AARS1,89.0148212728858,3,3,1,4.23095941742189,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,P51532,SMARCA4,57.5448703744737,3,3,1,4.04846735325637,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,P56524,HDAC4,27.8307112785287,2,3,0.666666666666667,3.95688017214857,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q09472,EP300,35.5417682251274,3,3,1,3.97113604345677,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q13547,HDAC1,88.9912186763761,3,3,1,4.23003362665896,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q56NI9,ESCO2,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q5JTZ9,AARS2,53.6228672723244,3,3,1,4.03902115525302,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q5SQI0,ATAT1,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q8IXJ6,SIRT2,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q8N6T7,SIRT6,28.7391978728119,3,3,1,3.95601320358404,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q8WUI4,HDAC7,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q8WYB5,KAT6B,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q92769,HDAC2,34.7662308885442,3,3,1,3.9807053551015,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q92785,DPF2,56.386224934612,3,3,1,4.03625011897868,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q92793,CREBBP,51.2519388433415,3,3,1,4.03085706913852,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q92794,KAT6A,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q92830,KAT2A,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q92831,KAT2B,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q92993,KAT5,27.800385521525,3,3,1,3.93421543567235,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q969S8,HDAC10,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q96DB2,HDAC11,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q96EB6,SIRT1,22.3190932868352,3,3,1,3.91378545685109,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q99497,PARK7,94.9651264167393,3,3,1,4.31925286478278,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9BWD1,ACAT2,88.5571054925894,3,3,1,4.2275618150799,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9BY41,HDAC8,4.1879016175493,3,3,1,3.75601189901379,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9H7Z6,KAT8,36.0890983079889,3,3,1,3.96726096473214,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9H8E8,CSRP2BP,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q9H8M2,BRD9,0,1,3,0.333333333333333,4.04646056543354,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9H9T3,ELP3,56.7250166186572,3,3,1,4.05069008179029,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9NRC8,SIRT7,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q9NTG7,SIRT3,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q9NXA8,SIRT5,35.0043591979076,3,3,1,3.96369198129555,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9UBN7,HDAC6,6.47019720806559,3,3,1,3.80445365821247,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9UKN8,GTF3C4,59.5416577425573,3,3,1,4.04990227288923,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9UKV0,HDAC9,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q9ULM3,YEATS2,18.3740191804708,3,3,1,3.89441533250685,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9UPN9,TRIM33,33.2619404583423,3,3,1,3.96800472152885,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD058534,pretreated HK-2,Q9UQL6,HDAC5,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q9Y232,CDYL,0,0,3,0,,"",""
+PXD058534,pretreated HK-2,Q9Y6E7,SIRT4,0,0,3,0,,"",""
+PXD060185,MCF10A,O14929,HAT1,0,7,20,0.35,19.7858531256646,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,O15379,HDAC3,0,3,20,0.15,18.357418841954,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,O60885,BRD4,0,8,20,0.4,19.6384687796213,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,O75607,NPM3,0,6,20,0.3,21.0386831889288,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,O95251,KAT7,0,2,20,0.1,18.794303571912,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,P05783,KRT18,91.8623768581618,20,20,1,24.3339887299532,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,P41227,NAA10,8.35462442514052,10,20,0.5,20.7988432673053,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,P42568,MLLT3,0,0,20,0,,"",""
+PXD060185,MCF10A,P49588,AARS1,51.3133298272987,14,20,0.7,21.545302568685,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,P51532,SMARCA4,0,1,20,0.05,18.4725123632228,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,P56524,HDAC4,0,0,20,0,,"",""
+PXD060185,MCF10A,Q09472,EP300,0,0,20,0,,"",""
+PXD060185,MCF10A,Q13547,HDAC1,0,0,20,0,,"",""
+PXD060185,MCF10A,Q56NI9,ESCO2,0,0,20,0,,"",""
+PXD060185,MCF10A,Q5JTZ9,AARS2,0,6,20,0.3,18.3015184166435,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q5SQI0,ATAT1,0,0,20,0,,"",""
+PXD060185,MCF10A,Q8IXJ6,SIRT2,0,0,20,0,,"",""
+PXD060185,MCF10A,Q8N6T7,SIRT6,0,0,20,0,,"",""
+PXD060185,MCF10A,Q8WUI4,HDAC7,0,0,20,0,,"",""
+PXD060185,MCF10A,Q8WYB5,KAT6B,0,0,20,0,,"",""
+PXD060185,MCF10A,Q92769,HDAC2,22.2586367448352,11,20,0.55,21.4492579857838,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q92785,DPF2,0,4,20,0.2,18.6431567155694,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q92793,CREBBP,0,0,20,0,,"",""
+PXD060185,MCF10A,Q92794,KAT6A,0,0,20,0,,"",""
+PXD060185,MCF10A,Q92830,KAT2A,0,0,20,0,,"",""
+PXD060185,MCF10A,Q92831,KAT2B,0,0,20,0,,"",""
+PXD060185,MCF10A,Q92993,KAT5,0,0,20,0,,"",""
+PXD060185,MCF10A,Q969S8,HDAC10,0,0,20,0,,"",""
+PXD060185,MCF10A,Q96DB2,HDAC11,0,0,20,0,,"",""
+PXD060185,MCF10A,Q96EB6,SIRT1,0,2,20,0.1,17.7530391653676,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q99497,PARK7,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9BWD1,ACAT2,73.7960140018067,12,20,0.6,23.4393846948322,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q9BY41,HDAC8,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9H7Z6,KAT8,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9H8E8,CSRP2BP,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9H8M2,BRD9,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9H9T3,ELP3,0,1,20,0.05,19.8449861345386,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q9NRC8,SIRT7,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9NTG7,SIRT3,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9NXA8,SIRT5,0,2,20,0.1,20.5984960230058,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q9UBN7,HDAC6,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9UKN8,GTF3C4,0,6,20,0.3,18.8788604867832,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q9UKV0,HDAC9,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9ULM3,YEATS2,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9UPN9,TRIM33,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9UQL6,HDAC5,0,0,20,0,,"",""
+PXD060185,MCF10A,Q9Y232,CDYL,0,4,20,0.2,18.3473295001812,ordinary MaxQuant evidence intensity; no PTM enrichment,data/PXD002400/search_results/msms.zip
+PXD060185,MCF10A,Q9Y6E7,SIRT4,0,0,20,0,,"",""
+PXD060185,MCF7,O14929,HAT1,0,0,1,0,,"",""
+PXD060185,MCF7,O15379,HDAC3,0,0,1,0,,"",""
+PXD060185,MCF7,O60885,BRD4,30.481110752341,1,1,1,2.15458230908091,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,O75607,NPM3,79.2379722311915,1,1,1,2.72928160381657,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,O95251,KAT7,12.8511462705844,1,1,1,1.8818171535197,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,P05783,KRT18,99.9677106877623,1,1,1,3.98300896100107,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,P41227,NAA10,27.6073619631902,1,1,1,2.12220526297479,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,P42568,MLLT3,0,0,1,0,,"",""
+PXD060185,MCF7,P49588,AARS1,71.3270907329674,1,1,1,2.62037022800863,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,P51532,SMARCA4,60.4133031966419,1,1,1,2.47884835456137,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,P56524,HDAC4,0,0,1,0,,"",""
+PXD060185,MCF7,Q09472,EP300,0,0,1,0,,"",""
+PXD060185,MCF7,Q13547,HDAC1,45.2373264449467,1,1,1,2.32277746284088,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD060185,MCF7,Q5JTZ9,AARS2,43.6228608330643,1,1,1,2.30135689106602,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q5SQI0,ATAT1,0,0,1,0,,"",""
+PXD060185,MCF7,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD060185,MCF7,Q8N6T7,SIRT6,0,0,1,0,,"",""
+PXD060185,MCF7,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD060185,MCF7,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD060185,MCF7,Q92769,HDAC2,35.9380045205037,1,1,1,2.21866413600365,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q92785,DPF2,24.5398773006135,1,1,1,2.08343937612793,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q92793,CREBBP,0,0,1,0,,"",""
+PXD060185,MCF7,Q92794,KAT6A,0,0,1,0,,"",""
+PXD060185,MCF7,Q92830,KAT2A,0,0,1,0,,"",""
+PXD060185,MCF7,Q92831,KAT2B,0,0,1,0,,"",""
+PXD060185,MCF7,Q92993,KAT5,0,0,1,0,,"",""
+PXD060185,MCF7,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD060185,MCF7,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD060185,MCF7,Q96EB6,SIRT1,0,0,1,0,,"",""
+PXD060185,MCF7,Q99497,PARK7,89.3122376493381,1,1,1,2.92680617205631,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q9BWD1,ACAT2,54.0200193735873,1,1,1,2.41237845125235,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD060185,MCF7,Q9H7Z6,KAT8,0,0,1,0,,"",""
+PXD060185,MCF7,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD060185,MCF7,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD060185,MCF7,Q9H9T3,ELP3,0,0,1,0,,"",""
+PXD060185,MCF7,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD060185,MCF7,Q9NTG7,SIRT3,0,0,1,0,,"",""
+PXD060185,MCF7,Q9NXA8,SIRT5,4.19761059089441,1,1,1,1.56642000692392,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD060185,MCF7,Q9UKN8,GTF3C4,25.3793994187924,1,1,1,2.09240118443934,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD060185,MCF7,Q9ULM3,YEATS2,0,0,1,0,,"",""
+PXD060185,MCF7,Q9UPN9,TRIM33,67.0003228931224,1,1,1,2.56614744777022,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MCF7,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD060185,MCF7,Q9Y232,CDYL,0,0,1,0,,"",""
+PXD060185,MCF7,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,O14929,HAT1,19.3763326226013,1,1,1,1.88771793373312,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,O15379,HDAC3,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,O60885,BRD4,26.5724946695096,1,1,1,2.00872688603218,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,O75607,NPM3,31.636460554371,1,1,1,2.07275749530992,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,O95251,KAT7,0.133262260127932,1,1,1,0.400572931369522,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,P05783,KRT18,99.9200426439232,1,1,1,3.71550776316503,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,P41227,NAA10,13.6993603411514,1,1,1,1.77655374243738,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,P42568,MLLT3,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,P49588,AARS1,77.4786780383795,1,1,1,2.7172497976701,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,P51532,SMARCA4,56.8496801705757,1,1,1,2.4197823580337,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,P56524,HDAC4,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q09472,EP300,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q13547,HDAC1,34.6215351812367,1,1,1,2.11342772683274,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q5JTZ9,AARS2,41.9509594882729,1,1,1,2.2189889033416,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q5SQI0,ATAT1,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q8N6T7,SIRT6,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q92769,HDAC2,43.7899786780384,1,1,1,2.24307584955573,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q92785,DPF2,38.3528784648188,1,1,1,2.16937370017684,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q92793,CREBBP,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q92794,KAT6A,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q92830,KAT2A,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q92831,KAT2B,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q92993,KAT5,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q96EB6,SIRT1,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q99497,PARK7,92.6972281449893,1,1,1,3.03548099101977,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q9BWD1,ACAT2,66.8976545842218,1,1,1,2.55863284141204,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9H7Z6,KAT8,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9H9T3,ELP3,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9NTG7,SIRT3,5.57036247334755,1,1,1,1.49152821858896,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q9NXA8,SIRT5,9.24840085287846,1,1,1,1.64085615424473,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9UKN8,GTF3C4,18.4168443496802,1,1,1,1.87675421578079,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9ULM3,YEATS2,11.1673773987207,1,1,1,1.70931554599826,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q9UPN9,TRIM33,13.4861407249467,1,1,1,1.77513736182644,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,MDA-MB-468,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9Y232,CDYL,0,0,1,0,,"",""
+PXD060185,MDA-MB-468,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD060185,T-47D,O14929,HAT1,14.8306290919442,1,1,1,1.9458478846738,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,O15379,HDAC3,0,0,1,0,,"",""
+PXD060185,T-47D,O60885,BRD4,23.0287503558212,1,1,1,2.06785376964084,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,O75607,NPM3,74.8363222317108,1,1,1,2.69587224392271,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,O95251,KAT7,0,0,1,0,,"",""
+PXD060185,T-47D,P05783,KRT18,99.9430686023342,1,1,1,3.71822895541455,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,P41227,NAA10,18.3603757472246,1,1,1,2.00162112769409,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,P42568,MLLT3,0,0,1,0,,"",""
+PXD060185,T-47D,P49588,AARS1,86.8203814403644,1,1,1,2.90458613996837,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,P51532,SMARCA4,54.4264161685169,1,1,1,2.42594629652418,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,P56524,HDAC4,0,0,1,0,,"",""
+PXD060185,T-47D,Q09472,EP300,0,0,1,0,,"",""
+PXD060185,T-47D,Q13547,HDAC1,27.0993452889268,1,1,1,2.12287340615523,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD060185,T-47D,Q5JTZ9,AARS2,22.6586962709935,1,1,1,2.06247091206691,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q5SQI0,ATAT1,0,0,1,0,,"",""
+PXD060185,T-47D,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD060185,T-47D,Q8N6T7,SIRT6,0,0,1,0,,"",""
+PXD060185,T-47D,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD060185,T-47D,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD060185,T-47D,Q92769,HDAC2,11.8986621121549,1,1,1,1.88530140757065,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q92785,DPF2,0.967833760318816,1,1,1,1.26027685717763,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q92793,CREBBP,0,0,1,0,,"",""
+PXD060185,T-47D,Q92794,KAT6A,0,0,1,0,,"",""
+PXD060185,T-47D,Q92830,KAT2A,0,0,1,0,,"",""
+PXD060185,T-47D,Q92831,KAT2B,0,0,1,0,,"",""
+PXD060185,T-47D,Q92993,KAT5,0,0,1,0,,"",""
+PXD060185,T-47D,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD060185,T-47D,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD060185,T-47D,Q96EB6,SIRT1,0,0,1,0,,"",""
+PXD060185,T-47D,Q99497,PARK7,94.1360660404213,1,1,1,3.09890891162539,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q9BWD1,ACAT2,68.2892115001423,1,1,1,2.60544466345733,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD060185,T-47D,Q9H7Z6,KAT8,0,0,1,0,,"",""
+PXD060185,T-47D,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD060185,T-47D,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD060185,T-47D,Q9H9T3,ELP3,1.28095644748079,1,1,1,1.29099577191619,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD060185,T-47D,Q9NTG7,SIRT3,0,0,1,0,,"",""
+PXD060185,T-47D,Q9NXA8,SIRT5,0,0,1,0,,"",""
+PXD060185,T-47D,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD060185,T-47D,Q9UKN8,GTF3C4,18.8727583262169,1,1,1,2.01009306226083,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD060185,T-47D,Q9ULM3,YEATS2,0,0,1,0,,"",""
+PXD060185,T-47D,Q9UPN9,TRIM33,20.8368915456874,1,1,1,2.04042661817333,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD060185,T-47D,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD060185,T-47D,Q9Y232,CDYL,0,0,1,0,,"",""
+PXD060185,T-47D,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,O14929,HAT1,70.8871454435727,1,1,1,30.6652618500658,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,O15379,HDAC3,40.2051901025951,1,1,1,27.77843793614,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,O60885,BRD4,57.5980687990344,1,1,1,29.3540538870969,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,O75607,NPM3,0.675920337960169,1,1,1,21.8400744634834,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,O95251,KAT7,62.9209414604707,1,1,1,29.8505808391351,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,P05783,KRT18,99.6499698249849,1,1,1,38.2164378434152,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,P41227,NAA10,54.5564272782136,1,1,1,29.0741607017076,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,P42568,MLLT3,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,P49588,AARS1,90.8388654194327,1,1,1,33.3159476175887,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,P51532,SMARCA4,50.8267954133977,1,1,1,28.7449970618504,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,P56524,HDAC4,11.1285455642728,1,1,1,24.7831177930082,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q09472,EP300,56.3669281834641,1,1,1,29.2373339425224,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q13547,HDAC1,70.0784550392275,1,1,1,30.5842343153147,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q5JTZ9,AARS2,36.3065781532891,1,1,1,27.4606086332303,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q5SQI0,ATAT1,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q8IXJ6,SIRT2,46.6505733252867,1,1,1,28.3939481452554,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q8N6T7,SIRT6,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q8WUI4,HDAC7,53.6270368135184,1,1,1,28.9864984261957,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q92769,HDAC2,83.5968617984309,1,1,1,32.108925813748,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q92785,DPF2,60.19312009656,1,1,1,29.6000103991501,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q92793,CREBBP,96.8376584188292,1,1,1,35.1361397136116,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q92794,KAT6A,28.5334942667471,1,1,1,26.7839420313899,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q92830,KAT2A,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q92831,KAT2B,6.0108630054315,1,1,1,23.9075656186218,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q92993,KAT5,6.16777308388654,1,1,1,23.9456560996806,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q969S8,HDAC10,31.2733856366928,1,1,1,27.0019579079499,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q96EB6,SIRT1,11.6173808086904,1,1,1,24.8495731356428,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q99497,PARK7,97.1997585998793,1,1,1,35.3191820589152,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9BWD1,ACAT2,82.3536511768256,1,1,1,31.98162125963,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9BY41,HDAC8,16.8678334339167,1,1,1,25.5445107951077,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9H7Z6,KAT8,55.872057936029,1,1,1,29.1969257617159,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q9H8M2,BRD9,31.5389257694629,1,1,1,27.0278093456721,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9H9T3,ELP3,42.2691611345806,1,1,1,27.9702132614041,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q9NTG7,SIRT3,30.9957754978877,1,1,1,26.983375687211,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9NXA8,SIRT5,28.123114061557,1,1,1,26.7500868514144,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9UBN7,HDAC6,67.7489438744719,1,1,1,30.3172153054422,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9UKN8,GTF3C4,56.5721182860591,1,1,1,29.2498628141355,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q9ULM3,YEATS2,0,0,1,0,,"",""
+PXD063047,normal pregnancy placenta,Q9UPN9,TRIM33,93.9649969824985,1,1,1,34.0419703134246,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9UQL6,HDAC5,37.5256487628244,1,1,1,27.5547916525381,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9Y232,CDYL,47.5558237779119,1,1,1,28.4841608273538,ordinary MaxQuant protein intensity; no PTM enrichment,data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt
+PXD063047,normal pregnancy placenta,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD063266,PC-3M,O14929,HAT1,72.563946406821,1,1,1,23.7258805578917,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,O15379,HDAC3,0,0,1,0,,"",""
+PXD063266,PC-3M,O60885,BRD4,47.3812423873325,1,1,1,21.4384756315385,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,O75607,NPM3,54.5980511571255,1,1,1,22.0638496045115,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,O95251,KAT7,0,0,1,0,,"",""
+PXD063266,PC-3M,P05783,KRT18,98.3556638246041,1,1,1,29.1415579744645,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,P41227,NAA10,55.816077953715,1,1,1,22.1491718560879,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,P42568,MLLT3,0,0,1,0,,"",""
+PXD063266,PC-3M,P49588,AARS1,91.5042630937881,1,1,1,26.3912133140164,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,P51532,SMARCA4,58.830694275274,1,1,1,22.4419991246381,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,P56524,HDAC4,0,0,1,0,,"",""
+PXD063266,PC-3M,Q09472,EP300,0,0,1,0,,"",""
+PXD063266,PC-3M,Q13547,HDAC1,55.9987819732034,1,1,1,22.1765776740683,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD063266,PC-3M,Q5JTZ9,AARS2,0,0,1,0,,"",""
+PXD063266,PC-3M,Q5SQI0,ATAT1,0,0,1,0,,"",""
+PXD063266,PC-3M,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD063266,PC-3M,Q8N6T7,SIRT6,0,0,1,0,,"",""
+PXD063266,PC-3M,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD063266,PC-3M,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD063266,PC-3M,Q92769,HDAC2,0,0,1,0,,"",""
+PXD063266,PC-3M,Q92785,DPF2,0,0,1,0,,"",""
+PXD063266,PC-3M,Q92793,CREBBP,0,0,1,0,,"",""
+PXD063266,PC-3M,Q92794,KAT6A,0,0,1,0,,"",""
+PXD063266,PC-3M,Q92830,KAT2A,0,0,1,0,,"",""
+PXD063266,PC-3M,Q92831,KAT2B,0,0,1,0,,"",""
+PXD063266,PC-3M,Q92993,KAT5,0,0,1,0,,"",""
+PXD063266,PC-3M,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD063266,PC-3M,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD063266,PC-3M,Q96EB6,SIRT1,0,0,1,0,,"",""
+PXD063266,PC-3M,Q99497,PARK7,92.8745432399513,1,1,1,26.6971033289472,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,Q9BWD1,ACAT2,17.326431181486,1,1,1,18.9626277563958,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9H7Z6,KAT8,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9H9T3,ELP3,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9NTG7,SIRT3,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9NXA8,SIRT5,22.9293544457978,1,1,1,19.4526816373473,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9UKN8,GTF3C4,25.700365408039,1,1,1,19.6799284666177,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9ULM3,YEATS2,0.822168087697929,1,1,1,15.1622733024108,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,Q9UPN9,TRIM33,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD063266,PC-3M,Q9Y232,CDYL,42.326431181486,1,1,1,21.0297192643207,ordinary PC-3M heavy-channel SILAC proteome protein intensity,data/PXD022005/search_results/txt_proteomics.zip
+PXD063266,PC-3M,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD064912,human sperm,O14929,HAT1,17.5283111767602,32,33,0.96969696969697,8.65512064852207,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,O15379,HDAC3,2.86291280589214,25,33,0.757575757575758,7.00801598637078,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,O60885,BRD4,31.5783218445448,32,33,0.96969696969697,9.33482699221103,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,O75607,NPM3,0.615894824114651,18,33,0.545454545454545,7.07938092402939,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,O95251,KAT7,0,0,33,0,,"",""
+PXD064912,human sperm,P05783,KRT18,78.5547513425169,33,33,1,12.6100162024802,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,P41227,NAA10,75.0214381967414,33,33,1,12.3193296437333,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,P42568,MLLT3,0,0,33,0,,"",""
+PXD064912,human sperm,P49588,AARS1,89.2566851219225,33,33,1,13.9247827892273,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,P51532,SMARCA4,30.1933799976272,33,33,1,9.30391797945147,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,P56524,HDAC4,3.96768828700404,26,33,0.787878787878788,7.59408473063775,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q09472,EP300,0,0,33,0,,"",""
+PXD064912,human sperm,Q13547,HDAC1,54.1582631391624,33,33,1,10.8053309870733,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q56NI9,ESCO2,0,0,33,0,,"",""
+PXD064912,human sperm,Q5JTZ9,AARS2,50.1517174414371,33,33,1,10.4799890406776,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q5SQI0,ATAT1,33.5295502707794,33,33,1,9.611845435737,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q8IXJ6,SIRT2,55.1537283543409,33,33,1,10.7318615557149,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q8N6T7,SIRT6,0,2,33,0.0606060606060606,11.023382098911,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q8WUI4,HDAC7,0,0,33,0,,"",""
+PXD064912,human sperm,Q8WYB5,KAT6B,0,0,33,0,,"",""
+PXD064912,human sperm,Q92769,HDAC2,27.7469210335668,33,33,1,9.07758473281256,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q92785,DPF2,0,0,33,0,,"",""
+PXD064912,human sperm,Q92793,CREBBP,12.2466318728001,22,33,0.666666666666667,8.70594224551587,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q92794,KAT6A,0,0,33,0,,"",""
+PXD064912,human sperm,Q92830,KAT2A,0,0,33,0,,"",""
+PXD064912,human sperm,Q92831,KAT2B,0,0,33,0,,"",""
+PXD064912,human sperm,Q92993,KAT5,0,0,33,0,,"",""
+PXD064912,human sperm,Q969S8,HDAC10,14.9753220175755,25,33,0.757575757575758,8.58642521666689,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q96DB2,HDAC11,87.1100861755067,33,33,1,13.6527609626926,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q96EB6,SIRT1,7.40168706189854,29,33,0.878787878787879,7.72140672285298,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q99497,PARK7,95.0282893944866,33,33,1,15.164814573231,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9BWD1,ACAT2,81.9616553659107,33,33,1,13.095925578618,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9BY41,HDAC8,0,0,33,0,,"",""
+PXD064912,human sperm,Q9H7Z6,KAT8,10.2082093991672,23,33,0.696969696969697,8.30267977855247,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9H8E8,CSRP2BP,0,0,33,0,,"",""
+PXD064912,human sperm,Q9H8M2,BRD9,0,0,33,0,,"",""
+PXD064912,human sperm,Q9H9T3,ELP3,73.2372558361124,33,33,1,12.2300034257909,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9NRC8,SIRT7,0,0,33,0,,"",""
+PXD064912,human sperm,Q9NTG7,SIRT3,52.9462207521744,33,33,1,10.6820223290434,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9NXA8,SIRT5,60.0665557404326,33,33,1,11.1752748138316,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9UBN7,HDAC6,90.2378709373528,33,33,1,14.1877057606907,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9UKN8,GTF3C4,69.6947316592811,33,33,1,11.9774206475827,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9UKV0,HDAC9,0,0,33,0,,"",""
+PXD064912,human sperm,Q9ULM3,YEATS2,0,0,33,0,,"",""
+PXD064912,human sperm,Q9UPN9,TRIM33,1.41903171953255,23,33,0.696969696969697,7.02043201169353,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9UQL6,HDAC5,0,11,33,0.333333333333333,6.58280169849965,ordinary Spectronaut PG.Quantity; human sperm reference,data/PXD066517/search_results/20240275.tsv
+PXD064912,human sperm,Q9Y232,CDYL,0,0,33,0,,"",""
+PXD064912,human sperm,Q9Y6E7,SIRT4,0,0,33,0,,"",""
+PXD066054,BPH,O14929,HAT1,45.9259259259259,5,5,1,7.0232382800125,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,O15379,HDAC3,29.6059498956159,5,5,1,6.42483776108321,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,O60885,BRD4,63.0899091955493,5,5,1,7.94412070626513,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,O75607,NPM3,3.70322245322245,5,5,1,4.65411208192517,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,O95251,KAT7,44.4430234045274,5,5,1,6.98604217468505,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,P05783,KRT18,99.3486590038314,5,5,1,13.970699767289,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,P41227,NAA10,67.7884615384615,5,5,1,8.23022952396257,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,P42568,MLLT3,0,0,5,0,,"",""
+PXD066054,BPH,P49588,AARS1,87.0824634655532,5,5,1,9.93573985674381,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,P51532,SMARCA4,66.9754697286013,5,5,1,8.21889324808914,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,P56524,HDAC4,15.696764091858,5,5,1,5.76004762831385,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q09472,EP300,12.8021486123545,5,5,1,5.48934869094637,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q13547,HDAC1,82.669399257077,5,5,1,9.55136890738942,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q56NI9,ESCO2,0,0,5,0,,"",""
+PXD066054,BPH,Q5JTZ9,AARS2,41.2201048727459,5,5,1,6.84082334280426,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q5SQI0,ATAT1,15.0063856960409,5,5,1,5.64989764197639,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q8IXJ6,SIRT2,62.4888093106535,5,5,1,7.91517184749155,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q8N6T7,SIRT6,0,0,5,0,,"",""
+PXD066054,BPH,Q8WUI4,HDAC7,28.3653846153846,5,5,1,6.25553404157131,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q8WYB5,KAT6B,0,0,5,0,,"",""
+PXD066054,BPH,Q92769,HDAC2,66.4659920584091,5,5,1,8.19141877205742,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q92785,DPF2,60.2378820821077,5,5,1,7.78785892961254,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q92793,CREBBP,34.3281670295888,5,5,1,6.5953263529091,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q92794,KAT6A,16.5970772442589,4,5,0.8,5.86113873166248,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q92830,KAT2A,4.44386694386694,4,5,0.8,4.99168046190557,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q92831,KAT2B,0,0,5,0,,"",""
+PXD066054,BPH,Q92993,KAT5,2.51950377286098,3,5,0.6,5.50382974049553,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q969S8,HDAC10,0,0,5,0,,"",""
+PXD066054,BPH,Q96DB2,HDAC11,0,0,5,0,,"",""
+PXD066054,BPH,Q96EB6,SIRT1,10.6768837803321,5,5,1,5.31308964848052,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q99497,PARK7,96.7208915076214,5,5,1,12.1380055006721,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9BWD1,ACAT2,76.6107339567055,5,5,1,8.94208991697628,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9BY41,HDAC8,87.9438058748404,5,5,1,10.0657372556302,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9H7Z6,KAT8,43.7779767233662,5,5,1,7.00426230689668,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9H8E8,CSRP2BP,16.0506458626423,5,5,1,5.67668647880099,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9H8M2,BRD9,31.7697505197505,5,5,1,6.4426227422032,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9H9T3,ELP3,56.2603913543931,5,5,1,7.56946822967413,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9NRC8,SIRT7,0,0,5,0,,"",""
+PXD066054,BPH,Q9NTG7,SIRT3,40.5789675931856,5,5,1,6.82664720650071,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9NXA8,SIRT5,63.2433815065865,5,5,1,7.95287638902353,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9UBN7,HDAC6,42.9932150313152,5,5,1,6.94857781767416,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9UKN8,GTF3C4,39.5191200920834,5,5,1,6.78904194499223,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9UKV0,HDAC9,0,0,5,0,,"",""
+PXD066054,BPH,Q9ULM3,YEATS2,6.73052362707535,3,5,0.6,5.59336672932326,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9UPN9,TRIM33,30.779054916986,5,5,1,6.406683810824,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9UQL6,HDAC5,16.0496989880876,5,5,1,5.72932781905756,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9Y232,CDYL,29.3643688451209,5,5,1,6.35153076904983,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,BPH,Q9Y6E7,SIRT4,0,0,5,0,,"",""
+PXD066054,prostate cancer,O14929,HAT1,27.7748759467224,5,5,1,6.40511743609749,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,O15379,HDAC3,44.2151997910682,5,5,1,7.09796732564542,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,O60885,BRD4,60.6299212598425,5,5,1,7.83007026902703,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,O75607,NPM3,15.1115217104395,5,5,1,5.54926082407253,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,O95251,KAT7,45.3773831287542,5,5,1,7.13054306986636,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,P05783,KRT18,99.1250979367981,5,5,1,13.4448480747451,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,P41227,NAA10,64.9861422726673,5,5,1,7.87580970938629,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,P42568,MLLT3,0,0,5,0,,"",""
+PXD066054,prostate cancer,P49588,AARS1,85.4112441436752,5,5,1,9.78497394768965,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,P51532,SMARCA4,72.3192342517139,5,5,1,8.49932634132672,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,P56524,HDAC4,25.5335661622041,5,5,1,6.09824256432761,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q09472,EP300,16.4403238443458,5,5,1,5.79702323241992,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q13547,HDAC1,85.5879635739739,5,5,1,9.64885707802159,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q56NI9,ESCO2,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q5JTZ9,AARS2,52.8309357265409,5,5,1,7.30745695937698,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q5SQI0,ATAT1,9.4347581552306,5,5,1,5.473887173861,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q8IXJ6,SIRT2,50.1697571167407,5,5,1,7.25892554149832,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q8N6T7,SIRT6,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q8WUI4,HDAC7,26.249349297241,5,5,1,6.09205043036712,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q8WYB5,KAT6B,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q92769,HDAC2,76.273178375555,5,5,1,8.87584063717932,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q92785,DPF2,65.9441107338731,5,5,1,8.18980450509236,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q92793,CREBBP,37.5424392791852,5,5,1,6.65186673739013,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q92794,KAT6A,15.2259075476626,4,5,0.8,5.75017992830399,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q92830,KAT2A,18.0856620527553,4,5,0.8,5.86745492017795,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q92831,KAT2B,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q92993,KAT5,4.25698615826587,3,5,0.6,5.24964139738949,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q969S8,HDAC10,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q96DB2,HDAC11,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q96EB6,SIRT1,25.624110723063,5,5,1,6.10175259142245,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q99497,PARK7,97.5320047512208,5,5,1,12.2932915982162,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9BWD1,ACAT2,66.5929203539823,5,5,1,8.21047991337944,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9BY41,HDAC8,91.5382606424654,5,5,1,10.5780175476829,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9H7Z6,KAT8,48.2343810632518,5,5,1,7.10031456759464,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9H8E8,CSRP2BP,11.8177069731,4,5,0.8,5.59093119128124,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9H8M2,BRD9,28.0190048831992,5,5,1,6.16342656532918,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9H9T3,ELP3,57.4052515845298,5,5,1,7.57896724322192,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9NRC8,SIRT7,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q9NTG7,SIRT3,41.4939949848225,5,5,1,6.74168659313852,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9NXA8,SIRT5,68.7491915664209,5,5,1,8.24791303062135,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9UBN7,HDAC6,52.2254034357106,5,5,1,7.29514043285977,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9UKN8,GTF3C4,54.6390391975716,5,5,1,7.34462600910287,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9UKV0,HDAC9,0,0,5,0,,"",""
+PXD066054,prostate cancer,Q9ULM3,YEATS2,29.8926400206959,4,5,0.8,6.3248223928997,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9UPN9,TRIM33,36.6834820851119,5,5,1,6.57688079984119,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9UQL6,HDAC5,31.1732875808367,5,5,1,6.28958877565832,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9Y232,CDYL,27.4206142634045,5,5,1,6.15256476542446,ordinary Spectronaut PG.Quantity,data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv
+PXD066054,prostate cancer,Q9Y6E7,SIRT4,0,0,5,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,O14929,HAT1,87.6762388647371,2,2,1,11.5535371680584,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,O15379,HDAC3,34.3917323800981,2,2,1,7.93237217598482,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,O60885,BRD4,58.9971457770314,2,2,1,9.25635063281245,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,O75607,NPM3,74.2579354985136,2,2,1,10.2559165673945,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,O95251,KAT7,58.9939023418399,2,2,1,9.27271299700523,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,P05783,KRT18,99.8232017024608,2,2,1,15.6775582261524,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,P41227,NAA10,91.6328616246949,2,2,1,12.1176685893616,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,P42568,MLLT3,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,P49588,AARS1,92.4346961817675,2,2,1,12.2713758138216,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,P51532,SMARCA4,74.7835616647955,2,2,1,10.2997104213767,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,P56524,HDAC4,7.23668406486743,2,2,1,6.0836802558324,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q09472,EP300,11.439575200838,2,2,1,6.41948963700811,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q13547,HDAC1,92.4830911037115,2,2,1,12.2486731078021,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q56NI9,ESCO2,7.77861825516894,1,2,0.5,6.8600739165947,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q5JTZ9,AARS2,31.4796455714279,2,2,1,7.75951382149517,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q5SQI0,ATAT1,9.65311181706962,2,2,1,6.34526570306649,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q8IXJ6,SIRT2,20.9937247896628,2,2,1,7.15926079362121,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q8N6T7,SIRT6,54.2626309088695,2,2,1,8.97944000489823,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q8WUI4,HDAC7,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,Q8WYB5,KAT6B,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,Q92769,HDAC2,89.9259157962785,2,2,1,11.8387612432943,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q92785,DPF2,67.8015103729361,2,2,1,9.80304183946971,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q92793,CREBBP,45.1018645847479,2,2,1,8.47590062455441,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q92794,KAT6A,47.4094212946582,2,2,1,8.60751748077853,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q92830,KAT2A,12.7500983390424,2,2,1,6.60845029742476,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q92831,KAT2B,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,Q92993,KAT5,6.67691177792526,2,2,1,5.71179339560704,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q969S8,HDAC10,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,Q96DB2,HDAC11,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,Q96EB6,SIRT1,53.9278828958919,2,2,1,8.96513812770052,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q99497,PARK7,95.376477556066,2,2,1,13.0266621622803,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9BWD1,ACAT2,76.4917251760062,2,2,1,10.4373585506098,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9BY41,HDAC8,13.7485185390612,2,2,1,6.68598105381707,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9H7Z6,KAT8,34.1217494722843,2,2,1,7.87658795100346,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9H8E8,CSRP2BP,24.513130891975,2,2,1,7.34706854664679,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9H8M2,BRD9,20.8882390330451,2,2,1,7.14109443311771,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9H9T3,ELP3,67.141115091425,2,2,1,9.76351946561254,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9NRC8,SIRT7,26.6785534183416,2,2,1,7.48254445705567,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9NTG7,SIRT3,16.8638978089998,2,2,1,6.88600433867362,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9NXA8,SIRT5,48.909391330736,2,2,1,8.70191871411701,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9UBN7,HDAC6,32.4173171069132,2,2,1,7.80453700559172,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9UKN8,GTF3C4,65.4867718846606,2,2,1,9.66190424009647,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9UKV0,HDAC9,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,Q9ULM3,YEATS2,11.3633457077957,2,2,1,6.49836965650213,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9UPN9,TRIM33,70.3102285992249,2,2,1,9.97665344341747,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9UQL6,HDAC5,0,0,2,0,,"",""
+PXD066351,HCT116 control and Roseburia co-culture,Q9Y232,CDYL,60.1119933467342,2,2,1,9.31070772983414,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD066351,HCT116 control and Roseburia co-culture,Q9Y6E7,SIRT4,9.70828209183878,2,2,1,5.80996283180245,ordinary Spectronaut PG.Quantity,data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv
+PXD070007,glioblastoma stem cells,O14929,HAT1,78.7509885420835,6,6,1,20.8076783861735,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,O15379,HDAC3,45.5991612911384,6,6,1,18.4660722907857,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,O60885,BRD4,69.0654709252751,6,6,1,19.9528886368738,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,O75607,NPM3,61.5596178647884,6,6,1,19.4769456699712,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,O95251,KAT7,42.9974409571834,6,6,1,18.2674495412005,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,P05783,KRT18,0,2,6,0.333333333333333,16.1371304108791,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,P41227,NAA10,79.2776029301837,6,6,1,20.8629383071116,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,P42568,MLLT3,3.14099903140999,3,6,0.5,15.4124044513379,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,P49588,AARS1,97.8654208157038,6,6,1,24.1221471427125,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,P51532,SMARCA4,83.19592327549,6,6,1,21.2522351964768,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,P56524,HDAC4,36.1002242498631,6,6,1,17.8270159287199,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q09472,EP300,38.552174346956,6,6,1,17.9795257592375,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q13547,HDAC1,81.0451212855022,6,6,1,21.0634634166026,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q56NI9,ESCO2,4.18402662263805,5,6,0.833333333333333,14.7936541075062,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q5JTZ9,AARS2,64.044173203926,6,6,1,19.6302842811966,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q5SQI0,ATAT1,48.2068600814984,6,6,1,18.607995807354,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q8IXJ6,SIRT2,53.6283638942679,6,6,1,18.9238013570716,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q8N6T7,SIRT6,29.7139786872372,6,6,1,17.369002313256,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q8WUI4,HDAC7,23.029823020034,6,6,1,16.7207878042402,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q8WYB5,KAT6B,0,0,6,0,,"",""
+PXD070007,glioblastoma stem cells,Q92769,HDAC2,91.6903674309187,6,6,1,22.3671089680681,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q92785,DPF2,54.0624666964462,6,6,1,18.9706484897742,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q92793,CREBBP,7.10067655541498,6,6,1,15.1028987589695,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q92794,KAT6A,8.63822344392614,5,6,0.833333333333333,15.3170239043348,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q92830,KAT2A,0,0,6,0,,"",""
+PXD070007,glioblastoma stem cells,Q92831,KAT2B,1.5512381941773,5,6,0.833333333333333,13.7234476384229,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q92993,KAT5,12.0016048463936,6,6,1,15.6783202333173,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q969S8,HDAC10,0,0,6,0,,"",""
+PXD070007,glioblastoma stem cells,Q96DB2,HDAC11,0,0,6,0,,"",""
+PXD070007,glioblastoma stem cells,Q96EB6,SIRT1,25.3422500375623,6,6,1,17.0114979417625,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q99497,PARK7,94.8364078406337,6,6,1,22.988285390713,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9BWD1,ACAT2,93.421250476755,6,6,1,22.6944509297475,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9BY41,HDAC8,22.566305306972,5,6,0.833333333333333,16.9396366014371,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9H7Z6,KAT8,32.0600665864657,6,6,1,17.4429388079486,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9H8E8,CSRP2BP,0,0,6,0,,"",""
+PXD070007,glioblastoma stem cells,Q9H8M2,BRD9,37.3043660398802,6,6,1,17.8567922642945,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9H9T3,ELP3,62.1332563203105,6,6,1,19.5148139921941,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9NRC8,SIRT7,0,0,6,0,,"",""
+PXD070007,glioblastoma stem cells,Q9NTG7,SIRT3,8.22428439346169,4,6,0.666666666666667,15.9572802683336,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9NXA8,SIRT5,23.8790007372742,6,6,1,16.7794866119337,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9UBN7,HDAC6,47.7347858607556,6,6,1,18.5998919072454,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9UKN8,GTF3C4,79.1761804734201,6,6,1,20.8319132472526,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9UKV0,HDAC9,0,0,6,0,,"",""
+PXD070007,glioblastoma stem cells,Q9ULM3,YEATS2,33.238901240766,6,6,1,17.5699095033173,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9UPN9,TRIM33,58.9048625492626,6,6,1,19.3101699893955,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9UQL6,HDAC5,3.28190391848383,5,6,0.833333333333333,14.3656389582345,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9Y232,CDYL,33.0251206434665,6,6,1,17.616778059332,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,glioblastoma stem cells,Q9Y6E7,SIRT4,0,0,6,0,,"",""
+PXD070007,neural stem cells,O14929,HAT1,83.8067953398842,2,2,1,21.2826254351077,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,O15379,HDAC3,50.7800105625304,2,2,1,18.7950205939647,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,O60885,BRD4,76.3621627175781,2,2,1,20.5646256776236,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,O75607,NPM3,61.9979626465171,2,2,1,19.5189443893296,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,O95251,KAT7,52.8535572211135,2,2,1,18.9182426309975,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,P05783,KRT18,0.122938964420017,1,2,0.5,13.3611213347348,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,P41227,NAA10,81.9097932014171,2,2,1,21.092791311527,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,P42568,MLLT3,9.68419655749896,2,2,1,15.6750219830951,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,P49588,AARS1,95.166602660242,2,2,1,23.0143977190555,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,P51532,SMARCA4,92.3984753224357,2,2,1,22.4434468025747,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,P56524,HDAC4,19.5077089584322,2,2,1,16.6518777357701,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q09472,EP300,45.8947720095634,2,2,1,18.4847157771322,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q13547,HDAC1,80.1159767429414,2,2,1,20.8996433766236,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q56NI9,ESCO2,9.00247772496606,2,2,1,15.6117046023113,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q5JTZ9,AARS2,67.1891224336903,2,2,1,19.8514846467888,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q5SQI0,ATAT1,43.1536286097712,2,2,1,18.295312570523,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q8IXJ6,SIRT2,15.656000180131,2,2,1,16.2813267398592,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q8N6T7,SIRT6,28.9855383567637,2,2,1,17.3562237097627,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q8WUI4,HDAC7,31.3281713993193,2,2,1,17.5309422655299,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q8WYB5,KAT6B,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q92769,HDAC2,95.6880792871989,2,2,1,23.167287498731,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q92785,DPF2,77.9849755315103,2,2,1,20.6999653182265,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q92793,CREBBP,11.0381739861815,2,2,1,15.8353273574951,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q92794,KAT6A,31.0370212824233,2,2,1,17.5089766779192,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q92830,KAT2A,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q92831,KAT2B,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q92993,KAT5,24.9818776821682,2,2,1,17.0762535100288,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q969S8,HDAC10,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q96DB2,HDAC11,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q96EB6,SIRT1,32.6482524481722,2,2,1,17.6219778692327,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q99497,PARK7,87.3233441582746,2,2,1,21.6764406977647,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9BWD1,ACAT2,98.2678588636912,2,2,1,24.2140251118292,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9BY41,HDAC8,18.4981164803787,2,2,1,16.4880223626428,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9H7Z6,KAT8,49.5936425195113,2,2,1,18.7200272930007,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9H8E8,CSRP2BP,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q9H8M2,BRD9,42.7996594987032,2,2,1,18.2887118721129,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9H9T3,ELP3,58.7815862463958,2,2,1,19.3012562265643,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9NRC8,SIRT7,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q9NTG7,SIRT3,12.8942538809864,2,2,1,16.0161655460032,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9NXA8,SIRT5,24.6111473174727,2,2,1,17.0543747820579,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9UBN7,HDAC6,45.4536359780015,2,2,1,18.4601029067522,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9UKN8,GTF3C4,86.5648680259217,2,2,1,21.6060745267085,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9UKV0,HDAC9,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q9ULM3,YEATS2,47.4332135456806,2,2,1,18.5819485268757,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9UPN9,TRIM33,63.0139015065048,2,2,1,19.5856307267009,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9UQL6,HDAC5,0,0,2,0,,"",""
+PXD070007,neural stem cells,Q9Y232,CDYL,36.3191917362231,2,2,1,17.8493971941226,ordinary protein LFQ; no PTM enrichment,data/PXD069969/search_results/SA206LQB1_Annotation.xlsx
+PXD070007,neural stem cells,Q9Y6E7,SIRT4,0,0,2,0,,"",""
+PXD073311,HUVEC control and Pg infection,O14929,HAT1,81.2904931905329,3,3,1,17.1481885705284,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,O15379,HDAC3,29.3417922283902,3,3,1,14.4148041343451,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,O60885,BRD4,62.5545418484728,3,3,1,15.9933032996311,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,O75607,NPM3,81.4079661241233,3,3,1,17.1611614138306,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,O95251,KAT7,35.5282295385429,3,3,1,14.7239168699715,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,P05783,KRT18,99.6958878751818,3,3,1,22.2268598960815,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,P41227,NAA10,81.8001586042823,3,3,1,17.1976486535432,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,P42568,MLLT3,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,P49588,AARS1,90.7899960301707,3,3,1,18.2929147242969,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,P51532,SMARCA4,67.3812359401879,3,3,1,16.2520407699254,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,P56524,HDAC4,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q09472,EP300,4.48590710599444,3,3,1,12.4425832953357,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q13547,HDAC1,86.3203806502776,3,3,1,17.6813001884667,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q56NI9,ESCO2,18.8417294724316,3,3,1,13.7966683180815,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q5JTZ9,AARS2,41.3164155432197,3,3,1,14.990613675703,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q5SQI0,ATAT1,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q8IXJ6,SIRT2,28.8606589916634,3,3,1,14.3985767036816,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q8N6T7,SIRT6,16.4350932909885,3,3,1,13.6527665635321,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q8WUI4,HDAC7,84.456780333069,3,3,1,17.4824455991836,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q8WYB5,KAT6B,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q92769,HDAC2,82.1305841924399,3,3,1,17.2428391608108,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q92785,DPF2,70.882897171557,3,3,1,16.4483938193697,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q92793,CREBBP,50.0198491464867,3,3,1,15.4126922272447,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q92794,KAT6A,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q92830,KAT2A,68.9956331877729,3,3,1,16.3305457956647,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q92831,KAT2B,34.8803384900172,3,3,1,14.6941565314517,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q92993,KAT5,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q969S8,HDAC10,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q96DB2,HDAC11,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q96EB6,SIRT1,57.6658736452551,3,3,1,15.7798091104686,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q99497,PARK7,98.0042294475284,3,3,1,20.2606933140292,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9BWD1,ACAT2,91.9280137620749,3,3,1,18.4465341018466,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9BY41,HDAC8,9.48982289188475,3,3,1,13.0972815810583,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9H7Z6,KAT8,25.2016395610208,3,3,1,14.1615019592425,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9H8E8,CSRP2BP,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q9H8M2,BRD9,48.3082209886334,3,3,1,15.3257692244249,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9H9T3,ELP3,68.080888183981,3,3,1,16.2771747760068,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9NRC8,SIRT7,5.76948524546778,3,3,1,12.6708443182683,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9NTG7,SIRT3,10.8905650390367,3,3,1,13.2375012792413,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9NXA8,SIRT5,0.648405451898902,3,3,1,11.2926379786077,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9UBN7,HDAC6,73.3095143575493,3,3,1,16.6087312901379,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9UKN8,GTF3C4,62.0274914089347,3,3,1,15.9699283296668,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9UKV0,HDAC9,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q9ULM3,YEATS2,22.0195611948189,3,3,1,13.9939202097044,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9UPN9,TRIM33,76.6323024054983,3,3,1,16.811587930878,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9UQL6,HDAC5,0,0,3,0,,"",""
+PXD073311,HUVEC control and Pg infection,Q9Y232,CDYL,27.8482685699181,3,3,1,14.3443999446723,PXD073311 ordinary whole-proteome A0h baseline PG matrix,data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv
+PXD073311,HUVEC control and Pg infection,Q9Y6E7,SIRT4,0,0,3,0,,"",""
+PXD075377,HCC,O14929,HAT1,72.575669944091,8,8,1,1.13144664192308,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,O15379,HDAC3,0,0,8,0,,"",""
+PXD075377,HCC,O60885,BRD4,0,0,8,0,,"",""
+PXD075377,HCC,O75607,NPM3,27.7135145556198,8,8,1,0.88011244338439,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,O95251,KAT7,28.2822440717178,8,8,1,0.875193199392282,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,P05783,KRT18,0,0,8,0,,"",""
+PXD075377,HCC,P41227,NAA10,53.3786389049547,8,8,1,1.01953838001702,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,P42568,MLLT3,0,0,8,0,,"",""
+PXD075377,HCC,P49588,AARS1,55.070368228263,8,8,1,1.0266322662612,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,P51532,SMARCA4,19.4428378638905,8,8,1,0.820638222273986,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,P56524,HDAC4,37.0252554463081,8,8,1,0.927913430426073,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q09472,EP300,0,0,8,0,,"",""
+PXD075377,HCC,Q13547,HDAC1,22.1804511278195,8,8,1,0.845854615010301,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q56NI9,ESCO2,0,0,8,0,,"",""
+PXD075377,HCC,Q5JTZ9,AARS2,39.0302679776364,8,8,1,0.943718984696543,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q5SQI0,ATAT1,0,0,8,0,,"",""
+PXD075377,HCC,Q8IXJ6,SIRT2,78.4461152882205,8,8,1,1.18504616026333,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q8N6T7,SIRT6,0,0,8,0,,"",""
+PXD075377,HCC,Q8WUI4,HDAC7,0,0,8,0,,"",""
+PXD075377,HCC,Q8WYB5,KAT6B,0,0,8,0,,"",""
+PXD075377,HCC,Q92769,HDAC2,74.3107769423559,8,8,1,1.14299318562736,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q92785,DPF2,53.0798149219202,8,8,1,1.01595692424166,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q92793,CREBBP,0,0,8,0,,"",""
+PXD075377,HCC,Q92794,KAT6A,0,0,8,0,,"",""
+PXD075377,HCC,Q92830,KAT2A,0,0,8,0,,"",""
+PXD075377,HCC,Q92831,KAT2B,0,0,8,0,,"",""
+PXD075377,HCC,Q92993,KAT5,0,0,8,0,,"",""
+PXD075377,HCC,Q969S8,HDAC10,43.0788509735878,8,8,1,0.961970929147816,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q96DB2,HDAC11,0,0,8,0,,"",""
+PXD075377,HCC,Q96EB6,SIRT1,0,0,8,0,,"",""
+PXD075377,HCC,Q99497,PARK7,58.1646423751687,8,8,1,1.0482493298387,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q9BWD1,ACAT2,80.7113938692886,8,8,1,1.2068218509929,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q9BY41,HDAC8,0,0,8,0,,"",""
+PXD075377,HCC,Q9H7Z6,KAT8,0,0,8,0,,"",""
+PXD075377,HCC,Q9H8E8,CSRP2BP,0,0,8,0,,"",""
+PXD075377,HCC,Q9H8M2,BRD9,0,0,8,0,,"",""
+PXD075377,HCC,Q9H9T3,ELP3,47.0165799113168,8,8,1,0.985292555013922,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q9NRC8,SIRT7,0,0,8,0,,"",""
+PXD075377,HCC,Q9NTG7,SIRT3,84.5961056487372,8,8,1,1.29615133291335,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q9NXA8,SIRT5,34.2780026990553,8,8,1,0.91735283946903,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q9UBN7,HDAC6,62.5024098708309,8,8,1,1.07314438146234,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q9UKN8,GTF3C4,65.1339888181993,8,8,1,1.09653267932038,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,HCC,Q9UKV0,HDAC9,0,0,8,0,,"",""
+PXD075377,HCC,Q9ULM3,YEATS2,0,0,8,0,,"",""
+PXD075377,HCC,Q9UPN9,TRIM33,0,0,8,0,,"",""
+PXD075377,HCC,Q9UQL6,HDAC5,0,0,8,0,,"",""
+PXD075377,HCC,Q9Y232,CDYL,0,0,8,0,,"",""
+PXD075377,HCC,Q9Y6E7,SIRT4,0,0,8,0,,"",""
+PXD075377,adjacent liver,O14929,HAT1,0,0,8,0,,"",""
+PXD075377,adjacent liver,O15379,HDAC3,0,0,8,0,,"",""
+PXD075377,adjacent liver,O60885,BRD4,0,0,8,0,,"",""
+PXD075377,adjacent liver,O75607,NPM3,0,0,8,0,,"",""
+PXD075377,adjacent liver,O95251,KAT7,0,0,8,0,,"",""
+PXD075377,adjacent liver,P05783,KRT18,0,0,8,0,,"",""
+PXD075377,adjacent liver,P41227,NAA10,65.4235294117647,8,8,1,1.06673237403017,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,P42568,MLLT3,0,0,8,0,,"",""
+PXD075377,adjacent liver,P49588,AARS1,50.4176470588235,8,8,1,1.00183225296125,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,P51532,SMARCA4,0,0,8,0,,"",""
+PXD075377,adjacent liver,P56524,HDAC4,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q09472,EP300,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q13547,HDAC1,85.9058823529412,8,8,1,1.17495899241321,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q56NI9,ESCO2,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q5JTZ9,AARS2,22.0941176470588,8,8,1,0.859284525805838,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q5SQI0,ATAT1,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q8IXJ6,SIRT2,35.8235294117647,8,8,1,0.942161512748373,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q8N6T7,SIRT6,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q8WUI4,HDAC7,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q8WYB5,KAT6B,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q92769,HDAC2,78.2823529411765,8,8,1,1.12414359517411,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q92785,DPF2,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q92793,CREBBP,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q92794,KAT6A,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q92830,KAT2A,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q92831,KAT2B,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q92993,KAT5,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q969S8,HDAC10,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q96DB2,HDAC11,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q96EB6,SIRT1,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q99497,PARK7,72.2705882352941,8,8,1,1.09836318283514,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q9BWD1,ACAT2,11.4588235294118,8,8,1,0.787307654692022,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q9BY41,HDAC8,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9H7Z6,KAT8,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9H8E8,CSRP2BP,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9H8M2,BRD9,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9H9T3,ELP3,16.9764705882353,8,8,1,0.837646402690004,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q9NRC8,SIRT7,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9NTG7,SIRT3,60.5823529411765,8,8,1,1.05574674952437,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q9NXA8,SIRT5,45.3647058823529,8,8,1,0.985508713464803,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q9UBN7,HDAC6,36.3882352941176,8,8,1,0.946140888641515,ordinary iTRAQ clinical liver proteome,data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx
+PXD075377,adjacent liver,Q9UKN8,GTF3C4,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9UKV0,HDAC9,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9ULM3,YEATS2,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9UPN9,TRIM33,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9UQL6,HDAC5,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9Y232,CDYL,0,0,8,0,,"",""
+PXD075377,adjacent liver,Q9Y6E7,SIRT4,0,0,8,0,,"",""
+PXD078013,RKO WT and GSK3B KO,O14929,HAT1,23.5864745011086,1,1,1,1.99267965361814,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,O15379,HDAC3,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,O60885,BRD4,35.310421286031,1,1,1,2.14114766802316,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,O75607,NPM3,78.5753880266075,1,1,1,2.73092534784692,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,O95251,KAT7,1.13636363636364,1,1,1,1.07735047125128,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,P05783,KRT18,13.0543237250554,1,1,1,1.8031269863226,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,P41227,NAA10,39.079822616408,1,1,1,2.18873658295438,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,P42568,MLLT3,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,P49588,AARS1,80.1552106430155,1,1,1,2.75785685649983,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,P51532,SMARCA4,37.0842572062084,1,1,1,2.16562620679904,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,P56524,HDAC4,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q09472,EP300,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q13547,HDAC1,49.5288248337029,1,1,1,2.32900887084682,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q56NI9,ESCO2,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q5JTZ9,AARS2,52.2727272727273,1,1,1,2.3710308655194,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q5SQI0,ATAT1,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q8IXJ6,SIRT2,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q8N6T7,SIRT6,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q8WUI4,HDAC7,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q8WYB5,KAT6B,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q92769,HDAC2,24.0853658536585,1,1,1,1.99961516437622,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q92785,DPF2,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q92793,CREBBP,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q92794,KAT6A,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q92830,KAT2A,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q92831,KAT2B,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q92993,KAT5,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q969S8,HDAC10,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q96DB2,HDAC11,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q96EB6,SIRT1,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q99497,PARK7,95.7039911308204,1,1,1,3.1597668057581,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q9BWD1,ACAT2,57.9545454545455,1,1,1,2.44378253959994,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q9BY41,HDAC8,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9H7Z6,KAT8,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9H8E8,CSRP2BP,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9H8M2,BRD9,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9H9T3,ELP3,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9NRC8,SIRT7,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9NTG7,SIRT3,6.51330376940133,1,1,1,1.60175776255979,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q9NXA8,SIRT5,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9UBN7,HDAC6,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9UKN8,GTF3C4,29.9889135254989,1,1,1,2.08121501302851,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q9UKV0,HDAC9,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9ULM3,YEATS2,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9UPN9,TRIM33,14.9667405764967,1,1,1,1.84212024290226,ordinary proteome log2 protein abundance; rank-preserving,data/PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt
+PXD078013,RKO WT and GSK3B KO,Q9UQL6,HDAC5,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9Y232,CDYL,0,0,1,0,,"",""
+PXD078013,RKO WT and GSK3B KO,Q9Y6E7,SIRT4,0,0,1,0,,"",""
+PXD078736,HK-2 control and mannitol,O14929,HAT1,48.823016564952,3,3,1,4.00802281125114,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,O15379,HDAC3,36.1843563040106,3,3,1,3.98488603474205,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,O60885,BRD4,67.0729005096388,3,3,1,4.09290789964188,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,O75607,NPM3,44.0565431569929,3,3,1,3.99415501157148,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,O95251,KAT7,42.9856500321268,3,3,1,3.99077061012375,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,P05783,KRT18,69.9721567787535,3,3,1,4.09627252224812,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,P41227,NAA10,81.5378025273078,3,3,1,4.16382007935414,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,P42568,MLLT3,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,P49588,AARS1,89.0148212728858,3,3,1,4.23095941742189,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,P51532,SMARCA4,57.5448703744737,3,3,1,4.04846735325637,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,P56524,HDAC4,27.8307112785287,2,3,0.666666666666667,3.95688017214857,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q09472,EP300,35.5417682251274,3,3,1,3.97113604345677,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q13547,HDAC1,88.9912186763761,3,3,1,4.23003362665896,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q56NI9,ESCO2,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q5JTZ9,AARS2,53.6228672723244,3,3,1,4.03902115525302,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q5SQI0,ATAT1,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q8IXJ6,SIRT2,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q8N6T7,SIRT6,28.7391978728119,3,3,1,3.95601320358404,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q8WUI4,HDAC7,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q8WYB5,KAT6B,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q92769,HDAC2,34.7662308885442,3,3,1,3.9807053551015,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q92785,DPF2,56.386224934612,3,3,1,4.03625011897868,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q92793,CREBBP,51.2519388433415,3,3,1,4.03085706913852,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q92794,KAT6A,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q92830,KAT2A,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q92831,KAT2B,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q92993,KAT5,27.800385521525,3,3,1,3.93421543567235,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q969S8,HDAC10,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q96DB2,HDAC11,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q96EB6,SIRT1,22.3190932868352,3,3,1,3.91378545685109,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q99497,PARK7,94.9651264167393,3,3,1,4.31925286478278,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9BWD1,ACAT2,88.5571054925894,3,3,1,4.2275618150799,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9BY41,HDAC8,4.1879016175493,3,3,1,3.75601189901379,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9H7Z6,KAT8,36.0890983079889,3,3,1,3.96726096473214,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9H8E8,CSRP2BP,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q9H8M2,BRD9,0,1,3,0.333333333333333,4.04646056543354,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9H9T3,ELP3,56.7250166186572,3,3,1,4.05069008179029,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9NRC8,SIRT7,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q9NTG7,SIRT3,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q9NXA8,SIRT5,35.0043591979076,3,3,1,3.96369198129555,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9UBN7,HDAC6,6.47019720806559,3,3,1,3.80445365821247,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9UKN8,GTF3C4,59.5416577425573,3,3,1,4.04990227288923,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9UKV0,HDAC9,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q9ULM3,YEATS2,18.3740191804708,3,3,1,3.89441533250685,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9UPN9,TRIM33,33.2619404583423,3,3,1,3.96800472152885,ordinary Spectronaut PG.Log2Quantity; untreated HK-2 reference,data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt
+PXD078736,HK-2 control and mannitol,Q9UQL6,HDAC5,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q9Y232,CDYL,0,0,3,0,,"",""
+PXD078736,HK-2 control and mannitol,Q9Y6E7,SIRT4,0,0,3,0,,"",""

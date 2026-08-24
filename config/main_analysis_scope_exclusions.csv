@@ -1,4 +1,0 @@
-PXD,SampleGroup,PreviousScope,CurrentScope,DecisionAuthority,Reason
-PXD055230,human fibroblasts mock and HCMV or HSV-1,paired_33,excluded_from_main_30,teacher,"Herpesvirus infection strongly perturbs lactate biology; this deep dataset dominated the normal-cell Kla union."
-PXD057709,human fibroblasts mock and HCMV,paired_33,excluded_from_main_30,teacher,"Same herpesvirus publication family as PXD055230; both components are excluded together."
-PXD014870,MCF7,paired_33,excluded_from_main_30,teacher,"Experiment considered unsuccessful; only 193 Kla proteins were captured, far below the other MCF7 Kla dataset."

@@ -1,19 +1,31 @@
-# Human lactylome DDR publication reproduction package
+# Reproducing the human lactylome–DDR analysis
 
-This repository reproduces only the analyses reported in the final manuscript
-on human lactylation (Kla) and the DNA-damage response (DDR). It supports two
-routes that converge at the same validated 30-group publication input: direct
-use of the frozen release tables, or source-file processing followed by the
-same strict table comparison. It does not retain exploratory analyses.
+This repository contains the code and release inputs used for the analyses in
+the final manuscript on human lysine lactylation (Kla) and the DNA-damage
+response (DDR).
 
-All biological joins, deduplication and set membership use isoform-stripped
-human UniProt `BaseAccession`. Gene symbols and protein names are display-only
-annotations.
+The `full-source-to-publication` branch adds the step that turns downloaded,
+processed source files into the analysis tables. It leaves the original
+table-based workflow available as well, so a reader can choose either of the
+following:
 
-## Fixed study scope
+1. Start with the release tables already included in the repository and
+   reproduce the figures and supplementary tables.
+2. Start with the processed files from the public datasets, build the same
+   analysis tables, and then use the same downstream workflow.
 
-The input boundary starts with exactly 30 pan-Kla-enriched groups and their
-whole-proteome references.
+Both choices use the same 30-group study definition and the same final figure
+and supplementary-table code. Files from exploratory or superseded analyses
+are not part of this release.
+
+All joins, deduplication and set membership use the isoform-stripped human
+UniProt `BaseAccession`. Gene symbols and protein names are used only as
+display labels.
+
+## Study scope
+
+The study contains 30 Kla-enriched sample groups and their whole-proteome
+references.
 
 | Biological category | Groups |
 | --- | ---: |
@@ -22,19 +34,19 @@ whole-proteome references.
 | Cancer cell lines | 12 |
 | Normal cell lines | 7 |
 
-The Kla-DDR union contains 399 `BaseAccession` values. The curated seven-pathway
-score table uses `-1`, `0` and `+1` states for BER, NER, MMR, FA, HR, A-EJ and
-NHEJ. Its four reported set sizes are 183, 178, 381 and 292 proteins.
+The Kla-DDR union contains 399 `BaseAccession` values. The curated
+seven-pathway score table uses `-1`, `0` and `+1` states for BER, NER, MMR,
+FA, HR, A-EJ and NHEJ. The four reported pathway panels contain 183, 178,
+381 and 292 proteins.
 
-## Exact output contract
+## Figures and supplementary tables
 
-Each publication run first removes only `results/figures/` and
-`results/supplementary/`, then creates the following files and no others. Every
-panel is exported as both PNG and PDF. Tables S1–S3 and S6 are rebuilt as XLSX;
-the author-approved S4 ranking workbook and S5 regulator workbook are copied
-byte-for-byte from the frozen input boundary.
+A run writes to `results/figures/` and `results/supplementary/`. Before it
+starts, the workflow clears only those two output folders so that files from a
+previous run cannot be mistaken for current results. Every figure is saved as
+both PNG and PDF.
 
-| Manuscript item | Rebuilt output |
+| Manuscript item | Output |
 | --- | --- |
 | Figure 1 | Kla and whole-proteome DDR fractions |
 | Figure 2a–b | Whole-proteome DDR and Kla-DDR four-category Venn diagrams |
@@ -43,76 +55,85 @@ byte-for-byte from the frozen input boundary.
 | Figure S1a–b | Whole-proteome and Kla four-category Venn diagrams |
 | Figure S2a–c | Cell-line pathway matrices and cancer/normal cell-line summaries |
 | Tables S1–S3, S6 | Kla data, reference data, human DDR GO annotations and Venn membership |
-| Tables S4–S5 | Frozen pathway-ranking and regulator workbooks, preserved unchanged |
+| Tables S4–S5 | Author-provided pathway-ranking and regulator workbooks, copied unchanged |
 
-The final validation checks the input manifest, 30-group scope, 9/2/12/7
-category counts, 399-protein union, 183/178/381/292 pathway panels, all 15
-Venn regions for each analysis, all figure filenames and the exact S1–S6
-workbook layouts.
+The accompanying checks confirm the 30-group scope, the 9/2/12/7 category
+counts, the 399-protein union, the four pathway panels, the Venn membership
+fields, the figure filenames and the S1–S6 workbook layout.
 
-## Reproduce
+## Reproduce the publication outputs
 
-Use **R 4.4.3**. The committed `renv.lock` fixes the exact package versions
-used for this release, including the figure and spreadsheet writers. From the
-repository root:
+Use **R 4.4.3**. The committed `renv.lock` records the package versions used
+for this release. From the repository root, run:
 
 ```bash
 Rscript workflow/install_r_dependencies.R
 Rscript workflow/run_pipeline.R publication
 ```
 
-Outputs are written to `results/figures/` and `results/supplementary/`. A
-successful run ends with `PASS: final 30-group publication workflow completed.`
-The installation step restores the locked project library; it does not upgrade
-packages to current CRAN releases.
+This uses the release tables in `data/publication_input/` and produces the
+figures and Tables S1–S6. A successful run ends with:
 
-### Rebuild from processed public source files
+```text
+PASS: final 30-group publication workflow completed.
+```
 
-Download the processed search-result/supplementary files for the final 30
-groups into PXD folders (raw spectra are not required), then run:
+The installation command restores the recorded project library; it does not
+upgrade packages to the latest CRAN versions.
+
+## Start from processed source files
+
+The source-to-table workflow expects the processed search-result and
+supplementary files for the final 30 groups. Raw spectra are not needed. Put
+the files in PXD folders under a separate source directory, then run:
 
 ```bash
 Rscript workflow/run_pipeline.R source /absolute/path/to/source_cache
 ```
 
-The source route rebuilds the 30-group summaries, Kla/reference memberships,
-and analytical fields of all four Venn tables. Each is compared exactly to the
-frozen release before the shared figure and supplementary-table steps begin.
+The preparation step reads those files and writes the 30-group summary,
+Kla-protein membership, reference-protein membership and four analytical Venn
+tables. It checks the source-derived fields against the release tables before
+the common figure and supplementary-table steps are run. The release tables
+remain unchanged.
+
 S4 pathway ranking, S5 regulator annotations, regulator percentiles, pathway
-display settings, and Venn display annotations are fixed author-provided
-inputs; they are not regenerated. Some author supplements are hosted behind
-publisher browser-download controls, so those processed files must be placed
-in their recorded PXD paths before the source route is run.
+display settings and Venn display annotations are author-provided inputs.
+They are used as supplied; the source workflow does not invent replacements
+for them.
 
-### Verified rendering environment
+The large PXD files are not stored in Git. Most are available through the
+ProteomeXchange or iProX accessions recorded in the release tables and Table
+S1. A small number of article supplements are exposed only through publisher
+download pages. Download those files from the cited source and place them in
+their recorded PXD paths before running the source workflow.
 
-The release was verified on **macOS 15.6 (arm64)** with R 4.4.3, the committed
-lockfile and the system font **Arial Unicode MS**. This font is mandatory: the
-workflow stops before creating figures if it is absent. Other operating systems
-or font substitutions have not been validated and can change figure typography
-or pixels; they are outside this release's exact-reproduction claim.
+## Rendering environment
 
-## Frozen input boundary and provenance
+The release was checked on **macOS 15.6 (arm64)** with R 4.4.3 and the system
+font **Arial Unicode MS**. This font is required for the figure labels. Other
+operating systems or font substitutions may change typography and have not
+been checked for pixel-level agreement.
 
-`data/publication_input/` is the complete versioned input boundary. Its
-`INPUT_MANIFEST.csv` records an MD5 checksum and byte count for every frozen
-file; the workflow refuses changed, missing or extra-input substitutions.
+## Release inputs and provenance
 
-The package retains standardized final evidence, sample-level memberships,
-regulator percentiles, exact Venn memberships, the author-approved S4/S5
-workbooks and frozen human DDR GO annotations. Original public PXD files are
-not committed because of their size. Their ProteomeXchange accessions and
-source-file locators remain in `group_summary_30.csv` and Table S1.
+`data/publication_input/` is the versioned input set for the publication
+workflow. `INPUT_MANIFEST.csv` records the MD5 checksum and byte count of each
+file, and the workflow stops if a file is missing, changed or unexpectedly
+added.
+
+The release includes the standardized evidence tables, sample-level
+memberships, regulator percentiles, Venn memberships, the author-provided S4
+and S5 workbooks and the frozen human DDR GO annotations. The original public
+PXD files are not committed because of their size. Their accessions and
+source-file locations are retained in `group_summary_30.csv` and Table S1.
 
 ## Repository layout
 
 ```text
-data/publication_input/     frozen final inputs and integrity manifest
+data/publication_input/     release tables, workbooks and input manifest
 R/publication/              manuscript-figure generation
-workflow/                   direct/source entry points; source-to-table validation; builds S1–S3/S6 and copies S4/S5
-tests/                      executable publication contract
-results/                    regenerated outputs (ignored by Git)
+workflow/                   publication workflow and source-to-table preparation
+tests/                      checks for the study scope and outputs
+results/                    regenerated figures and supplementary tables
 ```
-
-Historical scopes, exploratory embeddings, alternative pathway analyses and
-superseded score sources are intentionally absent.

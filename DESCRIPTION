@@ -13,7 +13,7 @@ Imports:
     data.table,
     digest,
     dplyr,
-    eulerr,
+    ggVennDiagram,
     ggplot2,
     openxlsx2,
     patchwork,

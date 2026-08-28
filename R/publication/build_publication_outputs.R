@@ -7,8 +7,9 @@
 suppressPackageStartupMessages({
   library(data.table)
   library(dplyr)
+  library(eulerr)
   library(ggplot2)
-  library(ggVennDiagram)
+  library(patchwork)
   library(readxl)
   library(tidyr)
 })
@@ -132,36 +133,89 @@ save_figure <- function(plot, stem, width, height) {
   )
 }
 
-# Figure 1: independent Kla and whole-proteome DDR fractions for the 30 groups.
-fraction_data <- bind_rows(
-  groups |>
-    transmute(Category, CategoryLabel, RowOrder, PlotLabel,
-      Measurement = "Kla proteome", Fraction = KlaDdrFraction),
-  groups |>
-    transmute(Category, CategoryLabel, RowOrder, PlotLabel,
-      Measurement = "Whole proteome", Fraction = ReferenceDdrFraction)
-) |>
+# Figure 1 retains the established publication layout: a reference bar is
+# shown once for a shared whole-proteome source, immediately above the linked
+# Kla bar(s).  Only the input table is new; the colour and layout contract is
+# the one used before the repository was reduced to the final manuscript set.
+reference_rows <- groups |>
   mutate(
-    PlotLabel = factor(PlotLabel, levels = rev(unique(groups$PlotLabel))),
-    Measurement = factor(Measurement, levels = c("Kla proteome", "Whole proteome"))
+    ReferenceKey = paste(
+      ReferencePXD, ReferenceEvidenceFile, ReferenceProteinCount,
+      ReferenceDdrProteinCount, sep = "||"
+    )
+  ) |>
+  group_by(Category, ReferenceKey) |>
+  arrange(RowOrder, .by_group = TRUE) |>
+  summarise(
+    RowOrder = first(RowOrder),
+    PXD = first(ReferencePXD),
+    DisplayLabel = paste0(first(ReferenceLabelEn), " · ", first(ReferencePXD)),
+    Fraction = first(ReferenceDdrFraction),
+    Ddr = first(ReferenceDdrProteinCount),
+    Total = first(ReferenceProteinCount),
+    BarType = "reference",
+    .groups = "drop"
   )
-
-fraction_plot <- ggplot(fraction_data, aes(x = PlotLabel, y = Fraction, fill = Measurement)) +
-  geom_col(position = position_dodge(width = 0.8), width = 0.72) +
-  coord_flip() +
-  facet_grid(CategoryLabel ~ ., scales = "free_y", space = "free_y") +
-  scale_y_continuous(labels = scales::label_percent(accuracy = 1), expand = expansion(mult = c(0, 0.04))) +
-  scale_fill_manual(values = c("Kla proteome" = "#C44E52", "Whole proteome" = "#4C72B0")) +
-  labs(x = NULL, y = "DDR protein fraction", fill = NULL) +
-  theme_classic(base_size = 10, base_family = publication_font) +
+kla_rows <- groups |>
+  transmute(
+    Category, RowOrder, PXD,
+    DisplayLabel = paste0(KlaLabelEn, " · ", PXD),
+    Fraction = KlaDdrFraction,
+    Ddr = KlaDdrProteinCount,
+    Total = KlaProteinCount,
+    BarType = "kla"
+  )
+fraction_data <- bind_rows(reference_rows, kla_rows) |>
+  mutate(
+    BarPriority = if_else(BarType == "reference", 0L, 1L)
+  ) |>
+  arrange(match(as.character(Category), category_order), RowOrder, BarPriority, DisplayLabel) |>
+  mutate(
+    BarOrder = row_number(),
+    PlotRow = factor(as.character(BarOrder), levels = rev(as.character(BarOrder))),
+    CategoryLabel = factor(
+      as.character(Category), levels = category_order,
+      labels = unname(category_labels[category_order])
+    ),
+    Dataset = factor(
+      BarType, levels = c("reference", "kla"),
+      labels = c("Whole proteome", "Lactylome (Kla)")
+    ),
+    BarLabel = sprintf("%s/%s (%.1f%%)", Ddr, Total, 100 * Fraction)
+  )
+assert(max(fraction_data$Fraction, na.rm = TRUE) <= 0.15, "The established Figure 1 axis is 0-15%; a value exceeds that range.")
+fraction_plot <- ggplot(fraction_data, aes(x = Fraction * 100, y = PlotRow, fill = Dataset)) +
+  geom_col(width = 0.68, colour = "white", linewidth = 0.2) +
+  geom_text(aes(label = BarLabel), hjust = -0.04, size = 2.45, family = publication_font, colour = "#30343B") +
+  facet_grid(CategoryLabel ~ ., scales = "free_y", space = "free_y", switch = "y") +
+  scale_fill_manual(values = c("Whole proteome" = "#4E79A7", "Lactylome (Kla)" = "#F28E2B")) +
+  scale_x_continuous(limits = c(0, 15), breaks = c(0, 5, 10, 15), expand = expansion(mult = c(0, 0))) +
+  scale_y_discrete(labels = setNames(fraction_data$DisplayLabel, as.character(fraction_data$BarOrder))) +
+  guides(fill = guide_legend(ncol = 1, byrow = TRUE, keyheight = grid::unit(0.84, "cm"), keywidth = grid::unit(1.02, "cm"))) +
+  labs(x = "GO-DDR annotated protein fraction (%)", y = NULL, fill = NULL) +
+  theme_minimal(base_size = 10, base_family = publication_font) +
   theme(
-    strip.background = element_rect(fill = "#F0F0F0", colour = NA),
-    strip.text = element_text(face = "bold"),
-    axis.text.y = element_text(size = 7),
-    legend.position = "top",
-    panel.spacing.y = grid::unit(0.25, "lines")
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_line(colour = "#D9DDE3", linewidth = 0.45),
+    axis.text.y = element_text(size = 6.8, colour = "#30343B"),
+    axis.text.x = element_text(size = 10, colour = "#30343B"),
+    axis.title.x = element_text(size = 16.5, face = "bold", colour = "#20252B", margin = margin(t = 12)),
+    strip.placement = "outside",
+    strip.text.y.left = element_text(size = 15, face = "bold", colour = "#30343B", angle = 90),
+    strip.background = element_rect(fill = "#DCEAF5", colour = NA),
+    panel.spacing.y = grid::unit(0.72, "lines"),
+    legend.position = "inside",
+    legend.position.inside = c(0.965, 0.992),
+    legend.justification.inside = c(1, 1),
+    legend.direction = "vertical",
+    legend.text = element_text(size = 17.5, colour = "#20252B", lineheight = 1.12),
+    legend.key.spacing.y = grid::unit(0.24, "cm"),
+    legend.background = element_rect(fill = scales::alpha("white", 0.92), colour = "#C8CED6", linewidth = 0.45),
+    legend.margin = margin(11, 14, 11, 14),
+    plot.margin = margin(8, 16, 12, 12)
   )
-save_figure(fraction_plot, "Figure_1_DDR_fraction", 10, 12)
+save_figure(fraction_plot, "Figure_1_DDR_fraction", 13.5, max(12, nrow(fraction_data) * 0.28 + 4.2))
 
 build_role_map <- function() {
   read_excel(input_path("Supplementary_Table_S5_Lactylation_Regulators.xlsx"), sheet = "Regulator_Annotations") |>
@@ -181,50 +235,73 @@ build_role_map <- function() {
 role_map <- build_role_map()
 assert(!anyDuplicated(role_map[c("Role", "BaseAccession")]), "Each regulator role/accession pair must be unique.")
 
-draw_percentile_heatmap <- function(data, value_column, stem) {
+draw_percentile_heatmap <- function(data, value_column, stem, measurement_label) {
   values <- data |>
     mutate(
       GroupKey = paste(PXD, SampleGroup, sep = "__"),
       Value = .data[[value_column]]
     ) |>
-    inner_join(groups |> select(GroupKey, RowOrder, PlotLabel, Category), by = "GroupKey", relationship = "many-to-one") |>
+    inner_join(
+      groups |> select(GroupKey, RowOrder, KlaLabelEn, ReferenceLabelEn, Category),
+      by = "GroupKey", relationship = "many-to-one"
+    ) |>
     inner_join(role_map |> select(Role, BaseAccession, DisplayName), by = c("RegulatorBaseAccession" = "BaseAccession"), relationship = "many-to-many") |>
     filter(!is.na(Value)) |>
+    mutate(
+      PlotLabel = if (identical(value_column, "WholeProteomeRelativePercentile")) ReferenceLabelEn else KlaLabelEn
+    ) |>
     distinct(Role, DisplayName, PlotLabel, .keep_all = TRUE) |>
     mutate(
-      PlotLabel = factor(PlotLabel, levels = groups$PlotLabel),
-      Role = factor(Role, levels = role_order)
+      CategoryLabel = factor(
+        as.character(Category), levels = c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells"),
+        labels = c("Normal/non-tumor tissues", "Cancer tissues", "Normal/non-tumor cells", "Cancer cells")
+      ),
+      RoleLabel = factor(Role, levels = role_order),
+      PlotLabel = factor(PlotLabel, levels = rev(unique(PlotLabel[order(RowOrder)]))),
+      DisplayName = factor(DisplayName, levels = unique(role_map$DisplayName))
     )
   assert(nrow(values) > 0L, paste("No values were available for", stem))
-  plot <- ggplot(values, aes(x = PlotLabel, y = DisplayName, fill = Value)) +
-    geom_tile(colour = "white", linewidth = 0.1) +
-    facet_grid(Role ~ ., scales = "free_y", space = "free_y") +
-    scale_fill_gradient(low = "#F7FBFF", high = "#08519C", limits = c(0, 100), name = "Percentile") +
+  plot <- ggplot(values, aes(x = DisplayName, y = PlotLabel, fill = Value)) +
+    geom_tile(colour = "white", linewidth = 0.22) +
+    facet_grid(CategoryLabel ~ RoleLabel, scales = "free", space = "free") +
+    scale_fill_gradientn(
+      colours = c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B"),
+      values = scales::rescale(c(0, 20, 50, 80, 100)),
+      limits = c(0, 100), na.value = "#D9D9D9", name = measurement_label
+    ) +
     labs(x = NULL, y = NULL) +
-    theme_minimal(base_size = 9, base_family = publication_font) +
+    theme_minimal(base_size = 8.5, base_family = publication_font) +
     theme(
       panel.grid = element_blank(),
-      strip.text = element_text(face = "bold"),
-      axis.text.x = element_text(angle = 60, hjust = 1, size = 6),
-      axis.text.y = element_text(size = 7),
-      panel.spacing.y = grid::unit(0.3, "lines")
+      strip.text.x = element_text(face = "bold", size = 9),
+      strip.text.y = element_text(face = "bold", size = 8),
+      strip.background = element_rect(fill = "#F2F2F2", colour = NA),
+      axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 7),
+      axis.text.y = element_text(size = 7.2),
+      legend.position = "bottom",
+      legend.key.width = grid::unit(35, "mm"),
+      plot.margin = margin(8, 10, 8, 8)
     )
-  save_figure(plot, stem, 14, 11)
+  save_figure(plot, stem, 15.5, 11.5)
 }
 
 kla_percentiles <- fread(input_path("regulator_kla_percentiles_30.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, RelativeKlaPercentile)
-draw_percentile_heatmap(kla_percentiles, "RelativeKlaPercentile", "Figure_3b_Kla_regulator_percentiles")
+draw_percentile_heatmap(
+  kla_percentiles, "RelativeKlaPercentile", "Figure_3b_Kla_regulator_percentiles",
+  "Within-sample Kla\npercentile"
+)
 
 reference_percentiles <- fread(input_path("regulator_reference_percentiles_30.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, WholeProteomeRelativePercentile)
-draw_percentile_heatmap(reference_percentiles, "WholeProteomeRelativePercentile", "Figure_3a_reference_regulator_percentiles")
+draw_percentile_heatmap(
+  reference_percentiles, "WholeProteomeRelativePercentile", "Figure_3a_reference_regulator_percentiles",
+  "Whole-proteome\npercentile"
+)
 
-venn_colours <- c("#0072B2", "#E69F00", "#CC79A7", "#009E73")
-
-draw_exact_venn <- function(filename, stem) {
+draw_exact_venn <- function(filename, stem, title) {
   membership <- fread(input_path(filename)) |>
     as_tibble()
   membership_columns <- paste0("In_", category_order)
@@ -232,26 +309,39 @@ draw_exact_venn <- function(filename, stem) {
   sets <- lapply(category_order, function(category) {
     membership$BaseAccession[is_true(membership[[paste0("In_", category)]])]
   })
-  names(sets) <- unname(category_labels[category_order])
-  venn_plot <- ggVennDiagram(
-    sets,
-    label = "count",
-    label_geom = "text",
-    label_size = 5,
-    set_color = venn_colours,
-    set_size = 1,
-    edge_size = 0.7
-  ) +
-    scale_fill_gradient(low = "#F7F7F7", high = "#BDBDBD", guide = "none") +
-    theme_void(base_size = 10, base_family = publication_font) +
-    theme(plot.margin = margin(25, 85, 25, 85))
-  save_figure(venn_plot, stem, 11, 8.5)
+  labels <- unname(category_labels[category_order])
+  names(sets) <- labels
+  fit <- eulerr::euler(sets)
+  render <- function(device, path, width, height, resolution = NULL) {
+    if (identical(device, "png")) {
+      grDevices::png(path, width = width, height = height, res = resolution, type = "cairo")
+    } else {
+      grDevices::cairo_pdf(path, width = width, height = height, family = publication_font)
+    }
+    on.exit(grDevices::dev.off(), add = TRUE)
+    graphics::par(family = publication_font, mar = c(1, 1, 7.5, 1))
+    diagram <- plot(
+      fit,
+      labels = FALSE,
+      legend = list(labels = labels, side = "bottom", nrow = 1, ncol = 4, byrow = TRUE, cex = 0.9),
+      quantities = list(cex = 0.9),
+      fills = list(fill = c("#E69F00", "#D55E00", "#009E73", "#CC79A7"), alpha = 0.52),
+      edges = list(col = "#4B4B4B", lwd = 1.2),
+      main = list(label = title, cex = 0.85),
+      sub = "Deduplicated by UniProt BaseAccession; ellipse areas are fitted proportional to set sizes",
+      sub.cex = 0.78,
+      quantities.cex = 1.0
+    )
+    print(diagram)
+  }
+  render("png", file.path(figure_dir, paste0(stem, ".png")), 2400, 2300, 300)
+  render("pdf", file.path(figure_dir, paste0(stem, ".pdf")), 8.5, 8.0)
 }
 
-draw_exact_venn("venn_reference_ddr.csv", "Figure_2a_whole_proteome_DDR_Venn")
-draw_exact_venn("venn_kla_ddr.csv", "Figure_2b_Kla_DDR_Venn")
-draw_exact_venn("venn_reference.csv", "Supplementary_Figure_S1a_whole_proteome_Venn")
-draw_exact_venn("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_Venn")
+draw_exact_venn("venn_reference_ddr.csv", "Figure_2a_whole_proteome_DDR_Venn", "Reference whole-proteome DDR proteins across four tissue and cell categories")
+draw_exact_venn("venn_kla_ddr.csv", "Figure_2b_Kla_DDR_Venn", "Kla and DDR proteins across four tissue and cell categories")
+draw_exact_venn("venn_reference.csv", "Supplementary_Figure_S1a_whole_proteome_Venn", "Reference whole-proteome proteins across four tissue and cell categories")
+draw_exact_venn("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_Venn", "All Kla proteins across four tissue and cell categories")
 
 # Four signed pathway matrices reported in the manuscript. The frozen S4
 # ranking workbook is the data source; it is never recalculated by this code.
@@ -309,52 +399,117 @@ for (spec in matrix_specs) {
   )
 }
 
-draw_pathway_matrices <- function(keys, stem) {
-  matrix_data <- rbindlist(lapply(keys, function(key) {
-    data <- copy(pathway_panels[[key]]$matrix)
-    data[, Panel := pathway_panels[[key]]$label]
-    data
-  }))
-  matrix_data[, Panel := factor(Panel, levels = vapply(keys, function(key) pathway_panels[[key]]$label, character(1)))]
-  matrix_plot <- ggplot(matrix_data, aes(x = Rank, y = Pathway, fill = FillClass)) +
-    geom_tile(colour = NA) +
-    scale_fill_manual(
-      values = c(pathway_colours, "suppressing" = "#303030", "unassigned" = "#E6E6E6"),
-      breaks = c(pathway_order, "suppressing", "unassigned"),
-      labels = pathway_legend_labels,
-      name = NULL
+zero_fill <- "#F1F3F5"
+suppressing_fill <- "#2F3437"
+guide_colour <- "#4B5563"
+
+make_pathway_legend <- function() {
+  legend_data <- data.table(
+    X = 1:3,
+    Label = c(
+      "+1 promoting: solid pathway colour",
+      "-1 suppressing: dark charcoal",
+      "0 unassigned: light gray"
+    ),
+    Fill = c("#3C5488", suppressing_fill, zero_fill)
+  )
+  ggplot() +
+    geom_rect(
+      data = legend_data,
+      aes(xmin = X - 0.31, xmax = X + 0.31, ymin = 0.38, ymax = 0.68, fill = Fill),
+      colour = NA
     ) +
-    facet_wrap(~Panel, nrow = 1, scales = "free_x") +
-    scale_x_continuous(expand = c(0, 0), breaks = NULL) +
-    labs(x = "Kla-DDR proteins ranked by signed pathway score", y = NULL) +
-    theme_minimal(base_size = 10, base_family = publication_font) +
+    geom_text(data = legend_data, aes(x = X, y = 0.18, label = Label), family = publication_font, size = 3.8, colour = "#374151") +
+    scale_fill_identity() +
+    coord_cartesian(xlim = c(0.45, 3.55), ylim = c(0.05, 0.78), clip = "off") +
+    theme_void(base_family = publication_font) +
+    theme(plot.margin = margin(0, 10, 0, 10))
+}
+
+legacy_matrix_panel <- function(key) {
+  panel <- copy(pathway_panels[[key]]$matrix)
+  n <- uniqueN(panel$BaseAccession)
+  panel[, `:=`(
+    PathwayOrder = match(as.character(Pathway), pathway_order),
+    Y = 8 - match(as.character(Pathway), pathway_order),
+    XMin = Rank - 0.5,
+    XMax = Rank + 0.5
+  )]
+  panel[, `:=`(YMin = Y - 0.42, YMax = Y + 0.42)]
+  ggplot() +
+    geom_rect(data = panel[State == 0], aes(xmin = XMin, xmax = XMax, ymin = YMin, ymax = YMax), fill = zero_fill, colour = NA) +
+    geom_rect(data = panel[State == 1], aes(xmin = XMin, xmax = XMax, ymin = YMin, ymax = YMax, fill = as.character(Pathway)), colour = NA) +
+    geom_rect(data = panel[State == -1], aes(xmin = XMin, xmax = XMax, ymin = YMin, ymax = YMax), fill = suppressing_fill, colour = NA) +
+    scale_fill_manual(values = pathway_colours, guide = "none") +
+    scale_x_continuous(limits = c(0.5, n + 0.5), breaks = unique(as.integer(round(c(1, (n + 1) / 2, n)))), expand = c(0, 0)) +
+    scale_y_continuous(limits = c(0.5, 7.5), breaks = 7:1, labels = pathway_order, expand = c(0, 0)) +
+    labs(
+      title = paste0(pathway_panels[[key]]$label, "  |  n = ", n),
+      x = "Protein rank (ascending signed pathway score)", y = NULL
+    ) +
+    theme_minimal(base_family = publication_font, base_size = 10) +
     theme(
-      panel.grid = element_blank(),
-      strip.text = element_text(face = "bold"),
-      legend.position = "top"
+      panel.grid.major.y = element_blank(), panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_line(colour = "#D1D5DB", linewidth = 0.34),
+      axis.text.y = element_text(face = "bold", colour = "#374151", size = 9.8),
+      axis.text.x = element_text(colour = "#4B5563", size = 8.5),
+      axis.title.x = element_text(colour = "#374151", size = 9.5),
+      plot.title = element_text(face = "bold", size = 11.5, colour = "#111827"),
+      plot.margin = margin(7, 12, 7, 10)
     )
-  save_figure(matrix_plot, stem, 14, 3.6)
+}
+
+legacy_summary_panel <- function(key) {
+  panel <- copy(pathway_panels[[key]]$matrix)
+  n <- uniqueN(panel$BaseAccession)
+  summary_data <- panel[, .(
+    SuppressingCount = sum(State == -1),
+    UnassignedCount = sum(State == 0),
+    PromotingCount = sum(State == 1)
+  ), by = Pathway]
+  summary_data[, PathwayOrder := match(as.character(Pathway), pathway_order)]
+  setorder(summary_data, PathwayOrder)
+  summary_data[, `:=`(
+    Y = 8 - PathwayOrder,
+    PromotingFraction = PromotingCount / n,
+    SuppressingFraction = SuppressingCount / n,
+    PositiveLabel = sprintf("%d\n(%.1f%%)", PromotingCount, 100 * PromotingCount / n),
+    NegativeLabel = sprintf("%d\n(%.1f%%)", SuppressingCount, 100 * SuppressingCount / n),
+    ZeroLabel = paste0("0: ", UnassignedCount)
+  )]
+  ggplot() +
+    geom_rect(data = summary_data, aes(xmin = 0, xmax = PromotingFraction, ymin = Y - 0.29, ymax = Y + 0.29, fill = as.character(Pathway)), colour = NA) +
+    geom_rect(data = summary_data, aes(xmin = -SuppressingFraction, xmax = 0, ymin = Y - 0.29, ymax = Y + 0.29), fill = suppressing_fill, colour = NA) +
+    geom_vline(xintercept = 0, colour = guide_colour, linewidth = 0.4) +
+    geom_text(data = summary_data, aes(x = PromotingFraction + 0.008, y = Y, label = PositiveLabel), family = publication_font, hjust = 0, lineheight = 0.92, size = 2.75, colour = "#374151") +
+    geom_text(data = summary_data, aes(x = pmin(-SuppressingFraction - 0.005, -0.005), y = Y, label = NegativeLabel), family = publication_font, hjust = 1, lineheight = 0.92, size = 2.75, colour = "#374151") +
+    geom_text(data = summary_data, aes(x = 0.48, y = Y, label = ZeroLabel), family = publication_font, hjust = 0, size = 2.8, colour = "#6B7280") +
+    scale_fill_manual(values = pathway_colours, guide = "none") +
+    scale_x_continuous(limits = c(-0.13, 0.62), breaks = c(-0.1, 0, 0.1, 0.2, 0.3, 0.4), labels = function(x) paste0(abs(round(100 * x)), "%"), expand = c(0, 0)) +
+    scale_y_continuous(limits = c(0.5, 7.5), breaks = 7:1, labels = pathway_order, expand = c(0, 0)) +
+    labs(title = paste0(pathway_panels[[key]]$label, "\nn = ", n), x = "Protein fraction", y = NULL) +
+    theme_minimal(base_family = publication_font, base_size = 9) +
+    theme(
+      panel.grid.major.y = element_blank(), panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_line(colour = "#E5E7EB", linewidth = 0.32),
+      axis.text.y = element_text(face = "bold", colour = "#374151", size = 8.8),
+      axis.text.x = element_text(colour = "#4B5563", size = 7.8),
+      axis.title.x = element_text(colour = "#374151", size = 8.5),
+      plot.title = element_text(face = "bold", size = 10.5, colour = "#111827"),
+      plot.margin = margin(8, 13, 8, 8)
+    )
+}
+
+draw_pathway_matrices <- function(keys, stem) {
+  plot <- wrap_plots(lapply(keys, legacy_matrix_panel), nrow = 1) /
+    make_pathway_legend() + plot_layout(heights = c(1, 0.17))
+  save_figure(plot, stem, 15.8, 6.7)
 }
 
 draw_pathway_summary <- function(key, stem) {
-  summary_data <- pathway_panels[[key]]$summary
-  summary_plot <- ggplot(summary_data, aes(x = Pathway, y = SignedFraction, fill = FillClass)) +
-    geom_col(width = 0.72) +
-    geom_hline(yintercept = 0, colour = "#666666", linewidth = 0.3) +
-    scale_fill_manual(
-      values = c(pathway_colours, "suppressing" = "#303030"),
-      breaks = c(pathway_order, "suppressing"),
-      labels = pathway_legend_labels[c(pathway_order, "suppressing")],
-      name = NULL
-    ) +
-    scale_y_continuous(labels = scales::label_percent(accuracy = 1)) +
-    labs(x = NULL, y = "Fraction of Kla-DDR proteins", title = pathway_panels[[key]]$label) +
-    theme_classic(base_size = 10, base_family = publication_font) +
-    theme(
-      plot.title = element_text(face = "bold"),
-      legend.position = "top"
-    )
-  save_figure(summary_plot, stem, 7, 4.5)
+  plot <- legacy_summary_panel(key) /
+    make_pathway_legend() + plot_layout(heights = c(1, 0.17))
+  save_figure(plot, stem, 8.8, 7.2)
 }
 
 draw_pathway_matrices(c("cancer_tissue", "normal_tissue"), "Figure_2c_DDR_pathway_matrices_tissues")

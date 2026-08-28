@@ -4,10 +4,9 @@ This repository contains the code and release inputs used for the analyses in
 the final manuscript on human lysine lactylation (Kla) and the DNA-damage
 response (DDR).
 
-The `full-source-to-publication` branch adds the step that turns downloaded,
-processed source files into the analysis tables. It leaves the original
-table-based workflow available as well, so a reader can choose either of the
-following:
+This repository includes the step that turns downloaded, processed source
+files into the analysis tables. The release-table workflow remains available,
+so a reader can choose either of the following:
 
 1. Start with the release tables already included in the repository and
    reproduce the figures and supplementary tables.

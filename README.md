@@ -127,6 +127,24 @@ and S5 workbooks and the frozen human DDR GO annotations. The original public
 PXD files are not committed because of their size. Their accessions and
 source-file locations are retained in `group_summary_30.csv` and Table S1.
 
+## Isolated figure candidate
+
+This branch also contains an independent layout candidate under
+`R/candidate/`. It is not called by the publication workflow and does not
+replace anything under `results/figures/`. To render the three-row Figure 1
+candidate, run:
+
+```bash
+Rscript R/candidate/build_figure1_three_row_tissue_block.R .
+```
+
+The upper row places the non-tumor and tumor tissue groups side by side. The
+two lower rows retain the existing cancer-cell-line and normal-cell-line
+groups, in the established group order. The plotted values, colors, matching
+classes and labels come from the frozen publication inputs; only the panel
+arrangement and candidate typography are different. This candidate should be
+reviewed before it is considered for the publication release.
+
 ## Repository layout
 
 ```text

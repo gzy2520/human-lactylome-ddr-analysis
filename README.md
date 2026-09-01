@@ -127,29 +127,58 @@ and S5 workbooks and the frozen human DDR GO annotations. The original public
 PXD files are not committed because of their size. Their accessions and
 source-file locations are retained in `group_summary_30.csv` and Table S1.
 
-## Isolated figure candidate
+## Sample-level Figure 1 candidate
 
-This branch also contains an independent layout candidate under
-`R/candidate/`. It is not called by the publication workflow and does not
-replace anything under `results/figures/`. To render the three-row Figure 1
-candidate, run:
+This branch contains an optional Figure 1 candidate for reviewing within-PXD
+sample variation. It is separate from the publication workflow: it does not
+change the frozen figures or tables, and it writes only to
+`results/candidate/`.
+
+The plot uses 88 source-defined observations across the same 30 publication
+groups. Each point represents one sample, condition or model when that
+identity can be recovered from the deposited processed file. Technical
+channels, structural runs and pooled measurements are kept as transparent
+single observations when independent biological sample identities cannot be
+established; they are not counted as biological replicates. The `n=` label on
+each row shows the number of plotted observations.
+
+The upper block contains non-tumor and tumor tissues side by side. Cancer cell
+lines and normal cell lines remain in separate rows below, with the original
+group order retained. Orange boxes and points show sample-level Kla-DDR
+fractions. Blue diamonds show the frozen whole-proteome group reference used
+in the manuscript; they are not a second sample-level distribution.
+
+The committed candidate tables are enough to inspect the figure directly:
 
 ```bash
-Rscript R/candidate/build_figure1_three_row_tissue_block.R .
+Rscript R/candidate/build_figure1_sample_boxplot.R .
 ```
 
-The upper row places the non-tumor and tumor tissue groups side by side. The
-two lower rows retain the existing cancer-cell-line and normal-cell-line
-groups, in the established group order. The plotted values, colors, matching
-classes and labels come from the frozen publication inputs; only the panel
-arrangement and candidate typography are different. This candidate should be
-reviewed before it is considered for the publication release.
+To rebuild those tables from a local cache of the deposited processed files,
+run the preparation step first and then render the same figure:
+
+```bash
+Rscript R/candidate/prepare_sample_boxplot_inputs.R . /absolute/path/to/source_cache
+Rscript R/candidate/build_figure1_sample_boxplot.R .
+```
+
+The preparation step also writes a reconciliation table. Every group must
+match the frozen Kla and Kla-DDR protein counts before the figure is rendered.
+The sample-count and provenance checks can be run with:
+
+```bash
+Rscript tests/validate_sample_boxplot_contract.R .
+```
+
+This is a review candidate for the manuscript revision, not a replacement for
+the approved publication output.
 
 ## Repository layout
 
 ```text
 data/publication_input/     release tables, workbooks and input manifest
 R/publication/              manuscript-figure generation
+R/candidate/                optional sample-level Figure 1 review code
 workflow/                   publication workflow and source-to-table preparation
 tests/                      checks for the study scope and outputs
 results/                    regenerated figures and supplementary tables

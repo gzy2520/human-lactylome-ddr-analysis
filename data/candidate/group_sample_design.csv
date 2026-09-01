@@ -1,0 +1,31 @@
+RowOrder,PXD,SampleGroup,Parser,SampleTokens,SampleClass,NRuns,Note
+1,PXD033146,pathological rotator cuff tendon,tmt_plex,1;2;3;4;5;6,plex_channel,6,Six TMT reporter channels (each x3 technical reps); biological identity follows study design
+2,PXD036307,normal human lung,pd_site,PTB340;PTB342;PTB344;PTB346;PTB364;PTB372,replicate,6,Six normal-lung samples (PTB340-372)
+3,PXD046800,hypertrophic scar,pd_site,HSP1;HSP2;HSP3;HSP4,replicate,4,Same-study HSP1-HSP4 hypertrophic-scar samples
+4,PXD046800,adjacent skin,pd_site,NSP1;NSP2;NSP3;NSP4,replicate,4,Same-study NSP1-NSP4 adjacent-skin samples
+5,PXD050470,human hippocampus,xlsx_intensity,Proteins accession,H072;H081;H0187,replicate,3,Same three hippocampus samples (H072/H081/H0187)
+6,PXD063047,normal pregnancy placenta,pd_site,Con_1;Con_2;Con_3,replicate,3,Control placentas; PE_1-3 belong to the preeclampsia group (not in the 30)
+7,PXD064912,human sperm,xlsx_site,Rep 1;Rep 2;Rep 3,replicate,3,Three human-sperm samples (Rep 1-3)
+8,PXD066054,BPH,spectronaut,NAT1;NAT2;NAT3;NAT4;NAT5,replicate,5,Same-study NAT1-NAT5 BPH samples
+9,PXD075377,adjacent liver,itraq_pool,Control,pool,1,iTRAQ Control (adjacent liver) pool of a 2-channel experiment
+11,PXD066054,prostate cancer,spectronaut,PCa1;PCa2;PCa3;PCa4;PCa5,replicate,5,Same-study PCa1-PCa5 prostate-cancer samples
+12,PXD075377,HCC,itraq_pool,HCC,pool,1,iTRAQ HCC pool of a 2-channel experiment
+14,PXD060185,MCF7,pd_site,A,single,1,Single MCF7 sample (channel A)
+15,PXD028488,HCT116,pd_psm,HCT116,single,1,Single HCT116 enrichment run
+16,PXD053474,HCT116,single,HCT116-subcellular,single,22,One cell line measured across 22 subcellular compartment/fraction/acquisition runs
+17,PXD066351,HCT116 control and Roseburia co-culture,spectronaut,NC116;R116,condition,2,Control (NC116) vs Roseburia co-culture (R116), one run each
+18,PXD028488,TALL-104,pd_psm,TALL-enrichment;TALL-nonenrichment,single,2,One cell line: enriched + non-enriched runs
+19,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,pd_site,WT_rep1;WT_rep2;WT_rep3;SIRT1KO_rep1;SIRT1KO_rep2;SIRT1KO_rep3;SIRT3KO_rep1;SIRT3KO_rep2;SIRT3KO_rep3,condition,9,Three genotypes (WT/SIRT1-KO/SIRT3-KO) x 3 replicates
+20,PXD054919,A549,xlsx_site,A549-1;A549-2;A549-3,replicate,3,Three A549 samples
+21,PXD060185,MDA-MB-468,pd_site,B,single,1,Single MDA-MB-468 sample (channel B)
+22,PXD060185,T-47D,pd_site,D,single,1,Single T-47D sample (channel D)
+23,PXD063266,PC-3M,xlsx_site,1;2;3,replicate,3,Three PC-3M replicates
+24,PXD070007,glioblastoma stem cells,xlsx_model,G2907;G3028;G3264;GSC23;MES28;RKI,model,6,Six GSC models
+25,PXD078013,RKO WT and GSK3B KO,pd_protein,sg_1;sg_2;sg737_1;sg737_2,condition,4,WT2 (sg_1/sg_2) + GSK3B-KO2 (sg737_1/sg737_2)
+28,PXD028488,HEK293T,pd_psm,HEK293T,single,10,One cell line across 5 timepoints x 2 arms (enriched/non-enriched) = 10 runs
+29,PXD028737,HMC3,pending,,HMC3,condition,,PENDING SERVER (967 MB zip): H0/H24 normoxia-hypoxia conditions
+30,PXD058534,pretreated HK-2,pd_site,HK2,single,1,Single pretreated HK-2 sample
+31,PXD078736,HK-2 control and mannitol,pd_site,ctr_1;ctr_2;ctr_3;man_1;man_2;man_3,condition,6,Control (ctr_1-3) + mannitol (man_1-3)
+32,PXD060185,MCF10A,pd_site,C,single,1,Single MCF10A sample (channel C)
+33,PXD070007,neural stem cells,xlsx_model,ENSA;HMP1,model,2,Two NSC models
+34,PXD073311,HUVEC control and Pg infection,maxquant_pg,A0h_1;A0h_2;A0h_3;A6h_1;A6h_2;A6h_3,condition,6,A0h baseline (x3) + P. gingivalis infection A6h (x3)

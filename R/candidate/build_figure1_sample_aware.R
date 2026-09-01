@@ -36,17 +36,6 @@ category_fills <- c(
   normal_cells = "#DCEAF5",
   cancer_cells = "#FCE7D4"
 )
-match_labels <- c(
-  same_study_sample = "same study / sample",
-  same_biospecimen = "same biospecimen",
-  same_material = "same material",
-  external_tissue = "external tissue",
-  external_adjacent = "external adjacent tissue",
-  external_disease = "external disease ref.",
-  external_cell_line = "external cell-line ref.",
-  same_study_caveat = "same study / method caveat",
-  process_control = "process-control ref."
-)
 match_linetypes <- c(
   same_study_sample = "solid",
   same_biospecimen = "solid",
@@ -105,7 +94,7 @@ data <- merge(
 )
 setorder(data, RowOrder)
 stop_if(!anyNA(data$ReferenceFraction), "Candidate Fig. 1 requires a reference fraction for every group.")
-stop_if(all(data$MatchClass %in% names(match_labels)), "Candidate design contains an unknown match class.")
+stop_if(all(data$MatchClass %in% names(match_linetypes)), "Candidate design contains an unknown match class.")
 
 data[, Category := factor(Category, levels = category_order)]
 data[, CategoryLabel := factor(
@@ -113,7 +102,6 @@ data[, CategoryLabel := factor(
   levels = category_order,
   labels = unname(category_labels[category_order])
 )]
-data[, MatchLabel := unname(match_labels[MatchClass])]
 data[, MatchType := factor(MatchClass, levels = names(match_linetypes))]
 data[, RowLabel := paste0(DisplayGroup, " · ", PXD)]
 data[, NLabel := paste0("n=", format_n(KlaN), "/", format_n(ReferenceN))]
@@ -182,28 +170,14 @@ candidate_plot <- ggplot(data, aes(y = PlotRow)) +
     colour = "#C36E12"
   ) +
   geom_text(
-    aes(x = 15.35, label = NLabel),
+    aes(x = 16.0, label = NLabel),
     hjust = 0,
     size = 3.0,
     family = publication_font,
     colour = "#30343B"
   ) +
   geom_text(
-    aes(x = 17.15, label = KlaSampleDesign),
-    hjust = 0,
-    size = 2.8,
-    family = publication_font,
-    colour = "#4B5563"
-  ) +
-  geom_text(
-    aes(x = 23.5, label = MatchLabel),
-    hjust = 0,
-    size = 2.8,
-    family = publication_font,
-    colour = "#4B5563"
-  ) +
-  geom_text(
-    aes(x = 27.5, label = DeltaLabel),
+    aes(x = 20.5, label = DeltaLabel),
     hjust = 0,
     size = 3.0,
     family = publication_font,
@@ -219,7 +193,7 @@ candidate_plot <- ggplot(data, aes(y = PlotRow)) +
   ) +
   scale_linetype_manual(values = match_linetypes, guide = "none") +
   scale_x_continuous(
-    limits = c(0, 30),
+    limits = c(0, 27),
     breaks = c(0, 5, 10, 15),
     expand = expansion(mult = c(0, 0))
   ) +
@@ -230,8 +204,8 @@ candidate_plot <- ggplot(data, aes(y = PlotRow)) +
     x = "GO-DDR annotated protein fraction (%)",
     y = NULL,
     title = "DDR annotation across the 30 publication sample groups",
-    subtitle = "Blue = whole proteome reference; orange = Kla. Solid/dashed/dotted lines indicate same-study, external, and caveat/process references.\nRight: n (Kla/reference) · Kla sample structure · reference relation · delta.",
-    caption = "Each point is a publication sample-group summary. NR indicates that a common biological sample count was not recoverable from the processed evidence; it is not imputed."
+    subtitle = "Blue = whole proteome reference; orange = Kla. Solid/dashed/dotted lines indicate same-study, external, and caveat/process references.\nRight: n (Kla/reference) and delta (Kla minus reference).",
+    caption = "Each point is a publication sample-group summary. NR indicates that a common biological sample count was not recoverable from the processed evidence; it is not imputed. Per-group Kla sample structure and the reference relation (also encoded by line style) are tabulated in the supplementary sample design."
   ) +
   theme_minimal(base_size = 10, base_family = publication_font) +
   theme(
@@ -266,6 +240,6 @@ for (index in seq_along(strip_ids)) {
 }
 
 stem <- file.path(output_dir, "Figure_1_candidate_sample_aware")
-ggsave(paste0(stem, ".png"), plot_grob, width = 20.5, height = 20.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem, ".pdf"), plot_grob, width = 20.5, height = 20.5, bg = "white", device = cairo_pdf)
+ggsave(paste0(stem, ".png"), plot_grob, width = 18.5, height = 20.5, dpi = 300, bg = "white", device = ragg::agg_png)
+ggsave(paste0(stem, ".pdf"), plot_grob, width = 18.5, height = 20.5, bg = "white", device = cairo_pdf)
 message("Wrote candidate Figure 1: ", stem, ".png/.pdf")

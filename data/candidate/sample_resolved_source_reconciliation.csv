@@ -1,0 +1,8 @@
+PXD,PublicationGroup,FrozenKlaProteinCount,FrozenKlaDdrProteinCount,FrozenWholeProteomeProteinCount,FrozenWholeProteomeDdrProteinCount,SourceKlaProteinCount,SourceKlaDdrProteinCount,SourceWholeProteomeProteinCount,SourceWholeProteomeDdrProteinCount,KlaProteinCountMatchesFrozen,KlaDdrProteinCountMatchesFrozen,WholeProteomeProteinCountMatchesFrozen,WholeProteomeDdrProteinCountMatchesFrozen
+PXD046800,adjacent skin,527,31,2205,89,527,31,2205,89,TRUE,TRUE,TRUE,TRUE
+PXD046800,hypertrophic scar,402,19,2193,83,402,19,2193,83,TRUE,TRUE,TRUE,TRUE
+PXD050470,human hippocampus,853,29,6082,219,853,29,6082,219,TRUE,TRUE,TRUE,TRUE
+PXD066054,BPH,2118,142,8169,408,2118,142,8169,408,TRUE,TRUE,TRUE,TRUE
+PXD066054,prostate cancer,2125,143,8203,412,2125,143,8203,412,TRUE,TRUE,TRUE,TRUE
+PXD078013,RKO WT and GSK3B KO,1217,113,3615,252,1217,113,,,TRUE,TRUE,TRUE,TRUE
+PXD078736,HK-2 control and mannitol,1250,132,4897,304,1250,132,,,TRUE,TRUE,TRUE,TRUE

@@ -1,0 +1,218 @@
+SampleKey,PXD,SampleID,PublicationGroup,Category,ConditionLabel,EvidenceTier,Pathway,PositiveProteinCount,NegativeProteinCount,AnyPathwayProteinCount,KlaDdrProteinCount,FractionOfKlaDdrProteins
+PXD046800__NSP1,PXD046800,NSP1,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,AEJ,0,0,0,28,0
+PXD046800__NSP1,PXD046800,NSP1,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,BER,5,0,5,28,0.178571428571429
+PXD046800__NSP1,PXD046800,NSP1,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,FA,1,0,1,28,0.0357142857142857
+PXD046800__NSP1,PXD046800,NSP1,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,HR,7,0,7,28,0.25
+PXD046800__NSP1,PXD046800,NSP1,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,MMR,0,0,0,28,0
+PXD046800__NSP1,PXD046800,NSP1,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NER,3,0,3,28,0.107142857142857
+PXD046800__NSP1,PXD046800,NSP1,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NHEJ,8,0,8,28,0.285714285714286
+PXD046800__NSP2,PXD046800,NSP2,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,AEJ,0,1,1,22,0.0454545454545455
+PXD046800__NSP2,PXD046800,NSP2,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,BER,5,0,5,22,0.227272727272727
+PXD046800__NSP2,PXD046800,NSP2,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,FA,1,0,1,22,0.0454545454545455
+PXD046800__NSP2,PXD046800,NSP2,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,HR,7,0,7,22,0.318181818181818
+PXD046800__NSP2,PXD046800,NSP2,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,MMR,2,0,2,22,0.0909090909090909
+PXD046800__NSP2,PXD046800,NSP2,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NER,3,0,3,22,0.136363636363636
+PXD046800__NSP2,PXD046800,NSP2,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NHEJ,7,0,7,22,0.318181818181818
+PXD046800__NSP3,PXD046800,NSP3,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,AEJ,0,0,0,18,0
+PXD046800__NSP3,PXD046800,NSP3,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,BER,3,0,3,18,0.166666666666667
+PXD046800__NSP3,PXD046800,NSP3,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,FA,0,0,0,18,0
+PXD046800__NSP3,PXD046800,NSP3,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,HR,6,0,6,18,0.333333333333333
+PXD046800__NSP3,PXD046800,NSP3,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,MMR,1,0,1,18,0.0555555555555556
+PXD046800__NSP3,PXD046800,NSP3,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NER,1,0,1,18,0.0555555555555556
+PXD046800__NSP3,PXD046800,NSP3,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NHEJ,5,0,5,18,0.277777777777778
+PXD046800__NSP4,PXD046800,NSP4,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,AEJ,0,0,0,19,0
+PXD046800__NSP4,PXD046800,NSP4,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,BER,3,0,3,19,0.157894736842105
+PXD046800__NSP4,PXD046800,NSP4,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,FA,1,0,1,19,0.0526315789473684
+PXD046800__NSP4,PXD046800,NSP4,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,HR,6,0,6,19,0.315789473684211
+PXD046800__NSP4,PXD046800,NSP4,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,MMR,1,0,1,19,0.0526315789473684
+PXD046800__NSP4,PXD046800,NSP4,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NER,1,0,1,19,0.0526315789473684
+PXD046800__NSP4,PXD046800,NSP4,adjacent skin,normal_tissue,Adjacent skin,A_same_source_same_sample,NHEJ,4,0,4,19,0.210526315789474
+PXD046800__HSP1,PXD046800,HSP1,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,AEJ,0,0,0,13,0
+PXD046800__HSP1,PXD046800,HSP1,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,BER,2,0,2,13,0.153846153846154
+PXD046800__HSP1,PXD046800,HSP1,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,FA,0,0,0,13,0
+PXD046800__HSP1,PXD046800,HSP1,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,HR,4,0,4,13,0.307692307692308
+PXD046800__HSP1,PXD046800,HSP1,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,MMR,0,0,0,13,0
+PXD046800__HSP1,PXD046800,HSP1,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NER,0,0,0,13,0
+PXD046800__HSP1,PXD046800,HSP1,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NHEJ,4,0,4,13,0.307692307692308
+PXD046800__HSP2,PXD046800,HSP2,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,AEJ,0,0,0,13,0
+PXD046800__HSP2,PXD046800,HSP2,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,BER,3,0,3,13,0.230769230769231
+PXD046800__HSP2,PXD046800,HSP2,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,FA,1,0,1,13,0.0769230769230769
+PXD046800__HSP2,PXD046800,HSP2,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,HR,5,0,5,13,0.384615384615385
+PXD046800__HSP2,PXD046800,HSP2,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,MMR,1,0,1,13,0.0769230769230769
+PXD046800__HSP2,PXD046800,HSP2,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NER,1,0,1,13,0.0769230769230769
+PXD046800__HSP2,PXD046800,HSP2,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NHEJ,3,0,3,13,0.230769230769231
+PXD046800__HSP3,PXD046800,HSP3,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,AEJ,0,0,0,14,0
+PXD046800__HSP3,PXD046800,HSP3,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,BER,2,0,2,14,0.142857142857143
+PXD046800__HSP3,PXD046800,HSP3,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,FA,0,0,0,14,0
+PXD046800__HSP3,PXD046800,HSP3,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,HR,4,0,4,14,0.285714285714286
+PXD046800__HSP3,PXD046800,HSP3,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,MMR,0,0,0,14,0
+PXD046800__HSP3,PXD046800,HSP3,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NER,0,0,0,14,0
+PXD046800__HSP3,PXD046800,HSP3,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NHEJ,3,0,3,14,0.214285714285714
+PXD046800__HSP4,PXD046800,HSP4,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,AEJ,0,0,0,14,0
+PXD046800__HSP4,PXD046800,HSP4,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,BER,2,0,2,14,0.142857142857143
+PXD046800__HSP4,PXD046800,HSP4,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,FA,0,0,0,14,0
+PXD046800__HSP4,PXD046800,HSP4,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,HR,3,0,3,14,0.214285714285714
+PXD046800__HSP4,PXD046800,HSP4,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,MMR,0,0,0,14,0
+PXD046800__HSP4,PXD046800,HSP4,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NER,0,0,0,14,0
+PXD046800__HSP4,PXD046800,HSP4,hypertrophic scar,normal_tissue,Hypertrophic scar,A_same_source_same_sample,NHEJ,4,0,4,14,0.285714285714286
+PXD050470__H072,PXD050470,H072,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,AEJ,1,0,1,29,0.0344827586206897
+PXD050470__H072,PXD050470,H072,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,BER,5,0,5,29,0.172413793103448
+PXD050470__H072,PXD050470,H072,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,FA,1,0,1,29,0.0344827586206897
+PXD050470__H072,PXD050470,H072,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,HR,7,1,8,29,0.275862068965517
+PXD050470__H072,PXD050470,H072,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,MMR,3,0,3,29,0.103448275862069
+PXD050470__H072,PXD050470,H072,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,NER,2,0,2,29,0.0689655172413793
+PXD050470__H072,PXD050470,H072,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,NHEJ,12,0,12,29,0.413793103448276
+PXD050470__H081,PXD050470,H081,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,AEJ,1,0,1,29,0.0344827586206897
+PXD050470__H081,PXD050470,H081,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,BER,5,0,5,29,0.172413793103448
+PXD050470__H081,PXD050470,H081,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,FA,1,0,1,29,0.0344827586206897
+PXD050470__H081,PXD050470,H081,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,HR,7,1,8,29,0.275862068965517
+PXD050470__H081,PXD050470,H081,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,MMR,3,0,3,29,0.103448275862069
+PXD050470__H081,PXD050470,H081,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,NER,2,0,2,29,0.0689655172413793
+PXD050470__H081,PXD050470,H081,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,NHEJ,12,0,12,29,0.413793103448276
+PXD050470__H187,PXD050470,H187,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,AEJ,1,0,1,29,0.0344827586206897
+PXD050470__H187,PXD050470,H187,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,BER,5,0,5,29,0.172413793103448
+PXD050470__H187,PXD050470,H187,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,FA,1,0,1,29,0.0344827586206897
+PXD050470__H187,PXD050470,H187,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,HR,7,1,8,29,0.275862068965517
+PXD050470__H187,PXD050470,H187,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,MMR,3,0,3,29,0.103448275862069
+PXD050470__H187,PXD050470,H187,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,NER,2,0,2,29,0.0689655172413793
+PXD050470__H187,PXD050470,H187,human hippocampus,normal_tissue,Human hippocampus,A_same_source_same_sample,NHEJ,12,0,12,29,0.413793103448276
+PXD066054__NAT1,PXD066054,NAT1,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,AEJ,12,5,17,140,0.121428571428571
+PXD066054__NAT1,PXD066054,NAT1,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,BER,20,0,20,140,0.142857142857143
+PXD066054__NAT1,PXD066054,NAT1,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,FA,7,0,7,140,0.05
+PXD066054__NAT1,PXD066054,NAT1,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,HR,57,6,63,140,0.45
+PXD066054__NAT1,PXD066054,NAT1,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,MMR,10,0,10,140,0.0714285714285714
+PXD066054__NAT1,PXD066054,NAT1,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NER,16,0,16,140,0.114285714285714
+PXD066054__NAT1,PXD066054,NAT1,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NHEJ,39,6,45,140,0.321428571428571
+PXD066054__NAT2,PXD066054,NAT2,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,AEJ,13,4,17,133,0.12781954887218
+PXD066054__NAT2,PXD066054,NAT2,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,BER,19,0,19,133,0.142857142857143
+PXD066054__NAT2,PXD066054,NAT2,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,FA,7,0,7,133,0.0526315789473684
+PXD066054__NAT2,PXD066054,NAT2,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,HR,52,6,58,133,0.43609022556391
+PXD066054__NAT2,PXD066054,NAT2,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,MMR,9,0,9,133,0.0676691729323308
+PXD066054__NAT2,PXD066054,NAT2,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NER,15,0,15,133,0.112781954887218
+PXD066054__NAT2,PXD066054,NAT2,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NHEJ,37,4,41,133,0.308270676691729
+PXD066054__NAT3,PXD066054,NAT3,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,AEJ,12,3,15,129,0.116279069767442
+PXD066054__NAT3,PXD066054,NAT3,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,BER,18,0,18,129,0.13953488372093
+PXD066054__NAT3,PXD066054,NAT3,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,FA,7,0,7,129,0.0542635658914729
+PXD066054__NAT3,PXD066054,NAT3,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,HR,50,6,56,129,0.434108527131783
+PXD066054__NAT3,PXD066054,NAT3,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,MMR,9,0,9,129,0.0697674418604651
+PXD066054__NAT3,PXD066054,NAT3,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NER,14,0,14,129,0.108527131782946
+PXD066054__NAT3,PXD066054,NAT3,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NHEJ,36,5,41,129,0.317829457364341
+PXD066054__NAT4,PXD066054,NAT4,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,AEJ,13,3,16,131,0.122137404580153
+PXD066054__NAT4,PXD066054,NAT4,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,BER,19,0,19,131,0.145038167938931
+PXD066054__NAT4,PXD066054,NAT4,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,FA,7,0,7,131,0.0534351145038168
+PXD066054__NAT4,PXD066054,NAT4,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,HR,50,6,56,131,0.427480916030534
+PXD066054__NAT4,PXD066054,NAT4,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,MMR,9,0,9,131,0.0687022900763359
+PXD066054__NAT4,PXD066054,NAT4,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NER,14,0,14,131,0.106870229007634
+PXD066054__NAT4,PXD066054,NAT4,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NHEJ,36,5,41,131,0.312977099236641
+PXD066054__NAT5,PXD066054,NAT5,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,AEJ,12,4,16,131,0.122137404580153
+PXD066054__NAT5,PXD066054,NAT5,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,BER,19,0,19,131,0.145038167938931
+PXD066054__NAT5,PXD066054,NAT5,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,FA,7,0,7,131,0.0534351145038168
+PXD066054__NAT5,PXD066054,NAT5,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,HR,51,6,57,131,0.435114503816794
+PXD066054__NAT5,PXD066054,NAT5,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,MMR,10,0,10,131,0.0763358778625954
+PXD066054__NAT5,PXD066054,NAT5,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NER,16,0,16,131,0.122137404580153
+PXD066054__NAT5,PXD066054,NAT5,BPH,normal_tissue,Benign prostatic hyperplasia,A_same_source_same_sample,NHEJ,36,6,42,131,0.320610687022901
+PXD066054__PCa1,PXD066054,PCa1,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,AEJ,13,4,17,137,0.124087591240876
+PXD066054__PCa1,PXD066054,PCa1,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,BER,21,0,21,137,0.153284671532847
+PXD066054__PCa1,PXD066054,PCa1,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,FA,7,0,7,137,0.0510948905109489
+PXD066054__PCa1,PXD066054,PCa1,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,HR,55,6,61,137,0.445255474452555
+PXD066054__PCa1,PXD066054,PCa1,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,MMR,11,0,11,137,0.0802919708029197
+PXD066054__PCa1,PXD066054,PCa1,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NER,15,0,15,137,0.109489051094891
+PXD066054__PCa1,PXD066054,PCa1,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NHEJ,38,6,44,137,0.321167883211679
+PXD066054__PCa2,PXD066054,PCa2,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,AEJ,9,5,14,127,0.110236220472441
+PXD066054__PCa2,PXD066054,PCa2,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,BER,17,0,17,127,0.133858267716535
+PXD066054__PCa2,PXD066054,PCa2,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,FA,6,0,6,127,0.047244094488189
+PXD066054__PCa2,PXD066054,PCa2,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,HR,51,6,57,127,0.448818897637795
+PXD066054__PCa2,PXD066054,PCa2,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,MMR,10,0,10,127,0.078740157480315
+PXD066054__PCa2,PXD066054,PCa2,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NER,15,0,15,127,0.118110236220472
+PXD066054__PCa2,PXD066054,PCa2,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NHEJ,34,5,39,127,0.307086614173228
+PXD066054__PCa3,PXD066054,PCa3,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,AEJ,13,5,18,141,0.127659574468085
+PXD066054__PCa3,PXD066054,PCa3,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,BER,21,0,21,141,0.148936170212766
+PXD066054__PCa3,PXD066054,PCa3,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,FA,7,0,7,141,0.049645390070922
+PXD066054__PCa3,PXD066054,PCa3,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,HR,57,6,63,141,0.446808510638298
+PXD066054__PCa3,PXD066054,PCa3,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,MMR,11,0,11,141,0.0780141843971631
+PXD066054__PCa3,PXD066054,PCa3,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NER,15,0,15,141,0.106382978723404
+PXD066054__PCa3,PXD066054,PCa3,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NHEJ,39,6,45,141,0.319148936170213
+PXD066054__PCa4,PXD066054,PCa4,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,AEJ,12,4,16,137,0.116788321167883
+PXD066054__PCa4,PXD066054,PCa4,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,BER,19,0,19,137,0.138686131386861
+PXD066054__PCa4,PXD066054,PCa4,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,FA,7,0,7,137,0.0510948905109489
+PXD066054__PCa4,PXD066054,PCa4,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,HR,55,6,61,137,0.445255474452555
+PXD066054__PCa4,PXD066054,PCa4,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,MMR,10,0,10,137,0.072992700729927
+PXD066054__PCa4,PXD066054,PCa4,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NER,15,0,15,137,0.109489051094891
+PXD066054__PCa4,PXD066054,PCa4,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NHEJ,38,5,43,137,0.313868613138686
+PXD066054__PCa5,PXD066054,PCa5,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,AEJ,13,5,18,143,0.125874125874126
+PXD066054__PCa5,PXD066054,PCa5,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,BER,21,0,21,143,0.146853146853147
+PXD066054__PCa5,PXD066054,PCa5,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,FA,7,0,7,143,0.048951048951049
+PXD066054__PCa5,PXD066054,PCa5,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,HR,58,6,64,143,0.447552447552448
+PXD066054__PCa5,PXD066054,PCa5,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,MMR,11,0,11,143,0.0769230769230769
+PXD066054__PCa5,PXD066054,PCa5,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NER,16,0,16,143,0.111888111888112
+PXD066054__PCa5,PXD066054,PCa5,prostate cancer,cancer_tissue,Prostate cancer,A_same_source_same_sample,NHEJ,39,6,45,143,0.314685314685315
+PXD078013__sg737_1,PXD078013,sg737_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,AEJ,6,2,8,89,0.0898876404494382
+PXD078013__sg737_1,PXD078013,sg737_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,BER,16,0,16,89,0.179775280898876
+PXD078013__sg737_1,PXD078013,sg737_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,FA,6,0,6,89,0.0674157303370787
+PXD078013__sg737_1,PXD078013,sg737_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,HR,31,4,35,89,0.393258426966292
+PXD078013__sg737_1,PXD078013,sg737_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,MMR,3,0,3,89,0.0337078651685393
+PXD078013__sg737_1,PXD078013,sg737_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,NER,12,1,13,89,0.146067415730337
+PXD078013__sg737_1,PXD078013,sg737_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,NHEJ,24,3,27,89,0.303370786516854
+PXD078013__sg737_2,PXD078013,sg737_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,AEJ,4,1,5,77,0.0649350649350649
+PXD078013__sg737_2,PXD078013,sg737_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,BER,15,0,15,77,0.194805194805195
+PXD078013__sg737_2,PXD078013,sg737_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,FA,5,0,5,77,0.0649350649350649
+PXD078013__sg737_2,PXD078013,sg737_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,HR,25,3,28,77,0.363636363636364
+PXD078013__sg737_2,PXD078013,sg737_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,MMR,3,0,3,77,0.038961038961039
+PXD078013__sg737_2,PXD078013,sg737_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,NER,10,1,11,77,0.142857142857143
+PXD078013__sg737_2,PXD078013,sg737_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B KO,B_kla_sample_only,NHEJ,21,3,24,77,0.311688311688312
+PXD078013__sg_1,PXD078013,sg_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,AEJ,7,1,8,98,0.0816326530612245
+PXD078013__sg_1,PXD078013,sg_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,BER,16,0,16,98,0.163265306122449
+PXD078013__sg_1,PXD078013,sg_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,FA,6,0,6,98,0.0612244897959184
+PXD078013__sg_1,PXD078013,sg_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,HR,29,4,33,98,0.336734693877551
+PXD078013__sg_1,PXD078013,sg_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,MMR,4,0,4,98,0.0408163265306122
+PXD078013__sg_1,PXD078013,sg_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,NER,12,1,13,98,0.13265306122449
+PXD078013__sg_1,PXD078013,sg_1,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,NHEJ,23,3,26,98,0.26530612244898
+PXD078013__sg_2,PXD078013,sg_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,AEJ,6,3,9,97,0.0927835051546392
+PXD078013__sg_2,PXD078013,sg_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,BER,16,0,16,97,0.164948453608247
+PXD078013__sg_2,PXD078013,sg_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,FA,7,0,7,97,0.0721649484536082
+PXD078013__sg_2,PXD078013,sg_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,HR,35,4,39,97,0.402061855670103
+PXD078013__sg_2,PXD078013,sg_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,MMR,6,0,6,97,0.0618556701030928
+PXD078013__sg_2,PXD078013,sg_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,NER,14,1,15,97,0.154639175257732
+PXD078013__sg_2,PXD078013,sg_2,RKO WT and GSK3B KO,cancer_cells,RKO GSK3B WT,B_kla_sample_only,NHEJ,24,3,27,97,0.278350515463918
+PXD078736__ctr_1,PXD078736,ctr_1,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,AEJ,7,6,13,105,0.123809523809524
+PXD078736__ctr_1,PXD078736,ctr_1,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,BER,17,0,17,105,0.161904761904762
+PXD078736__ctr_1,PXD078736,ctr_1,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,FA,6,0,6,105,0.0571428571428571
+PXD078736__ctr_1,PXD078736,ctr_1,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,HR,34,7,41,105,0.39047619047619
+PXD078736__ctr_1,PXD078736,ctr_1,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,MMR,8,0,8,105,0.0761904761904762
+PXD078736__ctr_1,PXD078736,ctr_1,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,NER,12,1,13,105,0.123809523809524
+PXD078736__ctr_1,PXD078736,ctr_1,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,NHEJ,21,2,23,105,0.219047619047619
+PXD078736__ctr_2,PXD078736,ctr_2,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,AEJ,6,5,11,103,0.106796116504854
+PXD078736__ctr_2,PXD078736,ctr_2,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,BER,13,0,13,103,0.12621359223301
+PXD078736__ctr_2,PXD078736,ctr_2,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,FA,7,0,7,103,0.0679611650485437
+PXD078736__ctr_2,PXD078736,ctr_2,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,HR,40,5,45,103,0.436893203883495
+PXD078736__ctr_2,PXD078736,ctr_2,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,MMR,8,0,8,103,0.0776699029126214
+PXD078736__ctr_2,PXD078736,ctr_2,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,NER,11,1,12,103,0.116504854368932
+PXD078736__ctr_2,PXD078736,ctr_2,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,NHEJ,22,2,24,103,0.233009708737864
+PXD078736__ctr_3,PXD078736,ctr_3,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,AEJ,7,5,12,105,0.114285714285714
+PXD078736__ctr_3,PXD078736,ctr_3,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,BER,17,0,17,105,0.161904761904762
+PXD078736__ctr_3,PXD078736,ctr_3,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,FA,9,0,9,105,0.0857142857142857
+PXD078736__ctr_3,PXD078736,ctr_3,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,HR,40,5,45,105,0.428571428571429
+PXD078736__ctr_3,PXD078736,ctr_3,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,MMR,8,0,8,105,0.0761904761904762
+PXD078736__ctr_3,PXD078736,ctr_3,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,NER,12,1,13,105,0.123809523809524
+PXD078736__ctr_3,PXD078736,ctr_3,HK-2 control and mannitol,normal_cells,HK-2 control,B_kla_sample_only,NHEJ,26,2,28,105,0.266666666666667
+PXD078736__man_1,PXD078736,man_1,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,AEJ,3,3,6,56,0.107142857142857
+PXD078736__man_1,PXD078736,man_1,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,BER,8,0,8,56,0.142857142857143
+PXD078736__man_1,PXD078736,man_1,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,FA,2,0,2,56,0.0357142857142857
+PXD078736__man_1,PXD078736,man_1,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,HR,19,4,23,56,0.410714285714286
+PXD078736__man_1,PXD078736,man_1,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,MMR,4,0,4,56,0.0714285714285714
+PXD078736__man_1,PXD078736,man_1,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,NER,5,0,5,56,0.0892857142857143
+PXD078736__man_1,PXD078736,man_1,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,NHEJ,14,1,15,56,0.267857142857143
+PXD078736__man_2,PXD078736,man_2,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,AEJ,4,2,6,54,0.111111111111111
+PXD078736__man_2,PXD078736,man_2,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,BER,9,0,9,54,0.166666666666667
+PXD078736__man_2,PXD078736,man_2,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,FA,1,0,1,54,0.0185185185185185
+PXD078736__man_2,PXD078736,man_2,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,HR,16,4,20,54,0.37037037037037
+PXD078736__man_2,PXD078736,man_2,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,MMR,4,0,4,54,0.0740740740740741
+PXD078736__man_2,PXD078736,man_2,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,NER,5,0,5,54,0.0925925925925926
+PXD078736__man_2,PXD078736,man_2,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,NHEJ,14,1,15,54,0.277777777777778
+PXD078736__man_3,PXD078736,man_3,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,AEJ,4,2,6,54,0.111111111111111
+PXD078736__man_3,PXD078736,man_3,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,BER,9,0,9,54,0.166666666666667
+PXD078736__man_3,PXD078736,man_3,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,FA,1,0,1,54,0.0185185185185185
+PXD078736__man_3,PXD078736,man_3,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,HR,16,4,20,54,0.37037037037037
+PXD078736__man_3,PXD078736,man_3,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,MMR,4,0,4,54,0.0740740740740741
+PXD078736__man_3,PXD078736,man_3,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,NER,5,0,5,54,0.0925925925925926
+PXD078736__man_3,PXD078736,man_3,HK-2 control and mannitol,normal_cells,HK-2 mannitol,B_kla_sample_only,NHEJ,15,1,16,54,0.296296296296296

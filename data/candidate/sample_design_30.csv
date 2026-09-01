@@ -1,0 +1,31 @@
+RowOrder,PXD,SampleGroup,Category,KlaN,ReferenceN,KlaSampleDesign,ReferenceSampleDesign,Aggregation,MatchClass
+1,PXD033146,pathological rotator cuff tendon,normal_tissue,NA,NA,HA119TPLa matched samples,HA119TQ matched samples,protein union,same_study_sample
+2,PXD036307,normal human lung,normal_tissue,NA,NA,normal lung tissue,healthy lung tissue,dataset aggregate,external_tissue
+3,PXD046800,hypertrophic scar,normal_tissue,4,4,HSP1-HSP4,HSP1-HSP4,sample-group union,same_study_sample
+4,PXD046800,adjacent skin,normal_tissue,4,4,NSP1-NSP4,NSP1-NSP4,sample-group union,same_study_sample
+5,PXD050470,human hippocampus,normal_tissue,3,3,H072/H081/H0187,H072/H081/H0187,sample union,same_biospecimen
+6,PXD063047,normal pregnancy placenta,normal_tissue,NA,NA,normal placenta tissue,healthy placenta tissue,protein union,external_tissue
+7,PXD064912,human sperm,normal_tissue,NA,NA,human sperm samples,human sperm DIA proteome,repeat union,same_material
+8,PXD066054,BPH,normal_tissue,5,5,BPH samples,NAT1-NAT5,condition union,same_study_sample
+9,PXD075377,adjacent liver,normal_tissue,NA,NA,adjacent liver cohort,ANTs/Non-rec/Rec samples,protein union,external_adjacent
+11,PXD066054,prostate cancer,cancer_tissue,5,5,prostate cancer samples,PCa1-PCa5,condition union,same_study_sample
+12,PXD075377,HCC,cancer_tissue,NA,NA,HCC cohort,CISs/Non-rec/Rec samples,protein union,external_disease
+14,PXD060185,MCF7,cancer_cells,NA,NA,MCF7 samples,MCF7 SIDM00148,sample union,external_cell_line
+15,PXD028488,HCT116,cancer_cells,NA,NA,HCT116 enrichment,HCT-116 SIDM00783,sample union,external_cell_line
+16,PXD053474,HCT116,cancer_cells,NA,NA,HCT116 subcellular fractions,HCT-116 SIDM00783,compartment union,external_cell_line
+17,PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,NA,NA,HCT116/Roseburia conditions,matched DA samples,dataset aggregate,same_study_sample
+18,PXD028488,TALL-104,cancer_cells,3,3,TALL-104 enrichment,TALL-104 non-enrichment samples 1-3,sample union,same_study_sample
+19,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,NA,NA,HepG2 WT/SIRT1-KO/SIRT3-KO,SIRT proteinGroups,condition union,same_study_caveat
+20,PXD054919,A549,cancer_cells,NA,NA,A549 samples,A549 SIDM00903,dataset aggregate,external_cell_line
+21,PXD060185,MDA-MB-468,cancer_cells,NA,NA,MDA-MB-468 samples,MDA-MB-468 SIDM00628,sample union,external_cell_line
+22,PXD060185,T-47D,cancer_cells,NA,NA,T-47D samples,T47D SIDM00097,sample union,external_cell_line
+23,PXD063266,PC-3M,cancer_cells,NA,NA,PC-3M samples,PC-3M heavy SILAC channel,dataset aggregate,external_cell_line
+24,PXD070007,glioblastoma stem cells,cancer_cells,6,6,GSC models G2907/G3028/G3264/GSC23/MES28/RKI,same six GSC models,model union,same_biospecimen
+25,PXD078013,RKO WT and GSK3B KO,cancer_cells,4,NA,RKO WT2 + GSK3B-KO2,RKO SIDM01090,condition union,external_cell_line
+28,PXD028488,HEK293T,normal_cells,NA,NA,HEK293T control lysate,HEK293T control lysate,sample union,process_control
+29,PXD028737,HMC3,normal_cells,2,2,HMC3 H0/H24,H0/H24,sample union,same_study_sample
+30,PXD058534,pretreated HK-2,normal_cells,NA,3,pretreated HK-2,amostra1/amostra3/amostra4,protein union,external_cell_line
+31,PXD078736,HK-2 control and mannitol,normal_cells,6,3,HK-2 control3 + mannitol3,amostra1/amostra3/amostra4,condition union,external_cell_line
+32,PXD060185,MCF10A,normal_cells,NA,NA,MCF10A baseline,MCF-10A baseline,sample union,external_cell_line
+33,PXD070007,neural stem cells,normal_cells,2,2,NSC models ENSA/HMP1,ENSA/HMP1,model union,same_biospecimen
+34,PXD073311,HUVEC control and Pg infection,normal_cells,NA,3,HUVEC control/Pg infection,A0h_1/A0h_2/A0h_3,dataset aggregate,same_biospecimen

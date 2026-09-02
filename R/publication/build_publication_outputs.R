@@ -7,11 +7,9 @@
 suppressPackageStartupMessages({
   library(data.table)
   library(dplyr)
-  library(ggVennDiagram)
   library(ggplot2)
   library(patchwork)
   library(readxl)
-  library(tidyr)
 })
 
 set.seed(25)
@@ -371,74 +369,242 @@ draw_percentile_heatmap(
   c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B")
 )
 
-draw_exact_venn <- function(filename, stem, title) {
+draw_exact_upset <- function(filename, stem, title) {
   membership <- fread(input_path(filename)) |>
     as_tibble()
   membership_columns <- paste0("In_", venn_category_order)
-  assert(all(membership_columns %in% names(membership)), paste("Invalid Venn input:", filename))
-  venn_labels <- c(
-    normal_tissue = "non-tumor\ntissues",
-    cancer_tissue = "tumor\ntissues",
-    cancer_cells = "cancer cell\nlines",
-    normal_cells = "normal\ncell lines"
+  assert(all(membership_columns %in% names(membership)), paste("Invalid four-set membership input:", filename))
+  assert(!anyDuplicated(membership$BaseAccession), paste("Four-set membership contains duplicated accessions:", filename))
+  upset_labels <- c(
+    normal_tissue = "Non-tumor tissues",
+    cancer_tissue = "Tumor tissues",
+    cancer_cells = "Cancer cell lines",
+    normal_cells = "Normal cell lines"
   )
-  venn_colours <- c(
+  upset_colours <- c(
     normal_tissue = "#0072B2",
     cancer_tissue = "#E69F00",
     cancer_cells = "#CC79A7",
     normal_cells = "#009E73"
   )
-  lighten_region_colour <- function(region_id, strength = 0.42) {
-    set_ids <- as.integer(strsplit(region_id, "/", fixed = TRUE)[[1]])
-    rgb_values <- grDevices::col2rgb(unname(venn_colours)[set_ids])
-    base_rgb <- rowMeans(rgb_values)
-    mixed_rgb <- (1 - strength) * 255 + strength * base_rgb
-    grDevices::rgb(mixed_rgb[1], mixed_rgb[2], mixed_rgb[3], maxColorValue = 255)
+  membership_matrix <- vapply(
+    membership_columns,
+    function(column) is_true(membership[[column]]),
+    logical(nrow(membership))
+  )
+  row_masks <- as.integer(membership_matrix %*% c(1L, 2L, 4L, 8L))
+  assert(all(row_masks %in% seq_len(15L)), paste("A four-set membership row is empty:", filename))
+
+  mask_members <- function(mask) {
+    venn_category_order[bitwAnd(mask, bitwShiftL(1L, seq_along(venn_category_order) - 1L)) != 0L]
   }
-  exact_sets <- lapply(venn_category_order, function(category) {
-    membership$BaseAccession[is_true(membership[[paste0("In_", category)]])]
-  })
-  names(exact_sets) <- unname(venn_labels[venn_category_order])
-  plot <- ggVennDiagram(
-    exact_sets,
-    label = "count",
-    label_geom = "text",
-    label_size = 5.5,
-    label_color = "#1D1D1F",
-    label_alpha = 1,
-    label_font = publication_font,
-    set_color = unname(venn_colours[venn_category_order]),
-    set_size = 5.5,
-    edge_size = 0.7,
-    force_upset = FALSE
+  region_names <- vapply(seq_len(15L), function(mask) {
+    members <- mask_members(mask)
+    if (length(members) == length(venn_category_order)) {
+      "all_four"
+    } else {
+      paste0(paste(members, collapse = "_and_"), "_only")
+    }
+  }, character(1))
+  observed_regions <- membership |>
+    count(Region, name = "ProteinCount")
+  observed_region_counts <- observed_regions$ProteinCount[match(region_names, observed_regions$Region)]
+  observed_region_counts[is.na(observed_region_counts)] <- 0L
+  assert(
+    identical(as.integer(observed_region_counts), as.integer(tabulate(row_masks, nbins = 15L))),
+    paste("Four-set membership regions do not agree with the membership flags:", filename)
   )
-  region_ids <- as.character(plot$layers[[1]]$data$id)
-  plot$layers[[1]]$data$region_fill <- vapply(region_ids, lighten_region_colour, character(1))
-  plot$layers[[1]]$mapping <- aes(
-    x = .data$X,
-    y = .data$Y,
-    fill = .data$region_fill,
-    group = .data$id
+
+  intersections <- data.table(
+    Mask = seq_len(15L),
+    ProteinCount = as.integer(tabulate(row_masks, nbins = 15L))
+  )[order(-ProteinCount, Mask)]
+  intersections[, Intersection := .I]
+
+  set_order_bottom_to_top <- rev(venn_category_order)
+  set_membership <- data.table(
+    Set = venn_category_order,
+    SetLabel = unname(upset_labels[venn_category_order]),
+    SetCount = vapply(seq_along(venn_category_order), function(index) {
+      sum(membership_matrix[, index])
+    }, integer(1))
   )
-  plot <- plot +
-    scale_fill_identity(guide = "none") +
-    labs(title = title) +
-    theme_void(base_family = publication_font) +
+  set_membership[, Y := match(Set, set_order_bottom_to_top)]
+  set_axis_breaks <- sort(set_membership$Y)
+  set_axis_labels <- set_membership$SetLabel[order(set_membership$Y)]
+
+  matrix_data <- set_membership[
+    , .(Intersection = intersections$Intersection),
+    by = .(Set, Y)
+  ]
+  matrix_data <- merge(
+    matrix_data,
+    intersections[, .(Intersection, Mask)],
+    by = "Intersection",
+    sort = FALSE
+  )
+  matrix_data[, Present := bitwAnd(
+    Mask,
+    bitwShiftL(1L, match(Set, venn_category_order) - 1L)
+  ) != 0L]
+  connectors <- matrix_data[Present == TRUE, .(
+    YMin = min(Y),
+    YMax = max(Y),
+    N = .N
+  ), by = Intersection][N > 1L]
+
+  x_limits <- c(0.5, nrow(intersections) + 0.5)
+  max_intersection <- max(intersections$ProteinCount)
+  bar_label_y <- ifelse(
+    intersections$ProteinCount == 0L,
+    max(1, max_intersection * 0.025),
+    intersections$ProteinCount
+  )
+  intersections[, LabelY := bar_label_y]
+
+  intersection_plot <- ggplot(intersections, aes(x = Intersection, y = ProteinCount)) +
+    geom_col(width = 0.72, fill = "#4B5563") +
+    geom_text(
+      aes(y = LabelY, label = ProteinCount),
+      vjust = -0.28,
+      size = 3.55,
+      family = publication_font,
+      colour = "#252A31"
+    ) +
+    scale_x_continuous(limits = x_limits, breaks = intersections$Intersection, labels = NULL, expand = c(0, 0)) +
+    scale_y_continuous(
+      limits = c(0, max_intersection * 1.16 + 1),
+      breaks = scales::breaks_pretty(n = 4),
+      expand = c(0, 0)
+    ) +
+    labs(x = NULL, y = "Intersection size") +
+    theme_minimal(base_family = publication_font, base_size = 10.5) +
     theme(
-      plot.background = element_rect(fill = "white", colour = NA),
-      panel.background = element_rect(fill = "white", colour = NA),
-      plot.margin = margin(40, 120, 40, 120),
-      text = element_text(family = publication_font),
-      plot.title = element_text(hjust = 0.5, size = 20, colour = "#111111", margin = margin(b = 7))
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.y = element_line(colour = "#E2E5E9", linewidth = 0.38),
+      axis.text.x = element_blank(),
+      axis.ticks.x = element_blank(),
+      axis.text.y = element_text(size = 10, colour = "#4B5563"),
+      axis.title.y = element_text(size = 11.5, colour = "#30343B", margin = margin(r = 8)),
+      plot.margin = margin(5, 8, 3, 3)
     )
-  plot$coordinates$clip <- "off"
-  save_figure(plot, stem, 11, 8.5)
+
+  set_size_plot <- ggplot(set_membership, aes(x = SetCount, y = Y, fill = Set)) +
+    geom_col(width = 0.64, orientation = "y", colour = "white", linewidth = 0.25) +
+    geom_text(
+      aes(label = SetCount),
+      hjust = -0.18,
+      size = 3.75,
+      family = publication_font,
+      colour = "#30343B"
+    ) +
+    scale_fill_manual(values = upset_colours, guide = "none") +
+    scale_x_continuous(
+      limits = c(0, max(set_membership$SetCount) * 1.18 + 1),
+      breaks = scales::breaks_pretty(n = 3),
+      expand = c(0, 0)
+    ) +
+    scale_y_continuous(
+      limits = c(0.5, length(set_order_bottom_to_top) + 0.5),
+      breaks = set_axis_breaks,
+      labels = set_axis_labels,
+      expand = c(0, 0)
+    ) +
+    labs(x = "Set size", y = NULL) +
+    theme_minimal(base_family = publication_font, base_size = 10.5) +
+    theme(
+      panel.grid.major.y = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_line(colour = "#E2E5E9", linewidth = 0.38),
+      axis.text.x = element_text(size = 9.5, colour = "#4B5563"),
+      axis.text.y = element_text(size = 10.5, colour = "#30343B"),
+      axis.title.x = element_text(size = 11.5, colour = "#30343B", margin = margin(t = 8)),
+      plot.margin = margin(4, 5, 8, 4)
+    )
+
+  matrix_plot <- ggplot(matrix_data, aes(x = Intersection, y = Y)) +
+    geom_point(
+      shape = 21,
+      size = 4.2,
+      fill = "#E2E5E9",
+      colour = "white",
+      stroke = 0.38
+    ) +
+    geom_segment(
+      data = connectors,
+      aes(x = Intersection, xend = Intersection, y = YMin, yend = YMax),
+      inherit.aes = FALSE,
+      colour = "#5B6168",
+      linewidth = 1.05,
+      lineend = "round"
+    ) +
+    geom_point(
+      data = matrix_data[Present == TRUE],
+      aes(fill = Set),
+      shape = 21,
+      size = 4.2,
+      colour = "white",
+      stroke = 0.38
+    ) +
+    scale_fill_manual(values = upset_colours, guide = "none") +
+    scale_x_continuous(
+      limits = x_limits,
+      breaks = intersections$Intersection,
+      labels = intersections$Intersection,
+      expand = c(0, 0)
+    ) +
+    scale_y_continuous(
+      limits = c(0.5, length(set_order_bottom_to_top) + 0.5),
+      breaks = set_membership$Y,
+      labels = NULL,
+      expand = c(0, 0)
+    ) +
+    labs(x = "Intersection rank (bars ordered by size)", y = NULL) +
+    theme_minimal(base_family = publication_font, base_size = 10.5) +
+    theme(
+      panel.grid = element_blank(),
+      axis.text.x = element_text(size = 9.5, colour = "#4B5563"),
+      axis.title.x = element_text(size = 11.5, colour = "#30343B", margin = margin(t = 8)),
+      axis.ticks.x = element_line(colour = "#9AA0A6", linewidth = 0.35),
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      plot.margin = margin(4, 8, 8, 3)
+    )
+
+  top_row <- plot_spacer() + intersection_plot + plot_layout(widths = c(3.2, 10))
+  bottom_row <- set_size_plot + matrix_plot + plot_layout(widths = c(3.2, 10))
+  plot <- top_row / bottom_row +
+    plot_layout(heights = c(1.45, 1.25)) +
+    plot_annotation(
+      title = title,
+      subtitle = "Exact four-set intersections; zero-count combinations are retained",
+      theme = theme(
+        plot.title = element_text(
+          family = publication_font,
+          size = 20,
+          face = "plain",
+          hjust = 0.5,
+          colour = "#111111",
+          margin = margin(b = 2)
+        ),
+        plot.subtitle = element_text(
+          family = publication_font,
+          size = 10.5,
+          hjust = 0.5,
+          colour = "#5B6168",
+          margin = margin(b = 8)
+        ),
+        plot.margin = margin(8, 10, 10, 10)
+      )
+    )
+  save_figure(plot, stem, 13.5, 8.7)
 }
 
-draw_exact_venn("venn_reference_ddr.csv", "Figure_2a_whole_proteome_DDR_Venn", "DDR Proteome")
-draw_exact_venn("venn_kla_ddr.csv", "Figure_2b_Kla_DDR_Venn", "DDR Lactylome")
-draw_exact_venn("venn_reference.csv", "Supplementary_Figure_S1a_whole_proteome_Venn", "Whole Proteome")
-draw_exact_venn("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_Venn", "Whole Lactylome")
+draw_exact_upset("venn_reference_ddr.csv", "Figure_2a_whole_proteome_DDR_UpSet", "DDR Proteome")
+draw_exact_upset("venn_kla_ddr.csv", "Figure_2b_Kla_DDR_UpSet", "DDR Lactylome")
+draw_exact_upset("venn_reference.csv", "Supplementary_Figure_S1a_whole_proteome_UpSet", "Whole Proteome")
+draw_exact_upset("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_UpSet", "Whole Lactylome")
 
 # Four signed pathway matrices reported in the manuscript. The frozen S4
 # ranking workbook is the data source; it is never recalculated by this code.

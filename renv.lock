@@ -123,68 +123,6 @@
       "Maintainer": "Hadley Wickham <hadley@posit.co>",
       "Repository": "CRAN"
     },
-    "admisc": {
-      "Package": "admisc",
-      "Version": "0.41",
-      "Source": "Repository",
-      "SystemRequirements": "POSIX threads",
-      "Title": "Adrian Dusa's Miscellaneous",
-      "Authors@R": "person( given = \"Adrian\", family = \"Dusa\", role = c(\"aut\", \"cre\", \"cph\"), email = \"dusa.adrian@unibuc.ro\", comment = c(ORCID = \"0000-0002-3525-9253\"))",
-      "URL": "https://github.com/dusadrian/admisc",
-      "BugReports": "https://github.com/dusadrian/admisc/issues",
-      "Depends": [
-        "R (>= 3.5.0)"
-      ],
-      "Imports": [
-        "methods"
-      ],
-      "Suggests": [
-        "QCA (>= 3.7)"
-      ],
-      "Description": "Contains functions used across packages 'DDIwR', 'QCA' and 'venn'. Interprets and translates, factorizes and negates SOP - Sum of Products expressions, for both binary and multi-value crisp sets, and extracts information (set names, set values) from those expressions. Other functions perform various other checks if possibly numeric (even if all numbers reside in a character vector) and coerce to numeric, or check if the numbers are whole. It also offers, among many others, a highly versatile recoding routine and some more flexible alternatives to the base functions 'with()' and 'within()'. SOP simplification functions in this package use related minimization from package 'QCA', which is recommended to be installed despite not being listed in the Imports field, due to circular dependency issues.",
-      "License": "GPL (>= 3)",
-      "Encoding": "UTF-8",
-      "NeedsCompilation": "yes",
-      "Author": "Adrian Dusa [aut, cre, cph] (ORCID: <https://orcid.org/0000-0002-3525-9253>)",
-      "Maintainer": "Adrian Dusa <dusa.adrian@unibuc.ro>",
-      "Repository": "CRAN"
-    },
-    "aplot": {
-      "Package": "aplot",
-      "Version": "0.3.1",
-      "Source": "Repository",
-      "Title": "Decorate a 'ggplot' with Associated Information",
-      "Authors@R": "c( person(given = \"Guangchuang\", family = \"Yu\", email = \"guangchuangyu@gmail.com\",   role  = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-6485-8781\")), person(\"Shuangbin\", \"Xu\",       email = \"xshuangbin@163.com\",      role = \"ctb\",  comment = c(ORCID=\"0000-0003-3513-5362\")), person(given = \"Thomas\", family = \"Hackl\", email = \"thackl@mit.edu\", role = \"ctb\") )",
-      "Description": "Supports data-driven composition of a main plot with associated subplots that need precise axis alignment. Unlike general layout-focused tools such as 'cowplot' and 'patchwork', it enables related subplots to be integrated on the top, bottom, left, or right sides of a main plot with matched axes, so that the combined panels can be interpreted as a coherent whole. This design was inspired by the 'Method 2' described in 'ggtree' (G Yu (2018) <doi:10.1093/molbev/msy194>).",
-      "Depends": [
-        "R (>= 4.1.0)"
-      ],
-      "Imports": [
-        "ggfun (>= 0.1.3)",
-        "gtable",
-        "ggplot2",
-        "ggplotify",
-        "patchwork",
-        "magrittr",
-        "methods",
-        "utils",
-        "yulab.utils (>= 0.1.9)",
-        "pillar"
-      ],
-      "Suggests": [
-        "ggtree",
-        "testthat (>= 3.0.0)"
-      ],
-      "URL": "https://github.com/YuLab-SMU/aplot, https://yulab-smu.top/aplot/",
-      "License": "Artistic-2.0",
-      "Encoding": "UTF-8",
-      "Config/roxygen2/version": "8.0.0",
-      "Config/testthat/edition": "3",
-      "NeedsCompilation": "no",
-      "Author": "Guangchuang Yu [aut, cre] (ORCID: <https://orcid.org/0000-0002-6485-8781>), Shuangbin Xu [ctb] (ORCID: <https://orcid.org/0000-0003-3513-5362>), Thomas Hackl [ctb]",
-      "Maintainer": "Guangchuang Yu <guangchuangyu@gmail.com>",
-      "Repository": "CRAN"
-    },
     "base64enc": {
       "Package": "base64enc",
       "Version": "0.1-6",
@@ -507,90 +445,6 @@
       "Maintainer": "Thomas Lin Pedersen <thomas.pedersen@posit.co>",
       "Repository": "CRAN"
     },
-    "forcats": {
-      "Package": "forcats",
-      "Version": "1.0.1",
-      "Source": "Repository",
-      "Title": "Tools for Working with Categorical Variables (Factors)",
-      "Authors@R": "c( person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = c(\"aut\", \"cre\")), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"), comment = c(ROR = \"03wc8by49\")) )",
-      "Description": "Helpers for reordering factor levels (including moving specified levels to front, ordering by first appearance, reversing, and randomly shuffling), and tools for modifying factor levels (including collapsing rare levels into other, 'anonymising', and manually 'recoding').",
-      "License": "MIT + file LICENSE",
-      "URL": "https://forcats.tidyverse.org/, https://github.com/tidyverse/forcats",
-      "BugReports": "https://github.com/tidyverse/forcats/issues",
-      "Depends": [
-        "R (>= 4.1)"
-      ],
-      "Imports": [
-        "cli (>= 3.4.0)",
-        "glue",
-        "lifecycle",
-        "magrittr",
-        "rlang (>= 1.0.0)",
-        "tibble"
-      ],
-      "Suggests": [
-        "covr",
-        "dplyr",
-        "ggplot2",
-        "knitr",
-        "readr",
-        "rmarkdown",
-        "testthat (>= 3.0.0)",
-        "withr"
-      ],
-      "VignetteBuilder": "knitr",
-      "Config/Needs/website": "tidyverse/tidytemplate",
-      "Config/testthat/edition": "3",
-      "Encoding": "UTF-8",
-      "LazyData": "true",
-      "RoxygenNote": "7.3.3",
-      "NeedsCompilation": "no",
-      "Author": "Hadley Wickham [aut, cre], Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
-      "Maintainer": "Hadley Wickham <hadley@posit.co>",
-      "Repository": "CRAN"
-    },
-    "fs": {
-      "Package": "fs",
-      "Version": "2.1.0",
-      "Source": "Repository",
-      "Title": "Cross-Platform File System Operations Based on 'libuv'",
-      "Authors@R": "c( person(\"Jim\", \"Hester\", role = \"aut\"), person(\"Hadley\", \"Wickham\", role = \"aut\"), person(\"Gábor\", \"Csárdi\", role = \"aut\"), person(\"Jeroen\", \"Ooms\", , \"jeroenooms@gmail.com\", role = \"cre\"), person(\"libuv project contributors\", role = \"cph\", comment = \"libuv library\"), person(\"Joyent, Inc. and other Node contributors\", role = \"cph\", comment = \"libuv library\"), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"), comment = c(ROR = \"03wc8by49\")) )",
-      "Description": "A cross-platform interface to file system operations, built on top of the 'libuv' C library.",
-      "License": "MIT + file LICENSE",
-      "URL": "https://fs.r-lib.org, https://github.com/r-lib/fs",
-      "BugReports": "https://github.com/r-lib/fs/issues",
-      "Depends": [
-        "R (>= 4.1)"
-      ],
-      "Imports": [
-        "methods"
-      ],
-      "Suggests": [
-        "covr",
-        "crayon",
-        "knitr",
-        "pillar (>= 1.0.0)",
-        "rmarkdown",
-        "spelling",
-        "testthat (>= 3.0.0)",
-        "tibble (>= 1.1.0)",
-        "vctrs (>= 0.3.0)",
-        "withr"
-      ],
-      "VignetteBuilder": "knitr",
-      "SystemRequirements": "libuv: libuv-devel (rpm) or libuv1-dev (deb). Alternatively to build the vendored libuv 'cmake' is required. GNU make.",
-      "Config/Needs/website": "tidyverse/tidytemplate",
-      "Config/testthat/edition": "3",
-      "Config/usethis/last-upkeep": "2025-04-23",
-      "Copyright": "file COPYRIGHTS",
-      "Encoding": "UTF-8",
-      "Language": "en-US",
-      "RoxygenNote": "7.3.3",
-      "NeedsCompilation": "yes",
-      "Author": "Jim Hester [aut], Hadley Wickham [aut], Gábor Csárdi [aut], Jeroen Ooms [cre], libuv project contributors [cph] (libuv library), Joyent, Inc. and other Node contributors [cph] (libuv library), Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
-      "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
-      "Repository": "CRAN"
-    },
     "generics": {
       "Package": "generics",
       "Version": "0.1.4",
@@ -621,88 +475,6 @@
       "NeedsCompilation": "no",
       "Author": "Hadley Wickham [aut, cre] (ORCID: <https://orcid.org/0000-0003-4757-117X>), Max Kuhn [aut], Davis Vaughan [aut], Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
       "Maintainer": "Hadley Wickham <hadley@posit.co>",
-      "Repository": "CRAN"
-    },
-    "ggVennDiagram": {
-      "Package": "ggVennDiagram",
-      "Version": "1.5.7",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "A 'ggplot2' Implement of Venn Diagram",
-      "Authors@R": "c( person(\"Chun-Hui\",\"Gao\", email=\"gaospecial@gmail.com\", role=c(\"aut\",\"cre\"), comment=c(ORCID = \"0000-0002-1445-7939\")), person(\"Guangchuang\", \"Yu\", email = \"guangchuangyu@gmail.com\", role = c(\"ctb\"), comment = c(ORCID = \"0000-0002-6485-8781\")), person(\"Adrian\", \"Dusa\",  email = \"dusa.adrian@unibuc.ro\", role = c(\"aut\",\"cph\"),  comment = c(ORCID = \"0000-0002-3525-9253\",  note = \"Adrian Dusa is the author and copyright holder of venn, where ggVennDiagram imports the polygon coordinates enabling 5 - 7 sets Venn diagram.\")), person(\"Turgut Yigit\", \"Akyol\", email = \"tyakyol@gmail.com\", role = c(\"ctb\"), comment=c(ORCID = \"0000-0003-0897-7716\")) )",
-      "Maintainer": "Chun-Hui Gao <gaospecial@gmail.com>",
-      "Description": "Easy-to-use functions to generate 2-7 sets Venn or upset plot in publication quality.  'ggVennDiagram' plot Venn or upset using well-defined geometry dataset and 'ggplot2'. The shapes of 2-4 sets  Venn use circles and ellipses, while the shapes of 4-7 sets Venn use irregular polygons (4 has both forms), which  are developed and imported from another package 'venn', authored by Adrian Dusa. We provided internal functions to  integrate shape data with user provided sets data, and calculated the geometry of every regions/intersections  of them, then separately plot Venn in four components, set edges/labels, and region edges/labels. From version 1.0, it is possible to customize these components as you demand in ordinary 'ggplot2' grammar. From version 1.4.4, it supports unlimited number of sets, as it can draw a plain upset plot automatically when number of sets is more than 7.",
-      "Depends": [
-        "R (>= 4.1.0)"
-      ],
-      "Imports": [
-        "ggplot2 (>= 3.4.0)",
-        "dplyr",
-        "methods",
-        "tibble",
-        "aplot",
-        "venn (>= 1.12)",
-        "yulab.utils",
-        "forcats"
-      ],
-      "URL": "https://github.com/gaospecial/ggVennDiagram, https://gaospecial.github.io/ggVennDiagram/",
-      "License": "GPL-3",
-      "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.3",
-      "Suggests": [
-        "testthat (>= 2.1.0)",
-        "knitr",
-        "plotly",
-        "RColorBrewer",
-        "shiny",
-        "rmarkdown",
-        "tidyr"
-      ],
-      "VignetteBuilder": "knitr",
-      "NeedsCompilation": "no",
-      "Author": "Chun-Hui Gao [aut, cre] (ORCID: <https://orcid.org/0000-0002-1445-7939>), Guangchuang Yu [ctb] (ORCID: <https://orcid.org/0000-0002-6485-8781>), Adrian Dusa [aut, cph] (ORCID: <https://orcid.org/0000-0002-3525-9253>, note: Adrian Dusa is the author and copyright holder of venn, where ggVennDiagram imports the polygon coordinates enabling 5 - 7 sets Venn diagram.), Turgut Yigit Akyol [ctb] (ORCID: <https://orcid.org/0000-0003-0897-7716>)",
-      "Repository": "CRAN"
-    },
-    "ggfun": {
-      "Package": "ggfun",
-      "Version": "0.2.1",
-      "Source": "Repository",
-      "Title": "Miscellaneous Functions for 'ggplot2'",
-      "Authors@R": "c( person(\"Guangchuang\", \"Yu\",     email = \"guangchuangyu@gmail.com\", role = c(\"aut\", \"cre\", \"cph\"), comment = c(ORCID = \"0000-0002-6485-8781\")), person(\"Shuangbin\", \"Xu\",       email = \"xshuangbin@163.com\",      role = \"aut\", comment = c(ORCID=\"0000-0003-3513-5362\")) )",
-      "Author": "Guangchuang Yu [aut, cre, cph] (ORCID: <https://orcid.org/0000-0002-6485-8781>), Shuangbin Xu [aut] (ORCID: <https://orcid.org/0000-0003-3513-5362>)",
-      "Maintainer": "Guangchuang Yu <guangchuangyu@gmail.com>",
-      "Description": "Provides a collection of 'ggplot2' extensions and utilities for creating geometric layers, applying themes, working with legends, and modifying plot objects.",
-      "Depends": [
-        "R (>= 4.2.0)"
-      ],
-      "Imports": [
-        "cli",
-        "dplyr",
-        "ggplot2",
-        "graphics",
-        "grid",
-        "rlang",
-        "scales",
-        "utils",
-        "yulab.utils (>= 0.1.6)"
-      ],
-      "Suggests": [
-        "ggplotify",
-        "knitr",
-        "pkgload",
-        "quarto",
-        "testthat",
-        "tidyr",
-        "ggnewscale"
-      ],
-      "VignetteBuilder": "quarto",
-      "ByteCompile": "true",
-      "License": "Artistic-2.0",
-      "Encoding": "UTF-8",
-      "URL": "https://github.com/YuLab-SMU/ggfun",
-      "BugReports": "https://github.com/YuLab-SMU/ggfun/issues",
-      "Config/roxygen2/version": "8.0.0",
-      "NeedsCompilation": "no",
       "Repository": "CRAN"
     },
     "ggplot2": {
@@ -778,49 +550,6 @@
       "Maintainer": "Thomas Lin Pedersen <thomas.pedersen@posit.co>",
       "Repository": "CRAN"
     },
-    "ggplotify": {
-      "Package": "ggplotify",
-      "Version": "0.1.3",
-      "Source": "Repository",
-      "Title": "Convert Plot to 'grob' or 'ggplot' Object",
-      "Authors@R": "c(person(\"Guangchuang\", \"Yu\", email = \"guangchuangyu@gmail.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-6485-8781\")))",
-      "Description": "Convert plot function call (using expression or formula) to 'grob' or 'ggplot' object that compatible to the 'grid' and 'ggplot2' ecosystem. With this package, we are able to e.g. using 'cowplot' to align plots produced by 'base' graphics, 'ComplexHeatmap', 'eulerr', 'grid', 'lattice', 'magick', 'pheatmap', 'vcd' etc. by converting them to 'ggplot' objects.",
-      "Depends": [
-        "R (>= 3.4.0)"
-      ],
-      "Imports": [
-        "ggplot2",
-        "graphics",
-        "grDevices",
-        "grid",
-        "gridGraphics",
-        "rlang",
-        "yulab.utils"
-      ],
-      "Suggests": [
-        "aplot",
-        "colorspace",
-        "cowplot",
-        "ggimage",
-        "knitr",
-        "rmarkdown",
-        "lattice",
-        "prettydoc",
-        "vcd",
-        "utils"
-      ],
-      "VignetteBuilder": "knitr",
-      "ByteCompile": "true",
-      "License": "Artistic-2.0",
-      "URL": "https://github.com/GuangchuangYu/ggplotify",
-      "BugReports": "https://github.com/GuangchuangYu/ggplotify/issues",
-      "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.3",
-      "NeedsCompilation": "no",
-      "Author": "Guangchuang Yu [aut, cre] (ORCID: <https://orcid.org/0000-0002-6485-8781>)",
-      "Maintainer": "Guangchuang Yu <guangchuangyu@gmail.com>",
-      "Repository": "CRAN"
-    },
     "glue": {
       "Package": "glue",
       "Version": "1.8.1",
@@ -860,31 +589,6 @@
       "NeedsCompilation": "yes",
       "Author": "Jim Hester [aut] (ORCID: <https://orcid.org/0000-0002-2739-7082>), Jennifer Bryan [aut, cre] (ORCID: <https://orcid.org/0000-0002-6983-2759>), Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
       "Maintainer": "Jennifer Bryan <jenny@posit.co>",
-      "Repository": "CRAN"
-    },
-    "gridGraphics": {
-      "Package": "gridGraphics",
-      "Version": "0.5-1",
-      "Source": "Repository",
-      "Title": "Redraw Base Graphics Using 'grid' Graphics",
-      "Authors@R": "c(person(\"Paul\", \"Murrell\", role = c(\"cre\", \"aut\"), email = \"paul@stat.auckland.ac.nz\"), person(\"Zhijian\", \"Wen\", role = \"aut\", email = \"jwen246@aucklanduni.ac.nz\"))",
-      "Description": "Functions to convert a page of plots drawn with the  'graphics' package into identical output drawn with the 'grid' package. The result looks like the original 'graphics'-based plot, but consists of 'grid' grobs and viewports that can then be manipulated with  'grid' functions (e.g., edit grobs and revisit viewports).",
-      "Depends": [
-        "grid",
-        "graphics"
-      ],
-      "Imports": [
-        "grDevices"
-      ],
-      "Suggests": [
-        "magick (>= 1.3)",
-        "pdftools (>= 1.6)"
-      ],
-      "License": "GPL (>= 2)",
-      "URL": "https://github.com/pmur002/gridgraphics",
-      "NeedsCompilation": "no",
-      "Author": "Paul Murrell [cre, aut], Zhijian Wen [aut]",
-      "Maintainer": "Paul Murrell <paul@stat.auckland.ac.nz>",
       "Repository": "CRAN"
     },
     "gtable": {
@@ -1434,37 +1138,6 @@
       "SystemRequirements": "freetype2, libpng, libtiff, libjpeg, libwebp, libwebpmux",
       "NeedsCompilation": "yes",
       "Author": "Thomas Lin Pedersen [cre, aut] (ORCID: <https://orcid.org/0000-0002-5147-4711>), Maxim Shemanarev [aut, cph] (Author of AGG), Tony Juricic [ctb, cph] (Contributor to AGG), Milan Marusinec [ctb, cph] (Contributor to AGG), Spencer Garrett [ctb] (Contributor to AGG), Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
-      "Repository": "CRAN"
-    },
-    "rappdirs": {
-      "Package": "rappdirs",
-      "Version": "0.3.4",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "Application Directories: Determine Where to Save Data, Caches, and Logs",
-      "Authors@R": "c( person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = c(\"trl\", \"cre\", \"cph\")), person(\"Sridhar\", \"Ratnakumar\", role = \"aut\"), person(\"Trent\", \"Mick\", role = \"aut\"), person(\"ActiveState\", role = \"cph\", comment = \"R/appdir.r, R/cache.r, R/data.r, R/log.r translated from appdirs\"), person(\"Eddy\", \"Petrisor\", role = \"ctb\"), person(\"Trevor\", \"Davis\", role = c(\"trl\", \"aut\"), comment = c(ORCID = \"0000-0001-6341-4639\")), person(\"Gabor\", \"Csardi\", role = \"ctb\"), person(\"Gregory\", \"Jefferis\", role = \"ctb\"), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"), comment = c(ROR = \"03wc8by49\")) )",
-      "Description": "An easy way to determine which directories on the users computer you should use to save data, caches and logs. A port of Python's 'Appdirs' (<https://github.com/ActiveState/appdirs>) to R.",
-      "License": "MIT + file LICENSE",
-      "URL": "https://rappdirs.r-lib.org, https://github.com/r-lib/rappdirs",
-      "BugReports": "https://github.com/r-lib/rappdirs/issues",
-      "Depends": [
-        "R (>= 4.1)"
-      ],
-      "Suggests": [
-        "covr",
-        "roxygen2",
-        "testthat (>= 3.2.0)",
-        "withr"
-      ],
-      "Config/Needs/website": "tidyverse/tidytemplate",
-      "Config/testthat/edition": "3",
-      "Config/usethis/last-upkeep": "2025-05-05",
-      "Copyright": "Original python appdirs module copyright (c) 2010 ActiveState Software Inc. R port copyright Hadley Wickham, Posit, PBC.  See file LICENSE for details.",
-      "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.3",
-      "NeedsCompilation": "yes",
-      "Author": "Hadley Wickham [trl, cre, cph], Sridhar Ratnakumar [aut], Trent Mick [aut], ActiveState [cph] (R/appdir.r, R/cache.r, R/data.r, R/log.r translated from appdirs), Eddy Petrisor [ctb], Trevor Davis [trl, aut] (ORCID: <https://orcid.org/0000-0001-6341-4639>), Gabor Csardi [ctb], Gregory Jefferis [ctb], Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
-      "Maintainer": "Hadley Wickham <hadley@posit.co>",
       "Repository": "CRAN"
     },
     "readxl": {
@@ -2085,32 +1758,6 @@
       "Maintainer": "Davis Vaughan <davis@posit.co>",
       "Repository": "CRAN"
     },
-    "venn": {
-      "Package": "venn",
-      "Version": "1.13",
-      "Source": "Repository",
-      "Title": "Draw Venn Diagrams",
-      "Authors@R": "person(given = \"Adrian\", family = \"Dusa\", role = c(\"aut\", \"cre\", \"cph\"), email = \"dusa.adrian@unibuc.ro\", comment = c(ORCID = \"0000-0002-3525-9253\"))",
-      "Depends": [
-        "R (>= 3.5.0)"
-      ],
-      "Imports": [
-        "admisc (>= 0.33)"
-      ],
-      "Suggests": [
-        "QCA (>= 3.9)",
-        "ggplot2",
-        "ggpolypath"
-      ],
-      "Description": "A close to zero dependency package to draw and display Venn diagrams up to 7 sets, and any Boolean union of set intersections.",
-      "License": "GPL (>= 3)",
-      "URL": "https://github.com/dusadrian/venn",
-      "BugReports": "https://github.com/dusadrian/venn/issues",
-      "NeedsCompilation": "no",
-      "Author": "Adrian Dusa [aut, cre, cph] (ORCID: <https://orcid.org/0000-0002-3525-9253>)",
-      "Maintainer": "Adrian Dusa <dusa.adrian@unibuc.ro>",
-      "Repository": "CRAN"
-    },
     "viridisLite": {
       "Package": "viridisLite",
       "Version": "0.4.3",
@@ -2175,45 +1822,6 @@
       "NeedsCompilation": "no",
       "Author": "Jim Hester [aut], Lionel Henry [aut, cre], Kirill Müller [aut], Kevin Ushey [aut], Hadley Wickham [aut], Winston Chang [aut], Jennifer Bryan [ctb], Richard Cotton [ctb], Posit Software, PBC [cph, fnd]",
       "Maintainer": "Lionel Henry <lionel@posit.co>",
-      "Repository": "CRAN"
-    },
-    "yulab.utils": {
-      "Package": "yulab.utils",
-      "Version": "0.2.4",
-      "Source": "Repository",
-      "Title": "Supporting Functions for Packages Maintained by 'YuLab-SMU'",
-      "Authors@R": "c(person(\"Guangchuang\", \"Yu\", email = \"guangchuangyu@gmail.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-6485-8781\")))",
-      "Description": "Miscellaneous functions commonly used by 'YuLab-SMU'.",
-      "Depends": [
-        "R (>= 4.2.0)"
-      ],
-      "Imports": [
-        "cli",
-        "digest",
-        "fs",
-        "methods",
-        "rappdirs",
-        "rlang",
-        "tools",
-        "utils"
-      ],
-      "Suggests": [
-        "httr2",
-        "jsonlite",
-        "openssl",
-        "R.utils",
-        "testthat (>= 3.0.0)"
-      ],
-      "ByteCompile": "true",
-      "License": "Artistic-2.0",
-      "URL": "https://yulab-smu.top/",
-      "BugReports": "https://github.com/YuLab-SMU/yulab.utils/issues",
-      "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.3",
-      "Config/testthat/edition": "3",
-      "NeedsCompilation": "no",
-      "Author": "Guangchuang Yu [aut, cre] (ORCID: <https://orcid.org/0000-0002-6485-8781>)",
-      "Maintainer": "Guangchuang Yu <guangchuangyu@gmail.com>",
       "Repository": "CRAN"
     }
   }

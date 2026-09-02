@@ -48,17 +48,23 @@ both PNG and PDF.
 | Manuscript item | Output |
 | --- | --- |
 | Figure 1 | Kla and whole-proteome DDR fractions |
-| Figure 2a–b | Whole-proteome DDR and Kla-DDR four-category Venn diagrams |
+| Figure 2a–b | Whole-proteome DDR and Kla-DDR four-set UpSet plots |
 | Figure 2c–e | Tissue pathway matrices and tumor/non-tumor pathway summaries |
 | Figure 3a–b | Reference-proteome and Kla regulator percentile heatmaps |
-| Figure S1a–b | Whole-proteome and Kla four-category Venn diagrams |
+| Figure S1a–b | Whole-proteome and Kla four-set UpSet plots |
 | Figure S2a–c | Cell-line pathway matrices and cancer/normal cell-line summaries |
-| Tables S1–S3, S6 | Kla data, reference data, human DDR GO annotations and Venn membership |
+| Tables S1–S3, S6 | Kla data, reference data, human DDR GO annotations and four-set membership |
 | Tables S4–S5 | Author-provided pathway-ranking and regulator workbooks, copied unchanged |
 
 The accompanying checks confirm the 30-group scope, the 9/2/12/7 category
-counts, the 399-protein union, the four pathway panels, the Venn membership
-fields, the figure filenames and the S1–S6 workbook layout.
+counts, the 399-protein union, the four pathway panels, the four-set membership
+fields, the UpSet figure filenames and the S1–S6 workbook layout.
+
+The four UpSet plots read the same four membership files used by Table S6.
+They rank the exact intersections by size and keep all fifteen possible
+combinations, including combinations whose count is zero. This changes only
+the display of the frozen membership fields; it does not recalculate the
+underlying tables.
 
 ## Reproduce the publication outputs
 
@@ -91,13 +97,13 @@ Rscript workflow/run_pipeline.R source /absolute/path/to/source_cache
 ```
 
 The preparation step reads those files and writes the 30-group summary,
-Kla-protein membership, reference-protein membership and four analytical Venn
-tables. It checks the source-derived fields against the release tables before
+Kla-protein membership, reference-protein membership and four analytical
+set-membership tables. It checks the source-derived fields against the release tables before
 the common figure and supplementary-table steps are run. The release tables
 remain unchanged.
 
 S4 pathway ranking, S5 regulator annotations, regulator percentiles, pathway
-display settings and Venn display annotations are author-provided inputs.
+display settings and set-membership display annotations are author-provided inputs.
 They are used as supplied; the source workflow does not invent replacements
 for them.
 
@@ -122,7 +128,7 @@ file, and the workflow stops if a file is missing, changed or unexpectedly
 added.
 
 The release includes the standardized evidence tables, sample-level
-memberships, regulator percentiles, Venn memberships, the author-provided S4
+memberships, regulator percentiles, four-set memberships, the author-provided S4
 and S5 workbooks and the frozen human DDR GO annotations. The original public
 PXD files are not committed because of their size. Their accessions and
 source-file locations are retained in `group_summary_30.csv` and Table S1.

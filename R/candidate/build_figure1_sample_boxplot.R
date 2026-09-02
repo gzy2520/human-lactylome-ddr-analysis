@@ -69,6 +69,12 @@ category_labels <- c(
   cancer_cells = "Cancer cell lines",
   normal_cells = "Normal cell lines"
 )
+category_fills <- c(
+  normal_tissue = "#DCEAF5",
+  cancer_tissue = "#FCE7D4",
+  cancer_cells = "#FCE7D4",
+  normal_cells = "#DCEAF5"
+)
 stop_if(all(values$Category %in% category_order), "Unknown publication category in sample-level input.")
 
 group_counts <- values[, .(N = .N), by = .(RowOrder, PXD, SampleGroup, Category, DisplayGroup)]
@@ -105,10 +111,13 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
   panel_meta <- group_meta[Category == category]
   panel_values <- values[Category == category]
   panel_values[, PlotRow := factor(RowLabel, levels = rev(panel_meta$RowLabel))]
+  panel_values[, StripLabel := category_labels[[category]]]
   panel_reference <- panel_meta[, .(
     PlotRow = factor(RowLabel, levels = rev(panel_meta$RowLabel)),
-    ReferenceFraction
+    ReferenceFraction,
+    StripLabel = category_labels[[category]]
   )]
+  panel_meta[, StripLabel := category_labels[[category]]]
 
   ggplot(panel_values, aes(x = KlaDdrFractionPercentage, y = PlotRow)) +
     geom_boxplot(
@@ -166,8 +175,13 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
       expand = expansion(mult = c(0, 0))
     ) +
     scale_y_discrete() +
+    facet_grid(
+      StripLabel ~ .,
+      scales = "free_y",
+      space = "free_y",
+      switch = "y"
+    ) +
     labs(
-      title = category_labels[[category]],
       x = if (show_x_title) "GO-DDR annotated Kla protein fraction (%)" else NULL,
       y = NULL
     ) +
@@ -176,9 +190,12 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
       panel.grid.major.y = element_blank(),
       panel.grid.minor = element_blank(),
       panel.grid.major.x = element_line(colour = grid_colour, linewidth = 0.45),
+      panel.border = element_rect(colour = "#9AA5B1", fill = NA, linewidth = 0.65),
+      panel.background = element_rect(fill = "white", colour = NA),
       axis.text.y = element_text(size = 11.5, colour = charcoal, lineheight = 0.92),
       axis.text.x = if (show_x_text) element_text(size = 13.2, colour = charcoal) else element_blank(),
       axis.ticks.x = if (show_x_text) element_line(colour = "#8D99A6", linewidth = 0.35) else element_blank(),
+      axis.line.x = if (show_x_text) element_line(colour = "#8D99A6", linewidth = 0.35) else element_blank(),
       axis.title.x = element_text(
         size = 16.2,
         face = "bold",
@@ -192,6 +209,18 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
         hjust = 0,
         margin = margin(b = 6)
       ),
+      strip.placement = "outside",
+      strip.text.y.left = element_text(
+        size = 13.5,
+        face = "bold",
+        colour = charcoal,
+        angle = 90
+      ),
+      strip.background = element_rect(
+        fill = unname(category_fills[[category]]),
+        colour = NA
+      ),
+      strip.switch.pad.grid = grid::unit(0.16, "lines"),
       legend.position = if (show_legend) "bottom" else "none",
       legend.text = element_text(size = 13.2, colour = charcoal),
       legend.key.height = grid::unit(0.42, "cm"),
@@ -204,8 +233,8 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
 # The two tissue categories form one top block.  The two cell-line categories
 # retain separate full-width rows below, preserving the original group order.
 tissue_block <- patchwork::wrap_plots(
-  make_panel("normal_tissue", show_x_text = FALSE),
-  make_panel("cancer_tissue", show_x_text = FALSE),
+  make_panel("normal_tissue", show_x_text = TRUE),
+  make_panel("cancer_tissue", show_x_text = TRUE),
   nrow = 1,
   widths = c(1.95, 1.05),
   guides = "keep"
@@ -225,7 +254,7 @@ tissue_block <- patchwork::wrap_plots(
   )
 
 final_plot <- tissue_block /
-  make_panel("cancer_cells", show_x_text = FALSE) /
+  make_panel("cancer_cells", show_x_text = TRUE) /
   make_panel("normal_cells", show_x_title = TRUE, show_x_text = TRUE, show_legend = TRUE)
 
 final_plot <- final_plot + plot_layout(guides = "keep", heights = c(1.0, 1.0, 1.0))

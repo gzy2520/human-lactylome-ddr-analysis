@@ -146,7 +146,9 @@ The upper block contains non-tumor and tumor tissues side by side. Cancer cell
 lines and normal cell lines remain in separate rows below, with the original
 group order retained. Orange boxes and points show sample-level Kla-DDR
 fractions. Blue diamonds show the frozen whole-proteome group reference used
-in the manuscript; they are not a second sample-level distribution.
+in the manuscript; they are not a second sample-level distribution. Each
+plot area has its own border and x-axis, and the category strips use the
+original pale-blue/pale-orange tissue and cell-line grouping colors.
 
 The committed candidate tables are enough to inspect the figure directly:
 

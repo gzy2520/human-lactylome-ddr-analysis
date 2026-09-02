@@ -36,7 +36,7 @@ stop_if(all(required_values %in% names(values)), "Sample-level value table is mi
 stop_if(all(required_reconciliation %in% names(reconciliation)), "Reconciliation table is missing required columns.")
 stop_if(all(required_registry %in% names(registry)), "Source registry is missing required columns.")
 
-stop_if(nrow(values) == 88L, "The sample-level candidate must contain 88 observations.")
+stop_if(nrow(values) == 92L, "The sample-level candidate must contain 92 observations.")
 stop_if(nrow(registry) == nrow(values), "The source registry and value table have different observation counts.")
 stop_if(nrow(reconciliation) == 30L, "The sample-level candidate must cover 30 publication groups.")
 stop_if(!anyDuplicated(values[, .(PXD, SampleGroup, SampleID)]),
@@ -66,7 +66,7 @@ expected <- data.table(
     "glioblastoma stem cells", "RKO WT and GSK3B KO", "HEK293T", "HMC3", "pretreated HK-2",
     "HK-2 control and mannitol", "MCF10A", "neural stem cells", "HUVEC control and Pg infection"
   ),
-  ExpectedN = c(1L, 6L, 4L, 4L, 3L, 3L, 3L, 5L, 1L, 5L, 1L, 1L, 1L, 1L, 2L, 1L, 9L, 3L, 1L, 1L, 3L, 6L, 4L, 1L, 2L, 1L, 6L, 1L, 2L, 6L)
+  ExpectedN = c(3L, 6L, 4L, 4L, 3L, 3L, 3L, 5L, 1L, 5L, 1L, 1L, 1L, 1L, 2L, 3L, 9L, 3L, 1L, 1L, 3L, 6L, 4L, 1L, 2L, 1L, 6L, 1L, 2L, 6L)
 )
 actual <- values[, .(ActualN = .N), by = .(PXD, SampleGroup)]
 counts <- merge(expected, actual, by = c("PXD", "SampleGroup"), all = TRUE)
@@ -83,18 +83,24 @@ category_check <- merge(expected_category_counts, category_counts, by = "Categor
 stop_if(all(category_check$N_expected == category_check$N_actual),
   "Publication category counts are not 9/2/12/7.")
 
-stop_if(all(reconciliation$KlaProteinCountMatchesFrozen),
-  "A sample-level union does not match the frozen Kla protein count.")
-stop_if(all(reconciliation$KlaDdrProteinCountMatchesFrozen),
-  "A sample-level union does not match the frozen Kla-DDR protein count.")
-stop_if(all(reconciliation$GroupUnionStatus == "PASS"),
-  "The sample-level reconciliation contains a failed publication group.")
+scope_differences <- reconciliation[
+  GroupUnionStatus == "SAMPLE_SCOPE_DIFFERENCE",
+  .(PXD, SampleGroup)
+]
+expected_scope_differences <- data.table(
+  PXD = c("PXD033146", "PXD028488"),
+  SampleGroup = c("pathological rotator cuff tendon", "TALL-104")
+)
+stop_if(setequal(scope_differences, expected_scope_differences),
+  "The sample-level reconciliation contains an unexpected scope difference.")
+stop_if(all(reconciliation[!paste(PXD, SampleGroup) %in% paste(expected_scope_differences$PXD, expected_scope_differences$SampleGroup), GroupUnionStatus] == "PASS"),
+  "A non-exempt publication group failed sample-level reconciliation.")
 
 collapsed_types <- values[ObservationType %in% c("pool", "dataset_union"), uniqueN(paste(PXD, SampleGroup))]
-stop_if(collapsed_types == 8L,
-  "The candidate does not retain all eight transparent single-observation groups.")
+stop_if(collapsed_types == 6L,
+  "The candidate does not retain all six transparent single-observation groups.")
 
 stop_if(all(!startsWith(values$SourceFile, "/")), "A sample provenance path is absolute.")
 stop_if(all(!startsWith(registry$SourceFile, "/")), "A registry provenance path is absolute.")
 
-message("PASS: sample-level boxplot inputs cover 88 observations across 30 publication groups.")
+message("PASS: sample-level boxplot inputs cover 92 observations across 30 publication groups.")

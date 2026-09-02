@@ -1,5 +1,5 @@
 RowOrder,PXD,SampleGroup,FrozenKlaProteinCount,FrozenKlaDdrProteinCount,FrozenKlaDdrFraction,ObservedKlaProteinCount,ObservedKlaDdrProteinCount,ObservedSampleCount,SourceModes,KlaProteinCountMatchesFrozen,KlaDdrProteinCountMatchesFrozen,GroupUnionStatus
-1,PXD033146,pathological rotator cuff tendon,571,30,5.25394045534151,571,30,1,validated_publication_membership,TRUE,TRUE,PASS
+1,PXD033146,pathological rotator cuff tendon,571,30,5.25394045534151,464,23,3,deposited_sample_table,FALSE,FALSE,SAMPLE_SCOPE_DIFFERENCE
 2,PXD036307,normal human lung,474,31,6.54008438818565,474,31,6,deposited_sample_table,TRUE,TRUE,PASS
 3,PXD046800,hypertrophic scar,402,19,4.72636815920398,402,19,4,deposited_sample_table,TRUE,TRUE,PASS
 4,PXD046800,adjacent skin,527,31,5.88235294117647,527,31,4,deposited_sample_table,TRUE,TRUE,PASS
@@ -14,7 +14,7 @@ RowOrder,PXD,SampleGroup,FrozenKlaProteinCount,FrozenKlaDdrProteinCount,FrozenKl
 15,PXD028488,HCT116,240,30,12.5,240,30,1,validated_publication_membership,TRUE,TRUE,PASS
 16,PXD053474,HCT116,590,65,11.0169491525424,590,65,1,validated_publication_membership,TRUE,TRUE,PASS
 17,PXD066351,HCT116 control and Roseburia co-culture,2398,253,10.5504587155963,2398,253,2,deposited_spectronaut_table,TRUE,TRUE,PASS
-18,PXD028488,TALL-104,368,37,10.054347826087,368,37,1,validated_publication_membership,TRUE,TRUE,PASS
+18,PXD028488,TALL-104,368,37,10.054347826087,2007,33,3,deposited_sample_table,FALSE,FALSE,SAMPLE_SCOPE_DIFFERENCE
 19,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,2602,285,10.9531129900077,2602,285,9,deposited_sample_table,TRUE,TRUE,PASS
 20,PXD054919,A549,1220,116,9.50819672131148,1220,116,3,deposited_supplementary_table,TRUE,TRUE,PASS
 21,PXD060185,MDA-MB-468,1612,196,12.1588089330025,1612,196,1,deposited_sample_table,TRUE,TRUE,PASS

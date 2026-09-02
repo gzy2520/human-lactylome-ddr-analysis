@@ -127,49 +127,68 @@ and S5 workbooks and the frozen human DDR GO annotations. The original public
 PXD files are not committed because of their size. Their accessions and
 source-file locations are retained in `group_summary_30.csv` and Table S1.
 
-## Sample-level Figure 1 candidate
+## Sample-aware Figure 1 review plot
 
-This branch contains an optional Figure 1 candidate for reviewing within-PXD
-sample variation. It is separate from the publication workflow: it does not
-change the frozen figures or tables, and it writes only to
-`results/candidate/`.
+This branch contains a separate Figure 1 review plot under
+`results/candidate/`. The approved publication figures and tables are left
+untouched.
 
-The plot uses 88 source-defined observations across the same 30 publication
-groups. Each point represents one sample, condition or model when that
-identity can be recovered from the deposited processed file. Technical
-channels, structural runs and pooled measurements are kept as transparent
-single observations when independent biological sample identities cannot be
-established; they are not counted as biological replicates. The `n=` label on
-each row shows the number of plotted observations.
+The plot follows the original four-block arrangement. Each block contains two
+boxes—whole proteome and Kla—so there are eight boxes in total. The points are
+the source-resolved sample observations used to form each box; they are not
+summary values. The blue/orange palette identifies the two data types, while
+the four category strips use separate muted colors so the two visual cues do
+not overlap. Dark boxplot outlines make the lower and upper quartiles, median
+and whiskers readable against the filled boxes.
 
-The upper block contains non-tumor and tumor tissues side by side. Cancer cell
-lines and normal cell lines remain in separate rows below, with the original
-group order retained. Orange boxes and points show sample-level Kla-DDR
-fractions. Blue diamonds show the frozen whole-proteome group reference used
-in the manuscript; they are not a second sample-level distribution. Each
-plot area has its own border and x-axis, and the category strips use the
-original pale-blue/pale-orange tissue and cell-line grouping colors.
+The current category totals are:
 
-The committed candidate tables are enough to inspect the figure directly:
+| Category | Whole proteome | Kla |
+| --- | ---: | ---: |
+| non-tumor tissues | 62 | 32 |
+| tumor tissues | 13 | 6 |
+| normal cell lines | 15 | 19 |
+| cancer cell lines | 28 | 35 |
 
-```bash
-Rscript R/candidate/build_figure1_sample_boxplot.R .
+Technical channels, fractions, acquisition modes and pooled measurements are
+not counted as separate biological samples. If a source table contains only
+one recoverable material or profile, that observation is retained rather than
+inventing replicates. The whole-proteome and Kla sides use the same rule.
+
+The candidate inputs are:
+
+```text
+data/candidate/biological_sample_count_record.csv
+data/candidate/figure1_sample_boxplot_values.csv
+data/candidate/figure1_sample_boxplot_source_registry.csv
 ```
 
-To rebuild those tables from a local cache of the deposited processed files,
-run the preparation step first and then render the same figure:
+Render the candidate directly with:
+
+```bash
+Rscript R/candidate/build_figure1_category_boxplot.R .
+```
+
+The renderer writes the refined review image to
+`results/candidate/Figure_1_DDR_fraction_candidate_category_boxplot_refined.png`
+and the matching PDF.
+
+To rebuild the sample-level inputs from a local cache of the deposited
+processed files, run:
 
 ```bash
 Rscript R/candidate/prepare_sample_boxplot_inputs.R . /absolute/path/to/source_cache
-Rscript R/candidate/build_figure1_sample_boxplot.R .
+Rscript R/candidate/build_figure1_category_boxplot.R .
 ```
 
-The preparation step also writes a reconciliation table. Every group must
-match the frozen Kla and Kla-DDR protein counts before the figure is rendered.
-The sample-count and provenance checks can be run with:
+The Kla-only reconciliation records two known source-scope differences
+(PXD033146 and TALL-104); all other groups are checked against the frozen
+group-level counts. Run the input checks with:
 
 ```bash
 Rscript tests/validate_sample_boxplot_contract.R .
+Rscript tests/validate_figure1_sample_boxplot_contract.R .
+Rscript tests/validate_figure1_category_boxplot_contract.R .
 ```
 
 This is a review candidate for the manuscript revision, not a replacement for

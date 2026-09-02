@@ -331,6 +331,199 @@ read_maxquant_single_group <- function(path, pxd, group, sample_id, sample_class
     "deposited_group_union", path, sample_class, "dataset_union")
 }
 
+read_maxquant_by_numeric_columns <- function(
+  path, pxd, group, sample_map, column_map,
+  accession_columns = c("Majority protein IDs", "Protein IDs"),
+  source_mode = "deposited_sample_table",
+  observation_type = "sample"
+) {
+  data <- fread(path, check.names = FALSE, showProgress = FALSE)
+  accession_column <- intersect(accession_columns, names(data))[[1L]]
+  stop_if(!is.na(accession_column), paste0("Missing protein accession column in ", path))
+  base_keep <- valid_maxquant_rows(data)
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    columns <- column_map[[sample_id]]
+    stop_if(length(columns) > 0L && all(columns %in% names(data)),
+      paste0("Missing quantitative column for ", sample_id, " in ", path))
+    present <- Reduce(`|`, lapply(columns, function(column) positive_numeric(data[[column]])))
+    keep <- base_keep & present
+    records(
+      pxd, group, sample_id, split_accessions(data[[accession_column]][keep]),
+      source_mode, path, sample_map$SampleClass[[index]], observation_type
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_pxd033146_kla_by_channel <- function(path, pxd, group, sample_map) {
+  data <- fread(path, check.names = FALSE, showProgress = FALSE)
+  base_keep <- valid_maxquant_rows(data)
+  if ("id" %in% names(data)) base_keep <- base_keep & !is.na(data$id)
+  if ("Localization prob" %in% names(data)) {
+    base_keep <- base_keep & positive_numeric(data$`Localization prob`)
+  }
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    channel <- sample_map$Channel[[index]]
+    columns <- paste0("Reporter intensity corrected ", channel, "___", 1:3)
+    stop_if(all(columns %in% names(data)),
+      paste0("Missing PXD033146 Kla reporter columns for channel ", channel))
+    present <- Reduce(`|`, lapply(columns, function(column) positive_numeric(data[[column]])))
+    keep <- base_keep & present
+    records(
+      pxd, group, sample_map$SampleID[[index]], split_accessions(data$Proteins[keep]),
+      "deposited_sample_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_pd_proteins_by_sample <- function(path, pxd, group, sample_map, accession_column = "Accession") {
+  header <- names(read.delim(path, nrows = 0L, check.names = FALSE, stringsAsFactors = FALSE, quote = "\"", comment.char = ""))
+  data <- read.delim(path, check.names = FALSE, stringsAsFactors = FALSE, quote = "\"", comment.char = "")
+  stop_if(accession_column %in% names(data), paste0("Missing ", accession_column, " in ", path))
+  found_columns <- header[startsWith(header, "Found in Sample:")]
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    hits <- found_columns[
+      endsWith(found_columns, paste0(", ", sample_id)) |
+        endsWith(found_columns, paste0(", ", sample_id, "_1"))
+    ]
+    stop_if(length(hits) == 1L, paste0("Missing Proteome Discoverer sample column for ", sample_id))
+    keep <- detected_text(data[[hits[[1L]]]])
+    records(
+      pxd, group, sample_id, split_accessions(data[[accession_column]][keep]),
+      "deposited_sample_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_tall_by_sample <- function(path, pxd, group, sample_map) {
+  data <- fread(path, check.names = FALSE, showProgress = FALSE)
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    area_column <- paste0("Area ", sample_id)
+    stop_if(all(c("Accession", area_column) %in% names(data)),
+      paste0("Missing TALL sample columns for ", sample_id))
+    keep <- positive_numeric(data[[area_column]])
+    records(
+      pxd, group, sample_id, split_accessions(data$Accession[keep]),
+      "deposited_sample_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_pg_quantity_by_sample <- function(path, pxd, group, sample_map, accession_column = "PG.ProteinGroups") {
+  data <- fread(path, check.names = FALSE, showProgress = FALSE)
+  stop_if(accession_column %in% names(data), paste0("Missing ", accession_column, " in ", path))
+  header <- names(data)
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    hits <- header[
+      endsWith(header, ".PG.Quantity") & grepl(paste0("_", sample_id, "_"), header, fixed = TRUE)
+    ]
+    if (!length(hits)) {
+      hits <- header[
+        endsWith(header, ".PG.Quantity") & grepl(paste0("_", sample_id, "\\."), header, fixed = FALSE)
+      ]
+    }
+    stop_if(length(hits) == 1L, paste0("Expected one protein-quantity column for ", sample_id, " in ", path))
+    keep <- positive_numeric(data[[hits[[1L]]]])
+    records(
+      pxd, group, sample_id, split_accessions(data[[accession_column]][keep]),
+      "deposited_sample_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_itraq_by_sample <- function(path, pxd, group, sample_map, sheet) {
+  data <- as.data.table(read_excel(path, sheet = sheet))
+  stop_if("Accession" %in% names(data), paste0("Missing Accession in ", path, " / ", sheet))
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    stop_if(sample_id %in% names(data), paste0("Missing iTRAQ sample column for ", sample_id))
+    keep <- positive_numeric(data[[sample_id]])
+    records(
+      pxd, group, sample_id, split_accessions(data$Accession[keep]),
+      "deposited_supplementary_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_excel_numeric_by_sample <- function(
+  path, pxd, group, sample_map, sheet = 1L, skip = 0L,
+  accession_column, column_map, source_mode = "deposited_supplementary_table",
+  observation_type = "sample"
+) {
+  data <- as.data.table(read_excel(path, sheet = sheet, skip = skip))
+  stop_if(accession_column %in% names(data), paste0("Missing ", accession_column, " in ", path))
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    column <- column_map[[sample_id]]
+    stop_if(length(column) == 1L && column %in% names(data),
+      paste0("Missing quantitative column for ", sample_id, " in ", path))
+    keep <- positive_numeric(data[[column]])
+    records(
+      pxd, group, sample_id, split_accessions(data[[accession_column]][keep]),
+      source_mode, path, sample_map$SampleClass[[index]], observation_type
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_pxd066517_by_sample <- function(path, pxd, group, sample_map) {
+  data <- fread(path, check.names = FALSE, showProgress = FALSE)
+  stop_if("PG.ProteinAccessions" %in% names(data), paste0("Missing PG.ProteinAccessions in ", path))
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    hits <- names(data)[grepl(paste0("_", sample_id, "\\.raw\\.PG\\.Quantity$"), names(data))]
+    stop_if(length(hits) == 1L, paste0("Missing sperm reference sample column for ", sample_id))
+    keep <- positive_numeric(data[[hits[[1L]]]])
+    records(
+      pxd, group, sample_id, split_accessions(data$PG.ProteinAccessions[keep]),
+      "deposited_sample_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_hk2_by_sample <- function(path, pxd, group, sample_map) {
+  data <- fread(path, skip = 2L, check.names = FALSE, showProgress = FALSE)
+  stop_if("PG.ProteinGroups" %in% names(data), paste0("Missing PG.ProteinGroups in ", path))
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    hits <- names(data)[grepl(paste0("_", sample_id, "\\.raw\\.PG\\.MS2Quantity$"), names(data))]
+    stop_if(length(hits) == 1L, paste0("Missing HK-2 reference sample column for ", sample_id))
+    keep <- positive_numeric(data[[hits[[1L]]]])
+    records(
+      pxd, group, sample_id, split_accessions(data$PG.ProteinGroups[keep]),
+      "deposited_sample_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
+read_pxd073311_proteome_by_sample <- function(path, pxd, group, sample_map) {
+  data <- fread(path, check.names = FALSE, showProgress = FALSE)
+  stop_if("Protein.Group" %in% names(data), paste0("Missing Protein.Group in ", path))
+  raw_columns <- names(data)[grepl("A[06]h_[123]\\.raw$", names(data))]
+  output <- lapply(seq_len(nrow(sample_map)), function(index) {
+    sample_id <- sample_map$SampleID[[index]]
+    hits <- raw_columns[grepl(paste0("_", sample_id, "\\.raw$"), raw_columns)]
+    stop_if(length(hits) == 1L, paste0("Missing HUVEC reference sample column for ", sample_id))
+    keep <- positive_numeric(data[[hits[[1L]]]])
+    records(
+      pxd, group, sample_id, split_accessions(data$Protein.Group[keep]),
+      "deposited_sample_table", path, sample_map$SampleClass[[index]], "sample"
+    )
+  })
+  rbindlist(output, fill = TRUE)
+}
+
 sample_map <- function(pxd, group, ids, classes = rep("replicate", length(ids))) {
   data.table(PXD = pxd, SampleGroup = group, SampleID = ids, SampleClass = classes)
 }
@@ -355,6 +548,7 @@ dir.create(candidate_dir, recursive = TRUE, showWarnings = FALSE)
 groups <- fread(file.path(input_dir, "group_summary_30.csv"), check.names = FALSE)
 design <- fread(file.path(candidate_dir, "group_sample_design.csv"), check.names = FALSE, na.strings = c("", "NA"), fill = TRUE)
 membership <- fread(file.path(input_dir, "kla_protein_membership_30.csv"), check.names = FALSE)
+reference_membership <- fread(file.path(input_dir, "reference_protein_membership_30.csv"), check.names = FALSE)
 stop_if(nrow(groups) == 30L, "Frozen release must contain exactly 30 groups.")
 stop_if(nrow(design) == 30L, "Sample design must contain exactly 30 groups.")
 groups[, GroupKey := paste(PXD, SampleGroup, sep = "__")]
@@ -507,15 +701,31 @@ map <- sample_map("PXD073311", "HUVEC control and Pg infection", c("A0h_1", "A0h
 add_records(read_pxd073311_by_raw_file(path, "PXD073311", "HUVEC control and Pg infection", map))
 add_source("PXD073311", "HUVEC control and Pg infection", map$SampleID, map$SampleClass, "Spectronaut peptide matrix / positive raw-file intensity", path)
 
+# PXD033146 contains three pathological rotator-cuff tendon samples (RCT1-RCT3)
+# and a separate normal-control arm (NC1-NC3).  The Figure 1 tendon row uses
+# only the RCT arm.  Each channel has three acquisition columns in the
+# deposited site table; those are technical acquisitions of the same sample.
+path <- require_file(file.path(source_root, "PXD033146/search_results/extracted_pairing/search_result-HA119TPLa/La (K)Sites.txt"))
+map <- sample_map("PXD033146", "pathological rotator cuff tendon", paste0("RCT", 1:3))
+map[, Channel := 1:3]
+add_records(read_pxd033146_kla_by_channel(path, "PXD033146", "pathological rotator cuff tendon", map))
+add_source("PXD033146", "pathological rotator cuff tendon", map$SampleID, map$SampleClass, "MaxQuant Kla site table / RCT channel", path)
+
+# The TALL-104 deposited protein tables expose Sample 1-Sample 3 in both the
+# enriched Kla and non-enriched reference arms.  Keep those as three source
+# observations rather than collapsing the table to one dataset-level point.
+path <- require_file(file.path(source_root, "PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv"))
+map <- sample_map("PXD028488", "TALL-104", paste0("Sample ", 1:3))
+add_records(read_tall_by_sample(path, "PXD028488", "TALL-104", map))
+add_source("PXD028488", "TALL-104", map$SampleID, map$SampleClass, "Deposited protein table / sample area", path)
+
 # Dataset-level observations: the source contains technical/structural runs or
 # pooled channels, but it does not support independent biological sample IDs.
 single_groups <- list(
-  list(pxd = "PXD033146", group = "pathological rotator cuff tendon", id = "TMT_plex", class = "plex_channel", file = "PXD033146/search_results/extracted_pairing/search_result-HA119TPLa/La (K)Sites.txt"),
   list(pxd = "PXD075377", group = "adjacent liver", id = "Control_pool", class = "pool", file = "PXD075377/search_results/extracted/2-Basic_analysis/MS_identified_information.txt", intensity = "Intensity Control"),
   list(pxd = "PXD075377", group = "HCC", id = "HCC_pool", class = "pool", file = "PXD075377/search_results/extracted/2-Basic_analysis/MS_identified_information.txt", intensity = "Intensity HCC"),
   list(pxd = "PXD028488", group = "HCT116", id = "HCT116_dataset_union", class = "single"),
   list(pxd = "PXD053474", group = "HCT116", id = "HCT116_dataset_union", class = "single"),
-  list(pxd = "PXD028488", group = "TALL-104", id = "TALL-104_dataset_union", class = "single"),
   list(pxd = "PXD028488", group = "HEK293T", id = "HEK293T_dataset_union", class = "single"),
   list(pxd = "PXD058534", group = "pretreated HK-2", id = "HK2", class = "single", file = "PXD058534/search_results/extracted_pairing/txt/La (K)Sites.txt")
 )
@@ -579,6 +789,288 @@ sample_values[, ConditionLabel := fifelse(
   SampleID
 )]
 
+# Build the matched whole-proteome side at the same observation level.  Where
+# the reference file contains named source observations, use those columns;
+# where it is an averaged cell-line or single-material profile, retain one
+# transparent aggregate observation rather than manufacturing replicates.
+reference_records_list <- list()
+add_reference_records <- function(value, reference_pxd) {
+  if (!nrow(value)) return(invisible(NULL))
+  value[, ReferencePXD := reference_pxd]
+  reference_records_list[[length(reference_records_list) + 1L]] <<- value
+  invisible(NULL)
+}
+
+reference_membership_long <- rbindlist(lapply(seq_len(nrow(reference_membership)), function(index) {
+  accessions <- split_accessions(reference_membership$MappedBaseAccessions[[index]])
+  if (!length(accessions)) return(data.table())
+  data.table(
+    PXD = reference_membership$PXD[[index]],
+    SampleGroup = reference_membership$SampleGroup[[index]],
+    BaseAccession = accessions,
+    IsDdr = is_true_flag(reference_membership$IsDdr[[index]])
+  )
+}), fill = TRUE)
+
+add_reference_aggregate <- function(row) {
+  source_path <- require_file(file.path(
+    source_root,
+    sub("^data/", "", row$ReferenceEvidenceFile[[1L]])
+  ))
+  accessions <- reference_membership_long[
+    PXD == row$PXD[[1L]] & SampleGroup == row$SampleGroup[[1L]],
+    BaseAccession
+  ]
+  value <- records(
+    row$PXD[[1L]], row$SampleGroup[[1L]],
+    paste0(row$ReferencePXD[[1L]], "_aggregate"), accessions,
+    "validated_reference_membership", source_path, "aggregate", "aggregate"
+  )
+  add_reference_records(value, row$ReferencePXD[[1L]])
+}
+
+# Same-study, sample-resolved references.
+path <- require_file(file.path(source_root, "PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt"))
+map <- sample_map("PXD033146", "pathological rotator cuff tendon", paste0("RCT", 1:3))
+map[, Channel := 1:3]
+channel_columns <- setNames(
+  lapply(map$Channel, function(channel) paste0("Reporter intensity corrected ", channel)),
+  map$SampleID
+)
+add_reference_records(
+  read_maxquant_by_numeric_columns(path, "PXD033146", "pathological rotator cuff tendon", map, channel_columns),
+  "PXD033146"
+)
+
+path <- require_file(file.path(source_root, "PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt"))
+for (group in c("hypertrophic scar", "adjacent skin")) {
+  ids <- if (group == "hypertrophic scar") paste0("HSP", 1:4) else paste0("NSP", 1:4)
+  map <- sample_map("PXD046800", group, ids)
+  add_reference_records(read_pd_proteins_by_sample(path, "PXD046800", group, map), "PXD046800")
+}
+
+path <- require_file(file.path(source_root, "PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx"))
+map <- sample_map("PXD050470", "human hippocampus", c("H072", "H081", "H187"))
+intensity_map <- setNames(paste0("Intensity_", map$SampleID), map$SampleID)
+add_reference_records(
+  read_excel_numeric_by_sample(
+    path, "PXD050470", "human hippocampus", map, sheet = "Sheet1", skip = 5L,
+    accession_column = "Protein accession", column_map = intensity_map
+  ),
+  "PXD050470"
+)
+
+path <- require_file(file.path(source_root, "PXD066517/search_results/20240275.tsv"))
+ids <- c(paste0("L", 1:17), paste0("N", 1:16))
+map <- sample_map("PXD064912", "human sperm", ids, c(rep("L sperm", 17), rep("N sperm", 16)))
+add_reference_records(read_pxd066517_by_sample(path, "PXD064912", "human sperm", map), "PXD066517")
+
+path <- require_file(file.path(source_root, "PXD066054/search_results/extracted/DA/Protein_Quant.tsv"))
+for (group in c("BPH", "prostate cancer")) {
+  ids <- if (group == "BPH") paste0("NAT", 1:5) else paste0("PCa", 1:5)
+  map <- sample_map("PXD066054", group, ids)
+  add_reference_records(read_pg_quantity_by_sample(path, "PXD066054", group, map), "PXD066054")
+}
+
+path <- require_file(file.path(source_root, "PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx"))
+ids <- c(paste0("Non-rec", 1:4), paste0("Rec", 1:4))
+classes <- c(rep("Non-rec", 4), rep("Rec", 4))
+for (item in list(
+  list(group = "adjacent liver", sheet = "ANTs"),
+  list(group = "HCC", sheet = "CISs")
+)) {
+  map <- sample_map("PXD075377", item$group, ids, classes)
+  add_reference_records(read_itraq_by_sample(path, "PXD075377", item$group, map, item$sheet), "PXD065775")
+}
+
+path <- require_file(file.path(source_root, "PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv"))
+map <- sample_map("PXD066351", "HCT116 control and Roseburia co-culture", c("NC116", "R116"), c("control", "Roseburia co-culture"))
+add_reference_records(read_pg_quantity_by_sample(path, "PXD066351", "HCT116 control and Roseburia co-culture", map), "PXD066351")
+
+path <- require_file(file.path(source_root, "PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv"))
+map <- sample_map("PXD028488", "TALL-104", paste0("Sample ", 1:3))
+add_reference_records(read_tall_by_sample(path, "PXD028488", "TALL-104", map), "PXD028488")
+
+path <- require_file(file.path(source_root, "PXD050147/search_results/SIRT_proteinGroups.txt"))
+ids <- c(
+  "WT_pro_rep1", "WT_pro_rep2", "WT_pro_rep3",
+  "SIRT1KO_pro_rep1", "SIRT1KO_pro_rep2", "SIRT1KO_pro_rep3",
+  "SIRT3KO_pro_rep1", "SIRT3KO_pro_rep2", "SIRT3KO_pro_rep3"
+)
+classes <- c(rep("WT", 3), rep("SIRT1 KO", 3), rep("SIRT3 KO", 3))
+map <- sample_map("PXD050147", "HepG2 WT and SIRT1 or SIRT3 KO", ids, classes)
+intensity_map <- setNames(paste0("Intensity ", ids), ids)
+add_reference_records(
+  read_maxquant_by_numeric_columns(path, "PXD050147", "HepG2 WT and SIRT1 or SIRT3 KO", map, intensity_map),
+  "PXD050147"
+)
+
+path <- require_file(file.path(source_root, "PXD028737/search_results/extracted_reference/txt/proteinGroups.txt"))
+map <- sample_map("PXD028737", "HMC3", c("H0", "H24"), c("normoxia", "hypoxia"))
+intensity_map <- setNames(paste0("LFQ intensity ", map$SampleID), map$SampleID)
+add_reference_records(
+  read_maxquant_by_numeric_columns(path, "PXD028737", "HMC3", map, intensity_map),
+  "PXD028737"
+)
+
+path <- require_file(file.path(source_root, "PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt"))
+map <- sample_map("PXD058534", "pretreated HK-2", c("amostra1", "amostra3", "amostra4"), "untreated control")
+add_reference_records(read_hk2_by_sample(path, "PXD058534", "pretreated HK-2", map), "PXD072220")
+map <- sample_map("PXD078736", "HK-2 control and mannitol", c("amostra1", "amostra3", "amostra4"), "untreated control")
+add_reference_records(read_hk2_by_sample(path, "PXD078736", "HK-2 control and mannitol", map), "PXD072220")
+
+path <- require_file(file.path(source_root, "PXD069969/search_results/SA206LQB1_Annotation.xlsx"))
+for (item in list(
+  list(group = "glioblastoma stem cells", ids = c("G2907", "G3028", "G3264", "GSC23", "MES28", "RKI")),
+  list(group = "neural stem cells", ids = c("ENSA", "HMP1"))
+)) {
+  map <- sample_map("PXD070007", item$group, item$ids, "model")
+  intensity_map <- setNames(paste0("LFQ intensity ", item$ids), item$ids)
+  add_reference_records(
+    read_excel_numeric_by_sample(
+      path, "PXD070007", item$group, map, sheet = "Annotation_Combine",
+      accession_column = "Protein accession", column_map = intensity_map
+    ),
+    "PXD069969"
+  )
+}
+
+path <- require_file(file.path(source_root, "PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv"))
+map <- sample_map("PXD073311", "HUVEC control and Pg infection", paste0("A0h_", 1:3), "A0h control")
+add_reference_records(read_pxd073311_proteome_by_sample(path, "PXD073311", "HUVEC control and Pg infection", map), "PXD073311")
+
+direct_reference_keys <- c(
+  "PXD033146__pathological rotator cuff tendon",
+  "PXD046800__hypertrophic scar", "PXD046800__adjacent skin",
+  "PXD050470__human hippocampus", "PXD064912__human sperm",
+  "PXD066054__BPH", "PXD066054__prostate cancer",
+  "PXD075377__adjacent liver", "PXD075377__HCC",
+  "PXD066351__HCT116 control and Roseburia co-culture",
+  "PXD028488__TALL-104", "PXD050147__HepG2 WT and SIRT1 or SIRT3 KO",
+  "PXD028737__HMC3", "PXD058534__pretreated HK-2",
+  "PXD078736__HK-2 control and mannitol",
+  "PXD070007__glioblastoma stem cells", "PXD070007__neural stem cells",
+  "PXD073311__HUVEC control and Pg infection"
+)
+for (index in seq_len(nrow(groups))) {
+  row <- groups[index]
+  key <- paste(row$PXD, row$SampleGroup, sep = "__")
+  if (!(key %in% direct_reference_keys)) add_reference_aggregate(row)
+}
+
+reference_records <- unique(rbindlist(reference_records_list, fill = TRUE))
+reference_records[, SourceFile := vapply(SourceFile, source_rel, character(1))]
+reference_records[, GroupKey := paste(PXD, SampleGroup, sep = "__")]
+stop_if(setequal(unique(reference_records$GroupKey), groups$GroupKey),
+  "Reference preparation did not cover exactly the frozen groups.")
+stop_if(!anyDuplicated(reference_records[, .(PXD, SampleGroup, SampleID, BaseAccession)]),
+  "Duplicate reference sample-level membership rows detected.")
+
+reference_records <- merge(
+  reference_records,
+  unique(reference_membership_long[, .(PXD, SampleGroup, BaseAccession, IsDdr)]),
+  by = c("PXD", "SampleGroup", "BaseAccession"),
+  all.x = TRUE,
+  sort = FALSE
+)
+reference_records[is.na(IsDdr), IsDdr := FALSE]
+
+reference_values <- reference_records[, .(
+  ReferencePXD = first(ReferencePXD),
+  WholeProteomeProteinCount = uniqueN(BaseAccession),
+  WholeProteomeDdrProteinCount = uniqueN(BaseAccession[IsDdr == TRUE]),
+  SourceMode = first(SourceMode),
+  SourceFile = first(SourceFile),
+  SampleClass = first(SampleClass),
+  ObservationType = first(ObservationType)
+), by = .(PXD, SampleGroup, SampleID)]
+reference_values[, WholeProteomeDdrFraction := fifelse(
+  WholeProteomeProteinCount > 0L,
+  WholeProteomeDdrProteinCount / WholeProteomeProteinCount,
+  NA_real_
+)]
+reference_values[, WholeProteomeDdrFractionPercentage := WholeProteomeDdrFraction * 100]
+reference_values[, ConditionLabel := SampleID]
+
+plot_group_meta <- groups[, .(
+  RowOrder, PXD, SampleGroup, Category, DisplayGroup = KlaLabelEn,
+  ReferencePXD, FrozenKlaProteinCount = KlaProteinCount,
+  FrozenKlaDdrProteinCount = KlaDdrProteinCount,
+  FrozenKlaDdrFraction = KlaDdrFraction * 100,
+  FrozenReferenceProteinCount = ReferenceProteinCount,
+  FrozenReferenceDdrProteinCount = ReferenceDdrProteinCount,
+  FrozenReferenceDdrFraction = ReferenceDdrFraction * 100
+)]
+
+kla_plot_values <- merge(
+  sample_values[, .(
+    RowOrder, PXD, SampleGroup, Category, DisplayGroup, SampleID, ConditionLabel,
+    SampleClass, ObservationType, SourceMode, SourceFile,
+    ProteinCount = KlaProteinCount, DdrProteinCount = KlaDdrProteinCount,
+    DdrFraction = KlaDdrFraction, DdrFractionPercentage = KlaDdrFractionPercentage
+  )],
+  plot_group_meta,
+  by = c("RowOrder", "PXD", "SampleGroup", "Category", "DisplayGroup"),
+  all.x = TRUE,
+  sort = FALSE
+)
+kla_plot_values[, Dataset := "Lactylome (Kla)"]
+
+reference_plot_values <- merge(
+  reference_values,
+  plot_group_meta,
+  by = c("PXD", "SampleGroup"),
+  all.x = TRUE,
+  sort = FALSE
+)
+reference_plot_values[, ReferencePXD := ReferencePXD.x]
+reference_plot_values[, c("ReferencePXD.x", "ReferencePXD.y") := NULL]
+reference_plot_values[, `:=`(
+  ProteinCount = WholeProteomeProteinCount,
+  DdrProteinCount = WholeProteomeDdrProteinCount,
+  DdrFraction = WholeProteomeDdrFraction,
+  DdrFractionPercentage = WholeProteomeDdrFractionPercentage,
+  Dataset = "Whole proteome"
+)]
+
+figure1_values <- rbindlist(list(
+  kla_plot_values[, .(
+    RowOrder, PXD, SampleGroup, Category, DisplayGroup, Dataset,
+    SampleID, ConditionLabel, SampleClass, ObservationType, SourceMode, SourceFile,
+    ReferencePXD, ProteinCount, DdrProteinCount, DdrFraction, DdrFractionPercentage,
+    FrozenKlaProteinCount, FrozenKlaDdrProteinCount, FrozenKlaDdrFraction,
+    FrozenReferenceProteinCount, FrozenReferenceDdrProteinCount, FrozenReferenceDdrFraction
+  )],
+  reference_plot_values[, .(
+    RowOrder, PXD, SampleGroup, Category, DisplayGroup, Dataset,
+    SampleID, ConditionLabel, SampleClass, ObservationType, SourceMode, SourceFile,
+    ReferencePXD, ProteinCount, DdrProteinCount, DdrFraction, DdrFractionPercentage,
+    FrozenKlaProteinCount, FrozenKlaDdrProteinCount, FrozenKlaDdrFraction,
+    FrozenReferenceProteinCount, FrozenReferenceDdrProteinCount, FrozenReferenceDdrFraction
+  )]
+), fill = TRUE)
+setorder(figure1_values, RowOrder, Dataset, SampleID)
+
+stop_if(nrow(figure1_values[Dataset == "Lactylome (Kla)"]) == 92L,
+  "The source-defined Kla sample count must be 92.")
+stop_if(nrow(figure1_values[Dataset == "Whole proteome"]) == 118L,
+  "The source-defined whole-proteome sample count must be 118.")
+stop_if(all(is.finite(figure1_values$DdrFractionPercentage)),
+  "A Figure 1 sample fraction is not finite.")
+stop_if(all(figure1_values$DdrFractionPercentage >= 0 & figure1_values$DdrFractionPercentage <= 100),
+  "A Figure 1 sample fraction is outside 0-100 percent.")
+
+reference_registry <- reference_records[, .(
+  SampleClass = first(SampleClass),
+  Parser = paste0("whole-proteome / ", first(SourceMode)),
+  SourceFile = first(SourceFile)
+), by = .(PXD, SampleGroup, SampleID)]
+reference_registry[, Dataset := "Whole proteome"]
+registry_table <- rbindlist(registry, fill = TRUE)
+registry_table[, Dataset := "Lactylome (Kla)"]
+figure1_registry <- rbindlist(list(registry_table, reference_registry), fill = TRUE)
+setorder(figure1_registry, Dataset, PXD, SampleGroup, SampleID)
+
 frozen_group_values <- groups[, .(
   FrozenKlaProteinCount = KlaProteinCount,
   FrozenKlaDdrProteinCount = KlaDdrProteinCount,
@@ -608,7 +1100,6 @@ stop_if(!anyNA(sample_values$KlaDdrFraction), "A sample-level fraction is missin
 stop_if(all(sample_values$KlaDdrFraction >= 0 & sample_values$KlaDdrFraction <= 1), "A sample-level fraction is outside 0-1.")
 stop_if(all(reconciliation$ObservedSampleCount >= 1L), "A frozen group has no sample-level observation.")
 
-registry_table <- rbindlist(registry, fill = TRUE)
 setorder(registry_table, PXD, SampleGroup, SampleID)
 setorder(sample_values, RowOrder, SampleID)
 setorder(reconciliation, RowOrder)
@@ -628,6 +1119,8 @@ reconciliation <- reconciliation[, .(
 fwrite(sample_values, file.path(candidate_dir, "sample_boxplot_values.csv"), na = "")
 fwrite(reconciliation, file.path(candidate_dir, "sample_boxplot_reconciliation.csv"), na = "")
 fwrite(registry_table, file.path(candidate_dir, "sample_boxplot_source_registry.csv"), na = "")
+fwrite(figure1_values, file.path(candidate_dir, "figure1_sample_boxplot_values.csv"), na = "")
+fwrite(figure1_registry, file.path(candidate_dir, "figure1_sample_boxplot_source_registry.csv"), na = "")
 
 message(
   "Wrote sample-level boxplot inputs for ", nrow(sample_values),

@@ -369,7 +369,13 @@ draw_percentile_heatmap(
   c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B")
 )
 
-draw_exact_upset <- function(filename, stem, title) {
+draw_exact_upset <- function(
+    filename,
+    stem,
+    title,
+    mask_order = NULL,
+    x_axis_label = "Intersection rank (bars ordered by size)"
+) {
   membership <- fread(input_path(filename)) |>
     as_tibble()
   membership_columns <- paste0("In_", venn_category_order)
@@ -419,6 +425,11 @@ draw_exact_upset <- function(filename, stem, title) {
     Mask = seq_len(15L),
     ProteinCount = as.integer(tabulate(row_masks, nbins = 15L))
   )[order(-ProteinCount, Mask)]
+  if (!is.null(mask_order)) {
+    mask_order <- as.integer(mask_order)
+    assert(identical(sort(mask_order), seq_len(15L)), "The shared UpSet order must contain each four-set mask exactly once.")
+    intersections <- intersections[match(mask_order, Mask)]
+  }
   intersections[, Intersection := .I]
 
   set_order_bottom_to_top <- rev(venn_category_order)
@@ -606,7 +617,7 @@ draw_exact_upset <- function(filename, stem, title) {
       labels = NULL,
       expand = c(0, 0)
     ) +
-    labs(x = "Intersection rank (bars ordered by size)", y = NULL) +
+    labs(x = x_axis_label, y = NULL) +
     theme_minimal(base_family = publication_font, base_size = 10.5) +
     theme(
       panel.grid = element_blank(),
@@ -647,7 +658,28 @@ draw_exact_upset <- function(filename, stem, title) {
   save_figure(plot, stem, 13.5, 8.7)
 }
 
-draw_exact_upset("venn_reference_ddr.csv", "Figure_2a_whole_proteome_DDR_UpSet", "DDR Proteome")
+mask_order_from_input <- function(filename) {
+  source_membership <- fread(input_path(filename))
+  source_columns <- paste0("In_", venn_category_order)
+  assert(all(source_columns %in% names(source_membership)), paste("Invalid four-set order input:", filename))
+  source_matrix <- vapply(
+    source_columns,
+    function(column) is_true(source_membership[[column]]),
+    logical(nrow(source_membership))
+  )
+  source_masks <- as.integer(source_matrix %*% c(1L, 2L, 4L, 8L))
+  assert(all(source_masks %in% seq_len(15L)), paste("The shared UpSet order input contains an empty membership row:", filename))
+  order(-tabulate(source_masks, nbins = 15L), seq_len(15L))
+}
+
+kla_ddr_mask_order <- mask_order_from_input("venn_kla_ddr.csv")
+draw_exact_upset(
+  "venn_reference_ddr.csv",
+  "Figure_2a_whole_proteome_DDR_UpSet",
+  "DDR Proteome",
+  mask_order = kla_ddr_mask_order,
+  x_axis_label = "Intersection rank (ordered as DDR lactylome)"
+)
 draw_exact_upset("venn_kla_ddr.csv", "Figure_2b_Kla_DDR_UpSet", "DDR Lactylome")
 draw_exact_upset("venn_reference.csv", "Supplementary_Figure_S1a_whole_proteome_UpSet", "Whole Proteome")
 draw_exact_upset("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_UpSet", "Whole Lactylome")

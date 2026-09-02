@@ -462,6 +462,25 @@ draw_exact_upset <- function(filename, stem, title) {
   )
   intersections[, LabelY := bar_label_y]
 
+  intersection_breaks <- scales::breaks_pretty(n = 4)(c(0, max_intersection))
+  intersection_breaks <- sort(unique(intersection_breaks[intersection_breaks >= 0 & intersection_breaks <= max_intersection]))
+  if (!length(intersection_breaks) || intersection_breaks[[1]] != 0) {
+    intersection_breaks <- c(0, intersection_breaks)
+  }
+  intersection_axis <- data.frame(
+    X = 0.5,
+    Y = intersection_breaks,
+    Label = scales::label_number(accuracy = 1, big.mark = ",")(intersection_breaks)
+  )
+  intersection_axis_title <- data.frame(
+    X = 0.5,
+    Y = max_intersection / 2,
+    Label = "Intersection size"
+  )
+
+  # Keep the plotting area identical in the two right-hand panels.  The
+  # intersection y-axis is drawn inside the top panel so its axis grobs do
+  # not shift the bars relative to the membership matrix below.
   intersection_plot <- ggplot(intersections, aes(x = Intersection, y = ProteinCount)) +
     geom_col(width = 0.72, fill = "#4B5563") +
     geom_text(
@@ -471,13 +490,39 @@ draw_exact_upset <- function(filename, stem, title) {
       family = publication_font,
       colour = "#252A31"
     ) +
+    geom_segment(
+      data = intersection_axis,
+      aes(x = 0.5, xend = 0.53, y = Y, yend = Y),
+      inherit.aes = FALSE,
+      colour = "#9AA0A6",
+      linewidth = 0.35
+    ) +
+    geom_text(
+      data = intersection_axis,
+      aes(x = X, y = Y, label = Label),
+      inherit.aes = FALSE,
+      hjust = 1,
+      size = 3.1,
+      family = publication_font,
+      colour = "#4B5563"
+    ) +
+    geom_text(
+      data = intersection_axis_title,
+      aes(x = X, y = Y, label = Label),
+      inherit.aes = FALSE,
+      angle = 90,
+      size = 3.35,
+      family = publication_font,
+      colour = "#30343B"
+    ) +
     scale_x_continuous(limits = x_limits, breaks = intersections$Intersection, labels = NULL, expand = c(0, 0)) +
     scale_y_continuous(
       limits = c(0, max_intersection * 1.16 + 1),
-      breaks = scales::breaks_pretty(n = 4),
+      breaks = intersection_breaks,
       expand = c(0, 0)
     ) +
-    labs(x = NULL, y = "Intersection size") +
+    labs(x = NULL, y = NULL) +
+    coord_cartesian(clip = "off") +
     theme_minimal(base_family = publication_font, base_size = 10.5) +
     theme(
       panel.grid.major.x = element_blank(),
@@ -485,9 +530,10 @@ draw_exact_upset <- function(filename, stem, title) {
       panel.grid.major.y = element_line(colour = "#E2E5E9", linewidth = 0.38),
       axis.text.x = element_blank(),
       axis.ticks.x = element_blank(),
-      axis.text.y = element_text(size = 10, colour = "#4B5563"),
-      axis.title.y = element_text(size = 11.5, colour = "#30343B", margin = margin(r = 8)),
-      plot.margin = margin(5, 8, 3, 3)
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      axis.title.y = element_blank(),
+      plot.margin = margin(5, 8, 3, 32)
     )
 
   set_size_plot <- ggplot(set_membership, aes(x = SetCount, y = Y, fill = Set)) +
@@ -569,7 +615,7 @@ draw_exact_upset <- function(filename, stem, title) {
       axis.ticks.x = element_line(colour = "#9AA0A6", linewidth = 0.35),
       axis.text.y = element_blank(),
       axis.ticks.y = element_blank(),
-      plot.margin = margin(4, 8, 8, 3)
+      plot.margin = margin(4, 8, 8, 32)
     )
 
   top_row <- plot_spacer() + intersection_plot + plot_layout(widths = c(3.2, 10))

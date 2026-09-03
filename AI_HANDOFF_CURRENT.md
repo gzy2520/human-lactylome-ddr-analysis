@@ -122,6 +122,20 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
   - 生成脚本：`R/candidate/build_regulator_sample_percentile_scatters.R`
   - 契约测试：`tests/validate_regulator_sample_percentile_contract.R`（已纳入自动化回归套件，全量通过）。
 
+### 2026-09-03 最新修订：全蛋白与乳酸化调控因子百分位数热图（Figure 3a & 3b）同步更新至 31 组
+- **背景与原因**：由于候选分支纳入了代表食管癌的 PXD064038（乳酸化 6 样本）与其配对的 PXD065830（94 个 ESCC-T 肿瘤组织全蛋白对照），源数据已由 30 组扩展为 31 组。原 Figure 3a 和 Figure 3b 热图此前仅展示 30 组（肿瘤组织仅 2 行：Prostate cancer 与 Primary HCC），现根据源数据变更同步更新。
+- **数据提取与计算逻辑**：
+  - **Figure 3a（全蛋白百分位数热图）**：提取 PXD065830 的 94 个 ESCC-T 肿瘤样本的原始定量信号，按样本计算各蛋白百分位数后取中位数；在 `tumor tissues` 面板新增首行 `Independent ESCC tumor whole proteome`（使肿瘤组织由 2 行增加为 3 行完整呈现）。
+  - **Figure 3b（乳酸化 Kla 百分位数热图）**：提取 PXD064038 的 6 个样本（MEC_1-3, NEC_1-3）在 `La (K)Sites.txt` 中的位点定量信号，按样本计算百分位数后取中位数；在 `tumor tissues` 面板新增行 `ESCC MEC/NEC groups`。其中检出具有乳酸化定量信号的调控因子包括 HDAC1（中位数 66.7%）、PARK7（中位数 58.2%）、HAT1（中位数 22.0%）、DPF2（中位数 23.9%）等。
+- **生成脚本与文件**：
+  - 核心脚本：`R/candidate/update_regulator_percentile_heatmaps.R`
+  - 更新数据：`data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input/regulator_reference_percentiles_30.csv`（1,488 行，覆盖 31 组 × 48 个调控因子）与 `regulator_kla_percentiles_30.csv`（1,519 行，覆盖 31 组 × 49 行），并同步刷新 `INPUT_MANIFEST.csv`。
+  - 正式输出：
+    - `results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/Figure_3a_reference_regulator_percentiles.png/.pdf`
+    - `results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/Figure_3b_Kla_regulator_percentiles.png/.pdf`
+  - 候选镜像：`results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/heatmaps/`
+- **自动化测试**：全量 12 项契约测试（包括 `validate_escc_inclusion_scope.R`）100% 全部通过。
+
 扩展正式图与附表（与冻结默认正式出版目录隔离）：
 - 正式图表目录：`results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/`
 - 候选附表目录：`results/escc_inclusion_20260903_pxd065830_tumor_reference/supplementary/`（及镜像 `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/supplementary/`）
@@ -154,6 +168,7 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
 - MKI67 全蛋白比值：`R/candidate/build_figure1_mki67_ratio_boxplots.R`
 - Kla 七通路图：`R/candidate/build_ddr_pathway_summary_boxplots.R`
 - 10 个调控因子样本散点图：`R/candidate/build_regulator_sample_percentile_scatters.R`
+- 31 组热图更新脚本：`R/candidate/update_regulator_percentile_heatmaps.R`
 - ANOVA：`R/candidate/boxplot_significance.R`
 - UpSet/正式图：`R/publication/build_publication_outputs.R`
 - 附表契约验证：`tests/validate_candidate_supplementary_contract.R`

@@ -658,10 +658,8 @@ draw_exact_upset <- function(
       plot.margin = margin(4, 8, 8, 32)
     )
 
-  top_row <- plot_spacer() + intersection_plot + plot_layout(widths = c(3.7, 10))
-  bottom_row <- set_size_plot + matrix_plot + plot_layout(widths = c(3.7, 10))
-  plot <- top_row / bottom_row +
-    plot_layout(heights = c(1.45, 1.25)) +
+  plot <- (plot_spacer() + intersection_plot + set_size_plot + matrix_plot) +
+    plot_layout(ncol = 2, widths = c(3.7, 10), heights = c(1.45, 1.25)) +
     plot_annotation(
       title = title,
       subtitle = "Exact four-set intersections; zero-count combinations are retained",

@@ -132,6 +132,17 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
   - `Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx`（原 Table S4 重命名）：TumorTissues 面板由 178 扩展至 192 个蛋白质（新增 14 个食管癌相关 Kla-DDR 蛋白并赋序）。
   - `Supplementary_Table_S6_Lactylation_Regulators.xlsx`（原 Table S5 重命名）：49 个调控因子及其文献依据完整保留。
 
+### 2026-09-03 最新修订：UpSet 图版本核对、像素级对齐与排列顺序审计
+- **版本数据核实**：
+  - 候选目录 `results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/` 中的 UpSet 图均为 31 组最新版本（Figure 2b 中 Tumor tissues 大小为 192，总数 401；Figure 2a 全蛋白 DDR 为 836；柱子交集蛋白数全面更新）。
+- **点阵与柱子图对齐修复（消除 36.5 px 偏差至 0.00 px）**：
+  - 原代码采用 `(top_row / bottom_row)` 嵌套 patchwork 拼图，左下角 set-size 文字边距挤压了下方面板，造成点阵相较上方柱形图向右偏移 36.5 像素。
+  - 在 `R/publication/build_publication_outputs.R` 中将两层拼图重构为统一的全局 2×2 网格布局：`(plot_spacer() + intersection_plot + set_size_plot + matrix_plot) + plot_layout(ncol = 2, widths = c(3.7, 10), heights = c(1.45, 1.25))`。
+  - Python 像素级扫描复测结果显示：全部 15 列的柱子中心与点阵圆点中心水平差均为 0.00 像素，实现像素级对齐。
+- **两版本交集排列顺序说明**：
+  - **30 组 vs 31 组**：列顺序**不同**。因为 UpSet 遵循按交集蛋白数量降序排列（`bars ordered by size`）。31 组纳入食管癌后，交集 14（肿瘤组织+癌细胞系+正常细胞系）蛋白数由 5 跃升至 12，排序从第 8 列升至第 5 列；交集 13 则降为 3，排序后移至第 10 列。
+  - **同一版本内 Figure 2a 与 Figure 2b**：列顺序**完全相同**。Figure 2a 严格通过 `mask_order = kla_ddr_mask_order` 强制对齐 Figure 2b 的交集列顺序，便于横向比较。
+
 ## 关键脚本
 
 - 上游扩展：`R/candidate/prepare_escc_inclusion_inputs.R`

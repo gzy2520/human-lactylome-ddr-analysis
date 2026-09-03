@@ -515,6 +515,10 @@ draw_exact_upset <- function(
     Label = "Intersection size"
   )
 
+  max_axis_digits <- max(nchar(intersection_axis$Label))
+  axis_title_vjust <- -2.2 - 0.9 * max_axis_digits
+  plot_left_margin <- 32 + 6.5 * max_axis_digits
+
   # Keep the plotting area identical in the two right-hand panels.  The
   # intersection y-axis is drawn inside the top panel so its axis grobs do
   # not shift the bars relative to the membership matrix below.
@@ -538,7 +542,7 @@ draw_exact_upset <- function(
       data = intersection_axis,
       aes(x = X, y = Y, label = Label),
       inherit.aes = FALSE,
-      hjust = 1,
+      hjust = 1.25,
       size = 3.1,
       family = publication_font,
       colour = "#4B5563"
@@ -548,6 +552,7 @@ draw_exact_upset <- function(
       aes(x = X, y = Y, label = Label),
       inherit.aes = FALSE,
       angle = 90,
+      vjust = axis_title_vjust,
       size = 3.35,
       family = publication_font,
       colour = "#30343B"
@@ -570,7 +575,7 @@ draw_exact_upset <- function(
       axis.text.y = element_blank(),
       axis.ticks.y = element_blank(),
       axis.title.y = element_blank(),
-      plot.margin = margin(5, 8, 3, 32)
+      plot.margin = margin(5, 8, 3, plot_left_margin)
     )
 
   set_size_plot <- ggplot(set_membership, aes(x = SetCount, y = Y, fill = Set)) +
@@ -655,7 +660,7 @@ draw_exact_upset <- function(
       axis.ticks.x = element_line(colour = "#9AA0A6", linewidth = 0.35),
       axis.text.y = element_blank(),
       axis.ticks.y = element_blank(),
-      plot.margin = margin(4, 8, 8, 32)
+      plot.margin = margin(4, 8, 8, plot_left_margin)
     )
 
   plot <- (plot_spacer() + intersection_plot + set_size_plot + matrix_plot) +

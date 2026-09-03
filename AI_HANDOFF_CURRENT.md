@@ -142,6 +142,9 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
 - **两版本交集排列顺序说明**：
   - **30 组 vs 31 组**：列顺序**不同**。因为 UpSet 遵循按交集蛋白数量降序排列（`bars ordered by size`）。31 组纳入食管癌后，交集 14（肿瘤组织+癌细胞系+正常细胞系）蛋白数由 5 跃升至 12，排序从第 8 列升至第 5 列；交集 13 则降为 3，排序后移至第 10 列。
   - **同一版本内 Figure 2a 与 Figure 2b**：列顺序**完全相同**。Figure 2a 严格通过 `mask_order = kla_ddr_mask_order` 强制对齐 Figure 2b 的交集列顺序，便于横向比较。
+- **UpSet Y 轴 'Intersection size' 错位重叠彻底修复**：
+  - 原代码将 `intersection_axis_title` 绘制在 `X = 0.5` 且未指定横向位移，导致 90 度竖立的 "Intersection size" 标题直接从刻度数字（如 '50'、'100' 或 '200'、'300'）正中穿过，并贴着第 1 列柱子边缘，发生严重遮挡错位。
+  - 现引入根据刻度数字位数自适应的位移计算：`axis_title_vjust <- -2.2 - 0.9 * max_axis_digits`，并动态扩充左边距 `plot_left_margin <- 32 + 6.5 * max_axis_digits`（对 `intersection_plot` 与 `matrix_plot` 同步生效保证两图宽度一致）。"Intersection size" 完美平移至刻度数字左侧并留出清爽留白，文字重叠与数字遮挡彻底解决。
 
 ## 关键脚本
 

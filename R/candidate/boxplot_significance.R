@@ -118,10 +118,10 @@ compute_figure1_original_dataset_one_way_anova <- function(
   result[]
 }
 
-compute_pathway_sample_two_way_anova <- function(values, category_order, pathway_order) {
+compute_pathway_sample_two_way_anova <- function(values, category_order, pathway_order,
+                                                 direction_order = c("Pro", "Inh")) {
   required <- c("Category", "Pathway", "PositiveFraction", "NegativeFraction")
   stopifnot(all(required %in% names(values)))
-  direction_order <- c("Up/positive", "Down/negative")
   result <- data.table::rbindlist(lapply(pathway_order, function(pathway) {
     panel <- data.table::copy(values[as.character(Pathway) == pathway &
                                       as.character(Category) %in% category_order])
@@ -155,7 +155,7 @@ compute_pathway_sample_two_way_anova <- function(values, category_order, pathway
         Dataset = "Lactylome (Kla)",
         Pathway = pathway,
         Term = term,
-        Comparison = "Four categories by Up/positive versus Down/negative pathway state",
+        Comparison = "Four categories by Pro versus Inh pathway state",
         Test = "two-way ANOVA",
         AnalysisScale = "Kla-DDR pathway fraction percentage",
         N = nrow(long),

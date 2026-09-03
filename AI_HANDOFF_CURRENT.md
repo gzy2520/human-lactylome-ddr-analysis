@@ -78,7 +78,20 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
 - `mki67_ratio_boxplot/Figure_1_MKI67_over_ACTB_boxplot.png/.pdf`
 - `mki67_ratio_boxplot/Figure_1_MKI67_over_TUBB_boxplot.png/.pdf`
 - `mki67_ratio_boxplot/Figure_1_MKI67_over_H3C1_boxplot.png/.pdf`
-- `pathway_summary_by_pathway/Figure_2_DDR_pathway_summary_<BER|NER|MMR|FA|HR|AEJ|NHEJ>_boxplot.png/.pdf`
+- `pathway_summary_by_pathway/Figure_2_DDR_pathway_summary_<BER|NER|MMR|FA|HR|AEJ|NHEJ>_barplot.png/.pdf`（及同名兼容 `_boxplot.png/.pdf`）
+
+### 2026-09-03 最新修订：七通路 Summary 图表升级为 SEM 柱状图
+- **表现形式**：响应用户指令，七通路 summary 图不再使用 boxplot，改为带 error bar 的柱状图。
+  - 柱高表示各分类的均值（Mean）；
+  - 误差棒（error bar）使用 SEM 算法：$SEM = SD / \sqrt{n}$，上下界为 $Mean \pm SEM$（下界截断于 0）；
+  - 去除个体样本散点，画面干净清晰。
+- **正向立式布局（左旋 90 度）**：
+  - 类别横向并列排列（顶部 4 个 strip，保留马卡龙色背景）；
+  - 纵轴为竖直百分比 `"Relative portion of Kla-DDR proteins (%)"`。
+- **命名与排序**：
+  - 不再使用 `Up/down`，正向用 `"Pro"` 表示，反向用 `"Inh"` 表示；
+  - `"Pro 在前，Inh 在后"`（Pro 居左使用通路专用色，Inh 居右使用灰调 `#98A1AA`）。
+- **兼容性保障**：脚本同时输出 `_barplot.png/.pdf` 和 `_boxplot.png/.pdf`，manifest 与自动化测试 100% 通过。
 
 扩展正式图（与冻结默认正式图隔离）：
 `results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/`

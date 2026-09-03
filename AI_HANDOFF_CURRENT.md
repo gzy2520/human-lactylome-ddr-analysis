@@ -2,7 +2,7 @@
 
 更新时间：2026-09-03
 当前修订分支：`figure-enhancement`
-当前修订提交：`ac8d877 Restore legacy layouts for source-updated figures`
+当前修订提交：`9e8a842 overlay individual sample points onto upright SEM barplots`
 
 ## 先区分两条线
 
@@ -93,6 +93,35 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
   - `"Pro 在前，Inh 在后"`（Pro 居左使用通路专用色，Inh 居右使用灰调 `#98A1AA`）。
 - **兼容性保障**：脚本同时输出 `_barplot.png/.pdf` 和 `_boxplot.png/.pdf`，manifest 与自动化测试 100% 通过。
 
+### 2026-09-03 最新额外作图：10 个特定调控因子全蛋白样本级表达百分位数散点图（10 张图）
+- **背景与目的**：对原 Figure 3a 全蛋白百分位数热图进行精细化微观拆解。原热图展示的是每个 PXD/数据集的中位数百分位数，本修订按**单个样本（sample）**级别计算并绘制散点图。
+- **10 个目标基因与 UniProt 稳定 BaseAccession 严格 1:1 映射**：
+  1. `AARS1` $\to$ `P49588` (Lactylation Writer)
+  2. `ACAT2` $\to$ `Q9BWD1` (Lactylation Writer)
+  3. `KRT18` $\to$ `P05783` (Lactylation Writer)
+  4. `SIRT2` $\to$ `Q8IXJ6` (Lactylation Eraser)
+  5. `PARK7` $\to$ `Q99497` (Lactylation Writer-Eraser)
+  6. `HDAC1` $\to$ `Q13547` (Lactylation Writer-Eraser)
+  7. `HDAC2` $\to$ `Q92769` (Lactylation Writer-Eraser)
+  8. `BRD4` $\to$ `O60885` (Lactylation Reader)
+  9. `SMARCA4` $\to$ `P51532` (Lactylation Reader)
+  10. `TRIM33` $\to$ `Q9UPN9` (Lactylation Reader)
+  *严格执行全局规则：所有底层数据提取与匹配必须使用 `BaseAccession`，Gene Symbol 仅作为显示名称。*
+- **作图规范**：
+  - 横轴（X 轴）：四分类（`non-tumor tissues`, `tumor tissues`, `normal cell lines`, `cancer cell lines`，带马卡龙色 `#DCE9E2`, `#F0DEDE`, `#E7E1EE`, `#EEE4D2`）；
+  - 纵轴（Y 轴）：在全蛋白数据中，该蛋白在其所属样本的真实表达百分位数（`Whole-proteome expression percentile (%)`，范围 $0\% \sim 100\%$）；
+  - 图表形式：散点图（Scatter plot），每个点为一个独立的全蛋白参考样本（`shape = 21, size = 2.8, stroke = 0.55, colour = charcoal, alpha = 0.75`），水平抖动采用个人随机数种子 `25`（`position_jitter(width = 0.22, height = 0, seed = 25)`）；
+  - 统计标记：各分类中位线以深色横棒（`median crossbar, linewidth = 0.7, width = 0.45`）清晰标示；顶部标注各分类样本总数 $n$。
+- **数据输出与图表路径**：
+  - 数据表：`data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/target_10_regulators_sample_percentiles.csv`（包含 31 组 6,340 条观测记录与 30 组基准 5,400 条记录）；
+  - 候选范围图表（31 datasets，包含 94 个 ESCC 肿瘤全蛋白对照样本）：
+    `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/regulator_sample_percentiles/Figure_3_regulator_sample_percentile_<GENE>_<ACCESSION>.png/.pdf`
+  - 冻结基线图表（30 datasets）：
+    `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/regulator_sample_percentiles/baseline_30_datasets/Figure_3_regulator_sample_percentile_<GENE>_<ACCESSION>_30datasets.png/.pdf`
+- **生成脚本与测试契约**：
+  - 生成脚本：`R/candidate/build_regulator_sample_percentile_scatters.R`
+  - 契约测试：`tests/validate_regulator_sample_percentile_contract.R`（已纳入自动化回归套件，全量通过）。
+
 扩展正式图（与冻结默认正式图隔离）：
 `results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/`
 
@@ -102,6 +131,7 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
 - Figure 1：`R/candidate/build_figure1_category_boxplot.R`
 - MKI67 全蛋白比值：`R/candidate/build_figure1_mki67_ratio_boxplots.R`
 - Kla 七通路图：`R/candidate/build_ddr_pathway_summary_boxplots.R`
+- 10 个调控因子样本散点图：`R/candidate/build_regulator_sample_percentile_scatters.R`
 - ANOVA：`R/candidate/boxplot_significance.R`
 - UpSet/正式图：`R/publication/build_publication_outputs.R`
 

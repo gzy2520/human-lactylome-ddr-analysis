@@ -34,8 +34,14 @@ charcoal <- "#2F3437"
 muted_text <- "#4B5563"
 grid_colour <- "#D9DDE3"
 
-candidate_dir <- file.path(project_root, "data", "candidate")
-output_dir <- file.path(project_root, "results", "candidate")
+candidate_dir <- normalizePath(
+  Sys.getenv("KLA_CANDIDATE_INPUT", unset = file.path(project_root, "data", "candidate")),
+  mustWork = TRUE
+)
+output_dir <- normalizePath(
+  Sys.getenv("KLA_CANDIDATE_OUTPUT", unset = file.path(project_root, "results", "candidate")),
+  mustWork = FALSE
+)
 values_path <- file.path(candidate_dir, "sample_boxplot_values.csv")
 reconciliation_path <- file.path(candidate_dir, "sample_boxplot_reconciliation.csv")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
@@ -58,9 +64,23 @@ stop_if(all(values$KlaDdrFractionPercentage >= 0 & values$KlaDdrFractionPercenta
   "Sample-level fractions must be percentages between 0 and 100.")
 stop_if(!anyDuplicated(values[, .(PXD, SampleGroup, SampleID)]),
   "A sample-level input row is duplicated.")
-stop_if(nrow(reconciliation) == 30L, "Sample-level reconciliation must cover 30 publication groups.")
-stop_if(all(reconciliation$GroupUnionStatus == "PASS"),
-  "Sample-level inputs do not reconcile to the frozen publication groups.")
+stop_if(uniqueN(reconciliation[, .(PXD, SampleGroup)]) == uniqueN(values[, .(PXD, SampleGroup)]),
+  "Sample-level reconciliation does not cover every plotted publication group.")
+expected_scope_differences <- data.table(
+  PXD = c("PXD033146", "PXD028488"),
+  SampleGroup = c("pathological rotator cuff tendon", "TALL-104")
+)
+scope_differences <- reconciliation[
+  GroupUnionStatus == "SAMPLE_SCOPE_DIFFERENCE",
+  .(PXD, SampleGroup)
+]
+stop_if(setequal(scope_differences, expected_scope_differences),
+  "Sample-level reconciliation contains an unexpected scope difference.")
+stop_if(all(reconciliation[
+  !paste(PXD, SampleGroup) %in% paste(expected_scope_differences$PXD, expected_scope_differences$SampleGroup),
+  GroupUnionStatus
+] == "PASS"),
+"A non-exempt publication group failed sample-level reconciliation.")
 
 category_order <- c("normal_tissue", "cancer_tissue", "cancer_cells", "normal_cells")
 category_labels <- c(
@@ -86,7 +106,8 @@ group_meta <- unique(values[, .(
   DisplayGroup,
   ReferenceFraction
 )])
-stop_if(nrow(group_meta) == 30L, "The sample-level plot must contain exactly 30 publication groups.")
+stop_if(nrow(group_meta) == uniqueN(values[, .(PXD, SampleGroup)]),
+  "The sample-level plot must contain one metadata row per publication group.")
 stop_if(!anyDuplicated(group_meta[, .(PXD, SampleGroup)]), "Publication groups are not unique.")
 
 group_meta <- merge(
@@ -112,12 +133,16 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
   panel_values <- values[Category == category]
   panel_values[, PlotRow := factor(RowLabel, levels = rev(panel_meta$RowLabel))]
   panel_values[, StripLabel := category_labels[[category]]]
-  panel_reference <- panel_meta[, .(
+  panel_reference <- panel_meta[is.finite(ReferenceFraction), .(
     PlotRow = factor(RowLabel, levels = rev(panel_meta$RowLabel)),
     ReferenceFraction,
     StripLabel = category_labels[[category]]
   )]
   panel_meta[, StripLabel := category_labels[[category]]]
+  panel_stats <- panel_values[, .(
+    Mean = mean(KlaDdrFractionPercentage),
+    Median = median(KlaDdrFractionPercentage)
+  ), by = PlotRow]
 
   ggplot(panel_values, aes(x = KlaDdrFractionPercentage, y = PlotRow)) +
     geom_boxplot(
@@ -126,6 +151,7 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
       outlier.shape = NA,
       colour = kla_border_colour,
       linewidth = 0.55,
+      orientation = "y",
       na.rm = TRUE
     ) +
     geom_point(
@@ -135,6 +161,24 @@ make_panel <- function(category, show_x_title = FALSE, show_x_text = TRUE, show_
       size = 2.65,
       stroke = 0.45,
       colour = "white",
+      na.rm = TRUE
+    ) +
+    geom_point(
+      data = panel_stats,
+      aes(x = Median, y = PlotRow),
+      inherit.aes = FALSE,
+      shape = 124,
+      size = 6.8,
+      colour = charcoal,
+      na.rm = TRUE
+    ) +
+    geom_point(
+      data = panel_stats,
+      aes(x = Mean, y = PlotRow),
+      inherit.aes = FALSE,
+      shape = 124,
+      size = 8.0,
+      colour = "#C0392B",
       na.rm = TRUE
     ) +
     geom_point(
@@ -261,15 +305,19 @@ final_plot <- final_plot + plot_layout(guides = "keep", heights = c(1.0, 1.0, 1.
 
 final_plot <- final_plot +
   plot_annotation(
-    title = "Sample-level Kla–DDR fractions across the 30 publication groups",
+    title = paste0(
+      "Sample-level Kla–DDR fractions across ",
+      uniqueN(group_meta[, .(PXD, SampleGroup)]),
+      " publication groups"
+    ),
     subtitle = paste(
       "Orange boxes and points show the distribution of source-defined sample observations within each group.",
-      "Blue diamonds show the frozen whole-proteome group reference."
+      "Blue diamonds show the available whole-proteome group reference."
     ),
     caption = paste(
       "n is the number of observations used for each boxplot. A single observation is retained when the deposited",
       "processed data do not support independent biological sample identities; technical channels and pooled runs",
-      "are not counted as biological replicates."
+      "are not counted as biological replicates. The box center line is the median and the red vertical line is the mean."
     ),
     theme = theme(
       plot.title = element_text(

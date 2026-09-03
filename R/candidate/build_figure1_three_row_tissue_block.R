@@ -3,7 +3,7 @@
 # Candidate-only Figure 1 layout.
 #
 # The approved publication figure is not changed here.  This renderer keeps
-# the frozen 30-group values and historical group order, but lays them out as
+# the selected publication values and historical group order, but lays them out as
 # three horizontal rows: two tissue panels in the first row, followed by the
 # normal- and cancer-cell-line panels.
 
@@ -26,9 +26,23 @@ stop_if <- function(condition, message) {
   if (!isTRUE(condition)) stop(message, call. = FALSE)
 }
 
-input_dir <- file.path(project_root, "data", "publication_input")
-candidate_dir <- file.path(project_root, "data", "candidate")
-output_dir <- file.path(project_root, "results", "candidate")
+input_dir <- normalizePath(
+  Sys.getenv("KLA_PUBLICATION_INPUT", unset = file.path(project_root, "data", "publication_input")),
+  mustWork = TRUE
+)
+candidate_dir <- normalizePath(
+  Sys.getenv("KLA_CANDIDATE_DESIGN_INPUT", unset = file.path(project_root, "data", "candidate")),
+  mustWork = TRUE
+)
+output_dir <- normalizePath(
+  Sys.getenv("KLA_CANDIDATE_OUTPUT", unset = file.path(project_root, "results", "candidate")),
+  mustWork = FALSE
+)
+expected_group_count <- as.integer(Sys.getenv("KLA_PUBLICATION_EXPECTED_GROUPS", unset = "30"))
+expected_category_counts <- as.integer(strsplit(
+  Sys.getenv("KLA_PUBLICATION_CATEGORY_COUNTS", unset = "normal_tissue=9;cancer_tissue=2;cancer_cells=12;normal_cells=7"),
+  "[;]"
+)[[1L]] |> vapply(function(item) sub("^.*=", "", item), character(1)))
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 publication_font <- "Arial Unicode MS"
@@ -65,14 +79,16 @@ match_linetypes <- c(
 
 groups <- fread(file.path(input_dir, "group_summary_30.csv"), check.names = FALSE)
 design <- fread(file.path(candidate_dir, "sample_design_30.csv"), na.strings = c("", "NA"))
-stop_if(nrow(groups) == 30L, "Frozen publication input must contain 30 groups.")
-stop_if(nrow(design) == 30L, "Candidate design must contain 30 groups.")
+stop_if(nrow(groups) == expected_group_count,
+  paste0("Publication input must contain ", expected_group_count, " groups."))
+stop_if(nrow(design) == expected_group_count,
+  paste0("Candidate design must contain ", expected_group_count, " groups."))
 
 groups[, GroupKey := paste(PXD, SampleGroup, sep = "__")]
 design[, GroupKey := paste(PXD, SampleGroup, sep = "__")]
 stop_if(!anyDuplicated(groups$GroupKey), "Frozen publication groups are not unique.")
 stop_if(!anyDuplicated(design$GroupKey), "Candidate design rows are not unique.")
-stop_if(setequal(groups$GroupKey, design$GroupKey), "Candidate design does not cover the frozen 30 groups.")
+stop_if(setequal(groups$GroupKey, design$GroupKey), "Candidate design does not cover the selected publication groups.")
 
 data <- merge(
   groups[, .(
@@ -113,8 +129,8 @@ data[, DeltaLabel := sprintf("%+.1f pp", DeltaPP)]
 data[, ReferenceLabel := sprintf("%d/%d (%.1f%%)", ReferenceDdr, ReferenceTotal, ReferenceFraction)]
 data[, KlaLabel := sprintf("%d/%d (%.1f%%)", KlaDdr, KlaTotal, KlaFraction)]
 
-stop_if(identical(as.integer(table(factor(data$Category, levels = category_order))), c(9L, 2L, 12L, 7L)),
-  "The 30-group category counts must be 9/2/12/7 in the three-row layout order."
+stop_if(identical(as.integer(table(factor(data$Category, levels = category_order))), expected_category_counts),
+  "The selected publication category counts do not match the configured category contract."
 )
 
 make_category_panel <- function(category, show_x_title = FALSE) {
@@ -220,9 +236,9 @@ final_plot <- patchwork::wrap_plots(
   guides = "collect"
 ) +
   plot_annotation(
-    title = "DDR-annotated protein fractions across the 30 publication groups",
+    title = paste0("DDR-annotated protein fractions across the ", expected_group_count, " publication groups"),
     subtitle = paste(
-      "Each row compares the whole-proteome reference (blue) with the matched Kla measurement (orange).",
+      "Each row compares the whole-proteome reference (blue) with the linked Kla measurement (orange).",
       "The two tissue categories share the upper block; the two cell-line categories remain separate below."
     ),
     caption = paste(

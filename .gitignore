@@ -19,6 +19,10 @@ data/candidate/*
 !data/candidate/biological_sample_count_record.csv
 !data/candidate/figure1_sample_boxplot_values.csv
 !data/candidate/figure1_sample_boxplot_source_registry.csv
+!data/candidate/figure1_dataset_boxplot_values.csv
+!data/candidate/pathway_summary_dataset_boxplot_values.csv
+!data/candidate/figure1_pathway_summary_sample_boxplot_values.csv
+!data/candidate/figure1_mki67_ratio_*.csv
 results/
 work/
 outputs/

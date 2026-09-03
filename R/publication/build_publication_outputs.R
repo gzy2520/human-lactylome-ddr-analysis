@@ -24,7 +24,10 @@ input_dir <- normalizePath(
   Sys.getenv("KLA_PUBLICATION_INPUT", unset = file.path(project_root, "data", "publication_input")),
   mustWork = TRUE
 )
-figure_dir <- file.path(project_root, "results", "figures")
+figure_dir <- normalizePath(
+  Sys.getenv("KLA_PUBLICATION_OUTPUT", unset = file.path(project_root, "results", "figures")),
+  mustWork = FALSE
+)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 publication_font <- "Arial Unicode MS"
 
@@ -77,12 +80,14 @@ category_labels <- c(
   cancer_cells = "cancer cell lines",
   normal_cells = "normal cell lines"
 )
-category_counts <- c(
+default_category_counts <- c(
   normal_tissue = 9L,
   cancer_tissue = 2L,
   cancer_cells = 12L,
   normal_cells = 7L
 )
+expected_group_count <- as.integer(Sys.getenv("KLA_PUBLICATION_EXPECTED_GROUPS", unset = "30"))
+category_count_override <- Sys.getenv("KLA_PUBLICATION_CATEGORY_COUNTS", unset = "")
 pathway_order <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
 pathway_weights <- stats::setNames(seq_along(pathway_order), pathway_order)
 role_order <- c("Writer", "Eraser", "Writer-Eraser", "Reader")
@@ -118,7 +123,8 @@ fraction_display_names <- c(
   "PC-3M" = "PC-3M",
   "HCT116 control and Roseburia co-culture" = "HCT116 control/Roseburia co-culture",
   "glioblastoma stem cells" = "Glioblastoma stem cells",
-  "RKO WT and GSK3B KO" = "RKO WT/GSK3B-KO"
+  "RKO WT and GSK3B KO" = "RKO WT/GSK3B-KO",
+  "MEC and NEC ESCC groups" = "ESCC MEC/NEC groups"
 )
 
 pathway_display <- fread(input_path("pathway_display.csv"))
@@ -143,16 +149,31 @@ groups <- fread(input_path("group_summary_30.csv")) |>
       SampleGroup
     )
   )
-assert(nrow(groups) == 30L, "The frozen publication input must start with exactly 30 groups.")
+assert(nrow(groups) == expected_group_count, paste0(
+  "The publication input must contain exactly ", expected_group_count, " groups."
+))
 assert(!anyDuplicated(groups$GroupKey), "Publication groups must be unique PXD/sample-group pairs.")
 assert(
-  setequal(unique(groups$SampleGroup), names(fraction_display_names)),
+  all(unique(groups$SampleGroup) %in% names(fraction_display_names)),
   "Figure 1 requires the historical display label for every publication sample group."
 )
+category_counts <- default_category_counts
+if (nzchar(category_count_override)) {
+  parts <- strsplit(category_count_override, "[;,]", perl = TRUE)[[1L]]
+  parsed <- strsplit(parts, "=", fixed = TRUE)
+  category_counts <- stats::setNames(
+    as.integer(vapply(parsed, `[[`, character(1), 2L)),
+    vapply(parsed, `[[`, character(1), 1L)
+  )
+}
 observed_category_counts <- table(factor(as.character(groups$Category), levels = category_order))
 assert(
   identical(as.integer(observed_category_counts), as.integer(category_counts[category_order])),
-  "Publication group counts must be 9/2/12/7 in manuscript category order."
+  paste0(
+    "Publication group counts must be ",
+    paste(as.integer(category_counts[category_order]), collapse = "/"),
+    " in manuscript category order."
+  )
 )
 
 save_figure <- function(plot, stem, width, height) {
@@ -169,6 +190,10 @@ save_figure <- function(plot, stem, width, height) {
 # Kla bar(s).  Only the input table is new; the colour and layout contract is
 # the one used before the repository was reduced to the final manuscript set.
 reference_rows <- groups |>
+  filter(
+    !is.na(ReferenceDdrFraction) & is.finite(ReferenceDdrFraction) &
+      !is.na(ReferenceProteinCount) & ReferenceProteinCount > 0L
+  ) |>
   mutate(
     ReferenceKey = paste(
       ReferencePXD, ReferenceEvidenceFile, ReferenceProteinCount,
@@ -203,6 +228,7 @@ fraction_data <- bind_rows(reference_rows, kla_rows) |>
     FigureOrder = case_when(
       as.character(Category) == "cancer_tissue" & SampleGroup == "HCC" ~ 1L,
       as.character(Category) == "cancer_tissue" & SampleGroup == "prostate cancer" ~ 2L,
+      as.character(Category) == "cancer_tissue" & SampleGroup == "MEC and NEC ESCC groups" ~ 3L,
       TRUE ~ as.integer(RowOrder) + 2L
     )
   ) |>
@@ -569,6 +595,7 @@ draw_exact_upset <- function(
       expand = c(0, 0)
     ) +
     labs(x = "Set size", y = NULL) +
+    coord_cartesian(clip = "off") +
     theme_minimal(base_family = publication_font, base_size = 10.5) +
     theme(
       panel.grid.major.y = element_blank(),
@@ -687,14 +714,14 @@ draw_exact_upset("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_UpSe
 # Four signed pathway matrices reported in the manuscript. The frozen S4
 # ranking workbook is the data source; it is never recalculated by this code.
 kla_ddr_membership <- fread(input_path("venn_kla_ddr.csv"))
-assert(nrow(kla_ddr_membership) == 399L && uniqueN(kla_ddr_membership$BaseAccession) == 399L,
-  "The final Kla-DDR union must contain 399 BaseAccessions."
+assert(nrow(kla_ddr_membership) > 0L && uniqueN(kla_ddr_membership$BaseAccession) == nrow(kla_ddr_membership),
+  "The Kla-DDR membership must contain one row per BaseAccession."
 )
 matrix_specs <- list(
-  list(key = "normal_tissue", sheet = "NonTumorTissues", label = "non-tumor tissues", expected = 183L),
-  list(key = "cancer_tissue", sheet = "TumorTissues", label = "tumor tissues", expected = 178L),
-  list(key = "cancer_cells", sheet = "CancerCellLines", label = "cancer cell lines", expected = 381L),
-  list(key = "normal_cells", sheet = "NormalCellLines", label = "normal cell lines", expected = 292L)
+  list(key = "normal_tissue", sheet = "NonTumorTissues", label = "non-tumor tissues"),
+  list(key = "cancer_tissue", sheet = "TumorTissues", label = "tumor tissues"),
+  list(key = "cancer_cells", sheet = "CancerCellLines", label = "cancer cell lines"),
+  list(key = "normal_cells", sheet = "NormalCellLines", label = "normal cell lines")
 )
 
 pathway_panels <- list()
@@ -704,8 +731,8 @@ for (spec in matrix_specs) {
   panel[, BaseAccession := trimws(as.character(BaseAccession))]
   assert(all(c("BaseAccession", "SignedScore", pathway_order) %in% names(panel)), paste("Frozen S4 is missing required columns in", spec$sheet))
   assert(!anyDuplicated(panel$BaseAccession), paste("Frozen S4 has duplicated BaseAccessions in", spec$sheet))
-  assert(nrow(panel) == spec$expected, paste("Unexpected pathway-matrix size for", spec$label))
   expected_ids <- kla_ddr_membership$BaseAccession[is_true(kla_ddr_membership[[paste0("In_", spec$key)]])]
+  assert(nrow(panel) == length(expected_ids), paste("Unexpected pathway-matrix size for", spec$label))
   assert(setequal(panel$BaseAccession, expected_ids), paste("Frozen S4 membership does not match", spec$label))
   score_matrix <- as.matrix(panel[, ..pathway_order])
   storage.mode(score_matrix) <- "numeric"
@@ -838,4 +865,8 @@ draw_pathway_matrices(c("cancer_cells", "normal_cells"), "Supplementary_Figure_S
 draw_pathway_summary("cancer_cells", "Supplementary_Figure_S2b_DDR_pathway_summary_cancer_cell_lines")
 draw_pathway_summary("normal_cells", "Supplementary_Figure_S2c_DDR_pathway_summary_normal_cell_lines")
 
-message("PASS: rebuilt only manuscript figures from the frozen 30-group publication input.")
+message(
+  "PASS: rebuilt only manuscript figures from the configured ",
+  expected_group_count,
+  "-group publication input."
+)

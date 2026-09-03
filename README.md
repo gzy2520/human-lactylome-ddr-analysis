@@ -133,28 +133,29 @@ and S5 workbooks and the frozen human DDR GO annotations. The original public
 PXD files are not committed because of their size. Their accessions and
 source-file locations are retained in `group_summary_30.csv` and Table S1.
 
-## Sample-aware Figure 1 review plot
+## Figure 1 boxplot review plots
 
 This branch contains a separate Figure 1 review plot under
 `results/candidate/`. The approved publication figures and tables are left
 untouched.
 
-The plot follows the original four-block arrangement. Each block contains two
-boxes—whole proteome and Kla—so there are eight boxes in total. The points are
-the source-resolved sample observations used to form each box; they are not
-summary values. The blue/orange palette identifies the two data types, while
-the four category strips use separate muted colors so the two visual cues do
-not overlap. Dark boxplot outlines make the lower and upper quartiles, median
-and whiskers readable against the filled boxes.
+There are two isolated Figure 1 views. The category-level view uses the four
+biological categories on the x axis and two adjacent boxes per category—whole
+proteome and Kla. Each point is one PXD/sample-group dataset union, so it is
+not inflated by the number of source samples. The original-layout view keeps
+one row per publication group and modality, but retains source-resolved sample
+points because that layout is intended to show the underlying observations.
+Both views show the median as the dark box center line and the mean as a red
+line.
 
 The current category totals are:
 
 | Category | Whole proteome | Kla |
 | --- | ---: | ---: |
-| non-tumor tissues | 62 | 32 |
-| tumor tissues | 13 | 6 |
-| normal cell lines | 15 | 19 |
-| cancer cell lines | 28 | 35 |
+| non-tumor tissues | 9 | 9 |
+| tumor tissues | 2 | 2 |
+| cancer cell lines | 12 | 12 |
+| normal cell lines | 7 | 7 |
 
 Technical channels, fractions, acquisition modes and pooled measurements are
 not counted as separate biological samples. If a source table contains only
@@ -167,6 +168,7 @@ The candidate inputs are:
 data/candidate/biological_sample_count_record.csv
 data/candidate/figure1_sample_boxplot_values.csv
 data/candidate/figure1_sample_boxplot_source_registry.csv
+data/candidate/figure1_dataset_boxplot_values.csv
 ```
 
 Render the candidate directly with:
@@ -178,6 +180,11 @@ Rscript R/candidate/build_figure1_category_boxplot.R .
 The renderer writes the refined review image to
 `results/candidate/Figure_1_DDR_fraction_candidate_category_boxplot_refined.png`
 and the matching PDF.
+
+The renderer also writes `figure1_category_one_way_anova.csv`. The ANOVA is
+run separately for each modality with category as the factor, and the two
+omnibus p values are BH-adjusted. The original-layout renderer additionally
+writes `figure1_original_boxplot_mean_median.csv`.
 
 To rebuild the sample-level inputs from a local cache of the deposited
 processed files, run:
@@ -199,6 +206,158 @@ Rscript tests/validate_figure1_category_boxplot_contract.R .
 
 This is a review candidate for the manuscript revision, not a replacement for
 the approved publication output.
+
+The category-level Figure 1 plot reports one-way ANOVA by modality across the
+four categories. The original-layout view is descriptive and has no pooled
+protein-level test. The pathway-summary plots use three-term two-way ANOVA
+(category, direction and their interaction) on the dataset-level points.
+Displayed q values are BH-adjusted within the stated review-test family.
+
+## Optional MKI67-normalized Figure 1 views
+
+For an additional view of the whole-proteome data, the candidate workflow can
+plot Ki-67 (MKI67) relative to ACTB, TUBB or H3C1. Each point is one
+source-resolved whole-proteome observation, and the three ratios are rendered
+as three separate figures in the same four-category layout used for the
+Figure 1 review plot.
+
+The calculation uses the exact human UniProt accessions MKI67 P46013, ACTB
+P60709, TUBB P07437 and H3C1 P68431. Values are taken from the deposited
+whole-proteome tables. A source profile is left out of a particular ratio when
+one of the required proteins is absent or non-positive; there is no
+imputation. Protein-group values are kept as reported by the source, and the
+ProCan matrix's log2 abundances are back-transformed before the ratio is
+calculated. The input ratios themselves are not log-transformed; the y-axis is
+shown on a log10 scale so that the observed range remains readable.
+
+With a local source cache, prepare and render the three plots with:
+
+~~~bash
+Rscript R/candidate/prepare_figure1_mki67_ratio_inputs.R . /absolute/path/to/source_cache
+Rscript R/candidate/build_figure1_mki67_ratio_boxplots.R .
+~~~
+
+The images are written separately to
+results/candidate/mki67_ratio_boxplot/:
+
+~~~
+Figure_1_MKI67_over_ACTB_boxplot.png/.pdf
+Figure_1_MKI67_over_TUBB_boxplot.png/.pdf
+Figure_1_MKI67_over_H3C1_boxplot.png/.pdf
+~~~
+
+The current source cache produces 44 ACTB-normalized, 51 TUBB-normalized and
+35 H3C1-normalized observations. The exact source values, missingness reasons,
+coverage summary and statistics are recorded in
+data/candidate/figure1_mki67_ratio_*.csv. For each denominator, the four broad
+categories are first compared with a one-way ANOVA. Its p-value is adjusted
+across the three denominators. Pairwise brackets are shown only when that
+omnibus q-value is below 0.05; the brackets then use two-sided Wilcoxon
+rank-sum tests with BH adjustment across the six category pairs for that
+denominator. The statistics file retains both the three omnibus tests and all
+18 pairwise tests. Each box also has a red mean line in addition to the dark
+median line.
+
+The source-audit contract for these three plots is checked with:
+
+~~~bash
+Rscript tests/validate_figure1_mki67_ratio_contract.R .
+~~~
+
+## DDR pathway-summary dataset-level review plots
+
+The pathway summary is rendered as 14 isolated boxplots: seven pathways for
+the lactylome (Kla) and the same seven pathways for whole proteome. Each plot
+uses the four biological categories on the x axis. Within a category,
+Up/positive and Down/negative are adjacent boxes; the Down/negative values are
+not reflected to the opposite side of the axis. Each point is one
+PXD/sample-group dataset union. The dark line is the median and the red line
+is the mean.
+
+The source-preparation script writes the dataset-level input (one point per
+PXD/sample-group, two modalities and seven pathways) to:
+
+```text
+data/candidate/pathway_summary_dataset_boxplot_values.csv
+```
+
+Render all 14 candidate plots with:
+
+```bash
+Rscript R/candidate/build_ddr_pathway_summary_boxplots.R .
+```
+
+The PNG and PDF files are written under
+`results/candidate/pathway_summary_dataset_boxplot/`. The directory also
+contains `pathway_summary_dataset_boxplot_manifest.csv` and
+`pathway_summary_two_way_anova.csv`. The original publication renderer and
+its formal figure files are unchanged.
+
+The pathway-summary significance labels use two-way ANOVA for each
+dataset/pathway plot. The statistics retain the Category, Direction and
+Category × Direction terms, with a single BH adjustment across the 42 terms
+from 14 plots. Exact p values, adjusted q values and dataset point counts can
+be regenerated from the same inputs by sourcing
+`R/candidate/boxplot_significance.R`.
+
+## Isolated PXD064038 ESCC inclusion scope
+
+For the teacher-directed scope update, only the representative PXD064038
+group `MEC and NEC ESCC groups` is added. MEC and NEC are the two ESCC tumor
+subgroups defined by lymph-node metastasis status; PXD048995 and PXD063945
+remain excluded. The six PXD064038 observations contribute 1,239 Kla
+BaseAccessions and 92 Kla-DDR BaseAccessions. Its non-lactylated control is
+the ordinary whole-proteome tumor arm of iProX/PXD065830: only the 94 `T`
+ESCC tumor columns from Dataset1 sheet `2.a protein raw information` are
+used, giving 8,083 reference BaseAccessions and 420 DDR BaseAccessions. The
+24 `N` non-tumor columns are excluded. This is an independent ESCC tumor
+cohort, so the comparison is by BaseAccession and is not a same-specimen
+paired measurement; the healthy-esophagus PXD010154 file remains
+background-only. PXD053809 is not selected for this reproducible run because
+its deposited processed XLS is encrypted and is not currently auditable.
+
+The update is isolated under:
+
+```text
+data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/
+results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/
+results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/
+```
+
+Rebuild the scope and figures with:
+
+```bash
+Rscript R/candidate/prepare_escc_inclusion_inputs.R . /absolute/path/to/source_cache
+KLA_PUBLICATION_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input \
+KLA_PUBLICATION_OUTPUT=results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures \
+KLA_PUBLICATION_EXPECTED_GROUPS=31 \
+KLA_PUBLICATION_CATEGORY_COUNTS='normal_tissue=9;cancer_tissue=3;cancer_cells=12;normal_cells=7' \
+Rscript R/publication/build_publication_outputs.R .
+```
+
+The candidate Figure 1 and pathway-summary renders use the corresponding
+`candidate_input/` directory. Validate the isolated scope with:
+
+```bash
+Rscript tests/validate_escc_inclusion_scope.R .
+```
+
+For the expanded boxplot candidates, use:
+
+```bash
+KLA_CANDIDATE_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input \
+KLA_CANDIDATE_OUTPUT=results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference \
+KLA_CANDIDATE_EXPECTED_GROUPS=31 \
+Rscript R/candidate/build_figure1_category_boxplot.R .
+KLA_CANDIDATE_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input \
+KLA_PUBLICATION_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input \
+KLA_CANDIDATE_OUTPUT=results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/pathway_summary_dataset_boxplot \
+Rscript R/candidate/build_ddr_pathway_summary_boxplots.R .
+KLA_CANDIDATE_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input \
+KLA_CANDIDATE_OUTPUT=results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference \
+KLA_CANDIDATE_EXPECTED_GROUPS=31 \
+Rscript R/candidate/build_figure1_original_boxplot.R .
+```
 
 ## Repository layout
 

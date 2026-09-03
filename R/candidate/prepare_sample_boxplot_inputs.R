@@ -100,6 +100,95 @@ valid_maxquant_rows <- function(data) {
   keep
 }
 
+pathway_order <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
+
+read_frozen_pathway_scores <- function(path) {
+  score_tables <- lapply(excel_sheets(path), function(sheet) {
+    data <- as.data.table(read_excel(path, sheet = sheet))
+    stop_if(all(c("BaseAccession", pathway_order) %in% names(data)),
+      paste0("Missing pathway score columns in ", sheet))
+    data[, c("BaseAccession", pathway_order), with = FALSE]
+  })
+  scores <- rbindlist(score_tables, fill = TRUE)
+  scores[, BaseAccession := base_accession(BaseAccession)]
+  scores <- scores[nzchar(BaseAccession)]
+  for (pathway in pathway_order) {
+    conflicts <- scores[, .(DistinctScoreCount = uniqueN(get(pathway))), by = BaseAccession][DistinctScoreCount > 1L]
+    stop_if(!nrow(conflicts), paste0("Frozen pathway scores disagree for ", pathway))
+  }
+  score_matrix <- as.matrix(scores[, ..pathway_order])
+  storage.mode(score_matrix) <- "numeric"
+  stop_if(all(score_matrix %in% c(-1, 0, 1)), "Frozen pathway scores must be -1, 0 or +1.")
+  unique(scores[, lapply(.SD, function(values) values[[1L]]), by = BaseAccession, .SDcols = pathway_order])
+}
+
+build_pathway_summary_profile <- function(all_records, groups, pathway_scores) {
+  sample_keys <- unique(all_records[, .(PXD, SampleGroup, SampleID)])
+  ddr_totals <- all_records[IsDdr == TRUE, .(
+    KlaDdrProteinCount = uniqueN(BaseAccession)
+  ), by = .(PXD, SampleGroup, SampleID)]
+  stop_if(nrow(ddr_totals) == nrow(sample_keys),
+    "A source sample is missing a Kla-DDR denominator.")
+
+  sample_ddr <- unique(all_records[
+    IsDdr == TRUE & BaseAccession %in% pathway_scores$BaseAccession,
+    .(PXD, SampleGroup, SampleID, BaseAccession)
+  ])
+  joined <- merge(sample_ddr, pathway_scores, by = "BaseAccession", all = FALSE)
+  long <- melt(
+    joined,
+    id.vars = c("PXD", "SampleGroup", "SampleID", "BaseAccession"),
+    measure.vars = pathway_order,
+    variable.name = "Pathway",
+    value.name = "SignedState"
+  )
+  counts <- long[, .(
+    PositiveProteinCount = uniqueN(BaseAccession[SignedState == 1]),
+    NegativeProteinCount = uniqueN(BaseAccession[SignedState == -1]),
+    AnyPathwayProteinCount = uniqueN(BaseAccession[SignedState != 0])
+  ), by = .(PXD, SampleGroup, SampleID, Pathway)]
+
+  grid <- sample_keys[, .(Pathway = pathway_order), by = .(PXD, SampleGroup, SampleID)]
+  output <- merge(grid, counts, by = c("PXD", "SampleGroup", "SampleID", "Pathway"), all.x = TRUE)
+  output[is.na(PositiveProteinCount), PositiveProteinCount := 0L]
+  output[is.na(NegativeProteinCount), NegativeProteinCount := 0L]
+  output[is.na(AnyPathwayProteinCount), AnyPathwayProteinCount := 0L]
+  output <- merge(output, ddr_totals, by = c("PXD", "SampleGroup", "SampleID"), all.x = TRUE)
+  stop_if(!anyNA(output$KlaDdrProteinCount), "A pathway profile denominator is missing.")
+
+  source_meta <- all_records[, .(
+    SampleClass = first(SampleClass),
+    ObservationType = first(ObservationType),
+    SourceMode = paste(sort(unique(SourceMode)), collapse = ";"),
+    SourceFile = paste(sort(unique(SourceFile)), collapse = ";")
+  ), by = .(PXD, SampleGroup, SampleID)]
+  group_meta <- groups[, .(
+    RowOrder, PXD, SampleGroup, Category, DisplayGroup = KlaLabelEn
+  )]
+  output <- merge(output, source_meta, by = c("PXD", "SampleGroup", "SampleID"), all.x = TRUE)
+  output <- merge(output, group_meta, by = c("PXD", "SampleGroup"), all.x = TRUE)
+  output[, ConditionLabel := fifelse(
+    SampleClass %in% c("GSK3B WT", "GSK3B KO", "control", "Roseburia co-culture", "mannitol", "A0h control", "A6h Pg infection"),
+    SampleClass,
+    SampleID
+  )]
+  output[, Dataset := "Lactylome (Kla)"]
+  output[, `:=`(
+    PositiveFraction = PositiveProteinCount / KlaDdrProteinCount,
+    NegativeFraction = NegativeProteinCount / KlaDdrProteinCount
+  )]
+  output[, SignedFraction := PositiveFraction - NegativeFraction]
+  stop_if(nrow(output) == nrow(sample_keys) * length(pathway_order),
+    "The sample-level pathway profile is incomplete.")
+  setcolorder(output, c(
+    "RowOrder", "PXD", "SampleGroup", "Category", "DisplayGroup", "Dataset",
+    "SampleID", "ConditionLabel", "SampleClass", "ObservationType", "SourceMode", "SourceFile",
+    "Pathway", "PositiveProteinCount", "NegativeProteinCount", "AnyPathwayProteinCount",
+    "KlaDdrProteinCount", "PositiveFraction", "NegativeFraction", "SignedFraction"
+  ))
+  output
+}
+
 records <- function(pxd, group, sample_id, accessions, source_mode, source_file, sample_class, observation_type = "sample") {
   accessions <- sort(unique(accessions[is_uniprot(accessions)]))
   if (!length(accessions)) {
@@ -549,6 +638,9 @@ groups <- fread(file.path(input_dir, "group_summary_30.csv"), check.names = FALS
 design <- fread(file.path(candidate_dir, "group_sample_design.csv"), check.names = FALSE, na.strings = c("", "NA"), fill = TRUE)
 membership <- fread(file.path(input_dir, "kla_protein_membership_30.csv"), check.names = FALSE)
 reference_membership <- fread(file.path(input_dir, "reference_protein_membership_30.csv"), check.names = FALSE)
+pathway_scores <- read_frozen_pathway_scores(file.path(
+  input_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx"
+))
 stop_if(nrow(groups) == 30L, "Frozen release must contain exactly 30 groups.")
 stop_if(nrow(design) == 30L, "Sample design must contain exactly 30 groups.")
 groups[, GroupKey := paste(PXD, SampleGroup, sep = "__")]
@@ -764,6 +856,24 @@ all_records <- merge(
   sort = FALSE
 )
 all_records[is.na(IsDdr), IsDdr := FALSE]
+missing_pathway_scores <- setdiff(
+  unique(all_records$BaseAccession[all_records$IsDdr == TRUE]),
+  pathway_scores$BaseAccession
+)
+stop_if(!length(missing_pathway_scores),
+  "A source-derived Kla-DDR accession is absent from the frozen pathway-score table.")
+pathway_profile <- build_pathway_summary_profile(all_records, groups, pathway_scores)
+
+dataset_boxplot_helper <- file.path(
+  project_root, "R", "candidate", "build_dataset_level_boxplot_inputs.R"
+)
+stop_if(file.exists(dataset_boxplot_helper),
+  paste0("Missing dataset-level boxplot helper: ", dataset_boxplot_helper))
+source(dataset_boxplot_helper, local = TRUE)
+dataset_level_figure1_values <- build_dataset_level_figure1_values(groups)
+dataset_level_pathway_values <- build_dataset_level_pathway_summary(
+  groups, membership, reference_membership, pathway_scores
+)
 
 sample_values <- all_records[, .(
   KlaProteinCount = uniqueN(BaseAccession),
@@ -1121,9 +1231,13 @@ fwrite(reconciliation, file.path(candidate_dir, "sample_boxplot_reconciliation.c
 fwrite(registry_table, file.path(candidate_dir, "sample_boxplot_source_registry.csv"), na = "")
 fwrite(figure1_values, file.path(candidate_dir, "figure1_sample_boxplot_values.csv"), na = "")
 fwrite(figure1_registry, file.path(candidate_dir, "figure1_sample_boxplot_source_registry.csv"), na = "")
+fwrite(pathway_profile, file.path(candidate_dir, "figure1_pathway_summary_sample_boxplot_values.csv"), na = "")
+fwrite(dataset_level_figure1_values, file.path(candidate_dir, "figure1_dataset_boxplot_values.csv"), na = "")
+fwrite(dataset_level_pathway_values, file.path(candidate_dir, "pathway_summary_dataset_boxplot_values.csv"), na = "")
 
 message(
   "Wrote sample-level boxplot inputs for ", nrow(sample_values),
   " observations across ", uniqueN(sample_values[, .(PXD, SampleGroup)]),
-  " publication groups."
+  " publication groups and ", nrow(pathway_profile),
+  " sample-level pathway records."
 )

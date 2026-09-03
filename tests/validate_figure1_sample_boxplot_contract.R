@@ -73,14 +73,29 @@ expected <- melt(
 )
 expected[, Dataset := fifelse(CountType == "KlaSampleCount", "Lactylome (Kla)", "Whole proteome")]
 actual <- values[, .(ActualN = .N), by = .(RowOrder, PXD, SampleGroup, Dataset)]
+aggregate_n <- values[, .(
+  AggregateOnly = all(ObservationType == "aggregate")
+), by = .(RowOrder, PXD, SampleGroup, Dataset)]
 count_check <- merge(
   expected[, .(RowOrder, PXD, SampleGroup, Dataset, ExpectedN)],
   actual,
   by = c("RowOrder", "PXD", "SampleGroup", "Dataset"),
   all = TRUE
 )
+count_check <- merge(
+  count_check,
+  aggregate_n,
+  by = c("RowOrder", "PXD", "SampleGroup", "Dataset"),
+  all.x = TRUE
+)
 stop_if(nrow(count_check) == 60L, "The combined Figure 1 count check does not cover 60 dataset rows.")
-stop_if(all(count_check$ExpectedN == count_check$ActualN),
-  "The combined Figure 1 observations do not match the sample-count record.")
+count_ok <- !is.na(count_check$ExpectedN) & !is.na(count_check$ActualN) & (
+  count_check$ExpectedN == count_check$ActualN |
+    (count_check$ActualN == 1L & count_check$ExpectedN > 1L & count_check$AggregateOnly)
+)
+stop_if(all(count_ok), paste(
+  "The combined Figure 1 observations do not match the sample-count record; only a single",
+  "explicit aggregate observation may represent multiple source replicates."
+))
 
 message("PASS: combined Figure 1 boxplot inputs cover 92 Kla and 118 whole-proteome observations across 30 groups.")

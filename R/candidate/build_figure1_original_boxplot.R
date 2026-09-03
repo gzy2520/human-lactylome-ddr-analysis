@@ -48,10 +48,17 @@ category_fills <- c(
   cancer_cells = "#FCE7D4"
 )
 
-candidate_dir <- file.path(project_root, "data", "candidate")
-output_dir <- file.path(project_root, "results", "candidate")
+candidate_dir <- normalizePath(
+  Sys.getenv("KLA_CANDIDATE_INPUT", unset = file.path(project_root, "data", "candidate")),
+  mustWork = TRUE
+)
+output_dir <- normalizePath(
+  Sys.getenv("KLA_CANDIDATE_OUTPUT", unset = file.path(project_root, "results", "candidate")),
+  mustWork = FALSE
+)
 values_path <- file.path(candidate_dir, "figure1_sample_boxplot_values.csv")
 count_path <- file.path(candidate_dir, "biological_sample_count_record.csv")
+expected_group_count <- as.integer(Sys.getenv("KLA_CANDIDATE_EXPECTED_GROUPS", unset = "30"))
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 stop_if(file.exists(values_path), paste0("Missing Figure 1 sample input: ", values_path))
@@ -67,7 +74,8 @@ required_values <- c(
   "DdrFractionPercentage"
 )
 stop_if(all(required_values %in% names(values)), "Figure 1 sample input schema is incomplete.")
-stop_if(nrow(counts) == 30L, "The sample-count record must cover 30 publication groups.")
+stop_if(nrow(counts) == expected_group_count,
+  paste0("The sample-count record must cover ", expected_group_count, " publication groups."))
 stop_if(!anyDuplicated(counts[, .(PXD, SampleGroup)]), "The sample-count record contains duplicate groups.")
 stop_if(all(values$Dataset %in% c("Whole proteome", "Lactylome (Kla)")),
   "Figure 1 sample input contains an unknown dataset.")
@@ -87,14 +95,32 @@ expected_n <- melt(
 )
 expected_n[, Dataset := fifelse(CountType == "KlaSampleCount", "Lactylome (Kla)", "Whole proteome")]
 actual_n <- values[, .(ActualN = .N), by = .(RowOrder, PXD, SampleGroup, Dataset)]
+aggregate_n <- values[, .(
+  AggregateOnly = all(ObservationType == "aggregate"),
+  ObservationTypes = paste(sort(unique(ObservationType)), collapse = ";")
+), by = .(RowOrder, PXD, SampleGroup, Dataset)]
 n_check <- merge(
   expected_n[, .(RowOrder, PXD, SampleGroup, Dataset, ExpectedN)],
   actual_n,
   by = c("RowOrder", "PXD", "SampleGroup", "Dataset"),
   all = TRUE
 )
-stop_if(nrow(n_check) == 60L, "Figure 1 sample input does not contain both datasets for all groups.")
-stop_if(all(n_check$ExpectedN == n_check$ActualN), "Figure 1 sample counts disagree with the count record.")
+n_check <- merge(
+  n_check,
+  aggregate_n,
+  by = c("RowOrder", "PXD", "SampleGroup", "Dataset"),
+  all.x = TRUE
+)
+stop_if(nrow(n_check) == expected_group_count * 2L,
+  "Figure 1 sample input does not contain both datasets for all groups.")
+count_ok <- !is.na(n_check$ExpectedN) & !is.na(n_check$ActualN) & (
+  n_check$ExpectedN == n_check$ActualN |
+    (n_check$ActualN == 1L & n_check$ExpectedN > 1L & n_check$AggregateOnly)
+)
+stop_if(all(count_ok), paste(
+  "Figure 1 sample counts disagree with the count record; only a single",
+  "explicit aggregate observation may represent multiple source replicates."
+))
 
 values[, CategoryLabel := factor(
   Category,
@@ -114,10 +140,20 @@ row_labels <- unique(values[order(RowOrder, Dataset), .(RowID, RowLabel)])
 values[, PlotRow := factor(RowID, levels = rev(row_order))]
 values[, N := .N, by = .(RowID)]
 row_counts <- unique(values[, .(CategoryLabel, PlotRow, N)])
+row_stats <- values[, .(
+  Mean = mean(DdrFractionPercentage),
+  Median = median(DdrFractionPercentage)
+), by = PlotRow]
+fwrite(
+  row_stats[, .(PlotRow, Mean, Median)],
+  file.path(output_dir, "figure1_original_boxplot_mean_median.csv"),
+  na = ""
+)
 
 stop_if(identical(levels(values$CategoryLabel), unname(category_labels[category_order])),
   "Figure 1 category factor was not constructed.")
-stop_if(length(row_order) == 60L, "Figure 1 must contain 60 sample-level rows.")
+stop_if(length(row_order) == expected_group_count * 2L,
+  paste0("Figure 1 must contain ", expected_group_count * 2L, " dataset rows."))
 
 figure_plot <- ggplot(
   values,
@@ -127,8 +163,10 @@ figure_plot <- ggplot(
     aes(group = PlotRow),
     width = 0.68,
     outlier.shape = NA,
-    colour = "white",
-    linewidth = 0.35,
+    colour = charcoal,
+    linewidth = 0.55,
+    fatten = 1.35,
+    orientation = "y",
     na.rm = TRUE
   ) +
   geom_point(
@@ -138,6 +176,15 @@ figure_plot <- ggplot(
     size = 2.05,
     stroke = 0.42,
     colour = "white",
+    na.rm = TRUE
+  ) +
+  geom_point(
+    data = row_stats,
+    aes(x = Mean, y = PlotRow),
+    inherit.aes = FALSE,
+    shape = 124,
+    size = 8.2,
+    colour = "#C0392B",
     na.rm = TRUE
   ) +
   geom_text(
@@ -176,7 +223,12 @@ figure_plot <- ggplot(
   labs(
     x = "GO-DDR annotated protein fraction (%)",
     y = NULL,
-    fill = NULL
+    fill = NULL,
+    caption = paste(
+      "Each point is a source-resolved observation; one aggregate point is retained when the source only provides an aggregate profile.",
+      "The box center line is the median and the red vertical line is the mean.",
+      sep = "\n"
+    )
   ) +
   theme_minimal(base_size = 10, base_family = publication_font) +
   theme(

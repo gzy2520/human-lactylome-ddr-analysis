@@ -26,6 +26,24 @@ stop_if(all(is.finite(figure1_anova$PValue) & is.finite(figure1_anova$QValueBH))
 stop_if(all(figure1_anova$Significance %in% c("****", "***", "**", "*", "ns")),
   "Figure 1 ANOVA star labels are invalid.")
 
+original_anova <- compute_figure1_original_dataset_one_way_anova(figure1, dataset_order)
+expected_original_rows <- uniqueN(figure1[, .(PXD, SampleGroup)])
+stop_if(nrow(original_anova) == expected_original_rows,
+  "The PXD-axis Figure 1 ANOVA must contain one row per PXD/sample-group.")
+stop_if(all(original_anova$Test == "one-way ANOVA"),
+  "The PXD-axis Figure 1 does not use one-way ANOVA.")
+stop_if(all(original_anova$NWholeProteome > 0L & original_anova$NKla > 0L),
+  "Every PXD-axis Figure 1 row must contain both modalities.")
+stop_if(all(original_anova$Significance %in% c("****", "***", "**", "*", "ns", "NA")),
+  "The PXD-axis Figure 1 ANOVA labels are invalid.")
+if (any(figure1$PXD == "PXD064038" & figure1$SampleGroup == "MEC and NEC ESCC groups")) {
+  escc_anova <- original_anova[
+    PXD == "PXD064038" & SampleGroup == "MEC and NEC ESCC groups"
+  ]
+  stop_if(nrow(escc_anova) == 1L && escc_anova$NWholeProteome == 94L && escc_anova$NKla == 6L,
+    "The PXD064038 PXD-axis Figure 1 ANOVA row has the wrong sample counts.")
+}
+
 pathway <- fread(file.path(candidate_dir, "figure1_pathway_summary_sample_boxplot_values.csv"))
 pathway_anova <- compute_pathway_sample_two_way_anova(pathway, category_order, pathway_order)
 stop_if(nrow(pathway_anova) == length(pathway_order) * 3L,
@@ -39,4 +57,4 @@ stop_if(all(pathway_anova$NPoint > 0L & pathway_anova$N == pathway_anova$NPoint 
 stop_if(all(is.finite(pathway_anova$PValue) & is.finite(pathway_anova$QValueBH)),
   "Pathway two-way ANOVA contains a non-finite p or q value.")
 
-message("PASS: restored Figure 1 uses four source-sample one-way ANOVAs; seven Kla pathways use 21 two-way ANOVA terms.")
+message("PASS: restored Figure 1 uses category and PXD-axis one-way ANOVA; seven Kla pathways use 21 two-way ANOVA terms.")

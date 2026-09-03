@@ -143,10 +143,10 @@ There are two isolated Figure 1 views. The category-level view uses the four
 biological categories on the x axis and two adjacent boxes per category—whole
 proteome and Kla. Each point is one PXD/sample-group dataset union, so it is
 not inflated by the number of source samples. The original-layout view keeps
-one row per publication group and modality, but retains source-resolved sample
-points because that layout is intended to show the underlying observations.
-Both views show the median as the dark box center line and the mean as a red
-line.
+one row per PXD/sample-group dataset, with the whole-proteome and Kla boxes
+dodged within that same row, and retains source-resolved sample points because
+that layout is intended to show the underlying observations. Both views show
+the median as the dark box center line and the mean as a red line.
 
 The current category totals are:
 
@@ -186,6 +186,24 @@ one-way ANOVA inside each biological-category panel (whole proteome versus
 Kla), with BH adjustment across the four panels, and writes
 `figure1_category_boxplot_mean_median.csv` for the displayed median/mean
 statistics.
+
+The restored original-layout view is rendered with:
+
+```bash
+Rscript R/candidate/build_figure1_original_boxplot.R .
+```
+
+It writes `Figure_1_DDR_fraction_candidate_sample_boxplot.png/.pdf`. Its y axis
+is one PXD/sample-group dataset row; the whole-proteome and Kla boxplots are
+shown within that row and each dot is a source-resolved sample observation.
+The four category strips are the publication classification: non-tumor
+tissues, tumor tissues, normal cell lines and cancer cell lines. The renderer also writes
+`figure1_original_boxplot_classification.csv`,
+`figure1_original_boxplot_mean_median.csv` and
+`figure1_original_dataset_one_way_anova.csv`; the last file contains one-way
+ANOVA comparisons between the two modalities within each PXD/sample-group
+row. Rows with only one observation in each modality are retained but are
+marked non-estimable rather than receiving an invented significance value.
 
 To rebuild the sample-level inputs from a local cache of the deposited
 processed files, run:
@@ -343,10 +361,14 @@ For the expanded boxplot candidates, use:
 ```bash
 KLA_CANDIDATE_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input \
 KLA_CANDIDATE_OUTPUT=results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout \
-Rscript R/candidate/build_figure1_category_boxplot.R .
+KLA_CANDIDATE_EXPECTED_GROUPS=31 \
+Rscript R/candidate/build_figure1_original_boxplot.R . && \
+KLA_CANDIDATE_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input \
+KLA_CANDIDATE_OUTPUT=results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout \
+Rscript R/candidate/build_figure1_category_boxplot.R . && \
 KLA_CANDIDATE_INPUT=data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input \
 KLA_CANDIDATE_OUTPUT=results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout/pathway_summary_by_pathway \
-Rscript R/candidate/build_ddr_pathway_summary_boxplots.R .
+Rscript R/candidate/build_ddr_pathway_summary_boxplots.R . && \
 KLA_MKI67_OUTPUT=results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout/mki67_ratio_boxplot \
 Rscript R/candidate/build_figure1_mki67_ratio_boxplots.R .
 ```

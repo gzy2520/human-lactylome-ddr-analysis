@@ -65,6 +65,59 @@ compute_figure1_sample_one_way_anova <- function(
   result[]
 }
 
+compute_figure1_original_dataset_one_way_anova <- function(
+    values,
+    dataset_order = c("Whole proteome", "Lactylome (Kla)")) {
+  required <- c("RowOrder", "PXD", "SampleGroup", "Category", "Dataset", "DdrFractionPercentage")
+  stopifnot(all(required %in% names(values)))
+  group_columns <- c("RowOrder", "PXD", "SampleGroup", "Category")
+  groups <- unique(data.table::copy(values[, ..group_columns]))
+  data.table::setorder(groups, RowOrder, PXD, SampleGroup)
+  result <- data.table::rbindlist(lapply(seq_len(nrow(groups)), function(index) {
+    group <- groups[index]
+    panel <- data.table::copy(values[
+      RowOrder == group$RowOrder & PXD == group$PXD &
+        SampleGroup == group$SampleGroup & as.character(Dataset) %in% dataset_order
+    ])
+    panel <- panel[is.finite(DdrFractionPercentage)]
+    panel[, DatasetFactor := factor(as.character(Dataset), levels = dataset_order)]
+    n_whole <- sum(panel$DatasetFactor == dataset_order[[1L]], na.rm = TRUE)
+    n_kla <- sum(panel$DatasetFactor == dataset_order[[2L]], na.rm = TRUE)
+    table <- if (n_whole > 0L && n_kla > 0L && nrow(panel) > 2L) {
+      safe_aov_table(DdrFractionPercentage ~ DatasetFactor, panel)
+    } else {
+      NULL
+    }
+    data.table::data.table(
+      Plot = "Figure 1 PXD-axis source-sample row",
+      RowOrder = group$RowOrder,
+      PXD = group$PXD,
+      SampleGroup = group$SampleGroup,
+      Category = group$Category,
+      Dataset = NA_character_,
+      Pathway = NA_character_,
+      Term = "DatasetFactor",
+      Comparison = "Whole proteome versus Lactylome (Kla) within one PXD/sample-group row",
+      Test = "one-way ANOVA",
+      AnalysisScale = "DDR fraction percentage",
+      N = nrow(panel),
+      NWholeProteome = n_whole,
+      NKla = n_kla,
+      Df = aov_value(table, "DatasetFactor", "Df"),
+      ResidualDf = aov_value(table, "Residuals", "Df"),
+      FStatistic = aov_value(table, "DatasetFactor", "F value"),
+      PValue = aov_value(table, "DatasetFactor", "Pr(>F)")
+    )
+  }), fill = TRUE)
+  result[, QValueBH := stats::p.adjust(PValue, method = "BH")]
+  result[, Significance := vapply(QValueBH, significance_label, character(1))]
+  result[, AdjustmentFamily := paste(
+    nrow(groups),
+    "Figure 1 PXD-axis row-specific one-way ANOVA tests"
+  )]
+  result[]
+}
+
 compute_pathway_sample_two_way_anova <- function(values, category_order, pathway_order) {
   required <- c("Category", "Pathway", "PositiveFraction", "NegativeFraction")
   stopifnot(all(required %in% names(values)))

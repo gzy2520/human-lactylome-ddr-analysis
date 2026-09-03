@@ -231,6 +231,25 @@ stop_if(all(file.exists(candidate_files)),
 stop_if(file.exists(file.path(legacy_output_dir, "figure1_category_one_way_anova.csv")) &&
           file.exists(file.path(legacy_output_dir, "figure1_category_boxplot_mean_median.csv")),
   "Expanded Figure 1 statistics sidecars are missing.")
+original_stem <- file.path(legacy_output_dir, "Figure_1_DDR_fraction_candidate_sample_boxplot")
+original_files <- c(paste0(original_stem, ".png"), paste0(original_stem, ".pdf"))
+stop_if(all(file.exists(original_files)),
+  "The expanded PXD-axis Figure 1 files are missing.")
+original_classification <- fread(file.path(legacy_output_dir, "figure1_original_boxplot_classification.csv"))
+original_anova <- fread(file.path(legacy_output_dir, "figure1_original_dataset_one_way_anova.csv"))
+original_mean_median <- fread(file.path(legacy_output_dir, "figure1_original_boxplot_mean_median.csv"))
+stop_if(nrow(original_classification) == 31L &&
+          uniqueN(original_classification[, .(PXD, SampleGroup)]) == 31L &&
+          all(original_classification[grepl("^PXD064038__", GroupID), Category] == "cancer_tissue") &&
+          all(original_classification[grepl("^PXD064038__", GroupID), CategoryLabel] == "tumor tissues"),
+  "Expanded PXD-axis Figure 1 classification sidecar is incorrect.")
+stop_if(nrow(original_anova) == 31L && all(original_anova$Test == "one-way ANOVA") &&
+          nrow(original_anova[PXD == "PXD064038" & SampleGroup == "MEC and NEC ESCC groups" &
+            NWholeProteome == 94L & NKla == 6L]) == 1L,
+  "Expanded PXD-axis Figure 1 ANOVA sidecar is incomplete.")
+stop_if(nrow(original_mean_median) == 62L &&
+          uniqueN(original_mean_median[, .(PXD, SampleGroup, Dataset)]) == 62L,
+  "Expanded PXD-axis Figure 1 mean/median sidecar is incomplete.")
 pathway_manifest <- fread(file.path(pathway_output_dir, "pathway_summary_by_pathway_manifest.csv"))
 pathway_anova <- fread(file.path(pathway_output_dir, "pathway_summary_two_way_anova.csv"))
 stop_if(nrow(pathway_manifest) == 7L &&

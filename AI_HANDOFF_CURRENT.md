@@ -2,7 +2,7 @@
 
 更新时间：2026-09-03
 当前修订分支：`figure-enhancement`
-当前修订提交：`9e8a842 overlay individual sample points onto upright SEM barplots`
+当前修订提交：`27ec757 feat(regulators): generate sample-level whole-proteome percentile scatter plots for 10 target genes`
 
 ## 先区分两条线
 
@@ -122,18 +122,27 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
   - 生成脚本：`R/candidate/build_regulator_sample_percentile_scatters.R`
   - 契约测试：`tests/validate_regulator_sample_percentile_contract.R`（已纳入自动化回归套件，全量通过）。
 
-扩展正式图（与冻结默认正式图隔离）：
-`results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/`
+扩展正式图与附表（与冻结默认正式出版目录隔离）：
+- 正式图表目录：`results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/`
+- 候选附表目录：`results/escc_inclusion_20260903_pxd065830_tumor_reference/supplementary/`（及镜像 `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/supplementary/`）
+  - `Supplementary_Table_S1_Kla_Data.xlsx`：扩展至 31 组（纳入 PXD064038 6 个 Kla 样本、1,239 个蛋白、92 个 DDR 蛋白）。
+  - `Supplementary_Table_S2_Reference_Data.xlsx`：扩展至 31 组（纳入 PXD065830 94 例 ESCC 肿瘤参考全蛋白、8,083 个蛋白、420 个 DDR 蛋白）。
+  - `Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx`：6,707 条人类 DDR GO 注释保持完备。
+  - `Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx`：TumorTissues 面板由 178 扩展至 192 个蛋白质（新增 14 个食管癌相关 Kla-DDR 蛋白并赋序）。
+  - `Supplementary_Table_S5_Lactylation_Regulators.xlsx`：49 个调控因子及其文献依据完整保留。
+  - `Supplementary_Table_S6_Venn_Membership.xlsx`：扩展 4 个集合分析的 15 区域（AllKla 5,814、KlaDDR 401、Reference 24,397、ReferenceDDR 836）。
 
 ## 关键脚本
 
 - 上游扩展：`R/candidate/prepare_escc_inclusion_inputs.R`
+- 附表构建：`workflow/build_supplementary_workbooks.R`（支持环境变量 `KLA_PUBLICATION_INPUT` 与 `KLA_SUPPLEMENTARY_OUTPUT` 隔离输出）
 - Figure 1：`R/candidate/build_figure1_category_boxplot.R`
 - MKI67 全蛋白比值：`R/candidate/build_figure1_mki67_ratio_boxplots.R`
 - Kla 七通路图：`R/candidate/build_ddr_pathway_summary_boxplots.R`
 - 10 个调控因子样本散点图：`R/candidate/build_regulator_sample_percentile_scatters.R`
 - ANOVA：`R/candidate/boxplot_significance.R`
 - UpSet/正式图：`R/publication/build_publication_outputs.R`
+- 附表契约验证：`tests/validate_candidate_supplementary_contract.R`
 
 ## 推荐接手流程
 

@@ -15,7 +15,10 @@ input_dir <- normalizePath(
   Sys.getenv("KLA_PUBLICATION_INPUT", unset = file.path(project_root, "data", "publication_input")),
   mustWork = TRUE
 )
-output_dir <- file.path(project_root, "results", "supplementary")
+output_dir <- normalizePath(
+  Sys.getenv("KLA_SUPPLEMENTARY_OUTPUT", unset = file.path(project_root, "results", "supplementary")),
+  mustWork = FALSE
+)
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 assert <- function(condition, message) {
@@ -87,7 +90,7 @@ copy_frozen_workbook <- function(filename) {
 }
 
 groups <- fread(input_path("group_summary_30.csv"))
-assert(nrow(groups) == 30L, "Supplementary Tables must begin with exactly 30 Kla groups.")
+assert(nrow(groups) %in% c(30L, 31L), "Supplementary Tables must begin with 30 or 31 Kla groups.")
 kla_membership <- fread(input_path("kla_protein_membership_30.csv"))
 reference_membership <- fread(input_path("reference_protein_membership_30.csv"))
 require_columns(kla_membership, c("PXD", "SampleGroup", "BaseAccession", "IsDdr"), "Kla membership")

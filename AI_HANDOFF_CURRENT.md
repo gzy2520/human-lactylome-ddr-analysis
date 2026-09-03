@@ -128,9 +128,9 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
   - `Supplementary_Table_S1_Kla_Data.xlsx`：扩展至 31 组（纳入 PXD064038 6 个 Kla 样本、1,239 个蛋白、92 个 DDR 蛋白）。
   - `Supplementary_Table_S2_Reference_Data.xlsx`：扩展至 31 组（纳入 PXD065830 94 例 ESCC 肿瘤参考全蛋白、8,083 个蛋白、420 个 DDR 蛋白）。
   - `Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx`：6,707 条人类 DDR GO 注释保持完备。
-  - `Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx`：TumorTissues 面板由 178 扩展至 192 个蛋白质（新增 14 个食管癌相关 Kla-DDR 蛋白并赋序）。
-  - `Supplementary_Table_S5_Lactylation_Regulators.xlsx`：49 个调控因子及其文献依据完整保留。
-  - `Supplementary_Table_S6_Venn_Membership.xlsx`：扩展 4 个集合分析的 15 区域（AllKla 5,814、KlaDDR 401、Reference 24,397、ReferenceDDR 836）。
+  - `Supplementary_Table_S4_Venn_Membership.xlsx`（原 Table S6 重命名）：扩展 4 个集合分析的 15 区域（AllKla 5,814、KlaDDR 401、Reference 24,397、ReferenceDDR 836）。
+  - `Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx`（原 Table S4 重命名）：TumorTissues 面板由 178 扩展至 192 个蛋白质（新增 14 个食管癌相关 Kla-DDR 蛋白并赋序）。
+  - `Supplementary_Table_S6_Lactylation_Regulators.xlsx`（原 Table S5 重命名）：49 个调控因子及其文献依据完整保留。
 
 ## 关键脚本
 

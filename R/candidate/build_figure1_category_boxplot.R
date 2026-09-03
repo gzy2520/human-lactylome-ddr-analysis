@@ -1,10 +1,9 @@
 #!/usr/bin/env Rscript
 
-# Candidate Figure 1 renderer for dataset-level four-category boxplots.
-#
-# Each point is one PXD/sample-group union. The four categories are the x
-# axis, and Whole proteome/Kla are the two adjacent boxes within each category.
-# The approved publication renderer and its frozen inputs are not changed.
+# Re-render the approved-review Figure 1 layout: four biological-category
+# panels, whole proteome and Kla as the two horizontal boxplots, and each dot
+# as a deposited source-sample observation.  This script deliberately keeps
+# the layout used in the reviewed 2026-09-02 candidate figure.
 
 suppressPackageStartupMessages({
   library(data.table)
@@ -14,15 +13,8 @@ suppressPackageStartupMessages({
 set.seed(25)
 
 args <- commandArgs(trailingOnly = TRUE)
-project_root <- if (length(args) >= 1L) {
-  normalizePath(args[[1L]], mustWork = TRUE)
-} else {
-  normalizePath(".", mustWork = TRUE)
-}
-
-stop_if <- function(condition, message) {
-  if (!isTRUE(condition)) stop(message, call. = FALSE)
-}
+project_root <- if (length(args) >= 1L) normalizePath(args[[1L]], mustWork = TRUE) else normalizePath(".", mustWork = TRUE)
+stop_if <- function(condition, message) if (!isTRUE(condition)) stop(message, call. = FALSE)
 
 publication_font <- "Arial Unicode MS"
 whole_proteome_colour <- "#4E79A7"
@@ -33,236 +25,154 @@ muted_text <- "#65717D"
 grid_colour <- "#D9DDE3"
 panel_border_colour <- "#C8CED6"
 
-category_order <- c("normal_tissue", "cancer_tissue", "cancer_cells", "normal_cells")
+category_order <- c("normal_tissue", "cancer_tissue", "normal_cells", "cancer_cells")
 category_labels <- c(
   normal_tissue = "non-tumor tissues",
   cancer_tissue = "tumor tissues",
-  cancer_cells = "cancer cell lines",
-  normal_cells = "normal cell lines"
+  normal_cells = "normal cell lines",
+  cancer_cells = "cancer cell lines"
+)
+category_fills <- c(
+  normal_tissue = "#DCE9E2",
+  cancer_tissue = "#F0DEDE",
+  normal_cells = "#E7E1EE",
+  cancer_cells = "#EEE4D2"
 )
 dataset_order <- c("Whole proteome", "Lactylome (Kla)")
+plot_dataset_order <- rev(dataset_order)
 
-candidate_dir <- normalizePath(
-  Sys.getenv("KLA_CANDIDATE_INPUT", unset = file.path(project_root, "data", "candidate")),
-  mustWork = TRUE
-)
-output_dir <- normalizePath(
-  Sys.getenv("KLA_CANDIDATE_OUTPUT", unset = file.path(project_root, "results", "candidate")),
-  mustWork = FALSE
-)
-values_path <- file.path(candidate_dir, "figure1_dataset_boxplot_values.csv")
-significance_path <- file.path(project_root, "R", "candidate", "boxplot_significance.R")
+candidate_dir <- normalizePath(Sys.getenv(
+  "KLA_CANDIDATE_INPUT", unset = file.path(project_root, "data", "candidate")
+), mustWork = TRUE)
+output_dir <- Sys.getenv("KLA_CANDIDATE_OUTPUT", unset = file.path(project_root, "results", "candidate"))
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
-
-stop_if(file.exists(values_path), paste0("Missing dataset-level Figure 1 input: ", values_path))
-stop_if(file.exists(significance_path), paste0("Missing boxplot significance helper: ", significance_path))
+values_path <- file.path(candidate_dir, "figure1_sample_boxplot_values.csv")
+stop_if(file.exists(values_path), paste0("Missing Figure 1 sample input: ", values_path))
 values <- fread(values_path, check.names = FALSE)
-source(significance_path, local = TRUE)
 
-required_values <- c(
-  "RowOrder", "PXD", "SampleGroup", "Category", "Dataset", "DatasetPXD",
-  "DatasetPointID", "DatasetPointLabel", "SampleID", "SourceFile",
-  "DdrFraction", "DdrFractionPercentage", "ProteinCount", "DdrProteinCount"
-)
-stop_if(all(required_values %in% names(values)),
-  "Dataset-level Figure 1 input schema is incomplete.")
-stop_if(nrow(values) > 0L, "Dataset-level Figure 1 input is empty.")
-stop_if(!anyDuplicated(values$DatasetPointID),
-  "Dataset-level Figure 1 input contains duplicate point IDs.")
-stop_if(all(values$Dataset %in% dataset_order),
-  "Dataset-level Figure 1 input contains an unknown dataset.")
-stop_if(all(values$Category %in% category_order),
-  "Dataset-level Figure 1 input contains an unknown category.")
-stop_if(all(is.finite(values$DdrFraction) & is.finite(values$DdrFractionPercentage)),
-  "Dataset-level Figure 1 fractions contain non-finite values.")
-stop_if(all(values$DdrFraction >= 0 & values$DdrFraction <= 1),
-  "Dataset-level Figure 1 fractions must be between 0 and 1.")
-stop_if(all(values$DdrFractionPercentage >= 0 & values$DdrFractionPercentage <= 100),
-  "Dataset-level Figure 1 percentages must be between 0 and 100.")
+required_values <- c("PXD", "SampleGroup", "Category", "Dataset", "SampleID", "DdrFractionPercentage")
+stop_if(all(required_values %in% names(values)), "Figure 1 sample input schema is incomplete.")
+stop_if(all(values$Dataset %in% dataset_order), "Figure 1 contains an unknown modality.")
+stop_if(all(values$Category %in% category_order), "Figure 1 contains an unknown category.")
+stop_if(all(is.finite(values$DdrFractionPercentage) & values$DdrFractionPercentage >= 0 & values$DdrFractionPercentage <= 100),
+  "Figure 1 fractions must be finite percentages from 0 to 100.")
+stop_if(!anyDuplicated(values[, .(PXD, SampleGroup, Dataset, SampleID)]),
+  "Figure 1 source-sample points must be unique within modality.")
 
-actual_counts <- values[, .(N = .N), by = .(Category, Dataset)]
-expected_groups <- unique(values[, .(PXD, SampleGroup, Category)])
-expected_category_counts <- expected_groups[, .(ExpectedN = .N), by = Category]
-expected_counts <- expected_category_counts[
-  rep(seq_len(nrow(expected_category_counts)), each = length(dataset_order))
-]
-expected_counts[, Dataset := rep(dataset_order, times = nrow(expected_category_counts))]
-count_check <- merge(expected_counts, actual_counts, by = c("Category", "Dataset"), all = TRUE)
-stop_if(nrow(count_check) == length(category_order) * length(dataset_order),
-  "Dataset-level Figure 1 input does not contain eight category-dataset groups.")
-stop_if(all(count_check$ExpectedN == count_check$N),
-  "Dataset-level Figure 1 category-dataset counts are inconsistent.")
+source(file.path(project_root, "R", "candidate", "boxplot_significance.R"), local = TRUE)
+anova <- compute_figure1_sample_one_way_anova(values, category_order, dataset_order)
+stop_if(nrow(anova) == length(category_order) && all(is.finite(anova$PValue)),
+  "Figure 1 one-way ANOVA did not produce four finite category tests.")
+fwrite(anova, file.path(output_dir, "figure1_category_one_way_anova.csv"), na = "")
 
-values[, CategoryIndex := match(Category, category_order)]
-values[, CategoryLabel := factor(
-  Category,
-  levels = category_order,
-  labels = unname(category_labels[category_order])
-)]
-values[, Dataset := factor(Dataset, levels = dataset_order)]
-
-stop_if(identical(levels(values$CategoryLabel), unname(category_labels[category_order])),
-  "Figure 1 category factor was not constructed.")
-stop_if(identical(levels(values$Dataset), dataset_order),
-  "Figure 1 dataset factor was not constructed.")
-
-figure1_anova <- compute_category_one_way_anova(
-  values,
-  category_order = category_order,
-  dataset_order = dataset_order,
-  value_column = "DdrFractionPercentage"
-)
-stop_if(nrow(figure1_anova) == length(dataset_order),
-  "Figure 1 one-way ANOVA results are incomplete.")
-stop_if(all(is.finite(figure1_anova$PValue) & is.finite(figure1_anova$QValueBH)),
-  "Figure 1 one-way ANOVA results contain a non-finite p or q value.")
-fwrite(figure1_anova, file.path(output_dir, "figure1_category_one_way_anova.csv"), na = "")
-
-format_p <- function(value) {
-  if (!is.finite(value)) return("NA")
-  if (value < 0.001) formatC(value, format = "e", digits = 2)
-  else formatC(value, format = "f", digits = 3)
-}
-anova_label <- paste(vapply(seq_len(nrow(figure1_anova)), function(index) {
-  row <- figure1_anova[index]
-  paste0(row$Dataset, ": p=", format_p(row$PValue),
-    ", q=", format_p(row$QValueBH), " ", row$Significance)
-}, character(1)), collapse = "  |  ")
-
-box_stats <- values[, .(
+values[, CategoryLabel := factor(Category, levels = category_order, labels = unname(category_labels[category_order]))]
+values[, Dataset := factor(Dataset, levels = plot_dataset_order)]
+panel_counts <- values[, .(N = .N), by = .(CategoryLabel, Dataset)]
+summary_stats <- values[, .(
   Mean = mean(DdrFractionPercentage),
-  Median = median(DdrFractionPercentage),
-  N = .N
-), by = .(Category, Dataset, CategoryIndex)]
-box_stats[, Dataset := factor(Dataset, levels = dataset_order)]
-box_stats[, x_center := CategoryIndex + fifelse(
-  as.character(Dataset) == "Whole proteome", -0.19, 0.19
+  Median = median(DdrFractionPercentage)
+), by = .(Category, CategoryLabel, Dataset)]
+fwrite(summary_stats, file.path(output_dir, "figure1_category_boxplot_mean_median.csv"), na = "")
+
+x_limit <- max(20, ceiling(max(values$DdrFractionPercentage) * 1.35 / 5) * 5)
+annotation <- copy(anova)
+annotation[, CategoryLabel := factor(Category, levels = category_order, labels = unname(category_labels[category_order]))]
+annotation[, `:=`(
+  x_left = x_limit * 0.805,
+  x_right = x_limit * 0.825,
+  x_text = x_limit * 0.842,
+  y_low = 1,
+  y_high = 2,
+  y_mid = 1.5,
+  Label = Significance
 )]
-box_stats[, c("x_left", "x_right") := list(x_center - 0.21, x_center + 0.21)]
 
-y_limit <- max(14, ceiling((max(values$DdrFractionPercentage) + 1) / 2) * 2)
-y_breaks <- seq(0, y_limit, by = 2)
-if (tail(y_breaks, 1L) < y_limit) y_breaks <- c(y_breaks, y_limit)
-
-figure_plot <- ggplot(
-  values,
-  aes(x = CategoryIndex, y = DdrFractionPercentage, fill = Dataset)
-) +
+figure_plot <- ggplot(values, aes(x = DdrFractionPercentage, y = Dataset, fill = Dataset)) +
   geom_boxplot(
-    aes(group = Dataset),
-    position = position_dodge(width = 0.76),
-    width = 0.62,
-    outlier.shape = NA,
-    colour = charcoal,
-    linewidth = 0.78,
-    alpha = 0.84,
-    orientation = "x",
-    na.rm = TRUE
+    aes(group = Dataset), width = 0.60, outlier.shape = NA, colour = charcoal,
+    linewidth = 0.82, median.linewidth = 1.35, alpha = 0.82, na.rm = TRUE
   ) +
   geom_point(
-    aes(group = Dataset),
-    position = position_jitterdodge(
-      jitter.width = 0.045,
-      jitter.height = 0,
-      dodge.width = 0.76,
-      seed = 25
-    ),
-    shape = 21,
-    size = 3.15,
-    stroke = 0.58,
-    colour = "white",
-    alpha = 0.94,
-    na.rm = TRUE
+    aes(group = Dataset), position = position_jitter(width = 0, height = 0.12, seed = 25),
+    shape = 21, size = 3.25, stroke = 0.62, colour = "white", alpha = 0.94, na.rm = TRUE
+  ) +
+  geom_point(
+    data = summary_stats, aes(x = Mean, y = Dataset), inherit.aes = FALSE,
+    shape = 124, size = 8.8, stroke = 1.15, colour = mean_colour
+  ) +
+  geom_text(
+    data = panel_counts, aes(x = x_limit * 0.925, y = Dataset, label = paste0("n=", N)),
+    inherit.aes = FALSE, hjust = 0, size = 4.30, family = publication_font, colour = muted_text
   ) +
   geom_segment(
-    data = box_stats,
-    aes(x = x_left, xend = x_right, y = Median, yend = Median),
-    inherit.aes = FALSE,
-    colour = charcoal,
-    linewidth = 1.15,
-    lineend = "round"
+    data = annotation, aes(x = x_left, xend = x_right, y = y_low, yend = y_low),
+    inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
   ) +
   geom_segment(
-    data = box_stats,
-    aes(x = x_left, xend = x_right, y = Mean, yend = Mean),
-    inherit.aes = FALSE,
-    colour = mean_colour,
-    linewidth = 1.55,
-    lineend = "round"
+    data = annotation, aes(x = x_right, xend = x_right, y = y_low, yend = y_high),
+    inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
   ) +
-  scale_fill_manual(
-    values = c("Whole proteome" = whole_proteome_colour, "Lactylome (Kla)" = kla_colour),
-    breaks = dataset_order
+  geom_segment(
+    data = annotation, aes(x = x_left, xend = x_right, y = y_high, yend = y_high),
+    inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
   ) +
-  scale_x_continuous(
-    breaks = seq_along(category_order),
-    labels = unname(category_labels[category_order]),
-    limits = c(0.45, length(category_order) + 0.55),
-    expand = expansion(mult = c(0, 0))
+  geom_text(
+    data = annotation, aes(x = x_text, y = y_mid, label = Label), inherit.aes = FALSE,
+    hjust = 0, size = 5.0, family = publication_font, colour = charcoal
   ) +
-  scale_y_continuous(
-    limits = c(0, y_limit),
-    breaks = y_breaks,
-    labels = function(x) paste0(x, "%"),
-    expand = expansion(mult = c(0, 0.02))
-  ) +
-  guides(
-    fill = guide_legend(
-      nrow = 1,
-      byrow = TRUE,
-      keyheight = grid::unit(0.62, "cm"),
-      keywidth = grid::unit(0.92, "cm")
-    )
-  ) +
+  facet_grid(CategoryLabel ~ ., scales = "free_y", space = "free_y", switch = "y") +
+  scale_fill_manual(values = c("Whole proteome" = whole_proteome_colour, "Lactylome (Kla)" = kla_colour), breaks = dataset_order) +
+  scale_x_continuous(limits = c(0, x_limit), breaks = scales::pretty_breaks(n = 5), expand = expansion(mult = c(0, 0))) +
+  scale_y_discrete(labels = c("Lactylome (Kla)" = "Kla", "Whole proteome" = "Whole proteome")) +
+  guides(fill = guide_legend(nrow = 1, byrow = TRUE, keyheight = grid::unit(0.62, "cm"), keywidth = grid::unit(0.92, "cm"))) +
   labs(
-    title = "Dataset-level DDR fraction across four biological categories",
-    subtitle = paste0("One-way ANOVA by category; one point = one PXD/sample-group union.  ", anova_label),
-    x = NULL,
-    y = "GO-DDR annotated protein fraction (%)",
-    fill = NULL,
+    x = "GO-DDR annotated protein fraction (%)", y = NULL, fill = NULL,
     caption = paste(
-      "The dark horizontal line inside each box is the median; the red horizontal line is the mean.",
-      "Whole-proteome points use the corresponding reference PXD, while Kla points use the source PXD.",
-      "ANOVA q values are BH-adjusted across the two modality-specific omnibus tests (**** q<0.0001, *** q<0.001, ** q<0.01, * q<0.05).",
+      "Each point is one source-resolved sample observation. Dark box line = median; red vertical line = mean.",
+      "Stars show BH-adjusted one-way ANOVA tests between Whole proteome and Kla within each category",
+      "(**** q<0.0001, *** q<0.001, ** q<0.01, * q<0.05).",
       sep = "\n"
     )
   ) +
   theme_minimal(base_size = 14, base_family = publication_font) +
   theme(
-    panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.50),
-    panel.grid.minor = element_blank(),
-    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_blank(), panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_line(colour = grid_colour, linewidth = 0.50),
     panel.border = element_rect(colour = panel_border_colour, fill = NA, linewidth = 0.60),
-    axis.text.x = element_text(size = 14.5, colour = charcoal, face = "bold", lineheight = 0.96),
-    axis.text.y = element_text(size = 13.5, colour = charcoal),
-    axis.title.y = element_text(size = 17.0, face = "bold", colour = charcoal, margin = margin(r = 12)),
-    plot.title = element_text(size = 20.0, face = "bold", colour = charcoal, hjust = 0.5, margin = margin(b = 6)),
-    plot.subtitle = element_text(size = 11.5, colour = muted_text, hjust = 0.5, margin = margin(b = 11)),
-    plot.caption = element_text(size = 10.5, colour = muted_text, hjust = 0, lineheight = 1.05, margin = margin(t = 10)),
-    legend.position = "top",
-    legend.direction = "horizontal",
-    legend.text = element_text(size = 15.0, colour = charcoal),
-    legend.key.spacing.x = grid::unit(0.38, "cm"),
-    legend.background = element_rect(fill = "white", colour = NA),
+    axis.text.y = element_text(size = 15.5, colour = charcoal, face = "bold"),
+    axis.text.x = element_text(size = 15, colour = charcoal),
+    axis.title.x = element_text(size = 19, face = "bold", colour = charcoal, margin = margin(t = 14)),
+    axis.title.y = element_blank(),
+    strip.placement = "outside",
+    strip.text.y.left = element_text(size = 18, face = "bold", colour = charcoal, angle = 90, lineheight = 0.95),
+    strip.background = element_rect(fill = "#E7E9E7", colour = NA),
+    panel.spacing.y = grid::unit(0.72, "lines"),
+    legend.position = "top", legend.direction = "horizontal",
+    legend.text = element_text(size = 16.5, colour = charcoal, lineheight = 1.10),
+    legend.key.spacing.x = grid::unit(0.38, "cm"), legend.background = element_rect(fill = "white", colour = NA),
     legend.margin = margin(1, 0, 10, 0),
-    plot.margin = margin(12, 18, 14, 16),
-    plot.background = element_rect(fill = "white", colour = NA)
+    plot.caption = element_text(size = 10.4, hjust = 0.5, colour = charcoal, margin = margin(t = 10)),
+    plot.margin = margin(10, 18, 14, 12), plot.background = element_rect(fill = "white", colour = NA)
   )
 
-stop_if(length(ggplotGrob(figure_plot)$grobs) > 0L,
-  "Figure 1 dataset-level boxplot grob is empty.")
+apply_strip_fills <- function(plot) {
+  plot_grob <- ggplotGrob(plot)
+  strip_ids <- grep("^strip-l", plot_grob$layout$name)
+  strip_ids <- strip_ids[order(plot_grob$layout$t[strip_ids])]
+  stop_if(length(strip_ids) == length(category_order), "Figure 1 must contain four category strips.")
+  for (index in seq_along(strip_ids)) {
+    strip_grob <- plot_grob$grobs[[strip_ids[[index]]]]$grobs[[1L]]
+    background_id <- grep("^strip.background", strip_grob$childrenOrder)
+    stop_if(length(background_id) == 1L, "Unable to identify a Figure 1 category-strip background.")
+    strip_grob$children[[background_id]]$gp$fill <- unname(category_fills[category_order[[index]]])
+    strip_grob$children[[background_id]]$gp$col <- NA
+    plot_grob$grobs[[strip_ids[[index]]]]$grobs[[1L]] <- strip_grob
+  }
+  plot_grob
+}
 
+plot_grob <- apply_strip_fills(figure_plot)
 stem <- file.path(output_dir, "Figure_1_DDR_fraction_candidate_category_boxplot_refined")
-ggsave(
-  paste0(stem, ".png"), figure_plot,
-  width = 14.0, height = 8.8, dpi = 300, bg = "white", device = ragg::agg_png
-)
-ggsave(
-  paste0(stem, ".pdf"), figure_plot,
-  width = 14.0, height = 8.8, bg = "white", device = cairo_pdf
-)
-
-message(
-  "Wrote dataset-level four-category Figure 1 boxplot: ", stem,
-  ".png/.pdf and one-way ANOVA statistics (", nrow(expected_groups), " PXD/sample-group points per modality)."
-)
+ggsave(paste0(stem, ".png"), plot_grob, width = 15.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+ggsave(paste0(stem, ".pdf"), plot_grob, width = 15.5, height = 11.5, bg = "white", device = cairo_pdf)
+message("Wrote restored-layout Figure 1 source-sample boxplot: ", stem, ".png/.pdf")

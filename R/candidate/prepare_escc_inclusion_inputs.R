@@ -123,9 +123,21 @@ extract_pxd065830_tumor_reference <- function(path) {
     ProteinNameAudit = first_nonempty(ProteinNameAudit)
   ), by = BaseAccession]
 
+  # Preserve each deposited ESCC-T column as an individual source observation
+  # for the Figure 1 sample-point layer.  Membership itself remains keyed by
+  # stable UniProt BaseAccessions; no Gene Symbol is used for set operations.
+  sample_accessions <- setNames(lapply(seq_along(tumor_columns), function(index) {
+    column <- tumor_columns[[index]]
+    sample_keep <- positive_numeric(data[[column]][row_indices])
+    split_accessions(data[[1L]][row_indices][sample_keep])
+  }), headers[tumor_columns])
+  stop_if(all(vapply(sample_accessions, length, integer(1)) > 0L),
+    "At least one PXD065830 ESCC-T source column has no positive BaseAccessions.")
+
   list(
     accessions = accessions,
     sample_ids = headers[tumor_columns],
+    sample_accessions = sample_accessions,
     protein_table_rows = sum(keep),
     display = display
   )
@@ -206,6 +218,20 @@ reference_result <- extract_pxd065830_tumor_reference(reference_file)
 reference_accessions <- reference_result$accessions
 reference_ddr_accessions <- sort(intersect(reference_accessions, ddr_accessions))
 reference_fraction <- length(reference_ddr_accessions) / length(reference_accessions)
+reference_sample_counts <- rbindlist(lapply(reference_result$sample_ids, function(sample_id) {
+  sample_accessions <- reference_result$sample_accessions[[sample_id]]
+  ddr_sample_accessions <- intersect(sample_accessions, ddr_accessions)
+  data.table(
+    SampleID = sample_id,
+    ProteinCount = length(sample_accessions),
+    DdrProteinCount = length(ddr_sample_accessions),
+    DdrFraction = length(ddr_sample_accessions) / length(sample_accessions)
+  )
+}))
+stop_if(nrow(reference_sample_counts) == 94L &&
+          all(is.finite(reference_sample_counts$DdrFraction)) &&
+          all(reference_sample_counts$DdrFraction >= 0 & reference_sample_counts$DdrFraction <= 1),
+  "PXD065830 ESCC-T per-sample DDR fractions are invalid.")
 
 sample_counts <- sample_records[, .(
   KlaProteinCount = uniqueN(BaseAccession),
@@ -535,33 +561,33 @@ new_figure1_values <- sample_meta[, .(
   FrozenReferenceDdrProteinCount = length(reference_ddr_accessions),
   FrozenReferenceDdrFraction = reference_fraction * 100
 )]
-new_figure1_reference_value <- data.table(
+new_figure1_reference_values <- reference_sample_counts[, .(
   RowOrder = group_row_order,
   PXD = group_pxd,
   SampleGroup = group_name,
   Category = group_category,
   DisplayGroup = group_label_en,
   Dataset = "Whole proteome",
-  SampleID = paste0(reference_pxd, "_T_union"),
-  ConditionLabel = "94 ESCC tumor T samples (union)",
+  SampleID,
+  ConditionLabel = SampleID,
   SampleClass = "ESCC tumor tissue",
-  ObservationType = "group_union",
-  SourceMode = "external_tumor_reference_union",
+  ObservationType = "sample",
+  SourceMode = "external_tumor_reference_sample",
   SourceFile = reference_file_rel,
   ReferencePXD = reference_pxd,
-  ProteinCount = length(reference_accessions),
-  DdrProteinCount = length(reference_ddr_accessions),
-  DdrFraction = reference_fraction,
-  DdrFractionPercentage = reference_fraction * 100,
+  ProteinCount,
+  DdrProteinCount,
+  DdrFraction,
+  DdrFractionPercentage = DdrFraction * 100,
   FrozenKlaProteinCount = length(escc_accessions),
   FrozenKlaDdrProteinCount = length(escc_ddr_accessions),
   FrozenKlaDdrFraction = length(escc_ddr_accessions) / length(escc_accessions) * 100,
   FrozenReferenceProteinCount = length(reference_accessions),
   FrozenReferenceDdrProteinCount = length(reference_ddr_accessions),
   FrozenReferenceDdrFraction = reference_fraction * 100
-)
+)]
 existing_figure1_values <- fread(file.path(candidate_input_dir, "figure1_sample_boxplot_values.csv"), check.names = FALSE)
-updated_figure1_values <- rbindlist(list(existing_figure1_values, new_figure1_values, new_figure1_reference_value), fill = TRUE)
+updated_figure1_values <- rbindlist(list(existing_figure1_values, new_figure1_values, new_figure1_reference_values), fill = TRUE)
 setorder(updated_figure1_values, RowOrder, PXD, SampleGroup, Dataset, SampleID)
 fwrite(updated_figure1_values, file.path(candidate_input_dir, "figure1_sample_boxplot_values.csv"), na = "")
 
@@ -577,9 +603,9 @@ new_registry <- data.table(
 new_reference_registry <- data.table(
   PXD = group_pxd,
   SampleGroup = group_name,
-  SampleID = paste0(reference_pxd, "_T_union"),
+  SampleID = reference_result$sample_ids,
   SampleClass = "ESCC tumor tissue",
-  Parser = "whole-proteome / external PXD065830 T-column union",
+  Parser = "whole-proteome / external PXD065830 individual ESCC-T columns",
   SourceFile = reference_file_rel,
   Dataset = "Whole proteome"
 )
@@ -622,10 +648,10 @@ new_sample_count_record <- data.table(
   KlaSampleCount = length(sample_ids),
   KlaSampleIDs = paste(sample_ids, collapse = ";"),
   ReferencePXD = reference_pxd,
-  ReferenceSampleCount = 1L,
-  ReferenceSampleIDs = paste0(reference_pxd, "_T_union"),
-  CountingBasis = "six deposited Kla observations plus one external reference union",
-  Notes = paste0("The whole-proteome reference is the union of 94 ESCC tumor T columns from Dataset1; the 24 N non-tumor columns are excluded and the 94 T columns are not treated as independent matched replicates.")
+  ReferenceSampleCount = length(reference_result$sample_ids),
+  ReferenceSampleIDs = paste(reference_result$sample_ids, collapse = ";"),
+  CountingBasis = "six deposited Kla observations plus 94 external ESCC-T whole-proteome observations",
+  Notes = paste0("All 94 PXD065830 Dataset1 ESCC-T source columns are plotted individually; the 24 N non-tumor columns are excluded. They are independent ESCC tumor observations, not matched to the six PXD064038 Kla samples.")
 )
 sample_count_record <- rbindlist(list(sample_count_record, new_sample_count_record), fill = TRUE)
 setorder(sample_count_record, RowOrder, PXD, SampleGroup)
@@ -638,10 +664,10 @@ new_sample_design <- data.table(
   SampleGroup = group_name,
   Category = group_category,
   KlaN = length(sample_ids),
-  ReferenceN = 1L,
+  ReferenceN = length(reference_result$sample_ids),
   KlaSampleDesign = paste(sample_ids, collapse = ";"),
-  ReferenceSampleDesign = paste0(reference_pxd, " T-column union (94 ESCC tumor samples)"),
-  Aggregation = "six-sample Kla versus external tumor-reference union",
+  ReferenceSampleDesign = paste(reference_result$sample_ids, collapse = ";"),
+  Aggregation = "six Kla samples versus 94 external ESCC-T source observations",
   MatchClass = "external_disease"
 )
 sample_design <- rbindlist(list(sample_design, new_sample_design), fill = TRUE)

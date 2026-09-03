@@ -99,22 +99,16 @@ stop_if(all(coverage$Denominator %in% denominators & coverage$Category %in% cate
   "The MKI67 ratio coverage table contains an unknown key.")
 
 expected_global_rows <- length(denominators)
-expected_pairwise_rows <- length(denominators) * choose(length(categories), 2L)
-stop_if(nrow(significance) == expected_global_rows + expected_pairwise_rows,
+stop_if(nrow(significance) == expected_global_rows,
   "The MKI67 ratio significance table has an unexpected number of rows.")
 stop_if(all(significance$Denominator %in% denominators), "The significance table contains an unknown denominator.")
 global_significance <- significance[Test == "one-way ANOVA"]
-pairwise_significance <- significance[Test == "Wilcoxon rank-sum, two-sided"]
 stop_if(nrow(global_significance) == expected_global_rows,
   "The MKI67 ratio significance table must contain one omnibus test per denominator.")
-stop_if(nrow(pairwise_significance) == expected_pairwise_rows,
-  "The MKI67 ratio significance table must contain six pairwise comparisons per denominator.")
 stop_if(identical(global_significance$Denominator, denominators),
   "The MKI67 ratio omnibus denominator order changed.")
-stop_if(all(global_significance$AdjustmentFamily == "MKI67 ratio: three omnibus denominator tests"),
+stop_if(all(global_significance$AdjustmentFamily == "MKI67 ratio: three omnibus one-way ANOVA tests"),
   "The MKI67 ratio omnibus adjustment family changed.")
-stop_if(all(pairwise_significance$AdjustmentFamily == "MKI67 ratio: six category comparisons per denominator"),
-  "The MKI67 ratio pairwise adjustment family changed.")
 stop_if(all(is.finite(significance$PValue) & is.finite(significance$QValueBH)),
   "The MKI67 ratio significance table contains a missing p or q value.")
 stop_if(all(significance$Significance %in% c("****", "***", "**", "*", "ns")),
@@ -122,7 +116,7 @@ stop_if(all(significance$Significance %in% c("****", "***", "**", "*", "ns")),
 
 expected_global_p <- values[, .(
   PValue = {
-    fit <- stats::aov(Ratio ~ factor(Category, levels = categories), data = .SD)
+    fit <- stats::aov(log10(Ratio) ~ factor(Category, levels = categories), data = .SD)
     as.numeric(summary(fit)[[1]][1L, "Pr(>F)"])
   }
 ), by = Denominator]

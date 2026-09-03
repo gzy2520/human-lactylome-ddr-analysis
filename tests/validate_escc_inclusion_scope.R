@@ -28,7 +28,8 @@ publication_dir <- file.path(scope_dir, "publication_input")
 candidate_dir <- file.path(scope_dir, "candidate_input")
 formal_output_dir <- file.path(project_root, "results", scope_tag, "formal_figures")
 candidate_output_dir <- file.path(project_root, "results", "candidate", scope_tag)
-pathway_output_dir <- file.path(candidate_output_dir, "pathway_summary_dataset_boxplot")
+legacy_output_dir <- file.path(candidate_output_dir, "legacy_layout")
+pathway_output_dir <- file.path(legacy_output_dir, "pathway_summary_by_pathway")
 
 stop_if(dir.exists(scope_dir), "The dated ESCC inclusion scope is missing.")
 
@@ -151,10 +152,15 @@ stop_if(reconciliation[PXD == "PXD064038" & SampleGroup == "MEC and NEC ESCC gro
 
 figure1_values <- fread(file.path(candidate_dir, "figure1_sample_boxplot_values.csv"))
 pathway_values <- fread(file.path(candidate_dir, "figure1_pathway_summary_sample_boxplot_values.csv"))
-stop_if(nrow(figure1_values) == 217L, "Expanded Figure 1 sample input does not contain 217 observations.")
+stop_if(nrow(figure1_values) == 310L, "Expanded Figure 1 sample input does not contain 310 observations.")
 stop_if(nrow(figure1_values[Dataset == "Lactylome (Kla)"]) == 98L &&
-          nrow(figure1_values[Dataset == "Whole proteome"]) == 119L,
+          nrow(figure1_values[Dataset == "Whole proteome"]) == 212L,
   "Expanded Figure 1 dataset counts changed.")
+selected_sample_figure1 <- figure1_values[PXD == "PXD064038"]
+stop_if(nrow(selected_sample_figure1[Dataset == "Lactylome (Kla)"]) == 6L &&
+          nrow(selected_sample_figure1[Dataset == "Whole proteome"]) == 94L &&
+          uniqueN(selected_sample_figure1[Dataset == "Whole proteome", SampleID]) == 94L,
+  "PXD065830 ESCC-T observations were not retained as 94 individual Figure 1 points.")
 stop_if(nrow(pathway_values) == 686L && nrow(pathway_values[PXD == "PXD064038"]) == 42L,
   "Expanded pathway-summary input does not contain the six-by-seven ESCC panel.")
 
@@ -215,29 +221,28 @@ formal_stems <- c(
   "Supplementary_Figure_S2b_DDR_pathway_summary_cancer_cell_lines",
   "Supplementary_Figure_S2c_DDR_pathway_summary_normal_cell_lines"
 )
-candidate_stems <- c(
-  file.path(candidate_output_dir, "Figure_1_DDR_fraction_candidate_category_boxplot_refined"),
-  file.path(candidate_output_dir, "Figure_1_DDR_fraction_candidate_sample_boxplot")
-)
+candidate_stems <- file.path(legacy_output_dir, "Figure_1_DDR_fraction_candidate_category_boxplot_refined")
 formal_files <- file.path(formal_output_dir, paste0(rep(formal_stems, each = 2L), rep(c(".png", ".pdf"), length(formal_stems))))
 stop_if(all(file.exists(formal_files)),
   "One or more expanded formal figure files are missing.")
 candidate_files <- c(paste0(candidate_stems, ".png"), paste0(candidate_stems, ".pdf"))
 stop_if(all(file.exists(candidate_files)),
   "One or more expanded candidate figure files are missing.")
-stop_if(file.exists(file.path(candidate_output_dir, "figure1_category_one_way_anova.csv")) &&
-          file.exists(file.path(candidate_output_dir, "figure1_original_boxplot_mean_median.csv")),
+stop_if(file.exists(file.path(legacy_output_dir, "figure1_category_one_way_anova.csv")) &&
+          file.exists(file.path(legacy_output_dir, "figure1_category_boxplot_mean_median.csv")),
   "Expanded Figure 1 statistics sidecars are missing.")
-pathway_manifest <- fread(file.path(pathway_output_dir, "pathway_summary_dataset_boxplot_manifest.csv"))
+pathway_manifest <- fread(file.path(pathway_output_dir, "pathway_summary_by_pathway_manifest.csv"))
 pathway_anova <- fread(file.path(pathway_output_dir, "pathway_summary_two_way_anova.csv"))
-stop_if(nrow(pathway_manifest) == 14L &&
-          setequal(pathway_manifest$Dataset, c("Lactylome (Kla)", "Whole proteome")) &&
-          uniqueN(pathway_manifest$Pathway) == 7L,
-  "Expanded pathway-summary manifest does not contain 14 plots.")
+stop_if(nrow(pathway_manifest) == 7L &&
+          all(pathway_manifest$Dataset == "Lactylome (Kla)") &&
+          uniqueN(pathway_manifest$Pathway) == 7L &&
+          all(pathway_manifest$CategoryPanels == 4L) &&
+          all(pathway_manifest$BoxesPerFigure == 8L),
+  "Expanded pathway-summary manifest does not contain seven four-category Kla plots.")
 stop_if(all(file.exists(file.path(pathway_output_dir, pathway_manifest$PNG))) &&
           all(file.exists(file.path(pathway_output_dir, pathway_manifest$PDF))),
   "One or more expanded pathway-summary boxplot files are missing.")
-stop_if(nrow(pathway_anova) == 42L &&
+stop_if(nrow(pathway_anova) == 21L &&
           setequal(unique(pathway_anova$Term), c("CategoryFactor", "DirectionFactor", "CategoryFactor:DirectionFactor")) &&
           all(pathway_anova$Test == "two-way ANOVA"),
   "Expanded pathway-summary two-way ANOVA sidecar is incomplete.")

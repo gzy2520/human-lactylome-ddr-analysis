@@ -577,14 +577,16 @@ draw_exact_upset <- function(
     geom_col(width = 0.64, orientation = "y", colour = "white", linewidth = 0.25) +
     geom_text(
       aes(label = SetCount),
-      hjust = -0.18,
+      hjust = -0.10,
       size = 3.75,
       family = publication_font,
       colour = "#30343B"
     ) +
     scale_fill_manual(values = upset_colours, guide = "none") +
     scale_x_continuous(
-      limits = c(0, max(set_membership$SetCount) * 1.18 + 1),
+      # Reserve enough right-side space for the largest count label. This
+      # prevents lower-left set-size labels from being clipped in UpSet plots.
+      limits = c(0, max(set_membership$SetCount) * 1.32 + 1),
       breaks = scales::breaks_pretty(n = 3),
       expand = c(0, 0)
     ) +
@@ -604,7 +606,7 @@ draw_exact_upset <- function(
       axis.text.x = element_text(size = 9.5, colour = "#4B5563"),
       axis.text.y = element_text(size = 10.5, colour = "#30343B"),
       axis.title.x = element_text(size = 11.5, colour = "#30343B", margin = margin(t = 8)),
-      plot.margin = margin(4, 5, 8, 4)
+      plot.margin = margin(4, 18, 8, 4)
     )
 
   matrix_plot <- ggplot(matrix_data, aes(x = Intersection, y = Y)) +
@@ -656,8 +658,8 @@ draw_exact_upset <- function(
       plot.margin = margin(4, 8, 8, 32)
     )
 
-  top_row <- plot_spacer() + intersection_plot + plot_layout(widths = c(3.2, 10))
-  bottom_row <- set_size_plot + matrix_plot + plot_layout(widths = c(3.2, 10))
+  top_row <- plot_spacer() + intersection_plot + plot_layout(widths = c(3.7, 10))
+  bottom_row <- set_size_plot + matrix_plot + plot_layout(widths = c(3.7, 10))
   plot <- top_row / bottom_row +
     plot_layout(heights = c(1.45, 1.25)) +
     plot_annotation(

@@ -60,9 +60,14 @@ denominators_to_render <- if (length(render_options)) render_options else denomi
 stop_if(all(denominators_to_render %in% denominator_order),
   "The requested MKI67 ratio denominator is not supported.")
 
-candidate_dir <- file.path(project_root, "data", "candidate")
+candidate_dir <- normalizePath(Sys.getenv(
+  "KLA_MKI67_INPUT", unset = file.path(project_root, "data", "candidate")
+), mustWork = TRUE)
 output_dir_name <- if (show_significance) "mki67_ratio_boxplot" else "mki67_ratio_boxplot_no_significance"
-output_dir <- file.path(project_root, "results", "candidate", output_dir_name)
+output_dir <- Sys.getenv(
+  "KLA_MKI67_OUTPUT",
+  unset = file.path(project_root, "results", "candidate", output_dir_name)
+)
 values_path <- file.path(candidate_dir, "figure1_mki67_ratio_sample_values.csv")
 significance_path <- file.path(project_root, "R", "candidate", "boxplot_significance.R")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
@@ -95,22 +100,14 @@ ratio_test_values <- copy(values[, .(
   Denominator = as.character(Denominator),
   Ratio
 )])
-pairwise_significance <- compute_ratio_significance(
-  ratio_test_values,
-  category_order,
-  denominator_order
-)
 global_significance <- compute_ratio_global_significance(
   ratio_test_values,
-  category_order,
-  denominator_order
+  denominator_order,
+  category_order
 )
-significance <- rbindlist(list(global_significance, pairwise_significance), fill = TRUE)
 stop_if(nrow(global_significance) == length(denominator_order),
   "MKI67 ratio omnibus significance results are incomplete.")
-stop_if(nrow(pairwise_significance) == length(denominator_order) * choose(length(category_order), 2L),
-  "MKI67 ratio pairwise significance results are incomplete.")
-fwrite(significance, file.path(candidate_dir, "figure1_mki67_ratio_significance.csv"))
+fwrite(global_significance, file.path(candidate_dir, "figure1_mki67_ratio_significance.csv"))
 
 ratio_ticks <- function(panel_values) {
   panel_values <- panel_values[is.finite(panel_values) & panel_values > 0]
@@ -122,36 +119,6 @@ ratio_ticks <- function(panel_values) {
 format_q_value <- function(q_value) {
   if (!is.finite(q_value)) return("NA")
   formatC(q_value, format = "e", digits = 2)
-}
-
-make_brackets <- function(panel_values, panel_significance, y_max) {
-  significant <- panel_significance[is.finite(QValueBH) & QValueBH < 0.05]
-  if (!nrow(significant)) {
-    return(data.table(
-      x1 = numeric(), x2 = numeric(), y = numeric(), label_y = numeric(),
-      label = character(), Comparison = character(), QValueBH = numeric()
-    ))
-  }
-  significant[, c("x1", "x2", "Span") := list(
-    match(Group1, category_order),
-    match(Group2, category_order),
-    match(Group2, category_order) - match(Group1, category_order)
-  )]
-  setorder(significant, Span, x1, QValueBH)
-  base_y <- max(panel_values$Ratio, na.rm = TRUE) * 1.75
-  y_values <- base_y * 2.00^(seq_len(nrow(significant)) - 1L)
-  output <- significant[, .(
-    x1 = x1,
-    x2 = x2,
-    y = y_values,
-    label_y = y_values * 1.06,
-    label = Significance,
-    Comparison = Comparison,
-    QValueBH = QValueBH
-  )]
-  output[y > y_max, y := y_max / 1.20]
-  output[label_y > y_max, label_y := y_max / 1.10]
-  output
 }
 
 make_plot <- function(denominator) {
@@ -172,15 +139,7 @@ make_plot <- function(denominator) {
   preliminary_max <- max(c(raw_max * 1.35, category_counts$label_y * 1.10))
   panel_global <- global_significance[Denominator == denominator]
   global_q <- if (nrow(panel_global)) panel_global$QValueBH[[1L]] else NA_real_
-  panel_significance <- pairwise_significance[Denominator == denominator]
-  if (!show_significance || !isTRUE(is.finite(global_q) && global_q < 0.05)) {
-    panel_significance <- panel_significance[0]
-  }
-  bracket_seed <- make_brackets(panel, panel_significance, preliminary_max * 20)
-  bracket_max <- if (nrow(bracket_seed)) max(bracket_seed$label_y) * 1.12 else 0
-  y_max <- max(preliminary_max, bracket_max, raw_max * 1.50)
-  brackets <- make_brackets(panel, panel_significance, y_max)
-  y_max <- max(y_max, if (nrow(brackets)) max(brackets$label_y) * 1.08 else 0)
+  y_max <- max(preliminary_max, raw_max * 1.50)
 
   background <- data.table(
     xmin = seq_along(category_order) - 0.5,
@@ -213,9 +172,7 @@ make_plot <- function(denominator) {
   if (show_significance) {
     caption_text <- paste(
       caption_text,
-      "The one-way ANOVA omnibus test is adjusted across the three denominators.",
-      "Brackets are shown only when this omnibus test is significant and",
-      "then show pairwise two-sided Wilcoxon rank-sum tests with BH adjustment within this denominator;",
+      "The four-category one-way ANOVA is performed on log10 ratios and BH-adjusted across the three denominators.",
       "**** q<0.0001, *** q<0.001, ** q<0.01, * q<0.05.",
       sep = "\n"
     )
@@ -275,37 +232,6 @@ make_plot <- function(denominator) {
       fontface = "bold",
       colour = muted_text,
       vjust = -0.15
-    ) +
-    geom_segment(
-      data = brackets,
-      aes(x = x1, xend = x1, y = y, yend = y / 1.10),
-      inherit.aes = FALSE,
-      colour = charcoal,
-      linewidth = 0.78
-    ) +
-    geom_segment(
-      data = brackets,
-      aes(x = x1, xend = x2, y = y, yend = y),
-      inherit.aes = FALSE,
-      colour = charcoal,
-      linewidth = 0.78
-    ) +
-    geom_segment(
-      data = brackets,
-      aes(x = x2, xend = x2, y = y, yend = y / 1.10),
-      inherit.aes = FALSE,
-      colour = charcoal,
-      linewidth = 0.78
-    ) +
-    geom_text(
-      data = brackets,
-      aes(x = (x1 + x2) / 2, y = label_y, label = label),
-      inherit.aes = FALSE,
-      family = publication_font,
-      fontface = "bold",
-      size = 5.2,
-      colour = charcoal,
-      vjust = -0.10
     ) +
     scale_fill_manual(values = category_fills, guide = "none", drop = FALSE) +
     scale_x_continuous(

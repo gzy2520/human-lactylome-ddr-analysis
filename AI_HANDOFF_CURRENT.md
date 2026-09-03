@@ -80,11 +80,11 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
 - `mki67_ratio_boxplot/Figure_1_MKI67_over_H3C1_boxplot.png/.pdf`
 - `pathway_summary_by_pathway/Figure_2_DDR_pathway_summary_<BER|NER|MMR|FA|HR|AEJ|NHEJ>_barplot.png/.pdf`（及同名兼容 `_boxplot.png/.pdf`）
 
-### 2026-09-03 最新修订：七通路 Summary 图表升级为 SEM 柱状图
-- **表现形式**：响应用户指令，七通路 summary 图不再使用 boxplot，改为带 error bar 的柱状图。
-  - 柱高表示各分类的均值（Mean）；
-  - 误差棒（error bar）使用 SEM 算法：$SEM = SD / \sqrt{n}$，上下界为 $Mean \pm SEM$（下界截断于 0）；
-  - 去除个体样本散点，画面干净清晰。
+### 2026-09-03 最新修订：七通路 Summary 图表升级为带样本散点的立式 SEM 柱状图
+- **表现形式**：响应用户指令，七通路 summary 图不再使用 boxplot，改为带 error bar 的柱状图，并在柱上叠加个体样本散点以确保数据透明：
+  - 柱高表示各分类的均值（Mean，柱透明度 `alpha = 0.65`）；
+  - 误差棒（error bar）使用 SEM 算法：$SEM = SD / \sqrt{n}$，上下界为 $Mean \pm SEM$（下界截断于 0），位于顶层保持统计清晰；
+  - 柱上样本散点：`geom_point`（`shape = 21, size = 2.6, stroke = 0.55, alpha = 0.85, colour = charcoal`），内部与柱子同色填充（Pro 为通路主题色，Inh 为灰调 `#98A1AA`），水平微抖动 `position_jitter(width = 0.16, height = 0, seed = 25)`（遵循个人随机数种子 25 规则），散点完美收敛于柱宽内部。
 - **正向立式布局（左旋 90 度）**：
   - 类别横向并列排列（顶部 4 个 strip，保留马卡龙色背景）；
   - 纵轴为竖直百分比 `"Relative portion of Kla-DDR proteins (%)"`。

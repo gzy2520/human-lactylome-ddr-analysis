@@ -127,16 +127,22 @@ manifest <- rbindlist(lapply(pathway_order, function(pathway) {
   stats[, ErrorMin := pmax(0, Mean - SEM)]
   stats[, ErrorMax := Mean + SEM]
 
-  y_limit <- max(15, ceiling(max(stats$ErrorMax) * 1.35 / 5) * 5)
+  y_limit <- max(15, ceiling(max(c(stats$ErrorMax, long$ValuePercent)) * 1.15 / 5) * 5)
   counts <- stats[Direction == direction_order[[1L]], .(CategoryLabel, N, LabelY = y_limit * 0.92)]
 
-  figure_plot <- ggplot(stats, aes(x = Direction, y = Mean, fill = Direction)) +
+  figure_plot <- ggplot() +
     geom_col(
-      width = 0.58, colour = charcoal, linewidth = 0.65, alpha = 0.88
+      data = stats, aes(x = Direction, y = Mean, fill = Direction),
+      width = 0.58, colour = charcoal, linewidth = 0.65, alpha = 0.65
+    ) +
+    geom_point(
+      data = long, aes(x = Direction, y = ValuePercent, fill = Direction),
+      position = position_jitter(width = 0.16, height = 0, seed = 25),
+      shape = 21, size = 2.6, stroke = 0.55, alpha = 0.85, colour = charcoal
     ) +
     geom_errorbar(
-      aes(ymin = ErrorMin, ymax = ErrorMax),
-      width = 0.22, linewidth = 0.82, colour = charcoal
+      data = stats, aes(x = Direction, ymin = ErrorMin, ymax = ErrorMax),
+      width = 0.22, linewidth = 0.90, colour = charcoal
     ) +
     geom_text(
       data = counts, aes(x = 2.35, y = LabelY, label = paste0("n=", N)),
@@ -157,7 +163,7 @@ manifest <- rbindlist(lapply(pathway_order, function(pathway) {
       title = paste0(pathway, " pathway"), subtitle = make_subtitle(pathway),
       x = NULL, y = "Relative portion of Kla-DDR proteins (%)",
       caption = paste(
-        "Bars represent group mean; error bars indicate ± SEM.",
+        "Bars represent group mean; error bars indicate ± SEM; points represent individual source-resolved Kla observations.",
         "Pro = positive fraction; Inh = negative fraction. Fractions use each sample's Kla-DDR protein count as denominator.",
         sep = "\n"
       )

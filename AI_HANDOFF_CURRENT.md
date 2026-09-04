@@ -1,8 +1,8 @@
 # Kla project — current AI handoff
 
-更新时间：2026-09-03
+更新时间：2026-09-04
 当前修订分支：`figure-enhancement`
-当前修订提交：`27ec757 feat(regulators): generate sample-level whole-proteome percentile scatter plots for 10 target genes`
+当前修订提交：`feat(figure1): upright layout with sample-level dots for DDR fraction and MKI67 ratios`
 
 ## 先区分两条线
 
@@ -79,6 +79,34 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
 - `mki67_ratio_boxplot/Figure_1_MKI67_over_TUBB_boxplot.png/.pdf`
 - `mki67_ratio_boxplot/Figure_1_MKI67_over_H3C1_boxplot.png/.pdf`
 - `pathway_summary_by_pathway/Figure_2_DDR_pathway_summary_<BER|NER|MMR|FA|HR|AEJ|NHEJ>_barplot.png/.pdf`（及同名兼容 `_boxplot.png/.pdf`）
+
+### 2026-09-04 最新修订：Figure 1 核心图表正向立式（左旋90度）重构与个体样本级散点观测
+- **背景与修改要求**：
+  - 用户明确要求：将 Figure 1 图表正过来（左旋 90 度，由原来的水平箱线图转换为立式直立面板布局）；
+  - 横轴排列 4 大类（`non-tumor tissues`, `tumor tissues`, `normal cell lines`, `cancer cell lines`）；
+  - 图中所有散点必须为**独立样本级别观测**（`ObservationType == "sample"`），严禁聚合为数据集（PXD）级别的点；
+  - 同步更新 Figure 1 的 4 张关键图表：
+    1. `Figure_1_DDR_fraction_candidate_category_boxplot_refined`（DDR 分数图）
+    2. `Figure_1_MKI67_over_ACTB_boxplot`
+    3. `Figure_1_MKI67_over_TUBB_boxplot`
+    4. `Figure_1_MKI67_over_H3C1_boxplot`
+- **Figure 1 DDR 分数图（Figure_1_DDR_fraction_candidate_category_boxplot_refined）重构要点**：
+  - **布局设计**：采用 4 列并列分面面板（`facet_grid(. ~ CategoryLabel)`），顶部保留 4 色马卡龙背景 strip（`#DCE9E2`, `#F0DEDE`, `#E7E1EE`, `#EEE4D2`）；
+  - **模态对比**：每个分类面板内并列放置立式箱线图：左侧为 Whole proteome（蓝色 `#4E79A7`），右侧为 Lactylome (Kla)（橙色 `#F28E2B`）；
+  - **样本散点**：每个点为来源于测序源数据的独立样本（310 个样本点：62/32, 107/12, 15/19, 28/35），使用个人随机数种子 25 进行水平微抖动（`position_jitter(width = 0.16, height = 0, seed = 25)`）；
+  - **统计线与标注**：箱内黑色横线为中位数（Median），红色粗横线为均值（Mean，`colour = "#C0392B"`）；顶部标注样本量（`n=...`）及单因素方差分析显著性横杠与星号（BH 校正后四类均为 `****`）；
+  - **纵轴刻度**：纵向显示 `GO-DDR annotated protein fraction (%)`（0% ~ 25%）。
+- **三张 MKI67 比值图（MKI67 over ACTB / TUBB / H3C1）同步更新与优化**：
+  - **纳入食管癌肿瘤对照**：全面纳入 PXD065830 的 94 个 ESCC-T 肿瘤组织全蛋白样本（MKI67=P46013，ACTB=P60709 检出 5 例，TUBB=P07437 检出 94 例，H3C1=P68431 检出 45 例）；
+  - **样本级散点**：图中点均为独立源样本点（种子 25 抖动），tumor tissues 样本量显著充实（TUBB 由 n=5 增至 n=99，ANOVA q=3.06e-28；H3C1 由 n=5 增至 n=50，ANOVA q=5.90e-07；ACTB 由 n=5 增至 n=10，ANOVA q=0.067）；
+  - **对数纵轴顶部间距（Headroom）优化**：重构对数刻度范围计算，将 `y_max` 调整为 `10^(log10(raw_max) + 0.65)`，各组样本量标注 `label_y` 设为 `10^(log10(MaxRatio) + 0.22)`，彻底消除此前 `n=14`（H3C1）与 `n=99`（TUBB）与顶部外框发生微接触或裁剪的问题。
+- **输出文件路径**：
+  - 候选输出（31 组 ESCC 纳入）：
+    - `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout/Figure_1_DDR_fraction_candidate_category_boxplot_refined.png/.pdf`
+    - `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout/mki67_ratio_boxplot/Figure_1_MKI67_over_ACTB_boxplot.png/.pdf`
+    - `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout/mki67_ratio_boxplot/Figure_1_MKI67_over_TUBB_boxplot.png/.pdf`
+    - `results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/legacy_layout/mki67_ratio_boxplot/Figure_1_MKI67_over_H3C1_boxplot.png/.pdf`
+- **自动化测试**：全量 12 项契约测试（`tests/validate_*.R`）100% 全部 PASS。
 
 ### 2026-09-03 最新修订：七通路 Summary 图表升级为带样本散点的立式 SEM 柱状图
 - **表现形式**：响应用户指令，七通路 summary 图不再使用 boxplot，改为带 error bar 的柱状图，并在柱上叠加个体样本散点以确保数据透明：

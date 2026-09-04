@@ -1,9 +1,8 @@
 #!/usr/bin/env Rscript
 
-# Re-render the approved-review Figure 1 layout: four biological-category
-# panels, whole proteome and Kla as the two horizontal boxplots, and each dot
-# as a deposited source-sample observation.  This script deliberately keeps
-# the layout used in the reviewed 2026-09-02 candidate figure.
+# Render the upright Figure 1 candidate layout: four biological-category
+# panels (columns), whole proteome and Kla as two vertical boxplots in each panel,
+# and each dot as an individual deposited source-sample observation.
 
 suppressPackageStartupMessages({
   library(data.table)
@@ -39,7 +38,6 @@ category_fills <- c(
   cancer_cells = "#EEE4D2"
 )
 dataset_order <- c("Whole proteome", "Lactylome (Kla)")
-plot_dataset_order <- rev(dataset_order)
 
 candidate_dir <- normalizePath(Sys.getenv(
   "KLA_CANDIDATE_INPUT", unset = file.path(project_root, "data", "candidate")
@@ -66,7 +64,7 @@ stop_if(nrow(anova) == length(category_order) && all(is.finite(anova$PValue)),
 fwrite(anova, file.path(output_dir, "figure1_category_one_way_anova.csv"), na = "")
 
 values[, CategoryLabel := factor(Category, levels = category_order, labels = unname(category_labels[category_order]))]
-values[, Dataset := factor(Dataset, levels = plot_dataset_order)]
+values[, Dataset := factor(Dataset, levels = dataset_order)]
 panel_counts <- values[, .(N = .N), by = .(CategoryLabel, Dataset)]
 summary_stats <- values[, .(
   Mean = mean(DdrFractionPercentage),
@@ -74,61 +72,64 @@ summary_stats <- values[, .(
 ), by = .(Category, CategoryLabel, Dataset)]
 fwrite(summary_stats, file.path(output_dir, "figure1_category_boxplot_mean_median.csv"), na = "")
 
-x_limit <- max(20, ceiling(max(values$DdrFractionPercentage) * 1.35 / 5) * 5)
+max_val <- max(values$DdrFractionPercentage, na.rm = TRUE)
+y_limit <- max(20, ceiling(max(max_val * 1.32, max_val + 4) / 5) * 5)
+
 annotation <- copy(anova)
 annotation[, CategoryLabel := factor(Category, levels = category_order, labels = unname(category_labels[category_order]))]
 annotation[, `:=`(
-  x_left = x_limit * 0.805,
-  x_right = x_limit * 0.825,
-  x_text = x_limit * 0.842,
-  y_low = 1,
-  y_high = 2,
-  y_mid = 1.5,
+  x_left = 1,
+  x_right = 2,
+  x_mid = 1.5,
+  y_bar = y_limit * 0.92,
+  y_tick = y_limit * 0.895,
+  y_text = y_limit * 0.935,
   Label = Significance
 )]
 
-figure_plot <- ggplot(values, aes(x = DdrFractionPercentage, y = Dataset, fill = Dataset)) +
+figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill = Dataset)) +
   geom_boxplot(
-    aes(group = Dataset), width = 0.60, outlier.shape = NA, colour = charcoal,
+    aes(group = Dataset), width = 0.58, outlier.shape = NA, colour = charcoal,
     linewidth = 0.82, median.linewidth = 1.35, alpha = 0.82, na.rm = TRUE
   ) +
-  geom_point(
-    aes(group = Dataset), position = position_jitter(width = 0, height = 0.12, seed = 25),
-    shape = 21, size = 3.25, stroke = 0.62, colour = "white", alpha = 0.94, na.rm = TRUE
+  geom_segment(
+    data = summary_stats,
+    aes(x = as.numeric(Dataset) - 0.22, xend = as.numeric(Dataset) + 0.22, y = Mean, yend = Mean),
+    inherit.aes = FALSE, colour = mean_colour, linewidth = 1.55
   ) +
   geom_point(
-    data = summary_stats, aes(x = Mean, y = Dataset), inherit.aes = FALSE,
-    shape = 124, size = 8.8, stroke = 1.15, colour = mean_colour
+    aes(group = Dataset), position = position_jitter(width = 0.16, height = 0, seed = 25),
+    shape = 21, size = 3.0, stroke = 0.58, colour = "white", alpha = 0.88, na.rm = TRUE
   ) +
   geom_text(
-    data = panel_counts, aes(x = x_limit * 0.925, y = Dataset, label = paste0("n=", N)),
-    inherit.aes = FALSE, hjust = 0, size = 4.30, family = publication_font, colour = muted_text
+    data = panel_counts, aes(x = Dataset, y = y_limit * 0.82, label = paste0("n=", N)),
+    inherit.aes = FALSE, size = 4.4, family = publication_font, colour = muted_text, fontface = "bold"
   ) +
   geom_segment(
-    data = annotation, aes(x = x_left, xend = x_right, y = y_low, yend = y_low),
+    data = annotation, aes(x = x_left, xend = x_right, y = y_bar, yend = y_bar),
     inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
   ) +
   geom_segment(
-    data = annotation, aes(x = x_right, xend = x_right, y = y_low, yend = y_high),
+    data = annotation, aes(x = x_left, xend = x_left, y = y_tick, yend = y_bar),
     inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
   ) +
   geom_segment(
-    data = annotation, aes(x = x_left, xend = x_right, y = y_high, yend = y_high),
+    data = annotation, aes(x = x_right, xend = x_right, y = y_tick, yend = y_bar),
     inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
   ) +
   geom_text(
-    data = annotation, aes(x = x_text, y = y_mid, label = Label), inherit.aes = FALSE,
-    hjust = 0, size = 5.0, family = publication_font, colour = charcoal
+    data = annotation, aes(x = x_mid, y = y_text, label = Label), inherit.aes = FALSE,
+    size = 5.6, family = publication_font, colour = charcoal, fontface = "bold"
   ) +
-  facet_grid(CategoryLabel ~ ., scales = "free_y", space = "free_y", switch = "y") +
+  facet_grid(. ~ CategoryLabel) +
   scale_fill_manual(values = c("Whole proteome" = whole_proteome_colour, "Lactylome (Kla)" = kla_colour), breaks = dataset_order) +
-  scale_x_continuous(limits = c(0, x_limit), breaks = scales::pretty_breaks(n = 5), expand = expansion(mult = c(0, 0))) +
-  scale_y_discrete(labels = c("Lactylome (Kla)" = "Kla", "Whole proteome" = "Whole proteome")) +
+  scale_x_discrete(labels = c("Whole proteome" = "Whole\nproteome", "Lactylome (Kla)" = "Lactylome\n(Kla)")) +
+  scale_y_continuous(limits = c(0, y_limit), breaks = scales::pretty_breaks(n = 5), labels = function(y) paste0(y, "%"), expand = expansion(mult = c(0, 0))) +
   guides(fill = guide_legend(nrow = 1, byrow = TRUE, keyheight = grid::unit(0.62, "cm"), keywidth = grid::unit(0.92, "cm"))) +
   labs(
-    x = "GO-DDR annotated protein fraction (%)", y = NULL, fill = NULL,
+    x = NULL, y = "GO-DDR annotated protein fraction (%)", fill = NULL,
     caption = paste(
-      "Each point is one source-resolved sample observation. Dark box line = median; red vertical line = mean.",
+      "Each point is one source-resolved sample observation. Dark box line = median; red horizontal line = mean.",
       "Stars show BH-adjusted one-way ANOVA tests between Whole proteome and Kla within each category",
       "(**** q<0.0001, *** q<0.001, ** q<0.01, * q<0.05).",
       sep = "\n"
@@ -136,34 +137,36 @@ figure_plot <- ggplot(values, aes(x = DdrFractionPercentage, y = Dataset, fill =
   ) +
   theme_minimal(base_size = 14, base_family = publication_font) +
   theme(
-    panel.grid.major.y = element_blank(), panel.grid.minor = element_blank(),
-    panel.grid.major.x = element_line(colour = grid_colour, linewidth = 0.50),
+    panel.grid.major.x = element_blank(), panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.50),
     panel.border = element_rect(colour = panel_border_colour, fill = NA, linewidth = 0.60),
-    axis.text.y = element_text(size = 15.5, colour = charcoal, face = "bold"),
-    axis.text.x = element_text(size = 15, colour = charcoal),
-    axis.title.x = element_text(size = 19, face = "bold", colour = charcoal, margin = margin(t = 14)),
-    axis.title.y = element_blank(),
+    axis.text.x = element_text(size = 14.5, colour = charcoal, face = "bold", lineheight = 0.95),
+    axis.text.y = element_text(size = 14.5, colour = charcoal),
+    axis.title.y = element_text(size = 18, face = "bold", colour = charcoal, margin = margin(r = 12)),
     strip.placement = "outside",
-    strip.text.y.left = element_text(size = 18, face = "bold", colour = charcoal, angle = 90, lineheight = 0.95),
+    strip.text.x.top = element_text(size = 16, face = "bold", colour = charcoal, margin = margin(t = 6, b = 6)),
     strip.background = element_rect(fill = "#E7E9E7", colour = NA),
-    panel.spacing.y = grid::unit(0.72, "lines"),
+    panel.spacing.x = grid::unit(0.9, "lines"),
     legend.position = "top", legend.direction = "horizontal",
-    legend.text = element_text(size = 16.5, colour = charcoal, lineheight = 1.10),
+    legend.text = element_text(size = 15.5, colour = charcoal),
     legend.key.spacing.x = grid::unit(0.38, "cm"), legend.background = element_rect(fill = "white", colour = NA),
-    legend.margin = margin(1, 0, 10, 0),
-    plot.caption = element_text(size = 10.4, hjust = 0.5, colour = charcoal, margin = margin(t = 10)),
-    plot.margin = margin(10, 18, 14, 12), plot.background = element_rect(fill = "white", colour = NA)
+    legend.margin = margin(1, 0, 8, 0),
+    plot.caption = element_text(size = 10.4, hjust = 0.5, colour = charcoal, margin = margin(t = 12)),
+    plot.margin = margin(10, 18, 14, 14), plot.background = element_rect(fill = "white", colour = NA)
   )
 
 apply_strip_fills <- function(plot) {
   plot_grob <- ggplotGrob(plot)
-  strip_ids <- grep("^strip-l", plot_grob$layout$name)
-  strip_ids <- strip_ids[order(plot_grob$layout$t[strip_ids])]
-  stop_if(length(strip_ids) == length(category_order), "Figure 1 must contain four category strips.")
+  strip_ids <- grep("^strip-t", plot_grob$layout$name)
+  if (length(strip_ids) == 0L) {
+    strip_ids <- grep("^strip-l", plot_grob$layout$name)
+    strip_ids <- strip_ids[order(plot_grob$layout$t[strip_ids])]
+  } else {
+    strip_ids <- strip_ids[order(plot_grob$layout$l[strip_ids])]
+  }
   for (index in seq_along(strip_ids)) {
     strip_grob <- plot_grob$grobs[[strip_ids[[index]]]]$grobs[[1L]]
     background_id <- grep("^strip.background", strip_grob$childrenOrder)
-    stop_if(length(background_id) == 1L, "Unable to identify a Figure 1 category-strip background.")
     strip_grob$children[[background_id]]$gp$fill <- unname(category_fills[category_order[[index]]])
     strip_grob$children[[background_id]]$gp$col <- NA
     plot_grob$grobs[[strip_ids[[index]]]]$grobs[[1L]] <- strip_grob
@@ -173,6 +176,6 @@ apply_strip_fills <- function(plot) {
 
 plot_grob <- apply_strip_fills(figure_plot)
 stem <- file.path(output_dir, "Figure_1_DDR_fraction_candidate_category_boxplot_refined")
-ggsave(paste0(stem, ".png"), plot_grob, width = 15.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem, ".pdf"), plot_grob, width = 15.5, height = 11.5, bg = "white", device = cairo_pdf)
-message("Wrote restored-layout Figure 1 source-sample boxplot: ", stem, ".png/.pdf")
+ggsave(paste0(stem, ".png"), plot_grob, width = 14, height = 9, dpi = 300, bg = "white", device = ragg::agg_png)
+ggsave(paste0(stem, ".pdf"), plot_grob, width = 14, height = 9, bg = "white", device = cairo_pdf)
+message("Wrote upright Figure 1 source-sample boxplot: ", stem, ".png/.pdf")

@@ -126,7 +126,7 @@ make_plot <- function(denominator) {
   panel[, Denominator := as.character(Denominator)]
   stop_if(nrow(panel) > 0L, paste0("No data available for ", denominator))
   category_counts <- panel[, .(N = .N, MaxRatio = max(Ratio)), by = .(Category, X)]
-  category_counts[, label_y := MaxRatio * 1.18]
+  category_counts[, label_y := 10^(log10(MaxRatio) + 0.22)]
   category_stats <- panel[, .(
     Mean = mean(Ratio),
     Median = median(Ratio)
@@ -136,10 +136,9 @@ make_plot <- function(denominator) {
   raw_max <- max(panel$Ratio, na.rm = TRUE)
   raw_min <- min(panel$Ratio, na.rm = TRUE)
   y_min <- 10^(floor(log10(raw_min)) - 0.35)
-  preliminary_max <- max(c(raw_max * 1.35, category_counts$label_y * 1.10))
   panel_global <- global_significance[Denominator == denominator]
   global_q <- if (nrow(panel_global)) panel_global$QValueBH[[1L]] else NA_real_
-  y_max <- max(preliminary_max, raw_max * 1.50)
+  y_max <- 10^(log10(raw_max) + 0.65)
 
   background <- data.table(
     xmin = seq_along(category_order) - 0.5,

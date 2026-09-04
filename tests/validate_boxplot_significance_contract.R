@@ -26,6 +26,13 @@ stop_if(all(is.finite(figure1_anova$PValue) & is.finite(figure1_anova$QValueBH))
 stop_if(all(figure1_anova$Significance %in% c("****", "***", "**", "*", "ns")),
   "Figure 1 ANOVA star labels are invalid.")
 
+figure1_omnibus <- compute_figure1_category_omnibus_anova(figure1, category_order, dataset_order)
+stop_if(nrow(figure1_omnibus) == 4L, "Figure 1 omnibus ANOVA must evaluate four models/terms.")
+stop_if(all(is.finite(figure1_omnibus$PValue) & is.finite(figure1_omnibus$QValueBH)),
+  "Figure 1 omnibus ANOVA contains a non-finite p or q value.")
+stop_if(all(figure1_omnibus$Significance %in% c("****", "***", "**", "*", "ns")),
+  "Figure 1 omnibus ANOVA star labels are invalid.")
+
 original_anova <- compute_figure1_original_dataset_one_way_anova(figure1, dataset_order)
 expected_original_rows <- uniqueN(figure1[, .(PXD, SampleGroup)])
 stop_if(nrow(original_anova) == expected_original_rows,

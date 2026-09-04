@@ -65,6 +65,91 @@ compute_figure1_sample_one_way_anova <- function(
   result[]
 }
 
+compute_figure1_category_omnibus_anova <- function(
+    values,
+    category_order,
+    dataset_order = c("Whole proteome", "Lactylome (Kla)")) {
+  required <- c("Category", "Dataset", "DdrFractionPercentage")
+  stopifnot(all(required %in% names(values)))
+  dt <- data.table::copy(values[as.character(Category) %in% category_order &
+                                as.character(Dataset) %in% dataset_order &
+                                is.finite(DdrFractionPercentage)])
+  dt[, CategoryFactor := factor(as.character(Category), levels = category_order)]
+  dt[, DatasetFactor := factor(as.character(Dataset), levels = dataset_order)]
+
+  table_2way <- safe_aov_table(DdrFractionPercentage ~ CategoryFactor * DatasetFactor, dt)
+  dt_kla <- dt[DatasetFactor == "Lactylome (Kla)"]
+  table_kla <- safe_aov_table(DdrFractionPercentage ~ CategoryFactor, dt_kla)
+  dt_wp <- dt[DatasetFactor == "Whole proteome"]
+  table_wp <- safe_aov_table(DdrFractionPercentage ~ CategoryFactor, dt_wp)
+  table_pooled <- safe_aov_table(DdrFractionPercentage ~ CategoryFactor, dt)
+
+  rows <- list(
+    data.table::data.table(
+      Plot = "Figure 1 source-sample category comparison",
+      Category = "All (four categories)",
+      Dataset = "Both (Two-way ANOVA)",
+      Term = "CategoryFactor",
+      Comparison = "Four-category main effect (controlling for modality)",
+      Test = "two-way ANOVA",
+      AnalysisScale = "DDR fraction percentage",
+      N = nrow(dt),
+      Df = aov_value(table_2way, "CategoryFactor", "Df"),
+      ResidualDf = aov_value(table_2way, "Residuals", "Df"),
+      FStatistic = aov_value(table_2way, "CategoryFactor", "F value"),
+      PValue = aov_value(table_2way, "CategoryFactor", "Pr(>F)")
+    ),
+    data.table::data.table(
+      Plot = "Figure 1 source-sample category comparison",
+      Category = "All (four categories)",
+      Dataset = "Lactylome (Kla)",
+      Term = "CategoryFactor",
+      Comparison = "Four-category omnibus test within Lactylome (Kla)",
+      Test = "one-way ANOVA",
+      AnalysisScale = "DDR fraction percentage",
+      N = nrow(dt_kla),
+      Df = aov_value(table_kla, "CategoryFactor", "Df"),
+      ResidualDf = aov_value(table_kla, "Residuals", "Df"),
+      FStatistic = aov_value(table_kla, "CategoryFactor", "F value"),
+      PValue = aov_value(table_kla, "CategoryFactor", "Pr(>F)")
+    ),
+    data.table::data.table(
+      Plot = "Figure 1 source-sample category comparison",
+      Category = "All (four categories)",
+      Dataset = "Whole proteome",
+      Term = "CategoryFactor",
+      Comparison = "Four-category omnibus test within Whole proteome",
+      Test = "one-way ANOVA",
+      AnalysisScale = "DDR fraction percentage",
+      N = nrow(dt_wp),
+      Df = aov_value(table_wp, "CategoryFactor", "Df"),
+      ResidualDf = aov_value(table_wp, "Residuals", "Df"),
+      FStatistic = aov_value(table_wp, "CategoryFactor", "F value"),
+      PValue = aov_value(table_wp, "CategoryFactor", "Pr(>F)")
+    ),
+    data.table::data.table(
+      Plot = "Figure 1 source-sample category comparison",
+      Category = "All (four categories)",
+      Dataset = "Pooled observations",
+      Term = "CategoryFactor",
+      Comparison = "Four-category omnibus test pooled across modalities",
+      Test = "one-way ANOVA",
+      AnalysisScale = "DDR fraction percentage",
+      N = nrow(dt),
+      Df = aov_value(table_pooled, "CategoryFactor", "Df"),
+      ResidualDf = aov_value(table_pooled, "Residuals", "Df"),
+      FStatistic = aov_value(table_pooled, "CategoryFactor", "F value"),
+      PValue = aov_value(table_pooled, "CategoryFactor", "Pr(>F)")
+    )
+  )
+  res <- data.table::rbindlist(rows)
+  res[, QValueBH := stats::p.adjust(PValue, method = "BH")]
+  res[, Significance := vapply(QValueBH, significance_label, character(1))]
+  res[, AdjustmentFamily := "Figure 1 four-category omnibus ANOVA tests"]
+  res[]
+}
+
+
 compute_figure1_original_dataset_one_way_anova <- function(
     values,
     dataset_order = c("Whole proteome", "Lactylome (Kla)")) {

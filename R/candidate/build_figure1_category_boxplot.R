@@ -58,10 +58,35 @@ stop_if(!anyDuplicated(values[, .(PXD, SampleGroup, Dataset, SampleID)]),
   "Figure 1 source-sample points must be unique within modality.")
 
 source(file.path(project_root, "R", "candidate", "boxplot_significance.R"), local = TRUE)
+
+# Retain category-specific ANOVA sidecar for contract compatibility
 anova <- compute_figure1_sample_one_way_anova(values, category_order, dataset_order)
 stop_if(nrow(anova) == length(category_order) && all(is.finite(anova$PValue)),
   "Figure 1 one-way ANOVA did not produce four finite category tests.")
 fwrite(anova, file.path(output_dir, "figure1_category_one_way_anova.csv"), na = "")
+
+# Compute four-category omnibus ANOVA
+omnibus_anova <- compute_figure1_category_omnibus_anova(values, category_order, dataset_order)
+fwrite(omnibus_anova, file.path(output_dir, "figure1_category_omnibus_anova.csv"), na = "")
+
+cat_row <- omnibus_anova[Test == "two-way ANOVA" & Term == "CategoryFactor"]
+kla_row <- omnibus_anova[Dataset == "Lactylome (Kla)"]
+wp_row <- omnibus_anova[Dataset == "Whole proteome"]
+
+format_anova_p <- function(p) {
+  if (!is.finite(p)) return("NA")
+  if (p < 2.2e-16) return("p < 2.2e-16")
+  paste0("p = ", formatC(p, format = "e", digits = 2))
+}
+format_f_stat <- function(f) {
+  if (!is.finite(f)) return("NA")
+  sprintf("%.2f", f)
+}
+
+subtitle_text <- paste0(
+  "Four-category ANOVA ", format_anova_p(cat_row$PValue[[1L]]),
+  " (F = ", format_f_stat(cat_row$FStatistic[[1L]]), ", ", cat_row$Significance[[1L]], ")"
+)
 
 values[, CategoryLabel := factor(Category, levels = category_order, labels = unname(category_labels[category_order]))]
 values[, Dataset := factor(Dataset, levels = dataset_order)]
@@ -73,19 +98,7 @@ summary_stats <- values[, .(
 fwrite(summary_stats, file.path(output_dir, "figure1_category_boxplot_mean_median.csv"), na = "")
 
 max_val <- max(values$DdrFractionPercentage, na.rm = TRUE)
-y_limit <- max(20, ceiling(max(max_val * 1.32, max_val + 4) / 5) * 5)
-
-annotation <- copy(anova)
-annotation[, CategoryLabel := factor(Category, levels = category_order, labels = unname(category_labels[category_order]))]
-annotation[, `:=`(
-  x_left = 1,
-  x_right = 2,
-  x_mid = 1.5,
-  y_bar = y_limit * 0.92,
-  y_tick = y_limit * 0.895,
-  y_text = y_limit * 0.935,
-  Label = Significance
-)]
+y_limit <- max(20, ceiling((max_val + 3) / 5) * 5)
 
 figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill = Dataset)) +
   geom_boxplot(
@@ -102,24 +115,8 @@ figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill =
     shape = 21, size = 3.0, stroke = 0.58, colour = "white", alpha = 0.88, na.rm = TRUE
   ) +
   geom_text(
-    data = panel_counts, aes(x = Dataset, y = y_limit * 0.82, label = paste0("n=", N)),
+    data = panel_counts, aes(x = Dataset, y = y_limit * 0.92, label = paste0("n=", N)),
     inherit.aes = FALSE, size = 4.4, family = publication_font, colour = muted_text, fontface = "bold"
-  ) +
-  geom_segment(
-    data = annotation, aes(x = x_left, xend = x_right, y = y_bar, yend = y_bar),
-    inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
-  ) +
-  geom_segment(
-    data = annotation, aes(x = x_left, xend = x_left, y = y_tick, yend = y_bar),
-    inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
-  ) +
-  geom_segment(
-    data = annotation, aes(x = x_right, xend = x_right, y = y_tick, yend = y_bar),
-    inherit.aes = FALSE, colour = charcoal, linewidth = 0.78
-  ) +
-  geom_text(
-    data = annotation, aes(x = x_mid, y = y_text, label = Label), inherit.aes = FALSE,
-    size = 5.6, family = publication_font, colour = charcoal, fontface = "bold"
   ) +
   facet_grid(. ~ CategoryLabel) +
   scale_fill_manual(values = c("Whole proteome" = whole_proteome_colour, "Lactylome (Kla)" = kla_colour), breaks = dataset_order) +
@@ -127,11 +124,21 @@ figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill =
   scale_y_continuous(limits = c(0, y_limit), breaks = scales::pretty_breaks(n = 5), labels = function(y) paste0(y, "%"), expand = expansion(mult = c(0, 0))) +
   guides(fill = guide_legend(nrow = 1, byrow = TRUE, keyheight = grid::unit(0.62, "cm"), keywidth = grid::unit(0.92, "cm"))) +
   labs(
+    title = "DDR annotated protein fraction across four biological categories",
+    subtitle = subtitle_text,
     x = NULL, y = "GO-DDR annotated protein fraction (%)", fill = NULL,
     caption = paste(
       "Each point is one source-resolved sample observation. Dark box line = median; red horizontal line = mean.",
-      "Stars show BH-adjusted one-way ANOVA tests between Whole proteome and Kla within each category",
-      "(**** q<0.0001, *** q<0.001, ** q<0.01, * q<0.05).",
+      "Four-category omnibus ANOVA tests whether DDR fractions differ across the four biological categories",
+      paste0(
+        "(Two-way ANOVA Category factor F = ", format_f_stat(cat_row$FStatistic[[1L]]),
+        ", ", format_anova_p(cat_row$PValue[[1L]]), ", ", cat_row$Significance[[1L]], "; ",
+        "Kla F = ", format_f_stat(kla_row$FStatistic[[1L]]),
+        ", p = ", formatC(kla_row$PValue[[1L]], format = "e", digits = 2), "; ",
+        "Whole proteome F = ", format_f_stat(wp_row$FStatistic[[1L]]),
+        ", p = ", formatC(wp_row$PValue[[1L]], format = "e", digits = 2),
+        "; **** p < 0.0001)."
+      ),
       sep = "\n"
     )
   ) +
@@ -143,6 +150,8 @@ figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill =
     axis.text.x = element_text(size = 14.5, colour = charcoal, face = "bold", lineheight = 0.95),
     axis.text.y = element_text(size = 14.5, colour = charcoal),
     axis.title.y = element_text(size = 18, face = "bold", colour = charcoal, margin = margin(r = 12)),
+    plot.title = element_text(size = 20, face = "bold", colour = charcoal, hjust = 0.5, margin = margin(b = 4)),
+    plot.subtitle = element_text(size = 14, colour = muted_text, hjust = 0.5, margin = margin(b = 10)),
     strip.placement = "outside",
     strip.text.x.top = element_text(size = 16, face = "bold", colour = charcoal, margin = margin(t = 6, b = 6)),
     strip.background = element_rect(fill = "#E7E9E7", colour = NA),
@@ -150,8 +159,8 @@ figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill =
     legend.position = "top", legend.direction = "horizontal",
     legend.text = element_text(size = 15.5, colour = charcoal),
     legend.key.spacing.x = grid::unit(0.38, "cm"), legend.background = element_rect(fill = "white", colour = NA),
-    legend.margin = margin(1, 0, 8, 0),
-    plot.caption = element_text(size = 10.4, hjust = 0.5, colour = charcoal, margin = margin(t = 12)),
+    legend.margin = margin(1, 0, 4, 0),
+    plot.caption = element_text(size = 10.4, hjust = 0.5, colour = charcoal, lineheight = 1.15, margin = margin(t = 12)),
     plot.margin = margin(10, 18, 14, 14), plot.background = element_rect(fill = "white", colour = NA)
   )
 

@@ -35,10 +35,14 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
 用户给出的 2026-09-02 图是视觉基线。后续修改只更新数据源和明确指出的
 统计/排版，不要重新设计整套图片。
 
-1. Figure 1 DDR fraction：保持“四个生物类别纵向面板；每个面板两个
-   水平 boxplot（Whole proteome/Kla）；点是源样本结果”的布局。箱内深色
-   线是 median，红色竖线是 mean。每个类别做 Whole proteome 对 Kla 的
-   one-way ANOVA，4 个类别的 p 值做 BH 校正。
+1. Figure 1 DDR fraction：立式四面板（横向 4 列）布局；每个面板两个
+   立式 boxplot（Whole proteome/Kla）；点是源样本结果（种子 25 水平抖动）。
+   箱内深色线是 median，红色横线是 mean。顶部展示样本数 `n=...`。
+   用户要求：ANOVA 应对四大生物类别进行比较并给出一个全局显著性值（omnibus p/q），
+   副标题展示 `Four-category ANOVA p < 2.2e-16 (F = 217.40, ****)`，
+   去除了面板内部旧的组内两两括号，图面更清爽，与 MKI67 图风格统一。
+   双因素方差分析及分模态单因素分析结果完整记录于 `figure1_category_omnibus_anova.csv`，
+   原面板内两两 ANOVA 数据仍然保存在 `figure1_category_one_way_anova.csv` 以保证测试契约向后兼容。
 2. MKI67/H3C1：这是全蛋白组的 MKI67/H3C1 强度比图，不是 Kla 图。只用
    有 MKI67=P46013 和 H3C1=P68431 完整定量的全蛋白样本；没有插补。四类
    比较使用 one-way ANOVA。PXD065830 的 94 个 T 列 H3C1 全部缺失，不能

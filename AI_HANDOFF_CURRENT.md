@@ -192,6 +192,20 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
   - 原代码将 `intersection_axis_title` 绘制在 `X = 0.5` 且未指定横向位移，导致 90 度竖立的 "Intersection size" 标题直接从刻度数字（如 '50'、'100' 或 '200'、'300'）正中穿过，并贴着第 1 列柱子边缘，发生严重遮挡错位。
   - 现引入根据刻度数字位数自适应的位移计算：`axis_title_vjust <- -2.2 - 0.9 * max_axis_digits`，并动态扩充左边距 `plot_left_margin <- 32 + 6.5 * max_axis_digits`（对 `intersection_plot` 与 `matrix_plot` 同步生效保证两图宽度一致）。"Intersection size" 完美平移至刻度数字左侧并留出清爽留白，文字重叠与数字遮挡彻底解决。
 
+### 2026-09-04 最新修订：DDR Pathway Matrices（Figure 2c & Supplementary Figure S2a）新数据核验与候选目录同步
+- **数据源与范围核实**：
+  - **Figure 2c（组织 DDR 通路矩阵）**：
+    - `tumor tissues`（肿瘤组织）：全面采用 31 组最新数据（包含食管癌 PXD064038 样本），蛋白质总数由 30 组基线的 178 个扩展至 **192 个**（刻度线 0, 96, 192）。新增 14 个 Kla-DDR 蛋白，包含 6 个归属于特定通路的蛋白（UNG, CDK7, RAD23A, UBE2T, FANCD2, POLD1）与 8 个宽泛 DDR 蛋白（SignedScore = 0）。
+    - `non-tumor tissues`（非肿瘤组织）：保持 183 个蛋白质（刻度线 0, 92, 183）。
+  - **Supplementary Figure S2a（细胞系 DDR 通路矩阵）**：
+    - `cancer cell lines`：381 个蛋白质（刻度线 0, 190, 381）。
+    - `normal cell lines`：292 个蛋白质（刻度线 0, 146, 292）。
+- **配套通路总结（Figure 2d/2e & Supplementary Figure S2b/S2c）**：
+  - Figure 2d（Tumor tissues summary）：HR 促进 73 (38.0%)、抑制 8 (4.2%)；NHEJ 46 (24.0%)；BER 27 (14.1%)；NER 23 (12.0%)；AEJ 13 (6.8%)；MMR 12 (6.2%)；FA 11 (5.7%)，与 192 个蛋白质完全对应。
+- **输出目录与文件同步**：
+  - 正式出版目录：`results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/Figure_2c_DDR_pathway_matrices_tissues.png/.pdf` 及 `Supplementary_Figure_S2a_DDR_pathway_matrices_cell_lines.png/.pdf`；
+  - 同步镜像至候选工作目录：`results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/`，确保两种查看路径均能直接获取最新图表。
+
 ## 关键脚本
 
 - 上游扩展：`R/candidate/prepare_escc_inclusion_inputs.R`

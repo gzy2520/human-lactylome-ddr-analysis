@@ -178,20 +178,14 @@ make_plot <- function(denominator) {
   }
 
   plot <- ggplot(panel, aes(x = X, y = Ratio, fill = Category)) +
-    geom_rect(
-      data = background,
-      aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = Category),
-      inherit.aes = FALSE,
-      colour = NA,
-      alpha = 0.24
-    ) +
+    geom_vline(xintercept = c(1.5, 2.5, 3.5), colour = "#E5E7EB", linetype = "dashed", linewidth = 0.5) +
     geom_boxplot(
       aes(group = Category),
       width = 0.58,
       outlier.shape = NA,
       colour = charcoal,
-      linewidth = 0.90,
-      median.linewidth = 1.45,
+      linewidth = 0.85,
+      median.linewidth = 1.40,
       alpha = 0.90,
       orientation = "x",
       na.rm = TRUE
@@ -216,8 +210,8 @@ make_plot <- function(denominator) {
       aes(group = Category),
       position = position_jitter(width = 0.095, height = 0, seed = 25),
       shape = 21,
-      size = 3.25,
-      stroke = 0.72,
+      size = 3.0,
+      stroke = 0.65,
       colour = "white",
       alpha = 0.95,
       na.rm = TRUE
@@ -227,7 +221,7 @@ make_plot <- function(denominator) {
       aes(x = X, y = label_y, label = paste0("n=", N)),
       inherit.aes = FALSE,
       family = publication_font,
-      size = 4.55,
+      size = 4.2,
       fontface = "bold",
       colour = muted_text,
       vjust = -0.15
@@ -252,33 +246,35 @@ make_plot <- function(denominator) {
       y = "MKI67 protein intensity ratio (log scale)",
       caption = caption_text
     ) +
-    theme_minimal(base_family = publication_font, base_size = 15) +
+    theme_minimal(base_family = publication_font, base_size = 14) +
     theme(
       panel.grid.major.x = element_blank(),
       panel.grid.minor = element_blank(),
-      panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.52),
-      panel.border = element_rect(colour = panel_border_colour, fill = NA, linewidth = 0.68),
-      axis.text.x = element_text(size = 14.8, face = "bold", colour = charcoal, lineheight = 0.95),
-      axis.text.y = element_text(size = 14.3, colour = charcoal),
-      axis.title.y = element_text(size = 18.5, face = "bold", colour = charcoal, margin = margin(r = 12)),
+      panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.50),
+      panel.border = element_blank(),
+      axis.line.x = element_line(colour = "#8C939E", linewidth = 0.60),
+      axis.line.y = element_line(colour = "#8C939E", linewidth = 0.60),
+      axis.text.x = element_text(size = 13.5, face = "bold", colour = charcoal, lineheight = 0.95, margin = margin(t = 6)),
+      axis.text.y = element_text(size = 13.0, colour = charcoal),
+      axis.title.y = element_text(size = 15.5, face = "bold", colour = charcoal, margin = margin(r = 10)),
       plot.title = element_text(
-        size = 24.0,
+        size = 18.0,
         face = "bold",
         colour = charcoal,
         hjust = 0.5,
-        margin = margin(b = 5)
+        margin = margin(b = 4)
       ),
-      plot.subtitle = element_text(size = 14.2, colour = muted_text, hjust = 0.5, margin = margin(b = 12)),
-      plot.caption = element_text(size = 10.8, colour = muted_text, hjust = 0, lineheight = 1.05, margin = margin(t = 12)),
-      plot.margin = margin(14, 20, 16, 18),
+      plot.subtitle = element_text(size = 12.0, colour = muted_text, hjust = 0.5, margin = margin(b = 10)),
+      plot.caption = element_text(size = 9.8, colour = muted_text, hjust = 0, lineheight = 1.10, margin = margin(t = 10)),
+      plot.margin = margin(12, 16, 12, 12),
       plot.background = element_rect(fill = "white", colour = NA)
     ) +
     coord_cartesian(clip = "off")
 
   output_stem <- file.path(output_dir, paste0("Figure_1_MKI67_over_", denominator, "_boxplot"))
-  ggsave(paste0(output_stem, ".png"), plot, width = 11.2, height = 8.6, dpi = 300,
+  ggsave(paste0(output_stem, ".png"), plot, width = 8.5, height = 7.0, dpi = 300,
     bg = "white", device = ragg::agg_png)
-  ggsave(paste0(output_stem, ".pdf"), plot, width = 11.2, height = 8.6,
+  ggsave(paste0(output_stem, ".pdf"), plot, width = 8.5, height = 7.0,
     bg = "white", device = cairo_pdf)
 }
 

@@ -93,36 +93,43 @@ values[, Dataset := factor(Dataset, levels = dataset_order)]
 panel_counts <- values[, .(N = .N), by = .(CategoryLabel, Dataset)]
 summary_stats <- values[, .(
   Mean = mean(DdrFractionPercentage),
-  Median = median(DdrFractionPercentage)
+  Median = median(DdrFractionPercentage),
+  N = .N
 ), by = .(Category, CategoryLabel, Dataset)]
 fwrite(summary_stats, file.path(output_dir, "figure1_category_boxplot_mean_median.csv"), na = "")
 
 max_val <- max(values$DdrFractionPercentage, na.rm = TRUE)
 y_limit <- max(20, ceiling((max_val + 3) / 5) * 5)
 
-figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill = Dataset)) +
+dodge_width <- 0.72
+summary_stats[, CatIdx := as.numeric(CategoryLabel)]
+summary_stats[, XPos := fifelse(Dataset == "Whole proteome", CatIdx - dodge_width / 4, CatIdx + dodge_width / 4)]
+
+figure_plot <- ggplot(values, aes(x = CategoryLabel, y = DdrFractionPercentage, fill = Dataset)) +
+  geom_vline(xintercept = c(1.5, 2.5, 3.5), colour = "#E5E7EB", linetype = "dashed", linewidth = 0.5) +
   geom_boxplot(
-    aes(group = Dataset), width = 0.58, outlier.shape = NA, colour = charcoal,
+    position = position_dodge(width = dodge_width),
+    width = 0.58, outlier.shape = NA, colour = charcoal,
     linewidth = 0.82, median.linewidth = 1.35, alpha = 0.82, na.rm = TRUE
   ) +
   geom_segment(
     data = summary_stats,
-    aes(x = as.numeric(Dataset) - 0.22, xend = as.numeric(Dataset) + 0.22, y = Mean, yend = Mean),
+    aes(x = XPos - 0.16, xend = XPos + 0.16, y = Mean, yend = Mean),
     inherit.aes = FALSE, colour = mean_colour, linewidth = 1.55
   ) +
   geom_point(
-    aes(group = Dataset), position = position_jitter(width = 0.16, height = 0, seed = 25),
-    shape = 21, size = 3.0, stroke = 0.58, colour = "white", alpha = 0.88, na.rm = TRUE
+    aes(fill = Dataset),
+    position = position_jitterdodge(jitter.width = 0.14, dodge.width = dodge_width, seed = 25),
+    shape = 21, size = 2.8, stroke = 0.58, colour = "white", alpha = 0.88, na.rm = TRUE
   ) +
   geom_text(
-    data = panel_counts, aes(x = Dataset, y = y_limit * 0.92, label = paste0("n=", N)),
-    inherit.aes = FALSE, size = 4.4, family = publication_font, colour = muted_text, fontface = "bold"
+    data = summary_stats,
+    aes(x = XPos, y = y_limit * 0.94, label = paste0("n=", N)),
+    inherit.aes = FALSE, size = 4.0, family = publication_font, colour = muted_text, fontface = "bold"
   ) +
-  facet_grid(. ~ CategoryLabel) +
   scale_fill_manual(values = c("Whole proteome" = whole_proteome_colour, "Lactylome (Kla)" = kla_colour), breaks = dataset_order) +
-  scale_x_discrete(labels = c("Whole proteome" = "Whole\nproteome", "Lactylome (Kla)" = "Lactylome\n(Kla)")) +
   scale_y_continuous(limits = c(0, y_limit), breaks = scales::pretty_breaks(n = 5), labels = function(y) paste0(y, "%"), expand = expansion(mult = c(0, 0))) +
-  guides(fill = guide_legend(nrow = 1, byrow = TRUE, keyheight = grid::unit(0.62, "cm"), keywidth = grid::unit(0.92, "cm"))) +
+  guides(fill = guide_legend(nrow = 1, byrow = TRUE, keyheight = grid::unit(0.55, "cm"), keywidth = grid::unit(0.85, "cm"))) +
   labs(
     title = "DDR annotated protein fraction across four biological categories",
     subtitle = subtitle_text,
@@ -146,45 +153,23 @@ figure_plot <- ggplot(values, aes(x = Dataset, y = DdrFractionPercentage, fill =
   theme(
     panel.grid.major.x = element_blank(), panel.grid.minor = element_blank(),
     panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.50),
-    panel.border = element_rect(colour = panel_border_colour, fill = NA, linewidth = 0.60),
-    axis.text.x = element_text(size = 14.5, colour = charcoal, face = "bold", lineheight = 0.95),
-    axis.text.y = element_text(size = 14.5, colour = charcoal),
-    axis.title.y = element_text(size = 18, face = "bold", colour = charcoal, margin = margin(r = 12)),
-    plot.title = element_text(size = 20, face = "bold", colour = charcoal, hjust = 0.5, margin = margin(b = 4)),
-    plot.subtitle = element_text(size = 14, colour = muted_text, hjust = 0.5, margin = margin(b = 10)),
-    strip.placement = "outside",
-    strip.text.x.top = element_text(size = 16, face = "bold", colour = charcoal, margin = margin(t = 6, b = 6)),
-    strip.background = element_rect(fill = "#E7E9E7", colour = NA),
-    panel.spacing.x = grid::unit(0.9, "lines"),
+    panel.border = element_blank(),
+    axis.line.x = element_line(colour = "#8C939E", linewidth = 0.60),
+    axis.line.y = element_line(colour = "#8C939E", linewidth = 0.60),
+    axis.text.x = element_text(size = 13.5, colour = charcoal, face = "bold", margin = margin(t = 6)),
+    axis.text.y = element_text(size = 13.5, colour = charcoal),
+    axis.title.y = element_text(size = 16, face = "bold", colour = charcoal, margin = margin(r = 10)),
+    plot.title = element_text(size = 17, face = "bold", colour = charcoal, hjust = 0.5, margin = margin(b = 4)),
+    plot.subtitle = element_text(size = 12.5, colour = muted_text, hjust = 0.5, margin = margin(b = 10)),
     legend.position = "top", legend.direction = "horizontal",
-    legend.text = element_text(size = 15.5, colour = charcoal),
-    legend.key.spacing.x = grid::unit(0.38, "cm"), legend.background = element_rect(fill = "white", colour = NA),
+    legend.text = element_text(size = 13.5, colour = charcoal),
+    legend.key.spacing.x = grid::unit(0.35, "cm"), legend.background = element_rect(fill = "white", colour = NA),
     legend.margin = margin(1, 0, 4, 0),
-    plot.caption = element_text(size = 10.4, hjust = 0.5, colour = charcoal, lineheight = 1.15, margin = margin(t = 12)),
-    plot.margin = margin(10, 18, 14, 14), plot.background = element_rect(fill = "white", colour = NA)
+    plot.caption = element_text(size = 9.8, hjust = 0.5, colour = charcoal, lineheight = 1.15, margin = margin(t = 10)),
+    plot.margin = margin(10, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
   )
 
-apply_strip_fills <- function(plot) {
-  plot_grob <- ggplotGrob(plot)
-  strip_ids <- grep("^strip-t", plot_grob$layout$name)
-  if (length(strip_ids) == 0L) {
-    strip_ids <- grep("^strip-l", plot_grob$layout$name)
-    strip_ids <- strip_ids[order(plot_grob$layout$t[strip_ids])]
-  } else {
-    strip_ids <- strip_ids[order(plot_grob$layout$l[strip_ids])]
-  }
-  for (index in seq_along(strip_ids)) {
-    strip_grob <- plot_grob$grobs[[strip_ids[[index]]]]$grobs[[1L]]
-    background_id <- grep("^strip.background", strip_grob$childrenOrder)
-    strip_grob$children[[background_id]]$gp$fill <- unname(category_fills[category_order[[index]]])
-    strip_grob$children[[background_id]]$gp$col <- NA
-    plot_grob$grobs[[strip_ids[[index]]]]$grobs[[1L]] <- strip_grob
-  }
-  plot_grob
-}
-
-plot_grob <- apply_strip_fills(figure_plot)
 stem <- file.path(output_dir, "Figure_1_DDR_fraction_candidate_category_boxplot_refined")
-ggsave(paste0(stem, ".png"), plot_grob, width = 14, height = 9, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem, ".pdf"), plot_grob, width = 14, height = 9, bg = "white", device = cairo_pdf)
+ggsave(paste0(stem, ".png"), figure_plot, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
+ggsave(paste0(stem, ".pdf"), figure_plot, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 message("Wrote upright Figure 1 source-sample boxplot: ", stem, ".png/.pdf")

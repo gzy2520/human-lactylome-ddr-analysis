@@ -318,6 +318,12 @@ role_map <- build_role_map()
 assert(!anyDuplicated(role_map[c("Role", "BaseAccession")]), "Each regulator role/accession pair must be unique.")
 
 draw_percentile_heatmap <- function(data, value_column, stem, measurement_label, colours) {
+  heatmap_category_labels <- c(
+    normal_tissue = "non-tumor\ntissues",
+    cancer_tissue = "tumor\ntissues",
+    cancer_cells = "cancer\ncell lines",
+    normal_cells = "normal\ncell lines"
+  )
   values <- data |>
     mutate(
       GroupKey = paste(PXD, SampleGroup, sep = "__"),
@@ -336,15 +342,64 @@ draw_percentile_heatmap <- function(data, value_column, stem, measurement_label,
     mutate(
       CategoryLabel = factor(
         as.character(Category), levels = category_order,
-        labels = unname(category_labels[category_order])
+        labels = unname(heatmap_category_labels[category_order])
       ),
       RoleLabel = factor(Role, levels = role_order),
       PlotLabel = factor(PlotLabel, levels = rev(unique(PlotLabel[order(RowOrder)]))),
       DisplayName = factor(DisplayName, levels = unique(role_map$DisplayName))
     )
   assert(nrow(values) > 0L, paste("No values were available for", stem))
+
+  highlight_genes <- c("AARS1", "ACAT2", "KRT18", "SIRT2", "PARK7", "HDAC1", "HDAC2", "BRD4", "SMARCA4", "TRIM33")
+
+  # Construct continuous bounding boxes around the 10 highlighted regulator columns
+  box_lines <- list()
+  for (cat_lbl in levels(values$CategoryLabel)) {
+    sub_cat <- values |> filter(CategoryLabel == cat_lbl)
+    n_rows <- n_distinct(sub_cat$PlotLabel)
+    for (role_lbl in levels(values$RoleLabel)) {
+      sub_panel <- sub_cat |> filter(RoleLabel == role_lbl)
+      if (nrow(sub_panel) == 0) next
+      panel_genes <- levels(droplevels(sub_panel$DisplayName))
+      for (g in highlight_genes) {
+        if (g %in% panel_genes) {
+          x_pos <- which(panel_genes == g)
+          # Left border
+          box_lines[[length(box_lines) + 1]] <- data.frame(
+            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+            x = x_pos - 0.5, xend = x_pos - 0.5, y = 0.5, yend = n_rows + 0.5
+          )
+          # Right border
+          box_lines[[length(box_lines) + 1]] <- data.frame(
+            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+            x = x_pos + 0.5, xend = x_pos + 0.5, y = 0.5, yend = n_rows + 0.5
+          )
+          # Bottom border
+          box_lines[[length(box_lines) + 1]] <- data.frame(
+            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+            x = x_pos - 0.5, xend = x_pos + 0.5, y = 0.5, yend = 0.5
+          )
+          # Top border
+          box_lines[[length(box_lines) + 1]] <- data.frame(
+            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+            x = x_pos - 0.5, xend = x_pos + 0.5, y = n_rows + 0.5, yend = n_rows + 0.5
+          )
+        }
+      }
+    }
+  }
+  box_lines_df <- bind_rows(box_lines)
+  box_lines_df$CategoryLabel <- factor(box_lines_df$CategoryLabel, levels = levels(values$CategoryLabel))
+  box_lines_df$RoleLabel <- factor(box_lines_df$RoleLabel, levels = levels(values$RoleLabel))
+
   plot <- ggplot(values, aes(x = DisplayName, y = PlotLabel, fill = Value)) +
     geom_tile(colour = "white", linewidth = 0.22) +
+    geom_segment(
+      data = box_lines_df,
+      aes(x = x, xend = xend, y = y, yend = yend),
+      inherit.aes = FALSE,
+      colour = "#D73027", linewidth = 1.15
+    ) +
     facet_grid(CategoryLabel ~ RoleLabel, scales = "free", space = "free") +
     scale_fill_gradientn(
       colours = colours,
@@ -364,7 +419,7 @@ draw_percentile_heatmap <- function(data, value_column, stem, measurement_label,
     theme(
       panel.grid = element_blank(),
       strip.text.x = element_text(face = "bold", size = 12),
-      strip.text.y.right = element_text(face = "bold", size = 11, angle = 180),
+      strip.text.y.right = element_text(face = "bold", size = 10.5, angle = 0, hjust = 0),
       strip.background = element_rect(fill = "#F2F2F2", colour = NA),
       axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 10.2),
       axis.text.y = element_text(size = 9.6),
@@ -372,9 +427,9 @@ draw_percentile_heatmap <- function(data, value_column, stem, measurement_label,
       legend.direction = "horizontal",
       legend.title = element_text(size = 10.8),
       legend.text = element_text(size = 9.8),
-      plot.margin = margin(10, 12, 10, 10)
+      plot.margin = margin(10, 14, 10, 10)
     )
-  save_figure(plot, stem, 15.5, 11.5)
+  save_figure(plot, stem, 16.0, 11.5)
 }
 
 kla_percentiles <- fread(input_path("regulator_kla_percentiles_30.csv")) |>

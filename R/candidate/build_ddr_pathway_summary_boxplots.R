@@ -127,37 +127,38 @@ manifest <- rbindlist(lapply(pathway_order, function(pathway) {
   stats[, ErrorMin := pmax(0, Mean - SEM)]
   stats[, ErrorMax := Mean + SEM]
 
+  dodge_w <- 0.72
   y_limit <- max(15, ceiling(max(c(stats$ErrorMax, long$ValuePercent)) * 1.15 / 5) * 5)
-  counts <- stats[Direction == direction_order[[1L]], .(CategoryLabel, N, LabelY = y_limit * 0.92)]
+  counts <- stats[Direction == direction_order[[1L]], .(CategoryLabel, N, LabelY = y_limit * 0.94)]
 
   figure_plot <- ggplot() +
+    geom_vline(xintercept = c(1.5, 2.5, 3.5), colour = "#E5E7EB", linetype = "dashed", linewidth = 0.5) +
     geom_col(
-      data = stats, aes(x = Direction, y = Mean, fill = Direction),
+      data = stats, aes(x = CategoryLabel, y = Mean, fill = Direction),
+      position = position_dodge(width = dodge_w),
       width = 0.58, colour = charcoal, linewidth = 0.65, alpha = 0.65
     ) +
     geom_point(
-      data = long, aes(x = Direction, y = ValuePercent, fill = Direction),
-      position = position_jitter(width = 0.16, height = 0, seed = 25),
-      shape = 21, size = 2.6, stroke = 0.55, alpha = 0.85, colour = charcoal
+      data = long, aes(x = CategoryLabel, y = ValuePercent, fill = Direction),
+      position = position_jitterdodge(jitter.width = 0.14, dodge.width = dodge_w, seed = 25),
+      shape = 21, size = 2.4, stroke = 0.55, alpha = 0.85, colour = charcoal
     ) +
     geom_errorbar(
-      data = stats, aes(x = Direction, ymin = ErrorMin, ymax = ErrorMax),
-      width = 0.22, linewidth = 0.90, colour = charcoal
+      data = stats, aes(x = CategoryLabel, ymin = ErrorMin, ymax = ErrorMax, group = Direction),
+      position = position_dodge(width = dodge_w),
+      width = 0.22, linewidth = 0.85, colour = charcoal
     ) +
     geom_text(
-      data = counts, aes(x = 2.35, y = LabelY, label = paste0("n=", N)),
-      inherit.aes = FALSE, hjust = 1, size = 4.2, family = publication_font, colour = muted_text
+      data = counts, aes(x = CategoryLabel, y = LabelY, label = paste0("n=", N)),
+      inherit.aes = FALSE, hjust = 0.5, size = 4.0, family = publication_font, colour = muted_text, fontface = "bold"
     ) +
-    facet_grid(. ~ CategoryLabel) +
     scale_fill_manual(values = c("Pro" = pathway_colours[[pathway]], "Inh" = down_colour)) +
-    scale_colour_manual(values = c("Pro" = pathway_colours[[pathway]], "Inh" = down_colour)) +
     scale_y_continuous(
       limits = c(0, y_limit), breaks = scales::pretty_breaks(n = 5),
       labels = function(y) paste0(y, "%"), expand = expansion(mult = c(0, 0))
     ) +
     guides(
-      fill = guide_legend(title = NULL, nrow = 1, byrow = TRUE),
-      colour = "none"
+      fill = guide_legend(title = NULL, nrow = 1, byrow = TRUE, keyheight = grid::unit(0.55, "cm"), keywidth = grid::unit(0.85, "cm"))
     ) +
     labs(
       title = paste0(pathway, " pathway"), subtitle = make_subtitle(pathway),
@@ -168,35 +169,33 @@ manifest <- rbindlist(lapply(pathway_order, function(pathway) {
         sep = "\n"
       )
     ) +
-    theme_minimal(base_size = 14, base_family = publication_font) +
+    theme_minimal(base_size = 13.5, base_family = publication_font) +
     theme(
       panel.grid.major.x = element_blank(), panel.grid.minor = element_blank(),
       panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.50),
-      panel.border = element_rect(colour = panel_border_colour, fill = NA, linewidth = 0.60),
-      axis.text.x = element_text(size = 15, colour = charcoal, face = "bold"),
-      axis.text.y = element_text(size = 14.5, colour = charcoal),
-      axis.title.y = element_text(size = 17, face = "bold", colour = charcoal, margin = margin(r = 12)),
-      plot.title = element_text(size = 22, face = "bold", colour = pathway_colours[[pathway]], hjust = 0.5, margin = margin(b = 2)),
-      plot.subtitle = element_text(size = 11, colour = muted_text, hjust = 0.5, margin = margin(b = 10)),
-      strip.placement = "outside",
-      strip.text.x.top = element_text(size = 15.5, face = "bold", colour = charcoal, margin = margin(t = 6, b = 6)),
-      strip.background = element_rect(fill = "#E7E9E7", colour = NA),
-      panel.spacing.x = grid::unit(0.9, "lines"),
-      legend.position = "top", legend.text = element_text(size = 13.5, colour = charcoal),
-      legend.margin = margin(0, 0, 6, 0),
-      plot.caption = element_text(size = 10.5, hjust = 0.5, colour = muted_text, margin = margin(t = 12)),
-      plot.margin = margin(12, 18, 14, 14), plot.background = element_rect(fill = "white", colour = NA)
+      panel.border = element_blank(),
+      axis.line.x = element_line(colour = "#8C939E", linewidth = 0.60),
+      axis.line.y = element_line(colour = "#8C939E", linewidth = 0.60),
+      axis.text.x = element_text(size = 12.5, colour = charcoal, face = "bold", margin = margin(t = 6)),
+      axis.text.y = element_text(size = 12.0, colour = charcoal),
+      axis.title.y = element_text(size = 14.5, face = "bold", colour = charcoal, margin = margin(r = 10)),
+      plot.title = element_text(size = 18, face = "bold", colour = pathway_colours[[pathway]], hjust = 0.5, margin = margin(b = 2)),
+      plot.subtitle = element_text(size = 10.5, colour = muted_text, hjust = 0.5, margin = margin(b = 8)),
+      legend.position = "top", legend.text = element_text(size = 12.5, colour = charcoal),
+      legend.margin = margin(0, 0, 4, 0),
+      plot.caption = element_text(size = 9.2, colour = muted_text, hjust = 0.5, lineheight = 1.10, margin = margin(t = 10)),
+      plot.margin = margin(12, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
     )
 
-  plot_grob <- apply_strip_fills(figure_plot)
   stem_barplot <- paste0("Figure_2_DDR_pathway_summary_", pathway, "_barplot")
   stem_boxplot <- paste0("Figure_2_DDR_pathway_summary_", pathway, "_boxplot")
 
-  ggsave(file.path(output_dir, paste0(stem_barplot, ".png")), plot_grob, width = 14, height = 9, dpi = 300, bg = "white", device = ragg::agg_png)
-  ggsave(file.path(output_dir, paste0(stem_barplot, ".pdf")), plot_grob, width = 14, height = 9, bg = "white", device = cairo_pdf)
+  # 1:1 aspect ratio canvas (7.5 x 7.5 inches)
+  ggsave(file.path(output_dir, paste0(stem_barplot, ".png")), figure_plot, width = 7.5, height = 7.5, dpi = 300, bg = "white", device = ragg::agg_png)
+  ggsave(file.path(output_dir, paste0(stem_barplot, ".pdf")), figure_plot, width = 7.5, height = 7.5, bg = "white", device = cairo_pdf)
 
-  ggsave(file.path(output_dir, paste0(stem_boxplot, ".png")), plot_grob, width = 14, height = 9, dpi = 300, bg = "white", device = ragg::agg_png)
-  ggsave(file.path(output_dir, paste0(stem_boxplot, ".pdf")), plot_grob, width = 14, height = 9, bg = "white", device = cairo_pdf)
+  ggsave(file.path(output_dir, paste0(stem_boxplot, ".png")), figure_plot, width = 7.5, height = 7.5, dpi = 300, bg = "white", device = ragg::agg_png)
+  ggsave(file.path(output_dir, paste0(stem_boxplot, ".pdf")), figure_plot, width = 7.5, height = 7.5, bg = "white", device = cairo_pdf)
 
   data.table(
     Pathway = pathway, Dataset = "Lactylome (Kla)",

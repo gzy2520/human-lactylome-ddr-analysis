@@ -2,7 +2,7 @@
 
 更新时间：2026-09-04
 当前修订分支：`figure-enhancement`
-当前修订提交：`feat(figure1): upright layout with sample-level dots for DDR fraction and MKI67 ratios`
+当前修订提交：`feat(curation): update 14 ESCC Kla-DDR pathway classifications and regenerate figures and supplement tables`
 
 ## 先区分两条线
 
@@ -201,7 +201,13 @@ UniProt `BaseAccession`，不能用 Gene Symbol 做集合分析。
     - `cancer cell lines`：381 个蛋白质（刻度线 0, 190, 381）。
     - `normal cell lines`：292 个蛋白质（刻度线 0, 146, 292）。
 - **配套通路总结（Figure 2d/2e & Supplementary Figure S2b/S2c）**：
-  - Figure 2d（Tumor tissues summary）：HR 促进 73 (38.0%)、抑制 8 (4.2%)；NHEJ 46 (24.0%)；BER 27 (14.1%)；NER 23 (12.0%)；AEJ 13 (6.8%)；MMR 12 (6.2%)；FA 11 (5.7%)，与 192 个蛋白质完全对应。
+  - Figure 2d（Tumor tissues summary）：基于用户核对修正版（`Table_14_new_ESCC_Kla_DDR_proteins【核对修正版】.xlsx`）重新校准 14 个新增蛋白功能分类后，HR 促进 74 (38.5%)、抑制 8 (4.2%)；NHEJ 促进 46 (24.0%)、抑制 8 (4.2%)；BER 促进 27 (14.1%)；NER 促进 23 (12.0%)、抑制 2 (1.0%)；AEJ 促进 16 (8.3%)、抑制 6 (3.1%)；MMR 促进 13 (6.8%)；FA 促进 11 (5.7%)，与 192 个蛋白质条目完全对应。
+  - 14 个新蛋白核对修正明细：
+    - `UNG` (`P13051`): AEJ 0 -> 1 (BER=1, AEJ=1; SignedScore = 7)
+    - `UBE2T` (`Q9NPD8`): HR 0 -> 1 (NER=1, FA=1, HR=1; SignedScore = 11)
+    - `FANCD2` (`Q9BXW9`): MMR 0 -> 1, AEJ 0 -> 1, NHEJ 0 -> -1 (MMR=1, FA=1, HR=1, AEJ=1, NHEJ=-1; SignedScore = 11)
+    - `POLD1` (`P28340`): AEJ 0 -> 1 (BER=1, NER=1, MMR=1, HR=1, AEJ=1; SignedScore = 17)
+    - 其余 10 个蛋白评分维持原先设定。
 - **输出目录与文件同步**：
   - 正式出版目录：`results/escc_inclusion_20260903_pxd065830_tumor_reference/formal_figures/Figure_2c_DDR_pathway_matrices_tissues.png/.pdf` 及 `Supplementary_Figure_S2a_DDR_pathway_matrices_cell_lines.png/.pdf`；
   - 同步镜像至候选工作目录：`results/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/`，确保两种查看路径均能直接获取最新图表。

@@ -444,23 +444,42 @@ new_tumor_ids <- setdiff(
   expanded_kla_ddr_venn[In_cancer_tissue == TRUE, BaseAccession],
   tumor_sheet$BaseAccession
 )
-new_s4_rows <- all_s4_rows[BaseAccession %in% new_tumor_ids, ..s4_columns]
-missing_curated_rows <- setdiff(new_tumor_ids, new_s4_rows$BaseAccession)
-if (length(missing_curated_rows)) {
-  fallback_display <- display[match(missing_curated_rows, BaseAccession)]
-  stop_if(all(!is.na(fallback_display$GeneSymbolAudit) & nzchar(fallback_display$GeneSymbolAudit)),
-    "Missing display audit names for new tumor S4 rows.")
-  fallback_rows <- data.table(
-    BaseAccession = missing_curated_rows,
-    GeneSymbol = fallback_display$GeneSymbolAudit,
-    ProteinName = fallback_display$ProteinNameAudit,
-    BER = 0, NER = 0, MMR = 0, FA = 0, HR = 0, AEJ = 0, NHEJ = 0,
-    SignedScore = 0,
-    Note = "Broad DNA-repair/DNA-damage-response GO annotation; no specific seven-pathway seed hit"
-  )
-  new_s4_rows <- rbindlist(list(new_s4_rows, fallback_rows), fill = TRUE)
+
+curated_14_candidates <- c(
+  file.path(scope_dir, "Table_14_new_ESCC_Kla_DDR_proteins_curated.xlsx"),
+  file.path(project_root, "data", "candidate", "Table_14_new_ESCC_Kla_DDR_proteins_curated.xlsx")
+)
+curated_14_path <- curated_14_candidates[file.exists(curated_14_candidates)][1L]
+
+if (!is.na(curated_14_path) && file.exists(curated_14_path)) {
+  curated_14 <- as.data.table(read_excel(curated_14_path, sheet = "14_New_Kla_DDR_Proteins"))
+  stop_if(setequal(curated_14$BaseAccession, new_tumor_ids),
+    "Curated 14 new proteins do not match expected new tumor IDs.")
+  curated_score_mat <- as.matrix(curated_14[, ..pathway_columns])
+  storage.mode(curated_score_mat) <- "numeric"
+  curated_weights <- setNames(seq_along(pathway_columns), pathway_columns)
+  stop_if(identical(as.numeric(curated_14$SignedScore), as.numeric(curated_score_mat %*% curated_weights)),
+    "Curated 14 new proteins SignedScore does not match weighted pathway states.")
+  new_s4_rows <- curated_14[match(new_tumor_ids, BaseAccession), ..s4_columns]
+} else {
+  new_s4_rows <- all_s4_rows[BaseAccession %in% new_tumor_ids, ..s4_columns]
+  missing_curated_rows <- setdiff(new_tumor_ids, new_s4_rows$BaseAccession)
+  if (length(missing_curated_rows)) {
+    fallback_display <- display[match(missing_curated_rows, BaseAccession)]
+    stop_if(all(!is.na(fallback_display$GeneSymbolAudit) & nzchar(fallback_display$GeneSymbolAudit)),
+      "Missing display audit names for new tumor S4 rows.")
+    fallback_rows <- data.table(
+      BaseAccession = missing_curated_rows,
+      GeneSymbol = fallback_display$GeneSymbolAudit,
+      ProteinName = fallback_display$ProteinNameAudit,
+      BER = 0, NER = 0, MMR = 0, FA = 0, HR = 0, AEJ = 0, NHEJ = 0,
+      SignedScore = 0,
+      Note = "Broad DNA-repair/DNA-damage-response GO annotation; no specific seven-pathway seed hit"
+    )
+    new_s4_rows <- rbindlist(list(new_s4_rows, fallback_rows), fill = TRUE)
+  }
+  new_s4_rows <- new_s4_rows[match(new_tumor_ids, BaseAccession), ..s4_columns]
 }
-new_s4_rows <- new_s4_rows[match(new_tumor_ids, BaseAccession), ..s4_columns]
 s4_sheets[["TumorTissues"]] <- rbind(tumor_sheet, new_s4_rows, fill = TRUE)
 setorder(s4_sheets[["TumorTissues"]], SignedScore, BaseAccession)
 stop_if(nrow(s4_sheets[["TumorTissues"]]) == nrow(tumor_sheet) + length(new_tumor_ids),
@@ -674,7 +693,8 @@ sample_design <- rbindlist(list(sample_design, new_sample_design), fill = TRUE)
 setorder(sample_design, RowOrder, PXD, SampleGroup)
 fwrite(sample_design, file.path(candidate_input_dir, "sample_design_30.csv"), na = "")
 
-pathway_scores <- rbindlist(lapply(s4_sheets, function(sheet) {
+sheets_for_scores <- s4_sheets[c("TumorTissues", "NonTumorTissues", "CancerCellLines", "NormalCellLines")]
+pathway_scores <- rbindlist(lapply(sheets_for_scores, function(sheet) {
   sheet[, c("BaseAccession", pathway_order), with = FALSE]
 }), fill = TRUE)
 pathway_scores[, BaseAccession := base_accession(BaseAccession)]

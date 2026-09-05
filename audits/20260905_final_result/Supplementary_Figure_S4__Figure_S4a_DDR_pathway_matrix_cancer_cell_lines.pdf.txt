@@ -1,0 +1,29 @@
+           DDR pathway matrix — cancer cell lines (381 proteins)
+
+BER
+
+
+NER
+
+
+
+
+                                                                         cancer cell lines
+MMR
+
+
+  FA
+
+
+ HR
+
+
+NHEJ
+
+
+ AEJ
+
+       0                           190                             381
+
+                          Lactylated DDR Protein (#)
+

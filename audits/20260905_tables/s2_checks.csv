@@ -1,0 +1,4 @@
+Check,Observed,Expected,Status,Note
+S1_S2_summary_fields,0,0,PASS,Reference fields agree between Table S1 Group_Summary and Table S2 Reference_Group_Summary
+S2_membership_keys,0,0,PASS,No duplicate source-protein keys; Reference_DDR_Membership is all IsDdr=TRUE
+S2_unmapped_reference_ids,1141,0,WARN,"Unmapped ENSEMBLPROT rows remain in normal human lung (595) and normal pregnancy placenta (546); summary counts include them, while BaseAccession-based membership cannot"

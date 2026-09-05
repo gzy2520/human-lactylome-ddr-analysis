@@ -1,0 +1,17 @@
+Scope,Category,Dataset,N,Mean,Median
+baseline30,normal_tissue,Lactylome (Kla),32,4.99941028756421,4.93958817223512
+baseline30,normal_tissue,Whole proteome,62,4.17321680173185,4.03955123408946
+baseline30,cancer_tissue,Lactylome (Kla),6,6.77630272548912,6.7607701029487
+baseline30,cancer_tissue,Whole proteome,13,5.17600269092426,5.22359290670779
+baseline30,cancer_cells,Lactylome (Kla),35,10.2978094962884,10.9254498714653
+baseline30,cancer_cells,Whole proteome,28,6.51140764140617,6.70020969667819
+baseline30,normal_cells,Lactylome (Kla),19,10.5059526172127,10.2661596958175
+baseline30,normal_cells,Whole proteome,15,6.34661681861143,6.36208368915457
+expanded31,normal_tissue,Lactylome (Kla),32,4.99941028756421,4.93958817223512
+expanded31,normal_tissue,Whole proteome,62,4.17321680173185,4.03955123408946
+expanded31,cancer_tissue,Lactylome (Kla),12,6.88726213309519,6.7607701029487
+expanded31,cancer_tissue,Whole proteome,107,5.4900369938105,5.56802873821284
+expanded31,cancer_cells,Lactylome (Kla),35,10.2978094962884,10.9254498714653
+expanded31,cancer_cells,Whole proteome,28,6.51140764140617,6.70020969667819
+expanded31,normal_cells,Lactylome (Kla),19,10.5059526172127,10.2661596958175
+expanded31,normal_cells,Whole proteome,15,6.34661681861143,6.36208368915457

@@ -1,0 +1,36 @@
+                                                                                                 MKI67 / ACTB
+                                                                            Four-category one-way ANOVA q=6.75e-02
+                                                           Whole-proteome source observations; ACTB (beta-actin) used as the denominator
+
+
+
+
+MKI67 protein intensity ratio (log scale)
+                                                                                            n=10                         n=13
+                                                                                                                                                      n=21
+                                            1e+00
+
+
+
+
+                                            1e-01
+
+
+                                                                n=5
+                                            1e-02
+
+
+
+
+                                            1e-03
+
+                                                           non-tumor                       tumor                       normal                       cancer
+                                                            tissues                       tissues                     cell lines                   cell lines
+                                                    Each point is one source-resolved whole-proteome observation.
+                                                    Ratios use exact UniProt accessions MKI67=P46013 and
+                                                    ACTB=P60709
+                                                    with no imputation.
+                                                    The dark horizontal line inside each box is the median and the red horizontal line is the mean.
+                                                    The four-category one-way ANOVA is performed on log10 ratios and BH-adjusted across the three denominators.
+                                                    **** q<0.0001, *** q<0.001, ** q<0.01, * q<0.05.
+

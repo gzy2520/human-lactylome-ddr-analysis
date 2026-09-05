@@ -1,0 +1,4 @@
+Plot,Denominator,Term,Comparison,Test,AnalysisScale,N,NCategory,Df,ResidualDf,FStatistic,PValue,QValueBH,Significance,AdjustmentFamily
+Figure 1 MKI67/ACTB,ACTB,CategoryFactor,Four-category omnibus test,one-way ANOVA,log10(MKI67 / denominator),48,4,3,44,2.99309121810852,0.0408991402607054,0.0408991402607054,*,MKI67 ratio: three omnibus one-way ANOVA tests
+Figure 1 MKI67/TUBB,TUBB,CategoryFactor,Four-category omnibus test,one-way ANOVA,log10(MKI67 / denominator),137,4,3,133,69.2521676016451,4.89216443264931e-27,1.46764932979479e-26,****,MKI67 ratio: three omnibus one-way ANOVA tests
+Figure 1 MKI67/H3C1,H3C1,CategoryFactor,Four-category omnibus test,one-way ANOVA,log10(MKI67 / denominator),79,4,3,75,15.4639622084596,6.33049643843426e-08,9.49574465765139e-08,****,MKI67 ratio: three omnibus one-way ANOVA tests

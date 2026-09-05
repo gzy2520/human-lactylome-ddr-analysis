@@ -1,0 +1,15 @@
+BaseAccession,GeneSymbol,ProteinName,BER,NER,MMR,FA,HR,AEJ,NHEJ,SignedScore,Note
+P23497,SP100,Nuclear autoantigen Sp-100,0,0,0,0,0,0,0,0,-
+P28066,PSMA5,Proteasome subunit alpha type-5 (Macropain zeta chain) (Multicatalytic endopeptidase complex zeta chain) (Proteasome subunit alpha-5) (alpha-5) (Proteasome zeta chain),0,0,0,0,0,0,0,0,Broad DNA-repair/DNA-damage-response GO annotation; no specific seven-pathway seed hit
+P33991,MCM4,DNA replication licensing factor MCM4,0,0,0,0,0,0,0,0,-
+P49736,MCM2,DNA replication licensing factor MCM2,0,0,0,0,0,0,0,0,repair-coupled histone chaperone
+Q13619,CUL4A,Cullin-4A,0,0,0,0,0,0,0,0,stage-dependent NER effects
+Q14807,KIF22,Kinesin-like protein KIF22,0,0,0,0,0,0,0,0,-
+Q8N122,RPTOR,Regulatory-associated protein of mTOR (Raptor) (p150 target of rapamycin (TOR)-scaffold protein),0,0,0,0,0,0,0,0,Broad DNA-repair/DNA-damage-response GO annotation; no specific seven-pathway seed hit
+Q9BVC6,TMEM109,Transmembrane protein 109,0,0,0,0,0,0,0,0,DNA-damage apoptosis
+P13051,UNG,Uracil-DNA glycosylase,1,0,0,0,0,0,0,1,-
+P50613,CDK7,Cyclin-dependent kinase 7,0,1,0,0,0,0,0,2,TFIIH-associated evidence
+P54725,RAD23A,UV excision repair protein RAD23 homolog A,1,1,0,0,0,0,0,3,-
+Q9NPD8,UBE2T,Ubiquitin-conjugating enzyme E2 T,0,1,0,1,0,0,0,6,NER evidence in DT40
+Q9BXW9,FANCD2,Fanconi anemia group D2 protein,0,0,0,1,1,0,0,9,-
+P28340,POLD1,DNA polymerase delta catalytic subunit,1,1,1,0,1,0,0,11,-

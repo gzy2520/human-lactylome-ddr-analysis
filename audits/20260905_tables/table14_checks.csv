@@ -1,0 +1,4 @@
+Check,Rows,Duplicate_BaseAccession,Invalid_state_cells,SignedScore_mismatches,Status
+Table14_csv,14,0,0,0,PASS
+Table14_xlsx,14,0,0,0,PASS
+Table14_csv_xlsx_identity,14,,,,PASS

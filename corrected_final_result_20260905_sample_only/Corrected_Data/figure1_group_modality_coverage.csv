@@ -1,0 +1,63 @@
+PXD,SampleGroup,Category,Dataset,FullRows,SampleRows,NonSampleRows,SampleIDs
+PXD028488,HCT116,cancer_cells,Lactylome (Kla),1,0,1,0
+PXD028488,HCT116,cancer_cells,Whole proteome,1,0,1,0
+PXD028488,TALL-104,cancer_cells,Lactylome (Kla),3,3,0,3
+PXD028488,TALL-104,cancer_cells,Whole proteome,3,3,0,3
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,Lactylome (Kla),9,9,0,9
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,Whole proteome,9,9,0,9
+PXD053474,HCT116,cancer_cells,Lactylome (Kla),1,0,1,0
+PXD053474,HCT116,cancer_cells,Whole proteome,1,0,1,0
+PXD054919,A549,cancer_cells,Lactylome (Kla),3,3,0,3
+PXD054919,A549,cancer_cells,Whole proteome,1,0,1,0
+PXD060185,MCF7,cancer_cells,Lactylome (Kla),1,1,0,1
+PXD060185,MCF7,cancer_cells,Whole proteome,1,0,1,0
+PXD060185,MDA-MB-468,cancer_cells,Lactylome (Kla),1,1,0,1
+PXD060185,MDA-MB-468,cancer_cells,Whole proteome,1,0,1,0
+PXD060185,T-47D,cancer_cells,Lactylome (Kla),1,1,0,1
+PXD060185,T-47D,cancer_cells,Whole proteome,1,0,1,0
+PXD063266,PC-3M,cancer_cells,Lactylome (Kla),3,3,0,3
+PXD063266,PC-3M,cancer_cells,Whole proteome,1,0,1,0
+PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,Lactylome (Kla),2,0,2,0
+PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,Whole proteome,2,2,0,2
+PXD070007,glioblastoma stem cells,cancer_cells,Lactylome (Kla),6,0,6,0
+PXD070007,glioblastoma stem cells,cancer_cells,Whole proteome,6,6,0,6
+PXD078013,RKO WT and GSK3B KO,cancer_cells,Lactylome (Kla),4,0,4,0
+PXD078013,RKO WT and GSK3B KO,cancer_cells,Whole proteome,1,0,1,0
+PXD064038,MEC and NEC ESCC groups,cancer_tissue,Lactylome (Kla),6,6,0,6
+PXD064038,MEC and NEC ESCC groups,cancer_tissue,Whole proteome,94,94,0,94
+PXD066054,prostate cancer,cancer_tissue,Lactylome (Kla),5,5,0,5
+PXD066054,prostate cancer,cancer_tissue,Whole proteome,5,5,0,5
+PXD075377,HCC,cancer_tissue,Lactylome (Kla),1,0,1,0
+PXD075377,HCC,cancer_tissue,Whole proteome,8,8,0,8
+PXD028488,HEK293T,normal_cells,Lactylome (Kla),1,0,1,0
+PXD028488,HEK293T,normal_cells,Whole proteome,1,0,1,0
+PXD028737,HMC3,normal_cells,Lactylome (Kla),2,2,0,2
+PXD028737,HMC3,normal_cells,Whole proteome,2,2,0,2
+PXD058534,pretreated HK-2,normal_cells,Lactylome (Kla),1,0,1,0
+PXD058534,pretreated HK-2,normal_cells,Whole proteome,3,3,0,3
+PXD060185,MCF10A,normal_cells,Lactylome (Kla),1,1,0,1
+PXD060185,MCF10A,normal_cells,Whole proteome,1,0,1,0
+PXD070007,neural stem cells,normal_cells,Lactylome (Kla),2,0,2,0
+PXD070007,neural stem cells,normal_cells,Whole proteome,2,2,0,2
+PXD073311,HUVEC control and Pg infection,normal_cells,Lactylome (Kla),6,0,6,0
+PXD073311,HUVEC control and Pg infection,normal_cells,Whole proteome,3,3,0,3
+PXD078736,HK-2 control and mannitol,normal_cells,Lactylome (Kla),6,6,0,6
+PXD078736,HK-2 control and mannitol,normal_cells,Whole proteome,3,3,0,3
+PXD033146,pathological rotator cuff tendon,normal_tissue,Lactylome (Kla),3,3,0,3
+PXD033146,pathological rotator cuff tendon,normal_tissue,Whole proteome,3,3,0,3
+PXD036307,normal human lung,normal_tissue,Lactylome (Kla),6,6,0,6
+PXD036307,normal human lung,normal_tissue,Whole proteome,1,0,1,0
+PXD046800,adjacent skin,normal_tissue,Lactylome (Kla),4,4,0,4
+PXD046800,adjacent skin,normal_tissue,Whole proteome,4,4,0,4
+PXD046800,hypertrophic scar,normal_tissue,Lactylome (Kla),4,4,0,4
+PXD046800,hypertrophic scar,normal_tissue,Whole proteome,4,4,0,4
+PXD050470,human hippocampus,normal_tissue,Lactylome (Kla),3,3,0,3
+PXD050470,human hippocampus,normal_tissue,Whole proteome,3,3,0,3
+PXD063047,normal pregnancy placenta,normal_tissue,Lactylome (Kla),3,3,0,3
+PXD063047,normal pregnancy placenta,normal_tissue,Whole proteome,1,0,1,0
+PXD064912,human sperm,normal_tissue,Lactylome (Kla),3,3,0,3
+PXD064912,human sperm,normal_tissue,Whole proteome,33,33,0,33
+PXD066054,BPH,normal_tissue,Lactylome (Kla),5,5,0,5
+PXD066054,BPH,normal_tissue,Whole proteome,5,5,0,5
+PXD075377,adjacent liver,normal_tissue,Lactylome (Kla),1,0,1,0
+PXD075377,adjacent liver,normal_tissue,Whole proteome,8,8,0,8

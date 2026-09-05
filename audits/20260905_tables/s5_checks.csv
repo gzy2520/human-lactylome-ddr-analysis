@@ -1,0 +1,5 @@
+Sheet,Rows,Duplicate_BaseAccession,Invalid_state_cells,SignedScore_mismatches,Missing_from_S4,Extra_vs_S4,Status
+NonTumorTissues,183,0,0,0,0,0,PASS
+TumorTissues,192,0,0,0,0,0,PASS
+CancerCellLines,381,0,0,0,0,0,PASS
+NormalCellLines,292,0,0,0,0,0,PASS

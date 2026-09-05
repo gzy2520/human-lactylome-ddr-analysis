@@ -7,11 +7,9 @@
 suppressPackageStartupMessages({
   library(data.table)
   library(dplyr)
-  library(ggVennDiagram)
   library(ggplot2)
   library(patchwork)
   library(readxl)
-  library(tidyr)
 })
 
 set.seed(25)
@@ -26,7 +24,10 @@ input_dir <- normalizePath(
   Sys.getenv("KLA_PUBLICATION_INPUT", unset = file.path(project_root, "data", "publication_input")),
   mustWork = TRUE
 )
-figure_dir <- file.path(project_root, "results", "figures")
+figure_dir <- normalizePath(
+  Sys.getenv("KLA_PUBLICATION_OUTPUT", unset = file.path(project_root, "results", "figures")),
+  mustWork = FALSE
+)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 publication_font <- "Arial Unicode MS"
 
@@ -79,12 +80,14 @@ category_labels <- c(
   cancer_cells = "cancer cell lines",
   normal_cells = "normal cell lines"
 )
-category_counts <- c(
+default_category_counts <- c(
   normal_tissue = 9L,
   cancer_tissue = 2L,
   cancer_cells = 12L,
   normal_cells = 7L
 )
+expected_group_count <- as.integer(Sys.getenv("KLA_PUBLICATION_EXPECTED_GROUPS", unset = "30"))
+category_count_override <- Sys.getenv("KLA_PUBLICATION_CATEGORY_COUNTS", unset = "")
 pathway_order <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
 pathway_weights <- stats::setNames(seq_along(pathway_order), pathway_order)
 role_order <- c("Writer", "Eraser", "Writer-Eraser", "Reader")
@@ -120,7 +123,8 @@ fraction_display_names <- c(
   "PC-3M" = "PC-3M",
   "HCT116 control and Roseburia co-culture" = "HCT116 control/Roseburia co-culture",
   "glioblastoma stem cells" = "Glioblastoma stem cells",
-  "RKO WT and GSK3B KO" = "RKO WT/GSK3B-KO"
+  "RKO WT and GSK3B KO" = "RKO WT/GSK3B-KO",
+  "MEC and NEC ESCC groups" = "ESCC MEC/NEC groups"
 )
 
 pathway_display <- fread(input_path("pathway_display.csv"))
@@ -145,16 +149,31 @@ groups <- fread(input_path("group_summary_30.csv")) |>
       SampleGroup
     )
   )
-assert(nrow(groups) == 30L, "The frozen publication input must start with exactly 30 groups.")
+assert(nrow(groups) == expected_group_count, paste0(
+  "The publication input must contain exactly ", expected_group_count, " groups."
+))
 assert(!anyDuplicated(groups$GroupKey), "Publication groups must be unique PXD/sample-group pairs.")
 assert(
-  setequal(unique(groups$SampleGroup), names(fraction_display_names)),
+  all(unique(groups$SampleGroup) %in% names(fraction_display_names)),
   "Figure 1 requires the historical display label for every publication sample group."
 )
+category_counts <- default_category_counts
+if (nzchar(category_count_override)) {
+  parts <- strsplit(category_count_override, "[;,]", perl = TRUE)[[1L]]
+  parsed <- strsplit(parts, "=", fixed = TRUE)
+  category_counts <- stats::setNames(
+    as.integer(vapply(parsed, `[[`, character(1), 2L)),
+    vapply(parsed, `[[`, character(1), 1L)
+  )
+}
 observed_category_counts <- table(factor(as.character(groups$Category), levels = category_order))
 assert(
   identical(as.integer(observed_category_counts), as.integer(category_counts[category_order])),
-  "Publication group counts must be 9/2/12/7 in manuscript category order."
+  paste0(
+    "Publication group counts must be ",
+    paste(as.integer(category_counts[category_order]), collapse = "/"),
+    " in manuscript category order."
+  )
 )
 
 save_figure <- function(plot, stem, width, height) {
@@ -171,6 +190,10 @@ save_figure <- function(plot, stem, width, height) {
 # Kla bar(s).  Only the input table is new; the colour and layout contract is
 # the one used before the repository was reduced to the final manuscript set.
 reference_rows <- groups |>
+  filter(
+    !is.na(ReferenceDdrFraction) & is.finite(ReferenceDdrFraction) &
+      !is.na(ReferenceProteinCount) & ReferenceProteinCount > 0L
+  ) |>
   mutate(
     ReferenceKey = paste(
       ReferencePXD, ReferenceEvidenceFile, ReferenceProteinCount,
@@ -205,6 +228,7 @@ fraction_data <- bind_rows(reference_rows, kla_rows) |>
     FigureOrder = case_when(
       as.character(Category) == "cancer_tissue" & SampleGroup == "HCC" ~ 1L,
       as.character(Category) == "cancer_tissue" & SampleGroup == "prostate cancer" ~ 2L,
+      as.character(Category) == "cancer_tissue" & SampleGroup == "MEC and NEC ESCC groups" ~ 3L,
       TRUE ~ as.integer(RowOrder) + 2L
     )
   ) |>
@@ -293,7 +317,22 @@ build_role_map <- function() {
 role_map <- build_role_map()
 assert(!anyDuplicated(role_map[c("Role", "BaseAccession")]), "Each regulator role/accession pair must be unique.")
 
-draw_percentile_heatmap <- function(data, value_column, stem, measurement_label, colours) {
+draw_percentile_heatmap <- function(
+    data,
+    value_column,
+    stem,
+    measurement_label,
+    colours,
+    box_colour = NULL,
+    save_unboxed = FALSE,
+    unboxed_stem = NULL
+) {
+  heatmap_category_labels <- c(
+    normal_tissue = "non-tumor tissues",
+    cancer_tissue = "tumor tissues",
+    cancer_cells = "cancer cell lines",
+    normal_cells = "normal cell lines"
+  )
   values <- data |>
     mutate(
       GroupKey = paste(PXD, SampleGroup, sep = "__"),
@@ -312,145 +351,484 @@ draw_percentile_heatmap <- function(data, value_column, stem, measurement_label,
     mutate(
       CategoryLabel = factor(
         as.character(Category), levels = category_order,
-        labels = unname(category_labels[category_order])
+        labels = unname(heatmap_category_labels[category_order])
       ),
       RoleLabel = factor(Role, levels = role_order),
       PlotLabel = factor(PlotLabel, levels = rev(unique(PlotLabel[order(RowOrder)]))),
       DisplayName = factor(DisplayName, levels = unique(role_map$DisplayName))
     )
   assert(nrow(values) > 0L, paste("No values were available for", stem))
-  plot <- ggplot(values, aes(x = DisplayName, y = PlotLabel, fill = Value)) +
-    geom_tile(colour = "white", linewidth = 0.22) +
-    facet_grid(CategoryLabel ~ RoleLabel, scales = "free", space = "free") +
-    scale_fill_gradientn(
-      colours = colours,
-      values = scales::rescale(c(0, 20, 50, 80, 100)),
-      limits = c(0, 100),
-      na.value = "#D9D9D9",
-      name = measurement_label,
-      guide = guide_colourbar(
-        title.position = "left",
-        title.hjust = 1,
-        barwidth = grid::unit(76, "mm"),
-        barheight = grid::unit(4.2, "mm")
+
+  highlight_genes <- c("AARS1", "ACAT2", "KRT18", "SIRT2", "PARK7", "HDAC1", "HDAC2", "BRD4", "SMARCA4", "TRIM33")
+
+  # Construct continuous bounding boxes around the 10 highlighted regulator columns if box_colour is specified
+  box_lines_df <- NULL
+  if (!is.null(box_colour) && nzchar(box_colour)) {
+    box_lines <- list()
+    for (cat_lbl in levels(values$CategoryLabel)) {
+      sub_cat <- values |> filter(CategoryLabel == cat_lbl)
+      n_rows <- n_distinct(sub_cat$PlotLabel)
+      for (role_lbl in levels(values$RoleLabel)) {
+        sub_panel <- sub_cat |> filter(RoleLabel == role_lbl)
+        if (nrow(sub_panel) == 0) next
+        panel_genes <- levels(droplevels(sub_panel$DisplayName))
+        for (g in highlight_genes) {
+          if (g %in% panel_genes) {
+            x_pos <- which(panel_genes == g)
+            # Left border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos - 0.5, xend = x_pos - 0.5, y = 0.5, yend = n_rows + 0.5
+            )
+            # Right border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos + 0.5, xend = x_pos + 0.5, y = 0.5, yend = n_rows + 0.5
+            )
+            # Bottom border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos - 0.5, xend = x_pos + 0.5, y = 0.5, yend = 0.5
+            )
+            # Top border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos - 0.5, xend = x_pos + 0.5, y = n_rows + 0.5, yend = n_rows + 0.5
+            )
+          }
+        }
+      }
+    }
+    box_lines_df <- bind_rows(box_lines)
+    box_lines_df$CategoryLabel <- factor(box_lines_df$CategoryLabel, levels = levels(values$CategoryLabel))
+    box_lines_df$RoleLabel <- factor(box_lines_df$RoleLabel, levels = levels(values$RoleLabel))
+  }
+
+  build_plot <- function(include_boxes, border_col) {
+    p <- ggplot(values, aes(x = DisplayName, y = PlotLabel, fill = Value)) +
+      geom_tile(colour = "white", linewidth = 0.22)
+    if (include_boxes && !is.null(box_lines_df) && nrow(box_lines_df) > 0) {
+      p <- p + geom_segment(
+        data = box_lines_df,
+        aes(x = x, xend = xend, y = y, yend = yend),
+        inherit.aes = FALSE,
+        colour = border_col, linewidth = 1.15
       )
-    ) +
-    labs(x = NULL, y = NULL) +
-    theme_minimal(base_size = 10.5, base_family = publication_font) +
-    theme(
-      panel.grid = element_blank(),
-      strip.text.x = element_text(face = "bold", size = 12),
-      strip.text.y.right = element_text(face = "bold", size = 11, angle = 180),
-      strip.background = element_rect(fill = "#F2F2F2", colour = NA),
-      axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 10.2),
-      axis.text.y = element_text(size = 9.6),
-      legend.position = "bottom",
-      legend.direction = "horizontal",
-      legend.title = element_text(size = 10.8),
-      legend.text = element_text(size = 9.8),
-      plot.margin = margin(10, 12, 10, 10)
-    )
-  save_figure(plot, stem, 15.5, 11.5)
+    }
+    p +
+      facet_grid(CategoryLabel ~ RoleLabel, scales = "free", space = "free") +
+      scale_fill_gradientn(
+        colours = colours,
+        values = scales::rescale(c(0, 20, 50, 80, 100)),
+        limits = c(0, 100),
+        na.value = "#D9D9D9",
+        name = measurement_label,
+        guide = guide_colourbar(
+          title.position = "top",
+          title.hjust = 0,
+          barwidth = grid::unit(5.0, "mm"),
+          barheight = grid::unit(72, "mm")
+        )
+      ) +
+      labs(x = NULL, y = NULL) +
+      theme_minimal(base_size = 10.5, base_family = publication_font) +
+      theme(
+        panel.grid = element_blank(),
+        strip.text.x = element_text(face = "bold", size = 12),
+        strip.text.y.right = element_text(face = "bold", size = 11.0, angle = 90, hjust = 0.5),
+        strip.background = element_rect(fill = "#F2F2F2", colour = NA),
+        axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 10.2),
+        axis.text.y = element_text(size = 9.6),
+        legend.position = "right",
+        legend.direction = "vertical",
+        legend.title = element_text(size = 11.0, face = "bold", margin = margin(b = 8)),
+        legend.text = element_text(size = 9.8),
+        legend.margin = margin(0, 8, 0, 8),
+        plot.margin = margin(10, 14, 10, 10)
+      )
+  }
+
+  main_plot <- build_plot(include_boxes = !is.null(box_colour) && nzchar(box_colour), border_col = box_colour)
+  save_figure(main_plot, stem, 16.5, 11.5)
+
+  if (save_unboxed) {
+    unboxed_plot <- build_plot(include_boxes = FALSE, border_col = NULL)
+    target_unboxed_stem <- if (!is.null(unboxed_stem)) unboxed_stem else paste0(stem, "_no_frame")
+    save_figure(unboxed_plot, target_unboxed_stem, 16.5, 11.5)
+  }
 }
 
 kla_percentiles <- fread(input_path("regulator_kla_percentiles_30.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, RelativeKlaPercentile)
+
+# Blue version: generate framed version with blue frame (#08519C), and also save unboxed version
 draw_percentile_heatmap(
   kla_percentiles, "RelativeKlaPercentile", "Figure_3b_Kla_regulator_percentiles",
-  "Lactylome (Kla) percentile",
-  c("#FFFFFF", "#E8F3FA", "#9ECAE1", "#4292C6", "#08519C")
+  "Lactylome (Kla)\npercentile",
+  c("#FFFFFF", "#E8F3FA", "#9ECAE1", "#4292C6", "#08519C"),
+  box_colour = "#08519C",
+  save_unboxed = TRUE,
+  unboxed_stem = "Figure_3b_Kla_regulator_percentiles_no_frame"
+)
+# Also create explicit alias for blue frame
+file.copy(
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles.png"),
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles_with_blue_frame.png"),
+  overwrite = TRUE
+)
+file.copy(
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles.pdf"),
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles_with_blue_frame.pdf"),
+  overwrite = TRUE
 )
 
 reference_percentiles <- fread(input_path("regulator_reference_percentiles_30.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, WholeProteomeRelativePercentile)
+
+# Red/Orange version: generate framed version (#D73027) and unboxed version
 draw_percentile_heatmap(
   reference_percentiles, "WholeProteomeRelativePercentile", "Figure_3a_reference_regulator_percentiles",
-  "Whole-proteome percentile",
-  c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B")
+  "Whole-proteome\npercentile",
+  c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B"),
+  box_colour = "#D73027",
+  save_unboxed = TRUE,
+  unboxed_stem = "Figure_3a_reference_regulator_percentiles_no_frame"
 )
 
-draw_exact_venn <- function(filename, stem, title) {
+draw_exact_upset <- function(
+    filename,
+    stem,
+    title,
+    mask_order = NULL,
+    x_axis_label = "Intersection rank (bars ordered by size)"
+) {
   membership <- fread(input_path(filename)) |>
     as_tibble()
   membership_columns <- paste0("In_", venn_category_order)
-  assert(all(membership_columns %in% names(membership)), paste("Invalid Venn input:", filename))
-  venn_labels <- c(
-    normal_tissue = "non-tumor\ntissues",
-    cancer_tissue = "tumor\ntissues",
-    cancer_cells = "cancer cell\nlines",
-    normal_cells = "normal\ncell lines"
+  assert(all(membership_columns %in% names(membership)), paste("Invalid four-set membership input:", filename))
+  assert(!anyDuplicated(membership$BaseAccession), paste("Four-set membership contains duplicated accessions:", filename))
+  upset_labels <- c(
+    normal_tissue = "Non-tumor tissues",
+    cancer_tissue = "Tumor tissues",
+    cancer_cells = "Cancer cell lines",
+    normal_cells = "Normal cell lines"
   )
-  venn_colours <- c(
+  upset_colours <- c(
     normal_tissue = "#0072B2",
     cancer_tissue = "#E69F00",
     cancer_cells = "#CC79A7",
     normal_cells = "#009E73"
   )
-  lighten_region_colour <- function(region_id, strength = 0.42) {
-    set_ids <- as.integer(strsplit(region_id, "/", fixed = TRUE)[[1]])
-    rgb_values <- grDevices::col2rgb(unname(venn_colours)[set_ids])
-    base_rgb <- rowMeans(rgb_values)
-    mixed_rgb <- (1 - strength) * 255 + strength * base_rgb
-    grDevices::rgb(mixed_rgb[1], mixed_rgb[2], mixed_rgb[3], maxColorValue = 255)
+  membership_matrix <- vapply(
+    membership_columns,
+    function(column) is_true(membership[[column]]),
+    logical(nrow(membership))
+  )
+  row_masks <- as.integer(membership_matrix %*% c(1L, 2L, 4L, 8L))
+  assert(all(row_masks %in% seq_len(15L)), paste("A four-set membership row is empty:", filename))
+
+  mask_members <- function(mask) {
+    venn_category_order[bitwAnd(mask, bitwShiftL(1L, seq_along(venn_category_order) - 1L)) != 0L]
   }
-  exact_sets <- lapply(venn_category_order, function(category) {
-    membership$BaseAccession[is_true(membership[[paste0("In_", category)]])]
-  })
-  names(exact_sets) <- unname(venn_labels[venn_category_order])
-  plot <- ggVennDiagram(
-    exact_sets,
-    label = "count",
-    label_geom = "text",
-    label_size = 5.5,
-    label_color = "#1D1D1F",
-    label_alpha = 1,
-    label_font = publication_font,
-    set_color = unname(venn_colours[venn_category_order]),
-    set_size = 5.5,
-    edge_size = 0.7,
-    force_upset = FALSE
+  region_names <- vapply(seq_len(15L), function(mask) {
+    members <- mask_members(mask)
+    if (length(members) == length(venn_category_order)) {
+      "all_four"
+    } else {
+      paste0(paste(members, collapse = "_and_"), "_only")
+    }
+  }, character(1))
+  observed_regions <- membership |>
+    count(Region, name = "ProteinCount")
+  observed_region_counts <- observed_regions$ProteinCount[match(region_names, observed_regions$Region)]
+  observed_region_counts[is.na(observed_region_counts)] <- 0L
+  assert(
+    identical(as.integer(observed_region_counts), as.integer(tabulate(row_masks, nbins = 15L))),
+    paste("Four-set membership regions do not agree with the membership flags:", filename)
   )
-  region_ids <- as.character(plot$layers[[1]]$data$id)
-  plot$layers[[1]]$data$region_fill <- vapply(region_ids, lighten_region_colour, character(1))
-  plot$layers[[1]]$mapping <- aes(
-    x = .data$X,
-    y = .data$Y,
-    fill = .data$region_fill,
-    group = .data$id
+
+  intersections <- data.table(
+    Mask = seq_len(15L),
+    ProteinCount = as.integer(tabulate(row_masks, nbins = 15L))
+  )[order(-ProteinCount, Mask)]
+  if (!is.null(mask_order)) {
+    mask_order <- as.integer(mask_order)
+    assert(identical(sort(mask_order), seq_len(15L)), "The shared UpSet order must contain each four-set mask exactly once.")
+    intersections <- intersections[match(mask_order, Mask)]
+  }
+  intersections[, Intersection := .I]
+
+  set_order_bottom_to_top <- rev(venn_category_order)
+  set_membership <- data.table(
+    Set = venn_category_order,
+    SetLabel = unname(upset_labels[venn_category_order]),
+    SetCount = vapply(seq_along(venn_category_order), function(index) {
+      sum(membership_matrix[, index])
+    }, integer(1))
   )
-  plot <- plot +
-    scale_fill_identity(guide = "none") +
-    labs(title = title) +
-    theme_void(base_family = publication_font) +
+  set_membership[, Y := match(Set, set_order_bottom_to_top)]
+  set_axis_breaks <- sort(set_membership$Y)
+  set_axis_labels <- set_membership$SetLabel[order(set_membership$Y)]
+
+  matrix_data <- set_membership[
+    , .(Intersection = intersections$Intersection),
+    by = .(Set, Y)
+  ]
+  matrix_data <- merge(
+    matrix_data,
+    intersections[, .(Intersection, Mask)],
+    by = "Intersection",
+    sort = FALSE
+  )
+  matrix_data[, Present := bitwAnd(
+    Mask,
+    bitwShiftL(1L, match(Set, venn_category_order) - 1L)
+  ) != 0L]
+  connectors <- matrix_data[Present == TRUE, .(
+    YMin = min(Y),
+    YMax = max(Y),
+    N = .N
+  ), by = Intersection][N > 1L]
+
+  x_limits <- c(0.5, nrow(intersections) + 0.5)
+  max_intersection <- max(intersections$ProteinCount)
+  bar_label_y <- ifelse(
+    intersections$ProteinCount == 0L,
+    max(1, max_intersection * 0.025),
+    intersections$ProteinCount
+  )
+  intersections[, LabelY := bar_label_y]
+
+  intersection_breaks <- scales::breaks_pretty(n = 4)(c(0, max_intersection))
+  intersection_breaks <- sort(unique(intersection_breaks[intersection_breaks >= 0 & intersection_breaks <= max_intersection]))
+  if (!length(intersection_breaks) || intersection_breaks[[1]] != 0) {
+    intersection_breaks <- c(0, intersection_breaks)
+  }
+  intersection_axis <- data.frame(
+    X = 0.5,
+    Y = intersection_breaks,
+    Label = scales::label_number(accuracy = 1, big.mark = ",")(intersection_breaks)
+  )
+  intersection_axis_title <- data.frame(
+    X = 0.5,
+    Y = max_intersection / 2,
+    Label = "Intersection size"
+  )
+
+  max_axis_digits <- max(nchar(intersection_axis$Label))
+  axis_title_vjust <- -2.2 - 0.9 * max_axis_digits
+  plot_left_margin <- 32 + 6.5 * max_axis_digits
+
+  # Keep the plotting area identical in the two right-hand panels.  The
+  # intersection y-axis is drawn inside the top panel so its axis grobs do
+  # not shift the bars relative to the membership matrix below.
+  intersection_plot <- ggplot(intersections, aes(x = Intersection, y = ProteinCount)) +
+    geom_col(width = 0.72, fill = "#4B5563") +
+    geom_text(
+      aes(y = LabelY, label = ProteinCount),
+      vjust = -0.28,
+      size = 3.55,
+      family = publication_font,
+      colour = "#252A31"
+    ) +
+    geom_segment(
+      data = intersection_axis,
+      aes(x = 0.5, xend = 0.53, y = Y, yend = Y),
+      inherit.aes = FALSE,
+      colour = "#9AA0A6",
+      linewidth = 0.35
+    ) +
+    geom_text(
+      data = intersection_axis,
+      aes(x = X, y = Y, label = Label),
+      inherit.aes = FALSE,
+      hjust = 1.25,
+      size = 3.1,
+      family = publication_font,
+      colour = "#4B5563"
+    ) +
+    geom_text(
+      data = intersection_axis_title,
+      aes(x = X, y = Y, label = Label),
+      inherit.aes = FALSE,
+      angle = 90,
+      vjust = axis_title_vjust,
+      size = 3.35,
+      family = publication_font,
+      colour = "#30343B"
+    ) +
+    scale_x_continuous(limits = x_limits, breaks = intersections$Intersection, labels = NULL, expand = c(0, 0)) +
+    scale_y_continuous(
+      limits = c(0, max_intersection * 1.16 + 1),
+      breaks = intersection_breaks,
+      expand = c(0, 0)
+    ) +
+    labs(x = NULL, y = NULL) +
+    coord_cartesian(clip = "off") +
+    theme_minimal(base_family = publication_font, base_size = 10.5) +
     theme(
-      plot.background = element_rect(fill = "white", colour = NA),
-      panel.background = element_rect(fill = "white", colour = NA),
-      plot.margin = margin(40, 120, 40, 120),
-      text = element_text(family = publication_font),
-      plot.title = element_text(hjust = 0.5, size = 20, colour = "#111111", margin = margin(b = 7))
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.y = element_line(colour = "#E2E5E9", linewidth = 0.38),
+      axis.text.x = element_blank(),
+      axis.ticks.x = element_blank(),
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      axis.title.y = element_blank(),
+      plot.margin = margin(5, 8, 3, plot_left_margin)
     )
-  plot$coordinates$clip <- "off"
-  save_figure(plot, stem, 11, 8.5)
+
+  set_size_plot <- ggplot(set_membership, aes(x = SetCount, y = Y, fill = Set)) +
+    geom_col(width = 0.64, orientation = "y", colour = "white", linewidth = 0.25) +
+    geom_text(
+      aes(label = SetCount),
+      hjust = -0.10,
+      size = 3.75,
+      family = publication_font,
+      colour = "#30343B"
+    ) +
+    scale_fill_manual(values = upset_colours, guide = "none") +
+    scale_x_continuous(
+      # Reserve enough right-side space for the largest count label. This
+      # prevents lower-left set-size labels from being clipped in UpSet plots.
+      limits = c(0, max(set_membership$SetCount) * 1.32 + 1),
+      breaks = scales::breaks_pretty(n = 3),
+      expand = c(0, 0)
+    ) +
+    scale_y_continuous(
+      limits = c(0.5, length(set_order_bottom_to_top) + 0.5),
+      breaks = set_axis_breaks,
+      labels = set_axis_labels,
+      expand = c(0, 0)
+    ) +
+    labs(x = "Set size", y = NULL) +
+    coord_cartesian(clip = "off") +
+    theme_minimal(base_family = publication_font, base_size = 10.5) +
+    theme(
+      panel.grid.major.y = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_line(colour = "#E2E5E9", linewidth = 0.38),
+      axis.text.x = element_text(size = 9.5, colour = "#4B5563"),
+      axis.text.y = element_text(size = 10.5, colour = "#30343B"),
+      axis.title.x = element_text(size = 11.5, colour = "#30343B", margin = margin(t = 8)),
+      plot.margin = margin(4, 18, 8, 4)
+    )
+
+  matrix_plot <- ggplot(matrix_data, aes(x = Intersection, y = Y)) +
+    geom_point(
+      shape = 21,
+      size = 4.2,
+      fill = "#E2E5E9",
+      colour = "white",
+      stroke = 0.38
+    ) +
+    geom_segment(
+      data = connectors,
+      aes(x = Intersection, xend = Intersection, y = YMin, yend = YMax),
+      inherit.aes = FALSE,
+      colour = "#5B6168",
+      linewidth = 1.05,
+      lineend = "round"
+    ) +
+    geom_point(
+      data = matrix_data[Present == TRUE],
+      aes(fill = Set),
+      shape = 21,
+      size = 4.2,
+      colour = "white",
+      stroke = 0.38
+    ) +
+    scale_fill_manual(values = upset_colours, guide = "none") +
+    scale_x_continuous(
+      limits = x_limits,
+      breaks = intersections$Intersection,
+      labels = intersections$Intersection,
+      expand = c(0, 0)
+    ) +
+    scale_y_continuous(
+      limits = c(0.5, length(set_order_bottom_to_top) + 0.5),
+      breaks = set_membership$Y,
+      labels = NULL,
+      expand = c(0, 0)
+    ) +
+    labs(x = x_axis_label, y = NULL) +
+    theme_minimal(base_family = publication_font, base_size = 10.5) +
+    theme(
+      panel.grid = element_blank(),
+      axis.text.x = element_text(size = 9.5, colour = "#4B5563"),
+      axis.title.x = element_text(size = 11.5, colour = "#30343B", margin = margin(t = 8)),
+      axis.ticks.x = element_line(colour = "#9AA0A6", linewidth = 0.35),
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      plot.margin = margin(4, 8, 8, plot_left_margin)
+    )
+
+  plot <- (plot_spacer() + intersection_plot + set_size_plot + matrix_plot) +
+    plot_layout(ncol = 2, widths = c(3.7, 10), heights = c(1.45, 1.25)) +
+    plot_annotation(
+      title = title,
+      subtitle = "Exact four-set intersections; zero-count combinations are retained",
+      theme = theme(
+        plot.title = element_text(
+          family = publication_font,
+          size = 20,
+          face = "plain",
+          hjust = 0.5,
+          colour = "#111111",
+          margin = margin(b = 2)
+        ),
+        plot.subtitle = element_text(
+          family = publication_font,
+          size = 10.5,
+          hjust = 0.5,
+          colour = "#5B6168",
+          margin = margin(b = 8)
+        ),
+        plot.margin = margin(8, 10, 10, 10)
+      )
+    )
+  save_figure(plot, stem, 13.5, 8.7)
 }
 
-draw_exact_venn("venn_reference_ddr.csv", "Figure_2a_whole_proteome_DDR_Venn", "DDR Proteome")
-draw_exact_venn("venn_kla_ddr.csv", "Figure_2b_Kla_DDR_Venn", "DDR Lactylome")
-draw_exact_venn("venn_reference.csv", "Supplementary_Figure_S1a_whole_proteome_Venn", "Whole Proteome")
-draw_exact_venn("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_Venn", "Whole Lactylome")
+mask_order_from_input <- function(filename) {
+  source_membership <- fread(input_path(filename))
+  source_columns <- paste0("In_", venn_category_order)
+  assert(all(source_columns %in% names(source_membership)), paste("Invalid four-set order input:", filename))
+  source_matrix <- vapply(
+    source_columns,
+    function(column) is_true(source_membership[[column]]),
+    logical(nrow(source_membership))
+  )
+  source_masks <- as.integer(source_matrix %*% c(1L, 2L, 4L, 8L))
+  assert(all(source_masks %in% seq_len(15L)), paste("The shared UpSet order input contains an empty membership row:", filename))
+  order(-tabulate(source_masks, nbins = 15L), seq_len(15L))
+}
+
+kla_ddr_mask_order <- mask_order_from_input("venn_kla_ddr.csv")
+draw_exact_upset(
+  "venn_reference_ddr.csv",
+  "Figure_2a_whole_proteome_DDR_UpSet",
+  "DDR Proteome",
+  mask_order = kla_ddr_mask_order,
+  x_axis_label = "Intersection rank (ordered as DDR lactylome)"
+)
+draw_exact_upset("venn_kla_ddr.csv", "Figure_2b_Kla_DDR_UpSet", "DDR Lactylome")
+draw_exact_upset("venn_reference.csv", "Supplementary_Figure_S1a_whole_proteome_UpSet", "Whole Proteome")
+draw_exact_upset("venn_all_kla.csv", "Supplementary_Figure_S1b_Kla_proteome_UpSet", "Whole Lactylome")
 
 # Four signed pathway matrices reported in the manuscript. The frozen S4
 # ranking workbook is the data source; it is never recalculated by this code.
 kla_ddr_membership <- fread(input_path("venn_kla_ddr.csv"))
-assert(nrow(kla_ddr_membership) == 399L && uniqueN(kla_ddr_membership$BaseAccession) == 399L,
-  "The final Kla-DDR union must contain 399 BaseAccessions."
+assert(nrow(kla_ddr_membership) > 0L && uniqueN(kla_ddr_membership$BaseAccession) == nrow(kla_ddr_membership),
+  "The Kla-DDR membership must contain one row per BaseAccession."
 )
 matrix_specs <- list(
-  list(key = "normal_tissue", sheet = "NonTumorTissues", label = "non-tumor tissues", expected = 183L),
-  list(key = "cancer_tissue", sheet = "TumorTissues", label = "tumor tissues", expected = 178L),
-  list(key = "cancer_cells", sheet = "CancerCellLines", label = "cancer cell lines", expected = 381L),
-  list(key = "normal_cells", sheet = "NormalCellLines", label = "normal cell lines", expected = 292L)
+  list(key = "normal_tissue", sheet = "NonTumorTissues", label = "non-tumor tissues"),
+  list(key = "cancer_tissue", sheet = "TumorTissues", label = "tumor tissues"),
+  list(key = "cancer_cells", sheet = "CancerCellLines", label = "cancer cell lines"),
+  list(key = "normal_cells", sheet = "NormalCellLines", label = "normal cell lines")
 )
 
 pathway_panels <- list()
@@ -460,8 +838,8 @@ for (spec in matrix_specs) {
   panel[, BaseAccession := trimws(as.character(BaseAccession))]
   assert(all(c("BaseAccession", "SignedScore", pathway_order) %in% names(panel)), paste("Frozen S4 is missing required columns in", spec$sheet))
   assert(!anyDuplicated(panel$BaseAccession), paste("Frozen S4 has duplicated BaseAccessions in", spec$sheet))
-  assert(nrow(panel) == spec$expected, paste("Unexpected pathway-matrix size for", spec$label))
   expected_ids <- kla_ddr_membership$BaseAccession[is_true(kla_ddr_membership[[paste0("In_", spec$key)]])]
+  assert(nrow(panel) == length(expected_ids), paste("Unexpected pathway-matrix size for", spec$label))
   assert(setequal(panel$BaseAccession, expected_ids), paste("Frozen S4 membership does not match", spec$label))
   score_matrix <- as.matrix(panel[, ..pathway_order])
   storage.mode(score_matrix) <- "numeric"
@@ -594,4 +972,8 @@ draw_pathway_matrices(c("cancer_cells", "normal_cells"), "Supplementary_Figure_S
 draw_pathway_summary("cancer_cells", "Supplementary_Figure_S2b_DDR_pathway_summary_cancer_cell_lines")
 draw_pathway_summary("normal_cells", "Supplementary_Figure_S2c_DDR_pathway_summary_normal_cell_lines")
 
-message("PASS: rebuilt only manuscript figures from the frozen 30-group publication input.")
+message(
+  "PASS: rebuilt only manuscript figures from the configured ",
+  expected_group_count,
+  "-group publication input."
+)

@@ -1,0 +1,29 @@
+           DDR pathway matrix — normal cell lines (292 proteins)
+
+BER
+
+
+NER
+
+
+
+
+                                                                         normal cell lines
+MMR
+
+
+  FA
+
+
+ HR
+
+
+NHEJ
+
+
+ AEJ
+
+       0                           146                             292
+
+                          Lactylated DDR Protein (#)
+

@@ -1,0 +1,13 @@
+RecordNo,Role,GeneSymbol,BaseAccession,References,MappingSource
+6,Writer,CSRP2BP,Q9H8E8,,UniProtKB reviewed Homo sapiens
+7,Writer,ELP3,Q9H9T3,,UniProtKB reviewed Homo sapiens
+10,Writer,GTF3C4,Q9UKN8,,UniProtKB reviewed Homo sapiens
+22,Eraser,HDAC4,P56524,,UniProtKB reviewed Homo sapiens
+24,Eraser,HDAC5,Q9UQL6,,UniProtKB reviewed Homo sapiens
+25,Eraser,HDAC7,Q8WUI4,,UniProtKB reviewed Homo sapiens
+26,Eraser,HDAC8,Q9BY41,,UniProtKB reviewed Homo sapiens
+27,Eraser,HDAC9,Q9UKV0,,UniProtKB reviewed Homo sapiens
+28,Eraser,HDAC11,Q96DB2,,UniProtKB reviewed Homo sapiens
+32,Eraser,SIRT4,Q9Y6E7,,UniProtKB reviewed Homo sapiens
+41,Writer-Eraser,HDAC10,Q969S8,,UniProtKB reviewed Homo sapiens
+45,Reader,CDYL,Q9Y232,,UniProtKB reviewed Homo sapiens

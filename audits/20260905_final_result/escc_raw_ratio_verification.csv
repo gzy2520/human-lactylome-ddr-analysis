@@ -1,0 +1,4 @@
+Denominator,PositiveDenominator,ValidRatios,StoredRatios,MaxAbsoluteRatioError
+ACTB,5,5,5,3.10862446895044e-15
+TUBB,94,94,94,4.66293670342566e-15
+H3C1,45,45,45,5.10702591327572e-15

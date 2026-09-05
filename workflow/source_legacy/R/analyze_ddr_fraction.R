@@ -256,6 +256,39 @@ extract_pxd050470_reference <- function(path) {
   accessions
 }
 
+extract_pxd065830_tumor_reference <- function(path) {
+  data <- read_excel(
+    path,
+    sheet = "2.a protein raw information",
+    col_names = FALSE
+  )
+  if (nrow(data) < 3L || ncol(data) < 14L) {
+    stop("PXD065830 Dataset1 protein sheet is unexpectedly small: ", path)
+  }
+  headers <- trimws(as.character(unlist(data[2, ], use.names = FALSE)))
+  tumor_columns <- which(grepl("^ESCC-[0-9]+T$", headers))
+  if (length(tumor_columns) != 94L) {
+    stop(
+      "PXD065830 Dataset1 must provide exactly 94 ESCC tumor T columns; found ",
+      length(tumor_columns)
+    )
+  }
+  row_indices <- seq.int(3L, nrow(data))
+  present_matrix <- do.call(cbind, lapply(tumor_columns, function(column) {
+    values <- suppressWarnings(as.numeric(data[[column]][row_indices]))
+    is.finite(values) & values > 0
+  }))
+  keep <- rowSums(present_matrix, na.rm = TRUE) > 0L
+  accessions <- split_accessions(data[[1L]][row_indices][keep])
+  if (length(accessions) != 8083L || anyDuplicated(accessions)) {
+    stop(
+      "PXD065830 ESCC tumor T union must contain 8,083 unique UniProt BaseAccessions; found ",
+      length(accessions)
+    )
+  }
+  accessions
+}
+
 valid_maxquant_rows <- function(data) {
   keep <- rep(TRUE, nrow(data))
   if ("Reverse" %in% names(data)) {
@@ -994,6 +1027,16 @@ reference_set <- function(row) {
       file.path(project_root, row$常规蛋白组证据文件),
       ifelse(group == "HCC", "CISs", "ANTs")
     ))
+  }
+  if (
+    reference_pxd == "PXD065830" &&
+      pxd == "PXD064038" &&
+      group == "MEC and NEC ESCC groups"
+  ) {
+    return(extract_pxd065830_tumor_reference(file.path(
+      project_root,
+      row$常规蛋白组证据文件
+    )))
   }
   if (key %in% names(existing_alias)) {
     return(split_accessions(

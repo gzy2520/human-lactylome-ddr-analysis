@@ -1,0 +1,5 @@
+ProteinLabel,BaseAccession,Role,DisplayName
+MKI67,P46013,numerator,Ki-67
+ACTB,P60709,denominator,beta-actin
+TUBB,P07437,denominator,beta-tubulin
+H3C1,P68431,denominator,histone H3.1

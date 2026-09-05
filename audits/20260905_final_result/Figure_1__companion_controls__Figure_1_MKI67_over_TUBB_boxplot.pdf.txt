@@ -1,0 +1,32 @@
+                                                                          MKI67 / TUBB
+                                                                Four-category one-way ANOVA q = 1.15e-07
+
+
+                                            1e+00
+                                                                                                             n=28
+
+                                                                                            n=13
+
+
+
+
+MKI67 protein intensity ratio (log scale)
+                                            1e-01
+
+
+
+                                                                       n=5
+
+
+                                                      n=5
+                                            1e-02
+
+
+
+
+                                            1e-03
+
+
+                                                    non-tumor         tumor                normal           cancer
+                                                     tissues         tissues              cell lines       cell lines
+

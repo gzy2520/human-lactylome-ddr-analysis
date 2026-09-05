@@ -15,7 +15,10 @@ input_dir <- normalizePath(
   Sys.getenv("KLA_PUBLICATION_INPUT", unset = file.path(project_root, "data", "publication_input")),
   mustWork = TRUE
 )
-output_dir <- file.path(project_root, "results", "supplementary")
+output_dir <- normalizePath(
+  Sys.getenv("KLA_SUPPLEMENTARY_OUTPUT", unset = file.path(project_root, "results", "supplementary")),
+  mustWork = FALSE
+)
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 assert <- function(condition, message) {
@@ -87,7 +90,7 @@ copy_frozen_workbook <- function(filename) {
 }
 
 groups <- fread(input_path("group_summary_30.csv"))
-assert(nrow(groups) == 30L, "Supplementary Tables must begin with exactly 30 Kla groups.")
+assert(nrow(groups) %in% c(30L, 31L), "Supplementary Tables must begin with 30 or 31 Kla groups.")
 kla_membership <- fread(input_path("kla_protein_membership_30.csv"))
 reference_membership <- fread(input_path("reference_protein_membership_30.csv"))
 require_columns(kla_membership, c("PXD", "SampleGroup", "BaseAccession", "IsDdr"), "Kla membership")
@@ -127,12 +130,9 @@ write_workbook(
   "Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx"
 )
 
-# S4 and S5 are author-approved release assets. They are retained byte-for-byte
-# and are not recalculated or reformatted by this workflow.
-copy_frozen_workbook("Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
-copy_frozen_workbook("Supplementary_Table_S5_Lactylation_Regulators.xlsx")
+is_31_group <- nrow(groups) == 31L
 
-# S6: exact four-category memberships, set sizes and all fifteen possible
+# S4 / S6: exact four-category memberships, set sizes and all fifteen possible
 # Venn regions (including regions whose frozen count is zero).
 venn_categories <- c("normal_tissue", "cancer_tissue", "cancer_cells", "normal_cells")
 all_venn_regions <- function() {
@@ -147,13 +147,14 @@ venn_specs <- list(
   list(label = "Reference", file = "venn_reference.csv"),
   list(label = "ReferenceDDR", file = "venn_reference_ddr.csv")
 )
-s6_sheets <- list()
+venn_prefix <- if (is_31_group) "S4" else "S6"
+venn_sheets <- list()
 set_counts <- list()
 region_counts <- list()
 for (spec in venn_specs) {
   membership <- fread(input_path(spec$file))
-  require_columns(membership, c("BaseAccession", "Region", paste0("In_", venn_categories)), paste("S6", spec$label))
-  s6_sheets[[length(s6_sheets) + 1L]] <- list(name = paste0(spec$label, "_Members"), data = membership, table_name = paste0("S6", spec$label, "Members"))
+  require_columns(membership, c("BaseAccession", "Region", paste0("In_", venn_categories)), paste(venn_prefix, spec$label))
+  venn_sheets[[length(venn_sheets) + 1L]] <- list(name = paste0(spec$label, "_Members"), data = membership, table_name = paste0(venn_prefix, spec$label, "Members"))
   set_counts[[length(set_counts) + 1L]] <- data.table(
     Analysis = spec$label,
     Category = venn_categories,
@@ -167,8 +168,51 @@ for (spec in venn_specs) {
     ProteinCount = fifelse(is.na(observed$N[match(regions, observed$Region)]), 0L, observed$N[match(regions, observed$Region)])
   )
 }
-s6_sheets[[length(s6_sheets) + 1L]] <- list(name = "Set_Counts", data = rbindlist(set_counts), table_name = "S6SetCounts")
-s6_sheets[[length(s6_sheets) + 1L]] <- list(name = "Region_Counts", data = rbindlist(region_counts), table_name = "S6RegionCounts")
-write_workbook(s6_sheets, "Supplementary_Table_S6_Venn_Membership.xlsx")
+venn_sheets[[length(venn_sheets) + 1L]] <- list(name = "Set_Counts", data = rbindlist(set_counts), table_name = paste0(venn_prefix, "SetCounts"))
+venn_sheets[[length(venn_sheets) + 1L]] <- list(name = "Region_Counts", data = rbindlist(region_counts), table_name = paste0(venn_prefix, "RegionCounts"))
 
-message("PASS: built Supplementary Tables S1-S3/S6 and copied frozen S4/S5 unchanged.")
+if (is_31_group) {
+  # 31-group candidate scope renumbering requested by teacher:
+  # Table S6 -> Table S4 (Venn Membership)
+  # Table S4 -> Table S5 (Pathway Protein Ranking)
+  # Table S5 -> Table S6 (Lactylation Regulators)
+  # Table S1-S3 remain unchanged.
+  
+  # Remove any obsolete filenames from previous run in output_dir
+  unlink(file.path(output_dir, "Supplementary_Table_S6_Venn_Membership.xlsx"), force = TRUE)
+  
+  # Write Table S4 (Venn Membership)
+  write_workbook(venn_sheets, "Supplementary_Table_S4_Venn_Membership.xlsx")
+  
+  # Table S5: Pathway Protein Ranking (from input S4 or S5)
+  pathway_source <- if (file.exists(input_path("Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx"))) {
+    input_path("Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx")
+  } else {
+    input_path("Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
+  }
+  assert(file.exists(pathway_source), "Missing source pathway ranking workbook in publication input")
+  target_s5 <- file.path(output_dir, "Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx")
+  assert(isTRUE(file.copy(pathway_source, target_s5, overwrite = TRUE)), "Failed to copy S5 Pathway Protein Ranking")
+  
+  # Table S6: Lactylation Regulators (from input S5 or S6)
+  reg_source <- if (file.exists(input_path("Supplementary_Table_S6_Lactylation_Regulators.xlsx"))) {
+    input_path("Supplementary_Table_S6_Lactylation_Regulators.xlsx")
+  } else {
+    input_path("Supplementary_Table_S5_Lactylation_Regulators.xlsx")
+  }
+  assert(file.exists(reg_source), "Missing source regulators workbook in publication input")
+  target_s6 <- file.path(output_dir, "Supplementary_Table_S6_Lactylation_Regulators.xlsx")
+  assert(isTRUE(file.copy(reg_source, target_s6, overwrite = TRUE)), "Failed to copy S6 Lactylation Regulators")
+  
+  # Clean up old S4/S5 names in candidate output if they were the old mapping
+  unlink(file.path(output_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx"), force = TRUE)
+  unlink(file.path(output_dir, "Supplementary_Table_S5_Lactylation_Regulators.xlsx"), force = TRUE)
+  
+  message("PASS: built Supplementary Tables S1-S3, S4 (Venn), S5 (Pathway), S6 (Regulators) for 31-group scope.")
+} else {
+  # 30-group frozen publication scope layout
+  copy_frozen_workbook("Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
+  copy_frozen_workbook("Supplementary_Table_S5_Lactylation_Regulators.xlsx")
+  write_workbook(venn_sheets, "Supplementary_Table_S6_Venn_Membership.xlsx")
+  message("PASS: built Supplementary Tables S1-S3/S6 and copied frozen S4/S5 unchanged.")
+}

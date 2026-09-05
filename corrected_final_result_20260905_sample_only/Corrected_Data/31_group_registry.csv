@@ -1,0 +1,32 @@
+PXD,SampleGroup,Category,RowOrder,FullInputRows,SampleInputRows
+PXD033146,pathological rotator cuff tendon,normal_tissue,1,6,6
+PXD036307,normal human lung,normal_tissue,2,7,6
+PXD046800,hypertrophic scar,normal_tissue,3,8,8
+PXD046800,adjacent skin,normal_tissue,4,8,8
+PXD050470,human hippocampus,normal_tissue,5,6,6
+PXD063047,normal pregnancy placenta,normal_tissue,6,4,3
+PXD064912,human sperm,normal_tissue,7,36,36
+PXD066054,BPH,normal_tissue,8,10,10
+PXD075377,adjacent liver,normal_tissue,9,9,8
+PXD064038,MEC and NEC ESCC groups,cancer_tissue,10,100,100
+PXD066054,prostate cancer,cancer_tissue,11,10,10
+PXD075377,HCC,cancer_tissue,12,9,8
+PXD060185,MCF7,cancer_cells,14,2,1
+PXD028488,HCT116,cancer_cells,15,2,0
+PXD053474,HCT116,cancer_cells,16,2,0
+PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,17,4,2
+PXD028488,TALL-104,cancer_cells,18,6,6
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,19,18,18
+PXD054919,A549,cancer_cells,20,4,3
+PXD060185,MDA-MB-468,cancer_cells,21,2,1
+PXD060185,T-47D,cancer_cells,22,2,1
+PXD063266,PC-3M,cancer_cells,23,4,3
+PXD070007,glioblastoma stem cells,cancer_cells,24,12,6
+PXD078013,RKO WT and GSK3B KO,cancer_cells,25,5,0
+PXD028488,HEK293T,normal_cells,28,2,0
+PXD028737,HMC3,normal_cells,29,4,4
+PXD058534,pretreated HK-2,normal_cells,30,4,3
+PXD078736,HK-2 control and mannitol,normal_cells,31,9,9
+PXD060185,MCF10A,normal_cells,32,2,1
+PXD070007,neural stem cells,normal_cells,33,4,2
+PXD073311,HUVEC control and Pg infection,normal_cells,34,9,3

@@ -1,0 +1,52 @@
+                                                                               Whole Proteome
+                                                  Exact four-set intersections; zero-count combinations are retained
+
+
+
+                                                                              7804
+
+
+
+
+                                                                      6,000          5784
+
+
+
+
+                                                  Intersection size
+                                                                      4,000                 3845
+
+
+
+
+                                                                      2,000
+                                                                                                   1418   1387
+                                                                                                                   1063   1052
+                                                                                                                                   552    434     392       373
+                                                                                                                                                                  170   58   36   29
+                                                                          0
+
+
+
+Non-tumor tissues                         18468
+
+
+
+
+   Tumor tissues           9986
+
+
+
+
+ Cancer cell lines                    14989
+
+
+
+
+ Normal cell lines               11678
+
+
+                     0   10000            20000                                1      2      3      4      5         6      7       8       9      10       11    12    13   14   15
+
+                           Set size                                                                              Intersection rank (bars ordered by size)
+

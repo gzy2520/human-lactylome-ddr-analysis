@@ -1,0 +1,31 @@
+RowOrder,PXD,SampleGroup,FrozenKlaProteinCount,FrozenKlaDdrProteinCount,FrozenKlaDdrFraction,ObservedKlaProteinCount,ObservedKlaDdrProteinCount,ObservedSampleCount,SourceModes,KlaProteinCountMatchesFrozen,KlaDdrProteinCountMatchesFrozen,GroupUnionStatus
+1,PXD033146,pathological rotator cuff tendon,571,30,5.25394045534151,464,23,3,deposited_sample_table,FALSE,FALSE,SAMPLE_SCOPE_DIFFERENCE
+2,PXD036307,normal human lung,474,31,6.54008438818565,474,31,6,deposited_sample_table,TRUE,TRUE,PASS
+3,PXD046800,hypertrophic scar,402,19,4.72636815920398,402,19,4,deposited_sample_table,TRUE,TRUE,PASS
+4,PXD046800,adjacent skin,527,31,5.88235294117647,527,31,4,deposited_sample_table,TRUE,TRUE,PASS
+5,PXD050470,human hippocampus,853,29,3.39976553341149,853,29,3,deposited_supplementary_table,TRUE,TRUE,PASS
+6,PXD063047,normal pregnancy placenta,294,12,4.08163265306122,294,12,3,deposited_sample_table,TRUE,TRUE,PASS
+7,PXD064912,human sperm,231,7,3.03030303030303,231,7,3,deposited_supplementary_table,TRUE,TRUE,PASS
+8,PXD066054,BPH,2118,142,6.70443814919736,2118,142,5,deposited_spectronaut_table,TRUE,TRUE,PASS
+9,PXD075377,adjacent liver,1775,113,6.36619718309859,1775,113,1,deposited_group_union,TRUE,TRUE,PASS
+11,PXD066054,prostate cancer,2125,143,6.72941176470588,2125,143,5,deposited_spectronaut_table,TRUE,TRUE,PASS
+12,PXD075377,HCC,1798,121,6.72969966629588,1798,121,1,deposited_group_union,TRUE,TRUE,PASS
+14,PXD060185,MCF7,1235,132,10.6882591093117,1235,132,1,deposited_sample_table,TRUE,TRUE,PASS
+15,PXD028488,HCT116,240,30,12.5,240,30,1,validated_publication_membership,TRUE,TRUE,PASS
+16,PXD053474,HCT116,590,65,11.0169491525424,590,65,1,validated_publication_membership,TRUE,TRUE,PASS
+17,PXD066351,HCT116 control and Roseburia co-culture,2398,253,10.5504587155963,2398,253,2,deposited_spectronaut_table,TRUE,TRUE,PASS
+18,PXD028488,TALL-104,368,37,10.054347826087,2007,33,3,deposited_sample_table,FALSE,FALSE,SAMPLE_SCOPE_DIFFERENCE
+19,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,2602,285,10.9531129900077,2602,285,9,deposited_sample_table,TRUE,TRUE,PASS
+20,PXD054919,A549,1220,116,9.50819672131148,1220,116,3,deposited_supplementary_table,TRUE,TRUE,PASS
+21,PXD060185,MDA-MB-468,1612,196,12.1588089330025,1612,196,1,deposited_sample_table,TRUE,TRUE,PASS
+22,PXD060185,T-47D,1301,159,12.2213681783244,1301,159,1,deposited_sample_table,TRUE,TRUE,PASS
+23,PXD063266,PC-3M,384,41,10.6770833333333,384,41,3,deposited_supplementary_table,TRUE,TRUE,PASS
+24,PXD070007,glioblastoma stem cells,2564,238,9.2823712948518,2564,238,6,deposited_supplementary_table,TRUE,TRUE,PASS
+25,PXD078013,RKO WT and GSK3B KO,1217,113,9.28512736236647,1217,113,4,deposited_sample_table,TRUE,TRUE,PASS
+28,PXD028488,HEK293T,438,44,10.0456621004566,438,44,1,validated_publication_membership,TRUE,TRUE,PASS
+29,PXD028737,HMC3,1410,157,11.1347517730496,1410,157,2,deposited_sample_table,TRUE,TRUE,PASS
+30,PXD058534,pretreated HK-2,2164,220,10.1663585951941,2164,220,1,deposited_group_union,TRUE,TRUE,PASS
+31,PXD078736,HK-2 control and mannitol,1250,132,10.56,1250,132,6,deposited_sample_table,TRUE,TRUE,PASS
+32,PXD060185,MCF10A,947,115,12.1436114044351,947,115,1,deposited_sample_table,TRUE,TRUE,PASS
+33,PXD070007,neural stem cells,1527,173,11.3294040602489,1527,173,2,deposited_supplementary_table,TRUE,TRUE,PASS
+34,PXD073311,HUVEC control and Pg infection,1911,184,9.62846677132391,1911,184,6,deposited_spectronaut_matrix,TRUE,TRUE,PASS

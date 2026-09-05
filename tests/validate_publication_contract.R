@@ -93,15 +93,15 @@ assert(nrow(s5_role_map) == 49L, "Frozen S5 must retain its 49 unique role/BaseA
 
 figure_stems <- c(
   "Figure_1_DDR_fraction",
-  "Figure_2a_whole_proteome_DDR_Venn",
-  "Figure_2b_Kla_DDR_Venn",
+  "Figure_2a_whole_proteome_DDR_UpSet",
+  "Figure_2b_Kla_DDR_UpSet",
   "Figure_2c_DDR_pathway_matrices_tissues",
   "Figure_2d_DDR_pathway_summary_tumor_tissue",
   "Figure_2e_DDR_pathway_summary_non_tumor_tissue",
   "Figure_3a_reference_regulator_percentiles",
   "Figure_3b_Kla_regulator_percentiles",
-  "Supplementary_Figure_S1a_whole_proteome_Venn",
-  "Supplementary_Figure_S1b_Kla_proteome_Venn",
+  "Supplementary_Figure_S1a_whole_proteome_UpSet",
+  "Supplementary_Figure_S1b_Kla_proteome_UpSet",
   "Supplementary_Figure_S2a_DDR_pathway_matrices_cell_lines",
   "Supplementary_Figure_S2b_DDR_pathway_summary_cancer_cell_lines",
   "Supplementary_Figure_S2c_DDR_pathway_summary_normal_cell_lines"
@@ -168,4 +168,4 @@ for (analysis_name in names(venn_sources)) {
   assert(identical(as.integer(observed_regions$ProteinCount), as.integer(reconstructed)), paste("S6 region counts changed for", analysis_name))
 }
 
-message("PASS: exact 30-group scope, 399 BaseAccessions, four signed pathway panels, manuscript figures, and Tables S1-S6 only.")
+message("PASS: exact 30-group scope, 399 BaseAccessions, four signed pathway panels, UpSet figures, and Tables S1-S6 only.")

@@ -1,0 +1,137 @@
+       Ro                                                 GO-DDR annotated protein fraction (%)
+          t    at
+                    or
+                         cu                          0%      5%          10%        15%           20%
+                              ff
+                                   te
+                                        nd
+                                             on
+
+             Hy
+                p    er
+                                        Lu
+                                             ng
+                       tro
+                              ph
+                                    ic
+                     Ad                  sc
+                                               ar
+                          ja
+                             c     en
+                                        ts
+                    Hi                     kin
+                      pp
+                              oc
+                                   am
+                                     pu
+                                                s
+                              Pl
+                                ac
+                                         en
+                                               ta                                                                         Non-tumor tissues
+                                    Sp
+                                          er
+                                            m
+
+                                         BP
+                     Ad
+                          ja                   H
+                             c     en
+                                        tl
+                                          ive
+                                                 r
+               Pr                   ES
+                 os                       CC
+                         ta
+                              te
+                                   ca
+                                         nc
+                                               er
+
+                                         HC
+                                           C
+                                                                                                                          Tumor tissues
+                            HE
+                               K        29
+                                             3T
+
+             HK                     HM
+                -2                    C3
+                         (p
+                            re
+                               t   re
+                   HK                 a   te
+                      -2                       d)
+                            (m
+                              an
+                                         ni
+                                                                                                        Whole proteome
+                                           to
+                                                l)
+                              M
+             Ne                CF
+                u                10
+                     ra
+                        l                      A
+                                                                                                                          Normal cell lines
+                            st
+                                 em
+                                         ce
+                                               lls
+                                   HU
+                                     VE
+HC                                             C
+  T1
+     16          M
+                                                                                                        Lactylome (Kla)
+        (P          CF
+HC         XD           7
+  T1          02
+     16          84
+        (P           88
+           XD            )
+ HC           05
+    T1           34
+       16            74
+           (R            )
+                                                                                                                                              GO-DDR annotated protein fraction across 31 individual datasets
+
+
+
+
+             os
+                eb
+                   ur
+                      ia
+             TA          )
+                LL
+                   -1
+                      04
+                He
+                   pG
+                        2
+                            A5
+                     M         49
+                      DA
+                         -M
+                           B-
+                                                                                                                          Cancer cell lines
+                             46
+                                8
+                                    T-
+                                      47
+G                                              D
+    lio
+        b   la
+               sto
+                                   PC
+                     m               -3
+                      a                 M
+                            st
+                                 em
+                                         ce
+                                               lls
+
+                                         RK
+                                            O
+

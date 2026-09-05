@@ -130,12 +130,12 @@ p_s1a <- ggplot(values_s1a, aes(x = DatasetXFactor, y = DdrFractionPercentage, f
   geom_boxplot(
     position = position_dodge(width = dodge_w),
     width = 0.58, outlier.shape = NA, colour = charcoal,
-    linewidth = 0.65, median.linewidth = 1.1, alpha = 0.85, na.rm = TRUE
+    linewidth = 0.45, median.linewidth = 0.65, alpha = 0.85, na.rm = TRUE
   ) +
   geom_segment(
     data = s1a_stats,
     aes(x = XPos - 0.13, xend = XPos + 0.13, y = Mean, yend = Mean),
-    inherit.aes = FALSE, colour = mean_colour, linewidth = 1.25
+    inherit.aes = FALSE, colour = mean_colour, linewidth = 0.70
   ) +
   geom_point(
     aes(fill = Dataset),
@@ -246,12 +246,12 @@ p_s1b <- ggplot(values_s1b, aes(x = DatasetXFactor, y = Ratio, fill = Category))
   geom_boxplot(
     aes(group = DatasetXFactor),
     width = 0.52, outlier.shape = NA, colour = charcoal,
-    linewidth = 0.70, median.linewidth = 1.25, alpha = 0.85, na.rm = TRUE
+    linewidth = 0.45, median.linewidth = 0.65, alpha = 0.85, na.rm = TRUE
   ) +
   geom_segment(
     data = s1b_stats,
     aes(x = as.numeric(DatasetXFactor) - 0.20, xend = as.numeric(DatasetXFactor) + 0.20, y = Mean, yend = Mean),
-    inherit.aes = FALSE, colour = mean_colour, linewidth = 1.35
+    inherit.aes = FALSE, colour = mean_colour, linewidth = 0.70
   ) +
   geom_point(
     aes(group = DatasetXFactor),

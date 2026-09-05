@@ -110,22 +110,22 @@ figure_plot <- ggplot(values, aes(x = CategoryLabel, y = DdrFractionPercentage, 
   geom_boxplot(
     position = position_dodge(width = dodge_width),
     width = 0.58, outlier.shape = NA, colour = charcoal,
-    linewidth = 0.82, median.linewidth = 1.35, alpha = 0.82, na.rm = TRUE
+    linewidth = 0.55, median.linewidth = 0.75, alpha = 0.82, na.rm = TRUE
   ) +
   geom_segment(
     data = summary_stats,
     aes(x = XPos - 0.16, xend = XPos + 0.16, y = Mean, yend = Mean),
-    inherit.aes = FALSE, colour = mean_colour, linewidth = 1.55
+    inherit.aes = FALSE, colour = mean_colour, linewidth = 0.80
   ) +
   geom_point(
     aes(fill = Dataset),
     position = position_jitterdodge(jitter.width = 0.14, dodge.width = dodge_width, seed = 25),
-    shape = 21, size = 2.8, stroke = 0.58, colour = "white", alpha = 0.88, na.rm = TRUE
+    shape = 21, size = 2.6, stroke = 0.50, colour = "white", alpha = 0.88, na.rm = TRUE
   ) +
   geom_text(
     data = summary_stats,
     aes(x = XPos, y = y_limit * 0.94, label = paste0("n=", N)),
-    inherit.aes = FALSE, size = 4.0, family = publication_font, colour = muted_text, fontface = "bold"
+    inherit.aes = FALSE, size = 3.8, family = publication_font, colour = muted_text, fontface = "bold"
   ) +
   scale_fill_manual(values = c("Whole proteome" = whole_proteome_colour, "Lactylome (Kla)" = kla_colour), breaks = dataset_order) +
   scale_y_continuous(limits = c(0, y_limit), breaks = scales::pretty_breaks(n = 5), labels = function(y) paste0(y, "%"), expand = expansion(mult = c(0, 0))) +
@@ -134,20 +134,7 @@ figure_plot <- ggplot(values, aes(x = CategoryLabel, y = DdrFractionPercentage, 
     title = "DDR annotated protein fraction across four biological categories",
     subtitle = subtitle_text,
     x = NULL, y = "GO-DDR annotated protein fraction (%)", fill = NULL,
-    caption = paste(
-      "Each point is one source-resolved sample observation. Dark box line = median; red horizontal line = mean.",
-      "Four-category omnibus ANOVA tests whether DDR fractions differ across the four biological categories",
-      paste0(
-        "(Two-way ANOVA Category factor F = ", format_f_stat(cat_row$FStatistic[[1L]]),
-        ", ", format_anova_p(cat_row$PValue[[1L]]), ", ", cat_row$Significance[[1L]], "; ",
-        "Kla F = ", format_f_stat(kla_row$FStatistic[[1L]]),
-        ", p = ", formatC(kla_row$PValue[[1L]], format = "e", digits = 2), "; ",
-        "Whole proteome F = ", format_f_stat(wp_row$FStatistic[[1L]]),
-        ", p = ", formatC(wp_row$PValue[[1L]], format = "e", digits = 2),
-        "; **** p < 0.0001)."
-      ),
-      sep = "\n"
-    )
+    caption = NULL
   ) +
   theme_minimal(base_size = 14, base_family = publication_font) +
   theme(
@@ -156,16 +143,15 @@ figure_plot <- ggplot(values, aes(x = CategoryLabel, y = DdrFractionPercentage, 
     panel.border = element_blank(),
     axis.line.x = element_line(colour = "#8C939E", linewidth = 0.60),
     axis.line.y = element_line(colour = "#8C939E", linewidth = 0.60),
-    axis.text.x = element_text(size = 13.5, colour = charcoal, face = "bold", margin = margin(t = 6)),
-    axis.text.y = element_text(size = 13.5, colour = charcoal),
-    axis.title.y = element_text(size = 16, face = "bold", colour = charcoal, margin = margin(r = 10)),
-    plot.title = element_text(size = 17, face = "bold", colour = charcoal, hjust = 0.5, margin = margin(b = 4)),
-    plot.subtitle = element_text(size = 12.5, colour = muted_text, hjust = 0.5, margin = margin(b = 10)),
+    axis.text.x = element_text(size = 13.0, colour = charcoal, face = "bold", margin = margin(t = 6)),
+    axis.text.y = element_text(size = 13.0, colour = charcoal),
+    axis.title.y = element_text(size = 15, face = "bold", colour = charcoal, margin = margin(r = 10)),
+    plot.title = element_text(size = 16.5, face = "bold", colour = charcoal, hjust = 0.5, margin = margin(b = 4)),
+    plot.subtitle = element_text(size = 12.0, colour = muted_text, hjust = 0.5, margin = margin(b = 10)),
     legend.position = "top", legend.direction = "horizontal",
-    legend.text = element_text(size = 13.5, colour = charcoal),
+    legend.text = element_text(size = 13.0, colour = charcoal),
     legend.key.spacing.x = grid::unit(0.35, "cm"), legend.background = element_rect(fill = "white", colour = NA),
     legend.margin = margin(1, 0, 4, 0),
-    plot.caption = element_text(size = 9.8, hjust = 0.5, colour = charcoal, lineheight = 1.15, margin = margin(t = 10)),
     plot.margin = margin(10, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
   )
 

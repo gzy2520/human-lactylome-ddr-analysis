@@ -317,12 +317,21 @@ build_role_map <- function() {
 role_map <- build_role_map()
 assert(!anyDuplicated(role_map[c("Role", "BaseAccession")]), "Each regulator role/accession pair must be unique.")
 
-draw_percentile_heatmap <- function(data, value_column, stem, measurement_label, colours) {
+draw_percentile_heatmap <- function(
+    data,
+    value_column,
+    stem,
+    measurement_label,
+    colours,
+    box_colour = NULL,
+    save_unboxed = FALSE,
+    unboxed_stem = NULL
+) {
   heatmap_category_labels <- c(
-    normal_tissue = "non-tumor\ntissues",
-    cancer_tissue = "tumor\ntissues",
-    cancer_cells = "cancer\ncell lines",
-    normal_cells = "normal\ncell lines"
+    normal_tissue = "non-tumor tissues",
+    cancer_tissue = "tumor tissues",
+    cancer_cells = "cancer cell lines",
+    normal_cells = "normal cell lines"
   )
   values <- data |>
     mutate(
@@ -352,102 +361,140 @@ draw_percentile_heatmap <- function(data, value_column, stem, measurement_label,
 
   highlight_genes <- c("AARS1", "ACAT2", "KRT18", "SIRT2", "PARK7", "HDAC1", "HDAC2", "BRD4", "SMARCA4", "TRIM33")
 
-  # Construct continuous bounding boxes around the 10 highlighted regulator columns
-  box_lines <- list()
-  for (cat_lbl in levels(values$CategoryLabel)) {
-    sub_cat <- values |> filter(CategoryLabel == cat_lbl)
-    n_rows <- n_distinct(sub_cat$PlotLabel)
-    for (role_lbl in levels(values$RoleLabel)) {
-      sub_panel <- sub_cat |> filter(RoleLabel == role_lbl)
-      if (nrow(sub_panel) == 0) next
-      panel_genes <- levels(droplevels(sub_panel$DisplayName))
-      for (g in highlight_genes) {
-        if (g %in% panel_genes) {
-          x_pos <- which(panel_genes == g)
-          # Left border
-          box_lines[[length(box_lines) + 1]] <- data.frame(
-            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
-            x = x_pos - 0.5, xend = x_pos - 0.5, y = 0.5, yend = n_rows + 0.5
-          )
-          # Right border
-          box_lines[[length(box_lines) + 1]] <- data.frame(
-            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
-            x = x_pos + 0.5, xend = x_pos + 0.5, y = 0.5, yend = n_rows + 0.5
-          )
-          # Bottom border
-          box_lines[[length(box_lines) + 1]] <- data.frame(
-            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
-            x = x_pos - 0.5, xend = x_pos + 0.5, y = 0.5, yend = 0.5
-          )
-          # Top border
-          box_lines[[length(box_lines) + 1]] <- data.frame(
-            CategoryLabel = cat_lbl, RoleLabel = role_lbl,
-            x = x_pos - 0.5, xend = x_pos + 0.5, y = n_rows + 0.5, yend = n_rows + 0.5
-          )
+  # Construct continuous bounding boxes around the 10 highlighted regulator columns if box_colour is specified
+  box_lines_df <- NULL
+  if (!is.null(box_colour) && nzchar(box_colour)) {
+    box_lines <- list()
+    for (cat_lbl in levels(values$CategoryLabel)) {
+      sub_cat <- values |> filter(CategoryLabel == cat_lbl)
+      n_rows <- n_distinct(sub_cat$PlotLabel)
+      for (role_lbl in levels(values$RoleLabel)) {
+        sub_panel <- sub_cat |> filter(RoleLabel == role_lbl)
+        if (nrow(sub_panel) == 0) next
+        panel_genes <- levels(droplevels(sub_panel$DisplayName))
+        for (g in highlight_genes) {
+          if (g %in% panel_genes) {
+            x_pos <- which(panel_genes == g)
+            # Left border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos - 0.5, xend = x_pos - 0.5, y = 0.5, yend = n_rows + 0.5
+            )
+            # Right border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos + 0.5, xend = x_pos + 0.5, y = 0.5, yend = n_rows + 0.5
+            )
+            # Bottom border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos - 0.5, xend = x_pos + 0.5, y = 0.5, yend = 0.5
+            )
+            # Top border
+            box_lines[[length(box_lines) + 1]] <- data.frame(
+              CategoryLabel = cat_lbl, RoleLabel = role_lbl,
+              x = x_pos - 0.5, xend = x_pos + 0.5, y = n_rows + 0.5, yend = n_rows + 0.5
+            )
+          }
         }
       }
     }
+    box_lines_df <- bind_rows(box_lines)
+    box_lines_df$CategoryLabel <- factor(box_lines_df$CategoryLabel, levels = levels(values$CategoryLabel))
+    box_lines_df$RoleLabel <- factor(box_lines_df$RoleLabel, levels = levels(values$RoleLabel))
   }
-  box_lines_df <- bind_rows(box_lines)
-  box_lines_df$CategoryLabel <- factor(box_lines_df$CategoryLabel, levels = levels(values$CategoryLabel))
-  box_lines_df$RoleLabel <- factor(box_lines_df$RoleLabel, levels = levels(values$RoleLabel))
 
-  plot <- ggplot(values, aes(x = DisplayName, y = PlotLabel, fill = Value)) +
-    geom_tile(colour = "white", linewidth = 0.22) +
-    geom_segment(
-      data = box_lines_df,
-      aes(x = x, xend = xend, y = y, yend = yend),
-      inherit.aes = FALSE,
-      colour = "#D73027", linewidth = 1.15
-    ) +
-    facet_grid(CategoryLabel ~ RoleLabel, scales = "free", space = "free") +
-    scale_fill_gradientn(
-      colours = colours,
-      values = scales::rescale(c(0, 20, 50, 80, 100)),
-      limits = c(0, 100),
-      na.value = "#D9D9D9",
-      name = measurement_label,
-      guide = guide_colourbar(
-        title.position = "left",
-        title.hjust = 1,
-        barwidth = grid::unit(76, "mm"),
-        barheight = grid::unit(4.2, "mm")
+  build_plot <- function(include_boxes, border_col) {
+    p <- ggplot(values, aes(x = DisplayName, y = PlotLabel, fill = Value)) +
+      geom_tile(colour = "white", linewidth = 0.22)
+    if (include_boxes && !is.null(box_lines_df) && nrow(box_lines_df) > 0) {
+      p <- p + geom_segment(
+        data = box_lines_df,
+        aes(x = x, xend = xend, y = y, yend = yend),
+        inherit.aes = FALSE,
+        colour = border_col, linewidth = 1.15
       )
-    ) +
-    labs(x = NULL, y = NULL) +
-    theme_minimal(base_size = 10.5, base_family = publication_font) +
-    theme(
-      panel.grid = element_blank(),
-      strip.text.x = element_text(face = "bold", size = 12),
-      strip.text.y.right = element_text(face = "bold", size = 10.5, angle = 0, hjust = 0),
-      strip.background = element_rect(fill = "#F2F2F2", colour = NA),
-      axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 10.2),
-      axis.text.y = element_text(size = 9.6),
-      legend.position = "bottom",
-      legend.direction = "horizontal",
-      legend.title = element_text(size = 10.8),
-      legend.text = element_text(size = 9.8),
-      plot.margin = margin(10, 14, 10, 10)
-    )
-  save_figure(plot, stem, 16.0, 11.5)
+    }
+    p +
+      facet_grid(CategoryLabel ~ RoleLabel, scales = "free", space = "free") +
+      scale_fill_gradientn(
+        colours = colours,
+        values = scales::rescale(c(0, 20, 50, 80, 100)),
+        limits = c(0, 100),
+        na.value = "#D9D9D9",
+        name = measurement_label,
+        guide = guide_colourbar(
+          title.position = "top",
+          title.hjust = 0,
+          barwidth = grid::unit(5.0, "mm"),
+          barheight = grid::unit(72, "mm")
+        )
+      ) +
+      labs(x = NULL, y = NULL) +
+      theme_minimal(base_size = 10.5, base_family = publication_font) +
+      theme(
+        panel.grid = element_blank(),
+        strip.text.x = element_text(face = "bold", size = 12),
+        strip.text.y.right = element_text(face = "bold", size = 11.0, angle = 90, hjust = 0.5),
+        strip.background = element_rect(fill = "#F2F2F2", colour = NA),
+        axis.text.x = element_text(angle = 55, hjust = 1, vjust = 1, size = 10.2),
+        axis.text.y = element_text(size = 9.6),
+        legend.position = "right",
+        legend.direction = "vertical",
+        legend.title = element_text(size = 11.0, face = "bold", margin = margin(b = 8)),
+        legend.text = element_text(size = 9.8),
+        legend.margin = margin(0, 8, 0, 8),
+        plot.margin = margin(10, 14, 10, 10)
+      )
+  }
+
+  main_plot <- build_plot(include_boxes = !is.null(box_colour) && nzchar(box_colour), border_col = box_colour)
+  save_figure(main_plot, stem, 16.5, 11.5)
+
+  if (save_unboxed) {
+    unboxed_plot <- build_plot(include_boxes = FALSE, border_col = NULL)
+    target_unboxed_stem <- if (!is.null(unboxed_stem)) unboxed_stem else paste0(stem, "_no_frame")
+    save_figure(unboxed_plot, target_unboxed_stem, 16.5, 11.5)
+  }
 }
 
 kla_percentiles <- fread(input_path("regulator_kla_percentiles_30.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, RelativeKlaPercentile)
+
+# Blue version: generate framed version with blue frame (#08519C), and also save unboxed version
 draw_percentile_heatmap(
   kla_percentiles, "RelativeKlaPercentile", "Figure_3b_Kla_regulator_percentiles",
-  "Lactylome (Kla) percentile",
-  c("#FFFFFF", "#E8F3FA", "#9ECAE1", "#4292C6", "#08519C")
+  "Lactylome (Kla)\npercentile",
+  c("#FFFFFF", "#E8F3FA", "#9ECAE1", "#4292C6", "#08519C"),
+  box_colour = "#08519C",
+  save_unboxed = TRUE,
+  unboxed_stem = "Figure_3b_Kla_regulator_percentiles_no_frame"
+)
+# Also create explicit alias for blue frame
+file.copy(
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles.png"),
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles_with_blue_frame.png"),
+  overwrite = TRUE
+)
+file.copy(
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles.pdf"),
+  file.path(figure_dir, "Figure_3b_Kla_regulator_percentiles_with_blue_frame.pdf"),
+  overwrite = TRUE
 )
 
 reference_percentiles <- fread(input_path("regulator_reference_percentiles_30.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, WholeProteomeRelativePercentile)
+
+# Red/Orange version: generate framed version (#D73027) and unboxed version
 draw_percentile_heatmap(
   reference_percentiles, "WholeProteomeRelativePercentile", "Figure_3a_reference_regulator_percentiles",
-  "Whole-proteome percentile",
-  c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B")
+  "Whole-proteome\npercentile",
+  c("#FFFFFF", "#FFF3E0", "#FDBB84", "#FC8D59", "#B2182B"),
+  box_colour = "#D73027",
+  save_unboxed = TRUE,
+  unboxed_stem = "Figure_3a_reference_regulator_percentiles_no_frame"
 )
 
 draw_exact_upset <- function(

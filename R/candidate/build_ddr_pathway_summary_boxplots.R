@@ -79,12 +79,12 @@ make_subtitle <- function(pathway) {
   terms <- pathway_anova[Pathway == pathway]
   q_for <- function(term) {
     row <- terms[Term == term]
-    if (!nrow(row)) "NA" else paste0(row$Significance[[1L]], " (q=", formatC(row$QValueBH[[1L]], format = "e", digits = 2), ")")
+    if (!nrow(row)) "NA" else row$Significance[[1L]]
   }
   paste0(
-    "Two-way ANOVA, BH-adjusted: category ", q_for("CategoryFactor"),
-    "; direction ", q_for("DirectionFactor"),
-    "; category × direction ", q_for("CategoryFactor:DirectionFactor")
+    "Two-way ANOVA (BH): Category ", q_for("CategoryFactor"),
+    " | Direction ", q_for("DirectionFactor"),
+    " | Interaction ", q_for("CategoryFactor:DirectionFactor")
   )
 }
 
@@ -146,11 +146,11 @@ manifest <- rbindlist(lapply(pathway_order, function(pathway) {
     geom_errorbar(
       data = stats, aes(x = CategoryLabel, ymin = ErrorMin, ymax = ErrorMax, group = Direction),
       position = position_dodge(width = dodge_w),
-      width = 0.22, linewidth = 0.85, colour = charcoal
+      width = 0.22, linewidth = 0.60, colour = charcoal
     ) +
     geom_text(
       data = counts, aes(x = CategoryLabel, y = LabelY, label = paste0("n=", N)),
-      inherit.aes = FALSE, hjust = 0.5, size = 4.0, family = publication_font, colour = muted_text, fontface = "bold"
+      inherit.aes = FALSE, hjust = 0.5, size = 3.8, family = publication_font, colour = muted_text, fontface = "bold"
     ) +
     scale_fill_manual(values = c("Pro" = pathway_colours[[pathway]], "Inh" = down_colour)) +
     scale_y_continuous(
@@ -163,11 +163,7 @@ manifest <- rbindlist(lapply(pathway_order, function(pathway) {
     labs(
       title = paste0(pathway, " pathway"), subtitle = make_subtitle(pathway),
       x = NULL, y = "Relative portion of Kla-DDR proteins (%)",
-      caption = paste(
-        "Bars represent group mean; error bars indicate ± SEM; points represent individual source-resolved Kla observations.",
-        "Pro = positive fraction; Inh = negative fraction. Fractions use each sample's Kla-DDR protein count as denominator.",
-        sep = "\n"
-      )
+      caption = NULL
     ) +
     theme_minimal(base_size = 13.5, base_family = publication_font) +
     theme(
@@ -176,15 +172,14 @@ manifest <- rbindlist(lapply(pathway_order, function(pathway) {
       panel.border = element_blank(),
       axis.line.x = element_line(colour = "#8C939E", linewidth = 0.60),
       axis.line.y = element_line(colour = "#8C939E", linewidth = 0.60),
-      axis.text.x = element_text(size = 12.5, colour = charcoal, face = "bold", margin = margin(t = 6)),
+      axis.text.x = element_text(size = 12.0, colour = charcoal, face = "bold", margin = margin(t = 6)),
       axis.text.y = element_text(size = 12.0, colour = charcoal),
-      axis.title.y = element_text(size = 14.5, face = "bold", colour = charcoal, margin = margin(r = 10)),
-      plot.title = element_text(size = 18, face = "bold", colour = pathway_colours[[pathway]], hjust = 0.5, margin = margin(b = 2)),
+      axis.title.y = element_text(size = 14.0, face = "bold", colour = charcoal, margin = margin(r = 10)),
+      plot.title = element_text(size = 17, face = "bold", colour = pathway_colours[[pathway]], hjust = 0.5, margin = margin(b = 2)),
       plot.subtitle = element_text(size = 10.5, colour = muted_text, hjust = 0.5, margin = margin(b = 8)),
-      legend.position = "top", legend.text = element_text(size = 12.5, colour = charcoal),
+      legend.position = "top", legend.text = element_text(size = 12.0, colour = charcoal),
       legend.margin = margin(0, 0, 4, 0),
-      plot.caption = element_text(size = 9.2, colour = muted_text, hjust = 0.5, lineheight = 1.10, margin = margin(t = 10)),
-      plot.margin = margin(12, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
+      plot.margin = margin(10, 14, 10, 10), plot.background = element_rect(fill = "white", colour = NA)
     )
 
   stem_barplot <- paste0("Figure_2_DDR_pathway_summary_", pathway, "_barplot")

@@ -36,10 +36,10 @@ category_labels <- c(
   cancer_cells = "cancer\ncell lines"
 )
 category_fills <- c(
-  normal_tissue = "#DCE9E2",
-  cancer_tissue = "#F0DEDE",
-  normal_cells = "#E7E1EE",
-  cancer_cells = "#EEE4D2"
+  normal_tissue = "#0072B2",
+  cancer_tissue = "#D55E00",
+  normal_cells  = "#009E73",
+  cancer_cells  = "#CC79A7"
 )
 denominator_order <- c("ACTB", "TUBB", "H3C1")
 denominator_titles <- c(
@@ -149,33 +149,11 @@ make_plot <- function(denominator) {
   )
 
   subtitle_text <- if (show_significance) {
-    paste0(
-      "Four-category one-way ANOVA q=", format_q_value(global_q),
-      "\nWhole-proteome source observations; ", denominator_display[[denominator]],
-      " used as the denominator"
-    )
+    paste0("Four-category one-way ANOVA q = ", format_q_value(global_q))
   } else {
-    paste0(
-      "Whole-proteome source observations; ", denominator_display[[denominator]],
-      " used as the denominator"
-    )
+    NULL
   }
-  caption_text <- paste(
-    "Each point is one source-resolved whole-proteome observation.",
-    "Ratios use exact UniProt accessions MKI67=P46013 and",
-    switch(denominator, ACTB = "ACTB=P60709", TUBB = "TUBB=P07437", H3C1 = "H3C1=P68431"),
-    "with no imputation.",
-    "The dark horizontal line inside each box is the median and the red horizontal line is the mean.",
-    sep = "\n"
-  )
-  if (show_significance) {
-    caption_text <- paste(
-      caption_text,
-      "The four-category one-way ANOVA is performed on log10 ratios and BH-adjusted across the three denominators.",
-      "**** q<0.0001, *** q<0.001, ** q<0.01, * q<0.05.",
-      sep = "\n"
-    )
-  }
+  caption_text <- NULL
 
   plot <- ggplot(panel, aes(x = X, y = Ratio, fill = Category)) +
     geom_vline(xintercept = c(1.5, 2.5, 3.5), colour = "#E5E7EB", linetype = "dashed", linewidth = 0.5) +
@@ -184,9 +162,9 @@ make_plot <- function(denominator) {
       width = 0.58,
       outlier.shape = NA,
       colour = charcoal,
-      linewidth = 0.85,
-      median.linewidth = 1.40,
-      alpha = 0.90,
+      linewidth = 0.55,
+      median.linewidth = 0.75,
+      alpha = 0.82,
       orientation = "x",
       na.rm = TRUE
     ) +
@@ -195,7 +173,7 @@ make_plot <- function(denominator) {
       aes(x = x_left, xend = x_right, y = Median, yend = Median),
       inherit.aes = FALSE,
       colour = charcoal,
-      linewidth = 1.15,
+      linewidth = 0.75,
       lineend = "round"
     ) +
     geom_segment(
@@ -203,17 +181,17 @@ make_plot <- function(denominator) {
       aes(x = x_left, xend = x_right, y = Mean, yend = Mean),
       inherit.aes = FALSE,
       colour = "#C0392B",
-      linewidth = 1.55,
+      linewidth = 0.80,
       lineend = "round"
     ) +
     geom_point(
       aes(group = Category),
       position = position_jitter(width = 0.095, height = 0, seed = 25),
       shape = 21,
-      size = 3.0,
-      stroke = 0.65,
+      size = 2.6,
+      stroke = 0.50,
       colour = "white",
-      alpha = 0.95,
+      alpha = 0.90,
       na.rm = TRUE
     ) +
     geom_text(

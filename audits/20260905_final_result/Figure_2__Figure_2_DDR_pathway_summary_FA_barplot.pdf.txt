@@ -1,0 +1,44 @@
+                                                                                    FA pathway
+                                                           Two-way ANOVA (BH): Category ns | Direction **** | Interaction ns
+
+                                                                                      Pro         Inh
+
+                                           35%
+
+                                                       n=32                   n=6                   n=19                   n=35
+
+
+                                           30%
+
+
+
+
+Relative portion of Kla-DDR proteins (%)
+                                           25%
+
+
+
+
+                                           20%
+
+
+
+
+                                           15%
+
+
+
+
+                                           10%
+
+
+
+
+                                           5%
+
+
+
+
+                                           0%
+                                                 non-tumor tissues      tumor tissues        normal cell lines      cancer cell lines
+

@@ -1,0 +1,42 @@
+                                                                     MKI67 / H3C1 protein intensity ratio across 11 quantified whole-proteome datasets
+                                         Non-tumor tissues      Tumor tissues                               Normal cell lines                                               Cancer cell lines
+
+                                                                                                                                                                                         n=8
+                                 1e+03
+
+
+                                 1e+02
+
+
+
+
+MKI67 / H3C1 ratio (log scale)
+                                 1e+01                                                    n=2
+                                                              n=45
+                                                                                                          n=3               n=3
+                                 1e+00
+                                                                                                                                                            n=2
+                                                                                                                                        n=3                             n=3
+                                 1e-01
+                                                                                                                                                                                                  n=1
+
+
+                                                 n=5                               n=5
+                                 1e-02
+
+
+                                 1e-03
+
+
+                                 1e-04
+
+                                                BP           ES               ca         HM        (p                 (m            VE                os               10                 2       3M
+                                                  H            CC               nc         C3        re                 an            C                  eb              4             He       PC
+                                                                                   er                  tre                nit      HU                      ur       TA                   pG        -
+                                                                                                          at                 ol)                              ia)     LL
+                                                                      Pr                                    ed                                                          -
+                                                                         os                                   )    HK                              (R
+                                                                            tate                HK                   -2                        T1
+                                                                                                  -2                                             16
+                                                                                                                                              HC
+

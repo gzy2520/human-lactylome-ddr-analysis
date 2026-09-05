@@ -1,0 +1,137 @@
+                                                                     MKI67 / H3C1 ratio (log scale)
+       Ro
+          t    at
+                    or
+                         cu                          1e-04   1e-03    1e-02     1e-01               1e+00            1e+01     1e+02   1e+03
+                              ff
+                                   te
+                                        nd
+                                             on
+                                                     ND
+             Hy
+                p    er
+                                        Lu
+                                             ng
+                       tro                           ND
+                              ph
+                                    ic
+                     Ad                  sc
+                                               ar    ND
+                          ja
+                             c     en
+                                        ts
+                    Hi                     kin
+                      pp                             ND
+                              oc
+                                   am
+                                     pu
+                                                s    ND
+                              Pl
+                                ac
+                                         en
+                                               ta    ND
+                                                                                                                                                     Non-tumor tissues
+                                    Sp
+                                          er
+                                            m        ND
+
+                                         BP
+                     Ad
+                          ja                   H                        n=5
+                             c     en
+                                        tl
+                                          ive
+                                                 r   ND
+               Pr                   ES
+                 os                       CC
+                         ta                                                                                       n=45
+                              te
+                                   ca
+                                         nc
+                                               er                       n=5
+                                         HC
+                                           C
+                                                                                                                                                     Tumor tissues
+                            HE                       ND
+                               K        29
+                                             3T
+                                                     ND
+             HK                     HM
+                -2                    C3
+                         (p                                                                                              n=2
+                            re
+                               t   re
+                   HK                 a   te
+                      -2                       d)                                                           n=3
+                            (m
+                              an
+                                         ni
+                                           to
+                                                l)                                                          n=3
+                              M
+             Ne                CF
+                u                10
+                     ra
+                        l                      A     ND
+                                                                                                                                                     Normal cell lines
+                            st
+                                 em
+                                         ce
+                                               lls   ND
+                                   HU
+                                     VE
+HC                                             C                                        n=3
+  T1
+     1         6                    M
+                    (P               CF
+HC                     X               7             ND
+  T1                        D0
+     1                         2
+               6                    84
+                    (P                    88
+                       X    D0                   )   ND
+     HC
+       T1                      5    34
+          1          6                    74
+                         (R                      )   ND
+                           os
+                                   eb
+                                         ur
+                                           ia
+                            TA                )                                               n=2
+                               L    L-
+                                      10
+                                                4                                       n=3
+                                   He
+                                      p   G
+                                                2                                                                                              n=8
+                            A5
+                     M         49
+                                                                                                                                                                         MKI67 / H3C1 protein intensity ratio across individual whole-proteome datasets (ND = Not Detected)
+
+
+
+
+                      DA                             ND
+                         -M
+                           B-
+                                                                                                                                                     Cancer cell lines
+                             46
+                                8                    ND
+                                    T-
+                                      47
+G                                              D     ND
+    lio
+        b   la
+               sto
+                                   PC
+                     m               -3
+                      a                 M                                     n=1
+                            st
+                                 em
+                                         ce
+                                               lls   ND
+
+                                         RK
+                                            O        ND
+

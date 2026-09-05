@@ -1,0 +1,5 @@
+Check,Observed,Expected_documented_unique_records,Status,Note,Expected
+S6_annotation_rows,50,49.0,WARN,"50 rows, 49 unique (Role, GeneSymbol, BaseAccession) records, 48 unique BaseAccessions; HDAC5/Q9UQL6 is duplicated in the same role (records 23 and 24), while HDAC8/Q9BY41 has two roles",
+S6_mapping_coverage,0,,PASS,Regulator_ID_Mapping covers all 48 unique annotation accessions,0.0
+S6_missing_references,12,,WARN,12 annotation rows have no reference; this is a provenance gap unless explicitly marked as unavailable,0.0
+S6_reference_delimiter,1,,WARN,At least one cell concatenates multiple DOI URLs without a delimiter (PARK7 record 42); newline-separated multiple URLs are acceptable,0.0

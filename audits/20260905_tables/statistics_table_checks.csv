@@ -1,0 +1,5 @@
+Table,Rows,N_or_NPoint,NonSample_issue,Status,Note
+figure1_category_boxplot_mean_median.csv,8,not included,Cannot audit denominator from this table alone,WARN,"Add N, sample/aggregate/pool/condition/model classification, and source version to make the summary auditable"
+figure1_category_omnibus_anova.csv,4,"310,98,212",N=310 includes 38 non-sample observations; sample-only expanded input is 272,FAIL,"Comparison says controlling for modality, but the default sequential two-way ANOVA category term is order-dependent; this is a method/label issue"
+figure1_category_one_way_anova.csv,4,"94,119,34,63","Category totals include 38 non-sample observations; sample-only totals would be 91, 118, 41, 22",FAIL,Dataset-factor tests inherit the mixed observation unit; unused NA columns are harmless but should be documented or removed
+pathway_summary_two_way_anova.csv,21,N=196; NPoint=98,NPoint=98 includes 26 non-sample source observations; sample-only expanded input is 72,FAIL,Pro/Inh are two measurements from one source observation but are fit as independent rows; the current p/q values are not valid paired inference

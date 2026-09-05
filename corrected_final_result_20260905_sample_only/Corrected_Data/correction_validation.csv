@@ -1,0 +1,8 @@
+Check,Observed,Expected,Pass
+31-group registry,31,31,TRUE
+Figure 1 DDR fraction sample rows,272,272,TRUE
+Figure 1 MKI67 ratio sample rows,264,264,TRUE
+Figure 2 pathway sample rows,504,504,TRUE
+Figure 2 rows per pathway,72,72,TRUE
+All corrected input rows are sample,1,1,TRUE
+Reused whole-proteome source keys,11,11,TRUE

@@ -1,0 +1,2 @@
+TableRows,SourceRows,TableColumns,SourceColumns,CellMismatchesAfter_NA_Whitespace_Normalization,TableUniqueGeneProductIDs,SourceUniqueGeneProductIDs,ExactDuplicateRows,Status,Note
+5111,5111,14,14,0,2719,2719,0,PASS,"The workbook exactly matches the current 5,111-row TSV; the package README's 6,707-row description is stale"

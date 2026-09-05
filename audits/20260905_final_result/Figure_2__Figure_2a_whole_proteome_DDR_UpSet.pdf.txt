@@ -1,0 +1,56 @@
+                                                                                 DDR Proteome
+                                                Exact four-set intersections; zero-count combinations are retained
+
+
+
+
+                                                                           449
+
+
+                                                                     400
+
+
+
+
+                                                                     300
+
+
+
+
+                                                 Intersection size
+                                                                     200
+                                                                                                                     166
+
+
+                                                                     100
+                                                                                                                                    58
+                                                                                  31   40
+                                                                                                               30
+                                                                                            11                                                   19   14   0
+                                                                                                 7      5                    2              1                   3
+                                                                       0
+
+
+
+Non-tumor tissues                         725
+
+
+
+
+   Tumor tissues             478
+
+
+
+
+ Cancer cell lines                  616
+
+
+
+
+ Normal cell lines                  592
+
+
+                     0      500                                             1     2    3    4    5      6       7     8      9      10      11   12   13   14   15
+
+                         Set size                                                                Intersection rank (ordered as DDR lactylome)
+

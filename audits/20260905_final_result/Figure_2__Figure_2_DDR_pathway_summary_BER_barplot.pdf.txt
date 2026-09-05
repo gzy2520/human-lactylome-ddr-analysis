@@ -1,0 +1,31 @@
+                                                                                BER pathway
+                                                           Two-way ANOVA (BH): Category ns | Direction **** | Interaction ns
+
+                                                                                      Pro         Inh
+
+                                           40%
+
+                                                       n=32                   n=6                   n=19                   n=35
+
+
+
+
+Relative portion of Kla-DDR proteins (%)
+                                           30%
+
+
+
+
+                                           20%
+
+
+
+
+                                           10%
+
+
+
+
+                                           0%
+                                                 non-tumor tissues      tumor tissues        normal cell lines      cancer cell lines
+

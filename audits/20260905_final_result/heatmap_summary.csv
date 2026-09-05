@@ -1,0 +1,3 @@
+Input,Rows,Groups,MissingValue,ZeroNoDetection,ZeroWithDetection
+regulator_reference_percentiles_30.csv,1488,31,0,707,58
+regulator_kla_percentiles_30.csv,1519,31,0,1190,31

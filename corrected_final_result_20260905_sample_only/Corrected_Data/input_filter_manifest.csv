@@ -1,0 +1,4 @@
+Input,File,SourcePath,SourceRows,SampleRows,RemovedNonSampleRows,Filter
+figure1_fraction,figure1_sample_boxplot_values.csv,/Users/gzy2520/Desktop/Research/kla/data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input/figure1_sample_boxplot_values.csv,310,272,38,"ObservationType == ""sample"""
+figure1_ratio,figure1_mki67_ratio_sample_values.csv,/Users/gzy2520/Desktop/Research/kla/data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input/figure1_mki67_ratio_sample_values.csv,274,264,10,"ObservationType == ""sample"""
+pathway,figure1_pathway_summary_sample_boxplot_values.csv,/Users/gzy2520/Desktop/Research/kla/data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input/figure1_pathway_summary_sample_boxplot_values.csv,686,504,182,"ObservationType == ""sample"""

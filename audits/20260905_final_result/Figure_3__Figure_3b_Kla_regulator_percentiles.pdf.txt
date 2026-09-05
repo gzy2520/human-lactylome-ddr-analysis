@@ -1,0 +1,160 @@
+                                                    Writer   Eraser   Writer-Eraser   Reader
+                 Pathological rotator-cuff tendon
+
+                      Normal human lung tissue
+
+                       Hypertrophic scar tissue
+
+
+
+
+                                                                                               non-tumor tissues
+                            Adjacent skin tissue
+
+                    Human hippocampus tissue
+
+                    Normal-pregnancy placenta
+
+                                  Human sperm
+
+             Benign prostatic hyperplasia tissue
+
+                            Adjacent liver tissue
+
+
+
+
+                                                                                               tumor tissues
+                       ESCC MEC/NEC groups
+
+                         Prostate cancer tissue
+                                                                                                                   Lactylome (Kla)
+                                    HCC tissue
+                                                                                                                   percentile
+                                                                                                                      100
+
+                                     MCF7 cells
+
+                                  HCT116 cells
+                                                                                                                      75
+            HCT116 cells (subcellular fractions)
+
+HCT116 cells (control and Roseburia co-culture)
+                                                                                                                      50
+                TALL-104 cells (sodium lactate)
+
+
+
+
+                                                                                               cancer cell lines
+   HepG2 cells (WT, SIRT1 KO and SIRT3 KO)
+
+                                      A549 cells                                                                      25
+
+                             MDA-MB-468 cells
+
+                                     T-47D cells                                                                      0
+                                    PC-3M cells
+
+                 Glioblastoma stem-cell models
+
+                RKO cells (WT and GSK3B KO)
+
+
+                                 HEK293T cells
+
+            HMC3 cells (normoxia and hypoxia)
+
+
+
+
+                                                                                               normal cell lines
+                     HK-2 cells (IR-CM treated)
+
+HK-2 cells (normoxia and hypoxia-reoxygenation)
+
+                                  MCF10A cells
+
+                        Neural stem-cell models
+
+    HUVECs (control and P. gingivalis infection)
+
+                                                     AA S1R
+                                                          R
+                                                      AC S2
+                                                          A
+                                                      AT T2
+                                                    CR AT1
+                                                   CS EBB
+                                                     RP P
+                                                       EL
+                                                      EP  2B
+                                                          3
+                                                     ES 0 0
+                                                    GT O2C
+                                                        F3   P
+                                                            P3
+                                                GCN5 HA 4
+                                                    (K T1
+                                                       AT
+                                                      KA A)
+                                                       KA  2
+                                                          T2
+                                                      KA T5 CB
+                                                          T
+                                                      KA 6 A
+                                              AA
+                                                       KA
+                                                       KA T6
+                                                      KR T8
+                                                          T
+                                                      NA 18
+                                                          A1 B
+                                                            T7
+                                                     HDNP 0
+                                                     HD C4
+                                                     HD C5
+                                                     HD C7A
+                                                          A
+                                                          AM3
+                                                     HD C8
+                                                    HD AC9
+                                                       AC A
+                                                       SI 1
+                                                          RT
+                                                       SI 1
+                                                          RT1
+                                                       SI 2
+                                                          RT
+                                                       SI 3
+                                                          RT
+                                                       SI 4
+                                                          RT
+                                                       SI 5
+                                                          RT
+                                                       SI 6
+                                                          RT
+                                                     HD
+                                                     HD C8
+                                                     HD C1
+                                                     HD C2A
+                                                          A
+                                                          A
+                                                          A   7
+                                                     HD C3
+                                                    HD AC6
+                                                       AC
+                                                     PA 1 0
+                                                       BR RKD 7
+                                                       BR 4
+                                                       CD 9
+                                                       DP L
+                                                      M F2
+                                                   SM L L T
+                                                     AR 3 C D
+                                                            Y
+                                                     TR A4
+                                                        I
+                                                    YE M33
+                                                       AT   S2
+

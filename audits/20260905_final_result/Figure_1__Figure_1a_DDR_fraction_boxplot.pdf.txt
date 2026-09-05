@@ -1,0 +1,29 @@
+                                               DDR annotated protein fraction across four biological categories
+                                                               Four-category ANOVA p < 2.2e-16 (F = 142.81, ****)
+
+                                                                      Whole proteome          Lactylome (Kla)
+                                        20%
+                                                n=62    n=32          n=13     n=6          n=15     n=19             n=28    n=35
+
+
+
+
+GO-DDR annotated protein fraction (%)
+                                        15%
+
+
+
+
+                                        10%
+
+
+
+
+                                        5%
+
+
+
+
+                                        0%
+                                              non-tumor tissues      tumor tissues        normal cell lines         cancer cell lines
+

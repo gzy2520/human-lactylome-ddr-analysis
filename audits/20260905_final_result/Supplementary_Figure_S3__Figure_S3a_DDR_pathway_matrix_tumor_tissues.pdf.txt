@@ -1,0 +1,29 @@
+           DDR pathway matrix — tumor tissues (192 proteins)
+
+BER
+
+
+NER
+
+
+MMR
+
+
+
+
+                                                                     tumor tissues
+  FA
+
+
+ HR
+
+
+NHEJ
+
+
+ AEJ
+
+       0                         96                            192
+
+                        Lactylated DDR Protein (#)
+

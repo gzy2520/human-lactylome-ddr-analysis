@@ -1,0 +1,7 @@
+Check,Observed,Expected,Status,Note
+S1_group_registry,31,31,PASS,"31 unique (PXD, SampleGroup); category counts: cancer_cells=12; cancer_tissue=3; normal_cells=7; normal_tissue=9"
+S1_membership_counts,0,0,PASS,Group_Summary counts equal unique BaseAccession counts in membership sheets
+S1_membership_integrity,0,0,PASS,No duplicate group/accession keys; Kla_DDR_Membership is all IsDdr=TRUE
+S1_paired_flag,0,0,PASS,"All 31 rows are marked paired; this is a metadata flag, not proof of independent biological pairing"
+S1_pair_reuse,22 Kla PXD; 18 reference PXD,31 independent pairs,WARN,"These are 31 group rows, not 31 independent dataset pairs; PXD030304 is reused for 8 groups and several other references are reused"
+S1_roworder_contiguity,"13,26,27",none,WARN,RowOrder preserves legacy category ordering and is non-contiguous; document if used as a display index

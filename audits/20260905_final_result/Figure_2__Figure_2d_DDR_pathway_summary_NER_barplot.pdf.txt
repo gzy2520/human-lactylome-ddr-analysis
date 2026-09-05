@@ -1,0 +1,31 @@
+                                                                                 NER pathway
+                                                          Two-way ANOVA (BH): Category **** | Direction **** | Interaction ****
+
+                                                                                       Pro          Inh
+
+                                           20%
+
+                                                       n=32                   n=6                    n=19                    n=35
+
+
+
+
+Relative portion of Kla-DDR proteins (%)
+                                           15%
+
+
+
+
+                                           10%
+
+
+
+
+                                           5%
+
+
+
+
+                                           0%
+                                                 non-tumor tissues      tumor tissues         normal cell lines       cancer cell lines
+

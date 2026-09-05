@@ -1,0 +1,90 @@
+Input,PXD,SampleGroup,RegulatorBaseAccession,GeneSymbol,Value,DetectedSampleCount,QuantSampleCount
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,O15379,HDAC3,0,6,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,P56524,HDAC4,0,13,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q5SQI0,ATAT1,0,106,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q8N6T7,SIRT6,0,124,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q8WUI4,HDAC7,0,27,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q92793,CREBBP,0,64,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q9H7Z6,KAT8,0,185,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q9H8M2,BRD9,0,19,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q9H9T3,ELP3,0,192,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q9NTG7,SIRT3,0,100,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q9NXA8,SIRT5,0,108,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q9UBN7,HDAC6,0,81,401
+regulator_reference_percentiles_30.csv,PXD028488,HEK293T,Q9Y232,CDYL,0,154,401
+regulator_reference_percentiles_30.csv,PXD028488,TALL-104,Q5JTZ9,AARS2,0,1,3
+regulator_reference_percentiles_30.csv,PXD028488,TALL-104,Q8IXJ6,SIRT2,0,1,3
+regulator_reference_percentiles_30.csv,PXD028488,TALL-104,Q9H7Z6,KAT8,0,1,3
+regulator_reference_percentiles_30.csv,PXD028488,TALL-104,Q9Y232,CDYL,0,1,3
+regulator_reference_percentiles_30.csv,PXD046800,adjacent skin,Q92769,HDAC2,0,1,4
+regulator_reference_percentiles_30.csv,PXD046800,hypertrophic scar,Q92769,HDAC2,0,1,4
+regulator_reference_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92830,KAT2A,0,3,9
+regulator_reference_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9BY41,HDAC8,0,3,9
+regulator_reference_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9H7Z6,KAT8,0,2,9
+regulator_reference_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9NTG7,SIRT3,0,3,9
+regulator_reference_percentiles_30.csv,PXD058534,pretreated HK-2,Q9H8M2,BRD9,0,1,3
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,O14929,HAT1,0,7,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,O15379,HDAC3,0,3,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,O60885,BRD4,0,8,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,O75607,NPM3,0,6,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,O95251,KAT7,0,2,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,P51532,SMARCA4,0,1,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,Q5JTZ9,AARS2,0,6,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,Q92785,DPF2,0,4,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,Q96EB6,SIRT1,0,2,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,Q9H9T3,ELP3,0,1,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,Q9NXA8,SIRT5,0,2,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,Q9UKN8,GTF3C4,0,6,20
+regulator_reference_percentiles_30.csv,PXD060185,MCF10A,Q9Y232,CDYL,0,4,20
+regulator_reference_percentiles_30.csv,PXD064912,human sperm,Q8N6T7,SIRT6,0,2,33
+regulator_reference_percentiles_30.csv,PXD064912,human sperm,Q9UQL6,HDAC5,0,11,33
+regulator_reference_percentiles_30.csv,PXD070007,glioblastoma stem cells,P05783,KRT18,0,2,6
+regulator_reference_percentiles_30.csv,PXD078736,HK-2 control and mannitol,Q9H8M2,BRD9,0,1,3
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,O15379,HDAC3,0,34,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,O95251,KAT7,0,13,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,P56524,HDAC4,0,36,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q8N6T7,SIRT6,0,5,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q8WUI4,HDAC7,0,31,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q8WYB5,KAT6B,0,9,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q92793,CREBBP,0,45,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q92830,KAT2A,0,9,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q92831,KAT2B,0,8,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q969S8,HDAC10,0,18,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q96DB2,HDAC11,0,18,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q96EB6,SIRT1,0,9,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9BY41,HDAC8,0,9,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9H8M2,BRD9,0,29,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9UPN9,TRIM33,0,46,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9UQL6,HDAC5,0,8,94
+regulator_reference_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9Y232,CDYL,0,17,94
+regulator_kla_percentiles_30.csv,PXD046800,hypertrophic scar,Q13547,HDAC1,0,1,4
+regulator_kla_percentiles_30.csv,PXD053474,HCT116,Q9UKN8,GTF3C4,0,1,24
+regulator_kla_percentiles_30.csv,PXD053474,HCT116,P05783,KRT18,0,6,24
+regulator_kla_percentiles_30.csv,PXD053474,HCT116,Q9Y232,CDYL,0,6,24
+regulator_kla_percentiles_30.csv,PXD053474,HCT116,P51532,SMARCA4,0,2,24
+regulator_kla_percentiles_30.csv,PXD053474,HCT116,Q9UPN9,TRIM33,0,1,24
+regulator_kla_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q92794,KAT6A,0,1,9
+regulator_kla_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9H7Z6,KAT8,0,1,9
+regulator_kla_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9UQL6,HDAC5,0,2,9
+regulator_kla_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q8N6T7,SIRT6,0,2,9
+regulator_kla_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,P42568,MLLT3,0,1,9
+regulator_kla_percentiles_30.csv,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Q9ULM3,YEATS2,0,3,9
+regulator_kla_percentiles_30.csv,PXD063266,PC-3M,Q13547,HDAC1,0,1,3
+regulator_kla_percentiles_30.csv,PXD063266,PC-3M,Q9Y232,CDYL,0,1,3
+regulator_kla_percentiles_30.csv,PXD070007,glioblastoma stem cells,Q9BWD1,ACAT2,0,1,6
+regulator_kla_percentiles_30.csv,PXD070007,glioblastoma stem cells,O14929,HAT1,0,2,6
+regulator_kla_percentiles_30.csv,PXD070007,glioblastoma stem cells,Q92794,KAT6A,0,1,6
+regulator_kla_percentiles_30.csv,PXD070007,glioblastoma stem cells,Q8IXJ6,SIRT2,0,2,6
+regulator_kla_percentiles_30.csv,PXD070007,glioblastoma stem cells,Q9H8M2,BRD9,0,1,6
+regulator_kla_percentiles_30.csv,PXD078013,RKO WT and GSK3B KO,Q8WUI4,HDAC7,0,1,4
+regulator_kla_percentiles_30.csv,PXD078736,HK-2 control and mannitol,Q92793,CREBBP,0,2,6
+regulator_kla_percentiles_30.csv,PXD078736,HK-2 control and mannitol,O14929,HAT1,0,1,6
+regulator_kla_percentiles_30.csv,PXD078736,HK-2 control and mannitol,Q9H7Z6,KAT8,0,2,6
+regulator_kla_percentiles_30.csv,PXD058534,pretreated HK-2,P56524,HDAC4,0,1,1
+regulator_kla_percentiles_30.csv,PXD078736,HK-2 control and mannitol,Q9UPN9,TRIM33,0,2,6
+regulator_kla_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9UKN8,GTF3C4,0,2,6
+regulator_kla_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,P56524,HDAC4,0,1,6
+regulator_kla_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q92769,HDAC2,0,1,6
+regulator_kla_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9UBN7,HDAC6,0,1,6
+regulator_kla_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,O60885,BRD4,0,2,6
+regulator_kla_percentiles_30.csv,PXD064038,MEC and NEC ESCC groups,Q9UPN9,TRIM33,0,1,6

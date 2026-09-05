@@ -1,0 +1,9 @@
+Category,CategoryLabel,Dataset,Mean,Median,N
+normal_tissue,non-tumor tissues,Lactylome (Kla),4.95532038770827,4.92227979274611,31
+normal_tissue,non-tumor tissues,Whole proteome,4.15346213103312,4.0360280149319,60
+cancer_tissue,tumor tissues,Lactylome (Kla),6.90158599371331,6.76611614278103,11
+cancer_tissue,tumor tissues,Whole proteome,5.4900369938105,5.56802873821284,107
+cancer_cells,cancer cell lines,Lactylome (Kla),10.2702360989609,11.6876024030584,21
+cancer_cells,cancer cell lines,Whole proteome,6.62885692408716,6.70020969667819,20
+normal_cells,normal cell lines,Lactylome (Kla),10.9337544936487,10.9147609147609,9
+normal_cells,normal cell lines,Whole proteome,6.48330680412097,6.39190166305134,13

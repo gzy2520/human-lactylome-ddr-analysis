@@ -1,0 +1,22 @@
+Item,Value
+selected_group,MEC and NEC ESCC groups
+excluded_escc_related_dataset_1,PXD048995 (KYSE30 histone-focused; excluded)
+excluded_escc_related_dataset_2,PXD063945 (ESCC neoadjuvant; excluded)
+escc_source_pxd,PXD064038
+escc_sample_count,6
+escc_kla_union_count,1239
+escc_kla_ddr_count,92
+new_all_kla_union_count,72
+new_kla_ddr_union_count,2
+previous_catalog_kla_count,1246 (legacy catalog note; updated count uses current parser contract)
+strict_reference_status,available; independent ESCC tumor ordinary-proteome union by BaseAccession
+reference_pxd,PXD065830
+reference_tumor_sample_count,94
+reference_protein_union_count,8083
+reference_ddr_count,420
+reference_ddr_fraction,0.0519609056
+PXD053809_control_status,not selected; PXD053809 processed XLS is encrypted and not auditable in the current source cache
+PXD010154_status,healthy esophagus background only; not used as matched ordinary-proteome reference
+expanded_group_count,31
+expanded_tumor_S4_count,192
+clinical_docx_available,TRUE

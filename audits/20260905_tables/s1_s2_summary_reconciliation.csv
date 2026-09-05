@@ -1,0 +1,32 @@
+PXD,SampleGroup,ReferencePXD_S1,ReferenceProteinCount_S1,ReferenceDdrProteinCount_S1,ReferenceDdrFraction_S1,MatchMode_S1,ReferencePXD_S2,ReferenceProteinCount_S2,ReferenceDdrProteinCount_S2,ReferenceDdrFraction_S2,MatchMode_S2,ReferencePXD_mismatch,ReferenceProteinCount_mismatch,ReferenceDdrProteinCount_mismatch,ReferenceDdrFraction_mismatch,MatchMode_mismatch
+PXD028488,HCT116,PXD030304,4010,273,0.0680798004987531,BaseAccession_only,PXD030304,4010,273,0.0680798004987531,BaseAccession_only,False,False,False,False,False
+PXD028488,HEK293T,PXD030304,6441,381,0.0591523055426176,BaseAccession_only,PXD030304,6441,381,0.0591523055426176,BaseAccession_only,False,False,False,False,False
+PXD028488,TALL-104,PXD028488,3734,253,0.0677557579003749,BaseAccession_only,PXD028488,3734,253,0.0677557579003749,BaseAccession_only,False,False,False,False,False
+PXD028737,HMC3,PXD028737,6132,425,0.0693085453359426,BaseAccession_only,PXD028737,6132,425,0.0693085453359426,BaseAccession_only,False,False,False,False,False
+PXD033146,pathological rotator cuff tendon,PXD033146,3984,154,0.0386546184738956,BaseAccession_only,PXD033146,3984,154,0.0386546184738956,BaseAccession_only,False,False,False,False,False
+PXD036307,normal human lung,PXD010154,14022,668,0.0476394237626587,BaseAccession_only,PXD010154,14022,668,0.0476394237626587,BaseAccession_only,False,False,False,False,False
+PXD046800,adjacent skin,PXD046800,2205,89,0.0403628117913832,BaseAccession_only,PXD046800,2205,89,0.0403628117913832,BaseAccession_only,False,False,False,False,False
+PXD046800,hypertrophic scar,PXD046800,2193,83,0.0378476972184223,BaseAccession_only,PXD046800,2193,83,0.0378476972184223,BaseAccession_only,False,False,False,False,False
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,PXD050147,6772,450,0.0664500886001181,BaseAccession_only,PXD050147,6772,450,0.0664500886001181,BaseAccession_only,False,False,False,False,False
+PXD050470,human hippocampus,PXD050470,6082,219,0.0360078921407432,BaseAccession_only,PXD050470,6082,219,0.0360078921407432,BaseAccession_only,False,False,False,False,False
+PXD053474,HCT116,PXD030304,4010,273,0.0680798004987531,BaseAccession_only,PXD030304,4010,273,0.0680798004987531,BaseAccession_only,False,False,False,False,False
+PXD054919,A549,PXD030304,3448,226,0.0655452436194896,BaseAccession_only,PXD030304,3448,226,0.0655452436194896,BaseAccession_only,False,False,False,False,False
+PXD058534,pretreated HK-2,PXD072220,4897,304,0.0620788237696549,BaseAccession_only,PXD072220,4897,304,0.0620788237696549,BaseAccession_only,False,False,False,False,False
+PXD060185,MCF10A,PXD002400,4839,242,0.0500103327133705,BaseAccession_only,PXD002400,4839,242,0.0500103327133705,BaseAccession_only,False,False,False,False,False
+PXD060185,MCF7,PXD030304,3099,209,0.0674411100354953,BaseAccession_only,PXD030304,3099,209,0.0674411100354953,BaseAccession_only,False,False,False,False,False
+PXD060185,MDA-MB-468,PXD030304,3760,230,0.0611702127659574,BaseAccession_only,PXD030304,3760,230,0.0611702127659574,BaseAccession_only,False,False,False,False,False
+PXD060185,T-47D,PXD030304,3516,228,0.0648464163822526,BaseAccession_only,PXD030304,3516,228,0.0648464163822526,BaseAccession_only,False,False,False,False,False
+PXD063047,normal pregnancy placenta,PXD010154,12395,556,0.0448567970956031,BaseAccession_only,PXD010154,12395,556,0.0448567970956031,BaseAccession_only,False,False,False,False,False
+PXD063266,PC-3M,PXD022005,8049,262,0.0325506274071313,BaseAccession_only,PXD022005,8049,262,0.0325506274071313,BaseAccession_only,False,False,False,False,False
+PXD064038,MEC and NEC ESCC groups,PXD065830,8083,420,0.0519609056043548,BaseAccession_external_ESCC_tumor,PXD065830,8083,420,0.0519609056043548,BaseAccession_external_ESCC_tumor,False,False,False,False,False
+PXD064912,human sperm,PXD066517,10680,461,0.0431647940074906,BaseAccession_only,PXD066517,10680,461,0.0431647940074906,BaseAccession_only,False,False,False,False,False
+PXD066054,BPH,PXD066054,8169,408,0.0499449136981271,BaseAccession_only,PXD066054,8169,408,0.0499449136981271,BaseAccession_only,False,False,False,False,False
+PXD066054,prostate cancer,PXD066054,8203,412,0.0502255272461295,BaseAccession_only,PXD066054,8203,412,0.0502255272461295,BaseAccession_only,False,False,False,False,False
+PXD066351,HCT116 control and Roseburia co-culture,PXD066351,8130,504,0.0619926199261993,BaseAccession_only,PXD066351,8130,504,0.0619926199261993,BaseAccession_only,False,False,False,False,False
+PXD070007,glioblastoma stem cells,PXD069969,8374,495,0.0591115357057559,BaseAccession_only,PXD069969,8374,495,0.0591115357057559,BaseAccession_only,False,False,False,False,False
+PXD070007,neural stem cells,PXD069969,7246,459,0.0633452939552857,BaseAccession_only,PXD069969,7246,459,0.0633452939552857,BaseAccession_only,False,False,False,False,False
+PXD073311,HUVEC control and Pg infection,PXD073311,7794,512,0.0656915576084167,BaseAccession_only,PXD073311,7794,512,0.0656915576084167,BaseAccession_only,False,False,False,False,False
+PXD075377,HCC,PXD065775,5188,271,0.0522359290670779,BaseAccession_only,PXD065775,5188,271,0.0522359290670779,BaseAccession_only,False,False,False,False,False
+PXD075377,adjacent liver,PXD065775,4251,194,0.0456363208656787,BaseAccession_only,PXD065775,4251,194,0.0456363208656787,BaseAccession_only,False,False,False,False,False
+PXD078013,RKO WT and GSK3B KO,PXD030304,3615,252,0.0697095435684647,BaseAccession_only,PXD030304,3615,252,0.0697095435684647,BaseAccession_only,False,False,False,False,False
+PXD078736,HK-2 control and mannitol,PXD072220,4897,304,0.0620788237696549,BaseAccession_only,PXD072220,4897,304,0.0620788237696549,BaseAccession_only,False,False,False,False,False

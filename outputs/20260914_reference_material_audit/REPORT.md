@@ -14,7 +14,7 @@
 |GSC|GSE266884：优先GSM8255530、GSM8255531，MES28 shMCT1Control|与PXD070007/PXD069969同一论文，且MES28就是六个原模型之一。仅覆盖一个模型，不能声称六模型RNA齐全；另两份shKU70对照不自动合并成四份独立重复。|
 |NSC|保留GSE119834的9个NSC RNA样本候选|GEO确认NSC培养物而非整块脑组织；符合NSC类别的外部背景。未找到ENSA/HMP1的精确RNA，继续保留具体模型未匹配的标记。|
 
-DepMap 的9个细胞模型参照已在服务器固定到官方 `DepMap Public 24Q4`（2024-12-16）：蛋白编码基因 TPM 矩阵、`Model.csv` 和 `OmicsProfiles.csv` 均已下载并通过目录公布的 MD5。当前 `DepMap Public 26Q1` 目录对相应文件只返回元数据而不给可用 URL，因此 24Q4 是明确记录的可复现回退版本；这些外部亲本表达仍不能代表各自的 KO、感染或共培养条件，且分析前必须用 ACH 模型 ID 和稳定基因 ID 完成行列及尺度核对。
+DepMap 的9个细胞模型参照已在服务器固定到官方 `DepMap Public 24Q4`（2024-12-16）：蛋白编码基因 TPM 矩阵、`Model.csv` 和 `OmicsProfiles.csv` 均已下载并通过目录公布的 MD5。当前 `DepMap Public 26Q1` 目录对相应文件只返回元数据而不给可用 URL，因此 24Q4 是明确记录的可复现回退版本；这些外部亲本表达仍不能代表各自的 KO、感染或共培养条件。结构检查确认7个目标 ACH ID均有表达行、Model行和RNA profile，但19,193个带Entrez的基因列含17个重复Entrez ID；分析前必须按可追溯规则解决重复列、锁定稳定基因 ID和表达尺度。
 
 GSE181540虽然GEO统一标为RIP-Seq，但NS input样本明确注明抗体为none，采用rRNA去除total RNA、未做免疫富集；只有input臂可作为普通bulk候选。IP臂、甲基化峰表不能纳入。论文有Gallus gallus参考基因组文字，而GEO写人类hg19，存在来源内矛盾：取材与input建库证据支持候选资格，真正分析前应核验reads与参考基因组，不能直接信任全部处理结果。PC-3M处理表为RefSeq NM转录本主键，需稳定版本映射至Ensembl/Entrez；不能走Symbol合并。
 

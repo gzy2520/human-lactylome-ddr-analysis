@@ -1,0 +1,10 @@
+Metric	Value	Detail
+ExpressionRows	1673	streamed rows in the downloaded model-keyed matrix
+ExpressionColumns	19193	gene columns excluding the leading ModelID column
+EntrezGeneHeaders	19193	numeric Entrez IDs parsed from headers; symbols are not analytical keys
+UniqueEntrezGeneIDs	19176	unique numeric Entrez IDs before downstream duplicate resolution
+DuplicateEntrezGeneHeaders	17	duplicate stable IDs require deterministic downstream resolution
+TargetModelRows	7	ACH-000019;ACH-000147;ACH-000681;ACH-000739;ACH-000849;ACH-000943;ACH-000971
+ModelMetadataRows	7	ACH-000019;ACH-000147;ACH-000681;ACH-000739;ACH-000849;ACH-000943;ACH-000971
+TargetRNAProfiles	7	one Datatype=rna profile for each target model
+Validation	PASS_WITH_MAPPING_CAVEAT	all seven target ACH IDs resolved; duplicate Entrez columns remain for downstream QC

@@ -1,0 +1,12 @@
+ObservationType,N,InputFile
+sample,272,figure1_sample_boxplot_values.csv
+aggregate,12,figure1_sample_boxplot_values.csv
+pool,2,figure1_sample_boxplot_values.csv
+dataset_union,4,figure1_sample_boxplot_values.csv
+condition,12,figure1_sample_boxplot_values.csv
+model,8,figure1_sample_boxplot_values.csv
+sample,504,figure1_pathway_summary_sample_boxplot_values.csv
+pool,14,figure1_pathway_summary_sample_boxplot_values.csv
+dataset_union,28,figure1_pathway_summary_sample_boxplot_values.csv
+condition,84,figure1_pathway_summary_sample_boxplot_values.csv
+model,56,figure1_pathway_summary_sample_boxplot_values.csv

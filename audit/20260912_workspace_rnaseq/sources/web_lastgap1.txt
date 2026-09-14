@@ -1,0 +1,472 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM6175912)
+citeturn29search0 [wordlim: 200] Published: 4.3 years ago; Crawled: 4 days ago; Source name HEK293T ... treatment: untreated ... Library strategy RNA-Seq
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM6175912 Query DataSets for GSM6175912
+Status Public on Jul 25, 2022
+Title WT_untreated_rep1
+Sample type SRA
+ 
+Source name HEK293T
+Organism Homo sapiens
+Characteristics cell line: HEK293T
+cell type: human embryonic kidney cells
+genotype: wildtype
+treatment: untreated
+time: 24 hours
+Treatment protocol Only in drug treatment groups, we added IFN-β (Peprotech #300-02BC) to a final concentration of 100ng/ml to complete medium for 24 hours.
+Growth protocol We cultured the HEK293T (ATCC CRL-3216) cell lines in DMEM/Hi-Glucose supplemented with 10% FBS (Hyclone, United States), 100units/ml penicillin, and 100μg/ml streptomycin (Gibco, United States), 370C with 5% CO2.
+Extracted molecule total RNA
+Extraction protocol We extracted the total RNA with RNeasy Mini Kit (Qiagen, #774104) and QIAshredder (Qiagen #79654), and removed the residual genomic DNA with TURBO DNase. Next, we concentrated the total DNase-treated RNA using the RNA Clean & Concentrator™-5 kit (Zymo Research #SKUR1015)
+We prepared cDNA libraries using the TruSeq Stranded mRNA Library Prep Kit (Illumina).
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2500
+ 
+Description 101 bp PE
+Data processing We inspected the quality of the RNA-seq datasets using FastQC. We used STAR (2.7.0a) to align reads to the GRCh38 and GENCODE v34.
+We used RSEM with default settings for transcript abundance quantification.
+Assembly: hg38
+Supplementary files format and content: tab-delimited text files include TPM and FPKM values for each Sample
+ 
+Submission date May 21, 2022
+Last update date Jul 25, 2022
+Contact name Phuong Thao Ly
+E-mail(s) lyphuongthao@live.com
+Organization name Nanyang Technological University
+Department School of Biological Sciences
+Lab Xavier Roca
+Street address SBS-02S-88D, 60 Nanyang Drive
+City Singapore
+ZIP/Postal code 637551
+Country Singapore
+ 
+Platform ID GPL16791
+Series (1)
+GSE203529 Analysis of cellular transcripts targeted by ZAPL or ZAPS in HEK293T cells
+Relations
+BioSample SAMN28577607
+SRA SRX15406485
+Supplementary file Size Download File type/resource
+GSM6175912_1WT_no_RSEM.genes.results.gz 1.6 Mb (ftp)(http) RESULTS
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record
+Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM6767126)
+citeturn29search1 [wordlim: 200] Published: 3.8 years ago; Crawled: last week; Title S1-RNA-seq-HEK293T ... treatment: Untreated
+Sample GSM6767126 Query DataSets for GSM6767126
+Status Public on Jun 11, 2024
+Title S1-RNA-seq-HEK293T
+Sample type SRA
+ 
+Source name HEK293T
+Organism Homo sapiens
+Characteristics cell line: HEK293T
+genotype: WT
+treatment: Untreated
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted according to the manual of TRIzol™ (ThermoFisher Scintific#:15596026) from the manufacturer. DNase I (ThermoFisher Scintific#: EN0521) treatment was performed at 37°C to remove potential gDNA contamination.
+cDNA hybrids were synthesized by ProtoScript® II Reverse Transcriptase with d(T)23VN primer according to the manufacturer’s manual. Then, cDNA hybrids were incubated with MBN at 30°C for 30 min to remove remaining primers and RNA. For library construction, synthesized cDNA hybrids were sonicated to 250 bp using ME220 (Covaris, 70 W, 20% Duty factor, 1000 cycles per burst, 130 s, at 4 – 20°C). For RNA-seq library preparation, denaturation was performed by heating at 95°C for 2 minutes followed by immediately cooling on ice for 2 minutes. Then, Accel-NGS® 1S Plus DNA Library Kit (Swift Biosciences) was used for library preparation according to the manufacturer’s manual.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Data processing Basecalls were performed using bcl2fastq v2.17 for Novaseq output.
+Raw reads with low quality and adaptor contamination were trimmed, and short reads less than 50 pb were filtered by Trim Galore (version 0.6.7)
+Trimmed sequence reads were mapped to GRCh38 using HISTAT2 (version 2.2.1) with default parameters.
+Assembly: GRCh38
+Supplementary files format and content: Raw counts for the feature of genes were extracted by featureCounts (version 2.0.3).
+ 
+Submission date Nov 30, 2022
+Last update date Jun 11, 2024
+Contact name Changbin Sun
+Organization name Chinese Academy of Agricultural Sciences
+Department Agricultural Genomics Institute at Shenzhen
+Lab Guangdong Laboratory of Lingnan Modern Agriculture
+Street address Dapeng
+City Shenzhen
+ZIP/Postal code 518120
+Country China
+ 
+Platform ID GPL24676
+Series (2)
+GSE219070 RNA-seq for HEK293T: a high-throughput method for R-loop mapping and quantitative assessment
+GSE219071 mDRIP-seq is a high-throughput method for quantitative R-loop landscape profiling
+Relations
+BioSample SAMN31944405
+SRA SRX18430849
+Supplementary file Size Download File type/resource
+GSM6767126_S1-RNA-seq-HEK293T.RawCount.txt.gz 5.0 Mb (ftp)(http) TXT--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7029103)
+citeturn29search2 [wordlim: 200] Published: 3.6 years ago; Crawled: 2 months ago;    NCBI > GEO > Accession Display Image: Help Not logged in | Login Image: Help ... Source name HEK293T ... treatment: untreated ... RNA libraries for RNA-seq were prepared using SMARTER mRNA-Seq Library Prep Kit following manufacturer's protocols. tRNA libraries for RNA-seq were prepared using eCLIP library construction method.
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM7029103 Query DataSets for GSM7029103
+Status Public on Feb 06, 2023
+Title PRAISE-WT-rRNA-untreated
+Sample type SRA
+ 
+Source name HEK293T
+Organism Homo sapiens
+Characteristics cell line: HEK293T
+genotype: WT
+treatment: untreated
+fraction: rRNA
+Growth protocol HEK293T were cultured in DMEM medium (Corning) supplemented with 10% (v/v) FBS (Gibco), 1% GlutaMAX (Gibco) and 0.5% penicillin/streptomycin (Gibco) at 37 °C with 5% CO2.
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted with TRIzol (Invitrogen) followed by isopropanol precipitation, according to the manufacturer’s instructions. For PolyA+ RNA isolation, size selection was first performed using MEGAclear Transcription Clean-Up Kit (Ambion) to deplete small RNA, and RNA was subsequently purified with two sequential rounds of polyA tail purification using oligo (dT)25 Dynabeads (Invitrogen). Small RNA fractions were collected from the flow-through of MEGAclear Transcription Clean-Up Kit.
+RNA libraries for RNA-seq were prepared using SMARTER mRNA-Seq Library Prep Kit following manufacturer's protocols. tRNA libraries for RNA-seq were prepared using eCLIP library construction method.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Data processing trimiming using cutadapt
+mapping using HISAT2 and then tailored alignment
+remove multiple mapping
+converting bam into bw using bamCoverage
+Assembly: hg38
+Supplementary files format and content: bw files including mapping result data
+ 
+Submission date Feb 06, 2023
+Last update date Feb 08, 2023
+Contact name Jiang Zhe
+E-mail(s) zhejiang@pku.edu.cn
+Phone 010-62752895
+Organization name Peking University
+Department School of Life Sciences
+Lab Chengqi Yi lab
+Street address No. 5 Yiheyuan Road, Haidian District
+City Beijing
+State/province Beijing
+ZIP/Postal code 100871
+Country China
+ 
+Platform ID GPL24676
+Series (1)
+GSE212210 Quantitative profiling of pseudouridylation landscape in the human transcriptome
+Relations
+BioSample SAMN33143021
+SRA SRX19298170
+Supplementary file Size Download File type/resource
+GSM7029103_PRAISE-WT-rRNA-untreated.bw 2.0 Kb (ftp)(http) BW
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file
+Image
+Image Image Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM6767127)
+citeturn29search3 [wordlim: 200] Published: 2.3 years ago; Crawled: 2 months ago; Title S2-RNA-seq-HEK293T ... treatment: Untreated
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM6767127 Query DataSets for GSM6767127
+Status Public on Jun 11, 2024
+Title S2-RNA-seq-HEK293T
+Sample type SRA
+ 
+Source name HEK294T
+Organism Homo sapiens
+Characteristics cell line: HEK294T
+genotype: WT
+treatment: Untreated
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted according to the manual of TRIzol™ (ThermoFisher Scintific#:15596026) from the manufacturer. DNase I (ThermoFisher Scintific#: EN0521) treatment was performed at 37°C to remove potential gDNA contamination.
+cDNA hybrids were synthesized by ProtoScript® II Reverse Transcriptase with d(T)23VN primer according to the manufacturer’s manual. Then, cDNA hybrids were incubated with MBN at 30°C for 30 min to remove remaining primers and RNA. For library construction, synthesized cDNA hybrids were sonicated to 250 bp using ME220 (Covaris, 70 W, 20% Duty factor, 1000 cycles per burst, 130 s, at 4 – 20°C). For RNA-seq library preparation, denaturation was performed by heating at 95°C for 2 minutes followed by immediately cooling on ice for 2 minutes. Then, Accel-NGS® 1S Plus DNA Library Kit (Swift Biosciences) was used for library preparation according to the manufacturer’s manual.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Data processing Basecalls were performed using bcl2fastq v2.17 for Novaseq output.
+Raw reads with low quality and adaptor contamination were trimmed, and short reads less than 50 pb were filtered by Trim Galore (version 0.6.7)
+Trimmed sequence reads were mapped to GRCh38 using HISTAT2 (version 2.2.1) with default parameters.
+Assembly: GRCh38
+Supplementary files format and content: Raw counts for the feature of genes were extracted by featureCounts (version 2.0.3).
+ 
+Submission date Nov 30, 2022
+Last update date Jun 11, 2024
+Contact name Changbin Sun
+Organization name Chinese Academy of Agricultural Sciences
+Department Agricultural Genomics Institute at Shenzhen
+Lab Guangdong Laboratory of Lingnan Modern Agriculture
+Street address Dapeng
+City Shenzhen
+ZIP/Postal code 518120
+Country China
+ 
+Platform ID GPL24676
+Series (2)
+GSE219070 RNA-seq for HEK293T: a high-throughput method for R-loop mapping and quantitative assessment
+GSE219071 mDRIP-seq is a high-throughput method for quantitative R-loop landscape profiling
+Relations
+BioSample SAMN31944404
+SRA SRX18430850
+Supplementary file Size Download File type/resource
+GSM6767127_S2-RNA-seq-HEK293T.RawCount.txt.gz 5.0 Mb (ftp)(http) TXT--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4913396)
+citeturn29search4 [wordlim: 200] Published: 5.3 years ago; Crawled: last month; Title HEK293T Total RNA (H293T_T) ... metabolic labeling: untreated ... OTHER: 3'READS+ (3' end biased RNA-Seq)
+Status Public on May 31, 2021
+Title HEK293T Total RNA (H293T_T)
+Sample type SRA
+ 
+Source name HEK 293T
+Organism Homo sapiens
+Characteristics cell type: HEK 293T
+metabolic labeling: untreated
+fraction: N/A
+Treatment protocol cells were cultures with 50uM of 4-thiouridine (Sigma) for 1 hours. 100ug of total RNA was biotinylated with biotin-HPDP, and subsequently captured by Streptavidin C1 Dynabeads (ThermoFisher). The unbound flow-through (FT) fraction was also collected to represent pre-existing RNAs.
+Growth protocol Human HEK293T cells were cultured in high glucose DMEM with 10% FBS (Gibco) and 1% Penicillin/Streptomycin solution (Sigma).
+Extracted molecule total RNA
+Extraction protocol RNA was harvested with Trizol (Sigma)
+0.2-2ug of input RNA was captured using oligo(dT)25 magnetic beads and fragmented on beads with RNAse III. Partially digested poly(A)+ RNA fragments were ligated to 5’ adapter (5′-CCUUGGCACCCGAGAAUUCCANNNN) with T4 RNA ligase 1. The ligation products were incubated with biotin-T15-(T)5 LNA and digested by RNase H. Digested products were ligated to 3’ adapter with T4 RNA ligase 2. The final ligation products were reverse transcribed and subjected for PCR amplification with index primers for multiplex sequencing. PCR products were size selected with AMPure XP beads (Beckman) and subjected to quality control with ScreenTape (Agilent). Libraries were sequenced on llumina HiSeq (2 x 150 paired end reads).
+OTHER: 3'READS+ (3' end biased RNA-Seq)
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2000
+ 
+Description column label is H293T_T
+Total RNA
+Data processing the sequence corresponding to 5’ adapter was first removed from raw 3’READS reads using Cutadapt (1.18). Reads with short inserts (<25 nt) were discarded.
+The retained reads were then mapped to the human genome (hg19) using bowtie2 (local mode) (2.2.9). The six random nucleotides at the 5’ end of reads 1 derived from the 3’ adapter were removed before mapping using the setting "-5 6" in bowtie2. Reads with a mapping quality score (MAPQ) <10 were discarded.
+Reads with ≥2 non-genomic 5’ Ts after alignment were called PASS reads. PASs within 24 nt from each other were clustered as previously described
+Genome_build: hg19
+Supplementary_files_format_and_content: tab-delimited text file including reads count for each pAs/gene
+ 
+Submission date Nov 18, 2020
+Last update date May 31, 2021
+Contact name Bin Tian
+E-mail(s) btian@wistar.org
+Phone 215-898-3922
+Organization name the wistar institute
+Street address 3601 Spruce Street
+City Philadelphia
+State/province PA
+ZIP/Postal code 19104
+Country USA
+ 
+Platform ID GPL11154
+Series (1)
+GSE161727 Alternative polyadenylation isoform abundance and stability of HEK293T cells
+Relations
+BioSample SAMN16826987
+SRA SRX9527581
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+RNA-seq, HEK293T cells, untreated, Rep1 - - GEO DataSets - NCBI (https://www.ncbi.nlm.nih.gov/gds?LinkName=biosample_gds&from_uid=37898924)
+citeturn29search5 [wordlim: 200] Crawled: 2 days ago; RNA-seq, HEK293T cells, untreated, Rep1
+
+# GEO DataSets
+
+## Functional Genomics Studies
+
+RNA-seq, HEK293T cells, untreated, Rep1
+
+Organism:
+    Homo sapiens
+
+Source name:
+    HEK293T
+
+Platform:
+    GPL28038
+Series:
+    GSE245856 GSE246399
+Download data: TXT
+
+Sample
+
+Accession:
+    GSM7849970
+
+ID:
+    307849970
+
+SRA Run Selector
+
+## Supplemental Content
+
+### Related information
+
+  * BioSample
+
+BioSample links
+
+  * SRA
+
+Links to Short Read Archive Experiments
+
+  * Taxonomy
+
+### Important Links
+
+  * GEO Home
+  * GEO Documentation
+  * About GEO DataSets
+  * Construct a Query
+  * Download Options
+
+
+RNA-seq, HEK293T cells, untreated, Rep1
+
+GEO DataSets
+
+  * GEO DataSets Links for BioSample (Select 37898924) (1)
+
+GEO DataSets--------------------------------------------------------------------------------
+Massively multiplex chemical transcriptomics at si... (ID 587707) - BioProject - NCBI (https://ncbi.nlm.nih.gov/bioproject/587707)
+citeturn29search6 [wordlim: 200] Published: 6.7 years ago; Crawled: 5 days ago; Single-cell RNA-seq libraries were generated using two and three level single-cell combinatorial indexing RNA sequencing (sci-RNA-seq) of untreated or small molecule inhibitor exposed HEK293T, NIH3T3, A549, MCF7 and K562 cells.
+
+Accession: PRJNA587707 ID: 587707
+
+## Massively multiplex chemical transcriptomics at single cell resolution
+
+Single-cell RNA-seq libraries were generated using two and three level single-cell combinatorial indexing RNA sequencing (sci-RNA-seq) of untreated or small molecule inhibitor exposed HEK293T, NIH3T3, A549, MCF7 and K562 cells. More...
+
+Single-cell RNA-seq libraries were generated using two and three level single-cell combinatorial indexing RNA sequencing (sci-RNA-seq) of untreated or small molecule inhibitor exposed HEK293T, NIH3T3, A549, MCF7 and K562 cells. Different cells and different treatment were hashed and pooled prior to sci-RNA-seq using a nuclear barcoding strategy. This nuclear barcoding strategy relies on fixation of barcode containing well-specific oligos that are specific to a given cell type, replicate or treatment condition. Overall design: Single-cell RNA-seq libraries were generated using two and three level single-cell combinatorial indexing RNA sequencing (sci-RNA-seq) of untreated or small molecule inhibitor exposed HEK293T, NIH3T3, A549, MCF7 and K562 cells. --------------------------------------------------------------------------------
+DataMed (https://datashareindex.org/dataset/5643818)
+citeturn29search7 [wordlim: 200] Crawled: 3 weeks ago;     https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi? ... Single-cell RNA-seq libraries were generated using two and three level single-cell combinatorial indexing RNA sequencing (sci-RNA-seq) of untreated or small molecule inhibitor exposed HEK293T, NIH3T3, A549, MCF7 and K562 cells.
+
+Dataset
+
+# Massively multiplex chemical transcriptomics at single cell resolution
+
+GEO· 2019· GSE139944
+
+Authors: S Srivatsan, S Srivatsan, J McFaline-Figueroa, V Ramani, Lauren Saunders, Junyue Cao, Jonathan Packer, Hannah Pliner, D Jackson, Riza Daza, Lena Christiansen, Fan Zhang,...[Button: [ Show all 15 authors ]]
+
+Used by
+
+5
+
+Mentioned by
+
+3
+
+External ID
+    GSE139944
+
+Repository
+    GEO
+
+Download
+    https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE139944
+
+Overview
+
+## Description
+
+Single-cell RNA-seq libraries were generated using two and three level single-cell combinatorial indexing RNA sequencing (sci-RNA-seq) of untreated or small molecule inhibitor exposed HEK293T, NIH3T3, A549, MCF7 and K562 cells. Different cells and different treatment were hashed and pooled prior to sci-RNA-seq using a nuclear barcoding strategy. --------------------------------------------------------------------------------
+GSE256246 — Putative looping factor ZNF143/ZFP143 is an essential transcriptional regulator with no l… | GEO dataset | BioTransfer (https://usebiotransfer.org/tools/geo-finder/GSE256246/)
+citeturn29search8 [wordlim: 200] Published: 2.5 years ago; Crawled: 3 weeks ago;   * GSM8091483 HEK293T, clone 30 untreated, Micro-C, rep. ... N4 mESC, clone A untreated, CTCF ChIP-seq, rep.
+N4 mESC, clone B ∆ZFP143 3h, Micro-C, rep. 2
+  * GSM8091477 JM8.N4 mESC, clone B ∆CTCF 3h, Micro-C, rep. 2
+  * GSM8091478 JM8.N4 mESC, clone B ∆ZFP143/∆CTCF 3h, Micro-C, rep. 2
+  * GSM8091479 JM8.N4 mESC, clone D untreated, Micro-C, rep. 1
+  * GSM8091480 JM8.N4 mESC, clone D ∆ZFP143 3h, Micro-C, rep. 1
+  * GSM8091481 JM8.N4 mESC, clone D untreated, Micro-C, rep. 2
+  * GSM8091482 JM8.N4 mESC, clone D ∆ZFP143 3h, Micro-C, rep. 2
+  * GSM8091483 HEK293T, clone 30 untreated, Micro-C, rep. 1
+  * GSM8091484 HEK293T, clone 30 ∆ZFP143 3h, Micro-C, rep. 1
+  * GSM8091485 HEK293T, clone 30 untreated, Micro-C, rep. 2
+  * GSM8091486 HEK293T, clone 30 ∆ZFP143 3h, Micro-C, rep. --------------------------------------------------------------------------------
+mTORC1 Balances Cellular Amino Acid Supply with Demand for Protein Synthesis through Post-transcriptional Control of ATF4 - PubMed (https://pubmed.ncbi.nlm.nih.gov/28494858/)
+citeturn29search9 [wordlim: 200] Published: 9.4 years ago; Crawled: last month; Left panel: changes in mRNA levels in HEK293T cells treated with either 250 nM Torin 1 or 1 μM tunicamycin for 6 hr were analyzed by RNA-seq. ... Values for each mRNA are normalized to GAPDH and are relative to levels in untreated wild-type cells (n = 3, error bars are SD).
+Left panel: changes in mRNA levels in HEK293T cells treated with either 250 nM Torin 1 or 1 μM tunicamycin for 6 hr were analyzed by RNA-seq. Blue, mTOR-regulated mRNAs (q < 0.1) with AA-related functions, as in (D); green, mRNAs induced by tunicamycin (q < 0.1) with ER stress-related functions (MSIGDB M10844) (n = 2). Right panel: boxplot shows change in expression of AA-related and ER-stress mRNAs in HEK293T cells treated with 250 nM Torin 1 or 1 μM tunicamycin for 6 hr (n = 2). Boxplots are displayed with standard definitions: upper and lower hinges are 25^{th} and 75^{th} percentile, respectively. The bar represents the median. (F) mTOR regulation of ATF4-target transcripts in ATF4^{−/−} cells. RNA was isolated from ATF4^{+/+} and ATF4^{−/−} HEK293T cells treated with vehicle (DMSO) or 250 nM Torin 1 for 4 hr and analyzed by qPCR. Values for each mRNA are normalized to GAPDH and are relative to levels in untreated wild-type cells (n = 3, error bars are SD). (G) Loss of ATF4 reduces AA uptake. Uptake of ^{14}C-labeled AAs was measured in ATF4^{+/+}, ATF4^{−/−}, or ATF4^{−/−} HEK293T cells expressing ectopic ATF4 by scintillation counting and normalized to DNA content. n = 3, error bars are SD, significance by t test. (H) mTOR inhibition reduces AA uptake. ATF4^{+/+} and ATF4^{−/−} HEK293T cells were treated with vehicle (DMSO) or 250 nM Torin 1 for 24 hr. AA uptake was assessed as in (G). n = 3, error bars are SD, significance by t test.
+
+--------------------------------------------------------------------------------
+Persistent Activation of mRNA Translation by Transient Hsp90 Inhibition - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC10088179/)
+citeturn29search10 [wordlim: 200] Published: 6.1 years ago; Crawled: last month; The accession number for the raw RNA-seq and ribosome-profiling read counts reporter in this paper is GEO: GSE153945. ... HEK293T reporter cell line stably expressing Renilla luciferase (Rluc)-tagged HSP90 (HSP90β) was as previously described (Taipale et al., 2012).HEK293T cells were used for the complementation and immunoprecipitation assays.
+X-gal  | Sigma-Aldrich  | Cat# 10703729001
+Luciferase Control RNA  | Promega  | Cat# L4561
+TRIzol Reagent  | ThermoFisher  | Cat# 15596026
+RNasin^{®} Ribonuclease Inhibitor  | Promega  | Cat# N2111
+cOmplete, EDTA-free Protease Inhibitor Cocktail  | Sigma-aldrich  | Cat# 11873580001
+Ambion RNase I, cloned, 100 U/μL  | ThermoFisher  | Cat# AM2294
+SuperScript III Reverse Transcriptase  | ThermoFisher  | Cat# 18080093
+
+* * *
+
+Critical Commercial Assays
+
+* * *
+
+Nano-Glo^{®} Luciferase Assay System  | Promega  | Cat# N1110
+BioLux^{®} Gaussia Luciferase Flex Assay Kit  | NE BioLabs  | E3308
+
+* * *
+
+Deposited Data
+
+* * *
+
+RNA seq and Ribosome profiling  | created here  | GEO: GSE153945
+
+* * *
+
+Experimental Models: Cell Lines
+
+* * *
+
+HEK293T cells  | Lindqiust lab  | N/A
+
+* * *
+
+Experimental Models: Organisms/Strains
+
+* * *
+
+S. cerevisiae: Strain background: W303  | ATCC  | Cat# 201238
+S. cerevisiae: Strain background: BY4741  | ATCC  | Cat# 201388
+More strains, see Table S4  |  | N/A
+--------------------------------------------------------------------------------
+Chapter 2 Materials and Methods (https://fileserver-az.core.ac.uk/download/574733732.pdf)
+citeturn29search12 [wordlim: 200] Published: 3.1 years ago; Crawled: 3.1 years ago; RNA-seq data for untreated HEK293T cells were retrieved from the GEO (project PRJNA336449; Aktaş et al., 2017).
+Chapter 2 Materials and Methods
+
+instrument ran in data dependent acquisition Top S mode with the most abundant ions with charge states 2-7 selected for MS/MS. Samples were run in technical triplicate. All data analysis of raw mass spectrometry files was performed using the MaxQuant bioinformatics suite (Max-Planck Institute for Biochemistry). The FASTA protein database, together with common contaminants, were searched and peptide identification was achieved by feature matching. Both LFQ and IBAQ label-free quantification was performed. Data transformation and visualisation was performed in Perseus (Max-Planck Institute for Biochemistry).
+
+2.3.3  HEK293T RNA-seq
+
+RNA-seq data for untreated HEK293T cells were retrieved from the GEO (project PRJNA336449; Aktaş et al., 2017). RNA-seq fastq files were trimmed using Trimmomatic 0.36 to remove Illumina primers and poor-quality sequences. A minimum length of 35 nucleotides was also used. Salmon 0.8.2 was used to align trimmed RNA-seq data to human genome build GRCh38 to calculate transcripts per million (TPMs) for each gene.
+
+84--------------------------------------------------------------------------------
+Microsoft Word - Supplementary Information_250818.docx (https://rcastoragev2.blob.core.windows.net/28c9cb1cb24c5a3403369f99435886f4/41467_2025_63167_MOESM1_ESM.pdf)
+citeturn29search13 [wordlim: 200] Published: 3 months ago; untreated Jurkat cells. d, RNA-seq plots of HEK293T cells treated with RENDER-CRISPRoff v3
+Supplementary Figure 8. RNA-seq analysis of RENDER-CRISPRoff treated Jurkat and 
+HEK293T cells. a, RNA-seq plots of Jurkat cells treated with RENDER-CRISPRoff v3 packaged 
+with sgRNAs targeting CD55 compared to untreated Jurkat cells. The data are representative of 
+the average of two independent replicates. b, c, Comparison between two replicates of RNA-seq 
+of (b) Jurkat cells treated with RENDER-CRISPRoff v3 packaged with CD55-sgRNAs, and (c) 
+untreated Jurkat cells. d, RNA-seq plots of HEK293T cells treated with RENDER-CRISPRoff v3 
+packaged with sgRNAs targeting CLTA compared to untreated HEK293T cells. The data are 
+representative of the average of two independent replicates. e, f, Comparison between two 
+replicates of RNA-seq of (e) Jurkat cells treated with RENDER-CRISPRoff v3 packaged with 
+CLTA-sgRNAs, and (f) untreated HEK293T cells.--------------------------------------------------------------------------------
+tRNA modifications tune m6A-dependent mRNA decay - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12255531/)
+citeturn29search11 [wordlim: 200] Published: 1.2 years ago; Crawled: 2 weeks ago; (E) Reporter mRNA decay in HEK293T cells after transcriptional shutoff by actinomycin D (left) or triptolide (right). ... We then transfected these constructs into HEK293T cells, blocked transcription with either triptolide or actinomycin D, and monitored reporter mRNA decay by RT-qPCR. ... GTEx  | GTEx Consortium^{44}  | https://storage.googleapis.com/adult-gtex/bulk-gex/v7/rna-seq/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_median_tpm.gct.gz
+--------------------------------------------------------------------------------
+International Journal of (https://pdfs.semanticscholar.org/26a1/5eac1a2aa690f638e389179bc982462b2a2a.pdf)
+citeturn29search14 [wordlim: 200] Published: 7 months ago; All three cell lines (untreated K562, hemin-treated K562, and HEK293T) were processed ... Both the raw RNA-Seq reads and the processed gene expression values for untreated
+--------------------------------------------------------------------------------
+siqRNA-seq is a spike-in-independent technique for quantitative mapping of mRNA landscape (https://d-nb.info/1345815484/34)
+citeturn29search15 [wordlim: 200] Published: 2.1 years ago; models for gene expression quantification of untreated HEK293T cells ... Quantification RNA-seq for HEK293T cells treated with ActD for 12 h. ... (https://​www.​ncbi.​nlm.​nih.​gov/​geo/​query/​acc.​cgi?​
+--------------------------------------------------------------------------------
+SCIENCE ADVANCES | RESEARCH ARTICLE (https://scholars.cityu.edu.hk/ws/portalfiles/portal/253596364/232063819.pdf)
+citeturn29search16 [wordlim: 200] Published: 4 months ago; For RNA-seq data analysis, we conducted the same pipeline as the Chrom-seq. ... For correlation analysis between Chrom-seq component expression and gene expression in cells, raw counts of untreated HEK293T and CBX7 module experimental groups were converted to FPKM values and log2-transformed.
+--------------------------------------------------------------------------------
+S c i e n c e  A d va n c e s  | R e s e a r c h  A r t i c l e (https://research-portal.uu.nl/ws/portalfiles/portal/236951139/sciadv.adn1397.pdf)
+citeturn29search17 [wordlim: 200] Published: 6 months ago; seq data of H3K4me3 in HEK293T cells from the GEO database ... RNA-­seq data analysis, we conducted the same pipeline as the ... cellular transcriptome, raw counts of untreated HEK293T cells
+

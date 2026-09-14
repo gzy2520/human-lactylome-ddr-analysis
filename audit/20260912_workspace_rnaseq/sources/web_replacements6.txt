@@ -1,0 +1,271 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114691)
+citeturn21search0 [wordlim: 200] Published: 8.3 years ago; Crawled: 4 days ago; Series GSE114691 Query DataSets for GSE114691 ... Lab Children's Health Research Institute ... GSE114691_MasterCount_ControlONLY.txt.gz 4.6 Mb (ftp)(http) TXT
+Series GSE114691 Query DataSets for GSE114691
+Status Public on Jun 28, 2019
+Title Placental transcriptome in pregnancies complicated by Intrauterine growth restriction (IUGR) and preeclampsia (PE)
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Purpose: Identify differentially expressed genes in placental samples from early-onset (EO) IUGR, EO-PE, as well as pregnancies complicated by both EO-PE and EO-IUGR
+ 
+Overall design Methods: Isolated total RNA from human placenta at birth and used it for RNA-sequencing on the Hiseq2000. Sequences were aligned to the human transcriptome (hg19/genome_build37) . Aligned sequences were then used to obtain abundance measurements and conduct differential expression analysis.
+ 
+Contributor(s) Awamleh Z, Gloor G, Han V
+Citation(s) 31248403
+Submission date May 21, 2018
+Last update date Jul 02, 2019
+Contact name Victor Han
+E-mail(s) Victor.Han@lhsc.on.ca
+Organization name Western University
+Department Biochemistry
+Lab Children's Health Research Institute
+Street address 1151 Richmond Street
+City London
+State/province Ontario
+ZIP/Postal code N6A3K7
+Country Canada
+ 
+Platforms (1)
+GPL11154 Illumina HiSeq 2000 (Homo sapiens)
+Samples (79)Image: Less... Less...            Image: More... More...
+GSM3147325 Control1
+GSM3147326 Control2
+GSM3147327 Control3
+GSM3147328 Control4
+GSM3147329 Control5
+GSM3147330 Control6
+GSM3147331 Control7
+GSM3147332 Control8
+GSM3147333 Control9
+GSM3147334 Control10
+GSM3147335 Control11
+GSM3147336 Control12
+GSM3147337 Control13
+GSM3147338 Control14
+GSM3147339 Control15
+GSM3147340 Control16
+GSM3147341 Control17
+GSM3147342 Control18
+GSM3147343 Control19
+GSM3147344 Control20
+GSM3147345 Control21
+GSM3147346 PE1
+GSM3147384 PEIUGR19
+GSM3147385 PEIUGR20
+GSM3147386 IUGR1
+GSM3147387 IUGR2
+GSM3147388 IUGR3
+GSM3147389 IUGR4
+GSM3147390 IUGR5
+GSM3147391 IUGR6
+GSM3147392 IUGR7
+GSM3147393 IUGR8
+GSM3147394 IUGR9
+GSM3147395 IUGR10
+GSM3147396 IUGR11
+GSM3147397 IUGR12
+GSM3147398 IUGR13
+GSM3147399 IUGR14
+GSM3147400 IUGR15
+GSM3147401 IUGR16
+GSM3147402 IUGR17
+Relations
+BioProject PRJNA472249
+SRA SRP148556
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE114691_MasterCount_ControlONLY.txt.gz 4.6 Mb (ftp)(http) TXT
+GSE114691_MasterCount_IUGRONLY.txt.gz 4.0 Mb (ftp)(http) TXT
+GSE114691_MasterCount_PEIUGR.txt.gz 4.3 Mb (ftp)(http) TXT
+GSE114691_MasterCount_PEONLY.txt.gz 4.3 Mb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+Systematic comparison of high-throughput single-cell RNA-seq methods for immune cell profiling - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC7818754/)
+citeturn21search1 [wordlim: 200] Published: 5.6 years ago; Crawled: 6 days ago; We demonstrate that these methods have fewer dropout events, which facilitates the identification of differentially-expressed genes and improves the concordance of single-cell profiles to immune bulk RNA-seq signatures. ... Overall, our characterization of immune cell mixtures provides useful metrics, which can guide selection of a high-throughput single-cell RNA-seq method for profiling more complex immune-cell heterogeneity usually found in vivo. ... Although techniques such as FACS and mass cytometry [1] are useful for studying cellular diversity according to well-characterized cell-surface-protein markers, the advent of single-cell RNA sequencing (RNA-seq) has expanded the power to characterize individual immune cells from a defined set of cell-surface markers to the entire transcriptome for last few years. ... Here, all 10x Genomics methods, which had the highest mRNA detection sensitivity, exhibited a high correlation to bulk RNA-seq data as well as more DE genes with a lower range of expression levels in bulk data. ... Systematic comparison of single-cell and single-nucleus RNA-sequencing methods.
+## Abstract
+
+### Background
+
+Elucidation of immune populations with single-cell RNA-seq has greatly benefited the field of immunology by deepening the characterization of immune heterogeneity and leading to the discovery of new subtypes. However, single-cell methods inherently suffer from limitations in the recovery of complete transcriptomes due to the prevalence of cellular and transcriptional dropout events. This issue is often compounded by limited sample availability and limited prior knowledge of heterogeneity, which can confound data interpretation.
+
+### Results
+
+Here, we systematically benchmarked seven high-throughput single-cell RNA-seq methods. We prepared 21 libraries under identical conditions of a defined mixture of two human and two murine lymphocyte cell lines, simulating heterogeneity across immune-cell types and cell sizes. We evaluated methods by their cell recovery rate, library efficiency, sensitivity, and ability to recover expression signatures for each cell type. We observed higher mRNA detection sensitivity with the 10x Genomics 5′ v1 and 3′ v3 methods. We demonstrate that these methods have fewer dropout events, which facilitates the identification of differentially-expressed genes and improves the concordance of single-cell profiles to immune bulk RNA-seq signatures.
+
+### Conclusion
+
+Overall, our characterization of immune cell mixtures provides useful metrics, which can guide selection of a high-throughput single-cell RNA-seq method for profiling more complex immune-cell heterogeneity usually found in vivo.
+
+### Supplementary Information
+
+The online version contains supplementary material available at 10.1186/s12864-020-07358-4.
+
+Keywords: Single cell, Transcriptomics, Single-cell RNA-seq, High throughput sequencing, Immune-cell profiling
+
+## Background
+
+Understanding the cellular diversity underlying immune responses is an important component of immunological research. Although techniques such as FACS and mass cytometry [1] are useful for studying cellular diversity according to well-characterized cell-surface-protein markers, the advent of single-cell RNA sequencing (RNA-seq) has expanded the power to characterize individual immune cells from a defined set of cell-surface markers to the entire transcriptome for last few years. In this work, we extend previous findings with a focus on the application of high-throughput methods to immune-cell profiling. By using a defined mixture of four lymphocyte cell lines, we assess the performance of seven high-throughput methods using four commercially-available systems to address common concerns in immune-cell profiling. First, we examine library efficiency in terms of cell recovery and cell-assignable reads. Next, we assess mRNA detection sensitivity and the correlation of cellular profiles to immune cell signatures from bulk RNA-seq. Finally, we compare results across the lymphocyte cell lines and explore in-vivo variation of mRNA detection across peripheral blood mononuclear cells (PBMCs) in consideration of varying cell sizes and cellular mRNA contents. This study serves as useful guidelines for the selection of a suitable single-cell RNA-seq method to study immune cells.
+
+## Results
+
+### Design of single-cell RNA-seq benchmarking experiments
+
+We benchmarked four commercially-available high-throughput single-cell systems: the Chromium [14] (10x Genomics), the ddSEQ (Illumina and Bio-Rad), the scRNA-Seq System running Drop-seq (Dolomite Bio) [15], and the ICELL8 cx (Takara Bio) [16] (Fig. 1). We tested three methods available for the Chromium (3′ v3, 3′ v2 and 5′ v1) as well as two methods for the ICELL8 (the official 3′ DE protocol and an alternate 3′ DE-UMI protocol). All methods tested perform mRNA end counting by tagging mRNA sequences with a barcode containing a cell identifier (CID) and a unique molecular identifier (UMI) with lengths that vary by method (Supplement Table 1).
+
+#### Fig. 1.
+
+Open in a new tab
+
+Overview of high-throughput single-cell benchmarking experiments. Experiments were performed using four immune cell lines to benchmark cell recovery, transcript detection sensitivity, concordance to bulk RNA-seq and differentially-expressed gene identification
+
+All techniques, apart from ddSEQ, amplify full-length cDNA (Supplement Table 1) using a modified Smart-seq protocol [17, 18], which incorporates a 5′ PCR handle by employing a reverse transcriptase’s ability to switch templates at the end of a transcript. Full-length cDNA can be amplified with primers in the 5′ template-switch and 3′ poly-T oligonucleotides. Barcoded cDNA ends are further amplified after direct ligation or tagmentation to incorporate Illumina sequencing adapters. ddSEQ contains a single amplification step during adapter incorporation after second strand synthesis without amplification of full-length cDNA. Amplification bias introduced in the multiple rounds of PCR in these protocols, is mitigated by the incorporation of UMIs [19]. 1; Supplement Figs. 1 and 2). Cells were identified and classified by correlating single-cell expression profiles to bulk RNA-seq.
+
+### Evaluation of cell capture and library efficiency
+
+One important consideration for single-cell RNA-seq is the capture rate, or the fraction of cells recovered in the data relative to input. This is especially critical when working with precious samples with few cells. To identify recovered cells, we used the curve of the log-total count against the log-rank of each CID, which is equivalent to the transposed log-log empirical cumulative density plot of the total counts of each CID. The knee and inflection points in this curve typically define the transition between the cell-containing component and the ambient RNA component of the total count distribution. Here, we defined a recovered cell as a CID located above the inflection point (Supplement Fig. 2a). In our tests, we found that capture rates were slightly lower than, but tracked with theoretical rates (Fig. 2a; Table 1). As expected, we observed the highest rates with 10x Genomics methods, ranging from ~ 30 to ~ 80%, while ddSEQ and Drop-seq methods recovered < 2% of cells.
+
+#### Fig. 2.
+
+Open in a new tab
+
+Library-pool and cell-capture efficiencies: a Cell capture efficiency was measured by the number of cell identifiers (CIDs) above the inflection point of the rank ordered reads/CID plot (knee plot) relative to the number of cells loaded on the instrument. Horizontal lines indicate theoretical capture efficiency based on bead/cell loading concentrations or manufacturer’s guidelines. b Library pool efficiency was measured by the number of reads in CIDs above the inflection point
+
+#### Table 1.
+
+Summary of average mRNA/gene detection sensitivities and capture rates for each single-cell RNA-seq method
+
+Method  | Avg Multiplet Rate  | Avg Cell Capture Efficiency  | Avg Library Pool Efficiency  | Median nUMIs (EL4)  | Median nGenes (EL4)  | GD50 EL4 (FPKM)  | Avg nDE genes  | Avg nDE genes (> 1.5 FC in bulk)  | Recall (mean ± sd)  | Precision (mean ± sd)
+
+Transcript detection sensitivity: a Distributions of unique molecular identifiers (UMIs) and b genes detected in EL4 cells by sample are plotted. c Numbers of UMIs or d genes detected versus numbers of reads per cell for each cell type are plotted. e Accumulated average numbers of genes detected from aggregated data of subsamples up to 50 cells are plotted. f Dropout modeling (dropout rate versus FPKM of bulk sequencing) for EL4 cells by method are shown. A left-shifted curve indicates higher sensitivity, that is, fewer dropouts at lower expression levels. Sensitivity of methods for EL4 cells ranked in the following order: 10x 3′ v3 > 10x 5′ v1 > 10x 3′ v2 > ddSEQ > Drop-seq > ICELL8 3′ DE > ICELL8 3′ DE-UMI. Cells with high mitochondrial expression rates were excluded from this calculation
+
+To account for varying read distributions across the four cell types, we compared the number of detected UMIs and genes relative to the total number of reads per cell. For EL4, IVA12 and Jurkat cells, we observed a similar trend across methods with regards to efficiency of transcript and gene detection (Fig. 3c, d). Again, 10x 3′ v3 (mean ± sd reads/UMI = 2.07 ± 0.52, reads/gene = 9.04 ± 2.65) and 5′ v1 chemistries (mean ± sd reads/UMI = 1.98 ± 0.19, reads/gene = 9.51 ± 2.68) were the most efficient, requiring fewer reads to detect a single UMI or gene. These methods are followed by 10x 3′ v2 (reads/UMI = 2.35 ± 0.33, reads/gene = 11.17 ± 3.03), ddSEQ (reads/UMI = 5.25 ± 1.14, reads/gene = 13.42 ± 3.89), Drop-seq (reads/UMI = 6.40 ± 1.42, reads/gene = 15.97 ± 5.62) and ICELL8 methods (3′ DE: reads/gene = 29.68 ± 41.48, 3’ DE-UMI: reads/UMI = 21.77 ± 5.50, reads/gene = 47.5 ± 17.91). This trend is largely mirrored in TALL-104 cells, albeit less distinct due to the low read depth obtained for those cells (Fig. 3c, d; Supplement Fig. 1c).
+
+We further examined the number of genes with at least one sequenced read in pseudo-bulk populations. For this purpose, cells form each cell type were pooled and gene-expression measurements were merged. We observed similar trends with higher numbers of detected genes with the 10x 3′ v3, and 5′ v1 method for EL4, IVA12 and Jurkat cells (Fig. 3e). ### mRNA detection affects the fidelity of single-cell and pseudo-bulk transcriptomes
+
+We next investigated how well single-cell expression recapitulates immune signatures from bulk RNA-seq. For this purpose, we correlated expression of a set of marker genes (defined using bulk RNA-seq data; see Methods) between bulk RNA-seq and single cells. In general, cells with more genes detected had a better concordance to bulk RNA-seq immune signatures (Supplement Fig. 5). We observed higher Pearson correlation coefficients for 10x 3′ v3, 5′ v1 and ddSEQ methods against EL4, IVA12 and Jurkat bulk RNA-seq expression signatures (Fig. 4a). ICELL8 3′ methods, with generally fewer genes detected, demonstrated the lowest correlation values. Overall, poorer correlation to TALL-104 bulk RNA-seq was in line with fewer transcripts and genes detected for this cell type in the single-cell data.
+
+#### Fig. 4.
+
+Open in a new tab
+
+Correlation to bulk RNA-seq: a Pearson correlation (r) of cell identifiers (CIDs) to bulk RNA-seq data using highly-expressed variable genes. Only r values above 0.2 were included in plot. b Average Pearson correlation using all genes for aggregated data of 50 subsamples of up to 50 cells are plotted
+
+We further examined the correlation between pooled single-cell RNA-seq pseudo-bulk transcriptomes and bulk RNA-seq data using all genes. Averaging gene-expression profiles across single cells is commonly performed to compare data across experiments and is thought to resemble bulk data. For EL4, IVA12 and Jurkat, most methods began to plateau around a correlation value of r = 0.9 with a pool of 10–20 cells (Fig. 4b). The maximum correlation values were lower for ICELL8 3′ DE (r = 0.90 and 3′ DE-UMI methods (r = 0.81–0.90) compared to other methods (r=0.92–0.95), and correlation was generally lower for TALL-104 cells in all methods, suggesting that lower mRNA detection sensitivity not only affects data fidelity at a per-cell level but also impacts aggregated single-cell data. Although samples were prepared under identical conditions, we cannot rule out any effects of biological differences between samples. Gene expression data was normalized by each cell’s library size (see Methods), which correlated highly to scaling factors derived by deconvolution from cell pools (mean +/− sd r =0.99 +/− 0.016) (Supplement Table 4) [25]. Over 3000 DE genes were identified in 10x Genomics methods, the highest among the methods tested, followed by Drop-seq (avg ~ 2700 genes) and ddSEQ (avg ~ 2800 genes), while the two ICELL8 methods had the fewest numbers of DE genes (avg ~ 1800 and ~ 1000 genes) (Fig. 5b; Table 1). We observed similar trends with two alternative commonly-used tests for differential expression, a Mann-Whitney-Wilcoxon test [26] and a likelihood ratio test with an negative binomial generalized linear model [26, 27] (Supplement Fig. 6a). Performing DE analysis using all the cells obtained in each method increased the number of genes passing the significance threshold due to the increased statistical power (Supplement Fig. 6b). When we considered the 5,868 genes that had more than a 1.5-fold difference in bulk RNA-seq data as a proxy for ground-truth expression differences, the trend remained the same (Fig. 5b; Supplement Figs. 6a, 6b; Table 1). To further evaluate the effectiveness of calling DE genes in terms of quantity and quality, we assessed recall and precision of each technology. Recall was calculated as the fraction of DE genes in bulk RNA-seq data that was identified as differentially expressed in the single-cell data. Precision was defined by the fraction of DE genes from single-cell data that were also differentially expressed in bulk RNA-seq data. We observed the highest recall rates for 10x Genomics methods (0.595 - 10x 5′ v1; 0.577 - 10x 3′ v3) (Table 1) indicating lower type II error rates for these methods with higher mRNA detection sensitivity. Precision was reasonably high across all methods (0.728–0.887) (Table 1), implying a moderately low number of falsely called DE genes overall.
+
+## Discussion
+
+In this paper we explored several important quality metrics of single-cell RNA-seq methods: efficiency of cell recovery, library efficiency and mRNA detection sensitivity. High recovery of cells put into a system and minimal loss of reads due to noise are important, especially for limited samples with few cells. The differences in performance we observed across these methods are directly related to the design of cell and mRNA capture. To partition cells, the methods we tested either use microfluidics to generate nanoliter sized droplets or to partition cells on microwell chips. Ideally, those microreactors contain exactly one bead and one cell. In practice, however, the number of cells per microreactor approximately follows a Poisson distribution. While the loading probability of cells is similar across these methods, the distribution of barcoding oligonucleotides varies. The loading statistics of Drop-seq and ddSEQ follow a Poisson distribution, while 10x Chromium chips load beads in a sub-Poissonian fashion. Increasing the sensitivity of mRNA detection greatly benefits downstream analyses of immune profiling datasets. Sampling transcriptomes with high fidelity results in a greater likelihood of detecting rare transcripts for identifying DE genes at lower expression levels. In general, our results showed that expression profiles of cells with high mRNA content generated by methods with a high mRNA detection rate correlated well to bulk-RNA-seq data. Also, the number of DE genes as well as the overall correlation in fold-change differences to bulk RNA-seq improved with higher mRNA detection sensitivity. Here, all 10x Genomics methods, which had the highest mRNA detection sensitivity, exhibited a high correlation to bulk RNA-seq data as well as more DE genes with a lower range of expression levels in bulk data. Notably, our results reveal that the higher variance in the detection of lowly expressed transcripts commonly observed in techniques with lower sensitivity is not necessarily overcome by pooling across single cells when performing pseudo-bulk analyses. --------------------------------------------------------------------------------
+IUGR3 - - GEO DataSets - NCBI (https://www.ncbi.nlm.nih.gov/gds/303147388)
+citeturn21search2 [wordlim: 200] Crawled: 5 days ago;     GSE114691
+
+# GEO DataSets
+
+## Functional Genomics Studies
+
+IUGR3
+
+Organism:
+    Homo sapiens
+
+Source name:
+    Placenta
+
+Platform:
+    GPL11154
+Series:
+    GSE114691
+Download data
+
+Sample
+
+Accession:
+    GSM3147388
+
+ID:
+    303147388
+
+SRA Run Selector
+
+## Supplemental Content
+
+### Related information
+
+  * BioSample
+
+BioSample links
+
+  * SRA
+
+Links to Short Read Archive Experiments
+
+### Important Links
+
+  * GEO Home
+  * GEO Documentation
+  * About GEO DataSets
+  * Construct a Query
+  * Download Options
+
+
+  * IUGR3
+
+IUGR3
+
+GEO DataSets
+
+  * E4.5-5.5_new_Plate2_A10 (scRNA-Seq)
+
+E4.5-5.5_new_Plate2_A10 (scRNA-Seq)
+
+GEO DataSets--------------------------------------------------------------------------------
+Plasticizer mixture exposure-induced preeclampsia pathogenesis: Integrated single-cell and bulk transcriptomics, network toxicology, and molecular docking insights - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0278691525006805)
+citeturn21search3 [wordlim: 200] Crawled: last week; The GSE114691 (GPL11154) consists of the expression profiles of 20 PE placenta tissue samples (PE) and 21 control placenta tissue samples (control) (Awamleh et al., 2019) (Only the PE and control samples were selected, and other samples were excluded). ... This work was supported by the Natural Science Foundation of Anhui Province (Grant number: 2208085QH233); the Basic and Clinical Cooperative Research Promotion Program of Anhui Medical University (Grant number: 2021xkjT030).
+--------------------------------------------------------------------------------
+Identification of key genes in pathogenesis of placental insufficiency intrauterine growth restriction - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC8796578/)
+citeturn21search4 [wordlim: 200] Published: 4.6 years ago; Crawled: last month; The IUGR datasets GSE114691, GSE12216, and GSE24129 were obtained from NCBI Gene Expression Omnibus (GEO; https://www.ncbi.nlm.nih.gov/geo/). ... Characteristics of the studied populations in GSE114691, 12216, and 24129 met the following criteria (Supplementary Table 1): (1) intrauterine growth restriction with estimated fetal weight below the 10th percentile, (2) all IUGR individuals showed clinical signs of disturbed placental function such as asymmetric growth, oligohydroamnions, and/or increased pulsatility index of the umbilical artery, (3) known maternal and fetal factors were excluded, such as maternal systemic diseases (hypertension, diabetes, et.al, especially at the beginning of inclusion), multiple gestation, fetal congenital infection, structural abnormalities, and chromosomal abnormalities, (4) early and/or late onset IUGR [25–27].
+--------------------------------------------------------------------------------
+Upregulation of HIF1A /miR-210 and downregulation of miR-383 in EOPE, IUGR, and EOPE/IUGR: Integrative bioinformatics insights into miR-383 targets - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0143400426003164)
+citeturn21search5 [wordlim: 200] Crawled: last month; For miR-383 target analysis, differentially expressed genes (DEGs) from GSE114691 RNA-seq data were intersected with predicted targets from TargetScan 7.1.
+--------------------------------------------------------------------------------
+BMP5 promotes trophoblast functions upon N-glycosylation via the BMP5-SMAD1/5 signaling pathway in preeclampsia - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0143400424007434)
+citeturn21search6 [wordlim: 200] Published: 1.8 years ago; Crawled: last week; To investigate differences in BMP5 expression in normal and preeclamptic villous tissues, we conducted a differential gene analysis using publicly available transcriptomic data from the GEO database (GSE114691, Normal = 21, PE = 20).
+--------------------------------------------------------------------------------
+Shared glycosylation-related molecular mechanism and immune infiltration patterns of fetal growth restriction and preeclampsia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC13442947/)
+citeturn21search7 [wordlim: 200] Published: last month; Crawled: 3 weeks ago; Gene expression microarray datasets GSE114691 (9) and GSE203507 (10) were obtained from the Gene Expression Omnibus (GEO) database for placental tissue analysis. ... Image: Flowchart diagram illustrating the analysis pipeline for gene expression data integration from two GEO databases (GSE114691 and GSE203507), including merging, batch normalization, hub gene identification, gene regulatory group comparison, enrichment analysis, machine learning approaches (Lasso, RF-RFE, SVM-RFE), identification of five shared diagnostic key genes, and subsequent analyses such as single-cell profiling, ROC curve generation, immune infiltration studies, nomogram construction, and real-world validation through WB and IHC methods.
+--------------------------------------------------------------------------------
+Mitochondrial genetic landscape and its correlation with immune cell infiltration in preeclampsia: Insights from bioinformatics - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0165037825001056)
+citeturn21search8 [wordlim: 200] Crawled: 2 months ago; Placenta transcriptome sequence dataset GSE114691 (GPL11154 platform) with 41 samples (Control: n = 21, PE: n = 20), GSE190971 (GPL11154 platform) with 13 samples (Control: n = 6, PE: n = 7), GSE75010 (GPL6244 platform) with integrated 157 samples (Control: n = 77, PE: n = 80) and GSE74341 (GPL16699 platform) with 25 samples (Control: n = 15, PE: n = 10) were obtained from Gene Expression Omnibus (GEO) database (https://www.ncbi.nlm.nih.gov/). ... A total of 2145 DEGs were identified in GSE114691, including 1185 up-regulated genes and 960 down-regulated genes (Fig.
+--------------------------------------------------------------------------------
+Oral Concurrent Session 8 – Hypertension - 2026 - Pregnancy - Wiley Online Library (https://obgyn.onlinelibrary.wiley.com/doi/10.1002/pmf2.70153)
+citeturn21search9 [wordlim: 200] Published: 7 months ago; Crawled: 3 days ago; Study Design: Using DESeq2, we interrogated an RNA sequencing (RNAseq) dataset of placental villous tissue (GSE114691) from pregnancies with (n = 20) and without PE (n = 21) for expression of PRC2 subunits (EZH1, EZH2 and SUZ12), CATACOMB, and DNMT1, 3A, and 3B.
+--------------------------------------------------------------------------------
+Integrated analysis of multiple microarray studies to identify potential pathogenic gene modules in preeclampsia - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0014480021000307)
+citeturn21search10 [wordlim: 200] Crawled: last month; All eligible microarray datasets were downloaded from the Gene Expression Omnibus database (GEO, https://www.ncbi.nlm.nih.gov/geo/), which is a public functional genomics data repository. ... The criteria illustrated above enabled incorporation of 7 eligible preeclampsia datasets, 6 (GSE114691, GSE25906, GSE10588, GSE44711, GSE54618, GSE24129) of which being analyzed for identifying DEGs whereas the remaining one (GSE75010) for validation.
+--------------------------------------------------------------------------------
+Frontiers | Analyzing molecular signatures in preeclampsia and fetal growth restriction: Identifying key genes, pathways, and therapeutic targets for preterm birth (https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2024.1384214/full)
+citeturn21search11 [wordlim: 200] Published: 2.4 years ago; Crawled: 2 weeks ago; Stepwise overview of the present research study. ... Within its extensive collection, it encompasses a diverse spectrum of data types, spanning from traditional microarray-based evaluations of mRNA, genomic DNA, and protein levels to non-array methodologies like serial analysis of gene expression (SAGE) and mass spectrometry for comprehensive proteomic analyses. ... Moving to the second RNA sequence dataset, GSE114691, high-throughput expression profiling was conducted using the Illumina HiSeq 2000 platform.
+--------------------------------------------------------------------------------
+Hypertension in Pregnancy (https://www.tandfonline.com/doi/pdf/10.1080/10641955.2026.2649740)
+citeturn21search12 [wordlim: 200] Published: 4 months ago; The PE-related datasets were retrieved from the Gene Expression Omnibus (GEO) database (https:// ... The training set consisted of 41 samples obtained from the GSE114691
+--------------------------------------------------------------------------------
+Placental transcriptomic profiling showed disturbance of chemokine activities and lymphocyte chemota (https://www.tandfonline.com/doi/pdf/10.1080/14767058.2025.2567473)
+citeturn21search13 [wordlim: 200] Published: 3 months ago; manufacturer’s standard instructions (Invitrogen, USA), and genomic DNA was removed using ... RNA purification, reverse transcription, library construction and sequencing were performed at ... were mapped to the human reference genome (GRCh38.p13) with HISAT2 v. ... The gene count expression matrix was examined by the DESeq2 [23] statistical method. ... and the database of Pregnancy Outcome Prediction Study [26]. ... The high-throughput sequencing data series GSE114691 generated using the platform
+--------------------------------------------------------------------------------
+Investigating transposable element (https://s3.ap-southeast-1.amazonaws.com/ap-st01.ext.exlibrisgroup.com/64OTAGO_INST/storage/alma/BB/70/CF/81/62/7A/20/43/9D/45/6E/2B/C0/1B/02/E4/bitstream_72399.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJUYRSPBSIJGGDX6A%2F20260410%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260410T080404Z&X-Amz-Expires=86399&X-Amz-Signature=9f1c71b48349bce542827f1367e8fafd52e8a703467b9845f8b2785e405cb914&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B+filename%3D%22bitstream_72399.pdf%22%3B+filename%2A%3DUTF-8%27%27bitstream_72399.pdf&response-content-type=application%2Fpdf)
+citeturn21search14 [wordlim: 200] Published: 4 months ago; RNA-seq placental PE datasets. ... GSE114691
+--------------------------------------------------------------------------------
+A.Rakić et al., *Selenium-Related Gene Activation in Fetal Growth Restriction Placentas: A Bioinformatics Analysis* (https://iit.ac.rs/wp-content/uploads/2026/02/3rd-ICCBIKG-Proceedings-Final-FULL-1_compressed.pdf)
+citeturn21search15 [wordlim: 200] Published: 6 months ago; The independent GSE114691 dataset was used to validate the differential expression of critical genes and the enrichment of the "Selenoamino Acid Metabolism" pathway. ... Left: Discovery Dataset (GSE203507) Right: Validation Dataset (GSE114691).
+--------------------------------------------------------------------------------
+Title: Identification of key genes in the pathogenesis of preeclampsia via (https://www.frontiersin.org/api/v4/articles/1190012/file/Data_Sheet_1.pdf/1190012_supplementary-materials_datasheets_1_pdf/2)
+citeturn21search16 [wordlim: 200] Published: 7 months ago; GSE114691
+--------------------------------------------------------------------------------
+Checking your browser - reCAPTCHA (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178411)
+citeturn21view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178411","lineno":null}); Total lines: 3
+--------------------------------------------------------------------------------
+Checking your browser - reCAPTCHA (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714)
+citeturn21view1 [wordlim: 200] Crawled: 3 days ago; Content type: text/html; Source: open({"ref_id":"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714","lineno":null}); Total lines: 3
+

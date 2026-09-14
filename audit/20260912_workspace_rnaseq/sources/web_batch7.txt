@@ -1,0 +1,613 @@
+DepMap Cell Line Summary (https://depmap.org/portal/cell_line/ACH-000943)
+citeturn9search0 [wordlim: 200] Crawled: 3 months ago;   * RKODepMap ID: ACH-000943
+  * RKO
+
+DepMap ID: ACH-000943
+
+[Button: Overview][Button: Mutations][Button: Fusions][Button: Translocations]
+
+## Description
+
+  * Model
+  * Patient
+  * IDs
+
+#### Annotations
+
+###### Oncotree Subtype and Code
+
+Colon Adenocarcinoma (COAD)
+
+###### Oncotree Primary Disease
+
+Colorectal Adenocarcinoma
+
+###### Oncotree Lineage
+
+Bowel
+
+#### Lineage Contexts
+
+###### Level 0
+
+Bowel (BOWEL)
+
+###### Level 1
+
+Colorectal Adenocarcinoma (COADREAD)
+
+###### Level 2
+
+Colon Adenocarcinoma (COAD)
+
+#### Molecular Subtypes
+
+###### Level 0
+
+BRAF p.V600E (BRAFp.V600E)
+
+###### Level 0
+
+MSI (MSI)
+
+###### Level 0
+
+NF1_LoF (NF1_LoF)
+
+###### Level 0
+
+PIK3CA (PIK3CA)
+
+###### Level 1
+
+PIK3CA p.H1047 (PIK3CAp.H1047)
+
+###### Primary/Metastasis
+
+Primary
+
+###### Collection Site
+
+Colon
+
+###### Source
+
+ATCC
+
+###### Catalog Number
+
+CRL-2577
+
+#### Overview
+
+###### Age and Category
+
+Unknown
+
+###### Sex
+
+Unknown
+
+#### Cell Line Name
+
+RKO_LARGE_INTESTINE
+
+#### CCLE Name
+
+RKO_LARGE_INTESTINE
+
+#### Aliases:
+
+RKO
+
+#### Cellosaurus RRID
+
+CVCL_0504
+
+#### Sanger Model ID
+
+SIDM01090
+
+#### COSMIC ID
+
+909698
+
+## Oncogenic Alterations
+
+Gene  | Alteration  | Oncogenic  | Function
+--- | --- | --- | ---
+STAT3  | E616del  | Likely Oncogenic  | Unknown
+PIK3CA  | H1047R  | Oncogenic  | Gain-of-function
+BRAF  | V600E  | Oncogenic  | Gain-of-function
+_{v4.7}
+
+## Top 10 Preferentially Essential GenesImage: info icon
+
+### CRISPR
+
+#### CRISPR (DepMap Public 25Q3+Score, Chronos)
+
+WRN
+
+ATP6V0E1
+
+MTCH2
+
+SLC5A3
+
+MTX2
+
+TTC7A
+
+HYCC2
+
+CAD
+
+TPK1
+
+ATRN
+
+### RNAi
+
+#### RNAi (Achilles+DRIVE+Marcotte, DEMETER2)
+
+TTC7A
+
+ALDH18A1
+
+SDHD
+
+SDHA
+
+IDH2
+
+POLR1G
+
+SDHC
+
+SUCLA2
+
+MTHFD1
+
+OGDH
+
+Download gene effect z-scores for all genes: CRISPR, RNAi
+
+## Sequenced and profiled in the following datasets:
+
+CN (1 datasets)
+
+Copy Number WGS Public 25Q3 (Log2 transformed)
+
+CRISPR (1 datasets)
+
+CRISPR (DepMap Public 25Q3+Score, Chronos)
+
+Drug screen (9 datasets)
+
+PRISM Repurposing Public 24Q2
+
+Drug sensitivity AUC (PRISM Repurposing Secondary Screen)
+
+Drug sensitivity AUC (CTD^2)
+
+Drug sensitivity AUC (Sanger GDSC1)
+
+Drug sensitivity AUC (Sanger GDSC2)
+
+Drug sensitivity replicate-level dose (CTD^2)
+
+Drug sensitivity replicate-level dose (Sanger GDSC1)
+
+Drug sensitivity replicate-level dose (Sanger GDSC2)
+
+Drug sensitivity replicate-level dose (PRISM Repurposing Secondary Screen)
+
+Expression (1 datasets)
+
+Expression Public 25Q3
+
+Methylation (1 datasets)
+
+Methylation (1kb upstream TSS)
+
+Mutations (3 datasets)
+
+Hotspot Mutations
+
+Damaging Mutations
+
+Mutation
+
+Protein Expression (1 datasets)
+
+Protein Array
+
+RNAi (3 datasets)
+
+RNAi (Achilles+DRIVE+Marcotte, DEMETER2)
+
+RNAi (Achilles, DEMETER2)
+
+RNAi (DRIVE, DEMETER2)
+
+Structural variants (2 datasets)
+
+Fusion
+
+Translocation
+
+## MetMap Image
+
+Target  | Potential Image  | Penetrance Image
+--- | --- | ---
+Bone  | -3.5  | 0.07
+Brain  | -3.24  | 0.14
+Kidney  | -2.11  | 0.5
+Liver  | -0.92  | 0.36
+Lung  | -1.77  | 0.5
+
+Explore MetMap 500 data--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE75010)
+citeturn9search1 [wordlim: 200] Published: 10.3 years ago; Crawled: last week; Series GSE75010 Query DataSets for GSE75010 ... Experiment type Expression profiling by array
+Series GSE75010 Query DataSets for GSE75010
+Status Public on May 10, 2016
+Title Placental gene expression profiling for the identification of clinically relevant subclasses of human preeclampsia
+Organism Homo sapiens
+Experiment type Expression profiling by array
+Third-party reanalysis
+Summary Preeclampsia (PE) is a complex, heterogeneous disorder of pregnancy, demonstrating considerable variability in observed maternal symptoms and fetal outcomes. We hypothesized that this heterogeneity is due to the existence of multiple molecular forms of PE. To address our hypothesis, we created a large (N=330) human placental microarray data set consisting of seven previously published studies (GSE30186, GSE10588, GSE24129, GSE25906, GSE43942, GSE4707, and GSE44711) and 157 highly annotated samples from a BioBank (below).
+Applying unsupervised clustering to this combined data set revealed multiple distinct molecular groups of placentas, including three clinically relevant potential origins of PE based on gene expression and correlating patient records.
+ 
+Overall design A total of 80 PE placentas and 77 non-PE placentas, representing a range of clinical presentations, were purchased from a BioBank. When combined with the previously-published data sets, we had access to and analyzed gene expression data for 157 PE placentas and 173 non-PE placentas.
+ 
+Contributor(s) Leavey K, Bainbridge S, Cox B
+Citation(s) 27160201, 28962696, 29187609, 29507646, 30278173, 30312585
+Submission date Nov 13, 2015
+Last update date Oct 13, 2018
+Contact name Brian Cox
+E-mail(s) b.cox@utoronto.ca
+Phone (416) 978-3241
+Organization name University of Toronto
+Department Physiology
+ 
+Platforms (1)
+GPL6244 [HuGene-1_0-st] Affymetrix Human Gene 1.0 ST Array [transcript (gene) version]
+Samples (157)Image: Less... Less...            Image: More... More...
+Reanalysis of GSM747301
+Reanalysis of GSM747302
+Reanalysis of GSM747303
+Reanalysis of GSM747304
+Reanalysis of GSM747305
+Reanalysis of GSM747306
+Reanalysis of GSM747307
+Reanalysis of GSM747308
+Reanalysis of GSM747309
+BioProject PRJNA302183
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE75010_RAW.tar 664.8 Mb (http)(custom) TAR (of CEL)
+GSE75010_complete_dataset.csv.gz 32.6 Mb (ftp)(http) CSV--------------------------------------------------------------------------------
+Determination of 0/1/2 for multi-variant genes in OmicsSomaticMutations MatrixDamaging - Q&A - DepMap Community Forum (https://forum.depmap.org/t/determination-of-0-1-2-for-multi-variant-genes-in-omicssomaticmutations-matrixdamaging/2403)
+citeturn9search2 [wordlim: 200] Published: 3.5 years ago; Crawled: 2 months ago; For example, in the RKO cell-line (ACH-000943) there are two variants in RGS22.
+
+# Determination of 0/1/2 for multi-variant genes in OmicsSomaticMutations MatrixDamaging
+
+Q&A
+
+data
+
+DOrlando March 22, 2023, 6:52pm 1
+
+How are the 0/1/2 values calculated per-gene in the OmicsSomaticMutationsMatrixDamaging.csv file in the situation where there are multiple variants in the same gene in the same cell-line?
+
+For example, in the RKO cell-line (ACH-000943) there are two variants in RGS22. Neither variant alone is homozygous, but in the OmicsSomaticMutationsMatrixDamaging.csv file, its listed as ‘2’ which would imply a homozygous mutation.
+
+How are multiple mutations being aggregated to determine the 0/1/2 calls at the per-gene level?
+
+Mutation binary
+
+simz March 30, 2023, 8:30pm 2
+
+Hello,
+
+When there are multiple variants in the same gene, the allele frequencies from these variants are summed and if this sum is greater than 0.95, a value of 2 is assigned in this matrix. You are correct that 2 doesn’t always mean that there is a homozygous mutation, but that it is more likely to be a complete loss-of-function mutation than 1.
+
+Thanks for pointing this out. We will update the data description in the coming releases.
+
+Simone--------------------------------------------------------------------------------
+Latest Issues and Bugs topics - DepMap Community Forum (https://forum.depmap.org/c/issues/6?page=5)
+citeturn9search3 [wordlim: 200] Crawled: 3 months ago; DepMap Community Forum ... KM12 RKO mutation on CBR3 Issues and Bugs omics  |  | 1  | 415  | July 26, 2021 ... 21Q2 Sample_info.csv missing sample ACH-002315 Report an Issue data  |  | 1  | 471  | May 14, 2021
+Pathology inconsistencies in CCLE_2019 annotation file Report an Issue data  |  | 1  | 347  | August 16, 2021
+[IMPORTANT UPDATE] Fingerprinting data corrections (21Q3 release) Issues and Bugs omics ,  data  |  | 0  | 4215  | August 11, 2021
+KM12 RKO mutation on CBR3 Issues and Bugs omics  |  | 1  | 415  | July 26, 2021
+Some compound can't find PRISM drug sensitivity data Issues and Bugs data  |  | 2  | 412  | June 22, 2021
+Missing Expression data? Issues and Bugs  |  | 2  | 426  | June 21, 2021
+21Q2 CCLE_segment_cn.csv contains U instead of +,0,- Issues and Bugs  |  | 1  | 601  | June 1, 2021
+21Q1 CCLE_mutations incorrect Entrez_Gene_Id & format of Codon_Change Issues and Bugs data  |  | 1  | 369  | May 24, 2021
+21Q2 Sample_info.csv missing sample ACH-002315 Report an Issue data  |  | 1  | 471  | May 14, 2021
+Unable to download the drug sensitivity data Report an Issue data ,  compound-screens  |  | 3  | 825  | April 21, 2021
+Mutation discrepancy PC-3 and PC3JPC3 Issues and Bugs  |  | 1  | 326  | March 23, 2021
+HCC1395: implausible ploidy estimate Report an Issue  |  | 1  | 458  | March 4, 2021
+Bad access in China Report an Issue  |  | 2  | 431  | February 11, 2021
+Missing data field in 20Q4 v2 segment level copy number data Issues and Bugs data ,  documentation  |  | 2  | 573  | February 1, 2021
+CCLE_segment_cn: Amplification status column missing Report an Issue data  |  | 2  | 694  | January 22, 2021
+--------------------------------------------------------------------------------
+Unveiling preeclampsia: diagnostic value and potential molecular mechanisms of abnormally methylated immune-related genes - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12971016/)
+citeturn9search4 [wordlim: 200] Published: 6 months ago; Crawled: last month; The search was limited by study type using “expression profiling by array” and “methylation profiling by array”. ... The results showed that the expression trends of ESRRG, FGF10, STC2, PPARG, LTF, MX1, and RELB were consistent with the expression trends in the GSE75010 dataset (Supplementary Figure S4).
+In this study, abnormally methylated immune-related differentially expressed genes (DEGs) in PE were identified based on the Gene Expression Omnibus (GEO, https://www.ncbi.nlm.nih.gov/geo/) database, and RF, DT, and SVM classification models were constructed. This study aimed to explore the potential mechanisms and values of abnormally methylated immune-related DEGs in PE through differential analysis, functional annotation, immune correlation analysis, construction of classification models, and establishment of mRNA-miRNA interaction networks.
+
+## Material and Methods
+
+### Data source
+
+PE-related datasets in the GEO database based on the keyword “(preeclampsia) AND ‘Homo sapiens'[porgn:__txid9606]” were retrieved. The search was limited by study type using “expression profiling by array” and “methylation profiling by array”. Subsequently, the datasets that met the following criteria were included in this study: 1) must be mRNA transcriptome data and DNA methylation data of the whole genome; 2) from PE and control placental tissue samples; 3) standardization or the original dataset; 4) being from the same year. According to the above screening criteria, 1 mRNA dataset (GSE75010) and 1 methylation dataset (GSE75196) were obtained (Supplementary Table S1). For the GSE75010 dataset, the original creators of the dataset employed empirical Bayes methods for normalization and batch correction (10). For the GSE75196 dataset, the original creators of the dataset normalized the data using the dasen function (11).
+
+--------------------------------------------------------------------------------
+Microsoft PowerPoint - Checkpoint Molecule Profiling in Tumor and Immune Cell Lines (https://delivery-files.atcc.org/api/public/content/256200-Checkpoint-Molecule-Profiling-in-Tumor-and-Immune-Cell-Lines)
+citeturn9search12 [wordlim: 200] Published: 4.4 years ago; <th>Depmap ID</th> ... <td>ACH-000995</td> ... <td>TALL-104</td>
+Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public
+
+vs. ATCC JURKAT Clone E6-1
+
+<table id="e1">
+<tr>
+<th>Depmap ID</th>
+<th>Cell Line Name</th>
+<th>Primary Disease</th>
+<th>Lineage</th>
+<th>Lineage Subtype</th>
+<th>HLA-A</th>
+<th>HLA-B</th>
+<th>HLA-C</th>
+<th>HLA-DPA1</th>
+<th>HLA-DPB1</th>
+<th>HLA-DQA1</th>
+<th>HLA-DQB1</th>
+<th>HLA-DRA</th>
+<th>HLA-DRB1</th>
+</tr>
+<tr>
+<td>ACH-000995</td>
+<td>JURKAT</td>
+<td>Leukemia</td>
+<td>Blood</td>
+<td>ALL</td>
+<td>8.058912</td>
+<td>8.030281</td>
+<td>7.862017</td>
+<td>0.505891</td>
+<td>0.344828</td>
+<td>0.495695</td>
+<td>2.495695</td>
+<td>0.536053</td>
+<td>1.655352</td>
+</tr>
+<tr>
+<td>Not in CCLE</td>
+<td>TALL-104</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ACH-000964</td>
+<td>MOLT3</td>
+<td>Leukemia</td>
+<td>Blood</td>
+<td>ALL</td>
+<td>8.553744</td>
+<td>7.295631</td>
+<td>7.458940</td>
+<td>0.298658</td>
+<td>0.097611</td>
+<td>0.124328</td>
+<td>0.028569</td>
+<td>0.505891</td>
+--------------------------------------------------------------------------------
+Special Issue Reprint (https://mdpi-res.com/bookfiles/book/8298/Therapeutic_Landscapes_in_Colorectal_Carcinoma.pdf?v=1737770750)
+citeturn9search13 [wordlim: 200] Published: 1.2 years ago; RKO ... DepMap ID ... ACH-001039
+Medicina 2022, 58, 1498
+and HT-29, have non-canonical pathogenic mutations in either BRAF (NCI-H508) or in
+PIK3CA (HT-29) and they are both MSS, have lower mutation counts, are hyper-diploid
+and have a high FGA.
+Table 1. BRAF mutated colorectal cancer cell lines and their speciﬁc BRAF mutations and concomitant
+PIK3CA mutations. Data are from the Cancer Cell Line Encyclopedia (CCLE). WT: wild type.
+Cell Line
+BRAF
+PIK3CA
+BRAF V600E mutations
+COLO205
+V600E
+WT
+COLO201
+V600E
+WT
+LS411N
+V600E
+WT
+SW1417
+V600E
+WT
+CL34
+V600E
+WT
+MDST8
+V600E, V600K, V600M
+WT
+OUMS23
+V600E, X287_splice
+WT
+SNU-C5
+V600E
+H1047R
+RKO
+V600E
+H1047R
+HT-29
+V600E, T119S
+P449T
+BRAF non-V600E pathogenic mutations
+HT-55
+N581Y
+WT
+NCI-H508
+G596R
+E545K
+BRAF mutations of unknown signiﬁcance
+HT115
+R354Q
+R88Q, E321D, R770Q
+SNU-C4
+D22N
+E545G, V71I
+CCK81
+S273N, R506G
+C420R, C472Y
+LS513
+E204L, E204V, E204*
+WT
+GP2D
+T529A
+H1047L
+SNU1040
+V120I, S76P
+L632*
+SNU407
+R726C
+H1047R
+SNU503
+D22N
+WT
+LS180
+D211G
+H1047R
+KM12
+A712T, A404Cfs*9
+WT
+GP5D
+T529A
+H1047L
+Table 2. Characteristics of colorectal cancer cell lines with BRAF V600E mutations without and with
+concomitant PIK3CA mutations. Cell line NCI-H508 has a BRAF G596R pathogenic mutation instead
+of BRAF V600E mutation. Cell lines without an asterisk are without PIK3CA mutations and are
+presented ﬁrst. Cell lines with an asterisk in the bottom lines of the table are those with concomitant
+PIK3CA mutations.
+Cell Line
+DepMap ID
+Mutation Count
+FGA
+Ploidy
+MSI Status
+COLO205
+ACH-001039
+307
+0.44
+3.2
+MSS
+OUMS23
+ACH-000296
+340
+0.50
+2.5
+MSS
+COLO201
+ACH-000253
+255
+0.38
+2.96
+MSS
+MDST8
+ACH-000935
+776
+0.55
+3.82
+MSS
+LS411N
+ACH-000985
+5442
+0.28
+3.30
+MSI
+SW1417
+ACH-000236
+248
+0.56
+3.01
+MSS
+CL34
+ACH-000895
+1280
+0.14
+1.95
+MSI
+SNUC5 *
+ACH-000970
+2990
+0.09
+2.0
+MSI
+RKO *
+ACH-000943
+3424
+0.14
+2.1
+MSI
+NCI-H508 *
+ACH-000360
+318
+0.48
+4.6
+MSS
+HT-29 *
+ACH-000552
+416
+0.43
+3.04
+MSS
+63--------------------------------------------------------------------------------
+Microsoft PowerPoint - Checkpoint Molecule Profiling in Tumor and Immune Cell Lines (https://www.atcc.org/-/media/resources/webinar-presentations/2022/checkpoint-molecule-profiling-in-tumor-and-immune-cell-lines.pdf?hash=5B6ABCEF5B97B120516DE10CEB22768A&rev=420fb7d9cd204dbbbd7b862cbca7261f)
+citeturn9search14 [wordlim: 200] Published: 4.4 years ago; ATCC JURKAT Clone E6-1 Depmap ID | Cell Line Name | | Primary Disease | | Lineage | | Lineage Subtype | | | HLA‐A | | HLA‐B | | HLA‐C | | HLA‐DPA1 | | HLA‐DPB1 | | HLA‐DQA1 | | HLA‐DQB1 | | HLA‐DRA | | HLA‐DRB1 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs..ATCC JURKAT Clone E6-1 ACH‐000995 | JURKAT | | Leukemia | | Blood | | ALL | | | 8.058912 8.030281 7.862017 | | | | | | 0.505891 | | 0.344828 | | 0.495695 | | 2.495695 | | 0.536053 | | 1.655352 | Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs..ATCC JURKAT Clone E6-1 Not in CCLE TALL‐104 | | | | | | | | | | | | | | | | | | | | | | | | | | | Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs..
+Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs.. ATCC JURKAT Clone E6-1 Depmap ID | Cell Line Name | | Primary Disease | | Lineage | | Lineage Subtype | | | HLA‐A | | HLA‐B | | HLA‐C | | HLA‐DPA1 | | HLA‐DPB1 | | HLA‐DQA1 | | HLA‐DQB1 | | HLA‐DRA | | HLA‐DRB1 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs.. ATCC JURKAT Clone E6-1 ACH‐000995 | JURKAT | | Leukemia | | Blood | | ALL | | | 8.058912 8.030281 7.862017 | | | | | | 0.505891 | | 0.344828 | | 0.495695 | | 2.495695 | | 0.536053 | | 1.655352 | Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs.. ATCC JURKAT Clone E6-1 Not in CCLE TALL‐104 | | | | | | | | | | | | | | | | | | | | | | | | | | | Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs.. ATCC JURKAT Clone E6-1 ACH‐000964 | MOLT3 | | Leukemia | | Blood | | ALL | | | 8.553744 7.295631 7.458940 | | | | | | 0.298658 | | 0.097611 | | 0.124328 | | 0.028569 | | 0.505891 | | 0.214125 | Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs.. ATCC JURKAT Clone E6-1 ACH‐000061 | HH | | Lymphoma | | Lymphocyte | | Non Hodgkin Lymphoma | | | 9.954545 11.320575 9.395041 8.428904 8.307292 8.269594 8.348905 9.473036 8.979854 | | | | | | | | | | | | | | | | | Immune Cell Lines – RNAseq Profiling, CCLE Expression 22Q1 Public vs..--------------------------------------------------------------------------------
+Cellosaurus cell line RKO (CVCL_0504) (https://www.cellosaurus.org/CVCL_0504)
+citeturn9search5 [wordlim: 200] Published: 14.4 years ago; Crawled: 2 weeks ago; ColonAtlas; RKO ... DepMap; ACH-000943
+--------------------------------------------------------------------------------
+Medicina 2022, 58, 1498 (https://mdpi-res.com/bookfiles/book/8298/Therapeutic_Landscapes_in_Colorectal_Carcinoma.pdf?v=1737425259)
+citeturn9search15 [wordlim: 200] Published: 2.8 years ago; <tr><th>Cell Line</th><th>DepMap ID</th><th>Mutation Count</th><th>FGA</th><th>Ploidy</th><th>MSI Status</th></tr> ... <tr><td>RKO *</td><td>ACH-000943</td><td>3424</td><td>0.14</td><td>2.1</td><td>MSI</td></tr>
+--------------------------------------------------------------------------------
+World J Oncol (https://wjon.elmerpub.com/tables/wjon2647t.htm)
+citeturn9search6 [wordlim: 200] Crawled: 2 months ago; DepMap CRISPR-Cas9 Knockout Gene Effect Scores ... RKO  | ACH-000943  | -0.14606
+--------------------------------------------------------------------------------
+Integrative transcriptome-wide analysis of atopic dermatitis for drug repositioning - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9213508/)
+citeturn9search7 [wordlim: 200] Published: 4.2 years ago; Crawled: last month; Transcriptome data from AD patients are available in NCBI-GEO (GSE121212, GSE16161, GSE5667, and GSE120721) and EBI-ArrayExpress (E-MTAB-8149).
+--------------------------------------------------------------------------------
+SciCrunch | Research Resource Resolver (https://scicrunch.org/resolver/CVCL_0504/)
+citeturn9search8 [wordlim: 200] Published: 4.4 years ago; Crawled: 2 months ago; Cross References: BTO:BTO_0001890, CLO:CLO_0008825, EFO:EFO_0001232, MCCL:MCC:0000401, AddexBio:C0009012/374, ArrayExpress:E-MTAB-783, ArrayExpress:E-MTAB-2706, ArrayExpress:E-MTAB-2770, ArrayExpress:E-MTAB-3610, ATCC:CRL-2577, BioGRID_ORCS_Cell_line:477, BioSample:SAMN03471682, BioSample:SAMN03472274, BioSample:SAMN10988176, cancercelllines:CVCL_0504, CCRID:1101HUM-PUMC000668, CCRID:3101HUMTCHu116, Cell_Model_Passport:SIDM01090, ChEMBL-Cells:CHEMBL3307731, ChEMBL-Targets:CHEMBL614879, CLS:305035, ColonAtlas:RKO, Cosmic:873164, Cosmic:887214, Cosmic:909698, Cosmic:948133, Cosmic:1043824, Cosmic:1131688, Cosmic:1132576, Cosmic:1132687, Cosmic:1154653, Cosmic:1184099, Cosmic:1184330, Cosmic:1187315, Cosmic:1223146, Cosmic:1303884, Cosmic:1310948, Cosmic:1312309, Cosmic:1479607, Cosmic:1537488, Cosmic:1552178, Cosmic:1676744, Cosmic:1708414, Cosmic:1805264, Cosmic:1888954, Cosmic:1995622, Cosmic:2302003, Cosmic:2550355, Cosmic:2588706, Cosmic:2646668, Cosmic:2650776, Cosmic:2667884, Cosmic:2667968, Cosmic:2668257, Cosmic:2727473, Cosmic:2787542, Cosmic:2811055, Cosmic-CLP:909698, DepMap:ACH-000943, EGA:EGAS00001000610, EGA:EGAS00001000978, ENCODE:ENCBS740UAH, ENCODE:ENCBS954LTA, GDSC:909698, GEO:GSM206538, GEO:GSM274765, GEO:GSM274766, GEO:GSM383863, GEO:GSM741254, GEO:GSM844676, GEO:GSM887541, GEO:GSM888624, GEO:GSM1346884, GEO:GSM1374850, GEO:GSM1374851, GEO:GSM1374852, GEO:GSM1448132, GEO:GSM1670380, GEO:GSM2550011, KCB:KCB 2011102YJ, LiGeA:CCLE_267, LINCS_LDP:LCL-1168, Lonza:59, MetaboLights:MTBLS227, PharmacoDB:RKO_1316_2019, PRIDE:PXD001550, PRIDE:PXD002395, PRIDE:PXD005235, PRIDE:PXD005354, PRIDE:PXD005355, PRIDE:PXD030304, Progenetix:CVCL_0504, PubChem_Cell_line:CVCL_0504, TOKU-E:3013, Ubigene:YC-C002, Wikidata:Q54950538
+--------------------------------------------------------------------------------
+Large-scale placenta DNA methylation integrated analysis reveals fetal sex-specific differentially methylated CpG sites and regions - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9174475/)
+citeturn9search9 [wordlim: 200] Published: 4.3 years ago; Crawled: last month; Finally, we examined if the genes implicated by the nine significant DMRs from the full term analysis (Table 4) showed evidence for differential placenta gene expression using microarray data from a single publicly available dataset (GSE75010; paired DNAm samples from GSE98224 were analyzed in this study, see Supplementary Table 1). ... We searched the Gene Expression Omnibus (GEO) database on July 19th, 2018 for Illumina 450K microarray data sets containing human placental tissue samples by applying the following search terms: “placental methylation” or “placenta methylation” and limiting to platform types of “methylation profiling by array”, “methylation profiling by genome tiling array”, and “methylation profiling by SNP array”.
+--------------------------------------------------------------------------------
+Transcriptomic comparison of early onset preeclampsia and placenta accreta identifies inverse trophoblast and decidua functions at the maternal-fetal interface - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12549338/)
+citeturn9search10 [wordlim: 200] Published: 10 months ago; Crawled: last month; The NCBI Gene Expression Omnibus (GEO) (http://www.ncbi.nlm.nih.gov/geo/) was searched for all publicly available preeclampsia datasets using the keywords “preeclampsia” AND “homo sapiens”, searching for data types “expression profiling by array, by high throughput sequencing, by sage” by November of 2023. ... All Affymetrix, Agilent, and Illumina platforms were processed using crossmeta except GSE75010, which required processing using the oligo package due to its historical array platform (Human Gene 1.0 ST Array).
+--------------------------------------------------------------------------------
+Office 365 Die Produktivitätsplattform in der Cloud (https://download.microsoft.com/download/1/A/F/1AFA253D-9A9F-4AE2-87B2-C705BE85F838/201011_Webcast_Office365.pdf)
+citeturn9search16 [wordlim: 200] Published: 14.9 years ago; <td>AA Arthrosonographie Achillessehne RKO SG</td>
+--------------------------------------------------------------------------------
+ciNA 2S ClOSZ'f (https://cybra.lodz.pl/Content/12461/PrzF_rXI_nr530.pdf)
+citeturn9search17 [wordlim: 200] Published: 6 months ago; „RKO ... się w Stanach Zjednoczonycl1 niespo„
+--------------------------------------------------------------------------------
+The word YASHERKOACH is in the Wiktionary (https://en.wikwik.org/yasherkoach)
+citeturn9search11 [wordlim: 200] Published: 3.2 years ago; Crawled: 3 months ago; ach ACH ash Ash ashe Ashe asher Asher erk her Her koa OAC RKO she She SHE s/he she- (s)he Sher Sherk yas Yas
+

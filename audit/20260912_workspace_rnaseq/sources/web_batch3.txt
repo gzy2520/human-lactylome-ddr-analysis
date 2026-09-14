@@ -1,0 +1,461 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160115)
+citeturn5search0 [wordlim: 200] Published: 5.9 years ago; Crawled: 4 months ago; Series GSE160115 Query DataSets for GSE160115 ... GSE160115_complete_table_4339.txt.gz 845.2 Kb (ftp)(http) TXT
+Series GSE160115 Query DataSets for GSE160115
+Status Public on Oct 27, 2020
+Title Transcriptional response of A. thaliana Root and Shoot tissue to light stress and presence of microbial communities in myc2-3 and MYC2-Flag lines
+Organism Arabidopsis thaliana
+Experiment type Expression profiling by high throughput sequencing
+Summary MYC2 is a central node controlling the crosstalk between JA and other phytohormone signalling pathways and regulating responses to light and circadian clock. We hypothesized that this transcription factor might coordinate prioritization of microbiota-induced growth over defense under suboptimal light conditions
+ 
+Overall design Combination of two different conditions were tested (in myc2-3 plants and MYC2-Flag plants), a) absence/presnece of microbes and b) normal condition and low PAR condition. Respectively in plant Roots (n= 2x12 samples) and Shoots (n= 2x12 samples)
+ 
+Contributor(s) Hou S, Hacquard S
+Citation missing Has this study been published? Please login to update or notify GEO.
+Submission date Oct 26, 2020
+Last update date Oct 27, 2020
+Contact name Thorsten Thiergart
+E-mail(s) thiergart@mpipz.mpg.de
+Organization name MPIPZ cologne
+ 
+Platforms (1)
+GPL17639 Illumina HiSeq 2500 (Arabidopsis thaliana)
+Samples (48)Image: Less... Less...            Image: More... More...
+GSM4860034 4339.A SC_Shoot_Y_1
+GSM4860035 4339.B SC_Shoot_Y_2
+GSM4860036 4339.C SC_Shoot_Y_3
+GSM4860037 4339.D SC_Shoot_N_1
+GSM4860038 4339.E SC_Shoot_N_2
+GSM4860039 4339.F SC_Shoot_N_3
+GSM4860040 4339.G NC_Shoot_N_1
+GSM4860041 4339.H NC_Shoot_N_2
+GSM4860042 4339.I NC_Shoot_N_3
+GSM4860043 4339.J NC_Shoot_Y_1
+GSM4860044 4339.K NC_Shoot_Y_2
+GSM4860045 4339.L NC_Shoot_Y_3
+GSM4860046 4339.M NC_Root_N_1
+GSM4860047 4339.N NC_Root_N_2
+GSM4860048 4339.O NC_Root_N_3
+GSM4860049 4339.P SC_Root_N_1
+GSM4860050 4339.Q SC_Root_N_2
+GSM4860051 4339.R SC_Root_N_3
+GSM4860052 4339.S SC_Root_Y_1
+GSM4860053 4339.T SC_Root_Y_2
+GSM4860054 4339.U SC_Root_Y_3
+GSM4860055 4339.V NC_Root_Y_1
+GSM4860056 4339.W NC_Root_Y_2
+GSM4860057 4339.X NC_Root_Y_3
+GSM4860058 4340.A NC_Shoot_N_1
+GSM4860059 4340.B NC_Shoot_N_2
+GSM4860060 4340.C NC_Shoot_N_3
+GSM4860061 4340.D NC_Shoot_Y_1
+GSM4860062 4340.E NC_Shoot_Y_2
+GSM4860063 4340.F NC_Shoot_Y_3
+GSM4860064 4340.G SC_Shoot_N_1
+GSM4860065 4340.H SC_Shoot_N_2
+GSM4860066 4340.I SC_Shoot_N_3
+GSM4860067 4340.J SC_Shoot_Y_1
+GSM4860068 4340.K SC_Shoot_Y_2
+GSM4860069 4340.L SC_Shoot_Y_3
+GSM4860070 4340.M NC_Root_Y_1
+GSM4860071 4340.N NC_Root_Y_2
+GSM4860072 4340.O NC_Root_Y_3
+GSM4860073 4340.P NC_Root_N_1
+GSM4860074 4340.Q NC_Root_N_2
+GSM4860075 4340.R NC_Root_N_3
+GSM4860076 4340.S SC_Root_Y_1
+GSM4860077 4340.T SC_Root_Y_2
+GSM4860078 4340.U SC_Root_Y_3
+GSM4860079 4340.V SC_Root_N_1
+GSM4860080 4340.W SC_Root_N_2
+GSM4860081 4340.X SC_Root_N_3
+Relations
+BioProject PRJNA671872
+SRA SRP288594
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE160115_complete_table_4339.txt.gz 845.2 Kb (ftp)(http) TXT
+GSE160115_complete_table_4340.txt.gz 839.1 Kb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113941)
+citeturn5search1 [wordlim: 200] Published: 8.1 years ago; Crawled: 3 weeks ago; Series GSE113941 Query DataSets for GSE113941 ... We provide evidence that an underlying mechanism driving these changes in gene expression is a sustained mTORC1 activation driven by MNK1-eIF4E signaling. ... R01 CA200263 The role of ENF loss, TLR4 and spinal plasticity in paclitaxel CIPN The University of Texas MD Anderson Cancer Center Patrick M Dougherty ... Lab Pain Neurobiology Research Group ... GSM3124269 DRG RNA-seq cipn model [cipn input biosample5] ... GSE113941_uniform_process_tpm_vals.txt.gz 1.1 Mb (ftp)(http) TXT
+Series GSE113941 Query DataSets for GSE113941
+Status Public on Aug 01, 2018
+Title Nociceptor translational profiling reveals the RagA-mTORC1 network as a critical generator of neuropathic pain
+Organism Mus musculus
+Experiment type Expression profiling by high throughput sequencing
+Summary Pain sensing neurons, nociceptors, are key drivers of neuropathic pain. We used translating ribosome affinity purification (trap) to comprehensively characterize up- and down-regulated mRNA translation in Scn10a-positive nociceptors in chemotherapy-induced neuropathic pain. We provide evidence that an underlying mechanism driving these changes in gene expression is a sustained mTORC1 activation driven by MNK1-eIF4E signaling. RagA, a GTPase controlling mTORC1 activity, is identified as a novel target of MNK1-eIF4E signaling, demonstrating a new link between these distinct signaling pathways. Neuropathic pain and RagA translation are strongly attenuated by genetic ablation of eIF4E phosphorylation, MNK1 elimination or treatment with the MNK inhibitor eFT508. We reveal a novel translational circuit for the genesis of neuropathic pain with important implications for next generation neuropathic pain therapeutics.
+ 
+Overall design Examination of paired unbiased mRNA profile and mRNA profile based on eGFP + L10a (RPL10A) pulldown (TRAP assay) for normal mouse DRG (4 assays / replicates) and DRG from CIPN (Paclitaxel) model mouse (5 assays, 2 pooled to make 4 replicates)
+Associated NIH grants: R01NS065926 (TJP), R01NS098826 (TJP and GD), R01CA200263 (PMD) and R01NS100788 (ZTC)
+Web link https://www.utdallas.edu/bbs/painneurosciencelab/sensoryomics/cipntrap/
+ 
+Contributor(s) Price TJ, Campbell Z, Dussor G, Webster KR, Sonenberg N, Khoutursky A, Dougherty PM, Megat S, Ray PR, Moy JK, Lou T, Barragan-Iglesias P, Li Y, Pradhan G, Wangzhou A, Ahmad A, North RY
+Citation(s) 30459229, 31253755
+NIH grant(s)
+Grant ID Grant title Affiliation Name
+R01 NS065926 Translation Control of Pain Plasticity THE UNIVERSITY OF TEXAS AT DALLAS Theodore J Price
+R56 NS098826 Protease Activated Receptor Type 2 Targeting for Migraine Pain THE UNIVERSITY OF TEXAS AT DALLAS Theodore J Price
+R01 NS100788 3? End Regulation in Nociceptor Plasticity THE UNIVERSITY OF TEXAS AT DALLAS Zachary Campbell
+R01 CA200263 The role of ENF loss, TLR4 and spinal plasticity in paclitaxel CIPN The University of Texas MD Anderson Cancer Center Patrick M Dougherty
+Submission date May 02, 2018
+Last update date Mar 13, 2020
+Contact name Theodore John Price
+E-mail(s) theodore.price@utdallas.edu
+Phone 9728834311
+Organization name The University of Texas at Dallas
+Department Behavioral and Brain Sciences
+Lab Pain Neurobiology Research Group
+Street address 800 W Campbell Rd
+City Richardson
+State/province TX
+ZIP/Postal code 75080
+Country USA
+ 
+Platforms (1)
+GPL19057 Illumina NextSeq 500 (Mus musculus)
+Samples (18)Image: Less... Less...            Image: More... More...
+GSM3124261 DRG RNA-seq normal [normal input biosample1]
+GSM3124262 DRG RNA-seq normal [normal input biosample2]
+GSM3124263 DRG RNA-seq normal [normal input biosample3]
+GSM3124264 DRG RNA-seq normal [normal input biosample4]
+GSM3124265 DRG trap normal [normal trap biosample1]
+GSM3124266 DRG trap normal [normal trap biosample2]
+GSM3124267 DRG trap normal [normal trap biosample3]
+GSM3124268 DRG trap normal [normal trap biosample4]
+GSM3124269 DRG RNA-seq cipn model [cipn input biosample5]
+GSM3124270 DRG RNA-seq cipn model [cipn input biosample6]
+GSM3124271 DRG RNA-seq cipn model [cipn input biosample7 subsample1]
+GSM3124272 DRG RNA-seq cipn model [cipn input biosample7 subsample2]
+GSM3124273 DRG RNA-seq cipn model [cipn input biosample8]
+GSM3124274 DRG trap cipn model [cipn trap biosample5]
+GSM3124275 DRG trap cipn model [cipn trap biosample6]
+GSM3124276 DRG trap cipn model [cipn trap biosample7 subsample1]
+GSM3124277 DRG trap cipn model [cipn trap biosample7 subsample2]
+GSM3124278 DRG trap cipn model [cipn trap biosample8]
+Relations
+BioProject PRJNA454562
+SRA SRP144301
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE113941_uniform_process_tpm_vals.txt.gz 1.1 Mb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record
+Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114724)
+citeturn5search2 [wordlim: 200] Published: 8.3 years ago; Crawled: 3 days ago; GSE114724_rna_imputed.tsv.gz 57.2 Mb (ftp)(http) TSVGSE114724_rna_raw.tsv.gz 55.2 Mb (ftp)(http) TSV
+Series GSE114724 Query DataSets for GSE114724
+Status Public on Jun 28, 2018
+Title Single-cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment - 5' RNA sequencing and TCR sequencing
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Knowledge of immune cell phenotypes in the tumor microenvironment is essential for understanding mechanisms of cancer progression and immunotherapy response. We created an immune map of breast cancer using single-cell RNA-seq data from 45,000 immune cells from eight breast carcinomas, as well as matched normal breast tissue, blood, and lymph node. We developed a preprocessing pipeline, SEQC, and a Bayesian clustering and normalization method, Biscuit, to address computational challenges inherent to single-cell data. Despite significant similarity between normal and tumor tissue-resident immune cells, we observed continuous phenotypic expansions specific to the tumor microenvironment. Analysis of paired single-cell RNA and T cell receptor (TCR) sequencing data from 27,000 additional T cells revealed the combinatorial impact of TCR utilization on phenotypic diversity. Our results support a model of continuous activation in T cells and do not comport with the macrophage polarization model in cancer, with important implications for characterizing tumor-infiltrating immune cells. 
+ 
+Overall design Single-cell RNA sequencing was performed on three patients using the 10x genomics TCR profiling kits. For each patient, populations of T-cells were assayed for both TCR sequence and trancriptome-wide RNA-sequence. Two donors have a replicate experiment.
+ 
+Contributor(s) Azizi E, Carr AJ, Plitas G, Cornish AE, Konopacki C, Prabhakaran S, Nainys J, Wu K, Kiseliovas V, Setty M, Choi K, Fromme RM, Dao P, McKenney PT, Wasti RC, Kadaveru K
+Citation(s) 29961579
+Submission date May 21, 2018
+Last update date Mar 27, 2019
+Contact name Ambrose J Carr
+Organization name Memorial Sloan Kettering Cancer Center
+Department Computational and Systems Biology Program, SKI
+Lab Dana Pe'er
+Street address 417 E 68th St
+City New York
+State/province NY
+ZIP/Postal code 10065
+Country USA
+ 
+Platforms (2)
+GPL16791 Illumina HiSeq 2500 (Homo sapiens)
+GPL18573 Illumina NextSeq 500 (Homo sapiens)
+Samples (10)Image: Less... Less...            Image: More... More...
+GSM3148575 BC09_TUMOR1
+GSM3148576 BC09_TUMOR2
+GSM3148577 BC10_TUMOR1
+GSM3148578 BC11_TUMOR1
+GSM3148579 BC11_TUMOR2
+GSM3148580 BC09_TUMOR1_TCR
+GSM3148581 BC09_TUMOR2_TCR
+GSM3148582 BC10_TUMOR1_TCR
+GSM3148583 BC11_TUMOR1_TCR
+GSM3148584 BC11_TUMOR2_TCR
+This SubSeries is part of SuperSeries:
+GSE114727 Single-cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment
+Relations
+BioProject PRJNA472381
+SRA SRP148594
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE114724_RAW.tar 155.7 Mb (http)(custom) TAR (of CSV, MTX, TSV)
+GSE114724_rna_imputed.tsv.gz 57.2 Mb (ftp)(http) TSV
+GSE114724_rna_raw.tsv.gz 55.2 Mb (ftp)(http) TSV
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file
+Processed data are available on Series record
+Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3148579)
+citeturn5search3 [wordlim: 200] Published: 8.3 years ago; Crawled: last month; Organization name Memorial Sloan Kettering Cancer Center ... GSE114724 Single-cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment - 5' RNA sequencing and TCR sequencing
+Genome_build: Gencode GRCh38
+Supplementary_files_format_and_content: Cell x gene unnormalized count matrices
+ 
+Submission date May 21, 2018
+Last update date Jun 28, 2018
+Contact name Ambrose J Carr
+Organization name Memorial Sloan Kettering Cancer Center
+Department Computational and Systems Biology Program, SKI
+Lab Dana Pe'er
+Street address 417 E 68th St
+City New York
+State/province NY
+ZIP/Postal code 10065
+Country USA
+ 
+Platform ID GPL18573
+Series (2)
+GSE114724 Single-cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment - 5' RNA sequencing and TCR sequencing
+GSE114727 Single-cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment
+Relations
+BioSample SAMN09233253
+SRA SRX4108608
+Supplementary file Size Download File type/resource
+GSM3148579_BC11_TUMOR2_barcodes.tsv.gz 18.6 Kb (ftp)(http) TSV
+GSM3148579_BC11_TUMOR2_genes.tsv.gz 258.6 Kb (ftp)(http) TSV
+GSM3148579_BC11_TUMOR2_matrix.mtx.gz 27.8 Mb (ftp)(http) MTX
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3124262)
+citeturn5search4 [wordlim: 200] Published: 8.4 years ago; Crawled: 3 weeks ago; Status Public on Aug 01, 2018 ... Anti-GFP beads were washed with high salt buffer (20 mM HEPES, 5 mM MgCl2, 350 mM KCl, 1% NP-40, 0.5 mM DTT and 100 μg/ml cyclohexamide) and RNA was eluted from all samples using a Direct-zol kit (Zymo Research) according to the manufacturer’s instructions. ... Processed .bam files were then quantified for each gene using Cufflinks 2.2.1 with gencode.vM10 genome annotation. ... Supplementary_files_format_and_content: Zipped (gzip 1.3.12), tab separated text file (text encoding : Unicode UTF-8 with Unicode Byte Order Mark, end of line : \n) with columns for gene id (Gencode), gene name, locus, and TPMs for each RNA-seq and trap replicate for all coding genes ... Organization name The University of Texas at Dallas ... GSE113941 Nociceptor translational profiling reveals the RagA-mTORC1 network as a critical generator of neuropathic pain
+Genome_build: GRCm38.p4 (reference annotation GENCODE vM10)
+Supplementary_files_format_and_content: Zipped (gzip 1.3.12), tab separated text file (text encoding : Unicode UTF-8 with Unicode Byte Order Mark, end of line : \n) with columns for gene id (Gencode), gene name, locus, and TPMs for each RNA-seq and trap replicate for all coding genes
+ 
+Submission date May 02, 2018
+Last update date Aug 01, 2018
+Contact name Theodore John Price
+E-mail(s) theodore.price@utdallas.edu
+Phone 9728834311
+Organization name The University of Texas at Dallas
+Department Behavioral and Brain Sciences
+Lab Pain Neurobiology Research Group
+Street address 800 W Campbell Rd
+City Richardson
+State/province TX
+ZIP/Postal code 75080
+Country USA
+ 
+Platform ID GPL19057
+Series (1)
+GSE113941 Nociceptor translational profiling reveals the RagA-mTORC1 network as a critical generator of neuropathic pain
+Relations
+BioSample SAMN09010442
+SRA SRX4020691
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3124264)
+citeturn5search5 [wordlim: 200] Published: 8.4 years ago; Crawled: 3 weeks ago; Processed .bam files were then quantified for each gene using Cufflinks 2.2.1 with gencode.vM10 genome annotation. ... Supplementary_files_format_and_content: Zipped (gzip 1.3.12), tab separated text file (text encoding : Unicode UTF-8 with Unicode Byte Order Mark, end of line : \n) with columns for gene id (Gencode), gene name, locus, and TPMs for each RNA-seq and trap replicate for all coding genes ... Organization name The University of Texas at Dallas ... Lab Pain Neurobiology Research Group ... GSE113941 Nociceptor translational profiling reveals the RagA-mTORC1 network as a critical generator of neuropathic pain
+Genome_build: GRCm38.p4 (reference annotation GENCODE vM10)
+Supplementary_files_format_and_content: Zipped (gzip 1.3.12), tab separated text file (text encoding : Unicode UTF-8 with Unicode Byte Order Mark, end of line : \n) with columns for gene id (Gencode), gene name, locus, and TPMs for each RNA-seq and trap replicate for all coding genes
+ 
+Submission date May 02, 2018
+Last update date Aug 01, 2018
+Contact name Theodore John Price
+E-mail(s) theodore.price@utdallas.edu
+Phone 9728834311
+Organization name The University of Texas at Dallas
+Department Behavioral and Brain Sciences
+Lab Pain Neurobiology Research Group
+Street address 800 W Campbell Rd
+City Richardson
+State/province TX
+ZIP/Postal code 75080
+Country USA
+ 
+Platform ID GPL19057
+Series (1)
+GSE113941 Nociceptor translational profiling reveals the RagA-mTORC1 network as a critical generator of neuropathic pain
+Relations
+BioSample SAMN09010440
+SRA SRX4020693
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3387462)
+citeturn5search6 [wordlim: 200] Published: 8.0 years ago; Crawled: 5 months ago; Briefly, 10 ng of poly-A containing mRNA molecules are copied into first strand cDNA by reverse transcription and template-switching using oligo(dt) primers and LNA-containing template-switching oligo (TSO). cDNA is pre-amplified using limited number of cycles, purified and tagmented with Tn5 transposase. cDNA fragments generated after tagmentation are gap-repaired, enriched by PCR and purified to create the final cDNA library for HiSeq 2000 Illumina sequencing. ... Gene expression counts were estimated using featureCounts (Rsubread version 1.6.1), summarized across all exons as annotated in the GENCODE v28, with option “largestOverlap”. ... GSE119931 Cell differentiation grade determines distinct FOXA2 contributions to the cis-regulatory networks of pancreatic cancer cells [RNA-seq]
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NextSeq 500
+ 
+Description processed data file:
+PANC1.FOXA2KO.genes.counts.txt
+PANC1.FOXA2KO.genes.edgeR_results.txt
+Data processing Reads were pre-processing (filtering, quality trimming and adapter clipping) using Trimmomatic (version 0.38), then single-end reads with a minimum of 36 bp were aligned to human genome build GRCh38/hg38 using TopHat2 (version 2.1.0) with the option “--b2-very-sensitive”. Only uniquely mapped reads were retained.
+Gene expression counts were estimated using featureCounts (Rsubread version 1.6.1), summarized across all exons as annotated in the GENCODE v28, with option “largestOverlap”.
+Differentially expressed genes in biological triplicates of wild-type vs. FOXA1/2-KD in CFPAC1 cell lines or wild-type vs. FOXA2-KO in PANC1 cell lines were identified using EdgeR R-package v3.2.2.
+Genome_build: GRCh38/hg38
+Supplementary_files_format_and_content: *.gene.counts.txt files contain raw read counts for each samples. *.edgeR_results.txt files contain differentially expressed genes for each comparison.
+ 
+Submission date Sep 13, 2018
+Last update date Sep 17, 2019
+Contact name Chiara Balestrieri
+E-mail(s) balestrieri.c@gmail.com
+Organization name IRCCS San Raffaele Scientific Institute
+Department Center for Omics Sciences
+Street address Via Olgettina 58
+City Milan
+ZIP/Postal code 20132
+Country Italy
+ 
+Platform ID GPL18573
+Series (2)
+GSE119931 Cell differentiation grade determines distinct FOXA2 contributions to the cis-regulatory networks of pancreatic cancer cells [RNA-seq]
+GSE120017 Cell differentiation grade determines distinct FOXA2 contributions to the cis-regulatory networks of pancreatic cancer cells
+Relations
+BioSample SAMN10056384
+SRA SRX4677303
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3387470)
+citeturn5search7 [wordlim: 200] Published: 7.0 years ago; Crawled: 3 weeks ago; Briefly, 10 ng of poly-A containing mRNA molecules are copied into first strand cDNA by reverse transcription and template-switching using oligo(dt) primers and LNA-containing template-switching oligo (TSO). cDNA is pre-amplified using limited number of cycles, purified and tagmented with Tn5 transposase. cDNA fragments generated after tagmentation are gap-repaired, enriched by PCR and purified to create the final cDNA library for HiSeq 2000 Illumina sequencing. ... Gene expression counts were estimated using featureCounts (Rsubread version 1.6.1), summarized across all exons as annotated in the GENCODE v28, with option “largestOverlap”. ... GSE119931 Cell differentiation grade determines distinct FOXA2 contributions to the cis-regulatory networks of pancreatic cancer cells [RNA-seq]
+Differentially expressed genes in biological triplicates of wild-type vs. FOXA1/2-KD in CFPAC1 cell lines or wild-type vs. FOXA2-KO in PANC1 cell lines were identified using EdgeR R-package v3.2.2.
+Genome_build: GRCh38/hg38
+Supplementary_files_format_and_content: *.gene.counts.txt files contain raw read counts for each samples. *.edgeR_results.txt files contain differentially expressed genes for each comparison.
+ 
+Submission date Sep 13, 2018
+Last update date Sep 17, 2019
+Contact name Chiara Balestrieri
+E-mail(s) balestrieri.c@gmail.com
+Organization name IRCCS San Raffaele Scientific Institute
+Department Center for Omics Sciences
+Street address Via Olgettina 58
+City Milan
+ZIP/Postal code 20132
+Country Italy
+ 
+Platform ID GPL18573
+Series (2)
+GSE119931 Cell differentiation grade determines distinct FOXA2 contributions to the cis-regulatory networks of pancreatic cancer cells [RNA-seq]
+GSE120017 Cell differentiation grade determines distinct FOXA2 contributions to the cis-regulatory networks of pancreatic cancer cells
+Relations
+BioSample SAMN10056376
+SRA SRX4677311
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+Identifying T-cell clubs by embracing the local harmony between TCR and gene expressions - PubMed (https://pubmed.ncbi.nlm.nih.gov/39496799/)
+citeturn5search8 [wordlim: 200] Published: 1.9 years ago; Crawled: 2 weeks ago; Azizi E, Carr AJ, Plitas G, Cornish AE, Konopacki C, Prabhakaran S, Nainys J, Wu K, Kiseliovas V, Setty M, Choi K, Fromme RM, Dao P, McKenney PT, Wasti RC, Kadaveru K (2018) Gene expression omnibus GSE114724. https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114724†www.ncbi.nlm.nih.gov】
+acc=GSE114724†www.ncbi.nlm.nih.gov】
+  5.     1. Borcherding N, Zhang W (2020) Gene expression omnibus GSE121636. https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121636
+
+[Button: Show all 74 references ]
+
+## MeSH terms
+
+  * [Button: COVID-19* / genetics ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: COVID-19* / immunology ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: Humans ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: Receptors, Antigen, T-Cell* / genetics ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: Receptors, Antigen, T-Cell* / immunology ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: Receptors, Antigen, T-Cell* / metabolism ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: SARS-CoV-2 / immunology ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: Sequence Analysis, RNA ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * [Button: Single-Cell Analysis / methods ]
+
+Actions
+
+    * Search in PubMed
+    * Search in MeSH
+    * Add to Search
+
+  * ### Full Text Sources
+
+    * Nature Publishing Group
+    * PubMed Central
+  * ### Medical--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3387474)
+citeturn5search9 [wordlim: 200] Published: 8.0 years ago; Crawled: 3 months ago; Briefly, 10 ng of poly-A containing mRNA molecules are copied into first strand cDNA by reverse transcription and template-switching using oligo(dt) primers and LNA-containing template-switching oligo (TSO). cDNA is pre-amplified using limited number of cycles, purified and tagmented with Tn5 transposase. cDNA fragments generated after tagmentation are gap-repaired, enriched by PCR and purified to create the final cDNA library for HiSeq 2000 Illumina sequencing. ... Gene expression counts were estimated using featureCounts (Rsubread version 1.6.1), summarized across all exons as annotated in the GENCODE v28, with option “largestOverlap”. ... GSE119931 Cell differentiation grade determines distinct FOXA2 contributions to the cis-regulatory networks of pancreatic cancer cells [RNA-seq]
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3148582)
+citeturn5search10 [wordlim: 200] Published: 8.3 years ago; Crawled: last week; Organization name Memorial Sloan Kettering Cancer Center ... GSE114724 Single-cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment - 5' RNA sequencing and TCR sequencing
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3148584)
+citeturn5search11 [wordlim: 200] Published: 8.3 years ago; Crawled: 6 days ago; Organization name Memorial Sloan Kettering Cancer Center ... GSE114724 Single-cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment - 5' RNA sequencing and TCR sequencing
+

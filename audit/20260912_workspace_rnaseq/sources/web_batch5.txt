@@ -1,0 +1,529 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125287)
+citeturn7search0 [wordlim: 200] Published: 7.3 years ago; Crawled: last month; Series GSE125287 Query DataSets for GSE125287 ... GSE125287_rawCounts.tsv.gz 1.2 Mb (ftp)(http) TSV
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Series GSE125287 Query DataSets for GSE125287
+Status Public on Jun 12, 2019
+Title Gene expression analysis of mouse alveolar macrophages infected with Mycobacterium tuberculosis
+Organism Mus musculus
+Experiment type Expression profiling by high throughput sequencing
+Summary The aim of this study was to measure the immune response of alveolar macrophages (AMs) to intracellular Mtb infection in vivo. We characterized the transcriptional profile of murine Mtb-infected AMs after aerosol infection by sorting cells from bronchoalveolar lavage fluid and performing low-input RNA-sequencing. H37Rv.naive.240.AD38
+GSM3567784 B6.H37Rv.mEmNeg.240.AD38
+GSM3567785 B6.H37Rv.mEmPos.240.AD38
+GSM3567786 B6.H37Rv.naive.240.AD39
+GSM3567787 B6.H37Rv.mEmNeg.240.AD39
+GSM3567788 B6.H37Rv.mEmPos.240.AD39
+GSM3567789 B6.H37Rv.naive.240.AD40
+GSM3567790 B6.H37Rv.mEmNeg.240.AD40
+GSM3567791 B6.H37Rv.mEmPos.240.AD40
+GSM3567792 Nrf2.H37Rv.naive.24.AD44
+GSM3567793 Nrf2.H37Rv.mEmPos.24.AD44
+GSM3567794 Nrf2.H37Rv.naive.24.AD54
+GSM3567795 Nrf2.H37Rv.mEmPos.24.AD54
+GSM3567796 B6.H37Rv.naive.24.AD47
+GSM3567797 B6.H37Rv.naive.24.AD48
+Relations
+BioProject PRJNA515746
+SRA SRP180017
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE125287_rawCounts.tsv.gz 1.2 Mb (ftp)(http) TSV
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156340)
+citeturn7search1 [wordlim: 200] Published: 6.1 years ago; Crawled: 2 months ago; Series GSE156340 Query DataSets for GSE156340 ... We characterize the H + T-induced changes in gene expression by single cell (sc)RNA-seq, DNA interactions by Hi-C, and RNA-chromatin interactions by iMARGI.
+Series GSE156340 Query DataSets for GSE156340
+Status Public on Aug 17, 2020
+Title Stress-induced RNA–chromatin interactions promote endothelial dysfunction (RNA-seq)
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Chromatin-associated RNA (caRNA) has been proposed as a type of epigenomic modifier. Here, we test whether environmental stress can induce cellular dysfunction through modulating RNA-chromatin interactions. We induce endothelial cell (EC) dysfunction with high glucose and TNFα (H + T), that mimic the common stress in diabetes mellitus. We characterize the H + T-induced changes in gene expression by single cell (sc)RNA-seq, DNA interactions by Hi-C, and RNA-chromatin interactions by iMARGI. H + T induce inter-chromosomal RNA-chromatin interactions, particularly among the super enhancers. To test the causal relationship between H + T-induced RNA-chromatin interactions and the expression of EC dysfunction-related genes, we suppress the LINC00607 RNA. This suppression attenuates the expression of SERPINE1, a critical pro-inflammatory and pro-fibrotic gene. Furthermore, the changes of the co-expression gene network between diabetic and healthy donor-derived ECs corroborate the H + T-induced RNA-chromatin interactions. Taken together, caRNA-mediated dysregulation of gene expression modulates EC dysfunction, a crucial mechanism underlying numerous diseases.
+ 
+Overall design Performing polyA-enriched RNA-seq in HUVECs with LINC00607 knockdown by two different LNAs under high glucose and TNFa treatment.
+ 
+Contributor(s) Calandrelli R, Xu L, Luo Y, Wu W, Fan X, Nguyen T, Chen C, Sriram K, Natarajan R, Bouman-Chen Z, Zhong S
+Citation(s) 33060583, 35837599, 38251974
+Submission date Aug 17, 2020
+Last update date Feb 09, 2024
+Contact name Sheng Zhong
+E-mail(s) szhong@eng.ucsd.edu
+Organization name University of California San Diego
+Department Bioengineering
+Street address 9500 Gilman Dr
+City La Jolla
+State/province CA
+ZIP/Postal code 92093
+Country USA
+ 
+Platforms (1)
+GPL16791 Illumina HiSeq 2500 (Homo sapiens)
+Samples (8)Image: Less... Less...            Image: More... More...
+GSM4729224 HUVEC_Scr_NG_1
+GSM4729225 HUVEC_Scr_HT_1
+GSM4729226 HUVEC_LNA1_HT_1
+GSM4729227 HUVEC_LNA4_HT_1
+GSM4729228 HUVEC_Scr_NG_2
+GSM4729229 HUVEC_Scr_HT_2
+GSM4729230 HUVEC_LNA1_HT_2
+GSM4729231 HUVEC_LNA4_HT_2
+This SubSeries is part of SuperSeries:
+GSE135357 Stress-induced RNA–chromatin interactions promote endothelial dysfunction
+Relations
+BioProject PRJNA657560
+SRA SRP277809
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE156340_RAW.tar 35.3 Mb (http)(custom) TAR (of TXT)
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137452)
+citeturn7search2 [wordlim: 200] Published: 6.0 years ago; Crawled: 2 months ago; Series GSE137452 Query DataSets for GSE137452 ... GSE137452_RAW.tar 401.5 Mb (http)(custom) TAR (of IDAT)
+Series GSE137452 Query DataSets for GSE137452
+Status Public on Sep 20, 2020
+Title Epigenome analysis of Control and PLX4032 Resistant Clones with EPIC array.
+Organism Homo sapiens
+Experiment type Methylation profiling by array
+Summary Genome wide DNA methylation profiling of control and PLX4032 resistant clones to identify resistance-associated methylome alternations, and to integrate with transcriptome analysis. Results provide insight into clonal epigentic adaption of PLX4032 resistance in BRAF V600E melanoma.
+ 
+Overall design Bisulphite converted DNA from 2 controls (parental and parallel) and 15 PLX4032 resistant clones were hybridised to the Illumina Infinium MethylationEPIC BeadChip.
+ 
+Contributor(s) Zhang Z, Ding Y, Sulman EP
+Citation(s) 36202798
+Submission date Sep 15, 2019
+Last update date Oct 26, 2022
+Contact name Ze-yan Zhang
+Organization name NYU Langone Health
+Department Radiation Oncology
+Lab Sulman Lab
+Street address 522 First Ave
+City New York
+State/province NY
+ZIP/Postal code 10016
+Country USA
+ 
+Platforms (1)
+GPL21145 Infinium MethylationEPIC
+Samples (17)Image: Less... Less...            Image: More... More...
+GSM4079621 A375
+GSM4079622 DMSO-A375
+GSM4079623 bc12-1-R1a
+GSM4079624 bc12-1-R1b
+GSM4079625 bc2-1-R2a
+GSM4079626 bc2-1-R2b
+GSM4079627 bc345-1-R3
+GSM4079628 bc345-2-R3
+GSM4079629 bc45-R4
+GSM4079630 bc435-1-R4a
+GSM4079631 bc435-1-R4b
+GSM4079632 bc41235-R4
+GSM4079633 bc41235-R5
+GSM4079634 bc5-2-R5
+GSM4079635 bc534-2-R5
+GSM4079636 bc51234-R4
+GSM4079637 bc51234-R5
+BioProject PRJNA565587
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE137452_RAW.tar 401.5 Mb (http)(custom) TAR (of IDAT)
+GSE137452_signal_intensities.txt.gz 76.1 Mb (ftp)(http) TXT
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121190)
+citeturn7search3 [wordlim: 200] Published: 7.9 years ago; Crawled: 2 months ago; Series GSE121190 Query DataSets for GSE121190 ... GSE121190_RAW.tar 31.6 Mb (http)(custom) TAR (of CEL)
+Series GSE121190 Query DataSets for GSE121190
+Status Public on Oct 13, 2018
+Title Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+Organism Mus musculus
+Experiment type Expression profiling by array
+Summary Gene expression patterns among populations of kidney fibroblasts at different stages of injury or repair were analyzed by Affymetrix arrays.
+ 
+Overall design PDGFra-positive fibroblasts were FACS sorted from mouse kidneys at various times post injury and RNA extracted for gene expression comparisons.
+ 
+Contributor(s) Dressler GR, Higashi AY
+Citation(s) 30545984
+NIH grant(s)
+Grant ID Grant title Affiliation Name
+R01 DK054740 Pax2 Interacting Proteins in Development and Disease REGENTS OF THE UNIVERSITY OF MICHIGAN - ANN ARBOR Gregory R Dressler
+R01 DK073722 Epigenetic Regulation of Kidney Development REGENTS OF THE UNIVERSITY OF MICHIGAN - ANN ARBOR Gregory R Dressler
+Submission date Oct 12, 2018
+Last update date Jan 14, 2019
+Contact name Greg Dressler
+E-mail(s) dressler@umich.edu
+Phone 734-764-6490
+Organization name University of Michigan
+Department Pathology
+Street address 109 Zina Pitcher Drive
+City Ann Arbor
+State/province MI
+ZIP/Postal code 48109
+Country USA
+ 
+Platforms (1)
+GPL11180 [HT_MG-430_PM] Affymetrix HT MG-430 PM Array Plate
+Samples (15)Image: Less... Less...            Image: More... More...
+GSM3427561 Folic Acid 3 days, 001
+GSM3427562 Folic Acid 3 days, 002
+GSM3427563 Folic Acid 3 days, 003
+GSM3427564 Folic Acid 7 days, 004
+GSM3427565 Folic Acid 7 days, 005
+GSM3427566 Folic Acid 7 days, 006
+GSM3427567 Folic Acid 14 days, 007
+GSM3427568 Folic Acid 14 days, 008
+GSM3427569 Folic Acid 14 days, 009
+GSM3427570 UUO 14 days, 010
+GSM3427571 UUO 14 days, 011
+GSM3427572 UUO 14 days, 012
+GSM3427573 Uninjured Kidney, 013
+GSM3427574 Uninjured Kidney, 014
+GSM3427575 Uninjured Kidney, 015
+Relations
+BioProject PRJNA496051
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE121190_RAW.tar 31.6 Mb (http)(custom) TAR (of CEL)
+Processed data included within Sample table
+Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4079629)
+citeturn7search4 [wordlim: 200] Published: 7.0 years ago; Crawled: 2 months ago; Extraction protocol genomic DNA was extracted using QIAGEN AllPrep DNA/RNA/miRNA universal kit according to standard instructions ... GSE137452 Epigenome analysis of Control and PLX4032 Resistant Clones with EPIC array.
+City New York
+State/province NY
+ZIP/Postal code 10016
+Country USA
+ 
+Platform ID GPL21145
+Series (1)
+GSE137452 Epigenome analysis of Control and PLX4032 Resistant Clones with EPIC array.
+Data table header descriptions
+ID_REF
+VALUE average beta
+Detection Pval
+Data table
+ID_REF VALUE Detection Pval
+cg07881041 0.850859416 0
+cg23229610 0.825341767 0
+cg03513874 0.850327967 0
+cg05451842 0.398268398 0
+cg14797042 0.864195558 0
+cg09838562 0.051078119 0
+cg25458538 0.892478814 0
+cg09261072 0.576209389 0
+cg02404579 0.840705227 0
+cg04118974 0.805778032 0
+cg01236347 0.321749432 0
+cg22585117 0.796888505 0
+cg25552317 0.855176541 0
+cg23875663 0.121646746 0
+cg07659892 0.070256931 0
+cg15995909 0.83769757 0
+cg23728960 0.781660271 0
+cg11993619 0.0472103 0
+cg01925883 0.323850351 0
+cg03452160 0.072556211 0
+Total number of rows: 865918
+Supplementary file Size Download File type/resource
+GSM4079629_bc45_R4_Grn.idat.gz 7.0 Mb (ftp)(http) IDAT
+GSM4079629_bc45_R4_Red.idat.gz 7.1 Mb (ftp)(http) IDAT
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3427565)
+citeturn7search5 [wordlim: 200] Published: 7.9 years ago; Crawled: 2 months ago; Status Public on Oct 13, 2018 ... Hybridization protocol Following Labeling procedure, 3.75 ug of biotinylated cDNA were hybridized at 45C on Affymetrix Mouse HT MG-430 PM arrays, and were washed and stained using the Affymetrix Gene Atlas system (software version 1.0.4.267). ... Organization name University of Michigan ... GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+Scan protocol Arrays were scanned using the Affymetrix Gene Atlas system (software version 1.0.4.267).
+Data processing Data was analyzed using the limma and affy Bioconductor packages implemented in the R-statistical environment version 3.3.0. RMA was used to fit log2 transformed expression values.
+ 
+Submission date Oct 12, 2018
+Last update date Jan 03, 2019
+Contact name Greg Dressler
+E-mail(s) dressler@umich.edu
+Phone 734-764-6490
+Organization name University of Michigan
+Department Pathology
+Street address 109 Zina Pitcher Drive
+City Ann Arbor
+State/province MI
+ZIP/Postal code 48109
+Country USA
+ 
+Platform ID GPL11180
+Series (1)
+GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+Data table header descriptions
+ID_REF
+VALUE Log2 RMA
+Data table
+ID_REF VALUE
+1415670_PM_at 8.599729433
+1415671_PM_at 9.096294543
+1415672_PM_at 8.971556403
+1415673_PM_at 6.178195005
+1415674_PM_a_at 6.254689899
+1415675_PM_at 7.817135548
+1415676_PM_a_at 7.752194246
+1415677_PM_at 8.046531525
+1415678_PM_at 7.127005445
+1415679_PM_at 7.978270637
+1415680_PM_at 7.855645368
+1415681_PM_at 7.340143285
+1415682_PM_at 5.005579554
+1415683_PM_at 7.326220043
+1415684_PM_at 4.118574799
+1415685_PM_at 4.334404446
+1415686_PM_at 7.972722521
+1415687_PM_a_at 7.580209022
+1415688_PM_at 5.071778286
+1415689_PM_s_at 4.524634301
+Total number of rows: 45141
+Table truncated, full table size 1159 Kbytes.
+Supplementary file Size Download File type/resource
+GSM3427565_Dressler_005.ga.cel.gz 2.1 Mb (ftp)(http) CEL
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4079634)
+citeturn7search6 [wordlim: 200] Published: 7.0 years ago; Crawled: 2 months ago; Extraction protocol genomic DNA was extracted using QIAGEN AllPrep DNA/RNA/miRNA universal kit according to standard instructions ... GSE137452 Epigenome analysis of Control and PLX4032 Resistant Clones with EPIC array.
+ 
+Platform ID GPL21145
+Series (1)
+GSE137452 Epigenome analysis of Control and PLX4032 Resistant Clones with EPIC array.
+Data table header descriptions
+ID_REF
+VALUE average beta
+Detection Pval
+Data table
+ID_REF VALUE Detection Pval
+cg07881041 0.793306623 0
+cg23229610 0.795075457 0
+cg03513874 0.813809687 0
+cg05451842 0.330809992 0
+cg14797042 0.825565713 0
+cg09838562 0.053279282 0
+cg25458538 0.854657279 0
+cg09261072 0.76045386 0
+cg02404579 0.876593807 0
+cg04118974 0.825722884 0
+cg01236347 0.45040849 0
+cg22585117 0.838006757 0
+cg25552317 0.864096642 0
+cg23875663 0.050195204 0
+cg07659892 0.044354839 0
+cg15995909 0.755898367 0
+cg23728960 0.517668852 0
+cg11993619 0.092460727 0
+cg01925883 0.055530165 0
+cg03452160 0.066144296 0
+Total number of rows: 865918
+Table truncated, full table size 21136 Kbytes.
+Supplementary file Size Download File type/resource
+GSM4079634_bc5_2_R5_Grn.idat.gz 7.0 Mb (ftp)(http) IDAT
+GSM4079634_bc5_2_R5_Red.idat.gz 7.1 Mb (ftp)(http) IDAT
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4079624)
+citeturn7search7 [wordlim: 200] Published: 6.0 years ago; Crawled: 2 months ago; Extraction protocol genomic DNA was extracted using QIAGEN AllPrep DNA/RNA/miRNA universal kit according to standard instructions ... GSE137452 Epigenome analysis of Control and PLX4032 Resistant Clones with EPIC array.
+ 
+Platform ID GPL21145
+Series (1)
+GSE137452 Epigenome analysis of Control and PLX4032 Resistant Clones with EPIC array.
+Data table header descriptions
+ID_REF
+VALUE average beta
+Detection Pval
+Data table
+ID_REF VALUE Detection Pval
+cg07881041 0.829008701 0
+cg23229610 0.490357698 0
+cg03513874 0.514788732 0
+cg05451842 0.32475744 0
+cg14797042 0.857307819 0
+cg09838562 0.053426052 0
+cg25458538 0.815707621 0
+cg09261072 0.802670623 0
+cg02404579 0.819419775 0
+cg04118974 0.800451595 0
+cg01236347 0.76 0
+cg22585117 0.782048618 0
+cg25552317 0.860291144 0
+cg23875663 0.069023569 0
+cg07659892 0.043372257 0
+cg15995909 0.838789595 0
+cg23728960 0.557145778 0
+cg11993619 0.185124864 0
+cg01925883 0.284407484 0
+cg03452160 0.078687716 0
+Total number of rows: 865918
+Table truncated, full table size 21164 Kbytes.
+[Input]
+Supplementary file Size Download File type/resource
+GSM4079624_bc12_1_R1b_Grn.idat.gz 7.0 Mb (ftp)(http) IDAT
+GSM4079624_bc12_1_R1b_Red.idat.gz 7.1 Mb (ftp)(http) IDAT
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3427572)
+citeturn7search8 [wordlim: 200] Published: 7.9 years ago; Crawled: last month; Status Public on Oct 13, 2018 ... Hybridization protocol Following Labeling procedure, 3.75 ug of biotinylated cDNA were hybridized at 45C on Affymetrix Mouse HT MG-430 PM arrays, and were washed and stained using the Affymetrix Gene Atlas system (software version 1.0.4.267). ... Organization name University of Michigan ... GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models ... 1415685_PM_at 4.518191972
+Scan protocol Arrays were scanned using the Affymetrix Gene Atlas system (software version 1.0.4.267).
+Data processing Data was analyzed using the limma and affy Bioconductor packages implemented in the R-statistical environment version 3.3.0. RMA was used to fit log2 transformed expression values.
+ 
+Submission date Oct 12, 2018
+Last update date Jan 03, 2019
+Contact name Greg Dressler
+E-mail(s) dressler@umich.edu
+Phone 734-764-6490
+Organization name University of Michigan
+Department Pathology
+Street address 109 Zina Pitcher Drive
+City Ann Arbor
+State/province MI
+ZIP/Postal code 48109
+Country USA
+ 
+Platform ID GPL11180
+Series (1)
+GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+Data table header descriptions
+ID_REF
+VALUE Log2 RMA
+Data table
+ID_REF VALUE
+1415670_PM_at 8.521328812
+1415671_PM_at 8.207107479
+1415672_PM_at 9.103016476
+1415673_PM_at 6.344144213
+1415674_PM_a_at 6.697943486
+1415675_PM_at 7.517098376
+1415676_PM_a_at 7.735019726
+1415677_PM_at 4.928870584
+1415678_PM_at 7.477926598
+1415679_PM_at 7.071415762
+1415680_PM_at 8.368412947
+1415681_PM_at 6.966832431
+1415682_PM_at 4.958712891
+1415683_PM_at 7.733777311
+1415684_PM_at 4.079770408
+1415685_PM_at 4.518191972
+1415686_PM_at 7.42802276
+1415687_PM_a_at 6.790232318
+1415688_PM_at 6.531138508
+1415689_PM_s_at 4.104027151
+Total number of rows: 45141
+Table truncated, full table size 1159 Kbytes.
+[Input]
+Supplementary file Size Download File type/resource
+GSM3427572_Dressler_012.ga.cel.gz 2.1 Mb (ftp)(http) CEL
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3427567)
+citeturn7search9 [wordlim: 200] Published: 7.9 years ago; Crawled: 2 months ago; Hybridization protocol Following Labeling procedure, 3.75 ug of biotinylated cDNA were hybridized at 45C on Affymetrix Mouse HT MG-430 PM arrays, and were washed and stained using the Affymetrix Gene Atlas system (software version 1.0.4.267). ... Organization name University of Michigan ... GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models ... 1415679_PM_at 8.168190564
+Scan protocol Arrays were scanned using the Affymetrix Gene Atlas system (software version 1.0.4.267).
+Data processing Data was analyzed using the limma and affy Bioconductor packages implemented in the R-statistical environment version 3.3.0. RMA was used to fit log2 transformed expression values.
+ 
+Submission date Oct 12, 2018
+Last update date Jan 03, 2019
+Contact name Greg Dressler
+E-mail(s) dressler@umich.edu
+Phone 734-764-6490
+Organization name University of Michigan
+Department Pathology
+Street address 109 Zina Pitcher Drive
+City Ann Arbor
+State/province MI
+ZIP/Postal code 48109
+Country USA
+ 
+Platform ID GPL11180
+Series (1)
+GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+Data table header descriptions
+ID_REF
+VALUE Log2 RMA
+Data table
+ID_REF VALUE
+1415670_PM_at 8.544959896
+1415671_PM_at 9.012964758
+1415672_PM_at 8.217540794
+1415673_PM_at 6.694665064
+1415674_PM_a_at 7.570635071
+1415675_PM_at 8.12959956
+1415676_PM_a_at 8.843026779
+1415677_PM_at 8.147677967
+1415678_PM_at 7.683665767
+1415679_PM_at 8.168190564
+1415680_PM_at 7.681308868
+1415681_PM_at 7.51243106
+1415682_PM_at 5.177785578
+1415683_PM_at 7.277317191
+1415684_PM_at 3.280664064
+1415685_PM_at 5.181070509
+1415686_PM_at 7.82751345
+1415687_PM_a_at 8.025825749
+1415688_PM_at 5.943437782
+1415689_PM_s_at 5.9686525
+Total number of rows: 45141
+Table truncated, full table size 1159 Kbytes.
+[Input]
+Supplementary file Size Download File type/resource
+GSM3427567_Dressler_007.ga.cel.gz 2.1 Mb (ftp)(http) CEL
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3427566)
+citeturn7search10 [wordlim: 200] Published: 7.9 years ago; Crawled: 4 months ago; Status Public on Oct 13, 2018 ... Hybridization protocol Following Labeling procedure, 3.75 ug of biotinylated cDNA were hybridized at 45C on Affymetrix Mouse HT MG-430 PM arrays, and were washed and stained using the Affymetrix Gene Atlas system (software version 1.0.4.267). ... Organization name University of Michigan ... GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+Scan protocol Arrays were scanned using the Affymetrix Gene Atlas system (software version 1.0.4.267).
+Data processing Data was analyzed using the limma and affy Bioconductor packages implemented in the R-statistical environment version 3.3.0. RMA was used to fit log2 transformed expression values.
+ 
+Submission date Oct 12, 2018
+Last update date Jan 03, 2019
+Contact name Greg Dressler
+E-mail(s) dressler@umich.edu
+Phone 734-764-6490
+Organization name University of Michigan
+Department Pathology
+Street address 109 Zina Pitcher Drive
+City Ann Arbor
+State/province MI
+ZIP/Postal code 48109
+Country USA
+ 
+Platform ID GPL11180
+Series (1)
+GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+Data table header descriptions
+ID_REF
+VALUE Log2 RMA
+Data table
+ID_REF VALUE
+1415670_PM_at 8.558934706
+1415671_PM_at 7.703215253
+1415672_PM_at 9.543678541
+1415673_PM_at 6.310873881
+1415674_PM_a_at 6.609912631
+1415675_PM_at 7.408070456
+1415676_PM_a_at 7.197945502
+1415677_PM_at 8.132653786
+1415678_PM_at 7.847110712
+1415679_PM_at 7.53743188
+1415680_PM_at 7.733658503
+1415681_PM_at 5.062248473
+1415682_PM_at 5.008006266
+1415683_PM_at 7.065094136
+1415684_PM_at 3.458345745
+1415685_PM_at 5.015992092
+1415686_PM_at 8.232059261
+1415687_PM_a_at 7.175808118
+1415688_PM_at 5.280801731
+1415689_PM_s_at 5.198660581
+Total number of rows: 45141
+[Input]
+Supplementary file Size Download File type/resource
+GSM3427566_Dressler_006.ga.cel.gz 2.1 Mb (ftp)(http) CEL
+Processed data included within Sample table--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3427571)
+citeturn7search11 [wordlim: 200] Published: 7.9 years ago; Crawled: last month; Hybridization protocol Following Labeling procedure, 3.75 ug of biotinylated cDNA were hybridized at 45C on Affymetrix Mouse HT MG-430 PM arrays, and were washed and stained using the Affymetrix Gene Atlas system (software version 1.0.4.267). ... GSE121190 Expression Profiling of Fibroblasts in Chronic and Acute Disease Models
+

@@ -1,0 +1,12 @@
+aa195c6 (HEAD -> add_data) docs: add 31-group matched RNA-seq transcriptome reference catalog
+037645d (main, figure-enhancement) feat(curation): update 14 ESCC Kla-DDR pathway classifications and regenerate figures and supplement tables
+62c94ef docs: document DDR pathway matrices 31-group verification and sync
+76a3835 feat(figure1): evaluate four-category omnibus ANOVA for DDR fraction layout
+45339df feat(figure1): upright layout with sample-level dots for DDR fraction and MKI67 ratios
+eccab4d feat(heatmaps): update Figure 3a and 3b regulator percentile heatmaps with 31st ESCC group
+bc5951a fix(figures): eliminate Intersection size axis title overlap in UpSet plots
+ba1dad4 fix(figures): align UpSet matrix dots with intersection bars and verify 31-group ordering
+5abd76f feat(tables): renumber Supplementary Tables for 31-group scope (S4=Venn, S5=Pathways, S6=Regulators)
+f009ce5 feat(tables): update Supplementary Tables S1-S6 for 31-group ESCC candidate scope
+27ec757 feat(regulators): generate sample-level whole-proteome percentile scatter plots for 10 target genes
+9e8a842 feat(figures): overlay individual sample points onto upright SEM barplots

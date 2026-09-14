@@ -1,0 +1,32 @@
+[
+  [
+    "PRJNA687528",
+    4,
+    "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA687528&result=read_run&fields=run_accession,experiment_accession,sample_accession,sample_title,scientific_name,library_strategy,library_source,library_selection,fastq_ftp,fastq_md5&format=tsv"
+  ],
+  [
+    "PRJNA401827",
+    108,
+    "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA401827&result=read_run&fields=run_accession,experiment_accession,sample_accession,sample_title,scientific_name,library_strategy,library_source,library_selection,fastq_ftp,fastq_md5&format=tsv"
+  ],
+  [
+    "PRJNA472249",
+    79,
+    "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA472249&result=read_run&fields=run_accession,experiment_accession,sample_accession,sample_title,scientific_name,library_strategy,library_source,library_selection,fastq_ftp,fastq_md5&format=tsv"
+  ],
+  [
+    "PRJNA173072",
+    10,
+    "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA173072&result=read_run&fields=run_accession,experiment_accession,sample_accession,sample_title,scientific_name,library_strategy,library_source,library_selection,fastq_ftp,fastq_md5&format=tsv"
+  ],
+  [
+    "PRJNA548798",
+    22,
+    "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA548798&result=read_run&fields=run_accession,experiment_accession,sample_accession,sample_title,scientific_name,library_strategy,library_source,library_selection,fastq_ftp,fastq_md5&format=tsv"
+  ],
+  [
+    "PRJNA1121890",
+    24,
+    "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA1121890&result=read_run&fields=run_accession,experiment_accession,sample_accession,sample_title,scientific_name,library_strategy,library_source,library_selection,fastq_ftp,fastq_md5&format=tsv"
+  ]
+]

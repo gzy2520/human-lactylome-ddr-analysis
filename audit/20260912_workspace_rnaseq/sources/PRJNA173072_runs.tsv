@@ -1,0 +1,11 @@
+run_accession	experiment_accession	sample_accession	sample_title	scientific_name	library_strategy	library_source	library_selection	fastq_ftp	fastq_md5
+SRR543692	SRX178610	SAMN01120626	Sperm Donor1 mRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543692/SRR543692.fastq.gz	a254752f22e2954cbbec6a34c8f58f2b
+SRR543695	SRX178611	SAMN01120627	Sperm Donor2 mRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543695/SRR543695.fastq.gz	4c7e7438cd81fa6330dbc5cb9a674092
+SRR543694	SRX178611	SAMN01120627	Sperm Donor2 mRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543694/SRR543694.fastq.gz	5d935f2c36233cee13921b9a1e7e334e
+SRR543698	SRX178613	SAMN01120629	Sperm Donor2 smRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	size fractionation	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543698/SRR543698.fastq.gz	75c0f20ef7fe67dfbbb206ec78ba12da
+SRR543691	SRX178610	SAMN01120626	Sperm Donor1 mRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543691/SRR543691.fastq.gz	21aa2b7ab3a5abedcf914afe3a942e7c
+SRR543693	SRX178611	SAMN01120627	Sperm Donor2 mRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543693/SRR543693.fastq.gz	98edc5d681e96dc6c9618322da5a8ada
+SRR543696	SRX178612	SAMN01120628	Sperm Donor1 smRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	size fractionation	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543696/SRR543696.fastq.gz	cb0f081641ff9346a09f5229a74a7483
+SRR543697	SRX178612	SAMN01120628	Sperm Donor1 smRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	size fractionation	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543697/SRR543697.fastq.gz	2efbab5c5902761fdd1f8179a1647a3d
+SRR543700	SRX178613	SAMN01120629	Sperm Donor2 smRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	size fractionation	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543700/SRR543700.fastq.gz	f720c97004749958aa0c9beb9c4bf360
+SRR543699	SRX178613	SAMN01120629	Sperm Donor2 smRNA-seq	Homo sapiens	RNA-Seq	TRANSCRIPTOMIC	size fractionation	ftp.sra.ebi.ac.uk/vol1/fastq/SRR543/SRR543699/SRR543699.fastq.gz	3e8953f0480f0b61942b4ad7c517a690

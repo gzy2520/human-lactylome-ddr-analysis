@@ -1,0 +1,298 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714)
+citeturn34search0 [wordlim: 200] Published: 6.5 years ago; Crawled: last week; Experiment type Expression profiling by high throughput sequencing ... GSE132714_Clinical_annotations_of_BPH_samples.xlsx 12.5 Kb (ftp)(http) XLSX
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Series GSE132714 Query DataSets for GSE132714
+Status Public on Mar 18, 2020
+Title Transcriptional alterations in BPH
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary We identified a BPH transcriptional signature that included 392 significantly differential expressed genes between BPH and control samples, and validated this BPH transcriptional signature using two independent study cohorts. By performing integrative analysis using transcriptional and methylation profiling, we identified two distinct BPH subtypes, supporting robust biologically distinct subgroups across different data types. To validate these BPH subtypes, we tested our signature via k-means clustering in two independent cohorts, and identified nearly identical subgroups. To nominate potential subtype specific therapeutic options, we utilized a Connectivity Map analysis, and found 50% of nominated compounds in one subgroup were related to inhibition of mTOR signaling.
+ 
+Overall design Identification of BPH and subgroup transcriptional signatures
+ 
+Contributor(s) Liu D, Barbieri CE
+Citation(s) 32332823
+Submission date Jun 13, 2019
+Last update date Jun 17, 2022
+Contact name Deli Liu
+E-mail(s) del2017@med.cornell.edu
+ 
+Platforms (1)
+GPL16791 Illumina HiSeq 2500 (Homo sapiens)
+Samples (22)Image: Less... Less...            Image: More... More...
+GSM3890639 BPH_1
+GSM3890640 BPH_2
+GSM3890641 BPH_3
+GSM3890642 BPH_4
+GSM3890643 BPH_5
+GSM3890644 BPH_6
+GSM3890645 BPH_7
+GSM3890646 BPH_8
+GSM3890647 BPH_9
+GSM3890648 BPH_10
+GSM3890649 BPH_11
+GSM3890650 BPH_12
+GSM3890651 BPH_13
+GSM3890652 BPH_14
+GSM3890653 BPH_15
+GSM3890654 BPH_16
+GSM3890655 BPH_17
+GSM3890656 BPH_18
+GSM3890657 Ctrl_1
+GSM3890658 Ctrl_2
+GSM3890659 Ctrl_3
+GSM3890660 Ctrl_4
+Relations
+BioProject PRJNA548798
+SRA SRP201383
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE132714_Clinical_annotations_of_BPH_samples.xlsx 12.5 Kb (ftp)(http) XLSX
+GSE132714_RAW.tar 8.4 Mb (http)(custom) TAR (of TXT)
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119834)
+citeturn34search1 [wordlim: 200] Published: 7.5 years ago; Crawled: 2 weeks ago; Series GSE119834 Query DataSets for GSE119834 ... Experiment type Expression profiling by high throughput sequencing ... GSM3384847 NSC1 [RNA-Seq]
+Series GSE119834 Query DataSets for GSE119834
+Status Public on Mar 18, 2019
+Title CHROMATIN LANDSCAPES REVEAL DEVELOPMENTALLY ENCODED TRANSCRIPTIONAL STATES THAT DEFINE GLIOBLASTOMA [RNA-Seq]
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Glioblastoma is an incurable brain cancer characterized by high genetic and pathological heterogeneity. Here we mapped active chromatin landscapes with gene expression, whole-exomes, copy number profiles, and DNA methylomes across 44 glioblastoma stem cell (GSCs) models, 50 primary glioblastomas, and 10 neural stem cells (NSCs) with the goal of identifying essential super enhancer (SE)-associated genes and the core transcription factors that establish them and glioblastoma identity. Glioblastomas segregate with two dominant enhancer profiles that coopt unique developmental transcription factor regulatory programs to enforce tumor identity. From group specific enhancer profiles, we inferred core transcription factors that define subgroup identity. These transcription factors show higher activity in glioblastomas versus normal neural stem cells, are associated with poor clinical outcomes, and are required for glioblastoma growth in vitro and in vivo. Given challenges with genetically-defined targeted therapies for glioblastoma, we propose targeting underlying transcriptional identity may serve as an important therapeutic strategy.
+ 
+Overall design Dataset consists of total RNA isolated from either glioblastoma primary tissue or gliblastoma stem cell models and an analysis of gene expression signatures.
+For primary GBM samples, we have 50 GBM samples in total, 46 of which have H3k27ac ChIPseq data, 45 of which have RNAseq data, and 39 of which have methylation data (GBM74 has replicate data).
+For glioblastoma stem cell samples, we have 44 GSC samples in total, 43 of which have H3k27ac ChIPseq data, 44 of which have RNAseq data, and 41 of which have methylation data.
+For neural stem cell samples, we have 10 NSC samples in total, 9 of which have H3k27ac ChIPseq data, 9 of which have RNAseq data, and 9 of which have methylation data.
+ 
+Contributor(s) Mack SC, Singh I, Wang X, Hirsch R, Lin CY, Rich JN
+GSM3384841 GSC44 [RNA-Seq]
+GSM3384842 GSC5 [RNA-Seq]
+GSM3384843 GSC6 [RNA-Seq]
+GSM3384844 GSC7 [RNA-Seq]
+GSM3384845 GSC8 [RNA-Seq]
+GSM3384846 GSC9 [RNA-Seq]
+GSM3384847 NSC1 [RNA-Seq]
+GSM3384848 NSC10 [RNA-Seq]
+GSM3384849 NSC2 [RNA-Seq]
+GSM3384850 NSC4 [RNA-Seq]
+GSM3384851 NSC5 [RNA-Seq]
+GSM3384852 NSC6 [RNA-Seq]
+GSM3384853 NSC7 [RNA-Seq]
+GSM3384854 NSC8 [RNA-Seq]
+GSM3384855 NSC9 [RNA-Seq]
+This SubSeries is part of SuperSeries:
+GSE119776 CHROMATIN LANDSCAPES REVEAL DEVELOPMENTALLY ENCODED TRANSCRIPTIONAL STATES THAT DEFINE GLIOBLASTOMA
+Relations
+BioProject PRJNA490436
+SRA SRP161553
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE119834_fpkm_table.txt.gz 12.7 Mb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3890652)
+citeturn34search2 [wordlim: 200] Published: 6.5 years ago; Crawled: last month; RNA-seq library for BPH and control samples from patients without BPH symptoms were generated using Poly-A and Ribo-Zero kits. ... Combat v3.20.0 was used to remove the batch effect of different RNA-seq libraries for the downstream gene expression analysis. ... GSE132714 Transcriptional alterations in BPH
+ 
+Description RNA-seq
+Data processing Reads were mapped to the human reference genome sequence (hg19) using STAR v2.4.0j. Then the resulting BAM files were subsequently converted into mapped-read format (MRF) using RSEQtools.
+The read count of each gene was calculated via HTSeq using GENCODE as reference gene annotation set. Quantification of gene expression was performed via RSEQtools v0.6, and expression levels (RPKM) were estimated by counting all nucleotides mapped to each gene and were normalized by the total number of mapped nucleotides (per million) and the gene length (per kb). Combat v3.20.0 was used to remove the batch effect of different RNA-seq libraries for the downstream gene expression analysis.
+Genome_build: hg19
+Supplementary_files_format_and_content: First column represents the gene name, and second represents the expression level (RPKM) for each gene.
+ 
+Submission date Jun 13, 2019
+Last update date Mar 18, 2020
+Contact name Deli Liu
+E-mail(s) del2017@med.cornell.edu
+Organization name Weill Cornell Medicine
+Street address 1300 York Ave
+City New York
+State/province New York
+ZIP/Postal code 10021
+Country USA
+ 
+Platform ID GPL16791
+Series (1)
+GSE132714 Transcriptional alterations in BPH
+Relations
+BioSample SAMN12052532
+SRA SRX6068106
+Supplementary file Size Download File type/resource
+GSM3890652_BPH_14.rpkm.txt.gz 383.2 Kb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA--------------------------------------------------------------------------------
+Causal links of 233 metabolic markers to benign prostatic hyperplasia: Mendelian randomization and RNA-sequencing insights - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC13193292/)
+citeturn34search3 [wordlim: 200] Published: 5 months ago; Crawled: 4 weeks ago; # Causal links of 233 metabolic markers to benign prostatic hyperplasia: Mendelian randomization and RNA-sequencing insights ... This study aims to apply the MR method across multiple BPH datasets, combining bulk RNA-seq data to comprehensively analyze the relationship between 233 metabolic markers and BPH. ... Differential expression analysis of the GSE132714 dataset was conducted using the “limma” package with the following criteria: |log fold change (FC)| >0.5 and adjusted p value <0.05. ... A total of 620 DEGs were identified from the GSE132714 dataset, including 619 downregulated and 1 upregulated gene.
+## 2. METHODS
+
+### 2.1. Data source
+
+The genome-wide association study (GWAS) data for 233 metabolic markers were retrieved from the GWAS Catalog (https://www.ebi.ac.uk/gwas/), with accession numbers ranging from GCST90301941 to GCST90302173.^{18} Data on BPH were sourced from OpenGWAS (https://gwas.mrcieu.ac.uk/). Table 1 presented detailed information about the GWAS data used in the study. Gene expression profiles for BPH were obtained from the Gene Expression Omnibus (GEO, https://www.ncbi.nlm.nih.gov/geo/). The training dataset (GSE132714) was sampled in New York, USA, with most patients of European descent, comprising 4 normal samples and 18 abnormal samples.^{19} The validation dataset (GSE119195) was sampled in Wuhan, China, primarily involving Chinese patients. It includes three normal samples and five abnormal samples.--------------------------------------------------------------------------------
+Integrative multiplatform molecular profiling of benign prostatic hyperplasia identifies distinct subtypes - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC7181734/)
+citeturn34search4 [wordlim: 200] Published: 6.4 years ago; Crawled: last month; Normal controls for RNA-seq and ERRBS were obtained from men undergoing radical prostatectomy for prostate cancer without BPH. ... Whole genome sequencing (WGS) on 5 BPH samples with matched normal samples from blood tissue was performed in New York Genome Center under standard protocol and pipeline for 100 bp paired-end sequencing. ... acc=GSE124187), RNA-seq data has been deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714), and ERRBS data has been deposited in GEO under the accession GSE123111 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+D.L., J.S., R.S.G., D.R., A.V., D.P., V.R., J.F., H.P., D.L., D.T., K.S., Z.W., A.T., R.L., B.C., A.F.O. and J.M.M. conducted experiments and acquired data. D.L., J.S., C.E.B. and A.S. analyzed the data. D.L., A.S. and C.E.B. wrote the manuscript. J.S., A.R., A.T., R.L., B.C., A.F.O., J.M.M., F.D., O.E. and M.A.R., helped to revise the manuscript.
+
+## Data availability
+
+The SNP array data has been deposited in GEO under the accession GSE124187 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124187), RNA-seq data has been deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714), and ERRBS data has been deposited in GEO under the accession GSE123111 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123111).
+
+## Footnotes
+
+Peer review information Nature Communications thanks Dan Robinson, William Ricke and the other anonymous reviewer(s) for their contribution to the peer review of this work. Peer reviewer reports are available.
+
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+These authors jointly supervised this work: Andrea Sboner, Christopher E. Barbieri.
+
+## Contributor Information
+
+Andrea Sboner, Email: ans2077@med.cornell.edu.
+
+Christopher E. Barbieri, Email: chb9074@med.cornell.edu
+
+--------------------------------------------------------------------------------
+RNA sequencing and integrative analysis reveal pathways and hub genes associated with TGFβ1 stimulation on prostatic stromal cells - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9412917/)
+citeturn34search5 [wordlim: 200] Published: 4.1 years ago; Crawled: last month; Methods: GSE132714 is currently the newer, available, and best high-throughput sequencing data set for BPH disease and includes the largest number of BPH cases. ... Keywords: benign prostatic hyperplasia, TGFβ1, prostatic stromal cells, RNA sequencing, bioinformatics analysis
+## Abstract
+
+Objective: Benign prostatic hyperplasia (BPH) is the most common urological disease in elderly men. The transforming growth factor beta 1 (TGFβ1) plays an important role in the proliferation and differentiation of BPH stroma. However, it is not clear yet which important pathways and key genes are the downstream of TGFβ1 acting on prostatic stromal cells.
+
+Methods: GSE132714 is currently the newer, available, and best high-throughput sequencing data set for BPH disease and includes the largest number of BPH cases. We examined the TGFβ1 expression level in BPH and normal prostate (NP) by analyzing the GSE132714 data set as well as carrying out immunohistochemistry of 15 BPH and 15 NP samples. Primary prostatic stromal cells (PrSCs) were isolated from five fresh BPH tissues. RNA sequencing and bioinformatics analysis were used to reveal important pathways and hub genes associated with TGFβ1 stimulation on PrSCs.
+
+Results: TGFβ1 was upregulated in BPH stroma compared to NP stroma. --------------------------------------------------------------------------------
+TIAM1 drives prostatic branching phenotype and is a potential therapeutic target for benign prostatic hyperplasia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12220968/)
+citeturn34search6 [wordlim: 200] Published: 1.2 years ago; Crawled: last month; GSE132714). ... The controls for RNA-Seq were obtained from men undergoing radical prostatectomy for prostate cancer without BPH.Middleton et al. (45) utilized 37 (28 were available in dbGap) BPH and 19 (18 were available in dbGap) controls, acquired concurrent BPH tissues from radical prostatectomies for prostate cancer; control tissue was obtained from normal PZ regions of prostates without other zonal pathologic changes (accession no. phs001698.v1.p1).
+GSE132714). Prostate tissue from TZ of patients with BPH was utilized for the study. The controls for RNA-Seq were obtained from men undergoing radical prostatectomy for prostate cancer without BPH. Middleton et al. (45) utilized 37 (28 were available in dbGap) BPH and 19 (18 were available in dbGap) controls, acquired concurrent BPH tissues from radical prostatectomies for prostate cancer; control tissue was obtained from normal PZ regions of prostates without other zonal pathologic changes (accession no. phs001698.v1.p1).
+
+The DNASTAR SeqMan NGen assembler (DNASTAR 2016) was used to map the FASTQ files to the human reference genome (GRCh38). The assembled RNA-Seq reads were normalized by the reads per kilobase per million mapped reads (RPKM) method. Differences in gene expression levels were analyzed using Fisher’s exact test in the ArrayStar software package (DNASTAR 2016). DEGs were filtered with a fold-change of ≥ |1.5| and FDR of < 0.05, using Bonferroni-Hochberg correction method. --------------------------------------------------------------------------------
+Heat Shock Protein Family A Member 1A Attenuates Apoptosis and Oxidative Stress via ERK/JNK Pathway in Hyperplastic Prostate - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11891570/)
+citeturn34search7 [wordlim: 200] Published: 1.5 years ago; Crawled: last month; RNA‐Seq and Single Cell Sequencing Analysis Between BPH and Control Groups ... (C) The expression level of HSPA1A in human normal prostate tissues versus BPH tissues in the integrated dataset of GSE119195 and GSE132714.
+## 2. Results
+
+### 2.1. RNA‐Seq and Single Cell Sequencing Analysis Between BPH and Control Groups
+
+Two datasets, GSE119195 and GSE132714, obtained from the Gene Expression Omnibus (GEO) database, were integrated and then subjected to RNA‐seq analysis. Analysis of this integrated dataset revealed 260 DEGs, including 91 upregulated genes such as HSPA1A, BMP5, NELL2, NRK, and CXCL13 together with 169 downregulated genes including GPX3 (Figure 1A). The heatmap data clearly represented the overall expression patterns of the top 10 genes with increased activity and the 10 genes with decreased activity, among which HSPA1A ranked in the top four (Figure 1B). Subsequently, the expression of HSPA1A was examined in BPH samples of an integrated dataset, demonstrating significant upregulation compared to normal controls (Figure 1C). Furthermore, Gene Set Enrichment Analysis (GSEA) revealed that upregulation of HSPA1A correlated with the functional pathway including cell cycle, ROS, mitogen‐activated protein kinases (MAPK) signaling pathway, PI3K/AKT signaling pathway and apoptosis (Figure 1D,E). --------------------------------------------------------------------------------
+Integrative multiplatform molecular profiling of benign prostatic hyperplasia identifies distinct subtypes | Nature Communications (https://www.nature.com/articles/s41467-020-15913-6)
+citeturn34search8 [wordlim: 200] Published: 6.4 years ago; Crawled: last week; Because BPH, by its very nature often has no adjacent normal tissue, we compared the gene expression profiles from BPH samples with histologically normal transition zone tissue sampled from age-matched controls (Fig. 2a, Supplementary Tables 7 and 8). ... Green color represents BPH samples, and gray color represents control samples from normal transition zones of men undergoing radical prostatectomy for prostate cancer (without clear evidence of BPH). b Hierarchical clustering and heatmap of transcriptional signatures based on significantly differentially expressed genes between BPH and control samples. c Validation of transcriptional signature (panel B) in an independent study (GSE6250). ... acc=GSE124187), RNA-seq data has been deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+## Data availability
+
+The SNP array data has been deposited in GEO under the accession GSE124187 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124187), RNA-seq data has been deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714), and ERRBS data has been deposited in GEO under the accession GSE123111 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123111).
+
+## References
+
+  1. Bushman, W. Etiology, epidemiology, and natural history of benign prostatic hyperplasia. Urol. Clin. North Am. 36, 403–415 (2009).
+
+  2. Vuichoud, C. & Loughlin, K. R. Benign prostatic hyperplasia: epidemiology, economics and evaluation. Can. J. Urol. 22(Suppl 1), 1–6 (2015).
+
+  3. Chughtai, B. et al. Benign prostatic hyperplasia. Nat. Rev. Dis. Prim. 2, 16031 (2016).
+--------------------------------------------------------------------------------
+Integrating single-cell and bulk transcriptomic analyses to explore key lactylation-related genes in benign prostatic hyperplasia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC13434622/)
+citeturn34search9 [wordlim: 200] Published: 3 months ago; Crawled: last week; The gene expression data for benign prostatic hyperplasia (BPH) were obtained from the Gene Expression Omnibus (GEO) database (https://www.ncbi.nlm.nih.gov/geo/), including datasets GSE132714, GSE65343, GSE104749, GSE119195, GSE7307, and GSE30994, comprising a total of 47 BPH samples and 16 healthy control samples. ... During cell filtering, cells with abnormal proportions of mitochondrial, ribosomal, or hemoglobin gene expression, as well as those with low RNA sequencing depth or atypical numbers of detected genes, were excluded to minimize technical noise and remove low-quality cells.
+The dataset GSE132714, containing 18 BPH samples and 4 normal controls, was used as an external validation set. In addition, the scRNA-seq data for BPH were obtained from GSE172357, which included 5 BPH samples and 3 healthy control samples. The raw data were processed using the R package “limma”, with normalization performed via the normalizeBetweenArrays function, and log₂ transformation applied when not previously conducted. To eliminate batch effects among datasets, the ComBat function from the R package “sva” was employed, ensuring the homogeneity of the merged MetaGSE dataset. Gene lists were curated based on the intersection of unique genes across datasets, and the expression matrices were standardized for subsequent analyses. The lactylation-related gene set comprised 327 genes previously reported to be associated with the lactylation process^{13}. The detailed gene list is provided in Supplementary Table S1.
+
+### Single-cell analysis
+W.), the Central Guidance for Local Science and Technology Development Funds Project (ZY24212012, F. W.), the National Natural Science Foundation of China (NSFC) (82372828, F. W.), the Science Foundation for Distinguished Young Scholars of Guangxi Medical University (F. W.), and the Yongjiang Program of Nanning (2021015, F. W.).
+
+## Data availability
+
+The datasets analyzed during the current study are publicly available. The bulk RNA-seq and scRNA-seq datasets were obtained from the NCBI Gene Expression Omnibus database (https://www.ncbi.nlm.nih.gov/geo/) under accession numbers: GSE132714 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714), GSE65343 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE65343), GSE104749 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE104749), GSE119195 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119195), GSE7307 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7307),GSE30994 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30994),and GSE172357 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE172357).
+
+## Code availability
+
+The R code utilized for data analysis and figure generation is available on GitHub at https://github.com/good1000/lactylation1.
+
+--------------------------------------------------------------------------------
+Frontiers | Multi-omic insights into mitochondrial dysfunction and prostatic disease: evidence from transcriptomics, proteomics, and methylomics (https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2025.1609933/full)
+citeturn34search10 [wordlim: 200] Published: 1.1 years ago; Crawled: 2 weeks ago; For those 4 genes in BPH, only DCXR was cross-validated in two datasets (GSE132714: P-value <0.05; GSE7307: P-value <0.05), while ELAC2 was validated in GSE7307 (P-value <0.05) (Figure 2E). ... For 6 prioritized genes in PCa, GLOD4 (GSE46602: P-value <0.001; GSE70768: P-value <0.05), MRPL24 (GSE46602: P-value <0.001; GSE70768: P-value <0.001), and PUS1 (GSE46602: P-value <0.001; GSE70768: P-value <0.001) were cross-validated in two RNA-sequencing datasets (Figure 4E).
+Tier of candidate genes for prostatic diseases with multi-omics analyses.
+
+We validated theses prioritized genes through RNA-sequencing data. For those 4 genes in BPH, only DCXR was cross-validated in two datasets (GSE132714: P-value <0.05; GSE7307: P-value <0.05), while ELAC2 was validated in GSE7307 (P-value <0.05) (Figure 2E). Neither of the two candidate genes in prostatitis presented supporting evidence from RNA-sequencing (Figure 3D). For 6 prioritized genes in PCa, GLOD4 (GSE46602: P-value <0.001; GSE70768: P-value <0.05), MRPL24 (GSE46602: P-value <0.001; GSE70768: P-value <0.001), and PUS1 (GSE46602: P-value <0.001; GSE70768: P-value <0.001) were cross-validated in two RNA-sequencing datasets (Figure 4E).
+
+--------------------------------------------------------------------------------
+Threonine fuels glioblastoma through YRDC-mediated codon-biased translational reprogramming - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11552442/)
+citeturn34search11 [wordlim: 200] Published: 2.5 years ago; Crawled: last month; RNA-seq data of 44 GSC samples and nine NSC samples are from GSE119834 (ref. 25) and were analyzed using the limma package.
+Screens from the DepMap project analyzed by Chronos^{23} were used to investigate the dependencies of YRDC in other cell lines. Any screen with a median score less than −0.6 was considered as YRDC essential. Screens of different carcinoma cell lines and a non-transformed epithelial cell line were from a prior report^{24}. To investigate the dependencies of t^{6}A downstream targets, processed data analyzed by the BAGEL algorithm were downloaded^{16,20,21,39}, followed by a query of each target.
+
+### GSC dataset interrogation
+
+RNA-seq data of three pairs of GSCs and DGCs are from GSE54791 (ref. 15) and were analyzed using the limma package. To infer translation activities in GSCs, GSEA was used based on GOBP: positive regulation of translation. To identify dysregulated tRNA modifiers in GSCs, 111 tRNA modification enzymes were analyzed by setting the threshold of log_{2} |fold change| to 0.8 and adjusted P < 0.05 (two tailed; Supplementary Table 4). RNA-seq data of 44 GSC samples and nine NSC samples are from GSE119834 (ref. 25) and were analyzed using the limma package. Molecular subtypes (PN, classical and mesenchymal) were determined with the ‘ssgsea.GBM.classification’ package^{53}. Three empirical classification P values for three subtypes were generated for each cell, and the molecular subtype was defined by the smallest P value. ChIP–seq data of H3K27ac from GSCs, DGCs and NSCs are from GSE54047 (ref. 15) and GSE119755 (ref. 25). ChIP–seq data of OL1G2 are from GSE54047. Integrative Genomics Viewer was used for peak visualization.
+
+--------------------------------------------------------------------------------
+https://doi.org/10.1038/s41598-026-54516-x (https://www.nature.com/articles/s41598-026-54516-x_reference.pdf)
+citeturn34search12 [wordlim: 200] Published: 3 months ago; The dataset GSE132714, containing 18 BPH samples and 4 normal controls,
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESS
+patterns, regulatory roles, and contributions of related genes to cellular heterogeneity 
+in different BPH cell types remain poorly characterized at the single-cell level. 
+Therefore, elucidating the functions of lactylation-related genes in BPH may provide 
+critical insights into disease mechanisms, facilitate the discovery of cell type-specific 
+biomarkers, and inspire the development of novel therapeutic strategies.
+Methods
+Data Sources
+The gene expression data for benign prostatic hyperplasia (BPH) were obtained 
+from 
+the 
+Gene 
+Expression 
+Omnibus 
+(GEO) 
+database 
+(https://www.ncbi.nlm.nih.gov/geo/), 
+including 
+datasets 
+GSE132714, 
+GSE65343, 
+GSE104749, GSE119195, GSE7307, and GSE30994, comprising a total of 47 BPH 
+samples and 16 healthy control samples. To identify diagnostic biomarkers and 
+evaluate their predictive performance for BPH onset, GSE65343, GSE104749, 
+GSE119195, GSE7307, and GSE30994 were merged into a meta-cohort termed 
+MetaGSE, serving as the training set, which included 29 BPH samples and 12 normal 
+controls. The dataset GSE132714, containing 18 BPH samples and 4 normal controls, 
+was used as an external validation set. In addition, the scRNA-seq data for BPH were 
+obtained from GSE172357, which included 5 BPH samples and 3 healthy control 
+ARTICLE IN PRESS
+samples. The raw data were processed using the R package “limma”, with 
+normalization 
+performed 
+via 
+the 
+normalizeBetweenArrays 
+function, 
+and 
+log₂ 
+transformation applied when not previously conducted. To eliminate batch effects 
+among datasets, the ComBat function from the R package “sva” was employed, 
+ensuring the homogeneity of the merged MetaGSE dataset. Gene lists were curated 
+based on the intersection of unique genes across datasets, and the expression matrices 
+were standardized for subsequent analyses. The lactylation-related gene set comprised 
+327 genes previously reported to be associated with the lactylation process (13). The--------------------------------------------------------------------------------
+fgene-2022-919103 1..9 (https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2022.919103/pdf)
+citeturn34search13 [wordlim: 200] Published: 4.1 years ago; 2.4 RNA sequencing ... TGFβ1 in BPH and normal prostate using this GSE132714 data ... RNA-seq at Annoroad Gene Technology Corporation (Beijing, ... GSE132714 is currently the newer, available, and best high-
+--------------------------------------------------------------------------------
+TIAM1 drives prostatic branching phenotype and is a potential therapeutic target for (https://df6sxcketz7bb.cloudfront.net/manuscripts/188000/188062/jci.insight.188062.v1.pdf)
+citeturn34search14 [wordlim: 200] Published: 4 months ago; RNA-Sequencing data processing and analysis. ... control samples for the RNA-seq (Accession number: GSE132714). ... undergoing radical prostatectomy for prostate cancer without BPH. ... controls, acquired concurrent BPH tissues from radical prostatectomies for prostate cancer;
+--------------------------------------------------------------------------------
+ARTICLE IN PRESS (https://www.nature.com/articles/s41419-026-08867-y_reference.pdf)
+citeturn34search15 [wordlim: 200] Published: 3 months ago; Raw gene expression datasets, including GSE119195 and GSE132714, were obtained from the ... The GSE132714 dataset comprises tissues from 18 BPH patients ... RNA Sequencing
+--------------------------------------------------------------------------------
+TYPE Original Research (https://pdfs.semanticscholar.org/9c25/3b62b3c7c159674652567dad00074f526c48.pdf)
+citeturn34search16 [wordlim: 200] Published: 1.1 years ago; inﬂammation samples of prostate through RNA-sequencing data.We extracted two independent datasets for BPH (GSE7307 andGSE132714) and PCa (GSE46602 and GSE70768) from Gene ... we utilized the murine prostate tissue RNA-sequencing data from
+--------------------------------------------------------------------------------
+UC Irvine
+UC Irvine Previously Published Works
+Tit (https://escholarship.org/content/qt88t4f08q/qt88t4f08q.pdf)
+citeturn34search17 [wordlim: 200] Published: 1.2 years ago; through genome sequencing. ... All the RNA-seq raw sequencing data have been deposited into the ... found on the Gene Expression Omnibus (GEO) under the accession numberGSE119834. ... accession numbers GSE54792 and GSE119755.
+

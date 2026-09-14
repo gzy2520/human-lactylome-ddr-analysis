@@ -1,0 +1,547 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126848)
+citeturn8search0 [wordlim: 200] Published: 7.6 years ago; Crawled: yesterday; Series GSE126848 Query DataSets for GSE126848 ... GSE126848_Gene_counts_raw.txt.gz 1.3 Mb (ftp)(http) TXT
+Series GSE126848 Query DataSets for GSE126848
+Status Public on Feb 22, 2019
+Title HEPATIC TRANSCRIPTOME SIGNATURES IN PATIENTS WITH VARYING DEGREES OF NON-ALCOHOLIC FATTY LIVER DISEASE COMPARED TO HEALTHY NORMAL-WEIGHT INDIVIDUALS
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Non-alcoholic fatty liver disease (NAFLD) represents a spectrum of conditions ranging from simple steatosis (NAFL), over non-alcoholic steatohepatitis (NASH) with or without fibrosis, to cirrhosis with end-stage disease. The hepatic molecular events underlying the development of NAFLD and transition to NASH are poorly understood. The present study aimed to determine hepatic transcriptome dynamics in patients with NAFL or NASH compared to healthy normal-weight and obese individuals. RNA sequencing and quantitative histomorphometry of liver fat, inflammation and fibrosis was performed on liver biopsies obtained from healthy normal weight (n=14) and obese (n=12) individuals, NAFL (n=15) and NASH (n=16) patients. Normal weight and obese subjects showed normal liver histology and comparable gene expression profiles. Liver transcriptome signatures were largely overlapping in NAFL and NASH patients, however, clearly separated from healthy normal-weight and obese controls. Most marked pathway perturbations identified in both NAFL and NASH were associated with markers of lipid metabolism, immunomodulation, extracellular matrix remodeling and cell cycle control. Interestingly, NASH patients with positive Sonic hedgehog hepatocyte staining showed distinct transcriptome and histomorphometric changes compared to NAFL. In conclusion, application of immunohistochemical markers of hepatocyte injury may serve as a more objective tool for distinguishing NASH from NAFL, facilitating improved resolution of hepatic molecular changes associated with progression of NAFLD.
+ 
+Overall design Liver biopsies from healthy, obese, NAFLD and NASH subjects
+ 
+Contributor(s) Rigbolt K, Nielsen JC
+Citation(s) 30653341
+Submission date Feb 21, 2019
+Last update date Mar 26, 2019
+Contact name Kristoffer Rigbolt
+E-mail(s) kri@gubra.dk
+ 
+Platforms (1)
+GPL18573 Illumina NextSeq 500 (Homo sapiens)
+Samples (57)Image: Less... Less...            Image: More... More...
+GSM3615293 NAFL_1
+GSM3615294 NAFL_2
+GSM3615295 NAFL_3
+GSM3615296 NAFL_4
+GSM3615297 NAFL_5
+GSM3615298 NAFL_6
+GSM3615299 NAFL_7
+GSM3615300 NAFL_8
+GSM3615301 NAFL_9
+GSM3615302 NAFL_10
+GSM3615303 NAFL_11
+GSM3615304 NAFL_12
+GSM3615305 NAFL_13
+GSM3615306 NAFL_14
+GSM3615307 NAFL_15
+GSM3615308 NASH_1
+GSM3615309 NASH_2
+GSM3615310 NASH_3
+GSM3615311 NASH_4
+GSM3615312 NASH_5
+GSM3615313 NASH_6
+GSM3615314 NASH_7
+GSM3615315 NASH_8
+GSM3615316 NASH_9
+GSM3615317 NASH_10
+GSM3615318 NASH_11
+GSM3615319 NASH_12
+GSM3615320 NASH_13
+GSM3615321 NASH_14
+GSM3615322 NASH_15
+GSM3615323 NASH_16
+GSM3615324 Normal-weight_1
+GSM3615325 Normal-weight_2
+GSM3615326 Normal-weight_3
+GSM3615327 Normal-weight_4
+GSM3615328 Normal-weight_5
+GSM3615329 Normal-weight_6
+GSM3615330 Normal-weight_7
+GSM3615331 Normal-weight_8
+GSM3615332 Normal-weight_9
+GSM3615333 Normal-weight_10
+GSM3615334 Normal-weight_11
+GSM3615335 Normal-weight_12
+GSM3615336 Normal-weight_13
+GSM3615337 Normal-weight_14
+GSM3615338 Obese_1
+GSM3615339 Obese_2
+GSM3615340 Obese_3
+GSM3615341 Obese_4
+GSM3615342 Obese_5
+GSM3615343 Obese_6
+GSM3615344 Obese_7
+GSM3615345 Obese_8
+GSM3615346 Obese_9
+GSM3615347 Obese_10
+GSM3615348 Obese_11
+GSM3615349 Obese_12
+Relations
+BioProject PRJNA523510
+SRA SRP186450
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE126848_Gene_counts_raw.txt.gz 1.3 Mb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record
+Image--------------------------------------------------------------------------------
+Predicting age from the transcriptome of human dermal fibroblasts - - GEO DataSets - NCBI (https://www.ncbi.nlm.nih.gov/gds?LinkName=bioproject_gds&from_uid=454681)
+citeturn8search1 [wordlim: 200] Crawled: last week;     GSE113957 ... Accession: GSE113957
+
+Predicting age from the transcriptome of human dermal fibroblasts
+
+(Submitter supplied) There is a marked heterogeneity in human lifespan and health outcomes for people of the same chronological age. Thus, one fundamental challenge is to identify molecular and cellular biomarkers of aging that could predict lifespan and be useful in evaluating lifestyle changes and therapeutic strategies in the pursuit of healthy aging. Here, we developed a computational method to predict biological age from gene expression data in skin fibroblast cells using an ensemble of machine learning classifiers. more...
+
+Organism:
+    Homo sapiens
+
+Type:
+    Expression profiling by high throughput sequencing
+
+Platforms:
+    GPL18573 GPL16791
+143 Samples
+    
+Download data: TXT
+
+Series
+
+Accession:
+    GSE113957
+
+ID:
+    200113957
+
+## Supplemental Content
+
+### Related information
+
+  * PubMed
+
+Related PubMed entries
+
+  * Full text in PMC
+
+### Important Links
+
+  * GEO Home
+  * GEO Documentation
+  * About GEO DataSets
+  * Construct a Query
+  * Download Options
+
+### Recent activity
+
+[Input]
+
+Clear Turn Off Turn On
+
+  * Predicting age from the transcriptome of human dermal fibroblasts
+
+Predicting age from the transcriptome of human dermal fibroblasts
+
+Accession: GSE113957--------------------------------------------------------------------------------
+NAFL_1 - - GEO DataSets - NCBI (https://www.ncbi.nlm.nih.gov/gds/303615293)
+citeturn8search2 [wordlim: 200] Crawled: last week;     GSE126848
+
+# GEO DataSets
+
+## Functional Genomics Studies
+
+Search database[Select]
+
+NAFL_1
+
+Organism:
+    Homo sapiens
+
+Source name:
+    Liver needle biopsy
+
+Platform:
+    GPL18573
+Series:
+    GSE126848
+Download data
+
+Sample
+
+Accession:
+    GSM3615293
+
+ID:
+    303615293
+
+SRA Run Selector
+
+## Supplemental Content
+
+### Related information
+
+  * BioSample
+
+BioSample links
+
+  * SRA
+
+Links to Short Read Archive Experiments
+
+### Important Links
+
+  * GEO Home
+  * GEO Documentation
+  * About GEO DataSets
+  * Construct a Query
+  * Download Options
+
+
+NAFL_1
+
+GEO DataSets
+--------------------------------------------------------------------------------
+204_3yr0mos_F_Unknown - - GEO DataSets - NCBI (https://www.ncbi.nlm.nih.gov/gds/303124702)
+citeturn8search3 [wordlim: 200] Crawled: last month;     GSE113957
+
+204_3yr0mos_F_Unknown
+
+Organism:
+    Homo sapiens
+
+Source name:
+    Unknown
+
+Platform:
+    GPL18573
+Series:
+    GSE113957
+Download data
+
+Sample
+
+Accession:
+    GSM3124702
+
+ID:
+    303124702
+
+
+## Supplemental Content
+
+### Related information
+
+  * BioSample
+
+BioSample links
+
+  * SRA
+
+Links to Short Read Archive Experiments
+
+  * Taxonomy
+
+Taxonomy
+
+
+204_3yr0mos_F_Unknown
+
+GEO DataSets
+
+  * C57_FACS_CD34
+
+C57_FACS_CD34
+
+GEO DataSets--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3615294)
+citeturn8search4 [wordlim: 200] Published: 7.6 years ago; Crawled: 6 days ago; GSE126848 HEPATIC TRANSCRIPTOME SIGNATURES IN PATIENTS WITH VARYING DEGREES OF NON-ALCOHOLIC FATTY LIVER DISEASE COMPARED TO HEALTHY NORMAL-WEIGHT INDIVIDUALS
+Sample GSM3615294 Query DataSets for GSM3615294
+Status Public on Feb 22, 2019
+Title NAFL_2
+Sample type SRA
+ 
+Source name Liver needle biopsy
+Organism Homo sapiens
+Characteristics gender: Male
+tissue: Liver
+disease: NAFLD
+Extracted molecule polyA RNA
+Extraction protocol TruSeq® Stranded mRNA Library Prep for NeoPrep
+RNA was isolated from fine needle biopsies of human livers using NucleoSpin® from MACHEREY-NAGEL according to manufactors protocol
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model NextSeq 500
+ 
+Description 2685
+Data processing bcl2fastq v2.17.1.14 used for basecalling
+Sequenced reads were mapped to Ensembl Mus musculus genome using whole genome using STAR v2.5.2a with default parameters
+Filtering for protein coding genes
+Genome_build: Ensembl GRCh38 89
+Supplementary_files_format_and_content: Count table
+ 
+Submission date Feb 21, 2019
+Last update date Feb 22, 2019
+Contact name Kristoffer Rigbolt
+E-mail(s) kri@gubra.dk
+Organization name Gubra
+Street address Hørsholm Kongevej 11B
+City Hørsholm
+ZIP/Postal code 2970
+Country Denmark
+ 
+Platform ID GPL18573
+Series (1)
+GSE126848 HEPATIC TRANSCRIPTOME SIGNATURES IN PATIENTS WITH VARYING DEGREES OF NON-ALCOHOLIC FATTY LIVER DISEASE COMPARED TO HEALTHY NORMAL-WEIGHT INDIVIDUALS
+Relations
+BioSample SAMN10979952
+SRA SRX5401560
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3124657)
+citeturn8search5 [wordlim: 200] Published: 8.4 years ago; Crawled: last month; Growth protocol Human dermal fibroblasts documented as ‘apparently healthy individuals’ deposited from the National Institute of Aging or the NIGMS Human Genetic Cell Repository were obtained or purchased from the Coriell Biobank Cell Repository (Camden, New Jersey, USA). ... HGPS patient fibroblasts were obtained from the Progeria Research Foundation and were cultured in high-glucose (4.5mg/ml) DMEM (Gibco) supplemented with 20% (vol/vol) fetal bovine medium and 1% (vol/vol) penicillin-strepomycin. ... RNA was purified with RNeasy Mini kits with 30 minutes of DNase I treatment to remove Genomic DNA in accordance to the manufacturer’s instructions (Qiagen). ... Data processing Reads were aligned to the human genome (hg19) using STAR (version 2.5.1b) ... Gene expression (FPKM) values were calculated for annotated RefSeq genes using HOMER (V4.9.1) by counting reads found overlapping exons ... State/province California ... GSE113957 Predicting age from the transcriptome of human dermal fibroblasts
+Status Public on Nov 16, 2018
+Title 114_37yr_Female_Unknown
+Sample type SRA
+ 
+Source name Skin/Blood
+Organism Homo sapiens
+Characteristics cell id: GM08400
+disease: Normal
+Sex: Female
+age: 37
+ethnicity: Unknown
+Growth protocol Human dermal fibroblasts documented as ‘apparently healthy individuals’ deposited from the National Institute of Aging or the NIGMS Human Genetic Cell Repository were obtained or purchased from the Coriell Biobank Cell Repository (Camden, New Jersey, USA). The cells were cultured in high-glucose (4.5mg/ml) DMEM (Gibco) supplemented with 15% (vol/vol) fetal bovine serum (Gibco), 1X glutamax (Gibco), 1X non-essential amino acids (Gibco) and 1% (vol/vol) penicillin-streptomycin (Gibco). HGPS patient fibroblasts were obtained from the Progeria Research Foundation and were cultured in high-glucose (4.5mg/ml) DMEM (Gibco) supplemented with 20% (vol/vol) fetal bovine medium and 1% (vol/vol) penicillin-strepomycin. All fibroblasts were cultured in DMEM unless specified and were maintained at 37oC in a humidified incubator with 3% O2 and 7.5% CO2. Cells were passaged every 2 to 5 days at 85% confluence.
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted using 1ml of TriZol reagent (Invitrogen) directly from the six-well plates or trypsinized and pelleted from 100mm dishes. RNA was purified with RNeasy Mini kits with 30 minutes of DNase I treatment to remove Genomic DNA in accordance to the manufacturer’s instructions (Qiagen).
+mRNA sequence libraries were prepared using the Illumina TruSeq Stranded mRNA kit with 150ng-1ug of total RNA.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NextSeq 500
+ 
+Description fpkm.txt
+Data processing Reads were aligned to the human genome (hg19) using STAR (version 2.5.1b)
+Only reads that aligned uniquely to a single genomic location were used for downstream analysis (MAPQ > 10 ).
+Gene expression (FPKM) values were calculated for annotated RefSeq genes using HOMER (V4.9.1) by counting reads found overlapping exons
+The top expressed isoform was used as proxy for gene expression, resulting in 27,142 unique genes.
+Age prediction models were fit to the FPKM data for all subjects using leave-one-out cross-validation. Model performance is reported on the average error made on the held-out sample for each validation fold.
+Genome_build: hg19
+Supplementary_files_format_and_content: FPKM expression table
+ 
+Submission date May 02, 2018
+Last update date Mar 28, 2022
+Contact name April Elizabeth Williams
+E-mail(s) apriljack06@gmail.com, awilliams@salk.edu
+Phone 7345461645
+Organization name Salk Institute for Biological Studies
+Department IGC
+Street address 10010 N Torrey Pines Rd
+City San Diego
+State/province California
+ZIP/Postal code 92037
+Country USA
+ 
+Platform ID GPL18573
+Series (1)
+GSE113957 Predicting age from the transcriptome of human dermal fibroblasts
+Relations
+BioSample SAMN09011777
+SRA SRX4022553
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record
+Image--------------------------------------------------------------------------------
+Identifying novel therapeutic targets for non-alcoholic fatty liver disease using bioinformatics approaches: from drug repositioning to traditional Chinese medicine - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12417881/)
+citeturn8search6 [wordlim: 200] Published: last year; Crawled: last month; The dataset is identified as GSE126848 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi? ... In the dataset GSE126848, a total of 1,241 genes were identified, including 526 upregulated genes and 715 downregulated genes.
+## 3 Results
+
+### 3.1 Selection and screening of gene expression data
+
+The gene expression data selected for this study includes: ① A study published in 2004 by Xiangya Second Hospital of Central South University, which analyzed the differential gene expression in liver tissues of patients with NAFLD compared to a control group. The dataset is identified as GSE260666 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE260666), comprising a total of 16 samples, including 10 NAFLD samples and 6 normal liver tissue samples; ② A transcriptomic analysis across the spectrum of non-alcoholic fatty liver disease published in 2020 by Newcastle University, with the dataset identified as GSE135251 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135251), comprising a total of 216 samples, including 206 samples at various stages of fibrosis and 10 normal liver tissue samples; ③ A study published in 2019 by Gubler in Denmark that compared the hepatic transcriptomic characteristics of patients with varying degrees of non-alcoholic fatty liver disease to those of healthy individuals with normal weight. The dataset is identified as GSE126848 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126848), comprising a total of 57 samples, including 14 normal healthy liver tissue samples, 12 normal healthy obese liver tissue samples, 15 samples of simple steatosis, and 16 samples of non-alcoholic steatohepatitis with or without fibrosis.
+
+### 3.2 Acquisition and selection method of differentially expressed genes
+
+Using P < 0.05 and |log2FC| ≥ 1 as the criteria for selection, a total of 167 genes were identified in the dataset GSE260666, including 100 upregulated genes and 67 downregulated genes. In the dataset GSE135251, a total of 2,166 genes were identified, including 871 upregulated genes and 1,295 downregulated genes. In the dataset GSE126848, a total of 1,241 genes were identified, including 526 upregulated genes and 715 downregulated genes. --------------------------------------------------------------------------------
+Identification and validation of efferocytosis-related biomarkers for the diagnosis of metabolic dysfunction-associated steatohepatitis based on bioinformatics analysis and machine learning - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11532026/)
+citeturn8search7 [wordlim: 200] Published: 1.9 years ago; Crawled: last month; By searching the Gene Expression Omnibus (GEO) database (https://www.ncbi.nlm.nih.gov/geo/), we identified GSE126848 as our primary test dataset, featuring liver transcriptome profiles of 14 healthy controls and 16 MASH patients (29). ... First, the raw counts of GSE126848 were normalized using the Trimmed Mean of M-values (TMM) method from edgeR package version 4.0.16 within the R software version 4.3.3.
+## Methods and materials
+
+### Data preparation
+
+By searching the Gene Expression Omnibus (GEO) database (https://www.ncbi.nlm.nih.gov/geo/), we identified GSE126848 as our primary test dataset, featuring liver transcriptome profiles of 14 healthy controls and 16 MASH patients (29). For validation, we selected GSE246221, which comprises liver microarray data from 4 healthy controls and 28 MASLD patients (30). Based on the MASLD activity score, 22 samples were diagnosed with MASH (31). Therefore, subsequent gene expression validation and diagnostic capability verification will utilize 4 healthy controls and 22 MASH samples from this dataset. Additionally, we incorporated GSE128334, a single-cell RNA sequencing (scRNA-seq) dataset from MASH mice model, to assess hub gene expression specifically in immune cells (32). To gather efferocytosis related genes (EFRGs), we queried the Gene Cards database (https://www.genecards.org/) and the Kyoto Encyclopedia of Genes and Genomes (KEGG) database (https://www.genome.jp/kegg/), focusing on the keyword “efferocytosis”. This thorough search yielded a total of 272 EFRGs, as detailed in Supplementary Table S1 .
+
+### Differentially expressed genes analysis
+
+First, the raw counts of GSE126848 were normalized using the Trimmed Mean of M-values (TMM) method from edgeR package version 4.0.16 within the R software version 4.3.3. Subsequently, the data distribution was examined, and a PCA cluster plot was generated to visualize the patterns. Second, to identify differentially expressed genes (DEGs) between MASH patients and healthy controls in the training dataset, we employed the DESeq2 package version 1.42.1. Twenty percent of the genes with very low expression levels were filtered out, and subsequently, those with p-adj < 0.05 and |log2 FC| ≥ 1 were identified as DEGs. To visualize the DEGs, volcano plots were generated. Following the intersection of DEGs with the EFRGs, the differentially expressed EFRGs in MASH was determined. Finally, the Venn Diagram package version 1.7.3 and ggplot2 package version 3.5.0 were utilized to visualize the results in a Venn diagram and heat map.
+For LAASO regression, the model was specified with the binomial parameter. The optimal lambda value was chosen based on lambda.min, and the model was validated using 10-fold cross-validation. For SVM-RFE, five-fold cross-validation was utilized for model evaluation. For more detailed information on the machine learning approach, please refer to the GitHub repository: https://github.com/chenghui3595/MASH-Efferocytosis-ML.
+
+### Construction of ROC and nomogram model
+
+To assess the diagnostic value of hub genes, we constructed the Receiver Operating Characteristic (ROC) curves, which were conducted by using the “pROC” package version 1.18.5. ROC curves demonstrated the Area Under the Curve (AUC), along with specificity and sensitivity. To reinforce the validity of marker genes, an external dataset, GSE246221, was employed to verify the diagnostic capability. Furthermore, a nomogram model was devised utilizing the “rms” package version 6.8-0 for predicting the onset of MASH. In the nomogram, each hub gene is assigned a distinct score, and the “total points” are derived by summing the scores of all contributing predictors.
+
+--------------------------------------------------------------------------------
+GSE132047 - Meningeal gd T cells regulate anxiety like behaviors via Il17a signaling on Neurons - OmicsDI (https://www.omicsdi.org/dataset/geo/GSE132047)
+citeturn8search8 [wordlim: 200] Published: 6.1 years ago; Crawled: last month; PROVIDER: GSE132047 | GEO | 2020/07/24
+Image: Transcriptomics
+
+### Dataset Information
+
+0 Views
+
+0 Connections
+
+0 Citations
+
+0 Reanalyses
+
+0 Downloads
+
+* * *
+
+Omics score: 0
+
+### Meningeal gd T cells regulate anxiety like behaviors via Il17a signaling on Neurons
+
+Ontology highlight
+
+* * *
+
+ABSTRACT: By characterizing the meningeal compartment of naive mice, here we explored a unique population of tissue-resident gd T cells, which we found to be the major source of IL-17A in the steady state meninges. gd T cells rapidly harbor meninges at perinatal stages and actively make IL-17A. Their IL-17A production was TCR-dependent but it occurred independent of commensal microbiota. The absence of meningeal gd T cells was related with risk-taking behavior in mice, which was dependent on the IL-17A signaling directly in the prefrontal cortex neurons. Our results demonstrate that tissue-resident meningeal gd T cell-derived IL-17A may represent an evolutionary bridge between anti-pathogen response and avoidance behavioral traits in vertebrates.
+
+ORGANISM(S): Mus musculus
+
+PROVIDER: GSE132047 | GEO | 2020/07/24
+
+REPOSITORIES: GEO
+
+Cite     Json Xml
+
+### Dataset's files
+
+[Input: Filter]
+
+Source:
+
+ 
+
+[Input]   | [Button: Name]  | [Button: Type]  | Action  | DRS
+--- | --- | --- | --- | ---
+[Input]   |  | Other  |  | 
+Upload file(s) to Galaxy server  |  | Items per page:5 1 - 1 of 1
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113957)
+citeturn8search9 [wordlim: 200] Published: 7.8 years ago; Crawled: yesterday; 
+Country USA
+ 
+Platforms (2)
+GPL16791 Illumina HiSeq 2500 (Homo sapiens)
+GPL18573 Illumina NextSeq 500 (Homo sapiens)
+Samples (143)Image: Less... Less...            Image: More... More...
+GSM3124560 14_1yr_Male_Asian
+GSM3124561 15_12yr_Male_Caucasian
+GSM3124562 16_24YR_Female_Caucasian
+GSM3124563 17_25YR_Male_caucasian
+GSM3124564 18_25YR_Female_caucasian
+GSM3124565 19_26YR_Male_Caucasian
+GSM3124566 20_26YR_Female_Caucasian
+GSM3124567 21_28YR_Male_Caucasian
+GSM3124568 22_29YR_Male_Caucasian
+GSM3124569 23_29YR_Male_Caucasian
+GSM3124570 24_30YR_Male_Caucasian
+GSM3124571 25_30YR_Female_Caucasian
+GSM3124572 26_30YR_Male_Caucasian
+GSM3124573 27_30YR_Male_Caucasian
+GSM3124574 28_43yr_Female_Caucasian
+GSM3124575 29_44yr_Male_Caucasian
+GSM3124576 30_41yr_Male_Caucasian
+GSM3124577 31_47yr_Male_Caucasian
+GSM3124578 32_50yr_Female_Caucasian
+GSM3124579 33_46yr_Male_Caucasian
+GSM3124580 34_50yr_Male_Caucasian
+GSM3124581 35_42yr_Female_Caucasian
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3839712)
+citeturn8search10 [wordlim: 200] Published: 6.1 years ago; Crawled: 5 months ago; Extraction protocol 10x Genomics Chromium single cell preparation ... Filtered matrices were saved as gene by count matrices with gene symbols as rownames and cell barcodes as column names. ... GSE132047 Meningeal gd T cells regulate anxiety like behaviors via Il17a signaling on NeuronsGSE147262 Meningeal gd T cells regulate anxiety like behaviors via Il17a signaling on Neurons
+Sample GSM3839712 Query DataSets for GSM3839712
+Status Public on Jul 24, 2020
+Title Sample 1_1_Spleen Adult
+Sample type SRA
+ 
+Source name Spleen Adult
+Organism Mus musculus
+Characteristics strain: Jax strain 000664 (C57BL6)
+cell type: gd T cells
+age: 8 weeks
+Sex: Male
+tissue: spleen
+Treatment protocol Naïve adult animals (8-weeks old) and pups (at P7) were euthanized and transcardially perfused. Their meninges were dissected, digested and stained for the single cell sequencing experiment.  
+Growth protocol Standard 12 h light/dark cycle conditions in rooms equipped with control for temperature and humidity. Mice were purchased from the Jackson Laboratory and bred in-house.
+Extracted molecule total RNA
+Extraction protocol 10x Genomics Chromium single cell preparation
+NGS Illumina Next Seq
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NextSeq 500
+ 
+Description CD45+, TCRb-, TCRgd+ sorted cells from spleen of adult mice
+Data processing Illumina bcl2fastq software used for basecalling
+UMI count matrices generated using the Cellranger count pipeline. The cellranger count pipeline, resulted in raw count matrices for each of our 4 sample conditions ( Meninges Pup, Meninges Adult, Spleen Pup, Spleen Adult).
+Data was read into R using the DropletUtils package and barcodes were identified as cells or empty droplets using the EmptyDrops method.
+Filtered matrices were saved as gene by count matrices with gene symbols as rownames and cell barcodes as column names.
+Genome_build: mm10
+Supplementary_files_format_and_content: Compressed csv files containing the raw UMI count matrices for each sample, with gene symbols and sample names and barcodes . Additionally, a compressed csv file containing a matrix with raw UMI counts from each sample, merged by gene symbols.
+ 
+Submission date May 31, 2019
+Last update date Oct 23, 2020
+Contact name Jonathan Kipnis
+Organization name Washington University in Saint Louis
+Department Pathology and Immunology
+Lab Kipnis Lab
+Street address 4515 McKinley Ave
+City Saint Louis
+State/province MO
+ZIP/Postal code 63110
+Country USA
+ 
+Platform ID GPL19057
+Series (2)
+GSE132047 Meningeal gd T cells regulate anxiety like behaviors via Il17a signaling on Neurons
+GSE147262 Meningeal gd T cells regulate anxiety like behaviors via Il17a signaling on Neurons
+Relations
+BioSample SAMN11912840
+SRA SRX5939642
+Supplementary file Size Download File type/resource
+GSM3839712_spleen_adult_counts.csv.gz 1.4 Mb (ftp)(http) CSV
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+Non-alcoholic fatty liver disease-associated DNA methylation and gene expression alterations in the livers of Collaborative Cross mice fed an obesogenic high-fat and high-sucrose diet - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9586642/)
+citeturn8search11 [wordlim: 200] Published: 4.5 years ago; Crawled: last month; This work was supported by the FDA-NCTR Intramural Research Program, the FDA-Office of Minority Health and Health Equity Intramural Challenge Grants, NCI-NCTR Interagency Agreement, and, in part, by a grant from NIEHS R01 ES029911. ... The data that support the findings of this study are available in Gene Expression Omnibus depository at https://www.ncbi.nlm.nih.gov/geo/, reference numbers GSE149863 and GSE126848. ... acc=GSE126848.
+## Funding Statement
+
+This work was supported by the FDA-NCTR Intramural Research Program, the FDA-Office of Minority Health and Health Equity Intramural Challenge Grants, NCI-NCTR Interagency Agreement, and, in part, by a grant from NIEHS R01 ES029911.
+
+## List of abbreviation
+
+CC: Collaborative Cross; HCC: hepatocellular carcinoma; HF/HS: high fat and high sucrose; NAFL: nonalcoholic fatty liver; NAFLD: nonalcoholic fatty liver disease; NASH: nonalcoholic steatohepatitis; DMRs: differentially methylated regions; NGS: next-generation sequencing.
+
+## Disclosure statement
+
+Arun J. Sanyal is the President of Sanyal Biotechnology, LLC, and has stock options in Genfit, Akarna, Tiziana, Indalo, and Durect. He has served as a consultant to AbVie, Astra Zeneca, Nitto Denko, Ardelyx, Conatus, Nimbus, Amarin, Salix, Tobira, Takeda, Fibrogen, Jannsen, Gilead, Boehringer, Lilly, Zafgen, Novartis, Novo Nordisk, and Pfizer. He has served as an unpaid consultant to Exhalenz, Intercept, Echosens, Immuron, Galectin, Fractyl, Northsea Pharma, Gencia, Syntlogic, Affimune, Chemomab, Nordic Bioscience Zydus, and Bristol Myers Squibb. His institution has received grant support from Gilead, Salix, Tobira, Bristol Myers, Shire, Intercept, Merck, Astra Zeneca, Malinckrodt, Cumberland, and Novartis. He receives royalties from Elsevier and UptoDate. Virginia Commonwealth University has ownership interests in Sanyal Biotechnology, LLC.
+
+## Data availability statement
+
+The data that support the findings of this study are available in Gene Expression Omnibus depository at https://www.ncbi.nlm.nih.gov/geo/, reference numbers GSE149863 and GSE126848. These data were derived from the following resources available in the public domain: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149863 and https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126848. Any additional data that support the findings of this study are available from the corresponding author, IP, upon request.
+
+## References
+

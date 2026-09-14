@@ -1,0 +1,324 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM6047809)
+citeturn30search0 [wordlim: 200] Published: 4.4 years ago; Crawled: last week; Source name Untreated MCF10A cells ... Library strategy RNA-Seq
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM6047809 Query DataSets for GSM6047809
+Status Public on Nov 11, 2022
+Title Untreated_Control [scRNA-seq]
+Sample type SRA
+ 
+Source name Untreated MCF10A cells
+Organism Homo sapiens
+Characteristics cell line: MCF10A
+cell type: Normal breast epithelial cell line
+treatment: Untreated
+Treatment protocol 10 ng/mL TGFbeta in complete growth medium for indicated time points.
+Growth protocol Standard culture conditions for MCF10A.
+Extracted molecule total RNA
+Extraction protocol Qiagen RNeasy kit.
+Single-cell suspensions of MCF10A were washed and resuspended in ice-cold PBS containing 0.1% BSA at a concentration of ~2500 cells/µL. Single cells were captured in the ddSEQ microfluidic system (Bio-Rad), mRNA libraries were built using the SureCell WTA 3′ Library Prep Kit (Illumina), libraries sequenced on NextSeq 500 (Illumina) using 150 cycle high output kit (Illumina). Protocols recommended by the manufacturers were followed at each stage.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic single cell
+Library selection cDNA
+Instrument model NextSeq 500
+ 
+Description T0
+RNA_expression
+Data processing Processed using BaseSpace (Illumina) with ‘hg19’ as the reference for alignment.
+Assembly: hg19 (GRCh37)
+Supplementary files format and content: scRNAseq_processed.tsv: umi count txt file.
+ 
+Submission date Apr 18, 2022
+Last update date Nov 11, 2022
+Contact name Andrew Emili
+ 
+Platform ID GPL18573
+Series (2)
+GSE194019 Expression data from MCF10A cells treated with TGFβ for multiple time points
+GSE200981 Expression data from MCF10A cells treated with TGFβ for multiple time points [scRNA-seq]
+Relations
+BioSample SAMN27622078
+SRA SRX14892140
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4949999)
+citeturn30search1 [wordlim: 200] Published: 3.0 years ago; Crawled: last month; Title MCF10A p53 WT control cells - RNA-seq ... treatment: untreated
+Status Public on Sep 21, 2023
+Title MCF10A p53 WT control cells - RNA-seq
+Sample type SRA
+ 
+Source name Endogenous wild type p53 protein without any V5 tag
+Organism Homo sapiens
+Characteristics cell type: MCF10A mammary epithelial cells
+genotype/variation: p53 WT control cells
+treatment: untreated
+cell line: MCF10A
+Treatment protocol No treatment
+Growth protocol MCF10A cells were cultured at 37˚C in a 5% CO2 humidified incubator. DMEM/F12 media (ThermoFisher #11320-082) was supplemented with 5% Horse Serum (ThermoFisher #16050-122), hEGF (10ng/ml, ThermoFisher #PHG0311), hydrocortisone (0.5µg/ml, Sigma #H0888), cholera toxin (100ng/ml, Sigma #C8052), and Insulin (10µg/ml, Sigma #I9278). Cell were routinely passaged with trypsin (0.25% in HBSS with 0.2g/ml EDTA, GE Healthcare #SH30042.01) at 80-90% confluence.
+Extracted molecule total RNA
+Extraction protocol RNA-Seq: Total RNA extracted from the cells (Qiagen cat no. 74134) were used to prepare cDNA using Nugen’s Ovation RNA-Seq System via single primer isothermal amplification (Catalogue # 7102-A01) automated on the Apollo 324 liquid handler from Wafergen.
+RNA-Seq: cDNA was sheared to approximately 300 bp fragments using the Covaris M220 ultrasonicator. Libraries were generated using Kapa Biosystem’s library preparation kit (KK8201). Fragments were end-repaired and A-tailed, individual indexes and adapters (Bioo, catalogue #520999) were ligated on each separate sample. The adapter ligated molecules were cleaned using AMPure beads (Agencourt Bioscience/Beckman Coulter, A63883), and amplified with Kapa’s HIFI enzyme. The library was then analyzed on an Agilent Bioanalyzer, and quantified by qPCR (KAPA Library Quantification Kit, KK4835) before multiplex pooling and sequencing a 2x75 PE flow cell on the NextSeq500 platform (Illumina) at the ASU’s CLAS Genomics Core facility.
+RNA-Seq: The library was then analyzed on an Agilent Bioanalyzer, and quantified by qPCR (KAPA Library Quantification Kit, KK4835) before multiplex pooling and sequencing a 2x75 PE flow cell on the NextSeq500 platform (Illumina) at the ASU’s CLAS Genomics Core facility.
+chip-seq: All the MCF10A cell lines were fixed with 1% formaldehyde in PBS and incubated for 10 min at RT. --------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8989955)
+citeturn30search2 [wordlim: 200] Published: 1.3 years ago; Crawled: 2 weeks ago; Treatment protocol MCF10A cells were split 1:10 (from a confluent plate) into a plastic 10cm culture plate before being treated with 2.5, 10, or 25μM etoposide the following day for 24 h. ... Single-cell RNA sequencing (scRNA-seq) libraries were generated using the 10x Genomics Chromium platform with the 3' mRNA capture kit. ... Libraries were sequenced on an Illumina NovaSeqX to a depth of 81,810 reads per cell for untreated, 74,214 reads per cell for 2.5µM, 81,254 reads per cell for 10µM, and 76,973 reads per cell for 25µM.
+Sample GSM8989955 Query DataSets for GSM8989955
+Status Public on Oct 30, 2025
+Title MCF10A, UT
+Sample type SRA
+ 
+Source name MCF10A
+Organism Homo sapiens
+Characteristics cell line: MCF10A
+cell type: normal human breast epithelial cell
+treatment: Untreated
+Treatment protocol MCF10A cells were split 1:10 (from a confluent plate) into a plastic 10cm culture plate before being treated with 2.5, 10, or 25μM etoposide the following day for 24 h. Cells were then washed twice with PBS before being returned to full-growth media. Full-growth media was refreshed every 3d during the drug recovery period.
+Extracted molecule polyA RNA
+Extraction protocol Single-cell suspensions were prepared following the 10x Genomics “Cell Preparation for Single Cell Protocols” guide with a viability of >95%. Single-cell encapsulation, barcoding, cDNA amplification, library preparation, and sequencing were performed by the University of Colorado Anschutz Genomics Shared Resource facility. Cells were encapsulated into droplets using the Chromium Controller, where reverse transcription occurred within individual gel beads-in-emulsion (GEMs).
+Single-cell RNA sequencing (scRNA-seq) libraries were generated using the 10x Genomics Chromium platform with the 3' mRNA capture kit. Single-cell suspensions were prepared following the 10x Genomics “Cell Preparation for Single Cell Protocols” guide with a viability of >95%. Single-cell encapsulation, barcoding, cDNA amplification, library preparation, and sequencing were performed by the University of Colorado Anschutz Genomics Shared Resource facility. Cells were encapsulated into droplets using the Chromium Controller, where reverse transcription occurred within individual gel beads-in-emulsion (GEMs). Following barcoding and cDNA amplification, sequencing libraries were constructed according to the manufacturer’s protocol. Libraries were sequenced on an Illumina NovaSeqX to a depth of 81,810 reads per cell for untreated, 74,214 reads per cell for 2.5µM, 81,254 reads per cell for 10µM, and 76,973 reads per cell for 25µM.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic single cell
+Library selection cDNA
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2773023)
+citeturn30search3 [wordlim: 200] Published: 9.0 years ago; Crawled: 2 months ago; Source name MCF10A untreated ... 50 ng of total RNA was used to prepare cDNA via single primer isothermal amplification using the Ovation RNA-Seq System (Nugen 7102-A01) and automated on the Apollo 324 liquid handler (Wafergen). cDNA was sheared to approximately 300 bp fragments using the Covaris M220 ultrasonicator.
+Status Public on Jan 31, 2018
+Title MCF10A_C_rep3
+Sample type SRA
+ 
+Source name MCF10A untreated
+Organism Homo sapiens
+Characteristics cell line: MCF 10A (ATCC CRL-10317)
+protein: PcTF
+treatment: control (untreated)
+time: control
+Treatment protocol Samples 1-6, 9-14, and 17-22 (transfections): DNA/Lipofectamine complexes contained 2 μg of plasmid DNA, 7.5 μl of Lipofectamine LTX (Invitrogen), 2.5 PLUS reagent, and 570 µl OptiMEM. Transfected cells were grown in pen/strep-free growth medium for 18 hrs. The transfection medium was replaced with fresh, pen/strep-supplemented medium and cells were grown for up to 72 hours). Controls (samples 7-8, 15-16, 23-24) were treated with vehicle only (Lipofectamine, PLUS, OptiMEM). Controls (samples 25-27) were not given any treatment.
+Growth protocol Cells were grown up to ~5.0E5 cells in 6-well plates at 37 deg. C in a 5% CO2 humidified incubator in the following media supplemented with 10% Tet-free FBS and 1% penicillin/ streptomycin: BT474 in Hybri-Care supplemented with 1.5 g/L sodium bicarbonate, BT549 in RPMI-1640 supplemented with 0.0008 mg/mL insulin, MCF7 in EMEM supplemented with 0.01 mg/mL insulin, MCF10A in MEGM BulletKit with all provided supplements except GA-1000. The adapter-ligated molecules were cleaned using AMPure beads (Agencourt Bioscience/Beckman Coulter, A63883), and amplified with Kapa’s HIFI enzyme. The library was analyzed on an Agilent Bioanalyzer, and quantified by qPCR (KAPA Library Quantification Kit, KK4835) before multiplex pooling and sequencing on a Hiseq 2000 platform (Illumina) at the ASU CLAS Genomics Core facility.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2000
+ 
+Description Sample 27
+MCF10A untreated replicate 3
+Control used for comparison of basal expression levels in untreated control cells
+controls_gene_exp.diff, ALL_gene_exp.diff, MCF10A_BT474_gene_exp.diff, MCF10A_MCF7_gene_exp.diff, MCF10A_BT549_gene_exp.diff, MCF10A_BT474_48rep1_rm_gene_exp.diff, ALL_BT474_48rep1_rm_gene_exp.diff
+Data processing Two raw read files were produced per sample
+Raw sequence data (fastq) was analyzed with FastQC (fastqc verision 0.11.3 )
+TrimmomaticSE was used to remove low-quality reads and adapters
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4669220)
+citeturn30search4 [wordlim: 200] Published: 6.2 years ago; Crawled: 6 months ago; Extraction protocol Total RNA was extracted from MCF10A cells after 24 h of co-culture with MCF7 cell-derived sEV using Direct-zol RNA MiniPrep kit (Zymo Research). ... One-hundred ng of total RNA was used to prepare a library for Illumina Sequencing using the Quant-Seq 3’mRNA-Seq Library Preparation Kit (Lexogen) ... Description untreated LCL cell lines from subject c2 G334R variant G, replicate 2
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM4669220 Query DataSets for GSM4669220
+Status Public on Nov 12, 2020
+Title hyp.2G variant of p53 from subject c2, untreated, replicate 2
+Sample type SRA
+ 
+Source name MCF10A cell lines
+Organism Homo sapiens
+Characteristics cell type: MCF10A
+condition: hypoxia
+replcate: 2
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted from MCF10A cells after 24 h of co-culture with MCF7 cell-derived sEV using Direct-zol RNA MiniPrep kit (Zymo Research). RNA quantity was determined using the Qubit 2.0 Fluorometer (ThermoFisher Scientific) and the quality was validated using the TapeStation RNA ScreenTape (Agilent).
+One-hundred ng of total RNA was used to prepare a library for Illumina Sequencing using the Quant-Seq 3’mRNA-Seq Library Preparation Kit (Lexogen)
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NextSeq 500
+ 
+Description untreated LCL cell lines from subject c2 G334R variant G, replicate 2
+Data processing RNA-Seq data was aligned using bowtie2 against hg19 version of genome and rsem (ver. 1.2.13) with Ensemble v84 transcriptome information used for gene count
+DESeq2 was used for differentail expression analysis
+Genome_build: hg19
+Supplementary_files_format_and_content: Prosessed files contains the raw counts for each gene
+ 
+Submission date Jul 13, 2020
+Last update date Nov 12, 2020
+Contact name Priyankara J Wickramasinghe
+E-mail(s) priyaw@wistar.org
+Phone 2154956837
+Organization name The Wistar Institute
+Department Bioinformatics
+Lab Genomics
+Street address 3601 Spruce Street
+City Philadelphia
+State/province PA
+ZIP/Postal code 19104
+Country USA
+ 
+Platform ID GPL18573
+Series (1)
+GSE154340 SMALL EXTRACELLULAR VESICLE REGULATION OF MITOCHONDRIAL DYNAMICS REPROGRAMS A HYPOXIC TUMOR MICROENVIRONMENT
+Relations
+BioSample SAMN15518788
+SRA SRX8722200
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record
+Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5227571)
+citeturn30search5 [wordlim: 200] Published: 5.4 years ago; Crawled: 2 months ago; treatment: untreated ... RNA-seq was performed on an Illumina HiSeq 2500 machine with six libraries multiplexed per lane using 50-bp paired-end reads. ... GSE171572 RNA and phosphoprotein profiles of TP53- and PTEN-knockouts in MCF10A at baseline and responding to DNA damage
+Status Public on Nov 20, 2023
+Title MCF10A_PTEN-KO_mock_r2
+Sample type SRA
+ 
+Source name MCF10A CELLS PTEN (-/-)
+Organism Homo sapiens
+Characteristics genotype: PTEN (-/-)
+treatment: untreated
+cell line catalog #: Sigma Aldrich (catalog # CLLS1046)
+cell line: MCF10A
+Treatment protocol Two days prior to cell line lysis, cells were plated in 100 mm culture dishes using an equal number of cells per dish (example: 1 million cells per 100 mm culture dish). 48 hours later, the growth medium was replaced with growth medium containing 0.5 mM of methyl methanesulfonate (MMS, Sigma-Aldrich, 129925) or growth medium containing no MMS (mock treatment). The cells were incubated for 3 hours at 37 °C in 5% CO2. At the end of the incubation time, the growth medium was removed, and the adherent cells were rinsed with Dulbecco's Phosphate-Buffered Saline (DPBS, Gibco, 14190). The cells were detached using 0.25% Trypsin-EDTA (Gibco, 25200) and placed in the incubator at 37 °C in 5% CO2 for 15-20 minutes. The Trypsin-EDTA solution was inactivated by adding Trypsin Neutralization Solution (TNS, DMEM:F-12 SILAC media containing 5% dialyzed horse serum) and the remaining attached cells were scraped off the plate with a cell scraper. RNA quality was assessed using an Agilent 2100 Bioanalyzer and RNA was only accepted if the RNA Integrity Number (RIN) was >9.0. 1.0 ug of total RNA from each sample was then polyA selected and chemically fragmented to ?200 bp, and cDNA was created using random hexamer primers. Library preparation followed the TruSeq Illumina protocol with each individual library receiving a unique Illumina barcode. RNA-seq was performed on an Illumina HiSeq 2500 machine with six libraries multiplexed per lane using 50-bp paired-end reads. This resulted in an average of 250 million reads per lane, with an average of 43 million reads per sample. Each sample had three biological replicates that were prepared on three separate days.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2500
+ 
+Description MCF10A_PTEN-KO_mock
+Data processing Illumina Bcl2fastq v2.16
+Genome_build: UCSC hg19
+Supplementary_files_format_and_content: .gct (cpm)
+ 
+Submission date Apr 06, 2021
+Last update date Nov 20, 2023
+Contact name Amanda Paulovich
+E-mail(s) apaulovi@fredhutch.org
+Organization name Fred Hutchinson Cancer Research Center
+Street address 1100 Fairview Ave. N.
+City Seattle
+State/province WA
+ZIP/Postal code 98109
+Country USA
+ 
+Platform ID GPL16791
+Series (1)
+GSE171572 RNA and phosphoprotein profiles of TP53- and PTEN-knockouts in MCF10A at baseline and responding to DNA damage
+Relations
+BioSample SAMN18633882
+SRA SRX10522717
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2178497)
+citeturn30search6 [wordlim: 200] Published: 10.0 years ago; Crawled: last month; Ion Total RNA-Seq Kit v2 (Life Technologies) was used according to manufacturer’s recommendations to prepare libraries. the Ion PI Template OT2 200 Kit v2 (Life Technologies) was used as per manufacturer’s instructions to generate template Ion PI Ion Sphere particles using the Ion OneTouch 2 System. ... GSE81955 Analysis of polysomal enrichment and depletion of mRNA in untreated and TGF-beta treated MCF-10A and MCF7 cells
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM2178497 Query DataSets for GSM2178497
+Status Public on Sep 24, 2016
+Title 10T3P
+Sample type SRA
+ 
+Source name MCF10A cells
+Organism Homo sapiens
+Characteristics cell type: breast epithelium
+treatment: TGFb, 5 ng/mL, 72h
+culture medium: DMEMF12, 5% Horse Serum, 20 ng/mL EGF, 0.5 mg/mL Hydrocortisone, 100 ng/mL Cholera Toxin, 10 mg/ml Insulin, Pen/Strep
+Treatment protocol Cells were treated with 5 ng/mL of TGF-b or vehicle control for 72 hours.
+Growth protocol see characteristics: Culture Medium above
+Extracted molecule total RNA
+Extraction protocol Cells lysed in 10 mM Tris-Cl, pH 7.4, 5 mM MgCl2, 100 mM KCl, 1% (v/v) Triton X-100, 0.5% (w/v) deoxycholate, 1000 U/ml RNasin, 2mM DTT and 100 µg/ml Cycloheximide. Total RNA and RNA from polysomal fractions were isolated with Trizol LS as per manufacturer's instructions. Poly(A) RNA was isolated using Dynabeads mRNA DIRECT Micro Kit (Life Technologies) according to manufacturer’s instructions.
+Partek GSA outputs imported to Excel, filtered to require 120 total observed reads across all conditions for a given cell type (ave 10/library), and compound enrichments calculated
+Genome_build: hg19
+Supplementary_files_format_and_content: .txt files - Partek GSA raw output. .xlsx files - import of Partek GSA raw output, compound enrichment calculation.
+ 
+Submission date May 26, 2016
+Last update date May 15, 2019
+Contact name Arindam Chaudhury
+E-mail(s) achaudhu@bcm.edu
+Phone 7137988884
+Organization name Baylor College of Medicine
+Department Molecular Physiology and Biophysics
+Lab Neilson Lab
+Street address One Baylor Plaza / MS BCM335
+City Houston
+State/province TX
+ZIP/Postal code 77030
+Country USA
+ 
+Platform ID GPL17303
+Series (1)
+GSE81955 Analysis of polysomal enrichment and depletion of mRNA in untreated and TGF-beta treated MCF-10A and MCF7 cells
+Relations
+BioSample SAMN05180022
+SRA SRX1802065
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+TGF-β induced reprogramming and drug resistance in triple-negative breast cells - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC8994282/)
+citeturn30search7 [wordlim: 200] Published: 4.4 years ago; Crawled: last month; To tackle these issues, we tried to unveil the early transcriptional evolution in response to TGF-β in a human triple-negative breast cell line through bioinformatical analysis on a RNA-seq dataset, for which MCF10A cells were treated with 5 ng/ml TGF-β1 for 0 h, 24 h, 48 h and 72 h, then the RNA-seq were performed in biological duplicates [13]. ... The RNA-seq dataset was obtained from NCBI’s Gene Expression Omnibus at https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi? ... We compared the treated MCF10A cells to the untreated cells as the reference, then differentially expressed genes were identified with the thresholds of | Fold change | > 1.5 and p value < 0.05.
+Interestingly, we found that the anti-proliferative and oncogenic effects of TGF-β happened at the same time frame. Sustained activation of several drug resistance markers was induced immediately after TGF-β stimulation. In addition, our results suggested that cellular reprograming induced by TGF-β contributes to the survival probability decline of breast cancer patients.
+
+## Methods
+
+### Data source
+
+The RNA-seq dataset was obtained from NCBI’s Gene Expression Omnibus at https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE74377, reference number GSE74377 and the measurements were normalized by DESeq2 [13].
+
+### Data analysis
+
+The RNA-seq data matrices were processed in R (Version 4.0.3) [14]. We compared the treated MCF10A cells to the untreated cells as the reference, then differentially expressed genes were identified with the thresholds of | Fold change | > 1.5 and p value < 0.05. KEGG pathway enrichment analysis [15–17] of differentially expressed genes was performed using clusterProfiler [18] package in R(Version 4.0.3) [14]. --------------------------------------------------------------------------------
+Single amino-acid differences define H2B variants and modify chromatin accessibility to induce EMT in breast cancer - PubMed (https://pubmed.ncbi.nlm.nih.gov/41580505/)
+citeturn30search8 [wordlim: 200] Published: 7 months ago; Crawled: 2 weeks ago; D Relative gene expression of H2B variants in untreated and cytokine-transformed MCF10A cells (n = 3); ****p < 0.0001. ... Cytokine-transformed MCF10A cells and cells expressing HIST1B2BO have overlapping ATAC-seq and RNA-seq signatures.
+Fig. 6. Inducing the epithelial-to-mesenchymal transition (EMT) generates transcriptional responses similar to those induced by HIST1H2BO.
+
+A Cytokine-induced transformation of MCF10A cells, and representative microscope images of non-treated and transformed cells. Scale bar is 200 µm. B Relative expression of epithelial and mesenchymal markers in untreated and cytokine-transformed MCF10A cells (n = 3); **** p < 0.0001. C Immunoblots of epithelial and mesenchymal markers. D Relative gene expression of H2B variants in untreated and cytokine-transformed MCF10A cells (n = 3); ****p < 0.0001. E PCA plot of total RNA-seq profiles. F Top enriched C6 oncogenic signatures in MCF10A cells stably expressing H2B variant minigenes, and in cytokine-transformed cells. G, H MCF10A cells expressing HIST1H2BO have similar oncogenic gene expression patterns as cytokine-transformed cells. Each column is a MSigDB C6 oncogenic signatures; each row is a gene within the respective signature. LFC = log fold-change.
+--------------------------------------------------------------------------------
+2.2. RNA-Sequencing Data Reanalysis (https://bio-protocol.org/exchange/minidetail?id=17166153&type=30)
+citeturn30search9 [wordlim: 200] Crawled: 5 months ago; Public gene expression data were collected from the Gene Expression Omnibus (GEO) repository [36] (https://www.ncbi.nlm.nih.gov/geo/ (accessed on 11 October 2022)).Nine to eleven independent studies containing untreated or control-treated samples of MCF10A, RWPE-1, ARPE-19, and MRC-5 cells were manually identified and metadata from each study (Table S1) were uniformly curated to allow for automated download and processing. ... The proportion of RNA-seq runs predicted to be epithelial (“E”) or mesenchymal (“M”) is listed at the bottom of the table.
+
+# 2.2. RNA-Sequencing Data Reanalysis
+
+PG Preethi Golconda
+
+MA Mariana Andrade-Medina
+
+AO Adam Oberstein
+
+This method is extracted from research article: Viruses, Dec 2023 Subconfluent ARPE-19 Cells Display Mesenchymal Cell-State Characteristics and Behave like Fibroblasts, Rather Than Epithelial Cells, in Experimental HCMV Infection Studies DOI: 10.3390/v16010049
+
+Request a Protocol
+
+Image: ask Image: ask Ask a question
+
+Favorite
+
+Public gene expression data were collected from the Gene Expression Omnibus (GEO) repository [36] (https://www.ncbi.nlm.nih.gov/geo/ (accessed on 11 October 2022)). Nine to eleven independent studies containing untreated or control-treated samples of MCF10A, RWPE-1, ARPE-19, and MRC-5 cells were manually identified and metadata from each study (Table S1) were uniformly curated to allow for automated download and processing. --------------------------------------------------------------------------------
+Identification of EMT signaling cross-talk and gene regulatory networks by single-cell RNA sequencing - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC8126782/)
+citeturn30search10 [wordlim: 200] Published: 5.3 years ago; Crawled: last month; To identify the signaling pathways that get sequentially induced during EMT in a time-dependent manner, we performed scRNA-seq at the same time points using MCF10A cells untreated (day 0) and treated with TGF-β1 (days 1 to 8) (Fig.
+ANOVA (***P < 0.001).
+
+To identify the signaling pathways that get sequentially induced during EMT in a time-dependent manner, we performed scRNA-seq at the same time points using MCF10A cells untreated (day 0) and treated with TGF-β1 (days 1 to 8) (Fig. 1C). The experiments were performed in two batches; the data were batch-corrected and curated before further analyses (SI Appendix, Fig. S1 and Dataset S1). The force-directed layout (20) embedding of the scRNA-seq data demonstrated a clear shift in the global gene-expression trajectory from epithelial to mesenchymal features, as expected, over the time course (Fig. 1D and SI Appendix, Fig. S2A).
+
+During EMT, E-cadherin and other junctional proteins, including claudins and desmosomes, are repressed, and this facilitates the general dedifferentiation program (5, 6). Therefore, we first analyzed the expression of well-defined epithelial and mesenchymal markers. --------------------------------------------------------------------------------
+Transcriptional responses to direct and indirect TGFB1 stimulation in cancerous and noncancerous mammary epithelial cells - PubMed (https://pubmed.ncbi.nlm.nih.gov/39468555/)
+citeturn30search11 [wordlim: 200] Published: 1.9 years ago; Crawled: last month; Methods: MCF10A (noncancerous, originating from fibrotic breast tissue) and MCF7 (cancer, estrogen receptor-positive) breast epithelial cells were treated with TGFB1 directly or through conditioned media from stimulated cells.Transcriptional changes (via RNA-seq) were assessed in untreated cells and after 1-6 days of treatment.
+--------------------------------------------------------------------------------
+Published online: March 3, 2014 (https://citeseerx.ist.psu.edu/document?doi=134a0d915b32203ed4abe3caab623a9f73913207&repid=rep1&type=pdf)
+citeturn30search12 [wordlim: 200] Published: 9 months ago; the untreated input (2.5% of the starting material). ... RNA-seq data for wild-type MCF10A (36-bp single reads) were
+--------------------------------------------------------------------------------
+Nucleosome dynamics render heterochromatin accessible in living human cells (https://d-nb.info/137187302X/34)
+citeturn30search13 [wordlim: 200] Published: 1.3 years ago; GSE237066 for MCF10A57) and our own RNA-seq data using salmon ... Untreated and Dam-3HA-eGFP adenovirus-treated
+--------------------------------------------------------------------------------
+51  
+Chapter II: A multi-omic analysis of MCF10A c (https://digitalcollections.ohsu.edu/record/44757/files/mclean.ian.2025.pdf)
+citeturn30search14 [wordlim: 200] Crawled: 9 months ago; Panel a: “MCF10A Ligand Screen - Experimental Media” boxplots of Cell Count versus many ligands (x-axis labels include ANGPT1, ANGPT2, BMP2, BMP4, BMP6, BMP7, EGF, EPO, FGF1, FGF2, FGF4, FGF7, FGF9, FGF10, FGF18, FGF19, GAS6, GDF11, HBEGF, HGF, IGF1, IGF2, IL6, IL8, JAG1, KNG1, NRG1, NRG2, OSM, PDGFA, PDGFB, TGFB1, TGFB2, TGFB3, TNF, TNFSF10, WNT3A, WNT5A, WNT7A, WNT9A, etc.). ... Horizontal bars show RNA-Seq Expression (Log2). ... Transcript values are drawn from RNAseq measures for untreated cells in exponential growth.
+--------------------------------------------------------------------------------
+Acquisition of aneuploidy drives mutant p53-associated gain-of-function phenotypes (https://rcastoragev2.blob.core.windows.net/c9382b7437678f0d4cb0e64f81b82fb7/PMC8408227.pdf)
+citeturn30search15 [wordlim: 200] Published: 5.0 years ago; values for untreated MCF10A (left panel) and CAL-51 (right panel) isogenic cell lines. b Venn diagrams showing the overlap between differentially ... Cell lines used in RNA-seq analyses are shown in Supplementary Fig. 5a. c Hierarchical
+--------------------------------------------------------------------------------
+QUANTITATIVE STUDY ON REGULATORY MECHANISMS OF CELL PHENOTYPE (https://d-scholarship.pitt.edu/35184/1/Dissertation_8.pdf)
+citeturn30search16 [wordlim: 200] Published: 10 months ago; Untreated MCF10A cells show typical epithelial morphology with tight cell- ... Next we performed RNA-seq studies to uncover changes of gene expression
+--------------------------------------------------------------------------------
+INTERNATIONAL JOURNAL OF ONCOLOGY  54:  1907-1920,  2019 (https://rcastoragev2.blob.core.windows.net/92345580d74e403e2d1a122bbbec1ce1/PMC6521941.pdf)
+citeturn30search17 [wordlim: 200] Published: 4 months ago; wild‑type p53 (p53+/+) or knockout (p53‑/‑) (A) HCT116 colorectal carcinoma cells and (B) non‑tumourigenic breast epithelial cells MCF10A harvested at 0, 12, ... RNA‑seq was performed on tissues from untreated p53 wild‑type (W) or knockout (K)
+

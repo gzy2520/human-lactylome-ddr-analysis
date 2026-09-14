@@ -1,0 +1,567 @@
+DepMap: The Cancer Dependency Map Project at Broad Institute (https://depmap.org/portal/)
+citeturn22search0 [wordlim: 200] Crawled: today; Download Datasets Download any dataset or past data available in the DepMap portal. ... ### If you are interested in identifying cancer vulnerabilities in your favorite cell lines, please consider sharing (depmap@broadinstitute.org) your valuable cell line models.
+  * # Welcome to the DepMap Portal
+
+### The goal of the Dependency Map (DepMap) portal is to empower the research community to make discoveries related to cancer vulnerabilities by providing open access to key cancer dependencies, analytical, and visualization tools.
+
+Learn more about DepMap Learn more about PedDep
+
+##### DepMap is part of a public-private partnership called the DepMap Consortium. Learn more about becoming a member of the DepMap Consortium.
+
+[Input: Type in a gene, compound, cell line, lineage to access its information page   ]
+
+# Explore the Portal
+
+Access the Current Release DepMap releases data bi-annually. Access the full dataset here.
+
+Data Explorer A powerful tool for exploring all DepMap data.
+
+Context Explorer Explore data starting from a specific context.
+
+Celligner Browse the transcriptional landscape connecting cell line and tumors
+
+Read our Release Notes Learn more about current data, pipelines and updates.
+
+Download Datasets Download any dataset or past data available in the DepMap portal.
+
+
+# Updates and Announcements
+
+## 26Q1 - Portal update
+
+The 26Q1 release is now available! Please read the release notes for more details on new data and pipeline updates.
+
+### Release Highlights
+
+  * 25 new genome-wide CRISPR screens and Omics for adult and pediatric models
+  * Subtype tree updates for CNS models (October 9, 2025 OncoTree update)
+  * Updates to CRISPR pipeline for library correction
+  * Updates to Mutation pipeline for variant filtering and hotspots
+  * Context Manager update to allow for all metadata types to be used when defining contexts
+  * New Tool! GeneTEA uses natural language processing to uncover biology across the portal
+
+### Olink Proteomics dataset
+
+We have profiled 161 cell lines covering 24 different cell line lineages using the Olink Explore HT platform. To learn more about Olink, please visit their website here.
+
+### Sanger Proteomics dataset
+
+We’ve included a matrix of relative protein quantities from Gonçalves et al. 2022. The original data was downloaded from Cell Model Passports.
+
+### Read the full Release Notes
+
+# Explore More Ways To Use DepMap
+
+Image: Discover dependencies
+
+#### Discover genetic and pharmacological dependencies
+
+Explore MSI cancer dependency on WRN in Data Explorer
+See the Gene Dependency Overview page for Sox10
+
+Image: Compare biomarkers
+
+#### Prioritize tumor contexts and predictive biomarkers
+
+Compare TRILACICLIB (CDK inhibitor) and RB1 expression in Data Explorer
+
+Image: Browse cancer models
+
+#### Browse our collection of over 2000 cancer models
+
+Dive deeper into MCF7 on our Gene Dependency page
+
+Image: Discover targets
+
+#### Discover interesting targets
+
+Find the most selective and/or predictable gene dependencies in Target discovery
+
+# Contribute Cancer Models and Datasets to DepMap
+
+Image: DepMap Contributions
+
+### If you are interested in identifying cancer vulnerabilities in your favorite cell lines, please consider sharing (depmap@broadinstitute.org) your valuable cell line models. We will profile them, screen them, and make the data available on the DepMap portal.
+
+Copyright © 2025 Broad Institute. All rights reserved. Privacy | Terms & Conditions
+
+CONNECT
+
+@CancerDepMap
+Feedback
+--------------------------------------------------------------------------------
+How can I obtain DepMap cell lines? - Commonly Asked Questions - DepMap Community Forum (https://forum.depmap.org/t/how-can-i-obtain-depmap-cell-lines/3769)
+citeturn22search1 [wordlim: 200] Published: 1.8 years ago; Crawled: 1.8 years ago; DepMap commonly provides the sources of cell lines used for data generation found on the portal. ... Search the cell line and reference the Source and Source Details information in the metadata box on the top left corner of the page.
+
+# How can I obtain DepMap cell lines?
+
+Resources Commonly Asked Questions
+
+Samantha_Stokes November 17, 2024, 8:20pm 1
+
+DepMap commonly provides the sources of cell lines used for data generation found on the portal.
+
+Cell lines may either be purchased through commercial vendors or be donated by academic labs across the world.
+
+To determine where you can obtain a cell line:
+
+  1. Search the cell line and reference the Source and Source Details information in the metadata box on the top left corner of the page.
+  2. Download the Model.csv file and reference the Source and Source Details columns provided.
+--------------------------------------------------------------------------------
+DepMap Cell Line Summary (https://depmap.org/portal/cell_line/ACH-000924)
+citeturn22search2 [wordlim: 200] Crawled: 2 months ago;   * depmap@broadinstitute.org ... DepMap ID: ACH-000924
+  * depmap@broadinstitute.org
+  * @CancerDepMap
+  * NCIH2172
+
+DepMap ID: ACH-000924
+
+[Button: Overview][Button: Mutations][Button: Fusions][Button: Translocations]
+
+@CancerDepMap
+Feedback--------------------------------------------------------------------------------
+A question about the naming of cell lines - Q&A - DepMap Community Forum (https://forum.depmap.org/t/a-question-about-the-naming-of-cell-lines/2622)
+citeturn22search3 [wordlim: 200] Published: 3.3 years ago; Crawled: 3.2 years ago; I noticed that the cell lines in this file are named with PR- prefix, not the ACH- prefix that I usually see.How can I map the PR- prefixed names to their specific cell line names? ... All the files in the portal with the suffix “Profile” are indexed by ProfileIDs (Pr-xxxxxx).
+
+fangli June 13, 2023, 2:22pm 1
+
+Hello, I have a question about the OmicsExpressionGenesExpectedCountProfile.csv file. I noticed that the cell lines in this file are named with PR- prefix, not the ACH- prefix that I usually see. How can I map the PR- prefixed names to their specific cell line names? Thank you for your help and attention.
+
+
+simz June 13, 2023, 2:24pm 2
+
+Hi,
+
+Thanks for reaching out. All the files in the portal with the suffix “Profile” are indexed by ProfileIDs (Pr-xxxxxx). You can find the mapping from ProfileIDs to ModelIDs (ACH-xxxxxx) in OmicsProfiles.csv.
+
+Best,
+Simone
+
+fangli June 14, 2023, 1:37pm 3
+
+Thank you very much for your timely, enthusiastic, and accurate response. Thank you again for your great help. Image: :smiley:--------------------------------------------------------------------------------
+A question about the naming of cell lines - #2 by simz - Q&A - DepMap Community Forum (https://forum.depmap.org/t/a-question-about-the-naming-of-cell-lines/2622/2)
+citeturn22search4 [wordlim: 200] Published: 3.3 years ago; Crawled: 3.2 years ago; # A question about the naming of cell lines ... All the files in the portal with the suffix “Profile” are indexed by ProfileIDs (Pr-xxxxxx).You can find the mapping from ProfileIDs to ModelIDs (ACH-xxxxxx) in OmicsProfiles.csv.
+
+# A question about the naming of cell lines
+
+Q&A
+
+documentation, data
+
+simz June 13, 2023, 2:24pm 2
+
+Hi,
+
+Thanks for reaching out. All the files in the portal with the suffix “Profile” are indexed by ProfileIDs (Pr-xxxxxx). You can find the mapping from ProfileIDs to ModelIDs (ACH-xxxxxx) in OmicsProfiles.csv.
+
+Best,
+Simone--------------------------------------------------------------------------------
+DepMap APIs (https://depmap.org/portal/api/)
+citeturn22search5 [wordlim: 200] Crawled: 2 months ago;     [ Base URL: depmap.org/portal/api ]
+## DepMap APIs
+    
+     1.0 
+    
+    [ Base URL: depmap.org/portal/api ]
+
+https://depmap.org/portal/api/swagger.json
+
+These APIs are experimental and may change without notice.
+
+#### data_page
+
+View data availability in the portal
+
+#### context_explorer
+
+View context data in the portal
+
+#### health_check
+
+Probe health of site, including status of celery worker and redis.
+
+#### task
+
+Poll long-running tasks
+
+#### download
+
+Download data in the portal
+
+#### compound
+
+View compound data in the portal
+
+#### Models--------------------------------------------------------------------------------
+Bioregistry - DepMap Cell Lines (https://bioregistry.io/registry/depmap)
+citeturn22search6 [wordlim: 200] Crawled: 2 weeks ago; DepMap Cell Lines  | `depmap`  | https://depmap.org/portal/cell_line/ACH-000001
+
+##### Registry DepMap Cell Lines
+
+[Button: Download ]
+
+JSON YAML RDF (turtle) RDF (JSON-LD) RDF (n3) OLS Configuration
+
+Suggest
+
+Image: Logo for DepMap Cell Lines
+
+Cell lines used in the Dependency Map (DepMap). Highly related to CCLE Cells.
+
+Prefix
+    `depmap`
+Keywords
+    cancer cell line cell cell line ontology
+License
+    CC-BY-4.0
+Links
+    Homepage OBO OWL OBO JSON
+Publications
+    2025 The present and future of the Cancer Dependency Map
+
+##### Identifier Standards
+
+Pattern for Local Unique Identifiers
+    
+
+Local identifiers in DepMap Cell Lines should match this regular expression:
+`^ACH-\d+$`
+
+Example Local Unique Identifier
+    ACH-000001   Resolve
+Pattern for CURIES
+    
+
+Compact URIs (CURIEs) constructed from DepMap Cell Lines should match this regular expression:
+`^depmap:ACH-\d+$`
+
+Example CURIE
+    depmap:ACH-000001
+
+##### Contacts
+
+Contact
+    Francisca Vazquez   Image: ORCiD logo 0000-0002-2857-4685
+Contributors
+    submitter Charles Tapley Hoyt   Image: ORCiD logo 0000-0003-4423-4370   cthoyt
+
+##### Ontology
+
+A summary of the relations in the Bioregistry schema can be found here.
+
+In Collection (1)
+    Synapse.org external links
+
+##### Mappings to External Registries
+
+Mappings from records in Bioregistry to external registries comprises the metaregistry. This resource has 1 mapping to an external registry.
+
+Registry Name  | Registry Metaprefix  | External Prefix  | Curate
+--- | --- | --- | ---
+Cellosaurus Image: Cellosaurus Registry logo  | `cellosaurus`  | `DepMap`  | 
+
+##### Providers
+
+Suggest
+
+A provider turns a local unique identifiers from a resource into a URI. Many providers are also resolvable as URLs (i.e., they can be used in a web browser).
+
+The local unique identifier `ACH-000001` is used to demonstrate the providers available for DepMap Cell Lines. Some providers may use a different example, which is displayed in the table below. A guide for curating additional providers can be found here.
+
+Provider Name  | Provider Code  | URI
+--- | --- | ---
+DepMap Cell Lines  | `depmap`  | https://depmap.org/portal/cell_line/ACH-000001
+Bioregistry  | `bioregistry`  | https://bioregistry.io/depmap:ACH-000001
+
+##### Programmatic Access to Name
+
+This name annotation was originally annotated in Bioregistry and is redistributed under the CC0 license.
+
+Get the name:
+    
+    `>>> import bioregistry as br
+    >>> br.get_name("depmap")
+    'DepMap Cell Lines'`
+
+##### Programmatic Access to License
+
+Get the license:
+    
+    `>>> import bioregistry as br
+    >>> br.get_license("depmap")
+    'CC-BY-4.0'`
+
+##### Programmatic Access to Links
+
+Get the homepage:
+    
+    `>>> import bioregistry as br
+    >>> br.get_homepage("depmap")
+    'https://depmap.org/portal'`
+
+Get the OBO download link:
+    
+    `>>> import bioregistry as br
+    >>> br.get_obo_download("depmap")
+    'https://w3id.org/biopragmatics/resources/depmap/depmap.obo'`
+
+Get the OWL download link:
+    
+    `>>> import bioregistry as br
+    >>> br.get_owl_download("depmap")
+    'https://w3id.org/biopragmatics/resources/depmap/depmap.owl'`
+
+Get the JSON download link:
+    
+    `>>> import bioregistry as br
+    >>> br.get_json_download("depmap")
+    'https://w3id.org/biopragmatics/resources/depmap/depmap.json'`
+
+##### Programmatic Access to Contact Information
+
+Get the contact's name:
+    
+    `>>> import bioregistry as br
+    >>> br.get_contact_name("depmap")
+    'Francisca Vazquez'`
+
+Get the contact's email:
+    
+    `>>> import bioregistry as br
+    >>> br.get_contact_email("depmap")
+    'vazquez@broadinstitute.org'`
+
+Get the contact's ORCiD identifier:
+    
+    `>>> import bioregistry as br
+    >>> br.get_contact_orcid("depmap")
+    '0000-0002-2857-4685'`--------------------------------------------------------------------------------
+DepMap Cell Line Summary (https://depmap.org/portal/cell_line/ACH-000171)
+citeturn22search7 [wordlim: 200] Crawled: 2 months ago; DepMap ID: ACH-000171
+
+DepMap ID: ACH-000171--------------------------------------------------------------------------------
+DepMap Cell Line Summary (https://depmap.org/portal/cell_line/ACH-000227)
+citeturn22search8 [wordlim: 200] Crawled: 2 months ago; DepMap ID: ACH-000227
+
+DepMap ID: ACH-000227--------------------------------------------------------------------------------
+crispr_22Q2 — crispr • depmap (https://uclouvain-cbio.github.io/depmap/reference/crispr.html)
+citeturn22search9 [wordlim: 200] Crawled: 2.1 years ago; The columns of `crispr` are: `depmap_id` a foreign key corresponding to the cancer cell lineage, `cell_line` containing the common CCLE name of the cancer cell lines, `gene` containing both the HUGO gene name of the knockout gene along with entrez ID#, `gene_name` containing only the HUGO gene name, `entrez_id` containing only the entrez ID# and `dependency` which contains the numerical dependency score values for each pair of genes and cell lines. ... This data represents the `Achilles_gene_effect.csv` file taken from the 22Q2 [Broad Institute](https://depmap.org/portal/download/) cancer depenedency study.
+
+depmap_id
+    
+
+Cancer cell line foreign key (i.e. "ACH-00001")
+
+gene
+    
+
+HUGO symbol (e.g. "SAP25") and Entrez ID# (e.g. 100316904)
+
+gene_name
+    
+
+HUGO symbol (e.g. "SAP25")
+
+entrez_id
+    
+
+Entrez ID# (e.g. 100316904)
+
+dependency
+    
+
+numerical depenency score of given gene and cell line
+
+cell_line
+    
+
+CCLE name of cancer cell line (i.e. "184A1_BREAST")
+
+## Source
+
+DepMap, Broad Institute: https://depmap.org/portal/download/
+
+## Details
+
+This data represents the `Achilles_gene_effect.csv` file taken from the 22Q2 [Broad Institute](https://depmap.org/portal/download/) cancer depenedency study. The derived dataset found in the `depmap` package features the addition of a foreign key `depmap_id` found in the first column of this dataset, which was added from the `metadata` dataset. This dataset has been converted to a long format tibble. Variables names from the original dataset were converted to lower case, put in snake case, and abbreviated where feasible.
+
+## Change log
+
+- 19Q1: Initial dataset consisted of a data frame with 9839772 rows (cell lines) and 6 variables representing 17634 genes, 558 cell lines, 26 primary diseases and 28 lineages.
+--------------------------------------------------------------------------------
+How to find the cell line names - Q&A - DepMap Community Forum (https://forum.depmap.org/t/how-to-find-the-cell-line-names/1273)
+citeturn22search10 [wordlim: 200] Published: 4.5 years ago; Crawled: 2 months ago; Hello，I have down load the “CRISPR (DepMap 22Q1 Public+Score, Chronos)” file ,but it does not have the cell line names and the cancer or organ ,so I want to know how to match the cell line name to ACH-0000 in CRISPR (DepMap 22Q1 Public+Score, Chronos) with cancer names or organ. ... You can find that information in the “sample metadata” file which you can download from the “File downloads” section of the portal.
+
+# How to find the cell line names
+
+Q&A
+
+Xuejing March 19, 2022, 3:20am 1
+
+Hello，I have down load the “CRISPR (DepMap 22Q1 Public+Score, Chronos)” file ,but it does not have the cell line names and the cancer or organ ,so I want to know how to match the cell line name to ACH-0000 in CRISPR (DepMap 22Q1 Public+Score, Chronos) with cancer names or organ.
+Thanks a lot in advance.
+Best regards.
+
+pmontgom March 21, 2022, 3:40pm 2
+
+You can find that information in the “sample metadata” file which you can download from the “File downloads” section of the portal.
+--------------------------------------------------------------------------------
+DepMap Community Forum (https://forum.depmap.org/top)
+citeturn22search11 [wordlim: 200] Crawled: 2 days ago; Aneuploidy score version in DepMap Q&A data  |  | 1  | 59  | May 13, 2026Disease annotation cell line ACH-001193 Q&A  |  | 1  | 66  | January 8, 2026 ... Error when downloading files using custom download Report an Issue portal  |  | 2  | 38  | June 29, 2026
+Organoid dependency data Q&A  |  | 1  | 71  | August 17, 2026
+Keep getting this error when downloading Cell Line data through custom downloads Issues and Bugs  |  | 2  | 53  | June 29, 2026
+Synthetic Lethality Q&A  |  | 0  | 87  | January 29, 2026
+Aneuploidy score version in DepMap Q&A data  |  | 1  | 59  | May 13, 2026
+Disease annotation cell line ACH-001193 Q&A  |  | 1  | 66  | January 8, 2026
+Are sequences for promoter regions available? Q&A data ,  omics  |  | 2  | 44  | February 2, 2026
+Change to fusion calls in 2025 releases? Q&A omics ,  data  |  | 1  | 56  | February 5, 2026
+Comparing custom drug profiling with PRISM Q&A compound-screens  |  | 0  | 78  | November 3, 2025
+Wrong cell counts in Sequencing WGS (Broad)? Report an Issue  |  | 1  | 52  | January 5, 2026
+How should CRISPRInferredModelEfficacy.csv identifiers be mapped in DepMap Public 26Q1? Q&A  |  | 1  | 58  | July 16, 2026
+Error when downloading files using custom download Report an Issue portal  |  | 2  | 38  | June 29, 2026
+Replicating 25Q2 / 25Q3 Chronos Gene Effect Scores Q&A  |  | 0  | 64  | December 21, 2025
+--------------------------------------------------------------------------------
+depmap: Cancer Dependency Map Data Package (https://bioconductor.unipi.it/packages/devel/data/experiment/manuals/depmap/man/depmap.pdf)
+citeturn22search12 [wordlim: 200] Published: 4 months ago; - **depmap_id**  Cancer cell line foreign key (i.e. ... This data represents the ‘Achilles_gene_effect.csv‘ file taken from the 22Q2 [Broad Institute](https://depmap.org/portal/d...) cancer dependency study.
+6
+
+crispr
+
+## Usage
+
+crispr
+
+## Format
+
+A data frame with 18881196 rows (cell lines) and 6 variables:
+
+- **depmap_id**  Cancer cell line foreign key (i.e. "ACH-00001")
+- **gene**  HUGO symbol (e.g. "SAP25") and Entrez ID# (e.g. 100316904)
+- **gene_name**  HUGO symbol (e.g. "SAP25")
+- **entrez_id**  Entrez ID# (e.g. 100316904)
+- **dependency**  numerical dependency score of given gene and cell line
+- **cell_line**  CCLE name of cancer cell line (i.e. "184A1_BREAST")
+
+## Details
+
+This data represents the ‘Achilles_gene_effect.csv‘ file taken from the 22Q2 [Broad Institute](https://depmap.org/portal/d...) cancer dependency study. The derived dataset found in the ‘depmap‘ package features the addition of a foreign key ‘depmap_id‘ found in the first column of this dataset, which was added from the ‘metadata‘ dataset. This dataset has been converted to a long format tibble. Variables names from the original dataset were converted to lower case, put in snake case, and abbreviated where feasible.
+
+## Change log
+
+- 19Q1: Initial dataset consisted of a data frame with 9839772 rows (cell lines) and 6 variables representing 17634 genes, 558 cell lines, 26 primary diseases and 28 lineages.
+- 19Q2: adds 5 cell lines, 1 primary disease and 1 lineage
+- 19Q3: adds 699 genes, 62 cell lines and 1 primary disease. Now a dataset with 11458125 rows and 6 variables.
+- 19Q4: adds 0 genes, 64 cell lines, 1 primary disease and 0 lineages.
+- 20Q1: adds 50 cell lines.
+- 20Q2: adds 30 cell lines.
+- 20Q3: adds 20 cell lines, 1 primary disease and 1 lineages.
+- 20Q4: adds 19 cell lines, 1 primary disease and 2 lineages
+- 21Q1: no change
+- 21Q2: removes 474 genes and adds 182 cell lines 1 primary disease and 1 lineage
+- 21Q3: removes 252 genes and adds 42 cell lines
+- 21Q4: removes 7 genes and 22 cell lines
+- 22Q1: adds 16 cell lines and 1 lineage
+- 22Q2: adds 16 cell lines and removes 1 primary diseases and 3 lineages.
+
+## Source
+
+DepMap, Broad Institute: https://depmap.org/portal/download/--------------------------------------------------------------------------------
+depmap: Cancer Dependency Map Data Package (https://bioconductor.unipi.it/packages/3.19/data/experiment/manuals/depmap/man/depmap.pdf)
+citeturn22search13 [wordlim: 200] Published: 9 months ago; The ‘metadata’ dataset contains the metadata about cell lines in the 22Q2 Broad Institute DepMap release, which includes mapping between ‘depmap_id’ and ‘cell_line’ name for cancer cell lines. ... "ACH-00001") ... RRID Resource Identification Portal ID
+metadata
+
+Examples
+
+## Not run:
+depmap_gene_summary()
+
+## End(Not run)
+
+metadata    metadata_22Q2
+
+Description
+
+The ‘metadata’ dataset contains the metadata about cell lines in the 22Q2 Broad Institute DepMap release, which includes mapping between ‘depmap_id’ and ‘cell_line’ name for cancer cell lines. This dataset does not contain any data from the Achilles screen nor dependency data, but contains the metadata from the other datasets pertaining to the 22Q1 DepMap release, for 1840 cell lines, 0 genes, 33 primary diseases and 30 lineages. The columns of ‘metadata’ are: ‘depmap_id’, ‘stripped_cell_line_name’, ‘cell_line’, ‘aliases’, ‘cosmic_id’, ‘sanger_id’, ‘WTSI_master_cell_ID’, ‘primary_disease’, ‘subtype_disease’, ‘sub_subtype_disease’, ‘gender’, ‘source’. This dataset can be loaded into the R environment with the ‘depmap_metadata’ function.
+
+Usage
+
+metadata
+
+Format
+
+A data frame with 1829 rows (cell lines) and 22 variables:
+
+depmap_id Cancer cell line primary key (i.e. "ACH-00001")
+stripped_cell_line_name Name of stripped cell line
+cell_line CCLE name of cancer cell line (i.e. "184A1_BREAST")
+cell_line_name Abbreviated name of cancer cell line (i.e. "NIH:OVCAR-3")
+aliases Aliases of cancer cell line
+cosmic_id Catalogue Of Somatic Mutations In Cancer ID number (e.g. 905933)
+sex Sex of tissue sample)
+source Source of tissue sample)
+culture_type Culture type of tissue sample)
+RRID Resource Identification Portal ID
+sample_collection_site Site of sample collection (AML), M3 (Promyelocytic))
+primary_or_metastasis Primary cancer cell line or metastatic
+primary_disease Primary Disease (e.g. cancer type)
+subtype_disease Subtype Disease (e.g. Acute Myelogenous Leukemia)--------------------------------------------------------------------------------
+Pan-cancer proteomic map of 949 human cell lines. (https://www.researchgate.net/profile/Qiang-Wu-41/post/Is_NCI-1299_cell_line_lung_adenocarcinoma_or_large_cell_lung_cancer/attachment/6422ead297e2867d5087bacf/AS%3A11431281131031457%401680009938515/download/Cellosaurus%2Bcell%2Bline%2BNCI-H1299%2B%28CVCL_0060%29.pdf)
+citeturn22search14 [wordlim: 200] Published: 3.5 years ago; id=724831)<br>DepMap; ACH-000510 (https://depmap.org/portal/cell_line/ACH-000510)<br>IGRhCellID; H1299GEO (http://igrhcdb.imsi.cn/ciq-bin/cell_line_view.cgi?
+Pan-cancer proteomic map of 949 human cell lines.  
+Cancer Cell 40:835-849.e8(2022)
+
+PubMed=36264037 (https://www.ncbi.nlm.nih.gov/pubmed/36264037); DOI=10.1002/psc.3458 (htt  
+Albrecht C.J., Stumpf F.M., Kruger L., Niedermier M.L., Stengel F., Marx A.  
+Chemical proteomics reveals interactors of the alarphone diadenosine triphosphate in the cancer cel  
+J. Pept. Sci. 29:e3458.1-e3458.10(2023)
+
+<table id="e1">
+<tr><td>Cell line collections</td><td>ATCC; CRL-5803 (https://www.atcc.org/Products/CRL-5803)<br>BCRJ; 0185 (http://bcrj.org.br/celula/0185)<br>CLS; 300485 (https://cls.shop/300485)<br>KCLB; 25803 (https://cellbank.snu.ac.kr/main/tmpl/sub_main.php?m_cd=6&m_id=0201&strQ=2580:<br>KCLB; 91299 (https://cellbank.snu.ac.kr/main/tmpl/sub_main.php?m_cd=6&m_id=0201&strQ=9129:<br>NCI-DTP (https://dtp.cancer.gov/repositories/); NCI-H1299</td></tr>
+<tr><td>Cell line databases/resources</td><td>CLO; CLO_0007986 (https://www.ebi.ac.uk/ols/ontologies/clo/terms?iri=http://purl.obolibrary.org/ol<br>MCCL (https://bioportal.bioontology.org/ontologies/MCCL); MCC:0000352<br>CCRID; 1101HUM-PUMC000469 (http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1101HUM<br>CCRID; 1102HUM-NIFDC00050 (http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1102HUM<br>CCRID; 3101HUMSCSP589 (http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101HUMSCF<br>CCRID; 3101HUMTCHu160 (http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101HUMTCH<br>CCRID; 4201HUM-CCTCC00640 (http://www.cellresource.cn/cellsearch.aspx?sc=1&where=4201HUM<br>Cell_Model_Passport; SIDM00649 (https://cellmodelpassports.sanger.ac.uk/passports/SIDM00649)<br>Cosmic-CLP; 724831 (https://cancer.sanger.ac.uk/cell_lines/sample/overview?id=724831)<br>DepMap; ACH-000510 (https://depmap.org/portal/cell_line/ACH-000510)<br>IGRhCellID; H1299GEO (http://igrhcdb.imsi.cn/ciq-bin/cell_line_view.cgi?cl_name=H1299GE<br>LINCS_LDP; LCL-1609 (http://lincsportal.ccs.miami.edu/cells/#/view/LCL-1609)<br>Lonza; 796 (https://knowledge.lonza.com/cell?id=796)<br>TOKU-E; 2592 (http://cell-lines.toku-e.com/Cell-Lines_2592.html)<br>TOKU-E; 3620 (http://cell-lines.toku-e.com/Cell-Lines_3620.html)</td></tr>
+--------------------------------------------------------------------------------
+Boston University (https://open.bu.edu/server/api/core/bitstreams/da71e76e-73aa-455d-9a9b-7dde2d5d766f/content)
+citeturn22search15 [wordlim: 200] Published: 2 months ago; 176   DepMap Cell Line Summary: SCC-9. https://depmap.org/portal/cell_line/ACH- ... 177   DepMap Cell Line Summary: CAL27. https://depmap.org/portal/cell_line/ACH-
+Ketoglutarate and mTORC1 Signaling. Cellular & Molecular Immunology, Nature 
+Publishing Group, 21, 448–465. https://doi.org/10.1038/s41423-024-01134-0. 
+176   DepMap Cell Line Summary: SCC-9. https://depmap.org/portal/cell_line/ACH-
+000181?tab=overview. 
+177   DepMap Cell Line Summary: CAL27. https://depmap.org/portal/cell_line/ACH-
+000832?tab=overview. 
+178   DepMap Cell Line Summary: HSC-3. https://depmap.org/portal/cell_line/ACH-
+000778?tab=overview. 
+179   DepMap Cell Line Summary: SCC-25. https://depmap.org/portal/cell_line/ACH-
+000188?tab=overview. 
+180   Cancer of the Oral Cavity and Pharynx - Cancer Stat Facts. SEER. 
+https://seer.cancer.gov/statfacts/html/oralcav.html. 
+181  Zabransky, D.J., Jaffee, E.M. and Weeraratna, A.T. (2022) Shared Genetic and 
+Epigenetic Changes Link Aging and Cancer. Trends in Cell Biology, 32, 338–350. 
+https://doi.org/10.1016/j.tcb.2022.01.004. 
+182  Fane, M. and Weeraratna, A.T. (2020) How the Ageing Microenvironment 
+Influences Tumour Progression. Nature Reviews Cancer, Nature Publishing Group, 
+20, 89–106. https://doi.org/10.1038/s41568-019-0222-9. 
+183  Wang, K., Zhan, F., Yang, X., Jiao, M., Wang, P., Zhang, H., Shang, W., Deng, J. 
+and Wang, L. (2025) KMT2D: A Key Emerging Epigenetic Regulator in Head and 
+Neck Diseases and Tumors. Life Sciences, 369, 123523. 
+https://doi.org/10.1016/j.lfs.2025.123523. 
+184  da Silva Santos, M.E., de Carvalho Abreu, A.K., Martins da Silva, F.W., Barros 
+Ferreira, E., Diniz dos Reis, P.E. and do Amaral Rabello Ramos, D. (2024) KMT2 
+(MLL) Family of Methyltransferases in Head and Neck Squamous Cell Carcinoma: 
+A Systematic Review. Head & Neck, 46, 417–434. 
+https://doi.org/10.1002/hed.27597. 
+185  Lorbeer, F.K. and Hockemeyer, D. (2020) TERT Promoter Mutations and Telomeres 
+during Tumorigenesis. Current Opinion in Genetics & Development, 60, 56–62. 
+https://doi.org/10.1016/j.gde.2020.02.001. 
+186  Han, Y. and Wang, X. (2020) The Emerging Roles of KPNA2 in Cancer. Life 
+Sciences, 241, 117140. https://doi.org/10.1016/j.lfs.2019.117140. 
+ 
+146--------------------------------------------------------------------------------
+Checking your browser - reCAPTCHA (https://pmc.ncbi.nlm.nih.gov/articles/PMC7818754/)
+citeturn22view0 [wordlim: 200] Crawled: 2 days ago; Content type: text/html; Source: find({"ref_id":"https://pmc.ncbi.nlm.nih.gov/articles/PMC7818754/","pattern":"Bulk RNA"}); Total lines: 3
+No matching text found for "Bulk RNA"--------------------------------------------------------------------------------
+Checking your browser - reCAPTCHA (https://pmc.ncbi.nlm.nih.gov/articles/PMC7818754/)
+citeturn22view1 [wordlim: 200] Crawled: 2 days ago; Content type: text/html; Source: find({"ref_id":"https://pmc.ncbi.nlm.nih.gov/articles/PMC7818754/","pattern":"GSE"}); Total lines: 3
+No matching text found for "GSE"--------------------------------------------------------------------------------
+Checking your browser - reCAPTCHA (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178411)
+citeturn22view2 [wordlim: 200] Crawled: today; Content type: text/html; Source: find({"ref_id":"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178411","pattern":"Title"}); Total lines: 3
+No matching text found for "Title"

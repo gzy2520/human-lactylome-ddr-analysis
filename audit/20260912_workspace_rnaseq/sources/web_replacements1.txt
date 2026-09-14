@@ -1,0 +1,292 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE180857)
+citeturn10search0 [wordlim: 200] Published: 4.5 years ago; Crawled: 5 days ago; Experiment type Expression profiling by high throughput sequencingSummary Objective: To identify transcript level differences between traumatic and degenerative tears of subacromial bursal tissues in shoulder joint using RNA-seq. ... Conclusions: This study increases our molecular understanding of bursal tissues in patients with rotator cuff tendinopathy based on the nature of disease that is trauma or degeneration.
+Series GSE180857 Query DataSets for GSE180857
+Status Public on Mar 15, 2022
+Title RNA-Seq analysis of traumatic and degenerative tears of subacromial bursal tissues of human shoulder joint
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Objective: To identify transcript level differences between traumatic and degenerative tears of subacromial bursal tissues in shoulder joint using RNA-seq. Methods: Bursal tissues were collected from female and male patients with traumatic or degenerative tears during arthroscopic surgery (N=32). Differentially expressed transcript between traumatic and degenerative tears were detected by RNA-seq and biological processes were identified computationally. RNA-seq results were selectively validated by real-time qPCR. Results: We identified 334 protein-coding transcripts differentially expressed between traumatic and degenerative tears in females and 167 in males at a fold-change greater than |2| and a P < 0.05. --------------------------------------------------------------------------------
+Genomic analysis of benign prostatic hyperplasia implicates cellular re-landscaping in disease pathogenesis - PubMed (https://pubmed.ncbi.nlm.nih.gov/31094703/)
+citeturn10search1 [wordlim: 200] Published: 7.3 years ago; Crawled: last month; Benign prostatic hyperplasia (BPH) is the most common cause of lower urinary tract symptoms in men. ... Keywords: Cell Biology; Expression profiling; Molecular pathology; Oncology; Prostate cancer.
+## Abstract
+
+Benign prostatic hyperplasia (BPH) is the most common cause of lower urinary tract symptoms in men. Current treatments target prostate physiology rather than BPH pathophysiology and are only partially effective. Here, we applied next-generation sequencing to gain new insight into BPH. By RNAseq, we uncovered transcriptional heterogeneity among BPH cases, where a 65-gene BPH stromal signature correlated with symptom severity. Stromal signaling molecules BMP5 and CXCL13 were enriched in BPH while estrogen regulated pathways were depleted. Notably, BMP5 addition to cultured prostatic myofibroblasts altered their expression profile towards a BPH profile that included the BPH stromal signature. RNAseq also suggested an altered cellular milieu in BPH, which we verified by immunohistochemistry and single-cell RNAseq. In particular, BPH tissues exhibited enrichment of myofibroblast subsets, whilst depletion of neuroendocrine cells and an estrogen receptor (ESR1)-positive fibroblast cell type residing near epithelium. --------------------------------------------------------------------------------
+Manually curated and harmonised transcriptomics datasets of psoriasis and atopic dermatitis patients - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC7555498/)
+citeturn10search2 [wordlim: 200] Published: 5.9 years ago; Crawled: last month; For each dataset, a table specifying the disease (psoriasis/atopic dermatitis) and the origin of biopsy (lesional/non-lesional sample) in addition to other phenotypic information was also retrieved. ... GSE121212  | 147  | 30641038  | RNA-Seq  | GPL16791
+
+Atopic Dermatitis and Psoriasis
+---
+Dataset ID  | # of included samples  | PMID  | Technology  | Platform
+--- | --- | --- | --- | ---
+GSE75890  | 27  | 26841714  | Microarray  | GPL17692
+GSE121212  | 147  | 30641038  | RNA-Seq  | GPL16791
+
+Open in a new tab
+
+##### Table 1.
+
+DNA microarray and RNA-Sequencing datasets of Atopic Dermatitis samples.
+
+Atopic Dermatitis
+---
+GEO dataset  | # of included samples  | PMID  | Technology  | Platform
+--- | --- | --- | --- | ---
+GSE16161  | 16  | 20004782  | Microarray  | GPL570
+GSE32924  | 28  | 21388663  | Microarray  | GPL570
+GSE120721  | 50  | 25567045  | Microarray  | GPL570
+GSE65832  | 40  | 25840722  | RNA-Seq  | GPL10999
+
+Open in a new tab
+
+--------------------------------------------------------------------------------
+A single cell transcriptional profile of benign prostatic hyperplasia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC13009279/)
+citeturn10search3 [wordlim: 200] Published: 6 months ago; Crawled: last month; To test for cell types associated with BPH, we performed signature score analysis and identified fibroblasts as the cell type with the strongest enrichment of a BPH signature gene set derived from a previous bulk RNA-seq study^{15} (Fig. ... A gene set signature for luminal 4 subgroup was also derived using the highly expressed genes and using this gene set we detected this luminal progenitor-like subgroup in a separate prostate cancer scRNA-seq dataset^{19} (Supplementary material, Fig. ... As ribosomal biogenesis is a crucial biological process closely tied to cell growth and proliferation^{59}, this luminal subgroup could be associated with the development of prostatic hyperplasia.
+## Associated Data
+
+This section collects any data citations, data availability statements, or supplementary materials included in this article.
+
+### Supplementary Materials
+
+Supplementary Material 1^{ (7MB, docx) }
+
+Supplementary Material 2^{ (14.3KB, docx) }
+
+Supplementary Material 3^{ (1.8MB, xlsx) }
+
+### Data Availability Statement
+
+The raw single cell RNA-sequencing data and differential gene expression matrix files generated during this study are available in the Gene Expression Omnibus (GEO) under the accession number GSE290213. Two previously published scRNA-seq datasets were analyzed and used to confirm annotation of the cell types - GSE176031 and GSE117403. The datasets generated by and analyzed in this study are also available by request from FWH.--------------------------------------------------------------------------------
+NURSA | Analysis of the lesional and non-lesional skin transcriptomes from patients with psoriasis or atopic dermatitis (https://www.signalingpathways.org/datasets/dataset.jsf?doi=10.1621%2Fu3ZHHqZCxE)
+citeturn10search4 [wordlim: 200] Published: 5.3 years ago; Crawled: last month; This is Version 1.0 of an annotated derivative of the original dataset, which can be found in GSE121212 ... (2019) Atopic Dermatitis Is an IL-13-Dominant Disease with Greater Molecular Heterogeneity Compared to Psoriasis.
+
+##### Analysis of the lesional and non-lesional skin transcriptomes from patients with psoriasis or atopic dermatitis
+
+[Input] [Input]
+
+Overview
+
+Dataset Name :
+
+Analysis of the lesional and non-lesional skin transcriptomes from patients with psoriasis or atopic dermatitis
+
+Description :
+
+Skin punch biopsies were obtained from lesional and non-lesional skin regions from patients diagnosed with psoriasis, atopic dermatitis, or healthy controls.
+
+Dataset Type :
+
+Transcriptomic
+
+Release Date :
+
+June 11, 2021
+
+DOI :
+
+10.1621/u3ZHHqZCxE
+
+Version :
+
+This is Version 1.0 of an annotated derivative of the original dataset, which can be found in GSE121212
+
+Dataset Citation :^{}
+
+Weidinger S, Rodriguez E, Tsoi LC and Gudjonsson J (2021) Analysis of the lesional and non-lesional skin transcriptomes from patients with psoriasis or atopic dermatitis, v 1.0 Signaling Pathways Project Datasets. 10.1621/u3ZHHqZCxE
+
+Download Citation :
+
+Tsoi LC, Rodriguez E, Degenhardt F, Baurecht H, Wehkamp U, Volks N, Szymczak S, Swindell WR, Sarkar MK, Raja K, Shao S, Patrick M, Gao Y, Uppala R, Perez White BE, Getsios S, Harms PW, Maverakis E, Elder JT, Franke A, Gudjonsson JE and Weidinger S. --------------------------------------------------------------------------------
+Genome-wide identification of dysregulated alternative splicing and RNA-binding proteins involved in atopic dermatitis - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC10940350/)
+citeturn10search5 [wordlim: 200] Published: 2.5 years ago; Crawled: last month; To gain a comprehensive understanding of the disease-related RBP regulators in AD patients, first, we collected and analyzed RNA-seq data (GSE121212) from 10 healthy samples, 10 NL samples, and 10 LS samples with AD. ... This suggests these gene expressions led to significantly different transcriptional characteristics in AD development.
+## Results
+
+### Part 1: Transcriptome analysis of DE-RBPs in LS and NL samples with AD compared with healthy samples
+
+To gain a comprehensive understanding of the disease-related RBP regulators in AD patients, first, we collected and analyzed RNA-seq data (GSE121212) from 10 healthy samples, 10 NL samples, and 10 LS samples with AD. The PCA showed significant differences in the transcriptomic genes between the AD LS group and AD NL group, as well as between the AD LS group and healthy group. However, there was minimal difference observed between the AD NL group and healthy group (Figure 1A). A total of 1298 upregulated DEGs and 1203 downregulated DEGs were identified between the healthy group and AD LS group, while 895 upregulated DEGs and 513 downregulated DEGs were observed between the AD NL group and AD LS group. However, only 20 upregulated DEGs and 10 downregulated DEGs were found between the healthy group and AD NL group (Figure 1B). This suggests these gene expressions led to significantly different transcriptional characteristics in AD development.
+--------------------------------------------------------------------------------
+Symptomatic Benign Prostatic Hyperplasia with Suppressed Epigenetic Regulator HOXB13 Shows a Lower Incidence of Prostate Cancer Development - PubMed (https://pubmed.ncbi.nlm.nih.gov/38201640/)
+citeturn10search6 [wordlim: 200] Published: 2.7 years ago; Crawled: last month; Our objective was to identify variations in gene expression that could help elucidate the pathways for the development of prostate cancer (PCa) in men with Benign Prostatic Hyperplasia (BPH). ... RNA sequencing (RNA-Seq) was performed on tissue cores from the MRI lesion and a geographically distant region (two regions per patient). ... Keywords: HOXB13; RNA; epigenetics; prostate cancer; prostatic hyperplasia.
+## Abstract
+
+Our objective was to identify variations in gene expression that could help elucidate the pathways for the development of prostate cancer (PCa) in men with Benign Prostatic Hyperplasia (BPH). We included 98 men with BPH, a positive prostate MRI (Prostate Imaging Reporting and Data System; PIRADS ≥ 4), and a negative biopsy from November 2014 to January 2018. RNA sequencing (RNA-Seq) was performed on tissue cores from the MRI lesion and a geographically distant region (two regions per patient). All patients were followed for at least three years to identify who went on to develop PCa. We compared the gene expressions of those who did not develop PCa ("BPH-only") vs. those who did ("BPH/PCa"). Then, we identified the subset of men with BPH who had the highest American Urological Association (AUA) symptom scores ("symptomatic BPH") and compared their gene expression to the BPH/PCa group. At a median follow-up of 47.5 months, 15 men had developed PCa while 83 did not. We compared gene expressions of 14 men with symptomatic BPH (AUAss ≥ 18) vs. 15 with BPH/PCa. We found two clusters of genes, suggesting the two groups had distinctive molecular features. Differential analysis revealed genes that were upregulated in BPH-only and downregulated in BPH/PCa, and vice versa. Symptomatic BPH men had upregulation of T-cell activation markers (TCR, CD3, ZAP70, IL-2 and IFN-γ and chemokine receptors, CXCL9/10) expression. In contrast, men with BPH/PCa had upregulation of NKX3-1 and HOXB13 transcription factors associated with luminal epithelial progenitors but depleted of immune cells, suggesting a cell-autonomous role in immune evasion. Symptomatic BPH with immune-enriched landscapes may support anti-tumor immunity. RNA sequencing of benign prostate biopsy tissue showing upregulation of NKX3-1 and HOXB13 with the absence of T-cells might help in identifying men at higher risk of future PCa development, which may be useful in determining ongoing PCa screening.
+
+Keywords: HOXB13; RNA; epigenetics; prostate cancer; prostatic hyperplasia.
+
+## Figures
+
+Figure 1
+
+Stratification of Benign Prostatic Hyperplasia…
+--------------------------------------------------------------------------------
+RNA - Nervous System (https://www.saedsayad.com/prs/RNA/skin.htm)
+citeturn10search7 [wordlim: 200] Crawled: 4.0 years ago; GSE121212  | Psoriasis  | Atopic Dermatitis, Psoriasis and healthy control RNA-seq cohort  | 2018  | Tissue  | Y  | 147  | Image ... GSE53552  | Psoriasis  | Gene expression profiling in psoriatic lesional and non-lesional skin [brodalumab treatment]  | 2013  | Tissue  | N  | 99  | Image
+GSE30999  | Psoriasis  | Expression data from skin biopsy samples from patients with moderate-to-severe psoriasis  | 2011  | Tissue  | N  | 170  | Image
+GSE41664  | Psoriasis  | Comparison of Gene Expression in Psoriatic Skin from Different Sources  | 2012  | Tissue  | N  | 157  | Image
+GSE63741  | Psoriasis  | Gene Expression Analyses of Homo sapiens Inflammatory Skin Diseases  | 2014  | Tissue  | N  | 150  | Image
+GSE121212  | Psoriasis  | Atopic Dermatitis, Psoriasis and healthy control RNA-seq cohort  | 2018  | Tissue  | Y  | 147  | Image
+GSE59455  | Melanoma  | Whole genome expression data from formalin-fixed parrafin embedded (FFPE) primary and metastatic melanomas  | 2014  | Tissue  | N  | 141  | Image
+GSE58558  | Atopic Dermatitis  | Cyclosporine in patients with atopic dermatitis modulates activated inflammatory pathways and reverses epidermal pathology  | 2014  | Tissue  | N  | 109  | Image
+GSE136757  | Psoriasis  | Molecular and Cellular Responses to the TYK2/JAK1 Inhibitor, PF 06700841, Reveal Reduction of Skin Inflammation in Plaque Psoriasis  | 2019  | Tissue  | N  | 106  | Image
+GSE83582  | Psoriasis  | Inflammatory signals linking inverse, erythrodermic and chronic plaque psoriasis  | 2016  | Tissue  | N  | 102  | Image
+GSE53552  | Psoriasis  | Gene expression profiling in psoriatic lesional and non-lesional skin [brodalumab treatment]  | 2013  | Tissue  | N  | 99  | Image
+--------------------------------------------------------------------------------
+Characterization of circular RNA transcriptomes in psoriasis and atopic dermatitis reveals disease‐specific expression profiles - Moldovan - 2021 - Experimental Dermatology - Wiley Online Library (https://onlinelibrary.wiley.com/doi/abs/10.1111/exd.14227)
+citeturn10search8 [wordlim: 200] Published: 5.9 years ago; Crawled: 2 weeks ago; The data that support the findings of this study are openly available in the National Center for Biotechnology Information Gene Expression Omnibus at https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121212, reference number GSE121212. ... Psoriasis.
+## DATA AVAILABILITY STATEMENT
+
+The data that support the findings of this study are openly available in the National Center for Biotechnology Information Gene Expression Omnibus at https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121212, reference number GSE121212.
+
+Supporting Information
+
+Filename  | Description
+--- | ---
+exd14227-sup-0001-FigS1.pdfPDF document, 269.8 KB  | Figure S1
+exd14227-sup-0002-FigS2.pdfPDF document, 133.3 KB  | Figure S2
+exd14227-sup-0003-FigS3.pdfPDF document, 378.2 KB  | Figure S3
+exd14227-sup-0004-FigS4.pdfPDF document, 56.4 KB  | Figure S4
+exd14227-sup-0005-TableS1.xlsxapplication/excel, 47.6 MB  | Table S1
+exd14227-sup-0006-TableS2.xlsxapplication/excel, 637.6 KB  | Table S2
+exd14227-sup-0007-TableS3.xlsxapplication/excel, 33 KB  | Table S3
+
+
+REFERENCES
+
+  * 1 Lebwohl M. Psoriasis. Lancet. 2003; 361(9364): 1197-1204.
+
+PubMed Web of Science® Google Scholar
+--------------------------------------------------------------------------------
+Single‐Cell Sequencing Reveals That CD4 + T Cells Eliminate Senescent Prostate Epithelium to Delay Progression of Benign Prostatic Hyperplasia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12507426/)
+citeturn10search9 [wordlim: 200] Published: 1.1 years ago; Crawled: last week; Publicly available single‐cell RNA‐seq data were retrieved under accession numbers GSE226237, GSM6547516, and GSM6547515. ... Age‐related gene expression data were obtained from the ADEIP database (http://gepia.cancer‐pku.cn/adeip), which was used for comparative transcriptomic analyses between young and aged prostate tissues. ... “Interleukin‐8 Expression Is Increased in Senescent Prostatic Epithelial Cells and Promotes the Development of Benign Prostatic Hyperplasia.”
+## Contributor Information
+
+Qian Zhang, Email: zhangqianbjmu@126.com.
+
+Wei Yu, Email: yuweipku@bjmu.edu.cn.
+
+## Data Availability Statement
+
+All sequencing data supporting this study have been deposited in the NCBI Gene Expression Omnibus (GEO). Publicly available single‐cell RNA‐seq data were retrieved under accession numbers GSE226237, GSM6547516, and GSM6547515. Newly generated datasets are available under GSE297404, GSE297402, and GSE297417. Age‐related gene expression data were obtained from the ADEIP database (http://gepia.cancer‐pku.cn/adeip), which was used for comparative transcriptomic analyses between young and aged prostate tissues.
+
+## References
+
+  1. Barbé‐Tuana, F. , Funchal G., Schmitz C. R. R., Maurmann R. M., and Bauer M. E.. 2020. “The Interplay Between Immunosenescence and Age‐Related Diseases.” Seminars in Immunopathology 42, no. 5: 545–557. --------------------------------------------------------------------------------
+Manually curated and harmonised transcriptomics datasets of psoriasis and atopic dermatitis patients (https://www.nature.com/articles/s41597-020-00696-8.pdf)
+citeturn10search12 [wordlim: 200] Published: 5.9 years ago; Atopic Dermatitis and Psoriasis Dataset ID | # of included samples | PMID | Technology | Platform --- | --- | --- | --- | --- Atopic Dermatitis and Psoriasis GSE75890 | 27 | 26841714 | Microarray | GPL17692 Atopic Dermatitis and Psoriasis GSE121212 | 147 | 30641038 | RNA-Seq | GPL16791Table 2.DNA microarray and RNA-Sequencing datasets of Psoriasis and Atopic Dermatitis samples.
+www.nature.com/scientificdata
+www.nature.com/scientificdata/
+Atopic Dermatitis and Psoriasis Dataset ID | # of included samples | PMID | Technology | Platform --- | --- | --- | --- | --- Atopic Dermatitis and Psoriasis GSE75890 | 27 | 26841714 | Microarray | GPL17692 Atopic Dermatitis and Psoriasis GSE121212 | 147 | 30641038 | RNA-Seq | GPL16791Table 2.  DNA microarray and RNA-Sequencing datasets of Psoriasis and Atopic Dermatitis samples.
+Psoriasis Dataset ID | # of included samples | PMID | Technology | Platform --- | --- | --- | --- | --- Psoriasis E-MTAB-3201 | 19 | 26086874 | Microarray | GPL571 Psoriasis GSE2737 | 8 | 16283139 | Microarray | GPL91 Psoriasis GSE6710 | 25 | 16858420 | Microarray | GPL96 Psoriasis GSE13355 | 173 | 19169254 | Microarray | GPL570 Psoriasis GSE14905 | 75 | 18648529 | Microarray | GPL570 Psoriasis GSE30999 | 151 | 22763790 | Microarray | GPL570 Psoriasis GSE34248 | 24 | 23308107 | Microarray | GPL570 Psoriasis GSE41662 | 46 | 23308107 | Microarray | GPL570 Psoriasis GSE50790 | 8 | 22479649 | Microarray | GPL570 Psoriasis GSE52471 | 38 | 23771123 | Microarray | GPL571 Psoriasis GSE58121 | 18 | 25058585 | Microarray | GPL14550 Psoriasis GSE61281 | 52 | 25243786 | Microarray | GPL6480 Psoriasis GSE67853 | 24 | 26763436 | Microarray | GPL570 Psoriasis GSE68923 | 5 | 28570274 | Microarray | GPL13607 Psoriasis GSE68924 | 5 | 28570274 | Microarray | GPL13607 Psoriasis GSE68937 | 6 | 28570274 | Microarray | GPL13607 Psoriasis GSE68939 | 5 | 28570274 | Microarray | GPL13607 Psoriasis GSE78097 | 31 | 27185339 | Microarray | GPL570 Psoriasis GSE80047 | 50 | 27152848 | Microarray | GPL13158 Psoriasis GSE82140 | 8 | 27312025 | Microarray | GPL17692 Psoriasis GSE83582 | 93 | 27448749 | Microarray | GPL19983 Psoriasis GSE106087 | 6 | Unpublished | Microarray | GPL15207 Psoriasis GSE41745 | 6 | 21850022 | RNA-Seq | GPL10999 Psoriasis GSE47944 | 84 | 24909886 | RNA-Seq | GPL11154 Psoriasis GSE54456 | 174 | 24441097 | RNA-Seq | GPL9052 Psoriasis GSE63979 | 42 | 5723451 | RNA-Seq | GPL9052 Psoriasis GSE67785 | 28 | 26251673 | RNA-Seq | GPL10999 Psoriasis GSE74697 | 52 | 27793094 | RNA-Seq | GPL16791 Psoriasis GSE83645 | 25 | 29031600 | RNA-Seq | GPL10999 Psoriasis GSE107871 | 24 | 29273799 | RNA-Seq | GPL10999 Psoriasis GSE117405 | 28 | 30054515 | RNA-Seq | GPL11154 Psoriasis GSE123785 | 19 | 31539532 | RNA-Seq | GPL18573 Psoriasis GSE123786 | 16 | 31539532 | RNA-Seq | GPL11154Table 3.  --------------------------------------------------------------------------------
+Integrated Multi-Omics Analyses Reveal Innovative Diagnostic and Therapeutic Targets Associated with Atopic Dermatitis - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12182234/)
+citeturn10search10 [wordlim: 200] Published: 1.2 years ago; Crawled: last month; (A) The volcano plot revealed 1371 DEGs in skin tissues from AD patients compared to healthy individuals in the GSE121212 dataset. ... The scatter plot demonstrated a positive correlation between Module Membership (MM) and Gene Significance (GS), suggesting that these genes, which are highly associated with AD, play a significant role within the greenyellow module (Figure 2D). ... By employing a venn diagram to examine the overlapping regions between GSE121212-Hub Genes and sc-Hub genes, we identified 57 common genes (Figure 5A), whose expression patterns were subsequently visualized using heatmaps (Figure S4).
+## Results
+
+### Screening of DEGs in AD Transcriptome Dataset
+
+The research methodology of this study is depicted in Figure S1. To identify DEGs associated with AD, an mRNA expression microarray dataset (GSE121212) was retrieved from the GEO database. The “DESeq2” package was employed to analyze the DEGs between the AD and HC groups. A total of 1371 DEGs were identified, comprising 828 upregulated and 543 downregulated genes in the AD group relative to the HC group. A volcano plot was utilized to visually represent genes with significant differential expression between the AD and HC groups (Figure 1A). To further elucidate the biological functions of these DEGs, KEGG and GO enrichment analyses were conducted. The KEGG enrichment analysis indicated that the DEGs were predominantly associated with pathways such as the Chemokine signaling pathway, IL-17 signaling pathway, JAK-STAT signaling pathway, Lipid and atherosclerosis, Neuroactive ligand-receptor interaction, NF-kappa B signaling pathway, PPAR signaling pathway, Retinol metabolism, Th1 and Th2 cell differentiation, Th17 cell differentiation, and TNF signaling pathway (Figure 1B). --------------------------------------------------------------------------------
+Transcriptomic analysis of benign prostatic hyperplasia identifies critical pathways in prostatic overgrowth and 5-alpha reductase inhibitor resistance - PubMed (https://pubmed.ncbi.nlm.nih.gov/38168866/)
+citeturn10search11 [wordlim: 200] Published: 2.7 years ago; Crawled: 3 weeks ago; Snap-frozen prostatic tissue taken at the time of surgery and 3D organoids were used for RNA-seq analysis. ... Deconvolution analysis of bulk RNA seq data with a human prostate single cell data set demonstrated increased levels of mast cells, NK cells, interstitial fibroblasts, and prostate luminal cells in S-BPH versus I-BPH. ... Keywords: 3-D organoid; benign prostatic hyperplasia (BPH); gene pathway analysis; lower urinary tract symptoms (LUTS).
+To understand the transcriptomic changes associated with 5ARI treatment, we performed bulk RNA sequencing of BPH and control samples from patients who received 5ARI versus those that did not. Deconvolution analysis was performed to estimate cellular composition. Bulk RNA sequencing was also performed on control versus glucocorticoid-treated prostate epithelia in 3D culture to determine underlying transcriptomic changes associated with branching morphogenesis.
+
+Method: Surgical BPH (S-BPH) tissue was defined as benign prostatic tissue collected from the transition zone (TZ) of patients who failed medical therapy while control tissue termed Incidental BPH (I-BPH) was obtained from the TZ of men undergoing radical prostatectomy for low-volume/grade prostatic adenocarcinoma confined to the peripheral zone. S-BPH patients were divided into four subgroups: men on no medical therapy (none: n = 7), α-blocker alone (n = 10), 5ARI alone (n = 6) or combination therapy (α-blocker and 5ARI: n = 7). Control I-BPH tissue was from men on no medical therapy (none: n = 8) or on α-blocker (n = 6). A human prostatic cell line in 3D culture that buds and branches was used to identify genes involved in early prostatic growth. Snap-frozen prostatic tissue taken at the time of surgery and 3D organoids were used for RNA-seq analysis. Bulk RNAseq data were deconvoluted using CIBERSORTx. Differentially expressed genes (DEG) that were statistically significant among S-BPH, I-BPH, and during budding and branching of organoids were used for pathway analysis.
+
+Results: Transcriptomic analysis between S-BPH (n = 30) and I-BPH (n = 14) using a twofold cutoff (p < 0.05) identified 377 DEG (termed BPH377) and a cutoff < 0.05 identified 3377 DEG (termed BPH3377). Within the S-BPH, the subgroups none and α-blocker were compared to patients on 5ARI to reveal 361 DEG (termed 5ARI361) that were significantly changed. Deconvolution analysis of bulk RNA seq data with a human prostate single cell data set demonstrated increased levels of mast cells, NK cells, interstitial fibroblasts, and prostate luminal cells in S-BPH versus I-BPH. --------------------------------------------------------------------------------
+1258
+INVESTIGATIVE REPORT
+Multicomponent Biomarker (https://dspace.ut.ee/server/api/core/bitstreams/2c287a57-565e-4217-b83b-2bf267459d03/content)
+citeturn10search13 [wordlim: 200] Published: 6.8 years ago; atopic dermatitis (AD), non-lesional skin samples of AD patients ... planus or contact eczema) were found among the RNA-seq datasets ... GSE63741 and GSE121212 datasets and was limited to the genes ... aNCBI GEO accession number. bGene expression quantification method. cLesional psoriasis vulgaris skin; dnon-lesional skin of psoriasis patients; elesional atopic
+months) until RNA extraction.
+Public datasets included in the analysis
+The NCBI GEO (https://www.ncbi.nlm.nih.gov/geo) datasets in-
+cluded in the analysis are summarized in Table I. The core datasets 
+used for testing the disease-specific multicomponent biomarker 
+approach were the microarray dataset GSE63741 and RNA-seq 
+dataset GSE121212, as these included several other inflammatory 
+skin diseases in addition to PsV. Additional 5 RNA-seq datasets 
+were included in the test set in order to incorporate more of dif-
+ferent PsV patient groups and additional skin conditions, such as 
+atopic dermatitis (AD), non-lesional skin samples of AD patients 
+(AD-NL) and non-lesional psoriatic skin (Ps-NL) samples. No 
+datasets including other inflammatory skin diseases (e.g. lichen 
+planus or contact eczema) were found among the RNA-seq datasets 
+listed in the NCBI GEO repository. 
+Quantitative PCR analysis
+Quantitative real-time PCR (qPCR) was used to quantify the 
+expression levels of marker genes in 2 groups of locally recruited 
+using STAR v2.6 (23). Aligned reads were quantified according to 
+GENCODE (24) release 26 with the “–quantMode GeneCounts” 
+option of STAR. Non-default options used for read alignment are 
+shown in Appendix S11. The colour-space SOLiD (Life Techno-
+1https://www.medicaljournals.se/acta/content/abstract/10.2340/00015555-3337
+Literature review for identification of proposed biomarkers. A 
+review of published studies was conducted to identify potential 
+biomarkers for PsV. The search was performed using the PubMed 
+search engine (https://www.ncbi.nlm.nih.gov/pubmed) and the 
+Table I. Datasets comprising the test set and corresponding number of samples
+GEOa
+Methodb
+PsVc
+Ps-NLd
+ADe
+AD-NLf
+LPg
+CEh
+Ci
+Ps-PPj
+Ps-Sk
+GSE66511
+RNA-seq
+12
+12
+12
+GSE41745
+RNA-seq
+  3
+  3
+GSE65832
+RNA-seq
+20
+20
+GSE83645
+RNA-seq
+18
+  5
+GSE117405
+RNA-seq
+  8
+  9
+3
+8
+GSE121212
+RNA-seq
+28
+27
+27
+27
+38
+GSE63741
+Microarray
+30
+30
+30
+30
+30
+ActaDV
+ActaDV
+Advances in dermatology and venereology
+Acta Dermato-Venereologica
+aNCBI GEO accession number. bGene expression quantification method. cLesional psoriasis vulgaris skin; dnon-lesional skin of psoriasis patients; elesional atopic 
+dermatitis skin; fnon-lesional skin of atopic dermatitis patients; glesional lichen planus skin; hlesional contact dermatitis skin; ihealthy control skin; jlesional plaque-type 
+palmoplantar psoriasis skin; klesional scalp psoriasis skin.
+Acta Derm Venereol 2019--------------------------------------------------------------------------------
+Integrative skin–blood transcriptomic analysis identifies circulating biomarkers reflecting disease activity in atopic dermatitis (https://www.frontiersin.org/journals/allergy/articles/10.3389/falgy.2026.1837776/pdf)
+citeturn10search14 [wordlim: 200] Published: 3 months ago; Atopic dermatitis (AD) is a chronic inﬂammatory skin disease ... RNA-seq data from the GSE121212 dataset were processed ... Differential gene expression analysis comparing atopic ... The dataset GSE121212 comprises RNA sequencing
+--------------------------------------------------------------------------------
+Table S1 Demographic data of samples from RNA-seq data (GSE121212) (https://www.frontiersin.org/api/v4/articles/1287111/file/Data_Sheet_1.PDF/1287111_supplementary-materials_datasheets_1_pdf/1)
+citeturn10search15 [wordlim: 200] Published: 6 months ago; Transcriptome analysis of differentially expressed RBP genes (DE-RBPs) in atopicdermatitis lesional and atopic dermatitis non-lesional samples compared with healthy samples.
+--------------------------------------------------------------------------------
+Finding Gene Regulatory Networks in Psoriasis: Application of a Tree-Based Machine Learning Approach (https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.921408/pdf)
+citeturn10search16 [wordlim: 200] Published: 4.2 years ago; atopic dermatitis (AD), to distinguish between speciﬁc regulators ... were included as a non-psoriatic, inﬂammatory disease ... Four RNA-seq datasets on psoriasis and three on atopic ... datasets GSE121212 (for both psoriasis and AD cohorts) andGSE140227 were retrieved from the gene expression omnibus
+--------------------------------------------------------------------------------
+Genomic analysis of benign prostatic hyperplasia implicates cellular (https://df6sxcketz7bb.cloudfront.net/manuscripts/129000/129749/cache/129749.3-20220113153220-covered-e0fd13ba177f913fd3156f593ead4cfd.pdf)
+citeturn10search17 [wordlim: 200] Published: 5 months ago; Benign prostatic hyperplasia (BPH) is the most common cause of lower urinary tract symptoms in ... Current treatments target prostate physiology rather than BPH pathophysiology and are only ... and single-cell RNA-Seq. ... Benign prostatic hyperplasia (BPH) is the most common cause of lower urinary tract symptoms
+

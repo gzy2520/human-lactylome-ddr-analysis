@@ -1,0 +1,297 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM987943)
+citeturn15search0 [wordlim: 200] Published: 7.8 years ago; Crawled: 4 months ago; Growth protocol The two sperm donor samples were obtained from men of known fertility attending the University of Utah Andrology laboratory, consented for research. ... Extraction protocol Total RNA was extracted from fertile donors (Donor1 and Donor2) using Trizol. ... The novoalign index was made by combining hg18 fasta files (UCSC), Illumina adapter sequences, and splice junction fasta files made using MakeSpliceJunctionFasta (USeq version 6.0) with -s 34 as input radius and merged ensGene and knownGene table (from genome.ucsc.edu) as annotation. ... E-mail(s) andrew.oler@nih.gov ... GSE40181 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (RNA-Seq)
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM987943 Query DataSets for GSM987943
+Status Public on Dec 03, 2018
+Title Sperm Donor2 mRNA-seq
+Sample type SRA
+ 
+Source name Sperm Donor 2, mRNA
+Organism Homo sapiens
+Characteristics cell type: sperm
+library prep method: mRNA directional
+Growth protocol The two sperm donor samples were obtained from men of known fertility attending the University of Utah Andrology laboratory, consented for research. Samples were collected after 2-5 days abstinence and subjected to a density gradient to purify viable, motile, mature sperm.
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted from fertile donors (Donor1 and Donor2) using Trizol. Counts for Refseq genes, piRNAs, and miRNAs were determined with DefinedRegionScanSeqs (USeq 8.3.3) using parameters -p 0 -o.
+Genome_build: hg18
+Supplementary_files_format_and_content: Tab-delimited text files contain RPKM expression values for RefSeq genes, piRNAs, and miRNAs. Files are linked to the Series record as supplementary files.
+ 
+Submission date Aug 16, 2012
+Last update date May 15, 2019
+Contact name Andrew J Oler
+E-mail(s) andrew.oler@nih.gov
+Organization name NIAID/NIH
+Department Bioinformatics and Computational Biosciences Branch (BCBB)
+Lab Computational Biology Section
+Street address 31 Center Drive, Room 3B62E
+City Bethesda
+State/province MD
+ZIP/Postal code 20892
+Country USA
+ 
+Platform ID GPL9115
+Series (2)
+GSE40181 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (RNA-Seq)
+GSE40196 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs
+Relations
+SRA SRX178611
+BioSample SAMN01120627
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7674084)
+citeturn15search1 [wordlim: 200] Published: 3.1 years ago; Crawled: last month; Title Human Sperm 5 ... Using human genome version hg19 and allowed mismatch number set to 2, sports 1.1 mapped reads to small RNA subtypes. ... GSE239810 Mitochondrial signals mediate paternal effects on offspring metabolism (small RNA-Seq)
+Sample GSM7674084 Query DataSets for GSM7674084
+Status Public on Apr 03, 2024
+Title Human Sperm 5
+Sample type SRA
+ 
+Source name Sperm
+Organism Homo sapiens
+Characteristics cell type: Sperm
+Extracted molecule total RNA
+Extraction protocol Human Spermatozoa were purified by centrifuging through a 50% gradient of Puresperm (Nidacon International AB). Total RNA was extracted from spermatozoa with trizol-chloroform phase separation method followed by precipitation and wash steps with 100% and 70% ethanol. RNA purity, integrity and quality was examined by Bioanalyzer (Agilent Technologies) and Qubit (Thermo Fisher Scientific).
+Sequencing libraries were prepared using NEBNext Small RNA Library Prep Set for Illumina (New England Biolabs, Ipswich, MA) with 100-120 ng RNA as a total input.
+ 
+Library strategy ncRNA-Seq
+Library source transcriptomic
+Library selection size fractionation
+Instrument model Illumina NovaSeq 6000
+ 
+Description Human sperm (BMI 25.7)
+Data processing After preliminary quality check, single read sequences were analyzed with sports 1.1. The adapter sequence (AGATCGGAAGAGCACACGTCTGAACTCCAGTCA) was trimmed with Cutadapt built in the pipeline and sequences with the length of 15-45 nucleotides were further processed. Using human genome version hg19 and allowed mismatch number set to 2, sports 1.1 mapped reads to small RNA subtypes. After joining sequences from all samples into a common count matrix, filter was applied to exclude sequences with no reads in more than 80 % of samples. Samples were analyzed based on BMI variation. Sequence-based differential expression analysis (DEA) was performed using DESeq2 addressing BMI as a continuous variable.
+hg19
+Table files for annotation information for every unique sequence and reads number of each major smallrna biotype for every samples.
+ 
+Submission date Aug 01, 2023
+Last update date Apr 03, 2024
+Contact name Raffaele Teperino
+E-mail(s) raffaele.teperino@helmholtz-muenchen.de
+Organization name Helmholtz Zentrum München
+Department Institute of Experimental Genetics (IEG)
+Lab Environmental Epigenetics
+Street address Ingolstädter Landstraße 1
+City München
+ZIP/Postal code 85764
+Country Germany
+ 
+Platform ID GPL24676
+Series (2)
+GSE239810 Mitochondrial signals mediate paternal effects on offspring metabolism (small RNA-Seq)
+GSE239815 Epigenetic inheritance of diet-induced and sperm-borne mitochondrial RNAs
+Relations
+BioSample SAMN36791048
+SRA SRX21213550
+Supplementary file Size Download File type/resource
+GSM7674084_1216_25.7_22L000177.R1_output.txt.gz 23.7 Mb (ftp)(http) TXT
+GSM7674084_1216_25.7_22L000177.R1_summary.txt.gz 13.3 Kb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7674086)
+citeturn15search2 [wordlim: 200] Published: 2.4 years ago; Crawled: 4 months ago; Title Human Sperm 7 ... Using human genome version hg19 and allowed mismatch number set to 2, sports 1.1 mapped reads to small RNA subtypes. ... GSE239810 Mitochondrial signals mediate paternal effects on offspring metabolism (small RNA-Seq)
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM7674086 Query DataSets for GSM7674086
+Status Public on Apr 03, 2024
+Title Human Sperm 7
+Sample type SRA
+ 
+Source name Sperm
+Organism Homo sapiens
+Characteristics cell type: Sperm
+Extracted molecule total RNA
+Extraction protocol Human Spermatozoa were purified by centrifuging through a 50% gradient of Puresperm (Nidacon International AB). Total RNA was extracted from spermatozoa with trizol-chloroform phase separation method followed by precipitation and wash steps with 100% and 70% ethanol. RNA purity, integrity and quality was examined by Bioanalyzer (Agilent Technologies) and Qubit (Thermo Fisher Scientific).
+Sequencing libraries were prepared using NEBNext Small RNA Library Prep Set for Illumina (New England Biolabs, Ipswich, MA) with 100-120 ng RNA as a total input.
+ 
+Library strategy ncRNA-Seq
+Library source transcriptomic
+Library selection size fractionation
+Instrument model Illumina NovaSeq 6000
+ 
+Description Human sperm (BMI 19.7)
+Data processing After preliminary quality check, single read sequences were analyzed with sports 1.1. The adapter sequence (AGATCGGAAGAGCACACGTCTGAACTCCAGTCA) was trimmed with Cutadapt built in the pipeline and sequences with the length of 15-45 nucleotides were further processed. Using human genome version hg19 and allowed mismatch number set to 2, sports 1.1 mapped reads to small RNA subtypes. After joining sequences from all samples into a common count matrix, filter was applied to exclude sequences with no reads in more than 80 % of samples. Samples were analyzed based on BMI variation. Sequence-based differential expression analysis (DEA) was performed using DESeq2 addressing BMI as a continuous variable.
+hg19
+Table files for annotation information for every unique sequence and reads number of each major smallrna biotype for every samples.
+ 
+Submission date Aug 01, 2023
+Last update date Apr 03, 2024
+Contact name Raffaele Teperino
+E-mail(s) raffaele.teperino@helmholtz-muenchen.de
+Organization name Helmholtz Zentrum München
+Department Institute of Experimental Genetics (IEG)
+Lab Environmental Epigenetics
+Street address Ingolstädter Landstraße 1
+City München
+ZIP/Postal code 85764
+Country Germany
+ 
+Platform ID GPL24676
+Series (2)
+GSE239810 Mitochondrial signals mediate paternal effects on offspring metabolism (small RNA-Seq)
+GSE239815 Epigenetic inheritance of diet-induced and sperm-borne mitochondrial RNAs
+Relations
+BioSample SAMN36791046
+SRA SRX21213552
+Supplementary file Size Download File type/resource
+GSM7674086_1200_19.7_22L000179.R1_output.txt.gz 19.0 Mb (ftp)(http) TXT
+GSM7674086_1200_19.7_22L000179.R1_summary.txt.gz 12.7 Kb (ftp)(http) TXT
+SRA Run SelectorImage: Help--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE40181)
+citeturn15search3 [wordlim: 200] Published: 14.1 years ago; Crawled: last month; Title Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (RNA-Seq) ... Overall design Total RNA was extracted from the sperm of two independent fertile donors and subjected to directional RNA-seq using both small RNA-seq and mRNA-seq Illumina protocols. ... GSM987944 Sperm Donor1 smRNA-seq
+Series GSE40181 Query DataSets for GSE40181
+Status Public on Dec 03, 2018
+Title Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (RNA-Seq)
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Non-coding RNA profiling by high throughput sequencing
+Summary To better understand the paternally inherited epigenome and transcriptome, we profiled multiple histone modifications, histone H3.3 variant, cytosine DNA methylation at base-pair resolution, and small RNA transcriptomes. We report new and surprising features of enhancers, pluripotency factor targets, spermiogenesis genes, piRNA clusters, CpG islands, partially methylated domains, imprinted loci, repetitive elements and sex chromosomes. First, we find that enhancers for embryonic transcription factors bear H3K27me3, but low H3K14ac and DNA methylation -- consistent with poising for future activation -- whereas enhancers near genes active in gametogenesis have high H3K27ac/H3K14ac, consistent with past activation. Second, binding site regions (in ES cells) for the pluripotency factors SOX2 and NANOG are DNA methylated in sperm, suggesting a need for zygotic demethylation/reprogramming. Unexpectedly, genes for spermiogenesis (but not spermatogenesis), and almost half of piRNA cluster promoters, bear both H3K4me3 and DNA methylation, a co-incidence not previously observed in mammals. Furthermore, we find major assymetries in H3.3 and H3K9me3 density between the X and Y chromosomes after MSCI. Lastly, deep sequencing reveals >10-fold increase in the known repertoire of retained/inherited miRNAs and piRNAs than previous estimates. Thus, the paternal epigenome contributes a mosaic of epigenetic regions that reflect past gametogenesis or poising for subsequent embryonic developmental regulation -- and a complex repertoire of small RNAs.
+ 
+Overall design Total RNA was extracted from the sperm of two independent fertile donors and subjected to directional RNA-seq using both small RNA-seq and mRNA-seq Illumina protocols.
+ 
+Contributor(s) Hammoud SS, Nix DA, Oler AJ, Carrell D, Cairns BR
+Citation missing Has this study been published? Please login to update or notify GEO.
+Submission date Aug 16, 2012
+Last update date May 15, 2019
+Contact name Andrew J Oler
+ 
+Platforms (1)
+GPL9115 Illumina Genome Analyzer II (Homo sapiens)
+Samples (4)Image: Less... Less...            Image: More... More...
+GSM987942 Sperm Donor1 mRNA-seq
+GSM987943 Sperm Donor2 mRNA-seq
+GSM987944 Sperm Donor1 smRNA-seq
+GSM987945 Sperm Donor2 smRNA-seq
+This SubSeries is part of SuperSeries:
+GSE40196 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs
+Relations
+BioProject PRJNA173072
+SRA SRP014899
+Download family Format
+Supplementary file Size Download File type/resource
+GSE40181_D1D2_DefinedRegionsScanSeq_refFlat_Results_RPKMgrthn0.4.txt.gz 153.6 Kb (ftp)(http) TXT
+GSE40181_Donor1_DRSS_miRNA_drssResults.txt.gz 23.1 Kb (ftp)(http) TXT
+GSE40181_Donor1_DRSS_piRNAs_drssResults.txt.gz 575.3 Kb (ftp)(http) TXT
+GSE40181_Donor1_DRSS_refseq_drssResults.txt.gz 825.7 Kb (ftp)(http) TXT
+GSE40181_Donor2_DRSS_miRNAs_drssResults.txt.gz 22.0 Kb (ftp)(http) TXT
+GSE40181_Donor2_DRSS_piRNAs_drssResults.txt.gz 504.1 Kb (ftp)(http) TXT
+GSE40181_Donor2_DRSS_refseq_drssResults.txt.gz 810.0 Kb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE40196)
+citeturn15search4 [wordlim: 200] Published: 14.1 years ago; Crawled: 2 months ago; E-mail(s) andrew.oler@nih.gov ... GSM987944 Sperm Donor1 smRNA-seq ... GSE40181 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (RNA-Seq)
+Series GSE40196 Query DataSets for GSE40196
+Status Public on Dec 03, 2018
+Title Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs
+Organism Homo sapiens
+Experiment type Methylation profiling by high throughput sequencing
+Expression profiling by high throughput sequencing
+Non-coding RNA profiling by high throughput sequencing
+Genome binding/occupancy profiling by high throughput sequencing
+Summary This SuperSeries is composed of the SubSeries listed below.
+ 
+Overall design Refer to individual Series
+ 
+Citation missing Has this study been published? Please login to update or notify GEO.
+Submission date Aug 17, 2012
+Last update date May 15, 2019
+Contact name Andrew J Oler
+E-mail(s) andrew.oler@nih.gov
+Organization name NIAID/NIH
+Department Bioinformatics and Computational Biosciences Branch (BCBB)
+Lab Computational Biology Section
+Street address 31 Center Drive, Room 3B62E
+City Bethesda
+State/province MD
+ZIP/Postal code 20892
+Country USA
+ 
+Platforms (2)
+GPL9115 Illumina Genome Analyzer II (Homo sapiens)
+GPL11154 Illumina HiSeq 2000 (Homo sapiens)
+Samples (16)Image: Less... Less...            Image: More... More...
+GSM987860 Sperm Donor1 Bisulfite Sequencing
+GSM987861 Sperm Donor2 Bisulfite Sequencing
+GSM987942 Sperm Donor1 mRNA-seq
+GSM987943 Sperm Donor2 mRNA-seq
+GSM987944 Sperm Donor1 smRNA-seq
+GSM987945 Sperm Donor2 smRNA-seq
+GSM988178 Sperm Donor Pool H3K9me3 ChIP-seq, rep1
+GSM988179 Sperm Donor Pool H3K9me3 ChIP-seq, rep2
+GSM988180 Sperm Donor Pool H3.3 ChIP-seq
+GSM988181 Sperm Donor Pool H3K36me3 ChIP-seq
+GSM988182 Sperm Donor Pool H3K4me1 ChIP-seq, rep1
+GSM988183 Sperm Donor Pool H3K4me1 ChIP-seq, rep2
+GSM988184 Sperm Donor Pool H3K14ac ChIP-seq, rep1
+GSM988185 Sperm Donor Pool H3K14ac ChIP-seq, rep2
+GSM988186 Sperm Donor Pool H3K27ac ChIP-seq, rep1
+GSM988187 Sperm Donor Pool H3K27ac ChIP-seq, rep2
+This SuperSeries is composed of the following SubSeries:
+GSE40178 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (Bisulfite-Seq)
+GSE40181 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (RNA-Seq)
+GSE40195 Human Sperm Epigenomes and Transcriptomes Reveal Novel Features of Enhancers, Sex Chromosomes, piRNAs, Gametogenesis, and Inherited Small RNAs (ChIP-Seq)
+Relations
+BioProject PRJNA173070
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary data files not provided
+SRA Run SelectorImage: Help--------------------------------------------------------------------------------
+The RNA content of human sperm reflects prior events in spermatogenesis and potential post-fertilization effects - PubMed (https://pubmed.ncbi.nlm.nih.gov/33950245/)
+citeturn15search5 [wordlim: 200] Published: 5.3 years ago; Crawled: last month; The present study provides an RNA-seq profiling of human sperm mRNAs and lncRNAs (messenger and long non-coding RNAs) in a well-characterized population of fertile individuals. ... Poly(A)-transcripts were sequenced and aligned to the human genome. mRNAs and lncRNAs were classified according to their mean expression values (FPKM: Fragments Per Kilobase of transcript per Million mapped reads) and integrity. ... Keywords: RNA; RNA-seq; Sperm; fertility; lncRNA.
+
+  * PMID: 33950245
+  * DOI: 10.1093/molehr/gaab035
+
+
+# The RNA content of human sperm reflects prior events in spermatogenesis and potential post-fertilization effects
+
+C Corral-Vazquez et al. Mol Hum Reprod. 2021.
+
+Show details
+
+## Abstract
+
+Transcriptome analyses using high-throughput methodologies allow a deeper understanding of biological functions in different cell types/tissues. The present study provides an RNA-seq profiling of human sperm mRNAs and lncRNAs (messenger and long non-coding RNAs) in a well-characterized population of fertile individuals. Sperm RNA was extracted from twelve ejaculate samples under strict quality controls. Poly(A)-transcripts were sequenced and aligned to the human genome. mRNAs and lncRNAs were classified according to their mean expression values (FPKM: Fragments Per Kilobase of transcript per Million mapped reads) and integrity. Gene Ontology analysis of the Expressed and Highly Expressed mRNAs showed an involvement in diverse reproduction processes, while the Ubiquitously Expressed and Highly Stable mRNAs were mainly involved in spermatogenesis. Transcription factor enrichment analyses revealed that the Highly Expressed and Ubiquitously Expressed sperm mRNAs were primarily regulated by zinc-fingers and spermatogenesis-related proteins. Regarding the Expressed lncRNAs, only one-third of their potential targets corresponded to Expressed mRNAs and were enriched in cell-cycle regulation processes. The remaining two-thirds were absent in sperm and were enriched in embryogenesis-related processes. A significant amount of post-testicular sperm mRNAs and lncRNAs was also detected. Even though our study is solely directed to the poly-A fraction of sperm transcripts, results indicate that both sperm mRNAs and lncRNAs constitute a footprint of previous spermatogenesis events and are configured to affect the first stages of embryo development.
+
+Keywords: RNA; RNA-seq; Sperm; fertility; lncRNA.
+
+© The Author(s) 2021. Published by Oxford University Press on behalf of European Society of Human Reproduction and Embryology. All rights reserved. For permissions, please email: journals.permissions@oup.com.
+--------------------------------------------------------------------------------
+Transcriptome sequencing reveals significant RNA variation in human sperm samples - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12255995/)
+citeturn15search6 [wordlim: 200] Published: 1.2 years ago; Crawled: last month; DNA transcription and protein translation are non-coupled for life activities after sperm formation, and if the RNA profile of isolated spermatozoa is resolved, it will help men with epigenetic effects on their offspring and male infertility due to RNA disorders.However, the significance of RNA identity, quantity, and quality in sperm biology and their implications for male fertility are not well understood. ... Keywords: RNA-seq, Asthenospermia, Sperm ... Moreover, RNA clustering analysis and differential gene expression in previous studies frequently overlook critical aspects of spermatogenesis, embryonic reprogramming, and early embryo development. ... HRA006250  | Human sperm transcription sequence  | fq(R1,R2)  | Genome Sequence Archive (https://ngdc.cncb.ac.cn/gsa-human/s/Wao4S2Ll) [15]
+--------------------------------------------------------------------------------
+Transcriptome sequencing reveals significant RNA variation in human sperm samples. (https://pubmed.ncbi.nlm.nih.gov/40652216/)
+citeturn15search7 [wordlim: 200] Published: 1.2 years ago; Crawled: last month; # Transcriptome sequencing reveals significant RNA variation in human sperm samples. ... DNA transcription and protein translation are non-coupled for life activities after sperm formation, and if the RNA profile of isolated spermatozoa is resolved, it will help men with epigenetic effects on their offspring and male infertility due to RNA disorders.However, the significance of RNA identity, quantity, and quality in sperm biology and their implications for male fertility are not well understood. ...   * Gene Expression Profiling ...   * RNA-seq ...   * Genome Biol.
+--------------------------------------------------------------------------------
+Approaches for sRNA Analysis of Human RNA-Seq Data: Comparison, Benchmarking - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9959513/)
+citeturn15search8 [wordlim: 200] Published: 3.6 years ago; Crawled: last month; https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi? ... A total of 108 RNA sequencing samples from Delker et al., dataset [60] (referred to as “Delker”) from RNAlater preserved clinical biopsies (16 sessile serrated adenomas/polyps, 14 hyperlastic polyps, 14 adenomatous polyps, 34 uninvolved colon and 30 control colon samples) were used for small RNA seq data analysis benchmarking, and 2 contrasts (16 sessile serrated adenomoas/polyps vs. 14 hyperlastic polyps (”Delker-P“) and 15 right vs. 15 left control colon (”Delker-C“) samples) were used in DE analysis. ... A total of 87 human sperm samples with high and low rates of good-quality embryos were analyzed in Hua et al., study [62] (referred to as “Hua“).
+--------------------------------------------------------------------------------
+What human sperm RNA-Seq tells us about the microbiome. (https://pubmed.ncbi.nlm.nih.gov/31902104/)
+citeturn15search9 [wordlim: 200] Published: 6.7 years ago; Crawled: last month; # What human sperm RNA-Seq tells us about the microbiome. ...   * CReATe Fertility Centre Research Program, Toronto, Canada. ... Microbial composition was determined by aligning sequencing reads not mapped to the human genome to the NCBI RefSeq bacterial, viral and archaeal genomes following RNA-Seq.
+--------------------------------------------------------------------------------
+Absence of Sperm Rna Elements Correlates With Idopathic Male Infertility - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC4721635/)
+citeturn15search10 [wordlim: 200] Published: 11.2 years ago; Crawled: last month; However, the absence of these same sperm RNA elements does not appear to be critical when assisted reproductive technologies (ART) such as In Vitro Fertilization (IVF) with or without Intracytoplasmic Sperm Injection (ICSI) are employed. ... Upon fertilization, the spermatozoon provides a complete, highly structured and epigenetically marked genome, that together with a defined compliment of RNAs and proteins, play a distinct role in early embryonic development(6, 7). ... Continued development of this sperm RNA-seq methodology is expected to reveal genomic variants from this data(27) that will better inform on the underlying origin of male infertility and possibly predict the future health of the child. ... Semen samples were collected after IRB approval and informed consent from a total of 96 patients from the CReATe Fertility Centre, Toronto, Canada (Site 1) and the Harvard School of Public Health, Boston, USA (Site 2), then processed and frozen at -80°C. ... The results corresponding to the 72 RNA-seq data sets are available at the GEO (NCBI) repository (GSE65683). ... Human reproduction.
+--------------------------------------------------------------------------------
+Whole transcriptome analysis to identify non-coding RNA regulators and hub genes in sperm of non-obstructive azoospermia by microarray, single-cell RNA sequencing, weighted gene co-expression network analysis, and mRNA-miRNA-lncRNA interaction analysis - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11165898/)
+citeturn15search11 [wordlim: 200] Published: 2.3 years ago; Crawled: last month; GSE145467  | 10  | 10  | Microarray (Agilent-014850 Whole Human Genome Microarray 4 × 44 K G4112F)GSE216907  | 8  | 6  | RNA-seq (Illumina HiSeq 2000) ... Semen samples were also taken from 24 patients with poor sperm motility, defined as fewer than 40% active sperms, 5% of which moved quickly in a linear progression, and 1 lymphocyte per high power field (40). ... The microarray data have been deposited in GEO (https://www.ncbi.nlm.nih.gov/geo) under the accession number GSE268452, and supplementary data during the current study are available on the Zenodo website, https://zenodo.org/records/10673208, respectively. ... All the gene expression data and clinical information used in this study have been approved by the local ethical committees Heidelberg (Ethics Committee of the Medical Faculty of Heidelberg University) and Amol University of Special Modern Technologies (Iran National Committee for Ethics in Biomedical Research: approved number: Ir.ausmt.rec.1402.05).
+--------------------------------------------------------------------------------
+Whole-genome sequencing of H3K4me3 and DNA methylation in human sperm reveals regions of overlap linked to fertility and development (https://lab-dumeaux.science/assets/pdfs/papers/refpop_cellReports.pdf)
+citeturn15search12 [wordlim: 200] Published: 5.2 years ago; Human sperm H3K4me3 ChIP-seq Human sperm WGBS | | This study (Chan et al., 2019) | | GEO: GSE156108 EGA: EGAS00001003617 --- | --- | --- | --- | --- Human sperm H3K4me3 ChIP-seq Human sperm MCC-seq | | This study This study | | GEO: GSE156108 GEO: GSE156108 Human sperm H3K4me3 ChIP-seq Human sperm H3K4me3 & H3K27me3 ChIP-seq | | This study (Hammoud et al., 2009) | | GEO: GSE156108 GEO: GSE15594 Human sperm H3K4me3 ChIP-seq hESCs H3K4me3 ChIP-seq | | This study (Grandy et al., 2015) | | GEO: GSE156108 GEO:GSE55502 Human sperm H3K4me3 ChIP-seq hESCs enhancers and super-enhancers (ChIP-STARR-seq) | | This study (Barakat et al., 2018) | | GEO: GSE156108 GEO: GSE99631 Human sperm H3K4me3 ChIP-seq DNA methylation reprogramming escapees (BS-Seq) | | This study (Tang et al., 2015) | | GEO: GSE156108 NCBI SRA: SRP057098 Human sperm H3K4me3 ChIP-seq Metastable epialleles (Bioinformatics analysis of published data) | | This study (Kessler et al., 2018) | | GEO: GSE156108 GEO: GSM1091961, GSM1091962, GSM1091963, GSM1091964, GSE49828, NCBI SRA: SRX388732, SRX175349, SRX263877, SRX388741, SRX388745, SRX109155, SRX263886, SRX263887, and SRX388747 Human sperm H3K4me3 ChIP-seq Spermatogenesis RNA-seq Database 1 | | This study (Jan et al., 2017) | | GEO: GSE156108 NCBI SRA: SRP069329 Human sperm H3K4me3 ChIP-seq Spermatogenesis RNA-seq Database 2 | | This study (Wang et al., 2018) | | GEO: GSE156108 GEO: GSE106487 Human sperm H3K4me3 ChIP-seq Embryo development scRNA-seq | | This study (Yan et al., 2013) | | GEO: GSE156108 GEO: GSE36552 Human sperm H3K4me3 ChIP-seq Human embryo H3K4me3/H3K27me3 ChIP-seq | | This study (Xia et al., 2019) | | GEO: GSE156108 GEO: GSE124718 Human sperm H3K4me3 ChIP-seq Human fetus H3K4me3/H3K27me3 ChIP-seq | | This study (Yan et al., 2016) | | GEO: GSE156108 GEO: GSE63634Software and algorithms
+--------------------------------------------------------------------------------
+Human sperm transcriptome: characterization, biological relevance, and biomarker functionality (https://ddd.uab.cat/pub/tesis/2020/hdl_10803_669365/ccv1de1.pdf)
+citeturn15search13 [wordlim: 200] Published: 6.1 years ago; In this study, we provide a deep characterization of the sperm transcriptome by RNA-seq technologies, focusing on data integration and functional description of both mRNAs and lncRNAs.For this purpose, 12 semen samples from fertile donors were collected and processed for RNA extraction.The obtained RNA samples were subjected to strict quality controls to verify the absence of RNA from non-sperm cells and DNA. cDNA libraries of poly(A) RNA molecules were constructed by means of the Universal Plus mRNAseq with NuQuant kit (NuGEN). ... The obtained reads were aligned by STAR algorithm to the human genome (GRCh38 alignment), and expression levels of mRNAs and lncRNAs were calculated with FeatureCounts.
+--------------------------------------------------------------------------------
+A transcriptomic insight into the human sperm microbiome through next-generation sequencing (https://www.tandfonline.com/doi/pdf/10.1080/19396368.2023.2183912)
+citeturn15search14 [wordlim: 200] Published: 3 months ago; the influence of the semen microbiome on male fertility ... Raw sperm RNA-seq data were selected from a previ- ... 2021) (NCBI BioProject accession number of the raw ... a cohort of 12 fertile normozoospermic donors with ... ization of viral and bacterial RNA cargo of human
+--------------------------------------------------------------------------------
+Epigenetic inheritance of diet-induced and sperm-borne mitochondrial RNAs (https://www.nature.com/articles/s41586-024-07472-3.pdf)
+citeturn15search15 [wordlim: 200] Published: 2.3 years ago; RNA isolation and sncRNA-seq libraries construction. ... Human sperm displays rapid responses to diet. ... ence genome and small RNA annotation databases were downloaded ... with the IVF and embryo culture experiments; J. ... Human spermatozoa sncRNA-seq and analysis: ... All of the raw sequencing data have been deposited at the NCBI Gene
+

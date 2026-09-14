@@ -1,0 +1,7 @@
+run_accession	sample_accession	library_strategy	library_source	library_selection	fastq_ftp
+SRR25179874	SAMN36344336	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/074/SRR25179874/SRR25179874_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/074/SRR25179874/SRR25179874_2.fastq.gz
+SRR25179875	SAMN36344337	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/075/SRR25179875/SRR25179875_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/075/SRR25179875/SRR25179875_2.fastq.gz
+SRR25179873	SAMN36344335	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/073/SRR25179873/SRR25179873_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/073/SRR25179873/SRR25179873_2.fastq.gz
+SRR25179876	SAMN36344338	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/076/SRR25179876/SRR25179876_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/076/SRR25179876/SRR25179876_2.fastq.gz
+SRR25179877	SAMN36344339	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/077/SRR25179877/SRR25179877_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/077/SRR25179877/SRR25179877_2.fastq.gz
+SRR25179878	SAMN36344340	RNA-Seq	TRANSCRIPTOMIC	cDNA	ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/078/SRR25179878/SRR25179878_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR251/078/SRR25179878/SRR25179878_2.fastq.gz

@@ -1,0 +1,368 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124282)
+citeturn19search0 [wordlim: 200] Published: 7.7 years ago; Crawled: last month; GSM3526877 Term placenta_rep1 (RNA-seq)
+Series GSE124282 Query DataSets for GSE124282
+Status Public on Dec 22, 2018
+Title Primary mid-trimester and term human cytotrophoblast, untreated [RNA-Seq]
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary We detected a genome-wide differential gene enrichment between mid-trimester and term human placenta. Pathway analysis identified that cytokine-cytokine receptor interaction, NF-κB, and TNF are the leading pathways enriched in term placenta. Our analysis has provided the first-time characterization of the key players of human placental origin with molecular changes across pregnancy, which could drive human labor.
+ 
+Overall design Total RNAs were extracted from 4 individual placentas at either mid-trimester or term pregnancy with use of Trizol method.
+ 
+Contributor(s) Wang B
+Citation(s) 30642670
+Submission date Dec 21, 2018
+Last update date Mar 20, 2019
+Contact name Bingbing Wang
+E-mail(s) wangbi@rwjms.rutgers.edu
+Organization name Rutgers RWJMS
+Street address 125 Paterson St Room 2143
+City New Brunswick
+State/province New Jersey
+ZIP/Postal code 08901
+Country USA
+ 
+Platforms (1)
+GPL17301 Ion Torrent PGM (Homo sapiens)
+Samples (8)Image: Less... Less...            Image: More... More...
+GSM3526873 Mid-trimester placenta_rep1 (RNA-seq)
+GSM3526874 Mid-trimester placenta_rep2 (RNA-seq)
+GSM3526875 Mid-trimester placenta_rep3 (RNA-seq)
+GSM3526876 Mid-trimester placenta_rep4 (RNA-seq)
+GSM3526877 Term placenta_rep1 (RNA-seq)
+GSM3526878 Term placenta_rep2 (RNA-seq)
+GSM3526879 Term placenta_rep3 (RNA-seq)
+GSM3526880 Term placenta_rep4 (RNA-seq)
+Relations
+BioProject PRJNA511458
+SRA SRP174220
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE124282_Processed_Data_FPKM.txt.gz 724.2 Kb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+Announcing the 25Q2 Release - Announcements - DepMap Community Forum (https://forum.depmap.org/t/announcing-the-25q2-release/4257)
+citeturn19search1 [wordlim: 200] Published: 1.3 years ago; Crawled: 1.2 years ago; ### 25Q2 Public DepMap Release Notes
+
+# Announcing the 25Q2 Release
+
+Announcements
+
+Samantha_Stokes June 5, 2025, 5:10pm 1
+
+### 25Q2 Public DepMap Release Notes
+
+In this release, we have added new CRISPR and Omics data, more WGS data for lines that previously had WES and important updates to our Omics and CRISPR pipelines.
+
+Please read the release note below for more information.
+
+### MODEL ANNOTATIONS
+
+  * We’ve added new metadata columns:
+    * New Columns
+      * Model.csv
+        * ModelIDAlias (Freetext): Previously known Model IDs (ACH-XXXXXX) used to reference the model, in cases when models are merged due to possible fingerprint swaps, duplication, etc.
+        * PediatricModelType (Boolean): Indicates if this model represents a pediatric cancer subtype based on molecular features rather than age alone.
+      * Modified Columns
+        * ModelAvailableInDbgap (Controlled Vocab): terms have been updated to reflect the appropriate level of access across databases where sequencing data may be available.
+
+### NEW DEPMAP DATA
+--------------------------------------------------------------------------------
+Integrative multiplatform molecular profiling of benign prostatic hyperplasia identifies distinct subtypes | Nature Communications (https://www.nature.com/articles/s41467-020-15913-6)
+citeturn19search2 [wordlim: 200] Published: 6.4 years ago; Crawled: last week; acc=GSE124187), RNA-seq data has been deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+## Data availability
+
+The SNP array data has been deposited in GEO under the accession GSE124187 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124187), RNA-seq data has been deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132714), and ERRBS data has been deposited in GEO under the accession GSE123111 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123111).
+
+## References
+
+  1. Bushman, W. Etiology, epidemiology, and natural history of benign prostatic hyperplasia. Urol. Clin. North Am. 36, 403–415 (2009).
+
+  2. Vuichoud, C. & Loughlin, K. R. Benign prostatic hyperplasia: epidemiology, economics and evaluation. Can. J. Urol. 22(Suppl 1), 1–6 (2015).
+
+  3. Chughtai, B. et al. Benign prostatic hyperplasia. Nat. Rev. Dis. Prim. 2, 16031 (2016).
+--------------------------------------------------------------------------------
+Chromatin architecture and physical constriction cooperate in phenotype switching and cancer cell dissemination | bioRxiv (https://www.biorxiv.org/content/10.64898/2026.02.05.702638v1.full)
+citeturn19search3 [wordlim: 200] Published: 7 months ago; Crawled: 2 months ago; DepMap Public 25Q2^{96} data was downloaded from the official website (https://depmap.org/portal). scRNAseq expression values from melanoma states in human^{85} were generated using a Seurat object retrieved from a public drive of the Marine Lab (https://rdr.kuleuven.be/dataset.xhtml?
+### Data mining public datasets
+
+TCGA SKCM transcriptomic data were downloaded from cBioPortal^{95}, while SKCM HumanMethylation450 array data were obtained through Bioconductor package TCGAbiolinks. SKCM patients were classified as Melanocytic, Transitory, Neural-Crest and Undifferentiated based on a previous study^{51}. Analysis was conducted using R (4.4.1).
+
+DepMap Public 25Q2^{96} data was downloaded from the official website (https://depmap.org/portal). scRNAseq expression values from melanoma states in human^{85} were generated using a Seurat object retrieved from a public drive of the Marine Lab (https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi%3A10.48804/GSAXBN). ATACseq generated in TCGA tumors was retrieved from XenaBrowser^{97}.
+
+H3K27ac Hi-ChIP ValidPairs derived from TCGA tumors^{98} were downloaded from the NCI repository (https://gdc.cancer.gov/about-data/publications/TCGA-HiChIP-2024).
+
+### Data and Code Availability
+
+Supplementary data, raw data and the code to process the data generated in this work will be available in Gene Expression Omnibus and in a dedicated Github link after peer reviewed publication.
+
+--------------------------------------------------------------------------------
+Preliminary RNA-Seq Analysis of Long Non-Coding RNAs Expressed in Human Term Placenta. (https://pubmed.ncbi.nlm.nih.gov/29954144/)
+citeturn19search4 [wordlim: 200] Published: 8.2 years ago; Crawled: last month; RNA-Seq data were used to profile, quantify, and classify lncRNAs in human term placenta.
+## Languages
+
+  * eng
+
+## Publication types
+
+  * Journal Article
+
+## Abstract
+
+Development of particular structures and proper functioning of the placenta are under the influence of sophisticated pathways, controlled by the expression of substantial genes that are additionally regulated by long non-coding RNAs (lncRNAs). To date, the expression profile of lncRNA in human term placenta has not been fully established. This study was conducted to characterize the lncRNA expression profile in human term placenta and to verify whether there are differences in the transcriptomic profile between the sex of the fetus and pregnancy multiplicity. RNA-Seq data were used to profile, quantify, and classify lncRNAs in human term placenta. The applied methodology enabled detection of the expression of 4463 isoforms from 2899 annotated lncRNA loci, plus 990 putative lncRNA transcripts from 607 intergenic regions. Those placentally expressed lncRNAs displayed features such as shorter transcript length, longer exon length, fewer exons, and lower expression levels compared to messenger RNAs (mRNAs). Among all placental transcripts, 175,268 were classified as mRNAs and 15,819 as lncRNAs, and 56,727 variants were discovered within unannotated regions. Five differentially expressed lncRNAs (HAND2-AS1, XIST, RP1-97J1.2, AC010084.1, TTTY15) were identified by a sex-bias comparison. Splicing events were detected within 37 genes and 4 lncRNA loci. Functional analysis of cis-related potential targets for lncRNAs identified 2021 enriched genes. It is presumed that the obtained data will expand the current knowledge of lncRNAs in placenta and human non-coding catalogs, making them more contemporary and specific.
+
+## MeSH terms
+
+  * Computational Biology
+  * Exons / genetics
+  * Female
+  * Humans
+  * Placenta / metabolism
+  * Pregnancy
+  * RNA, Long Noncoding / genetics
+  * RNA, Messenger / genetics
+  * Sequence Analysis, RNA
+
+## Keywords
+
+  * high-throughput RNA sequencing (RNA-Seq)
+  * human
+  * long non-coding RNA (lncRNA)
+  * placenta
+  * pregnancy
+  * transcriptome
+
+## Substances
+
+  * RNA, Long Noncoding
+  * RNA, Messenger
+
+## Conflict of interest
+
+The authors declare no conflict of interest.
+
+## References
+
+  * Cell. 2013 Jul 3;154(1):26-46; PMID: 23827673
+--------------------------------------------------------------------------------
+Integrating single-cell and bulk transcriptomic analyses to explore key lactylation-related genes in benign prostatic hyperplasia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC13434622/)
+citeturn19search5 [wordlim: 200] Published: 3 months ago; Crawled: last week; The gene expression data for benign prostatic hyperplasia (BPH) were obtained from the Gene Expression Omnibus (GEO) database (https://www.ncbi.nlm.nih.gov/geo/), including datasets GSE132714, GSE65343, GSE104749, GSE119195, GSE7307, and GSE30994, comprising a total of 47 BPH samples and 16 healthy control samples.
+## Methods
+
+### Data sources
+
+The gene expression data for benign prostatic hyperplasia (BPH) were obtained from the Gene Expression Omnibus (GEO) database (https://www.ncbi.nlm.nih.gov/geo/), including datasets GSE132714, GSE65343, GSE104749, GSE119195, GSE7307, and GSE30994, comprising a total of 47 BPH samples and 16 healthy control samples. To identify diagnostic biomarkers and evaluate their predictive performance for BPH onset, GSE65343, GSE104749, GSE119195, GSE7307, and GSE30994 were merged into a meta-cohort termed MetaGSE, serving as the training set, which included 29 BPH samples and 12 normal controls. The dataset GSE132714, containing 18 BPH samples and 4 normal controls, was used as an external validation set. In addition, the scRNA-seq data for BPH were obtained from GSE172357, which included 5 BPH samples and 3 healthy control samples. The raw data were processed using the R package “limma”, with normalization performed via the normalizeBetweenArrays function, and log₂ transformation applied when not previously conducted. To eliminate batch effects among datasets, the ComBat function from the R package “sva” was employed, ensuring the homogeneity of the merged MetaGSE dataset. Gene lists were curated based on the intersection of unique genes across datasets, and the expression matrices were standardized for subsequent analyses. The lactylation-related gene set comprised 327 genes previously reported to be associated with the lactylation process^{13}. The detailed gene list is provided in Supplementary Table S1.
+
+### Single-cell analysis
+--------------------------------------------------------------------------------
+ARTICLE
+https://doi.org/10.1038/s41467-020-15913-6 (https://iris.unitn.it/retrieve/handle/11572/280258/381415/s41467-020-15913-6.pdf)
+citeturn19search12 [wordlim: 200] Published: 9 months ago; deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/ ... acc=GSE132714), and ERRBS data has been deposited in GEO under theaccession GSE123111 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi? ... Genomic DNA was isolated ... BPH gene expression proﬁle associated to prostate gland ... Cancer Genome Atlas Research N.
+ARTICLE
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-020-15913-6
+Data availability
+The SNP array data has been deposited in GEO under the accession GSE124187 (https://
+www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124187), RNA-seq data has been
+deposited in GEO under the accession GSE132714 (https://www.ncbi.nlm.nih.gov/geo/
+query/acc.cgi?acc=GSE132714), and ERRBS data has been deposited in GEO under the
+accession GSE123111 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+acc=GSE123111).
+Received: 18 January 2019; Accepted: 23 March 2020;
+and hierarchical clustering were performed via using correlation distance and
+Ward’s method. GSEA31 v3.0 was performed using JAVA program and run in pre-
+ranked mode to identify enriched signatures. The GSEA plot, normalized enrich-
+ment score and q-values were derived from GSEA output for hallmark signature,
+and the metabolism related signatures were derived from MSigDB65 v6.2 database.
+Differential expression analysis was performed using the Wilcoxon signed-rank
+and F-statistic test after transforming the RPKMs via log2(RPKM + 1). Multiple-
+hypothesis testing was considered by using Benjamini-Hochberg (BH; FDR) cor-
+rection. The immune score and stromal score were calculated from gene expression
+of BPH samples via ESTIMATE66 v2.0.0. The ImmuneSum was deﬁned as the sum
+of normalized z-scores from gene expression of immune markers including
+PDCD1, PDCD1LG2, CD274, CD8A and CD8B. The comparison of molecular and
+clinical features between two subgroups was performed using Fisher’s exact test
+and Wilcoxon signed-rank test. The compounds for each subgroup were identiﬁed
+by using Connectivity Map (CMAP)39 with the top most overexpressed and
+underexpressed genes as the input, and CMAP score >90 were used to select the
+nominated compounds.
+DNA methylation processing and analysis pipeline. Genomic DNA was isolated
+from BPH and control samples, and submitted to the Epigenomics Core of Weill
+Cornell Medicine under standard protocol and pipeline. The Epigenomics Core
+--------------------------------------------------------------------------------
+dbGaP Study (https://ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001886.v3.p1)
+citeturn19search6 [wordlim: 200] Crawled: last month; In addition, we have performed scRNA-seq of the human placenta in the second trimester to investigate the expression of the canonical receptors for SARS-CoV-2 in both second and third (first study including term and preterm placentas) trimesters. ...     * Case-Control ... In version 2: For the scRNA-seq and snRNA-seq study of the placenta, in which we explored the expression of the canonical receptors for SARS-CoV-2, samples were collected from women who delivered in the second and third trimester.
+To fill this knowledge gap, we used scRNA-seq to profile the placental villous tree, basal plate, and chorioamniotic membranes of women across a range of pregnancy physiologic and pathologic conditions, including the processes of labor (term labor and preterm labor). In addition, we have performed scRNA-seq of the human placenta in the second trimester to investigate the expression of the canonical receptors for SARS-CoV-2 in both second and third (first study including term and preterm placentas) trimesters. Furthermore, we performed single-nuclear RNA-seq (snRNA-seq) in several cases from third trimester-derived placentas to better observe the expression of the canonical receptors for SARS-CoV-2 in the syncytiotrophoblast cells. In this new version of the study, we performed scRNA-seq of placentas from women with SARS-CoV-2 infection and healthy controls with the aim of characterizing the immunological responses triggered by this coronavirus in the maternal-fetal interface.
+
+  * Study Weblinks:
+    * Perinatology Research Branch (NICHD/NIH)
+  * Study Design:
+    * Case-Control
+  * Study Type:
+    * Case-Control
+    * Single Cell Analysis
+    * Tissue Expression
+  * dbGaP estimated ancestry using GRAF-pop
+  * Total number of consented subjects: 62
+  * Subject Sample Telemetry Report (SSTR)
+
+Study Inclusion/Exclusion Criteria
+    
+
+In version 1: For the scRNA-seq study of the placenta, in which we explored the physiologic (term labor) and pathologic (preterm labor) processes of parturition, labor was defined by the presence of regular uterine contractions at a frequency of at least two contractions every 10 min with cervical changes resulting in delivery. Women with preterm labor delivered between 33-35 weeks of gestation whereas those with term labor delivered between 38-40 weeks of gestation.
+
+In version 2: For the scRNA-seq and snRNA-seq study of the placenta, in which we explored the expression of the canonical receptors for SARS-CoV-2, samples were collected from women who delivered in the second and third trimester. No stringent exclusion criteria were utilized since this was an exploratory study.
+
+In version 3: For the scRNA-seq study of the placenta, in which we explored the immune responses triggered by SARS-CoV-2 infection, samples were collected from women who tested positive for SARS-CoV-2 (most of them were asymptomatic) and gestational age-matched controls. All women delivered a term neonate. Only singleton pregnancies were included.
+
+The collection and use of human materials for research purposes were approved by the Institutional Review Board of the Wayne State University School of Medicine. All participating women provided written informed consent prior to sample collection.
+
+Study History
+    
+
+Version 1 focused on using scRNA-seq to profile the placental villous tree, basal plate, and chorioamniotic membranes of women across a range of pregnancy conditions with a focus on labor both at term and preterm.
+
+Version 2 focused on the expression of the canonical receptors for SARS-CoV-2 in scRNA-seq data. We have performed scRNA-seq of the human placenta in the second trimester to investigate the expression of the canonical receptors for SARS-CoV-2 in both second and third (first study including term and preterm placentas) trimesters. Furthermore, we performed single-nuclear RNA-seq (snRNA-seq) in several cases from third trimester-derived placentas to better observe the expression of the canonical receptors for SARS-CoV-2 in the syncytiotrophoblast cells.
+
+Version 3 focused on investigating the local immune responses in the placental tissues (including the chorioamniotic membranes) triggered by SARS-CoV-2 infection during pregnancy. We performed scRNAseq analysis of the placenta of women who tested positive for SARS-CoV-2 during pregnancy and delivered a term neonate. Most of the women were asymptomatic. Controls included women who delivered a term neonate but SARS-CoV-2 infection was negative as evidenced by undetectable IgG and IgM levels in the systemic circulation.
+
+Selected Publications
+    
+
+Diseases/Traits Related to Study (MeSH terms)
+    
+
+  * Primary Phenotype: COVID-19
+  * SARS-CoV-2
+  * Pregnancy Complications, Infectious
+
+  * Principal Investigators
+    * Roger Pique-Regi. Wayne State University, Detroit, MI, USA.
+    * Nardhy Gomez-Lopez. Wayne State University, Detroit, MI, USA.
+    * Roberto Romero. Perinatology Research Branch, Eunice Kennedy Shriver National Institute of Child Health and Human Development, National Institutes of Health, Bethesda, MD, USA; Wayne State University, Detroit, MI, USA.
+  * Co-Investigators
+    * Sonia Hassan. Wayne State University, Detroit, MI, USA.
+    * Chaur-Dong Hsu. Wayne State University, Detroit, MI, USA.
+    * Adi Tarca. Wayne State University, Detroit, MI, USA.
+    * Francesca Luca. Wayne State University, Detroit, MI, USA.
+  * Funding Sources
+    * HHSN275201300006C. Eunice Kennedy Shriver National Institute of Child Health and Human Development, National Institutes of Health, Bethesda, MD, USA.
+    * Perinatal Research Initiative. Wayne State University, Detroit, MI, USA.--------------------------------------------------------------------------------
+Transcriptomic comparison of in vitro models of the human placenta - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11195179/)
+citeturn19search7 [wordlim: 200] Published: 2.2 years ago; Crawled: last month; We performed differential gene expression analysis on publicly available RNA sequencing data from 6 common in vitro models of the human placenta (HTR-8/SVneo, BeWo, JEG-3, JAR, Primary Trophoblasts, and Villous Explants) and compared to CANDLE and GAPPS bulk placental tissue or cytotrophoblast, syncytiotrophoblast, and extravillous trophoblast cell types derived from bulk placental tissue. ... Data that were not available as unfiltered counts on GEO were downloaded from the NCBI Sequence Read Archive (SRA) using sratools. ... Control treated RNA sequencing data of in vitro placental models including Villous Explants, Primary Trophoblasts, JAR cells, JEG-3 cells, BeWo cells, and HTR-8/SVneo cells were downloaded from SRA or GEO. ... To correct for samples originating from different labs and sequencing platforms, we used the “remove unwanted variation using residuals” (RUVr) function from the RUVSeq R package [32] to account for unknown confounding and batch effects.
+Tissue samples were placed in RNAlater within 30 minutes of delivery and stored at −80°C. Tissue collected as part of both studies were manually dissected and cleared of maternal decidua. Use of these samples for this study was approved by the University of Washington Institutional Review Board (IRB). Research activities related to the CANDLE study were approved by the University of Tennessee Health Sciences Center IRB while research activities related to the GAPPS samples was approved by the IRB of the Seattle Children’s Research Institute. ECHO PATHWAYs generated RNA sequencing data on 794 samples from CANDLE and 289 samples from GAPPS, as previously described [22] (Supplemental Figure 1).
+
+### Download of Publicly Available Data
+
+Publicly available RNA sequencing data of select in vitro models of the human placenta were identified through a search of cell model names on GEO. Data were downloaded from GEO using the GEOquery R package, confirmed to contain unfiltered count data, and then filtered to include only control samples [25]. Treatments of control samples included non-targeting knockdowns (i.e. siRNA, shRNA), vehicle controls (i.e. DMSO), and untreated samples. Data that were not available as unfiltered counts on GEO were downloaded from the NCBI Sequence Read Archive (SRA) using sratools. Transcript abundances were estimated from the downloaded SRA fastq files using the pseudo-alignment program kallisto, with bias correction using genome alignment GRCh38 [26]. Transcripts were then condensed to Ensembl Gene IDs using tximport producing count data [27]. A summary of the datasets used in this analysis is available with GEO accession numbers and citations in Table 1 and is summarized in Supplemental Figure 1.
+
+#### Table 1:
+
+Control treated RNA sequencing data of in vitro placental models including Villous Explants, Primary Trophoblasts, JAR cells, JEG-3 cells, BeWo cells, and HTR-8/SVneo cells were downloaded from SRA or GEO. Placental tissue data was acquired from the CANDLE and GAPPS cohorts and are available on dbGaP (CANDLE (N=794): phs003619.v1.p1, GAPPS (N=298): phs003620.v1.p1).
+--------------------------------------------------------------------------------
+ARTICLE IN PRESS (https://www.nature.com/articles/s41419-026-08867-y_reference.pdf)
+citeturn19search13 [wordlim: 200] Published: 3 months ago; Raw gene expression datasets, including GSE119195 and GSE132714, were obtained from theGene Expression Omnibus (GEO) database (http://www.ncbi.nlm.nih.gov/geo/).
+ARTICLE IN PRESS
+ 
+and the collection of patient clinical information were approved by the Medical Ethics Committee 
+of Zhongnan Hospital, Wuhan University, and written consent was obtained from the patients or 
+their legal guardians or immediate family members. The study also conformed to the guidelines 
+approved by the Ethics Committee of Zhongnan Hospital, Wuhan University (No. 2021038). 
+Bulk RNA‐Seq and Single‐Cell Transcriptome Analysis 
+Raw gene expression datasets, including GSE119195 and GSE132714, were obtained from the 
+Gene Expression Omnibus (GEO) database (http://www.ncbi.nlm.nih.gov/geo/). Specifically, the 
+GSE119195 dataset includes prostate tissue samples from 5 patients with BPH and 3 individuals 
+with normal prostate tissues(69). The GSE132714 dataset comprises tissues from 18 BPH patients 
+and 4 histologically confirmed normal controls. Data processing and analysis were performed 
+using R software (version 4.4.3) along with relevant bioinformatics packages(70). The expression 
+matrices from GSE119195 and GSE132714 were normalized and subsequently merged into a 
+--------------------------------------------------------------------------------
+https://doi.org/10.1038/s41598-026-54516-x (https://www.nature.com/articles/s41598-026-54516-x_reference.pdf)
+citeturn19search14 [wordlim: 200] Published: 3 months ago; (https://www.ncbi.nlm.nih.gov/geo/), ... The dataset GSE132714, containing 18 BPH samples and 4 normal controls,
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESS
+patterns, regulatory roles, and contributions of related genes to cellular heterogeneity 
+in different BPH cell types remain poorly characterized at the single-cell level. 
+Therefore, elucidating the functions of lactylation-related genes in BPH may provide 
+critical insights into disease mechanisms, facilitate the discovery of cell type-specific 
+biomarkers, and inspire the development of novel therapeutic strategies.
+Methods
+Data Sources
+The gene expression data for benign prostatic hyperplasia (BPH) were obtained 
+from 
+the 
+Gene 
+Expression 
+Omnibus 
+(GEO) 
+database 
+(https://www.ncbi.nlm.nih.gov/geo/), 
+including 
+datasets 
+GSE132714, 
+GSE65343, 
+GSE104749, GSE119195, GSE7307, and GSE30994, comprising a total of 47 BPH 
+samples and 16 healthy control samples. To identify diagnostic biomarkers and 
+evaluate their predictive performance for BPH onset, GSE65343, GSE104749, 
+GSE119195, GSE7307, and GSE30994 were merged into a meta-cohort termed 
+MetaGSE, serving as the training set, which included 29 BPH samples and 12 normal 
+controls. The dataset GSE132714, containing 18 BPH samples and 4 normal controls, 
+was used as an external validation set. In addition, the scRNA-seq data for BPH were 
+obtained from GSE172357, which included 5 BPH samples and 3 healthy control 
+ARTICLE IN PRESS
+samples. The raw data were processed using the R package “limma”, with 
+normalization 
+performed 
+via 
+the 
+normalizeBetweenArrays 
+function, 
+and 
+log₂ 
+transformation applied when not previously conducted. To eliminate batch effects 
+among datasets, the ComBat function from the R package “sva” was employed, 
+ensuring the homogeneity of the merged MetaGSE dataset. Gene lists were curated 
+based on the intersection of unique genes across datasets, and the expression matrices 
+were standardized for subsequent analyses. The lactylation-related gene set comprised 
+327 genes previously reported to be associated with the lactylation process (13). The--------------------------------------------------------------------------------
+Aberrant splicing in human cancer shows possible functional impact on transcription factors | Oncogene (https://www.nature.com/articles/s41388-026-03876-9)
+citeturn19search8 [wordlim: 200] Published: 2 months ago; Crawled: last week; DepMap Public 25Q2. ... We found 680 TFs covered by PTSEs across 12 cancer types that had cancer dependency data for at least one cancer cell line (Fig.
+### PTSEs include TFs showing cancer dependencies
+
+Loss-of-function screens in cancer cell lines, e.g., using Clustered Regularly Interspaced Short Palindromic Repeats (CRISPR) [42], have identified genes essential for cancer cell line survival. Because many TFs have been associated with the sustained cancer cell state [12], we evaluated the extent to which the TFs within PTSEs show cancer dependency, using the CRISPR-Cas9 screening data from The Cancer Dependency Map (DepMap, Broad (2025). DepMap Public 25Q2. Dataset. depmap.org) [20] (“Dependency profiles of TFs associated with PTSEs”). Given a gene and a cancer cell line, DepMap provides gene perturbation effects based on the Chronos score. A Chronos score of 0 or above indicates that the gene is not essential for cancer cell proliferation, while a Chronos score below 0 indicates the gene is essential for cancer cell line proliferation, with the more negative value indicating more essentiality.
+
+We found 680 TFs covered by PTSEs across 12 cancer types that had cancer dependency data for at least one cancer cell line (Fig. --------------------------------------------------------------------------------
+HIFα isoform specific activities drive cell-type specificity of VHL-associated oncogenesis (https://ora.ox.ac.uk/objects/uuid%3A155c23f6-fccc-470b-b83e-a4f6777aead7/files/r2b88qf072)
+citeturn19search15 [wordlim: 200] Published: 11 months ago; DepMap Public 25Q2. ... 6084/m9.ﬁgshare.14461980.v2] (2021).
+46. Haigis, K. M., Cichowski, K. & Elledge, S. J. Tissue-speciﬁcity in
+cancer: The rule, not the exception. Science 363, 1150–1151 (2019).
+47. Gerlinger, M. et al. Genomic architecture and evolution of clear cell
+renal cell carcinomas deﬁned by multiregion sequencing. Nat.
+Genet 46, 225–233 (2014).
+48. Cancer Genome Atlas Research Network Comprehensive mole-
+cular characterization of clear cell renal cell carcinoma. Nature
+499, 43–49 (2013).
+49. DepMap, Broad. DepMap Public 25Q2. Dataset [https://doi.org/10.
+6084/m9.ﬁgshare.14461980.v2] (2021).
+50. Tsherniak, A. et al. Deﬁning a cancer dependency map. Cell 170,
+564–576 e516 (2017).
+Nature Communications|   (2025) 16:9185 
+17--------------------------------------------------------------------------------
+Fibroblasts promote the progression of benign prostatic hyperplasia through colony-stimulating factor 1 receptor-mediated RTK signaling in prostatic epithelial cells - PubMed (https://pubmed.ncbi.nlm.nih.gov/41313502/)
+citeturn19search9 [wordlim: 200] Published: 9 months ago; Crawled: 3 weeks ago; Activation of RTK signaling in prostatic epithelial cells from BPH tissues. a–c GO and Reactome pathway enrichment analysis of DEGs in prostatic tissues from the GEO datasets GSE119195 (a) and GSE132714 (b), and from our previously published transcriptomic dataset (c) revealed significant enrichment of RTK-related pathways in BPH compared with normal prostate tissues. d GSEA of the three datasets demonstrated consistent activation of RTK signaling in BPH samples.
+--------------------------------------------------------------------------------
+RNA sequencing and integrative analysis reveal pathways and hub genes associated with TGFβ1 stimulation on prostatic stromal cells - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9412917/)
+citeturn19search10 [wordlim: 200] Published: 4.1 years ago; Crawled: last month; We examined the TGFβ1 expression level in BPH and normal prostate (NP) by analyzing the GSE132714 data set as well as carrying out immunohistochemistry of 15 BPH and 15 NP samples.
+--------------------------------------------------------------------------------
+depmap — Heureka Skills (https://heurekaskills.com/depmap/)
+citeturn19search11 [wordlim: 200] Crawled: yesterday;         find_release("25Q2") ...     `DepMap 24Q4 Public | 10.25452/figshare.plus.27993248.v1 | CC BY 4.0
+--------------------------------------------------------------------------------
+ARTICLE IN PRESS (https://www.nature.com/articles/s41419-026-08959-9_reference.pdf)
+citeturn19search16 [wordlim: 200] Published: 3 months ago; Pan-cancer genomic dependency data were sourced from the DepMap portal (DepMap Public 25Q2
+--------------------------------------------------------------------------------
+Published via Lake Erie College of (https://assets.cureus.com/uploads/review_article/pdf/382173/20251024-256797-cdhuxb.pdf)
+citeturn19search17 [wordlim: 200] Published: 10 months ago; 2Data obtained from DepMap Portal Dataset DepMap Public 25Q2.
+

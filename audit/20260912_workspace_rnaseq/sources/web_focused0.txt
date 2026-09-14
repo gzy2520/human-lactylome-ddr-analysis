@@ -1,0 +1,335 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8587311)
+citeturn13search0 [wordlim: 200] Published: 1.9 years ago; Crawled: last month; treatment: Untreat control ... RNA-seq library preparation and sequencing on an Illumina platform were finished by BMK Inc (Beijing, China). ... GSE280100 RNA-sequencing analysis of differential expressed genes in TGFβ-treated HK-2 cells after HDAC11 inhibition
+Sample GSM8587311 Query DataSets for GSM8587311
+Status Public on Nov 01, 2025
+Title HK-2 cells, mock, 0h, rep2
+Sample type SRA
+ 
+Source name HK-2 cells
+Organism Homo sapiens
+Characteristics cell line: HK-2 cells
+cell type: Epithelial cells
+genotype: WT
+treatment: Untreat control
+Treatment protocol HK-2 cells treated with 2 ug/ml TGFβ with the presence of HDAC11 inhibitor FT895 or vehicle (DMSO) for 1 h or 12 h. Equal volume of PBS treated cells were serve as mock control.
+Growth protocol HK-2 cells were cultured in DMEM/F12 containing 10% fetal bovine serum and 1% penicillin and streptomycin.
+Extracted molecule polyA RNA
+Extraction protocol Total RNA from 1 × 10^7 cells was isolated by Trizol extraction with DNase I treatment for each sample.
+RNA-seq library preparation and sequencing on an Illumina platform were finished by BMK Inc (Beijing, China).
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2000
+ 
+Description Mock2
+Data processing Based on the sequencing by synthesis (SBS) technology, the Illumina high-throughput sequencing platform sequences the cDNA library.
+Remove low-quality reads (including removing reads with an N ratio > 10%; removing reads with a quality value Q≤10 and a base number that accounts for more than 50% of the entire read)
+Sequence reads were mapped to reference genome GRCh38 using HISAT2 software.
+The StringTie algorithm normalizes the number of mapped reads and transcript length in the sample. FPKM (Fragments Per Kilobase of transcript per Million fragments mapped) is used as an indicator to measure the expression level of transcripts or genes.
+Assembly: StringTie to assemble and quantify the reads on the alignment.
+Supplementary files format and content: Excel file include RPKM values for each sample.
+ 
+Submission date Oct 22, 2024
+Last update date Nov 01, 2025
+Contact name Han Wu
+E-mail(s) wuhan@szu.edu.cn
+Phone +086 755 26910334
+Organization name Shenzhen University
+Street address Liuxian Road 1066
+City Shenzhen
+ZIP/Postal code +86 518055
+Country China
+ 
+Platform ID GPL11154
+Series (1)
+GSE280100 RNA-sequencing analysis of differential expressed genes in TGFβ-treated HK-2 cells after HDAC11 inhibition
+Relations
+BioSample SAMN44385279
+SRA SRX26459868
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5776158)
+citeturn13search1 [wordlim: 200] Published: 4.7 years ago; Crawled: last month; Extraction protocol RNAex Pro Reagent (AG, hunan, China) was used to extract total RNA from HK-2 cells according to the instructions provided by the manufacturer. ... Quality control of RNA-seq raw paired data was performed using FastQC and MultiQC ... RNA-seq reads were mapped to Homo sapiens genome Ensembl GRCh38 using Hisat2 (version 2.1.0) with default codes
+Status Public on Jan 10, 2022
+Title shCtrl-AGEs group 2
+Sample type SRA
+ 
+Source name Renal tubular epithelial cells
+Organism Homo sapiens
+Characteristics cell line: HK-2
+shRNA: shCtrl-AGE
+Treatment protocol The confluent cells were cultured in 400ug/ml AGEs for 72 h
+Growth protocol HK-2 cells from an immortalized human proximal tubular epithelial cell line were obtained from the ATCC, which was grown in the MEM and supplemented with 10% fetal bovine serum (FBS; Invitrogen, Carlsbad, Calif., USA). The cells were placed in a CO2 incubator at 37 °C and will be taken for the subsequent experimental logarithmic phase.
+Extracted molecule polyA RNA
+Extraction protocol RNAex Pro Reagent (AG, hunan, China) was used to extract total RNA from HK-2 cells according to the instructions provided by the manufacturer. A total amount of 2 μg isolated RNA per sample was used for DNA library preparation.
+Use NEBNext® UltraTM RNA Library Preparation Kit for Illumina® to generate a sequencing library (Neb, Ipswich, Massachusetts, USA) in accordance with the manufacturer's instructions.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2000
+ 
+Data processing NEBNext® UltraTM RNA Library Preparation Kit for Illumina® to generate a sequencing library
+The libraries were pooled in equimolar amounts and sequenced using a 2×132 bp chemical method
+Quality control of RNA-seq raw paired data was performed using FastQC and MultiQC
+Trim Galore was used to trim adapters, reads with low quality (<50) and short length (<75 bp)
+RNA-seq reads were mapped to Homo sapiens genome Ensembl GRCh38 using Hisat2 (version 2.1.0) with default codes
+The read counts of each gene were summarized using featureCounts . Raw read counts were imported into R studio and analyzed by using R package of DESeq2
+Genes with foldchange > 2 and false discovery rate (FDR) p-value < 0.05 adjusted by using ClusterProfile method were considered as differentially expressed genes (DEGs).
+Supplementary_files_format_and_content: count
+ 
+Submission date Jan 07, 2022
+Last update date Jan 11, 2022
+Contact name Ming WANG
+E-mail(s) wming@smu.edu.com
+Organization name School of Traditional Chinese Medicine, Southern Medical University
+Street address 1838 Guangzhou Avenue North, Baiyun District
+City guangzhou
+State/province Guangdong
+ZIP/Postal code 510515
+Country China
+ 
+Platform ID GPL11154
+Series (1)
+GSE193192 Next generation sequencing contributes to the quantitative analysis of AGEs stimulated HK-2 cell transcriptome
+Relations
+BioSample SAMN24718607
+SRA SRX13651173
+Supplementary file Size Download File type/resource
+GSM5776158_Ctrl_AGE_2.xlsx 10.9 Kb (ftp)(http) XLSX
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7593978)
+citeturn13search2 [wordlim: 200] Published: 3.2 years ago; Crawled: last week; Title HK-2 cells ,vector ,2 ... RNA libraries for RNA-seq were prepared using KAPA Stranded RNA-Seq Library Prep Kit following manufacturer's protocols. ... The RNA is compared to the reference genome by STAR software, reads count statistics are performed, and differential expression calculation is performed using R software. ... GSE237055 GILS1 alleviates cell senescence and renal fibrosis through PGC-1α-mediated mitochondrial quality control in kidney aging
+Status Public on Dec 09, 2024
+Title HK-2 cells ,vector ,2
+Sample type SRA
+ 
+Source name kidney
+Organism Homo sapiens
+Characteristics tissue: kidney
+cell line: HK-2
+cell type: Renal tubular epithelial cells
+genotype: vector
+Growth protocol HK-2 cells were maintained in DMEM supplemented with 10% fetal bovine serum(FBS) and antibiotics in humidified atmosphere with 5% CO2 at 37C
+Extracted molecule total RNA
+Extraction protocol RNA was enriched using the NEB next®Poly (A) mRNA Magnetic Isolation Module and 1-2 μg of total RNA was used to construct the sequence libraries.
+RNA libraries for RNA-seq were prepared using KAPA Stranded RNA-Seq Library Prep Kit following manufacturer's protocols.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Description NG2
+Data processing Solexa pipeline version 1.8 (Off-Line Base Caller software, version 1.8) software was used for base calling, and FastQC software was used to evaluate the sequencing quality of the reads after removing adapters (cutadapt was used to remove 3' and 5' adapters).
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7593979)
+citeturn13search3 [wordlim: 200] Published: 3.2 years ago; Crawled: last week;    NCBI > GEO > Accession Display Image: Help Not logged in | Login Image: Help ... Title HK-2 cells ,vector ,3 ... RNA libraries for RNA-seq were prepared using KAPA Stranded RNA-Seq Library Prep Kit following manufacturer's protocols. ... The RNA is compared to the reference genome by STAR software, reads count statistics are performed, and differential expression calculation is performed using R software. ... GSE237055 GILS1 alleviates cell senescence and renal fibrosis through PGC-1α-mediated mitochondrial quality control in kidney aging
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM7593979 Query DataSets for GSM7593979
+Status Public on Dec 09, 2024
+Title HK-2 cells ,vector ,3
+Sample type SRA
+ 
+Source name kidney
+Organism Homo sapiens
+Characteristics tissue: kidney
+cell line: HK-2
+cell type: Renal tubular epithelial cells
+genotype: vector
+Growth protocol HK-2 cells were maintained in DMEM supplemented with 10% fetal bovine serum(FBS) and antibiotics in humidified atmosphere with 5% CO2 at 37C
+Extracted molecule total RNA
+Extraction protocol RNA was enriched using the NEB next®Poly (A) mRNA Magnetic Isolation Module and 1-2 μg of total RNA was used to construct the sequence libraries.
+RNA libraries for RNA-seq were prepared using KAPA Stranded RNA-Seq Library Prep Kit following manufacturer's protocols.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Description NG3
+Data processing Solexa pipeline version 1.8 (Off-Line Base Caller software, version 1.8) software was used for base calling, and FastQC software was used to evaluate the sequencing quality of the reads after removing adapters (cutadapt was used to remove 3' and 5' adapters).
+The trimmed reads (trimmed 5',3'-adaptor bases using cutadapt) were aligned to reference genome using Hisat2 (2.1.0)software.
+Transcript abundance was estimated using StringTie software (1.3.3) with reference to official database annotation information.
+The R software Ballgown (v2.10.0) was used to calculate the FPKM at the gene level and the transcript level, and the expression differences at the gene level and the transcript level were calculated respectively, and the differentially expressed genes between samples or groups were screened.
+The RNA is compared to the reference genome by STAR software, reads count statistics are performed, and differential expression calculation is performed using R software.
+Assembly: GRCh37
+Supplementary files format and content: FPKM values for each sample
+ 
+Submission date Jul 11, 2023
+Last update date Dec 09, 2024
+Contact name xiuli Guo
+E-mail(s) gxl1786246@sina.com
+Organization name The First Hospital of China Medical University
+Street address No. 155 Nanjing North Street, Heping District, Shenyang, Liaoning Province
+City shenyang
+ZIP/Postal code 110000
+Country China
+ 
+Platform ID GPL24676
+Series (1)
+GSE237055 GILS1 alleviates cell senescence and renal fibrosis through PGC-1α-mediated mitochondrial quality control in kidney aging
+Relations
+BioSample SAMN36406127
+SRA SRX20983813
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GSE269418 — Effect of the sGC activator BAY 60-2770 on human proximal tubular (HK-2) cells under hypo… | GEO dataset | BioTransfer (https://usebiotransfer.org/tools/geo-finder/GSE269418/)
+citeturn13search4 [wordlim: 200] Published: 1.9 years ago; Crawled: last month; NCBI GEO page ↗ Open GSE269418 in finder → Find more human RNA-seq datasets → ...   * GSM8315283 HK2 cells, normoxia, solvent control, biol rep 1, RNA 04
+
+Download
+
+RAW.tar ↓ Series matrix ↓ All supplementary files ↗ Raw reads on ENA ↗
+
+NCBI GEO page ↗ Open GSE269418 in finder → Find more human RNA-seq datasets →
+
+Samples in this study
+
+  * GSM8315280 HK2 cells, normoxia, sGC activator, biol rep 1, RNA 01
+  * GSM8315281 HK2 cells, normoxia, sGC activator, biol rep 2, RNA 02
+  * GSM8315282 HK2 cells, normoxia, sGC activator, biol rep 3, RNA 03
+  * GSM8315283 HK2 cells, normoxia, solvent control, biol rep 1, RNA 04
+  * GSM8315284 HK2 cells, normoxia, solvent control, biol rep 2, RNA 05
+  * GSM8315285 HK2 cells, normoxia, solvent control, biol rep 3, RNA 06
+  * GSM8315286 HK2 cells, normoxia, solvent control, biol rep 4, RNA 07
+  * GSM8315297 HK2 cells, normoxia, solvent control, biol rep 5, RNA 18
+  * GSM8315298 HK2 cells, hypoxia, sGC activator, biol rep 1, RNA 21
+  * GSM8315299 HK2 cells, hypoxia, sGC activator, biol rep 2, RNA 22
+  * GSM8315300 HK2 cells, hypoxia, sGC activator, biol rep 3, RNA 23
+  * GSM8315301 HK2 cells, hypoxia, solvent control, biol rep 1, RNA 31
+  * GSM8315302 HK2 cells, hypoxia, solvent control, biol rep 2, RNA 32
+  * GSM8315303 HK2 cells, hypoxia, solvent control, biol rep 3, RNA 33
+
+Similar datasets
+
+  * GSE328275 Single-cell RNA sequencing of CD45+ immune cells across primary tumor, sentinel tumor-draining lymph node, and axillary lymph node in treatment-naive triple-negative breast cancer 28 samples
+  * GSE274275 Effect of depletion of NSUN4 on gene expression of NCI-H226 cells [RNA-seq] 6 samples
+--------------------------------------------------------------------------------
+Integrative RNA-seq and CLIP-seq analysis reveals hnRNP-F regulation of TNFα/NFκB signaling in high-glucose conditions - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12454069/)
+citeturn13search5 [wordlim: 200] Published: last year; Crawled: last month; Total RNA was isolated from the renal cortex and cells separately using the TRIzol method, and 1 μL of total RNA was used as the template, reverse-transcribed to cDNA, and continued to be amplified by using cDNA as the template, sequentially, at 95 °C for 3 min, 1 cycle, 95 °C for 10 s, and 62 °C for 40 s, for a total of 40 cycles. ... Consistent with protein-level observations, RT-qPCR confirmed significant upregulation of hnRNP-F mRNA in high-glucose-treated HK-2 cells (*P < 0.05 vs. control) (Figures 1D,E), while treatment with equiosmolar mannitol showed no comparable effect (P > 0.05). ... RNA-seq yielded robust expression for 18,051 genes (Supplementary Table S3).PCA was carried out and revealed excellent clustering of expression gene changes between the OE-hnRNP-F HK-2 cells and control samples for different treatment conditions (Figure 2B).
+### 2.2 hnRNP-F was overexpressed in HK-2 and MPC5 cell lines
+
+We employed four parallel wells for each group of HK-2 cells: HK-2 cells transfected with the control lentivirus were cultured in a high-glucose medium containing 30 mM glucose (HG-NC) for 72 h, while a separate group of control lentivirus-transfected HK-2 cells was cultured in a medium containing 30 mM mannitol to serve as an osmotic control (OS-NC). Similarly, HK-2 cells transfected to overexpress the hnRNP-F lentivirus (Gene ID:98758, Lentiviral expression vector LV5) were maintained in a 30 mM glucose medium (HG-OE) and in a mannitol medium (OS-OE) for 72 h, respectively. MPC5 cells were cultured under HG conditions (30 mM, 72 h), mannitol treatment (30 mM, 72 h), or LPS stimulation (10 μg/mL, 24 h) and then transfected with an hnRNP-F overexpressing plasmid packaged in a lentiviral vector (Gene ID: 98758, vector name: HBLV-ZsGreen-PURO).
+
+### 2.3 Reverse transcription quantitative real-time PCR (RT-qPCR)
+
+Total RNA was isolated from the renal cortex and cells separately using the TRIzol method, and 1 μL of total RNA was used as the template, reverse-transcribed to cDNA, and continued to be amplified by using cDNA as the template, sequentially, at 95 °C for 3 min, 1 cycle, 95 °C for 10 s, and 62 °C for 40 s, for a total of 40 cycles. Approximately 91.2%–96.39% paired-end reads per sample were then aligned to the human GRCH38 genome. RNA-seq yielded robust expression for 18,051 genes (Supplementary Table S3). PCA was carried out and revealed excellent clustering of expression gene changes between the OE-hnRNP-F HK-2 cells and control samples for different treatment conditions (Figure 2B). To evaluate the dynamics of gene expression between OE-hnRNP-F vs. Ctrl cells, we compared expression among all pairwise combinations of the samples using DESeq2 (Love et al., 2014).
+
+#### FIGURE 2.
+
+Open in a new tab
+
+hnRNP-F regulates gene expression in HK-2 cells. (A) Verification of hnRNP-F mRNA expression in OE-hnRNP-F and NC HK2 cells under high-glucose conditions (HG-NC vs. HG-OE) using RT-qPCR. (B) Principal component analysis (PCA) of all samples based on normalized gene expression levels, showing clustering of HG-NC, HG-OE, OS-NC, and OS-OE groups. (C) Venn diagrams showing the overlap of differentially expressed genes (DEGs) between high-glucose (HG) and osmolality-control (OS) conditions. --------------------------------------------------------------------------------
+UHRF1 promotes calcium oxalate-induced renal fibrosis by renal lipid deposition via bridging AMPK dephosphorylation - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11790803/)
+citeturn13search6 [wordlim: 200] Published: 1.6 years ago; Crawled: last month; Different concentrations of calcium oxalate stimulated HK-2 cells for 24 h. 150 μg/mL was determined to be the optimal concentration for affecting UHRF1 expression. ... Kidneys from the glyoxylate group (Gly, n = 3) and the control group (NC, n = 3) were collected for transcriptome RNA sequencing.
+### Cell culture
+
+HK-2 cells were cultured in DMEM/F12 medium with 10% fetal bovine serum (Vivacell, C2910-0500) and 1% penicillin–streptomycin solution. Cells were placed at 37℃ and 5% CO_{2} environment. Different concentrations of calcium oxalate stimulated HK-2 cells for 24 h. 150 μg/mL was determined to be the optimal concentration for affecting UHRF1 expression. Si-NC (control), Si-UHRF1, and Si-PPP2CA (from GenePharma Shanghai, China) were transfected into cells by Lipo6000 (C0526, Beyotime).
+
+The sequences of siRNAs in cell experiments were listed in Table S2.
+
+To study the inhibition effect of the AMPK pathway, cells were treated with AICAR (0.5 μM, 24 h), Compound C (5 μM, 18 h), or ND-630 (1 μM, 48 h) after modelling. All the reagents are from MCE (MedChemExpress; New Jersey, USA).
+
+### Transcriptome RNA sequencing and bioinformatic analysis
+
+Kidneys from the glyoxylate group (Gly, n = 3) and the control group (NC, n = 3) were collected for transcriptome RNA sequencing. --------------------------------------------------------------------------------
+The expression of apoptosis related genes in HK-2 cells overexpressing PPM1K was determined by RNA-seq analysis - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9663473/)
+citeturn13search7 [wordlim: 200] Published: 3.9 years ago; Crawled: last month; # The expression of apoptosis related genes in HK-2 cells overexpressing PPM1K was determined by RNA-seq analysis ... PPM1K-OE affect gene expression profiles of HK2 cells (A) The histogram showed the RT-qPCR results of control and treatment samples. ... RNA-seq results showed that 31369 genes were co expressed in overexpression group (OE) and control group (NC) cells, and 796 genes were specifically expressed, of which 243 genes were up-regulated and 553 genes were down regulated (Figure 1E). ... The names of the repository/repositories and accession number(s) can be found below: https://www.ncbi.nlm.nih.gov/geo; GSE212681.
+### The effect of overexpression of PPM1K gene on the transcriptome of HK-2 cells
+
+RNA-seq results showed that 31369 genes were co expressed in overexpression group (OE) and control group (NC) cells, and 796 genes were specifically expressed, of which 243 genes were up-regulated and 553 genes were down regulated (Figure 1E). The down regulated genes were significantly more than the down regulated genes (FC ≥ 2 or ≤0.5, FDR <0.05). The heat map shows that NC group and OE group are different, and the two biological replication are highly correlated (Figure 1F).
+
+By extracting the up-regulated epitope genes after PPM1K overexpression, GO analysis showed that the up-regulated genes were significantly enriched in the cellular amino acid biosynthetic process, tRNA aminoacylation for protein translation, intrinsic apoptotic signaling pathway in response to endoplasmic reticulum stress, apoptotic process, response to virus, response to endoplasmic reticulum stress, response to toxic substance, calcium ion transport, nervous system development, cellular calcium ion homeostasis and other biological processes (Figure 2A).
+## Data availability statement
+
+The datasets presented in this study can be found in online repositories. The names of the repository/repositories and accession number(s) can be found below: https://www.ncbi.nlm.nih.gov/geo; GSE212681.
+
+## Author contributions
+
+LZ and XS conceived and designed the study. LZ, YH, AA, ME and ZM collected the data. YH, AA and SK performed the research, analyzed data. LZ, XS and YH wrote the paper. WY and CL reviewed and modified the article. All authors discussed the results and contributed to the final article. All authors read and approved the final article.
+
+## Funding
+
+Work toward this research was supported by the National Natural Science Foundation of China (No. 81960145).
+
+## Conflict of interest
+
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+
+
+## References
+
+  1. Almawi W., Y., Saldanha F., L., Mahmood N. A., Al-Zaman I., Sater M. --------------------------------------------------------------------------------
+Next-Generation Sequencing Identifies TGF-β1-Associated Gene Expression Profiles in Renal Epithelial Cells Reiterated in Human Diabetic Nephropathy - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC3351834/)
+citeturn13search8 [wordlim: 200] Published: 14.7 years ago; Crawled: last month; The PCR primers and TaqMan probe for all assays were supplied as a pre-optimized single tube primer/probe Gene Expression Assay (Applied Biosystems). 18s rRNA was used as an endogenous control for normalization of the target genes. ... Having validated TGF-β1-induced signaling in HK-2 cells, we then examined global gene expression changes using massively parallel sequencing technology (RNA-Seq). 2027 genes were significantly regulated by TGF-β1 treatment (828 upregulated and 1199 downregulated; Supplementary Table 1 online). ... Comparison of RNA-Seq to microarray of TGF-β1 effects on gene expression in HK-2 cell line.
+### 3.3. Comparison of RNA-Seq and microarray data - RNA-Seq identifies a cohort of low abundance transcripts
+
+We previously performed microarray analysis of HK-2 cells treated with TGF-β1 using an identical design to the present study (GEO: GSE23338). Comparison of mean expression levels of all genes in the RNA-Seq dataset to those determined by Affymetrix microarray (11,033 genes) showed a highly significant signal correlation; Pearson correlation of 0.69, p<2.2e^{−16} (Fig. 4A). In a comparison of log fold-change value for each gene, we divided genes into three tertiles of expression level based on the RPKM values (average number of sequence reads per kilo-base pair of coding sequence, per million reads mapped) [22] and found increasing expression correlation for genes with higher expression level (Fig. 4B). In order to determine the extent of additional information available from RNA-Seq data, we compared the differentially expressed genes in both datasets (microarray – 199; RNA-Seq – 2027) (【51†Fig. --------------------------------------------------------------------------------
+N6-methyladenosine triggers renal fibrosis via enhancing translation and stability of ZEB2 mRNA - PubMed (https://pubmed.ncbi.nlm.nih.gov/39059495/)
+citeturn13search9 [wordlim: 200] Published: 2.1 years ago; Crawled: 3 weeks ago; ZEB2 was involved in m^{6}A-regulated EMT in renal tubular epithelial cells.A, volcano plot of RNA-seq analysis showing differentially expressed genes between sh-control and sh-METTL3 HK-2 cells.
+Figure 2
+
+ZEB2 was involved in m ^{ … }
+
+Figure 2
+
+ZEB2 was involved in m ^{ 6 } A-regulated EMT in renal tubular epithelial cells. …
+
+Figure 2
+
+ZEB2 was involved in m^{6}A-regulated EMT in renal tubular epithelial cells.A, volcano plot of RNA-seq analysis showing differentially expressed genes between sh-control and sh-METTL3 HK-2 cells. B, Venn diagram showing substantial and significant overlap among EMT genes, downregulated genes in sh-METTL3 HK-2 cells (>2-fold), and m^{6}A-enriched genes in the kidneys of WT mice. C, the mRNA levels of AHNAK, TGFB2, and ZEB2 in sh-control or sh-METTL3 HK-2 cells were measured by qRT-PCR. D, m^{6}A RIP-qPCR analysis of ZEB2 mRNA in control and EMT HK-2 cells. E, the protein levels of ZEB2 in sh-control or sh-METTL3 HK-2 cells were determined by Western blot analysis (left) and quantified (right). F, HK-2 cells were transfected with pcDNA (vector) or pcDNA/ALKBH5 for 48 h, and the protein expression of ZEB2 was measured by Western blot analysis (left) and quantified (right). --------------------------------------------------------------------------------
+Frontiers | The expression of apoptosis related genes in HK-2 cells overexpressing PPM1K was determined by RNA-seq analysis (https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2022.1004610/full)
+citeturn13search10 [wordlim: 200] Published: 3.9 years ago; Crawled: 2 days ago; The names of the repository/repositories and accession number(s) can be found below: https://www.ncbi.nlm.nih.gov/geo; GSE212681. ... Work toward this research was supported by the National Natural Science Foundation of China (No.
+## Statements
+
+### Data availability statement
+
+The datasets presented in this study can be found in online repositories. The names of the repository/repositories and accession number(s) can be found below: https://www.ncbi.nlm.nih.gov/geo; GSE212681.
+
+### Author contributions
+
+LZ and XS conceived and designed the study. LZ, YH, AA, ME and ZM collected the data. YH, AA and SK performed the research, analyzed data. LZ, XS and YH wrote the paper. WY and CL reviewed and modified the article. All authors discussed the results and contributed to the final article. All authors read and approved the final article.
+
+### Funding
+
+Work toward this research was supported by the National Natural Science Foundation of China (No. 81960145).
+
+### Conflict of interest
+
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+
+### Publisher’s note
+
+All claims expressed in this article are solely those of the authors and do not necessarily represent those of their affiliated organizations, or those of the publisher, the editors and the reviewers. --------------------------------------------------------------------------------
+TYPE Review (https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2024.1457319/pdf)
+citeturn13search12 [wordlim: 200] Published: 1.8 years ago; | Sample Cellular exosomes | Object Control HK-2 cells | Sample size 3 | Method RNA-seq | GEO ID GSE110509 | Dysregulated ncRNAs in lithogenic environment NA | ncRNAs validated by qRT-PCR NA Year None | Authors None | Sample None | Object HK-2 cells treated with oxalate | Sample size 6 | Method None | GEO ID None | Dysregulated ncRNAs in lithogenic environment None | ncRNAs validated by qRT-PCR None Year 2018 | Authors Zhang et al.
+--------------------------------------------------------------------------------
+LINC00472 inhibits cell migration by enhancing intercellular adhesion and regulates H3K27ac level via interacting with P300 in renal clear cell carcinoma - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9653443/)
+citeturn13search11 [wordlim: 200] Published: 3.8 years ago; Crawled: last month; In order to determine whether our scheme will affect the expression of genes near LINC00472, we checked the mRNA level of adjacent gene LINC01626 by using RT-qPCR, and the results showed that the mRNA level of LINC01626 did not change in both HK-2 KO-PE cell line and HK-2 KI-CMV cell line comparing with the control cell line (Fig. ... To further analyze the function of LINC00472 in cells, we performed RNA sequencing (RNA-seq) on two pairs of cell lines (HK-2 KI-CTR and KI-CMV, HK2 KO-NC and KO-PE) constructed by CRISPR-Cas9.
+--------------------------------------------------------------------------------
+Received: 16 July 2017  |  Revised: 21 August 2017  |  Accepted: 4 September 2017 (https://scholar.harvard.edu/files/cbenway/files/ajt.14503.pdf)
+citeturn13search13 [wordlim: 200] Published: 11 months ago; Argonaute 2 (AGO2) protein in the RNA-­induced silencing complex ... deposited in NCBI’s Gene Expression Omnibus and are accessible ... cells (HK-­2 cells) treated with CsA or vehicle as a control. ... 2.3 | RNA-­Seq
+--------------------------------------------------------------------------------
+TYPE Original Research (https://public-pages-files-2025.frontiersin.org/journals/physiology/articles/10.3389/fphys.2025.1475441/pdf)
+citeturn13search14 [wordlim: 200] Published: last year; empty vector was transfected into HK-2 cells as a control group (NC). ... Results: In this study, RNA sequencing (RNA-seq) was utilized to demonstrate ... and RNA-seq data, we found that hnRNP-F may inhibit gene expression by
+--------------------------------------------------------------------------------
+2177
+Int. J. Biol. Sci. 2026, Vol. 22 
+ 
+Ivyspring (https://www.ijbs.com/v22p2177.pdf)
+citeturn13search15 [wordlim: 200] Published: 4 months ago; Cisplatin-induced HK-2 cells transfected with eithernegative control siRNA or NAT10 siRNA using ... RNA-seq experiment ... RNA-seq libraries were constructed from 2 μg total ... Reads were aligned to the reference genome
+--------------------------------------------------------------------------------
+HHS Public Access (https://escholarship.org/content/qt3nv6x43t/qt3nv6x43t_noSplash_88348af831daf0de5c5c60883388e8b6.pdf)
+citeturn13search16 [wordlim: 200] Published: 1.2 years ago; primerdepot.nci.nih.gov/) or designed using Primer3Plus (www.primer3plus.com/) using the ... for the HK-2 and CAKI-1 cells and 35 minutes for the ACHN cells. ... 2.5 siRNA transfection and RNA-seq analyses ... as control in transient knockdown assays. siRNAs were transfected using ... accessed at NCBI’s Gene Expression Omnibus (GEO) under number GSE136604.
+

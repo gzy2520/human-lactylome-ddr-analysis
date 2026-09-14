@@ -1,0 +1,705 @@
+DepMap Cell Line Summary (https://depmap.org/portal/cell_line/ACH-000657)
+citeturn26search0 [wordlim: 200] Crawled: 3 months ago; DepMap ID: ACH-000657
+  * A2780
+
+DepMap ID: ACH-000657
+
+[Button: Overview][Button: Mutations][Button: Fusions][Button: Translocations]
+
+## Description
+
+  * Model
+  * Patient
+  * IDs
+
+#### Annotations
+
+###### Oncotree Subtype and Code
+
+Endometrioid Ovarian Cancer (EOV)
+
+###### Oncotree Primary Disease
+
+Ovarian Epithelial Tumor
+
+###### Oncotree Lineage
+
+Ovary/Fallopian Tube
+
+#### Lineage Contexts
+
+###### Level 0
+
+Ovary/Fallopian Tube (OVARY)
+
+###### Level 1
+
+Ovarian Epithelial Tumor (OVT)
+
+###### Level 2
+
+Endometrioid Ovarian Cancer (EOV)
+
+###### Primary/Metastasis
+
+Primary
+
+###### Collection Site
+
+ovary
+
+Image: cell line
+
+###### Source
+
+ECACC
+
+###### Catalog Number
+
+93112519
+
+#### Overview
+
+###### Age and Category
+
+Unknown
+
+###### Sex
+
+Female
+
+#### Cell Line Name
+
+A2780_OVARY
+
+#### CCLE Name
+
+A2780_OVARY
+
+#### Aliases:
+
+A2780
+
+#### Cellosaurus RRID
+
+CVCL_0134
+
+#### Sanger Model ID
+
+SIDM00210
+
+#### COSMIC ID
+
+906804
+
+## Oncogenic Alterations
+
+Gene  | Alteration  | Oncogenic  | Function
+--- | --- | --- | ---
+RRAS2  | Q72L  | Oncogenic  | Gain-of-function
+SMARCA4  | T910M  | Likely Oncogenic  | Loss-of-function
+PIK3CA  | E365K  | Likely Oncogenic  | Gain-of-function
+MED12  | D23Y  | Oncogenic  | Likely Loss-of-function
+_{v4.7}
+
+## Top 10 Preferentially Essential GenesImage: info icon
+
+### CRISPR
+
+#### CRISPR (DepMap Public 25Q3+Score, Chronos)
+
+RRAS2
+
+NABP2
+
+ATOX1
+
+RPS4Y1
+
+WRAP73
+
+AIMP2
+
+PSD4
+
+SRD5A3
+
+ALKBH8
+
+AMELY
+
+### RNAi
+
+#### RNAi (Achilles+DRIVE+Marcotte, DEMETER2)
+
+RRAS2
+
+ADGRF1
+
+PABPC3
+
+HSD17B12
+
+UTP15
+
+SLC35E2B
+
+CCND2
+
+ZNF329
+
+PNPT1
+
+WDR74
+
+Download gene effect z-scores for all genes: CRISPR, RNAi
+
+## Sequenced and profiled in the following datasets:
+
+CN (1 datasets)
+
+Copy Number WGS Public 25Q3 (Log2 transformed)
+
+CRISPR (1 datasets)
+
+CRISPR (DepMap Public 25Q3+Score, Chronos)
+
+Drug screen (9 datasets)
+
+PRISM Repurposing Public 24Q2
+
+Drug sensitivity AUC (PRISM Repurposing Secondary Screen)
+
+Drug sensitivity AUC (CTD^2)
+
+Drug sensitivity AUC (Sanger GDSC1)
+
+Drug sensitivity AUC (Sanger GDSC2)
+
+Drug sensitivity replicate-level dose (CTD^2)
+
+Drug sensitivity replicate-level dose (Sanger GDSC1)
+
+Drug sensitivity replicate-level dose (Sanger GDSC2)
+
+Drug sensitivity replicate-level dose (PRISM Repurposing Secondary Screen)
+
+Expression (1 datasets)
+
+Expression Public 25Q3
+
+Methylation (1 datasets)
+
+Methylation (1kb upstream TSS)
+
+Mutations (3 datasets)
+
+Hotspot Mutations
+
+Damaging Mutations
+
+Mutation
+
+Protein Expression (1 datasets)
+
+Protein Array
+
+RNAi (2 datasets)
+
+RNAi (Achilles+DRIVE+Marcotte, DEMETER2)
+
+RNAi (DRIVE, DEMETER2)
+
+Structural variants (2 datasets)
+
+Fusion
+
+Translocation
+
+## MetMap Image
+
+Target  | Potential Image  | Penetrance Image
+--- | --- | ---
+Bone  | -0.31  | 1.0
+Brain  | -0.4  | 1.0
+Kidney  | -0.2  | 1.0
+Liver  | 2.1  | 1.0
+Lung  | -0.5  | 1.0
+
+Explore MetMap 500 data--------------------------------------------------------------------------------
+Loss-of-function but not gain-of-function properties of mutant TP53 are critical for the proliferation, survival and metastasis of a broad range of cancer cells | Cancer Discovery | American Association for Cancer Research (https://aacrjournals.org/cancerdiscovery/article/doi/10.1158/2159-8290.CD-23-0402/729779/am/Loss-of-function-but-not-gain-of-function)
+citeturn26search1 [wordlim: 200] Published: 2.9 years ago; Crawled: 4 days ago; 24  | ACH-000657  | -0.0494121893611999  | 1  | A2780  | Ovarian Epithelial Tumor  | Ovary/Fallopian Tube ... 34  | ACH-000269  | -0.00428649657698  | 1  | AM38  | Diffuse Glioma  | CNS/Brain
+21  | ACH-000201  | 0.106495695398  | 1  | A204  | Rhabdomyosarcoma  | Soft Tissue
+22  | ACH-000788  | -0.0662892614628  | 1  | A2058  | Melanoma  | Skin
+23  | ACH-000740  | -0.243759234725  | 1  | A253  | Head and Neck Squamous Cell Carcinoma  | Head and Neck
+24  | ACH-000657  | -0.0494121893611999  | 1  | A2780  | Ovarian Epithelial Tumor  | Ovary/Fallopian Tube
+25  | ACH-000219  | -0.0240706781913  | 1  | A375  | Melanoma  | Skin
+26  | ACH-000697  | -0.259109886433999  | 1  | A3KAW  | Non-Hodgkin Lymphoma  | Lymphoid
+27  | ACH-000555  | -0.0799773294747  | 1  | A498  | Renal Cell Carcinoma  | Kidney
+28  | ACH-000157  | -0.555560997874  | 1  | A4FUK  | Non-Hodgkin Lymphoma  | Lymphoid
+29  | ACH-000052  | -0.122907470196  | 1  | A673  | Ewing Sarcoma  | Bone
+30  | ACH-000429  | -0.0792035982177  | 1  | A704  | Renal Cell Carcinoma  | Kidney
+31  | ACH-000528  | -0.178601550060999  | 1  | ABC1  | Non-Small Cell Lung Cancer  | Lung
+32  | ACH-000086  | -0.048685641869  | 1  | ACCMESO1  | Pleural Mesothelioma  | Pleura
+--------------------------------------------------------------------------------
+<table id="e1"> (https://www.aecid.gob.es/es/detalle-procedimiento-historico?_es_aecid_sede_procedimientos_ProcedimientoWebPortlet_id=workspace%3A%2F%2FSpacesStore%2F1055f59c-438e-4da2-ac5e-dcffb73af115&_es_aecid_sede_procedimientos_ProcedimientoWebPortlet_id=workspace%3A%2F%2FSpacesStore%2F1c760bca-96ad-48d6-9da2-af4f1c52dbf2&_es_aecid_sede_procedimientos_ProcedimientoWebPortlet_refererPlid=48332&p_p_cacheability=cacheLevelPage&p_p_id=es_aecid_sede_procedimientos_ProcedimientoWebPortlet&p_p_lifecycle=2&p_p_mode=view&p_p_resource_id=%2Fdownload-documento&p_p_state=normal&refererPlid=48332)
+citeturn26search12 [wordlim: 200] Published: 2.2 years ago; Crawled: 2.2 years ago; <td>2024/ACHU/000934</td> ... <td>ACCIÓN CONTRA EL HAMBRE (AcH)</td>
+<td>2024/ACHU/000528</td>
+<td>CRUZ ROJA ESPAÑOLA</td>
+<td>Burkina Faso</td>
+<td>Asistencia humanitaria y protección a las mujeres y niñas en situación de mayor vulnerabilidad agravada por el conflicto en Burkina Faso</td>
+</tr>
+<tr>
+<td>2024/ACHU/000567</td>
+<td>FARMAMUNDI</td>
+<td>Etiopía</td>
+<td>Salud integral, protección y restitución de derechos de mujeres afectadas por VSyVBG y conflicto armado en Tigray con enfoque de triple nexo</td>
+</tr>
+<tr>
+<td>2024/ACHU/000905</td>
+<td>FUNDACION ALIANZA POR LOS DERECHOS, LA IGUALDAD Y LA SOLIDARIDAD INTERNACIONAL</td>
+<td>Malí</td>
+<td>Respuesta humanitaria multisectorial para población afectada por el conflicto, priorizando a mujeres y niñas, en la región de Gao, Mali</td>
+</tr>
+<tr>
+<td>2024/ACHU/000934</td>
+<td>FUNDACIÓN AYUDA EN ACCIÓN</td>
+<td>Etiopía</td>
+<td>REACT-Asistencia multisectorial en apoyo a pobl. vulnerables afectadas por múltiples crisis en Afar</td>
+</tr>
+<tr>
+<td>2024/ACHU/000935</td>
+<td>FUNDACIÓN AYUDA EN ACCIÓN</td>
+<td>El Salvador</td>
+--------------------------------------------------------------------------------
+Gene Set - A2780 (https://maayanlab.cloud/Harmonizome/gene_set/A2780/DepMap%2BCRISPR%2BGene%2BDependency)
+citeturn26search2 [wordlim: 200] Crawled: last week; External Link  | https://depmap.org/portal/cell_line/ACH-000657
+
+# A2780 Gene Set
+
+Dataset  | DepMap CRISPR Gene Dependency
+Category  | disease or phenotype associations
+Type  | cell line
+External Link  | https://depmap.org/portal/cell_line/ACH-000657
+Similar Terms  | 
+Downloads & Tools  | The Enrichr link requires JavaScript. Image
+
+## Genes
+
+182 gene knockdowns changing fitness of A2780 relative to other cell lines from the DepMap CRISPR Gene Dependency Dataset.
+
+Symbol  | Name  | Standardized Value
+--- | --- | ---
+RRAS2  | related RAS viral (r-ras) oncogene homolog 2  | 8.04044
+ATOX1  | antioxidant 1 copper chaperone  | 7.5572
+RNF166  | ring finger protein 166  | 7.19546
+AIMP2  | aminoacyl tRNA synthetase complex-interacting multifunctional protein 2  | 5.87531
+NABP2  | nucleic acid binding protein 2  | 4.86735
+WRAP73  | WD repeat containing, antisense to TP73  | 4.7885
+ALKBH8  | alkB, alkylation repair homolog 8 (E. coli)  | 4.65761
+PSD4  | pleckstrin and Sec7 domain containing 4  | 4.58148
+MAGIX  | MAGI family member, X-linked  | 4.2851
+KIAA1191  | KIAA1191  | 4.18417
+DMAC2  | distal membrane arm assembly component 2  | 4.1484
+PRSS50  | protease, serine, 50  | 4.11854
+SYT5  | synaptotagmin V  | 4.11774
+FEM1A  | fem-1 homolog a (C. elegans)  | 3.88852
+TULP2  | tubby like protein 2  | 3.84821
+--------------------------------------------------------------------------------
+Supplementary Information (https://www.medrxiv.org/content/medrxiv/early/2022/01/07/2022.01.07.22268899/DC1/embed/media-1.pdf?download=true)
+citeturn26search13 [wordlim: 200] Published: 1.9 years ago; ACH-000045
+Sup Fig 5 
+ 
+b
+a
+DepMap_ID
+lineage
+ROC 5-fold cross validation
+blood
+ACH-000045
+1
+bile_duct
+ACH-000141
+2
+lung
+ACH-000257
+3
+kidney
+ACH-000272
+4
+kidney
+ACH-000313
+5
+esophagus
+ACH-000318
+6
+kidney
+ACH-000459
+7
+liver
+ACH-000537
+8
+breast
+ACH-000573
+9
+upper_aerodigestive
+ACH-000618
+10
+lung
+ACH-000677
+11
+AUC 0.860; Accuracy 79.9%
+central_nervous_system
+ACH-000760
+12
+Sensitivity
+AUC 0.894; Accuracy 80.4%
+lung
+ACH-000851
+13
+AUC 0.903; Accuracy 86.0%
+colorectal
+ACH-000969
+14
+AUC 0.865; Accuracy 81.0%
+lung
+ACH-001041
+15
+AUC 0.880; Accuracy 82.1%
+colorectal
+ACH-001061
+16
+kidney
+ACH-001163
+17
+central_nervous_system
+ACH-001232
+18
+thyroid
+ACH-001307
+19
+uterus
+ACH-001518
+20
+ovary
+ACH-001628
+21
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+kidney
+ACH-001688
+22
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+blood
+ACH-001737
+23
+Specificity
+colorectal
+ACH-001786
+24
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+8--------------------------------------------------------------------------------
+Revised 6/3/2026 at 2:45pm – Revised Item 11.c. PowerPoint Slide 11 (https://www.smcta.com/media/37125/download)
+citeturn26search14 [wordlim: 200] Published: 3 months ago; ACH ... 5,000.00 ... BANK OF NEW YORK MELLON, THE ... 000657
+WIR
+Capital Programs (1)
+SMCTA
+000333
+DEPARTMENT OF TRANSPORTATION
+10,079,957.10
+              
+WIR
+Capital Programs (1)
+SMCTA
+000334
+DEPARTMENT OF TRANSPORTATION
+57,679.86
+                      
+WIR
+Capital Programs (2)
+SMCTA
+000335
+PENINSULA CORRIDOR JOINT POWERS BOARD
+1,345,948.81
+                
+WIR
+Capital Programs (3)
+SMCTA
+000657
+WSP USA INC.
+14,218.47
+                      
+ACH
+Capital Programs (4)
+SMCTA
+000658
+MENLO PARK, CITY OF
+208,803.22
+                    
+ACH
+Capital Programs (5)
+SMCTA
+000659
+STANTEC CONSULTING SERVICES, INC.
+32,460.57
+                      
+ACH
+Capital Programs (6)
+SMCTA
+000660
+KIMLEY-HORN AND ASSOCIATES, INC.
+441,604.90
+                    
+ACH
+Capital Programs (7)
+SMCTA
+000662
+PENINSULA TRAFFIC CONGESTION RELIEF
+14,226.61
+                      
+ACH
+Capital Programs (8)
+SMCTA
+000663
+PENINSULA TRAFFIC CONGESTION RELIEF
+3,825.00
+                        
+ACH
+Capital Programs (9)
+SMCTA
+000664
+PHILANTHROPIC VENTURES FOUNDATION
+18,204.29
+                      
+ACH
+Capital Programs (10)
+--------------------------------------------------------------------------------
+Issues with copy number data - Report an Issue - DepMap Community Forum (https://forum.depmap.org/t/issues-with-copy-number-data/1441)
+citeturn26search3 [wordlim: 200] Published: 4.3 years ago; Crawled: 2 months ago;       ..$ : chr [1:73] "ACH-000520" "ACH-000657" "ACH-001278" "ACH-000713" ...
+     - attr(*, "dimnames")=List of 2
+      ..$ : chr [1:73] "ACH-000520" "ACH-000657" "ACH-001278" "ACH-000713" ...
+      ..$ : chr [1:24352] "DDX11L2" "WASH7P" "MIR6859.1" "MIR1302.2" ...
+    
+    > cn[1,1:20]
+      DDX11L2    WASH7P MIR6859.1 MIR1302.2   FAM138A     OR4F5    WASH9P MIR6859.2
+     1.168424  1.168424  1.168424  1.168424  1.168424  1.168424  1.168424  1.168424
+       OR4F29    OR4F16 LINC01409    FAM87B LINC01128 LINC00115    FAM41C LINC02593
+     1.168424  1.168424  1.168424  1.168424  1.168424  1.168424  1.168424  1.168424
+       SAMD11     NOC2L    KLHL17   PLEKHN1
+     1.168424  1.168424  1.168424  1.168424
+    `
+
+However, I don’t think the values are actually all the same.
+    
+    `> length(unique(cn[1,]))
+    [1] 482
+    `
+
+It looks like there are 482 distinct CN values for the 18k different genes, so many genes have the same CN value.
+
+This is actually not surprising because the copy number amplifications/deletions are typically much bigger segments than individual genes, so many genes have identical values.
+
+Thanks,
+Phil--------------------------------------------------------------------------------
+2017-04-22 (3) (https://www.cndh.org.mx/doctr/2015/CGSRAJ/RECO/a74/02a/USR-20170418-r403.pdf)
+citeturn26search15 [wordlim: 200] Published: 9.4 years ago; Crawled: 9.4 years ago; 000045 ... ** En suma, se evidencia que la ACH, a través de AR2 y AR3, y el Fideicomiso, por medio de AR4, propusieron y facilitaron la contratación de P1 para que efectuara los trabajos de restauración y rehabilitación del monumento histórico “El Caballito”, sin solicitar previamente al INAH el permiso necesario, lo que se acredita con el informe 89672, de 20 de diciembre de 2013, suscrito por el apoderado legal del INAH, en el que se señaló que ese Instituto no tuvo conocimiento del inicio de los trabajos sino hasta el 18 de septiembre de 2013 y que al día siguiente comisionó a SP1, restaurador adscrito a la CNCPC-INAH, para verificar la situación en que se encontraba el monumento.
+COMISIÓN NACIONAL DE LOS DERECHOS HUMANOS
+
+000045
+
+“asegurarme de que existiera la Licencia correspondiente por parte del INAH (...),” actividades que realizó al considerar que era indispensable hacer un estudio con andamiaje “y estar en posibilidad de apreciarlo a detalle”.
+
+**113.** No pasa inadvertido para la Comisión Nacional que AR8, en su declaración rendida ante la PGJ del 16 de octubre de 2013, respecto de la recepción de la copia de conocimiento del oficio FCH/DG/DDI/238/2013, de fecha 9 de septiembre de 2013, dentro de la AP 1, manifestó “que la persona encargada de haberle dado el oficio en comento omitió hacerlo, por lo cual no estuvo enterado [de los hechos], hasta el 21 de septiembre de 2013”.
+
+**114.** En suma, se evidencia que la ACH, a través de AR2 y AR3, y el Fideicomiso, por medio de AR4, propusieron y facilitaron la contratación de P1 para que efectuara los trabajos de restauración y rehabilitación del monumento histórico “El Caballito”, sin solicitar previamente al INAH el permiso necesario, lo que se acredita con el informe 89672, de 20 de diciembre de 2013, suscrito por el apoderado legal del INAH, en el que se señaló que ese Instituto no tuvo conocimiento del inicio de los trabajos sino hasta el 18 de septiembre de 2013 y que al día siguiente comisionó a SP1, restaurador adscrito a la CNCPC-INAH, para verificar la situación en que se encontraba el monumento. Dicho restaurador constató que personal de la Empresa 1 se encontraba trabajando sobre la escultura y determinó suspender los trabajos, por no contarse con la autorización necesaria, lo que realizó con fundamento en los artículos 12 de la LFMyZA y 46 de su Reglamento.
+
+**115.** Las omisiones señaladas evidencian que la ACH y el Fideicomiso, al autorizar y coadyuvar en la ejecución de los trabajos, sin contar con autorización del INAH, faltaron al deber de protección al monumento histórico “El Caballito”, lo que tuvo como consecuencia que se le causaran daños.
+
+43/61--------------------------------------------------------------------------------
+FIG. 27
+
+WO 2021/046027 (https://www.broadinstitute.org/files/patents/BI-10587__WO2021046027A1.pdf)
+citeturn26search16 [wordlim: 200] Published: 5.5 years ago;     <td>ACH-001307</td> ...     <td>ACH-000657</td>
+FIG. 27
+
+WO 2021/046027                                                                 PCT/US2020/048896
+
+78/125
+
+<table id="e1">
+  <tr>
+    <th>CCL8 Name</th>
+    <th>Dep Map ID</th>
+    <th>Experiments</th>
+  </tr>
+  <tr>
+    <td>22RV1_PROSTATE</td>
+    <td>ACH-000956</td>
+    <td>3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>42MGBA_CENTRAL_NERVOUS_SYSTEM</td>
+    <td>ACH-000322</td>
+    <td>2, 3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>769P_KIDNEY</td>
+    <td>ACH-000411</td>
+    <td>3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>786O_KIDNEY</td>
+    <td>ACH-000649</td>
+    <td>3, 10, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>8505C_THYROID</td>
+    <td>ACH-001307</td>
+    <td>3, 10, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>A2780_OVARY</td>
+    <td>ACH-000657</td>
+    <td>2, 3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>A375_SKIN</td>
+    <td>ACH-000219</td>
+    <td>2, 3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>ACCMESO1_PLEURA</td>
+    <td>ACH-000086</td>
+    <td>2, 3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>AGS_STOMACH</td>
+    <td>ACH-000880</td>
+    <td>2, 3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>BEN_LUNG</td>
+    <td>ACH-000603</td>
+    <td>3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>CAL120_BREAST</td>
+    <td>ACH-000212</td>
+    <td>3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>CAL62_THYROID</td>
+    <td>ACH-000174</td>
+    <td>2, 3, out_of_pool</td>
+  </tr>
+  <tr>
+    <td>CAOV3_OVARY</td>
+    <td>ACH-000713</td>
+    <td>1, 3, 5, 10, out_of_pool</td>
+  </tr>
+</table>
+
+SUBSTITUTE SHEET (RULE 26)--------------------------------------------------------------------------------
+NBC Transactions and Enquiries Guide | PDF | Cheque | Payments (https://www.scribd.com/document/793265686/NBC-SCREENS)
+citeturn26search4 [wordlim: 200] Crawled: 1.8 years ago; ACH ... 001088: SCR 001088: Mandate Acknowledgement Prompt Screen
+
+# 
+
+NBC Transactions and Enquiries Guide
+
+A
+
+## Uploaded by
+
+aniketthakur724
+
+
+# 
+
+NBC Transactions and Enquiries Guide
+
+A
+
+## Uploaded by
+
+aniketthakur724
+
+AI-enhanced title
+
+Copyright
+
+© All Rights Reserved
+
+We take content rights seriously. If you suspect this is your content, claim it here.
+
+Available Formats
+
+Download as PDF, TXT or read online on Scribd
+
+# FINANCIAL TRANSACTION MENU
+
+ACH
+ACH Credit
+ACH File Upload for Splitting
+ACH Upload for Posting
+ACH Return File Consolidation and Generation
+ACH CR File Upload for Splitting
+ACH CR Upload for Posting
+ACH CR Return File Consolidation and Generation
+036695: ACH Credit Transaction Enquiry
+ACH Debit
+ACH DR File Upload for Splitting
+ACH DR Upload for Posting
+036691: ACH Debit Transaction Enquiry
+ACH DR Return File Consolidation and Generation
+ACH Mandate
+001082: Mandate Technical Verification
+Pain 9,10,11 File Upload
+ACH MMS
+001088: SCR 001088: Mandate Acknowledgement Prompt Screen
+001099: Mandate Data Capturing
+--------------------------------------------------------------------------------
+DeepCDR: a hybrid graph convolutional network for predicting (https://watermark02.silverchair.com/btaa822_supplementary_material.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA5swggOXBgkqhkiG9w0BBwagggOIMIIDhAIBADCCA30GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM7rGitceWi7XtE0L1AgEQgIIDTp8Zsf8z_aPcgplGRPuqLG9cK0o1-dquoIapVueZsdCBOH0kB9Sh7a56tjUA-51khH_4Dfg-VsdZ6SOqY_dsMRexHM_K0YymAGgfkINimTIbWDODfUsupR8PHO2wH-8js4PNC1vHdyjpoPT8J3yqCgu6PTaLy_6ep6_26BrUj9z2MKOmHwGylaH0Fm0IqwA0D6jeNWS-RPXXJrg4uPqO2-isB2ZhRO163oMqck2ChXIAAs0IKQrnA207DWB3C8LutLS0Yv0WSPEhJoKKOAKfIzegk_V4n4EyDxKJezyW_BkaX1BbjnCI3FfHQr9wxrjN24VRz8Byw3oqZACzqBMiCAhLWVleKejvPygqRUMzGWGhNiKv4CdgBn1XWpohX6yfmeeKvq5yeDR_buvPZgHL-Onv5P06FxK6A43lZjIa4KFtUKns3dIKxVYd0LZE-B43aI_VL0_1YdcjRAafYXsZzm-g7PzHvNE_9y9yq8UGspzutZfH1lKTMZdxXyDfFVshyITrPgr8XGkLPE2ifQwXLIekOyu467eSi21NwDxcV5AUn7lp1rwNuFKNs62LOaUeKKfME7T5aw3oCRs_YLZxDATOdZLvgAyicK47MegeIjTKdxLEtO5eubLpvTY4rb2I2lZK0Jaxnca9ZsRBP-UXFMjCXNjlkOTE0HnjbSf4uSRD1PT-u3PHG9P3BE94K89--TaVE0XEZYbZyB7Kt7V4Mv83hkYurD1OGmkIG674ELLuRg62E9LSC3d_PVUhsJVm3E3vW3pgeoJ_Gu5pXXjxcDRBrMZt5MQVaOM3YWr8uy4unD1kxq8Unxs_dse6rFHf7Tv9uHntl8m4OyZntsjG65QY9ZTEAVu27rOIzpBvVChupKm4isE1hqK6WNFTx2BxdIsFgeYi7b2y4vQAO1AqaqKNLS6SRYKuGKeF4XZPg_yNBJGKLXq-O7FdTHQG2ba0xQOqxDeJFoF1SZBYB6n9_FfQ4goEACFUfR0eX4k51p4Bgqn-3cUfomcMA3odAM6MqcCkeOxcWLlEag2gwZBZo998Pl2T-H1UDRqCxuEwmkcpIfOCmL8UycDcBrPTPwZ4B-7vu7oyvTuiSkwjL2Zwa_Blxr6qmzFYwUQHxUZtZA)
+citeturn26search17 [wordlim: 200] Published: 10 months ago; ACH-000139  | Panc 03.27  | PAAD  | ACH-000657  | A2780  | UNABLE TO
+--------------------------------------------------------------------------------
+Bills (https://propertytax.eaglecounty.us/PropertyTaxSearch/TaxAccount/Bills/R026639)
+citeturn26search5 [wordlim: 200] Crawled: 2 days ago; 000657 ESCALANTE ... Parcel: 239127204004  | ... 657 ESCALANTE RD ... Where are my 2025 taxes going? ... Electronic Check (echeck/ach) - $1.30
+--------------------------------------------------------------------------------
+Chapter 6 Predictive biomarkers | Translational Bioinformatics with R (https://bookdown.org/gongchangzhaojie/TranslationalBioinformaticsWithR/predictive-biomarkers.html)
+citeturn26search6 [wordlim: 200] Crawled: 2 months ago;     ## ACH-000934               C5214
+--------------------------------------------------------------------------------
+GRAND (https://grand.networkmedicine.org/cell/mirna/)
+citeturn26search7 [wordlim: 200] Crawled: 2 weeks ago; ACH-000045  | MV411  | 908156.0  | Male  | -  | Suspension  | haematopoietic_and_lymphoid_tissue  | Primary  | LAML
+--------------------------------------------------------------------------------
+DegronMD - Q9Y6V0(PCLO) (https://bioinfo.uth.edu/degronmd/protein.php?pid=Q9Y6V0)
+citeturn26search8 [wordlim: 200] Crawled: 6 days ago; p.A915T  | ACH-000932  | Gastric Cancer  | CCLE  | PTTPQET  | DEG_SCF_FBW7_1  | 920:926  | Mutation rewiring degron network  | 0.1944
+--------------------------------------------------------------------------------
+Отчет иностранного эмитента (6-K) - ALUMINUM CORP OF CHINA LTD (https://smart-lab.ru/blog/disclosure/718555.php)
+citeturn26search9 [wordlim: 200] Published: 5.1 years ago; Crawled: 6 months ago; Компания с кодом ACH выпустила отчет иностранного эмитента, форма 6-K.Прочитать его можно по ссылке: www.sec.gov/Archives/edgar/data/1161611/000116161121000045/0001161611-21-000045-index.htm
+--------------------------------------------------------------------------------
+AchのSound Effects 人気の同人グッズ27点を通販！話題のアニメやデザインから個性的で被らないアイテムが見つかる - BOOTH (https://booth.pm/en/browse/Sound%20Effects?q=Ach)
+citeturn26search10 [wordlim: 200] Crawled: last month; Power Plant 2 効果音 Sound Effect 000045
+--------------------------------------------------------------------------------
+HDFC Bank Account Statement Summary | PDF | Accounting | Service Industries (https://www.scribd.com/document/973841624/Acct-Stmt-HD)
+citeturn26search11 [wordlim: 200] Published: 8 months ago; Crawled: 8 months ago; ## 000045-296758359237-PAYMENT FROM PHONE ... ## 08/12/25 ACH D- INDIAN CLEARING CORP-0000GF33FTM8 0000003615242089 08/12/25 1,000.00 95,607.49
+

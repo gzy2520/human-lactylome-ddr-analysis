@@ -1,0 +1,227 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7574839)
+citeturn12search0 [wordlim: 200] Published: 3.2 years ago; Crawled: last week; Characteristics tissue: Torn rotator cuff tendon ... Library strategy RNA-Seq ... GSE236746 Analysis of Differentially Expressed Genes in Torn Rotator Cuff Tendon Tissues in Diabetic Patients through RNA-sequencing
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM7574839 Query DataSets for GSM7574839
+Status Public on Nov 02, 2023
+Title Torn rotator cuff tendon, N-3
+Sample type SRA
+ 
+Source name Torn rotator cuff tendon
+Organism Homo sapiens
+Characteristics tissue: Torn rotator cuff tendon
+disease state: control
+Extracted molecule total RNA
+Extraction protocol The total RNA was extracted according to the instruction manual of the TRlzol Reagent (Life technologies, California, USA).
+A total amount of 1 μg RNA per sample was used as input material for the RNA sample preparations. Sequencing libraries were generated using Hieff NGS Ultima Dual-mode mRNA Library Prep Kit for Illumina (Yeasen Biotechnology (Shanghai) Co., Ltd.) following manufacturer’s recommendations and index codes were added to attribute sequences to each sample.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Data processing Raw data (raw reads) of fastq format were firstly processed through in-house perl scripts.
+Hisat2 tools soft were used to map with reference genome.
+Quantification of gene expression levelsGene expression levels were estimated by fragments per kilobase of transcript per million fragments mapped.
+Differential expression analysis of two groups was performed using the DESeq2.
+Assembly: hg38
+Supplementary files format and content: TXT file includes FPKM values for each Sample
+ 
+Submission date Jul 06, 2023
+Last update date Nov 02, 2023
+Contact name Ziyang Yuan
+E-mail(s) aa951598913@gmail.com
+Phone 18801213051
+Organization name Beijing Friendship Hospital
+Street address Yongan Road No.95
+City Beijing
+ZIP/Postal code 100053
+Country China
+ 
+Platform ID GPL24676
+Series (1)
+GSE236746 Analysis of Differentially Expressed Genes in Torn Rotator Cuff Tendon Tissues in Diabetic Patients through RNA-sequencing
+Relations
+BioSample SAMN36344338
+SRA SRX20927818
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA--------------------------------------------------------------------------------
+Single-Cell and Bulk Transcriptome Data Integration Reveals Dysfunctional Cell Types and Aberrantly Expressed Genes in Hypertrophic Scar - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC8762316/)
+citeturn12search1 [wordlim: 200] Published: 4.7 years ago; Crawled: last week; To reveal the cellular diversity and heterogeneity of skin tissues, we collected a single-cell RNA sequencing (RNA-seq) dataset of three normal (NS) and three hypertrophic scar (HS) samples from Gene Expression Omnibus (GEO) database (See Materials and methods). ... To reveal the expression patterns of the cell-type marker genes in skin tissues, we also collected five NS and five HS tissue samples for bulk RNA sequencing.
+## Results
+
+### Single-Cell and Bulk RNA-Seq Reveal the Cellular Diversity and Heterogeneity of Skin Tissues.
+
+To reveal the cellular diversity and heterogeneity of skin tissues, we collected a single-cell RNA sequencing (RNA-seq) dataset of three normal (NS) and three hypertrophic scar (HS) samples from Gene Expression Omnibus (GEO) database (See Materials and methods). After excluding the cells with low quality, we identified 18 cell clusters from 15,276 cells by the dimensional reduction and clustering analysis (Figure 1A), and characterized the cell clusters using the marker genes from previous studies (Solé-Boldo et al., 2020; Vorstandlechner et al., 2020; Liu et al., 2021). The cell clusters included six clusters of fibroblasts (FB-1/2/3/4/5/6, represented by marker genes: FBLN1, COL1A1, APOE, and APCDD1), three clusters of keratinocytes (KC-1/2/3: KRT1 and KRT14), two clusters of endothelial cells (EC-1/2: THBD and SELE), T cells (TC: PTPRC), smooth muscle cells (SMC: ACTA2 and RGS5), Langerhans cells (LA: AIF1), lymphatic endothelial cells (LEC: PROX1 and PDPN), dendritic cells (DC: HLA−DRB1 and CD1C), macrophage (MP: CD68), and melanocyte (MC: MITF) (Figure 1B), suggesting that the cell types were well characterized by the marker genes.
+
+#### FIGURE 1.
+
+Open in a new tab
+
+The cell populations and marker genes in the skin samples of hypertrophic scar (HS) and normal skins. (A) The cell clusters visualized by the dimensional reduction of t-distributed stochastic neighbor embedding (t-SNE). Each point represents one cell, and the filled colors represent the cell types. (B) The expression specificity of cell type-specific marker genes within the skin samples using scRNA-seq data. (C) The differential expression of the cell type-specific marker genes between HS and normal skins using bulk RNA-seq data.
+
+To reveal the expression patterns of the cell-type marker genes in skin tissues, we also collected five NS and five HS tissue samples for bulk RNA sequencing. As shown in Figure 1C, the representative marker genes were found to be differentially expressed between the NS and HS tissues (adjusted p-value < 0.05 and fold change >1.5). Moreover, about 26.83% of the cell-type marker genes (376/1,401) were observed to be differentially expressed between NS and HS samples. The deregulation of the cell-type marker genes in HS samples indicated that the cell proportions and gene expression patterns were changed in HS.
+
+### Differential Proportion Analysis Reveals Significant Expansion of Fibroblast and Contraction of KC Subpopulations in HS
+
+We next attempted to identify HS-associated cell lineages or clusters that were significantly expanded or contracted in HS. The FB-1 accounted for the largest number of cells, followed by FB-2, TC, and EC-2 based on the single-cell RNA-seq data (Figure 2A). Furthermore, we also conducted gene set enrichment analysis on the marker genes of those cell types to characterize their functionalities (Supplementary Table S1). Remarkably, the three major cell types, including FB-2, EC-2, and T cell, were characterized by collagen degradation, VEGFA-VEGFR2 Signaling Pathway, and TYROBP Causal Network, respectively. The cell proportions of the three NS and three HS samples could be estimated by the single-cell RNA-seq data. To improve the reliability of the differential proportion analysis, we also estimated the cell proportions for the ten bulk RNA-seq samples using MuSiC (Wang et al., 2019), a deconvolution method to estimate cell type proportions from bulk RNA sequencing data. The differential proportion analysis revealed that FB-1 and FB-2 were expanded in HS, while the proportion of KC-2 was reduced in HS (Figure 2B). Accordingly, the FB-1 and KC-2 marker genes were enriched in the up- and down-regulated genes in HS by bulk RNA-seq data (Figure 2C), respectively. However, FB-2 marker genes were enriched in neither the upregulated nor the downregulated genes in HS. These results suggested that the changed proportions of these cell types might be closely associated with HS.
+
+--------------------------------------------------------------------------------
+ZNF469 promotes extracellular matrix production in normal and keloid dermal fibroblasts - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12457930/)
+citeturn12search2 [wordlim: 200] Published: last year; Crawled: last month; Specifically, RNA-seq data from hypertrophic scar tissue was obtained from the Gene Expression Omnibus (GEO) database under accession number GSE178411 (unpublished dataset). ... To evaluate the clinical importance of ZNF469 in fibrotic skin disorders, publicly available bulk RNA-seq datasets derived from hypertrophic and keloid scar tissues were reanalyzed.
+### Bulk RNA-seq analysis of public datasets
+
+Publicly available bulk RNA-seq datasets were utilized for re-analysis. Specifically, RNA-seq data from hypertrophic scar tissue was obtained from the Gene Expression Omnibus (GEO) database under accession number GSE178411 (unpublished dataset). Additionally, RNA-seq data from keloid tissue were retrieved from the GEO under the following accession numbers: GSE158395 (30), GSE232079 (31), GSE117887 (32), GSE237752 (unpublished dataset), GSE211150 (unpublished dataset), GSE202293 (33), GSE210434 (34) and GSE221382 (35). The Spearman rank correlation coefficient (r) was calculated to assess the correlation between ZNF469 gene expression and the expression of genes associated with ECM.
+### ZNF469 is upregulated and correlates with ECM-related genes in pathological skin scarring
+
+To evaluate the clinical importance of ZNF469 in fibrotic skin disorders, publicly available bulk RNA-seq datasets derived from hypertrophic and keloid scar tissues were reanalyzed. Hypertrophic scars are typically restricted to the original wound area, whereas keloids are more aggressive, therapy-resistant lesions that extend beyond the wound boundaries. Moreover, research has demonstrated the induction of both COL1A1 and COL3A1 in keloid scars, with COL1A1 being induced to a much greater extent (44). Analysis of hypertrophic scar tissue in the GSE178411 dataset revealed a significant upregulation of the expression of both ZNF469 and ECM-related genes compared with that in normal skin tissue (Fig. 3A). Furthermore, ZNF469 expression levels were strongly correlated with the expression levels of ECM-related genes in hypertrophic scars, with the exception of FLRT2, which demonstrated a moderate association (【69†Fig. --------------------------------------------------------------------------------
+Gene Expression in Torn Rotator Cuff Tendons Determined by RNA Sequencing - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC7325550/)
+citeturn12search3 [wordlim: 200] Published: 6.2 years ago; Crawled: last month; To determine gene expression profiles in torn rotator cuff tendon tissue through use of RNA sequencing. ... The purpose of this study was to identify a genome-wide landscape of differential gene expression profiles in rotator cuff tendons, with tears compared with normal tendon tissue by using an RNA sequencing approach. ... We are currently recruiting patients back to attempt to obtain DNA for combined analysis with RNA seq data.
+
+[Button: Orthop J Sports Med]
+
+. 2020 Jun 29;8(6):2325967120927480. doi: 10.1177/2325967120927480
+
+# Gene Expression in Torn Rotator Cuff Tendons Determined by RNA Sequencing
+
+Robert Z Tashjian
+
+### Robert Z Tashjian, MD
+
+^{†}Department of Orthopaedics, University of Utah School of Medicine, Salt Lake City, Utah, USA.
+
+Find articles by Robert Z Tashjian
+
+^{†,}^{*}, Ian Lock
+
+### Ian Lock
+
+^{†}Department of Orthopaedics, University of Utah School of Medicine, Salt Lake City, Utah, USA.
+
+Find articles by Ian Lock
+
+^{†}, Erin K Granger
+
+### Erin K Granger, MPH
+
+^{†}Department of Orthopaedics, University of Utah School of Medicine, Salt Lake City, Utah, USA.
+
+Find articles by Erin K Granger
+
+^{†}, Yangliang Wang
+
+### Yangliang Wang, MD, DDS
+## Abstract
+
+### Background:
+
+Although the cause of rotator cuff tearing is likely multifactorial and a genetic predisposition has been proposed, the biochemical basis remains unknown.
+
+### Purpose:
+
+To determine gene expression profiles in torn rotator cuff tendon tissue through use of RNA sequencing.
+
+### Study Design:
+
+Controlled laboratory study.
+
+### Methods:
+
+The supraspinatus tendon edge was biopsied in 24 patients undergoing arthroscopic rotator cuff repair for full-thickness supraspinatus rotator cuff tears. The supraspinatus tendon was also biopsied in 9 patients undergoing open reduction and internal fixation for a proximal humeral fracture (controls). Total RNA was extracted and sequenced. Differential gene expression was analyzed between the tear and control groups, and a secondary analysis was conducted between groups defined by an unbiased clustering.
+
+### Results:
+
+Tear and control transcriptomes demonstrated significant differential expression in more than 3000 genes. The identified differential genes were highlighted in pathways involved in inflammation in control patients and extracellular matrix generation in patients with tears. 
+Keywords: rotator cuff, genetics, RNA sequencing, hypoxia, angiogenesis, inflammation, endothelial
+
+* * *
+
+The cause of rotator cuff disease is unknown but thought to include a combination of mechanical and biological factors. Possible causes of rotator cuff tearing include limited vascularity of the tendon, mechanical impingement on the undersurface of the acromion, and intrinsic degeneration. Sibling data and familiality data suggest a possible genetic origin of rotator cuff tearing.^{6,14} Various genetic variants associated with rotator cuff tearing have been identified through use of candidate gene analysis of genomic DNA including tenascin-C and estrogen-related receptor β.^{8,15} However, the differential expression of these genetic variants within the tear environment may provide even deeper insight into the pathogenesis of rotator cuff tearing.
+
+Several genes have been identified to be upregulated in rotator cuff tendons in patients with tears, including tumor necrosis factor α (TNF-α) and interleukins 1α and 1β (IL-1α and IL-1β); matrix metalloproteinases (MMP)-1, -9, and -13; and apoptotic genes including caspase-3, -8, and -9.^{1,9,10,12} Genome-wide survey of gene expression using microarray technique has identified certain gene expression profiles in torn rotator cuff tendons and identified upregulation of MMPs including MMP-3, -10, -12, -13, -15, -21, and -25 and interleukins including IL-3, -10, -13, and -15.^{2}
+
+Microarray techniques offer the ability to analyze the genome for differential gene expression based upon mRNA transcription.^{7} Limitations include evaluation of a limited number of targets dependent on transcript-specific probes and the requirement for binding of mRNA to the targets to determine expression.^{7} As a result, low signal transcripts or transcripts for which there is no probe may be missed.^{11} RNA sequencing avoids these issues and offers superior accuracy in determining expression levels because total mRNA is sequenced and quantified. This allows detection of rare and low-abundance transcripts not measured by microarray techniques.^{7,5} No prior studies have evaluated human genome-wide RNA sequencing of torn rotator cuff tissue.
+
+The purpose of this study was to identify a genome-wide landscape of differential gene expression profiles in rotator cuff tendons, with tears compared with normal tendon tissue by using an RNA sequencing approach. We also conducted the gene set enrichment analysis with the differentially expressed gene to characterize possible mechanisms for tear development. We hypothesized that variations in gene expression would be identified in genes associated with the extracellular matrix, chemotaxis, and inflammatory and immune responses.
+
+## Methods
+
+This was a prospective comparative study. Rotator cuff tissue biopsies were conducted in 33 patients undergoing surgical treatment of their shoulder. Hospital investigational review board approval at the University of Utah was obtained before initiation of the study, and all patients signed informed consent. A total of 24 patients with full-thickness posterosuperior rotator cuff tears underwent arthroscopic rotator cuff repair (study group), and 9 patients underwent open reduction and internal fixation for a proximal humeral fracture (control group). Inclusion criteria included any patient willing to consent to the biopsy who was undergoing repair of a full-thickness posterosuperior rotator cuff tear or open reduction and internal fixation of a proximal humeral fracture. Exclusion criteria included any partial-thickness tear repairs, any revision rotator cuff repairs, and any patient with a proximal humeral fracture with a full-thickness rotator cuff tear as determined by surgical observation or with a history of prior shoulder surgical procedures.
+A scalpel was used to remove a 3 × 3–mm piece of supraspinatus tendon, which was placed in RNAlater and then stored until processing. All patients had 3- and 4-part fractures, and these involved the tuberosity in a location posterior to the biceps groove. The rotator cuff tendon at the rotator cuff interval was the location for tissue sampling, which in the setting of a 3- or 4-part fracture is preserved. Superficial inspection of the rotator cuff confirmed no evidence of rotator cuff injury.
+
+Total RNA was extracted from the samples by use of the RNeasy Fibrous Tissue Mini Kit (Qiagen). Libraries were prepared through use of the Illumina TruSeq RNA kit, quality checked with the Agilent Bioanalyzer RNA 6000 chip (Agilent Technologies), captured by use of the RiboZero method (Illumina), and sequenced by 50-cycle end-reads on an Illumina HiSeq 2000. Reference FASTA files were generated by combining the chromosome sequences from hg38 with all possible splice junction sequences, which were generated with USeq (v8.8.8) MakeTranscriptome using a radius of 46 and annotated with Ensembl transcripts from the UCSC browser. ## Discussion
+
+In rotator cuff tendon tissue specimens obtained from 2 different scenarios—acute proximal humeral fractures undergoing operative fixation and rotator cuff tears undergoing arthroscopic repair—gene expression differed significantly. The expression profile in rotator cuff tears demonstrated an overabundance of extracellular matrix production and reduction in the drivers of cell division, suggesting a biology that may contribute to failure of healing after rotator cuff injury. Further, a secondary cluster analysis identified a subgroup of smaller tears with less tendon retraction with overexpression of genes within the hypoxia pathway, suggesting that hypoxia may play an important role in the early stages of rotator cuff disease. Interestingly, this group also had a very high propensity for healing, suggesting that repair in the early stages of disease may have a higher chance for repair success.
+
+The sequenced transcriptomes from tears versus controls analyzed as groups suggested the relatively increased presence of hematologic cells and inflammation in the controls. --------------------------------------------------------------------------------
+Conjoint analysis of lncRNA and mRNA expression in rotator cuff tendinopathy - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC7186612/)
+citeturn12search4 [wordlim: 200] Crawled: last month; After removing the synovium tissue and scar tissue at the edge of the torn RC tendon, two tendon samples of approximately 2 mm × 2 mm size were collected using a pair of arthroscopic scissors. ... RCT, rotator cuff tendinopathy; NT, normal tendon; F, female; M, male; BMI, body mass index; DP, duration of pain; SST, supraspinatus; IH, injure history; M, month; Y, year. ... The differential expression of NONHSAT209114.1, ENST00000577806, NONHSAT168464.1, PLK2, TMEM214, and IGF2 was confirmed by qRT-PCR, indicating the reliability of the RNA-Seq data and the potential roles of these RNAs in RCT occurrence.
+### RNA isolation, library construction, and sequencing
+
+The total RNA was isolated from the tendons using the RNeasy Mini Kit (Qiagen, Düsseldorf, Germany) according to the manufacturer’s instructions. RNA concentration and quality were determined using the Qubit^{®} 2.0 Fluorometer (Life Technologies, USA) and Nanodrop One spectrophotometer (Thermo Fisher Scientific, USA). Samples with an RNA integrity number of above 7.0 were used for sequencing. Paired-end libraries were synthesized using the VAHTS Total RNA-Seq (H/M/R) Library Prep Kit (Vazyme, Nanjing, China) per the manufacturer’s instructions. Briefly, after the removal of rRNA, RNA was purified using magnetic beads. Then, mRNA was fragmented into small pieces by heating at 94 °C in the presence of divalent cations for 8 min. The cleaved RNA fragments were copied into the first-strand cDNA using reverse transcriptase and random primers. DNA polymerase I and RNase H were used for the second-strand cDNA synthesis. The cDNA fragments were subjected to end repair, single A base addition, adapter ligation, and purification and enrichment by polymerase chain reaction (PCR) to generate the final cDNA library. --------------------------------------------------------------------------------
+Tenascin C deletion impairs tendon healing and functional recovery after rotator cuff repair - PubMed (https://pubmed.ncbi.nlm.nih.gov/39601211/)
+citeturn12search5 [wordlim: 200] Published: 1.8 years ago; Crawled: last month; Genetic variants in the extracellular matrix protein Tenascin C (TNC) are associated with impaired tendon healing and it is expressed in rotator cuff tendon tissue after injury, suggesting it may have a role in the repair process. ... We performed histologic, activity testing, bulk RNA-seq, and biomechanical analyses. ... Loss of Tenascin C following rotator cuff repair altered gene expression in the shoulder.
+## Abstract
+
+The biological factors that affect healing after rotator cuff repair (RCR) are not well understood. Genetic variants in the extracellular matrix protein Tenascin C (TNC) are associated with impaired tendon healing and it is expressed in rotator cuff tendon tissue after injury, suggesting it may have a role in the repair process. The purpose of the current study was to determine the role of TNC on tendon healing after RCR in a murine model. The supraspinatus tendon was transected and repaired on the left shoulder of wild-type (WT-RCR), Tenascin C null (Tnc^{-}-RCR) and Tnc heterozygous (Tnc^{+/-}-RCR) mice. Controls included the unoperated, contralateral shoulder of WT-RCR, Tnc^{-}RCR, Tnc^{+/-}-RCR mice and unoperated shoulders from age and genotype matched controls. We performed histologic, activity testing, bulk RNA-seq, and biomechanical analyses. At 8-weeks post-RCR, Tnc^{-} and Tnc^{+/-} mice had severe bone and tendon defects following RCR. Tnc^{-}-RCR mice had reduced activity after RCR including reduced wheel rotations, wheel duration, and wheel episode average velocity compared with WT-RCR. 
+(A) Tnc^{−} tendons had similar ultimate failure loads to WT mice after repair (Maximum load (N)). There was no difference within unrepaired control or repaired groups. (B) Tnc^{−} tendons had similar stiffness to WT mice after repair (Maximum stiffness (N/mm)). There was no difference within unrepaired control or repaired groups (p=0.923). Dots are independent biological replicates. Error bars represent mean ± SEM and statistically significant differences of *p ≤0.05, **p ≤ 0.01, and ***p ≤0.001.
+
+Figure 5.. Loss of Tenascin C following…
+
+Figure 5.. Loss of Tenascin C following rotator cuff repair altered gene expression in the…
+
+Figure 5.. Loss of Tenascin C following rotator cuff repair altered gene expression in the shoulder.
+
+RNA-seq analysis of RNA isolated from WT and Tnc^{−} shoulders 14 days post-RCR. (A) Volcano plot indicates genes significantly upregulated (red) or downregulated (blue) in Tnc^{−} shoulders compared with WT-RCR shoulders. (B) Z-scores indicate pathways that are up- or downregulated in Tnc^{−}-RCR compared with WT-RCR shoulders. WT-RCR; n = 3 and Tnc^{−}-RCR; n = 4 for each genotype. n = independent biological replicates.
+
+[Button: ] [Button: ]
+
+--------------------------------------------------------------------------------
+A macrophage-induced subpopulation of mesenchymal cells expressing Fcer1g contributes to wound-induced fibrosis | Nature Communications (https://doi.org/10.1038/s41467-026-69449-2)
+citeturn12search6 [wordlim: 200] Published: 7 months ago; Crawled: last month; To evaluate whether FCER1G⁺ PDGFRα⁺ mesenchymal cells are associated with human scar formation, we further reanalyzed another publicly available bulk RNA-seq dataset (GSE178411), which includes 108 human samples across uninjured skin (n = 26), early wounds (n = 22), late wounds (n = 29), chronic wounds (n = 3), and hypertrophic scars (n = 28).
+D7 vs. D0 Padj = 0.098; D7 vs. D1 Padj = 0.023; D7 vs. D30 Padj = 0.233). f Cross-species correlation of differentially expressed genes (DEGs) in FCER1G-expressing mesenchymal cells between mouse and human, based on Seurat FindMarkers() output. Spearman’s correlation coefficient and p-value are shown. g Normalized ssGSEA enrichment scores of mice Fcer1g signature genes (top 100 by log fold change) across wound states in human bulk RNA-seq dataset GSE178411, including normal skin (n = 24), early wound (n = 22), late wound (n = 29), chronic wound (n = 3), and hypertrophic scar (n = 28) (One-way ANOVA with Dunnett’s post-hoc test for multiple comparisons against normal skin. Padj < 0.0001 for all comparisons). Data are presented as mean ± s.d.
+
+To evaluate whether FCER1G⁺ PDGFRα⁺ mesenchymal cells are associated with human scar formation, we further reanalyzed another publicly available bulk RNA-seq dataset (GSE178411), which includes 108 human samples across uninjured skin (n = 26), early wounds (n = 22), late wounds (n = 29), chronic wounds (n = 3), and hypertrophic scars (n = 28). The top 100 DEGs derived from both mouse and human FCER1G⁺ PDGFRα⁺ mesenchymal cells effectively distinguished wound and scar samples from uninjured skin (Fig. 5g and Supplementary Fig. 18f). ssGSEA analysis revealed that FCER1G-associated signatures peaked during the early (acute) wound phase and gradually declined as wounds progressed toward hypertrophic scarring (Supplementary Fig. 19a), consistent with the temporal dynamics observed in mice. Furthermore, FCER1G expression alone recapitulated this pattern (Supplementary Fig. 19b), supporting its role as a key marker of a pro-fibrotic mesenchymal subset involved in hypertrophic scar formation during wound healing.
+
+--------------------------------------------------------------------------------
+A Robust Machine Learning Framework for Keloid Biomarker Discovery Beyond Differential Expression | bioRxiv (https://www.biorxiv.org/content/10.64898/2026.06.24.734231v1.full)
+citeturn12search7 [wordlim: 200] Published: 2 months ago; Crawled: last month; Transcriptomic datasets were identified through a systematic search of the Gene Expression Omnibus (GEO) repository [49] and related public databases for both bulk RNA-seq and scRNA-seq studies of human skin samples, corresponding to one of four conditions of interest: keloid scar, hypertrophic scar, normotrophic scar, or normal skin.
+## 5 Materials and Methods
+
+### 5.1 Dataset Assembly and Curation
+
+Transcriptomic datasets were identified through a systematic search of the Gene Expression Omnibus (GEO) repository [49] and related public databases for both bulk RNA-seq and scRNA-seq studies of human skin samples, corresponding to one of four conditions of interest: keloid scar, hypertrophic scar, normotrophic scar, or normal skin. With the exception of one bulk RNA dataset (OEP00002674), [16] which was obtained from the National Omics Data Encyclopedia, [50] the remaining samples can be retreived from the GEO database. Several categories of datasets were excluded. These included microarray studies (for instance, using Affymetrix technology), datasets containing only spatial transcriptomic measurements despite being incorrectly annotated as scRNA-seq datasets in public repositories, [9], datasets containing transcriptomic measurements from isolated cells rather than intact tissue biopsies (see Section 2), studies in which samples were subjected to experimental treatments (e.g., therapeutic injections), and samples associated with comorbid conditions such as systemic sclerosis. --------------------------------------------------------------------------------
+4  CHAROENTHANAKITKUL et al. ROLES OF ZNF469 IN DERMAL AND KELOID FIBROBLASTS (https://www.spandidos-publications.com/10.3892/mmr.2025.13668/download)
+citeturn12search12 [wordlim: 200] Published: last year; Crawled: last year; Bulk RNA-seq analysis of public datasets. ... Specifically, RNA-seq data from hypertrophic scar tissue was obtained from the Gene Expression Omnibus (GEO) database under accession number GSE178411 (unpublished dataset).
+--------------------------------------------------------------------------------
+Immune-related inflammatory gene in hypertrophic scar: prognostic and molecular mechanisms via integrated machine learning-WGCNA analysis - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12602242/)
+citeturn12search8 [wordlim: 200] Published: 10 months ago; Crawled: last month; Hypertrophic scar (HTS) is a prevalent fibrotic skin disorder that typically arises following trauma, surgery, or burns, characterized by excessive proliferation of cutaneous tissue and abnormal collagen deposition (1). ... However, machine learning applications in HTS research remain nascent, with few studies targeting immune-related inflammatory biomarkers screening and validation. ... Profiles associated with HTS in Gene Expression Omnibus (GEO, https://www.ncbi.nlm.nih.gov/gds/?
+--------------------------------------------------------------------------------
+Transcriptional Time Course After Rotator Cuff Tear - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC8378535/)
+citeturn12search9 [wordlim: 200] Published: 5.1 years ago; Crawled: last month; The SSP muscles from both shoulders were harvested and divided into four regions with the central tendon serving as the muscle midline between the anterior and posterior sides of the muscle. ... RNA extraction was performed using the QIAGEN Fibrous Tissue mini kit on a QIAGEN Qiacube robot (QIAGEN, Germantown, MD, United States). ... The data discussed in this publication have been deposited in NCBI’sGene Expression Omnibus (Edgar et al., 2002) and are accessible through GEO Series accession number GSE173234 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+--------------------------------------------------------------------------------
+Transcriptional Time Course After Rotator Cuff Tear. (https://pubmed.ncbi.nlm.nih.gov/34421646/)
+citeturn12search10 [wordlim: 200] Published: 5.1 years ago; Crawled: last month; Rotator cuff (RC) tears are prevalent in the population above the age of 60. ... This highlights the need to better understand the underlying dysfunction in muscle after RC tendon tear. ... RNA sequencing and analyses were performed to identify a transcriptional timeline of RC muscle changes and related morphological sequelae.
+--------------------------------------------------------------------------------
+Transcriptional Analysis of Normal and Pathological Scars (https://edoc.ub.uni-muenchen.de/34306/1/Walter_Annika_Sophie.pdf)
+citeturn12search13 [wordlim: 200] Published: 1.9 years ago; Crawled: 1.9 years ago; This project includes skin scar formation with normal skin scars, hypertrophic skin scars and keloid skin scars as well as Dupuytren´s scar tissue. ... In this research project, fresh scar tissue samples and Dupuytren´s disease tissue samples were collected during hand surgeries on site in the operating room. ... We hypothesized that normal scars, hypertrophic scars and keloid scars show different gene expression profiles in Bulk-RNA sequencing (Article I).
+--------------------------------------------------------------------------------
+Systematic identification of aberrant non-coding RNAs and their mediated modules in rotator cuff tears - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9470226/)
+citeturn12search11 [wordlim: 200] Published: 4.0 years ago; Crawled: 3 weeks ago; The rotator cuff consists of four muscle-tendon units: supraspinatus, infraspinatus, teres minor and subscapularis, which contribute to shoulder movement. ... RNA sequencing was performed to obtain the mRNA expression profile of torn supraspinatus muscles (group T) and matched unharmed subscapularis muscles (group P).
+--------------------------------------------------------------------------------
+UPPER LIMB
+@BoneJointRes
+Identification of age-rel (https://pdfs.semanticscholar.org/ec7e/701421c278f6487b92f8003978a87f5a1573.pdf)
+citeturn12search14 [wordlim: 200] Published: 2.0 years ago; RNA-seq data (GSE180836) were normalized in terms of gene ... Identification of age-related genes in rotator cuff tendon
+--------------------------------------------------------------------------------
+Deciphering the contributions of cuproptosis in the development of hypertrophic scar using single-cell analysis and machine learning techniques (https://public-pages-files-2025.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1207522/pdf)
+citeturn12search15 [wordlim: 200] Published: 3.2 years ago; Crawled: 3.2 years ago; The research process of this study can be seen from the graphic flow chart (Figure 1). ... Left side shows bulk-RNA seq workflow from RNA samples to DEG screening, Venn diagram, hub genes selection, immune cell infiltration, gene diagnosis model, and consensus clustering.Right side shows scRNA seq workflow from GSE156326 to cell annotation, cell-cell communication, and transcription factor inference.
+--------------------------------------------------------------------------------
+fgene-2021-806740 1..13 (https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.806740/pdf)
+citeturn12search16 [wordlim: 200] Published: 4.7 years ago; Single-Cell and Bulk Transcriptome Data Integration Reveals Dysfunctional Cell Types and Aberrantly Expressed Genes in Hypertrophic Scar ... In the present study, we found that FB-1, which was identified a major type of fibroblast and had the characteristics of myofibroblast, was significantly expanded in HS by integrative analysis of the single-cell and bulk RNA sequencing (RNA-seq) data. ... Keywords: hypertrophic scar, extracellular matrix, single-cell RNA sequencing, cell-cell communication, myofibroblast, keratinocyte ... Hypertrophic scar (HS) caused by pathologically excessive collagen deposition from skin fibroblasts in the dermis and subcutis are major types of pathological scars that can be regarded as complications to abnormal wound healing (Haverstock, 2001).
+

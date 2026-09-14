@@ -1,0 +1,659 @@
+MDA-MB-468 | Cell - PubChem (https://pubchem.ncbi.nlm.nih.gov/cell/CVCL_0419)
+citeturn18search0 [wordlim: 200] Published: 4.7 years ago; Crawled: 5 days ago; This page summarizes the data available in PubChem associated with the cell line MDA-MB-468. ... https://depmap.org/portal/cell_line/ACH-000849
+
+# MDA-MB-468
+
+Cell Line
+
+MDA-MB-468
+
+Source Tissue
+
+pleural effusion
+
+Source Organism
+
+Homo sapiens (human)
+
+Dates
+
+  * Create:
+
+2022-01-05
+
+  * Modify:
+
+2026-09-04
+
+Description
+
+This page summarizes the data available in PubChem associated with the cell line MDA-MB-468.
+
+PubChem
+
+## 1 Names and Identifiers
+
+### 1.1 Synonyms
+
+  * MDA-MB 468
+  * MDA-MB468
+  * MDAMB468
+  * MDA-468
+  * MDA468
+  * MB468
+  * MD Anderson-Metastatic Breast-468
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+### 1.2 Other Identifiers
+
+#### 1.2.1 Cellosaurus ID
+
+CVCL_0419
+
+ChEMBL; Dependency Map (DepMap); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.2 ChEMBL Cell Line ID
+
+CHEMBL3308424
+
+ChEMBL; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.3 LINCS ID
+
+LCL-1471
+
+LINCS Data Portal; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.4 HMS LINCS ID
+
+50335
+
+Harvard Medical School (HMS) LINCS; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.5 Cell Line Ontology ID
+
+CLO_0007641
+
+Cell Line Ontology (CLO); ChEMBL; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.6 Experimental Factor Ontology ID
+
+EFO_0001216
+
+ChEMBL; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.7 BRENDA Tissue Ontology ID
+
+BTO_0001570
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.8 COSMIC ID
+
+908123
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.9 GDSC
+
+908123
+
+Genomics of Drug Sensitivity in Cancer (GDSC); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.10 Cell Model Passports
+
+SIDM00628
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.11 DepMap ID
+
+ACH-000849
+
+Dependency Map (DepMap); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.12 Wikidata
+
+Q16880225
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+
+https://www.ebi.ac.uk/chembl/explore/cell_line/CHEMBL3308424
+
+  4. Swiss Institute of Bioinformatics Cellosaurus
+
+LICENSE
+
+Developed by the CALIPHO group. Cellosaurus is an ELIXIR Core Data Resource. This resource is released under a Creative Commons Attribution International license CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+
+https://www.cellosaurus.org/description.html
+
+MDA-MB-468
+
+https://www.cellosaurus.org/CVCL_0419
+
+  5. Dependency Map (DepMap)
+
+MDA-MB-468
+
+https://depmap.org/portal/cell_line/ACH-000849
+
+  6. Genomics of Drug Sensitivity in Cancer (GDSC)
+
+LICENSE
+
+Users have a non-exclusive, non-transferable right to use data files for internal proprietary research and educational purposes, including target, biomarker and drug discovery.
+
+https://www.cancerrxgene.org/legal
+
+MDA-MB-468
+--------------------------------------------------------------------------------
+DepMap Cell Line Summary (https://depmap.org/portal/cell_line/ACH-000971)
+citeturn18search1 [wordlim: 200] Crawled: 2 months ago;   * depmap@broadinstitute.org  * HCT116
+  * depmap@broadinstitute.org
+  * HCT116
+
+DepMap ID: ACH-000971
+
+[Button: Overview][Button: Mutations][Button: Fusions][Button: Translocations]--------------------------------------------------------------------------------
+Announcing the 25Q2 Release - Announcements - DepMap Community Forum (https://forum.depmap.org/t/announcing-the-25q2-release/4257)
+citeturn18search2 [wordlim: 200] Published: 1.3 years ago; Crawled: 1.2 years ago; ### 25Q2 Public DepMap Release Notes ...     * OmicsExpressionProteinCodingGenesTPMLogp1.csv will now have one row per model (similar to 24Q4)
+
+# Announcing the 25Q2 Release
+
+Announcements
+
+Samantha_Stokes June 5, 2025, 5:10pm 1
+
+### 25Q2 Public DepMap Release Notes
+
+In this release, we have added new CRISPR and Omics data, more WGS data for lines that previously had WES and important updates to our Omics and CRISPR pipelines.
+
+Please read the release note below for more information.
+
+### MODEL ANNOTATIONS
+
+  * We’ve added new metadata columns:
+    * New Columns
+      * Model.csv
+        * ModelIDAlias (Freetext): Previously known Model IDs (ACH-XXXXXX) used to reference the model, in cases when models are merged due to possible fingerprint swaps, duplication, etc.
+        * PediatricModelType (Boolean): Indicates if this model represents a pediatric cancer subtype based on molecular features rather than age alone.
+      * Modified Columns
+        * ModelAvailableInDbgap (Controlled Vocab): terms have been updated to reflect the appropriate level of access across databases where sequencing data may be available.
+
+### NEW DEPMAP DATA
+--------------------------------------------------------------------------------
+MDA-MB-468 Cell Line Mutations | CAN-IMMUNE Database (https://canelib.erc.monash.edu.au/cell-lines/MDA-MB-468)
+citeturn18search3 [wordlim: 200] Crawled: last week; MDA-MB-468 ... External: Cellosaurus (CVCL_0419) DepMap (ACH-000849) COSMIC (COSS908123) Cell Model Passports (SIDM00628) NCIt (C9245) OncoTree (BRCA) ... Category Cancer cell line
+
+MDA-MB-468
+
+Cell line classification
+
+Cell Line Classification[Button: ×]
+
+Tissue: The anatomical tissue this cell line originates from, standardized using Cell Model Passports (Sanger).
+
+Cancer: The cancer type classified using OncoTree (MSK) and mapped to the NCI Thesaurus (NCIt) ontology.
+
+MSI: Microsatellite Instability status. MSS = Microsatellite Stable (no instability detected). MSI = Microsatellite Instable (defective DNA mismatch repair, often linked to higher mutational burden and immunotherapy response).
+
+Origin: Where the sample was collected from. Metastasis = derived from a metastatic site (e.g. pleural effusion). Primary = derived directly from the primary tumour.
+
+Sources: Cell Model Passports, OncoTree, COSMIC
+
+Tissue: Breast Cancer: Invasive Breast Carcinoma MSI: MSS Origin: Metastasis
+
+1,569
+
+Mutations
+
+567
+
+Genes
+
+630
+
+Peptides
+
+External: Cellosaurus (CVCL_0419) DepMap (ACH-000849) COSMIC (COSS908123) Cell Model Passports (SIDM00628) NCIt (C9245) OncoTree (BRCA)
+
+Sample Information
+
+Sample & tumor characteristics
+
+Sample Information[Button: ×]
+
+Tissue: Anatomical tissue of origin, standardized via Cell Model Passports (Sanger).
+
+Cancer Type / Subtype: Disease classification from OncoTree (MSK), mapped to the NCI Thesaurus ontology.
+
+NCIt Code: NCI Thesaurus disease identifier, the unified ontology used across COSMIC, DepMap, and Cellosaurus.
+
+Tissue Status: Whether the sample is a primary tumour, metastasis, or other origin.
+
+Growth: In-vitro growth pattern (e.g., Adherent, Suspension).
+
+Sources: Cell Model Passports · DepMap · COSMIC
+
+Tissue Breast
+
+Cancer Type Invasive Breast Carcinoma
+
+Category Cancer cell line
+
+NCIt Code C9245
+
+Tissue Status Metastasis
+
+Growth Adherent
+
+Patient Information
+
+Patient demographics & clinical data
+
+Patient Information[Button: ×]
+
+Sex: Biological sex of the patient the cell line was derived from.
+
+Age: Age at time of sample collection (Adult, Paediatric, etc.).
+
+Ethnicity: Self-reported ethnicity from the source database.
+
+Primary Site / Subtype: COSMIC-reported anatomical site and sub-classification of the original tumour.
+
+Sources: COSMIC · Cell Model Passports
+
+Sex Female
+
+Age 51.0, Adult
+
+Ethnicity Black
+
+Primary Site Breast
+
+Site Subtype Ns, Pleural_effusion
+
+Genomic Profile
+
+Genomic characteristics & data sources
+
+Genomic Profile[Button: ×]
+
+MSI Status: Microsatellite instability status (MSS = stable, MSI = instable). From Cell Model Passports.
+
+Ploidy: Average genome ploidy estimated from copy number data.
+
+Mutational Burden: Mutations per megabase of coding sequence.
+
+Data Sources: Which databases contributed mutation data for this cell line. Highlighted = present, faded = not available.
+
+Sources: DepMap / CCLE · COSMIC CLP
+
+MSI Status MSS
+
+Ploidy 2.84
+
+Mutational Burden 10.7 mut/Mb
+
+Data Sources COSMIC DepMap PubMed
+
+#### Top 20 Mutated Genes
+
+Genes with the most mutations
+
+Top 20 Mutated Genes[Button: ×]
+
+Bar chart showing the 20 genes with the highest mutation count in this cell line across all data sources.
+
+Use the slider bar below the chart to pan and zoom across genes. You can also scroll inside the chart area.
+
+Mutation counts include all coding variants (substitutions, insertions, deletions) from COSMIC and DepMap.
+
+Sources: CAN-IMMUNE aggregated
+
+#### HLA Information
+
+HLA genotyping alleles
+
+HLA Information[Button: ×]
+
+HLA Class I (A, B, C): Present peptides to CD8+ cytotoxic T cells. Critical for neoantigen-based immunotherapy target prediction.
+
+HLA Class II (DQA1, DPB1, DQB1, DRB1): Present peptides to CD4+ helper T cells.
+
+Each locus shows two alleles (one per chromosome). Alleles are in standard WHO nomenclature (e.g., 02:17).
+
+HLA typing is used by CAN-IMMUNE to match mutant peptides against the cell line's specific HLA profile.
+
+Source: Cellosaurus / PubMed
+
+HLA Class I
+
+HLA-A
+
+23:01
+
+30:02
+
+HLA-B
+
+27:03
+
+53:01
+
+HLA-C
+
+04:01
+
+02:02
+
+HLA Class II
+
+DQA1
+
+05:02
+
+02:01
+
+DPB1
+
+-
+
+DQB1
+
+06:13
+
+03:04
+
+DRB1
+
+04:03
+
+13:100
+
+RPKM: A:194.74; B:46.11; C:189.77; DQA1:0.1; DQB1:0.09; DRB1:0.28
+
+Source: TCLP+Cellosaurus
+
+#### Mutations
+
+All coding mutations for this cell line
+
+Mutations Table[Button: ×]
+
+Complete list of coding mutations (amino acid changes) identified in this cell line.
+
+CAN-IMMUNE ID: Unique identifier linking each mutation to its 25-mer mutant peptide.
+
+Mutation AA / CDS: Amino acid and coding DNA sequence change notation.
+
+Mutant Peptide: 25-mer peptide centred on the mutation site, used for epitope prediction and HLA binding analysis.
+
+Use search and column sorting to explore. Data is loaded on demand from the server.
+
+Sources: COSMIC CLP · DepMap / CCLE
+
+Type [Select]
+
+Source [Select] Clear 0 [Button: ⇩ Download CSV ] [Button: ⇩ FASTA ]
+
+Gene  | Mutation AA  | Mutation CDS  | Type  | Source  | Transcript  | CAN-IMMUNE ID  | Mutant Peptide  | Ref
+--- | --- | --- | --- | --- | --- | --- | --- | ---
+
+Download FASTA [Button: ×]
+
+Select which peptide sequences to include. One entry is written per selected type, per mutation. Respects the active Type / Source / Search filters.
+
+[Input] Mutant 25-mer – mutant peptide centred on the change [Input] Wild-type 25-mer – matching germline peptide [Input] 9-mer, mutation at position 2 – HLA class-I anchor [Input] 9-mer, mutation at position 9 – C-terminal anchor
+
+Select at least one peptide type.
+
+[Button: Cancel] [Button: ⇩ Download FASTA]--------------------------------------------------------------------------------
+MDA-MB-468 Pharmacogenomics Data | CellMinerCDB | NCI Genomics and Pharmacology Facility (https://discover.nci.nih.gov/cellminercdb/cell_lines/mdamb468_cellminercdb.html)
+citeturn18search4 [wordlim: 200] Crawled: 3.2 years ago; # Cancer Cell Line: MDA-MB-468
+
+# Cancer Cell Line: MDA-MB-468
+
+  * Aliases: MDA-MB-468, MDAMB468, CVCL_0419
+  * Tissue: Breast
+  * Cellosaurus: CVCL_0419
+
+MDA-MB-468 is in CellMinerCDB, a searchable tool integrating cancer cell line pharmacogenomics data to link gene and drug activity signatures.
+
+Click Here to Access CellMinerCDB
+
+If you use content from this page or CellMinerCDB, please cite: Luna A et al. 2021. PMID: 33196823, Rajapakse VN et al. 2018. PMID: 30553813, and Luna et al. 2016., PMID: 33196823.
+
+Image: Cell Line MDA-MB-468 Available Pharmacogenomics Datasets
+
+Cell Line MDA-MB-468 Available Pharmacogenomics Datasets
+
+## Available Data
+
+Visit CellMinerCDB to interactively explore available pharmacogenomics data for the breast cancer cell line: MDA-MB-468.
+
+### Broad Achilles
+
+  * CRISPR
+  * Miscellaneous Phenotypic
+
+### Broad CCLE
+
+  * DNA Copy Number
+  * DNA Methylation RRBS
+  * DNA Mutation
+  * Drug Activity
+  * Metabolomics
+  * Microarray RNA Expression using z-score
+  * MicroRNA
+  * Miscellaneous Phenotypic
+  * RNA-seq Expression using log2.FPKM+1
+  * RPLA Protein
+
+### Broad CTRP
+
+  * DNA Copy Number
+  * DNA Mutation
+  * Drug Activity
+  * Microarray RNA Expression using z-score
+  * Miscellaneous Phenotypic
+
+### Broad Prism
+
+  * Drug Activity
+
+### MDACC CLP
+
+  * RPLA Protein
+
+### Sanger/MGH GDSC
+
+  * DNA Copy Number
+  * DNA Methylation 450K
+  * DNA Mutation
+  * Drug Activity
+  * Microarray RNA Expression using z-score
+  * Miscellaneous Phenotypic
+
+## Technical Information
+
+This page was generated using the R package rcellminer 2.15.1.
+--------------------------------------------------------------------------------
+Gene Set - HCT116 (https://maayanlab.cloud/Harmonizome/gene_set/HCT116/DepMap%2BCRISPR%2BGene%2BDependency)
+citeturn18search5 [wordlim: 200] Published: 1.8 years ago; Crawled: 2 months ago; External Link  | https://depmap.org/portal/cell_line/ACH-000971 ... 961 gene knockdowns changing fitness of HCT116 relative to other cell lines from the DepMap CRISPR Gene Dependency Dataset.
+
+# HCT116 Gene Set
+
+Dataset  | DepMap CRISPR Gene Dependency
+Category  | disease or phenotype associations
+Type  | cell line
+Description  | Human colon carcinoma cell line; established from the primary colon carcinoma of an adult man. (Experimental Factor Ontology, EFO_0002824)
+External Link  | https://depmap.org/portal/cell_line/ACH-000971
+Similar Terms  | 
+Downloads & Tools  | The Enrichr link requires JavaScript. Image
+
+## Genes
+
+961 gene knockdowns changing fitness of HCT116 relative to other cell lines from the DepMap CRISPR Gene Dependency Dataset.
+
+Symbol  | Name  | Standardized Value
+--- | --- | ---
+ZNF221  | zinc finger protein 221  | 27.76
+PNLIPRP3  | pancreatic lipase-related protein 3  | 17.14
+CDK14  | cyclin-dependent kinase 14  | 16.223
+IKZF5  | IKAROS family zinc finger 5 (Pegasus)  | 15.5312
+OAT  | ornithine aminotransferase  | 15.3722
+DYNLL2  | dynein, light chain, LC8-type 2  | 14.5122
+--------------------------------------------------------------------------------
+The MDA-MB-468 breast cancer cell line - The SUM Cancer Cell Line Knowledge Base (SLKBase) (https://sumlineknowledgebase.com/individual-cell-line-summaries/the-mda-mb-468-breast-cancer-cell-line/)
+citeturn18search6 [wordlim: 200] Published: last month; Crawled: last month; The MDA-MB-468 breast cancer cell line is an ER-negative, HER2 negative cell line that is perhaps best known for it’s amplification and overexpression of the EGFR gene, which is rare in breast cancer specimens and cell lines.  the MDA-468 cell line was derived from the pleural effusion metastasis of a 51 year old female of mostly African ancestry (80%) and 20% European ancestry.   the cell line has been classified as a Basal A breast cancer cell line.The STR profile along with other genomic data and information pertinent to this cell line can be found here at Cellosaurus, or here at COSMIC, or here at DepMap portal.
+July 29, 2026
+
+# The MDA-MB-468 breast cancer cell line
+
+The MDA-MB-468 breast cancer cell line is an ER-negative, HER2 negative cell line that is perhaps best known for it’s amplification and overexpression of the EGFR gene, which is rare in breast cancer specimens and cell lines.  the MDA-468 cell line was derived from the pleural effusion metastasis of a 51 year old female of mostly African ancestry (80%) and 20% European ancestry.   the cell line has been classified as a Basal A breast cancer cell line. The STR profile along with other genomic data and information pertinent to this cell line can be found here at Cellosaurus, or here at COSMIC, or here at DepMap portal.
+
+Oncogene Signature: This oncogene signature shows the high level amplification and overexpression of EGFR in these cells, and also shows that this gene was not a hit in either functional screen.  As will be discussed elsewhere, this finding is in keeping with the relative insensitivity of these cells to EGFR targeted drugs.  --------------------------------------------------------------------------------
+Cellosaurus cell line MDA-MB-468 (CVCL_0419) (https://www.cellosaurus.org/CVCL_0419)
+citeturn18search7 [wordlim: 200] Published: 14.4 years ago; Crawled: 4 days ago; Cell line name  | MDA-MB-468 ... Part of: Cancer Dependency Map project (DepMap) (includes Cancer Cell Line Encyclopedia - CCLE).
+
+#### Cellosaurus MDA-MB-468 (CVCL_0419)
+
+[Text][XML][JSON]
+
+Cell line name  | MDA-MB-468
+Synonyms  | MDA-MB 468; MDA-MB468; MDAMB468; MDA-468; MDA468; MB468; MD Anderson-Metastatic Breast-468
+Accession  | CVCL_0419
+Resource Identification Initiative  | To cite this cell line use: MDA-MB-468 (RRID:CVCL_0419)
+Comments  | Group: Triple negative breast cancer (TNBC) cell line.
+Part of: Cancer Dependency Map project (DepMap) (includes Cancer Cell Line Encyclopedia - CCLE).
+Part of: COSMIC cell lines project.
+Part of: EGFR genetic alteration cell panel (ATCC TCP-1027).
+Part of: ICBP43 breast cancer cell line panel.
+Part of: JWGray breast cancer cell line panel.
+Part of: KuDOS 95 cell line panel.
+Part of: MD Anderson Cell Lines Project.
+Part of: NCI-60 cancer cell line panel.
+Population: African American.
+Doubling time: 40.6 hours (PubMed=32576280); ~30-40 hours (DSMZ=ACC-738); 62 hours (NCI-DCTD=MDA-MB-468); ~47 hours (PBCF); 79.76 hours (JWGray panel).
+--------------------------------------------------------------------------------
+HMS LINCS Breast Cancer Browser (https://www.cancerbrowser.org/cell_line/mdamb468)
+citeturn18search8 [wordlim: 200] Crawled: last month; # MDA-MB-468 ... Images are not available for this cell line.
+
+# MDA-MB-468
+
+### General Information
+
+Collections:  | ICBP43
+Receptor Status:  | TNBC
+Molecular Subtype:  | Basal A
+
+### Media & ATCC Information
+
+Media Base:  | Leibovitz's L-15
+Media Additives:  | 10% FBS (not heat-inactivated) + 1% P/S, no CO2
+ATCC Number:  | HTB-132
+ATCC Link:  | MDA-MB-468
+
+### Relevant Datasets
+
+  * Basal Receptor (RTK) Profile
+  * Growth Factor-Induced pAKT/pERK Response
+
+### Images
+
+Images are not available for this cell line.--------------------------------------------------------------------------------
+MDA-MB-468 (https://en.wikipedia.org/wiki/MDA-MB-468)
+citeturn18search12 [wordlim: 200] Crawled: 3.0 years ago; MDA-MB-468 is a cell line that was isolated from a 51-year-old female human in 1977, and is commonly used in breast cancer research.
+MDA-MB-468
+Cell line used in breast cancer research
+
+MDA-MB-468 is a cell line that was isolated from a 51-year-old female human in 1977, and is commonly used in breast cancer research. MDA-MB-468 cells were extracted from a pleural effusion of mammary gland and breast tissues, and have proven useful for the study of metastasis, migration, and breast cancer proliferation.
+
+The cell line was isolated in 1977 by Relda Cailleau, et al., from a pleural effusion of a 51-year-old Black female patient with metastatic adenocarcinoma of the breast. Although the tissue donor was heterozygous for G6PD alleles, the cell line consistently showed only the G6PD A phenotype. MDA-MB-468 cells have a modal chromosome number of 64, though the actual number can vary from 60 to 67 in different cells.[citation needed]
+
+MDA-MB-468 has been used to test chemical breast cancer treatments.
+
+- WL Wang, W Porter. Mechanism of inhibition of MDA-MB-468 breast cancer cell growth by 2,3,7,8-tetrachlorodibenzo-p-dioxin. Carcinogenesis. May 1997.
+
+## See also
+
+* MCF-7
+
+## References
+
+## External links
+
+* Cellosaurus entry for MDA-MB-468 (https://www.cellosaurus.org/CVCL_0419)
+
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7906429)
+citeturn18search9 [wordlim: 200] Published: 2.4 years ago; Crawled: 2 months ago; cell line: MDA-MB-468
+Status Public on May 01, 2024
+Title MDA-MB-468 5mC5hmC, Control, 10 days, rep1
+Sample type SRA
+ 
+Source name triple-negative breast cancer
+Organism Homo sapiens
+Characteristics tissue: triple-negative breast cancer
+cell line: MDA-MB-468
+cell type: epithelial
+treatment: untreated
+Treatment protocol Cells were first plated with a density of 1.5x10^6 cells into 100 mm dishes. After 4h of cell adherence, 100 uM of DETA/NO was added to the media and cells were allowed to grow for 48h. At this time, cells were collected with trypsin (Gibco), pooled according to each replicate, counted, and re-plated at the same starting density of 1.5x10^6 cells into new 100 mm dishes. This was repeated every 48 h for a total of 10 days of DETA/NO treatment.
+Growth protocol Cells were cultured in Dulbecco's modified Eagle's medium (DMEM; Gibco) supplemented with 10% qualified fetal bovine serum (FBS; Gibco) and 1% penicillin/streptomycin (P/S; Gibco). All cells were cultured at 37°C in 5% CO2.
+Extracted molecule genomic DNA
+--------------------------------------------------------------------------------
+The mutations of MTAP don't match with uniprot and ncbi - Report an Issue - DepMap Community Forum (https://forum.depmap.org/t/the-mutations-of-mtap-dont-match-with-uniprot-and-ncbi/2414)
+citeturn18search10 [wordlim: 200] Published: 3.5 years ago; Crawled: 2 months ago; For example, HCT116 has a mutation p.V106A, but on uniprot, the 106 should be R. ... But anyway, it is not a V as DepMap suggested.And there are other missmatch: for HEC6 cell line, 79 should be W rather than G, 160 should be G rather than P, but the 208A is right.
+--------------------------------------------------------------------------------
+Resource Summary Report (https://dknet.org/data/record/SCR_013869-1/RRID%3ACVCL_0419/resolver/pdf%26i%3Drrid%3Acvcl_0419-0)
+citeturn18search13 [wordlim: 200] Published: 3 months ago; Description: Cell line MDA-MB-468 is a Cancer cell line with a species of origin Homo ... of: Cancer Dependency Map project (DepMap) (includes Cancer Cell Line Encyclopedia -
+--------------------------------------------------------------------------------
+T-47D - Wikidata (https://www.wikidata.org/wiki/Q54971341)
+citeturn18search11 [wordlim: 200] Published: 1.9 years ago; Crawled: 2 months ago; English  | T-47D  | cell line  |
+--------------------------------------------------------------------------------
+CellLineNet: End-to-End Learning and Transfer Learning For Multiclass Epithelial Breast cell Line Classification via a Convolutional Neural Network (https://arxiv.org/abs/1808.06041)
+citeturn18academia14 [wordlim: 200] Published: 8.1 years ago; We developed a Convolutional Neural Network that classifies 5 types of epithelial breast cell lines comprised of two human cancer lines, 2 normal immortalized lines, and 1 immortalized mouse line (MDA-MB-468, MCF7, 10A, 12A and HC11) without requiring feature extraction.
+--------------------------------------------------------------------------------
+Drug response prediction by inferring (https://scispace.com/pdf/drug-response-prediction-by-inferring-pathway-response-5ay633kj2f.pdf)
+citeturn18search15 [wordlim: 200] Published: 10.1 years ago; Cell line ... MAP3K8 ... HCT116 ... MAP2K1;MAP2K2
+--------------------------------------------------------------------------------
+Cell line MDA-MB 468 | Subtype TNBC | PIK3CA wt | CDKN2A wt | PTEN mut | TP53 mut | RB1 mut | CDH1 wt | BRAF wt | KRAS wt (https://www.frontiersin.org/api/v4/articles/355516/file/Table_3.PDF/355516_supplementary-materials_tables_3_pdf/1)
+citeturn18search16 [wordlim: 200] Published: 7 months ago; Cell line MDA-MB 468 | Subtype TNBC | PIK3CA wt | CDKN2A wt | PTEN mut | TP53 mut | RB1 mut | CDH1 wt | BRAF wt | KRAS wt
+--------------------------------------------------------------------------------
+Microsoft PowerPoint - Checkpoint Molecule Profiling in Tumor and Immune Cell Lines (https://delivery-files.atcc.org/api/public/content/256200-Checkpoint-Molecule-Profiling-in-Tumor-and-Immune-Cell-Lines)
+citeturn18search17 [wordlim: 200] Published: 4.4 years ago; Tumor Cell Lines – Protein Profiling by FACS ... <td>MDA-MB-468</td><td>+</td><td>-</td>
+--------------------------------------------------------------------------------
+www.nature.com/scientificreports (https://www.nature.com/articles/srep43013.pdf)
+citeturn18search18 [wordlim: 200] Published: 6 months ago; Cell Line HCT116 | MUT PTEN status | COSMIC ID | PTEN CNV | PTEN PTOTEIN EXPRESSION* +​+​ | Relative PTEN mRNA abundance** 0.35Cell Line HCT116 Parental | MUT PTEN status | COSMIC ID | PTEN CNV | PTEN PTOTEIN EXPRESSION* +​+​ | Relative PTEN mRNA abundance** 0.39
+--------------------------------------------------------------------------------
+MDA-MB-468 Morphology Question (https://www.reddit.com/r/labrats/comments/1gqdsdn)
+citeturn18reddit19 [wordlim: 200] Published: 1.8 years ago; Crawled: 1.8 years ago; Would you consider this appropriate morphology for the MDA-MB-468 cell line?
+--------------------------------------------------------------------------------
+Computational pipeline predicting cell death suppressors as targets for cancer therapy (https://www.weizmann.ac.il/mcb/Lev/sites/mcb.Lev/files/publications/Pipeline.Sima_.Lev_.24.pdf)
+citeturn18search20 [wordlim: 200] Published: 2.0 years ago; RNA-seq for MDA-MD-468 and HCC70 RNAseq for SUM159, HS578 and MDA-MB-231 | | this paper this paper | | GEO: GSE235201 GEO: GSE255459 --- | --- | --- | --- | --- RNA-seq for MDA-MD-468 and HCC70 CMAP signature dataset | | this paper Broad Institute | | GEO: GSE235201 GEO: GSE92742 RNA-seq for MDA-MD-468 and HCC70 CCLE dataset, version 20Q4 | | this paper DepMap project | | GEO: GSE235201 https://depmap.org/portal/ RNA-seq for MDA-MD-468 and HCC70 Achilles dataset, version 21Q1 | | this paper DepMap project | | GEO: GSE235201 https://depmap.org/portal/ RNA-seq for MDA-MD-468 and HCC70 FerrDB version 1 | | this paper | | GEO: GSE235201 http://www.zhounan.org/ferrdb/legacy/index. htmlExperimental models: Cell lines
+--------------------------------------------------------------------------------
+A Preliminary Exploration into an Alternative CellLineNet: An Evolutionary Approach (https://arxiv.org/abs/2007.13044)
+citeturn18academia21 [wordlim: 200] Published: 6.1 years ago; The final evolved model CellLineNet V2 classifies 5 types of epithelial breast cell lines consisting of two human cancer lines, 2 normal immortalized lines, and 1 immortalized mouse line (MDA-MB-468, MCF7, 10A, 12A and HC11).
+--------------------------------------------------------------------------------
+HCT116 cells (https://en.wikipedia.org/wiki/HCT116_cells)
+citeturn18search22 [wordlim: 200] Crawled: 9 months ago; HCT116 is a human colon cancer cell line used in therapeutic research and drug screenings. ... The HCT116 cell line was found to have two variations; one with a large expression of the Insp8 gene, and the other without.
+--------------------------------------------------------------------------------
+End-to-End Learning via a Convolutional Neural Network for Cancer Cell Line Classification (https://arxiv.org/abs/1807.10638)
+citeturn18academia23 [wordlim: 200] Published: 8.1 years ago; Our 6-layer Convolutional Neural Network is directly trained, validated and tested on 1,241 images of MDA-MB-468 and MCF7 breast cancer cell line in an end-to-end fashion, allowing a system to distinguish between different cancer cell types.
+--------------------------------------------------------------------------------
+MDA-MB-468 (https://zh.wikipedia.org/wiki/MDA-MB-468)
+citeturn18search24 [wordlim: 200] Crawled: 2.1 years ago; MDA-468, a human breast cancer cell line with a high number of epidermal growth factor (EGF) receptors, has an amplified EGF receptor gene and is growth inhibited by EGF. ... Mechanism of inhibition of MDA-MB-468 breast cancer cell growth by 2,3,7,8-tetrachlorodibenzo-p-dioxin.
+--------------------------------------------------------------------------------
+NCI-60 (https://en.wikipedia.org/wiki/NCI-60)
+citeturn18search25 [wordlim: 200] Crawled: 9 months ago; MDA-MB-435, originally classified as breast cancer cell line, was identified as being a melanoma cell line. ... MDA-MB-468 | Breast |  |  |  | 62 | 2000 | MDA-MB-468 (RRID:CVCL_0419)
+--------------------------------------------------------------------------------
+Modal Analysis of Cellular Dynamics in the Morphospace in Epithelial-Mesenchymal Transition (https://arxiv.org/abs/2406.01247)
+citeturn18academia26 [wordlim: 200] Published: 2.3 years ago; Usually, cells are categorized into discrete cell types or states based on gene expression and other cellular features. ... We used the data from quantitative image analysis of MDA-MB-468 cells undergoing EGF-induced EMT.
+--------------------------------------------------------------------------------
+HCT 116 (https://zh.wikipedia.org/wiki/HCT_116)
+citeturn18search27 [wordlim: 200] Crawled: 6 months ago; Characterization of HCT116 human colon cancer cells in an orthotopic model. ... Inositol Pyrophosphate Profiling of Two HCT116 Cell Lines Uncovers Variation in InsP8 Levels.
+

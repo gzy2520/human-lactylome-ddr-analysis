@@ -1,0 +1,309 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163781)
+citeturn20search0 [wordlim: 200] Published: 5.7 years ago; Crawled: 4 months ago; We demonstrate that these methods have fewer drop-out events which facilitates the identification of differentially-expressed genes and improves the concordance of single-cell profiles to immune bulk RNA-seq signatures.Overall design Various single-cell RNA-seq methods used to generate libraries using a 1:1:1:1 mixture of four lymphocyte cell lines (Jurkat, TALL-104, EL4, IVA12).
+Status Public on Jan 15, 2021
+Title Systematic comparison of high-throughput single-cell RNA-seq methods for immune cell profiling [10x]
+Organisms Homo sapiens; Mus musculus
+Experiment type Expression profiling by high throughput sequencing
+Summary We systematically benchmarked seven high-throughput single-cell RNA-seq methods. We prepared 21 libraries under identical conditions of a defined mixture of two human and two murine lymphocyte cell lines, simulating heterogeneity across immune-cell types and cell sizes. We evaluate methods by their cell recovery rate, library efficiency, sensitivity, and ability to recover expression signatures for each cell type. We observed higher mRNA detection sensitivity with the 10x Genomics 5’ v1 and 3’ v3 methods. We demonstrate that these methods have fewer drop-out events which facilitates the identification of differentially-expressed genes and improves the concordance of single-cell profiles to immune bulk RNA-seq signatures.
+ 
+Overall design Various single-cell RNA-seq methods used to generate libraries using a 1:1:1:1 mixture of four lymphocyte cell lines (Jurkat, TALL-104, EL4, IVA12).
+--------------------------------------------------------------------------------
+Mitochondria-mediated Maternal-fetal Interactions and Consequences of Mitochondrial Dysregulation Indicate New Roles for Mitochondria in Hypertensive Pregnancies | medRxiv (https://www.medrxiv.org/content/10.1101/2021.12.18.21268029v1.full)
+citeturn20search1 [wordlim: 200] Published: 4.7 years ago; Crawled: last week; Longitudinal data from peripheral blood plasma of 9 mothers with normotensive pregnancies and 8 mothers with pregnancies complicated with preeclampsia and/or gestational hypertension (GEO accession GSE154377; [7]) were used to investigate maternal dynamics of aberrant mitochondrial gene expression. ... Colored scale represents strength and direction of correlation; presence of circle indicates significant P-value (P-value ≤ 0.05); size of circle corresponds with significance, where larger circles represent smaller P-values; ‘BMI’: body mass index, ‘Age’: maternal age at delivery, ‘Placenta wt’: placental weight (g), ‘Neonate wt’: neonate weight at delivery (g), ‘Head circ’: neonate head circumference at delivery (cm), ‘Neonate lgth’: neonate length at delivery (cm), ‘Delivery’: neonate gestational age at delivery (weeks)
+### Transcriptomics data description
+
+Two high-throughput sequencing transcriptomic datasets were obtained through NCBI’s Gene Expression Omnibus[40]. All code and working files are publicly accessible via Github (https://github.com/contessaricci/mito_dysfunction_PIH). Longitudinal data from peripheral blood plasma of 9 mothers with normotensive pregnancies and 8 mothers with pregnancies complicated with preeclampsia and/or gestational hypertension (GEO accession GSE154377; [7]) were used to investigate maternal dynamics of aberrant mitochondrial gene expression. Patient-specific data can be found in original publication[7]. These data were sequenced on the Illumina HiSeq 4000 platform. Data were collected at four time points throughout gestation: at the end of the first trimester (referred to as 1^{st} trimester, collected between 12–17 weeks of gestation), at the end of the 2^{nd} trimester (referred to as 2^{nd} trimester, collected between 18–22 weeks of gestation), at the end of the 3^{rd} trimester (referred to as 3^{rd} trimester, collected between 35–37 weeks of gestation), and at delivery (time of collection unspecified). Data from placental samples collected within 30 minutes of delivery were used from 21 normotensive pregnancies and 20 pregnancies complicated by early-onset preeclampsia (GSE accession GSE114691; [1]). Placental samples were collected from two central and two peripheral locations, pooled, and sequenced on the Illumina HiSeq 2000 platform. Patient-specific data can be found in original publication[1]. Importantly, mothers experiencing preeclampsia and gestational hypertension were pooled here, as the original authors did not distinguish between these nor was a subtype of preeclampsia reported.
+
+### Identifying differentially expressed mitochondrial genes and interacting genes
+
+To identify all mitochondrial differentially expressed genes (mtDEGs) present for maternal peripheral blood plasma samples, differential gene expression analysis was conducted using the DESeq2 package[41] available for R software[42]. Contrasts were first conducted for each collection timepoint (e.g., one contrast between normotensive and preeclamptic pregnancies for 1^{st} trimester, one contrast between normotensive and preeclamptic pregnancies for 2^{nd} trimester, etc.), where covariates significantly stratifying gene expression data at each timepoint were included in each timepoint DESeq2 contrast model. --------------------------------------------------------------------------------
+Systematic comparison of high-throughput single- (https://assets-eu.researchsquare.com/files/rs-72851/v3_covered.pdf?c=1631850680)
+citeturn20search12 [wordlim: 200] Published: 7 months ago; trend is largely mirrored in TALL-104 cells, albeit less distinct due to the low read depth obtained for ... dropout rate was modeled as a function of the expression level in bulk RNA-seq (FPKM) for each cell
+(reads/UMI = 2.35 ± 0.33, reads/gene = 11.17 ± 3.03), ddSEQ (reads/UMI = 5.25 ± 1.14, reads/gene = 
+13.42 ± 3.89), Drop-seq (reads/UMI = 6.40 ± 1.42, reads/gene = 15.97 ± 5.62) and ICELL8 methods (3’ DE: 
+reads/gene = 29.68 ± 41.48, 3’DE-UMI: reads/UMI = 21.77 ± 5.50 , reads/gene = 47.5 ± 17.91).  This 
+trend is largely mirrored in TALL-104 cells, albeit less distinct due to the low read depth obtained for 
+those cells (Fig. 3c, 3d; Supplement Figure 1c).  
+We further examined the number of genes with at least one sequenced read in pseudo-bulk 
+populations.  For this purpose, cells form each cell type were pooled and gene expression 
+measurements were merged. We observed similar trends with higher numbers of detected genes with 
+the 10x 3’ v3, and 5’ v1 method for EL4, IVA12 and Jurkat cells (Fig. 3e).  Although the ICELL8 3’ DE 
+method had a low per-cell gene detection rate, when pooling more than 30 cells this method exhibited 
+comparable levels of gene detection to 10x 3’ v2, ddSEQ and Drop-seq methods.  This is likely due to the 
+high false negative rate of genes with overall low expression levels in the ICELL8 3’ DE method.  The 
+cumulative number of genes for TALL-104 cells was lower than the other cell types and the relative 
+detection rates across methods did match trends seen in other cell types, possibly due to the low read 
+depth and cell recovery for this cell type.  
+We also examined the ability of each method to detect genes at various expression levels by 
+calculating the dropout rate, the conditional probability that a gene is not detected in a given cell.  The 
+dropout rate was modeled as a function of the expression level in bulk RNA-seq (FPKM) for each cell 
+type. We used a nonlinear least square fit of the data that accounts for the activity of reverse 
+transcriptase described by Michaelis-Menten kinetics [21-23]. Here, higher gene detection sensitivity as 
+a function of fewer dropouts at lower expression levels, is indicated by left-shifted curves and lower 
+Gene Detection 50 (GD50) value, the point at which this curve reaches a detection probability of 0.5. The 
+GD50 metric represents the expression level of a gene we would expect to be detected in half of the 
+cells, and can help guide expectations of detection rates for genes of interest based on their expression 
+in bulk RNA-seq.  For EL4 cells, 10x Genomics methods were the most sensitive with 10x 3’ v3 having the 
+lowest GD50 at 13.6 FPKM, followed by the 5’ v1 and 3’ v2 chemistries (16.8 FPKM and 20.2 FPKM, 
+respectively).  The ddSEQ and Drop-seq methods had comparable dropout rates (25.0 FPKM and 26.7 
+FPKM respectively), while ICELL8 methods had the lowest sensitivity (37.9 FPKM/3’ DE and 112.1 
+FPKM/3’ DE UMI) (Fig. 3f; Table 1). We observed similar trends across methods with the other three cell 
+types, which had greater variance in read depth and transcript detection (Supplement Figures 4b-4d).   
+ 
+mRNA Detection Affects the Fidelity of Single-Cell and Pseudo-Bulk Transcriptomes 
+We next investigated how well single-cell expression recapitulates immune signatures from bulk 
+RNA-seq. For this purpose, we correlated expression of a set of marker genes (defined using bulk 
+RNAseq data; see Methods) between bulk RNAseq and single cells.  In general, cells with more genes 
+detected had a better concordance to bulk RNA-seq immune signatures (Supplement Figure 5).  We 
+observed higher Pearson correlation coefficients for 10x 3’ v3, 5’ v1 and ddSEQ methods against EL4, 
+IVA12 and Jurkat bulk RNA-seq expression signatures (Fig. 4a).  ICELL8 3’ methods, with generally fewer 
+genes detected, demonstrated the lowest correlation values.  Overall, poorer correlation to TALL-104 
+bulk RNAseq was in line with fewer transcripts and genes detected for this cell type in the single-cell 
+data.   
+We further examined the correlation between pooled single-cell RNA-seq pseudo-bulk 
+transcriptomes and bulk RNA-seq data using all genes.  Averaging gene-expression profiles across single 
+cells is commonly performed to compare data across experiments and is thought to resemble bulk data.--------------------------------------------------------------------------------
+Systematic Comparison of High-Throughput Single- (https://assets-eu.researchsquare.com/files/rs-72851/v1_covered.pdf?c=1631840749)
+citeturn20search13 [wordlim: 200] Published: 5 months ago; TALL-104 cells had the lowest distribution of reads, UMIs, and genes recovered (Supplemental Figure 1C ... We classified cells by correlating their expression profile to gene signatures from bulk RNA-seq.
+hands, more difficult to culture, with viability rates under 80% and slow growth.  Across all experiments, 
+TALL-104 cells had the lowest distribution of reads, UMIs, and genes recovered (Supplemental Figure 1C 
+and 4A), such that they were more susceptible to exclusion based on read or UMI thresholding of CIDs 
+to distinguish cells from ambient noise.   
+We classified cells by correlating their expression profile to gene signatures from bulk RNA-seq. 
+This enabled us to examine the recovery of each cell type with common thresholding points on the log-
+log curve of total reads or UMI vs rank ordered CIDs.  In droplet-based methods, thresholding removes a 
+large fraction of CIDs that are derived from droplets containing a barcoded bead, but no cell.  Two points 
+are commonly used as thresholds:  the knee point where the signed curvature is minimized and the 
+inflection point where first derivative is minimized [26] within a given range of total reads or UMIs 
+(Figure 6A and Figure S2A).  While the fraction of classifiable cells on each side of these two thresholds 
+--------------------------------------------------------------------------------
+Perturbation of placental protein glycosylation by endoplasmic reticulum stress promotes maladaptation of maternal hepatic glucose metabolism - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9843443/)
+citeturn20search2 [wordlim: 200] Published: 3.6 years ago; Crawled: last month; To further investigate the mis-glycosylation of PSG5 as a result of placental ER stress, we collected placentas from women with ePE and normotensive term controls (Table S10). ... Therefore, we investigated sialyltransferase expression in RNA-Seq datasets from BeWo cells after 24 h repetitive hypoxia-reoxygenation (HR) challenge (HR-induced injury is a potent inducer of ER stress and is central to placental pathophysiology in ePE^{26}^{,}^{46}).
+To further investigate the mis-glycosylation of PSG5 as a result of placental ER stress, we collected placentas from women with ePE and normotensive term controls (Table S10). Western blot analysis showed multiple PSG5 bands indicating differences in glycosylation (Figure S12B). The bands with higher molecular weight were predominantly present in the NTCs (Figure S12B), consistent with the reduced complexity of PSG5 glycan we observed in ePE serum. The results using BeWo cells suggested that ER stress reduces sialylation and glycan complexity and that mis-glycosylation of PSG5 could expose more glycans with terminal N-acetylglucosamine (GlcNAc). Therefore, the same placental tissue lysates were subjected to WGA affinity chromatography to isolate PSG5-containing glycans with terminal GlcNAc prior Western blotting analysis (Figure S12C). To overcome the unavoidable difference in gestational age of placental samples between NTC (39 ± 0.8 weeks) and ePE (27 ± 2.1 wk) (Table S10) we calculated the ratio between WGA-enriched and total PSG5 in placental lysates. --------------------------------------------------------------------------------
+e‐Poster - 2024 - Journal of Obstetrics and Gynaecology Research - Wiley Online Library (https://obgyn.onlinelibrary.wiley.com/doi/10.1111/jog.16161)
+citeturn20search3 [wordlim: 200] Published: 1.8 years ago; Crawled: 5 days ago; ## Gene expression analysis in placental tissue samples of severe preeclampsia patients by RNA sequencing ... Methods: We analyzed RNA sequencing data from 103 human placenta samples -43 with PE and 60 healthy controls- obtained from the NCBI GEO database (GSE 234729).
+## [A-0323]
+
+## Gene expression analysis in placental tissue samples of severe preeclampsia patients by RNA sequencing
+
+### Kena Park^{1,2}, Ju Seog Lee^{3}, Hyun Joo Sul^{1}, Eun Hee Yoo^{1}, Seung Yeon Pyeon^{1}
+
+#### ^{1}Department of Obstetrics, Kyung Hee University Hospital at Gangdong, Seoul, Korea, Republic of; ^{2}Department of Graduate School of Medicine, Kyung Hee University, Seoul, Korea, Republic of; ^{3}Department of Systems Biology, MD Anderson Cancer Center, Houston, United States
+
+Objectives: Preeclampsia (PE) only occurs in the context of pregnancy, and delivery of the placenta is often curative. The placenta seems to play a central role in the pathophysiology of PE. This study aimed to uncover genetic networks associated with PE by analyzing transcriptomic data from human placental samples.
+
+Methods: We analyzed RNA sequencing data from 103 human placenta samples -43 with PE and 60 healthy controls- obtained from the NCBI GEO database (GSE 234729). The raw sequencing data was processed and normalized prior to analysis. --------------------------------------------------------------------------------
+(PDF) Systematic comparison of high-throughput single-cell RNA-seq methods for immune cell profiling (https://www.researchgate.net/publication/347289067_Systematic_comparison_of_high-throughput_single-cell_RNA-seq_methods_for_immune_cell_profiling)
+citeturn20search4 [wordlim: 200] Published: 6.0 years ago; Crawled: 2 weeks ago; TALL-104 cells had the lowest distribution of reads, UMIs, and genes recovered (Supplemental Figure 1C ... We classified cells by correlating their expression profile to gene signatures from bulk RNA-seq.
+TALL-104 cells had the lowest distribution of reads, UMIs, and genes recovered (Supplemental Figure 1C
+
+and 4A), such that they were more susceptible to exclusion based on read or UMI thresholding of CIDs
+
+to distinguish cells from ambient noise.
+
+We classified cells by correlating their expression profile to gene signatures from bulk RNA-seq.
+
+This enabled us to examine the recovery of each cell type with common thresholding points on the log-
+
+log curve of total reads or UMI vs rank ordered CIDs. In droplet-based methods, thresholding removes a
+
+large fraction of CIDs that are derived from droplets containing a barcoded bead, but no cell. Two points
+
+are commonly used as thresholds: the knee point where the signed curvature is minimized and the
+
+inflection point where first derivative is minimized [28] within a given range of total reads or UMIs
+
+(Figure 6A and Supplemental Figure 2A). While the fraction of classifiable cells on each side of these
+
+two thresholds varied across experiments, both thresholds were able to capture EL4, IVA12 and Jurkat
+--------------------------------------------------------------------------------
+Human Extravillous Trophoblasts Require SRC-2 for Sustained Viability, Migration, and Invasion - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12249151/)
+citeturn20search5 [wordlim: 200] Published: 1.2 years ago; Crawled: last month; To address this issue, we report here that SRC-2 is expressed in multiple cell types of term placenta tissue from healthy women, and that SRC-2 expression in the commonly used HTR-8/SVneo human trophoblast cell line is essential for trophoblastic cell viability, migration, and invasion.In addition to significant changes in expression of previously reported genes in extravillous trophoblasts and/or the HTR-8/SVneo cell line, genome-wide RNA sequencing (RNA-seq) revealed that the expression levels of WNT-related factors are markedly reduced in HTR-8/SVneo cells with decreased expression levels of SRC-2. ... Interestingly, analysis of recent transcriptomic datasets derived from placental tissue biopsied from pregnancies of healthy normotensive women (n = 147) and women diagnosed with preeclampsia (n = 91) [94] show that WNT 9A along with SRC-2 are significantly reduced in placenta tissue from preeclampsia patients (WNT 9A: (Log2FC(DESeq2) = −0.22; adjusted p-value 0.032); SRC-2: (Log2FC(DESeq2) = −0.09; adjusted p-value: 0.029) https://www.obgyn.cam.ac.uk/placentome [94]; accessed 4 October 2024).
+We previously demonstrated that SRC-2 is essential for decidualization of stromal cells of the maternal endometrium [25,26,27,28], a crucial stage of the embryo implantation process. Although these studies provide important insights into our understanding of SRC-2 in the maternal endometrium during the earliest stages of pregnancy, the role of embryonic-derived SRC-2 during this implantation period is unclear. This knowledge gap is conspicuous in light of previous reports indicating that other members of the p160/SRC family serve important functions in a number of extraembryonic cell types, which are essential for the development and function of the placenta [29,30,31].
+
+To address this issue, we report here that SRC-2 is expressed in multiple cell types of term placenta tissue from healthy women, and that SRC-2 expression in the commonly used HTR-8/SVneo human trophoblast cell line is essential for trophoblastic cell viability, migration, and invasion. In addition to significant changes in expression of previously reported genes in extravillous trophoblasts and/or the HTR-8/SVneo cell line, genome-wide RNA sequencing (RNA-seq) revealed that the expression levels of WNT-related factors are markedly reduced in HTR-8/SVneo cells with decreased expression levels of SRC-2. Importantly, we identified WNT family member 9A (WNT 9A) as a critical SRC-2-responsive molecular target that is required for optimum execution of many of these key cellular processes, which are known to occur during hemochorial placentation.
+
+--------------------------------------------------------------------------------
+(PDF) Meta-Analysis of Placental Transcriptome Data Identifies a Novel Molecular Pathway Related to Preeclampsia (https://www.researchgate.net/publication/281404395_Meta-Analysis_of_Placental_Transcriptome_Data_Identifies_a_Novel_Molecular_Pathway_Related_to_Preeclampsia)
+citeturn20search6 [wordlim: 200] Published: 11.2 years ago; Crawled: 3 weeks ago; GSE = GEO accession number, NT = normotensive, PE = preeclampsia, QC = Quality Control ... Transcriptome Meta-Analysis of the Preeclamptic Placenta
+Jarvenpaa [22] 3 2 Affymetrix HG U133 plus 2.0
+
+Kang [23] 16 17 Codelink Human Whole Genome Bioarrays
+
+Lee [24] 13 13 Agilent Human 4X44K Oligomicroarrays Chip
+
+Liu [25] 28 24 CapitalBio, OPERON
+
+Mayor-Lynn [26] 6 3 Illumina HumRef-12 v3
+
+Varkonyi [27] 10 12 Agilent Human 4X44K Oligomicroarrays Chip
+
+Zhou [28] 5 5 CapitalBio, OPERON
+
+91 82
+
+NT = normotensive, PE = preeclampsia
+
+a
+
+platform names were obtained from description in cited publication.
+
+doi:10.1371/journal.pone.0132468.t002
+
+Table 1. Datasets included in the meta-analysis.
+
+number of samples
+
+reported after QC
+
+Data Set Data source (ﬁ rst author) NT PE NT PE Platform probes with Gene ID
+
+1 Authors
+
+c
+
+(Centlow) [10] 20 15 19 11 Custom, OPERON 13010
+
+2 Authors
+
+$
+
+(Enquobahrie) [11] 18 18 15 16 Custom, OPERON 13010
+
+3 Authors
+
+c
+
+(Hoegh) [12]3
+
+a
+
+3
+
+a
+
+3
+
+a
+
+3
+
+a
+
+Affymetrix HG U133A 19955
+
+4 GSE54618 (Jebbink) [9] 12 12 11 11 Illumina HumanHT-12 v4 37463
+
+5 Authors
+
+c
+
+(Kivinen) [13] 6867 Affymetrix HG U133 plus 2.0 41245
+
+6 GSE30186 (Meng) [14] 6665 Illumina HumanHT-12 v4 37463
+
+7 GSE4707 (Nishizawa) [15] 4 10 2
+
+b
+
+7
+
+b
+
+Agilent Whole Genome Oligo Microarray G4112A 29777
+
+8 GSE24129 (Nishizawa) [16]8888 Affymetrix Human Exon 1.0 ST array 21929
+
+9 GSE10588 (Sitras) [17] 26 17 24 16 ABI Human Genome Survey Microarray v.2.0 26396
+
+10A GSE25906 (Tsai) [18]8787 Illumina Human-6 v2 27303
+
+10B 29 16 28 16
+
+11 GSE14722 (Winn) [19] 11 12 9 9 Affymetrix HG U133A 19955
+
+Total 151 132 139 116
+
+GSE = GEO accession number, NT = normotensive, PE = preeclampsia, QC = Quality Control
+
+a
+
+each sample represents 3 pooled placentas
+
+b
+
+samples that are also present in dataset 8 were excluded from dataset 7
+
+c
+
+original data was provided by the authors.
+
+doi:10.1371/journal.pone.0132468.t001
+
+Transcriptome Meta-Analysis of the Preeclamptic Placenta
+
+PLOS ONE | DOI:10.1371/journal.pone.0132468 July 14, 2015 4/15
+
+signature were not included in the meta-signature from our current analysis. Six of these were
+
+not represented by a gene-specific probe on some platforms (INHBA,CGB,F5,HTRA4,
+
+PVRL4,RDH13). Calculation of the standardized mean difference (mu) based on the studies
+
+that did contain a gene-specific probe for these six genes shows that all are differentially
+
+expressed. Two of the 12 genes (HSD17B1,VIM) were among the 688 differentially expressed
+
+genes in the initial meta-signature, but were removed in the leave-one-out-analysis, and four
+
+genes (CGA,IGFBP1,PGF,TNFSF10) were not significantly differentially expressed in our
+
+meta-analysis on the original microarray data. For those genes in the gene list-driven signature
+
+that were also differentially expressed in the current analysis, the direction of differential
+
+expression was identical except for SOD1,SPP1 and VIM.SOD1 and VIM, which have been
+
+described in the literature both as being upregulated and downregulated in the preeclamptic
+
+placenta, are definitely downregulated in the current analysis. In fact, SOD1 is one of the most
+
+strongly downregulated genes in the preeclamptic placenta, as shown in S1 Table. The only
+
+genuine discrepancy is the direction of SPP1. Although reported as being upregulated in the
+
+--------------------------------------------------------------------------------
+Integrative transcriptome analysis reveals dysregulation of canonical cancer molecular pathways in placenta leading to preeclampsia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC3757356/)
+citeturn20search7 [wordlim: 200] Published: 13.0 years ago; Crawled: last month; Meta-analysis of datasets GSE10588^{19}, GSE14722^{20}, GSE4707^{21}, and GSE24129^{22}, containing gene expression profiles from fetal cell-derived histological subsections of placenta in case-control studies of preeclampsia, revealed 419 differentially-regulated genes (136 downregulated and 283 upregulated) coincident among the four datasets at false discovery rate (FDR) < 0.05 (Figure 1a and Table S1). ... Preeclampsia is identified clinically as hypertension that first occurs after 20 weeks gestation^{9}; therefore, we speculated that genes differentially-regulated during mid- to term-gestation would be important predictors of molecular pathways impaired in preeclampsia. ... RNA-seq analysis of K562 cells (K562-shX) with stable integration of a tet-inducible shRNA targeting a candidate (X) transcription factor from ENCODE/HudsonAlpha-MyersLab. http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+### Analysis of gene expression patterns in normal and time-course placenta
+
+To confirm the relevance of preeclampsia-specific genes identified through the meta-analysis described above, we compared human (GSE 95)^{24} and mouse (GSE 97)^{24} datasets containing gene expression patterns of normal tissue with respect to the ratios of expression of preeclampsia-specific genes in placenta versus all other tissues. The rationale for this comparison was that wild-type mice bred for research do not develop preeclampsia spontaneously (i.e., without chemical or surgical manipulation). We found that among 283 genes upregulated in preeclampsia meta-analysis, approximately 50 genes were more than 3-fold higher upregulated in human placentas compared to mouse placentas. We postulated that the genes most relevant to preeclampsia were among these 50 genes, which included EGFR, MAN1C1, ADAM12, ATF3, INHBA, FBN2 and GABRE among others (Figure 2).
+
+#### Figure 2. Expression of preeclampsia-specific genes in human and mouse placenta versus mean expression in other organs.
+
+Open in a new tab
+
+Degree of gene overexpression in placenta compared to other normal tissue in human (GSE95^{24}) and mouse (GSE97^{24}) datasets. Figure also depicts comparison of the ratio of expression of each selected gene in placenta versus all other normal tissue between human (GSE95^{24}) and mouse (GSE97^{24}) datasets. Genes used in this comparison were selected from among those identified through meta-analysis of preeclampsia case-control studies (Figure 1, Panel (a)). Y-axis represents the ratio of expression of each gene. Red bars indicate human and blue bars mouse genes.
+
+Preeclampsia is identified clinically as hypertension that first occurs after 20 weeks gestation^{9}; therefore, we speculated that genes differentially-regulated during mid- to term-gestation would be important predictors of molecular pathways impaired in preeclampsia. We conducted time-course analysis of gene expression patterns in normal placenta from first to third trimester in GDS2528^{25}. This analysis identified 710 placental genes differentially-expressed during mid- to term-gestation (i.e., 24–40 weeks) compared to first trimester; 303 genes were upregulated and 407 were downregulated (Data not shown). The gene lists obtained from analysis of normal and time-course placentas were used in the integrative analysis described later in this section.
+
+### Analysis of gene expression patterns in hypoxic trophoblasts
+
+Hypoxia (along with oxidative stress response) was among the dominant affected pathways in the preeclampsia meta-analysis (Figures 1c and 1d) with HIF1A signaling being the most significant regulator of differentially-expressed genes in this pathway (Figures 1e and 1f). In order to test whether hypoxia was the main regulator of a significant number of genes in the preeclampsia gene list, we interrogated preeclampsia-specific genes in hypoxic human trophoblasts (Swan 71 human trophoblast cells under chemical hypoxia by CoCl2-treatment) in an in vitro system (GSE31679)^{26}. --------------------------------------------------------------------------------
+ACAP1 Deficiency Predicts Inferior Immunotherapy Response in Solid Tumors - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9740925/)
+citeturn20search8 [wordlim: 200] Published: 3.8 years ago; Crawled: last month; Briefly, the lung cancer cells A549 were co-cultured with control or ACAP1-shRNA1/2 TALL-104 cells at a ratio of 1:2 for 24 h.
+### 2.9. Cell Culture and Lentivirus Transfection
+
+Jurkat, TALL-104, OS-RC-2, Caki-1, RT112/84, J82, KU1919, BFTC905, UM-UC-3, 5637, SK-HEP-1, Huh-7, A549, H1299, Calu-3, H1975, KYSE-30, KYSE-140, KYSE-150, KYSE-410, and KYSE-450 were cultured in RPMI1640 + 10% FBS (GIBCO). Recombinant human IL-2 (ProteinTech, Wuhan, China, #HZ-1015) was added to the TALL-104 culture media with a final concentration of 100 units/mL. A-498 was cultured in MEM + 10% FBS. HCT116, HT-29, SW480, and SW620 were cultured in DMEM + 10% FBS. Cells were obtained from Shanghai Cell Bank (Shanghai, China) or ATCC.
+
+For SPI1 overexpression, the coding sequence of the SPI1 genes was amplified by PCR and sub-cloned into pSIN-3×Flag for lentivirus production. For ACAP1 knockdown, the sequences of two shRNAs targeting human ACAP1 were obtained from The RNAi Consortium (MISSION^{®} TRC shRNA library, Sigma-Aldrich, St Louis, MO, USA) and sub-cloned into the pLKO.1 vector. shRNA1: CCGGGCAGGAGATGAGACGTATCTTGGATCCAAGATACGTCTCATCTCCTGCTTTTTG; shRNA2: CCGGTCACGCTAAATACGTGGAGAAGGATCCTTCTCCACGTATTTAGCGTGATTTTTG.
+--------------------------------------------------------------------------------
+Identification of placental nutrient transporters associated with intrauterine growth restriction and pre-eclampsia - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC5833046/)
+citeturn20search9 [wordlim: 200] Published: 8.5 years ago; Crawled: last month; It was found that the expression of Ca^{2+}-selective receptor channels and Na^{+}/Ca^{2+} exchangers were significantly increased in hypertensive placentae compared to normotensive tissues [32]. ... Publicly available data was obtained at http://www.ncbi.nlm.nih.gov/geo through the accession numbers GSE 25861, 24129, 12216, 25906, 14722, 35574, 24818. ... Total RNA was isolated from placental tissue with a modified protocol, using a Trizol reagent kit (Invitrogen) [34]. ... We evaluated the expression of the selected 46 targets in 43 well-characterized placenta samples using unsupervised hierarchical clustering. ... In order to directly compare the trend of gene regulation in IUGR or PE with the microarray analysis, we have presented the gene expression as the log (FC) to term controls.
+--------------------------------------------------------------------------------
+(PDF) Integrative multi-omics analysis identified FUT9 and MS4A3 as novel immune-phenotype and prognosis biomarkers for colorectal cancer and analyze the role of FUT9 in oncoimmunology (https://www.researchgate.net/publication/403046439_Integrative_multi-omics_analysis_identified_FUT9_and_MS4A3_as_novel_immune-phenotype_and_prognosis_biomarkers_for_colorectal_cancer_and_analyze_the_role_of_FUT9_in_oncoimmunology)
+citeturn20search10 [wordlim: 200] Published: 5 months ago; Crawled: 4 months ago; The TALL-104 cell line was also purchased from the American Type Culture ... To evaluate apoptosis, 1 × 10 5 tumor cells were cocultured with 3 × 10 6 TALL-104 cells for 48 h.
+--------------------------------------------------------------------------------
+The H19 Gene Imprinting in Normal Pregnancy and Pre-eclampsia | Request PDF (https://www.researchgate.net/publication/223028712_The_H19_Gene_Imprinting_in_Normal_Pregnancy_and_Pre-eclampsia)
+citeturn20search11 [wordlim: 200] Published: 17.4 years ago; Crawled: 3 months ago; Preliminary RNA-Seq Analysis of Long Non-Coding RNAs Expressed in Human Term Placenta
+

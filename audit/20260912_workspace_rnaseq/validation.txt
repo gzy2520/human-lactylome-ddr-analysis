@@ -1,0 +1,3 @@
+AUDIT_REGISTRY_PASS
+31 groups; 22 unique Kla PXD; 18 unique reference PXD
+This validates registry structure, not RNA matrices or biological eligibility.

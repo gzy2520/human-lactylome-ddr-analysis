@@ -1,0 +1,38 @@
+Accession,OriginalClaim,VerifiedFinding,Decision,Notes,EvidenceURL
+GSE138514,肌腱,小鼠外生殖器多组学,reject,物种及组织错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE138514
+GSE158498,肌腱,人胰岛caNFAT干预RNA-seq,reject,组织与干预错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE158498
+GSE121212,瘢痕/配对邻近皮肤,特应性皮炎/银屑病/健康皮肤,reject_for_claimed_match,不能当增生性瘢痕及其配对邻近皮肤样本,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121212
+GSE156326,瘢痕bulk,人/鼠皮肤单细胞研究,reject,scRNA不符合bulk要求,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156326
+GSE75010,胎盘RNAseq,胎盘Affymetrix芯片,reject,不是RNA-seq,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE75010
+GSE150830,足月胎盘,孕6-23周绒毛RNA-seq,reject_for_term,孕周不匹配,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE150830
+GSE132047,人精子,小鼠脑膜/脾gamma-delta T细胞单细胞,reject,物种、材料、技术错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132047
+GSE103939,人精子,水蚤转录组及甲基化,reject,物种错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103939
+GSE119931,BPH,胰腺癌FOXA2相关RNA-seq,reject,组织错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119931
+GSE160115,ESCC,拟南芥根/芽相关实验,reject,物种错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160115
+GSE113941,TALL104,小鼠感觉神经元RNA/TRAP,reject,物种/模型错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113941
+GSE114724,PC3M,人乳腺肿瘤免疫单细胞/TCR,reject,材料/技术错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114724
+GSE119834,GSC,人GSC/NSC/GBM bulk RNA-seq,retain_with_model_caveat,GSC/NSC库可保留；具体模型身份未匹配,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119834
+GSE137233,GSC,小鼠Klf4表皮表达芯片,reject,物种/技术错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137233
+GSE164585,HMC3,小鼠主动脉单细胞/ATAC,reject,物种/材料/技术错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE164585
+GSE125050,HMC3,人AD脑分选细胞,reject_for_model,不是HMC3细胞系,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125050
+GSE121190,HK2,小鼠肾成纤维细胞芯片,reject,不是人HK2 bulk RNA-seq,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121190
+GSE156340,HK2,人HUVEC LINC00607干预polyA RNA,reject_for_model,不是HK2；HUVEC参考也需另审其转染对照,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156340
+GSE137452,HK2,A375黑色素瘤甲基化芯片,reject,模型和技术错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137452
+GSE125287,MCF10A,小鼠巨噬细胞结核菌感染RNA,reject,物种及模型错误,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125287
+GSE113957,NSC,人皮肤成纤维细胞衰老,reject_for_model,不是NSC,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113957
+GSE126848,HUVEC,人NAFLD肝组织bulk,reject_for_model,不是HUVEC,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126848
+ENCSR000EYO,HepG2,K562 polyA RNA,reject_for_model,官方JSON核实,https://www.encodeproject.org/experiments/ENCSR000EYO/
+ENCSR000EYP,HEK293T,H1-hESC polyA RNA,reject_for_model,官方JSON核实,https://www.encodeproject.org/experiments/ENCSR000EYP/
+ENCSR000COV,A549及MCF10A,H1胞质polyA RNA,reject_for_model,两处复用均错误；还是分画库,https://www.encodeproject.org/experiments/ENCSR000COV/
+ENCSR255XLF,NSC,官方experiment端点404,unresolved,不能认定有效；404不等于证明永不存在,https://www.encodeproject.org/experiments/ENCSR255XLF/
+ENCSR751DVO,HUVEC,官方experiment端点404,unresolved,不能认定有效；替换为已核实whole-cell实验,https://www.encodeproject.org/experiments/ENCSR751DVO/
+ACH-000019,MCF7,MCF7,retain_identity_only,表达release/profile仍需核验,https://depmap.org/portal/cell_line/ACH-000019
+ACH-000971,HCT116,HCT116,retain_identity_only,三组共享，不是3独立RNA数据,https://depmap.org/portal/cell_line/ACH-000971
+ACH-000045,TALL104,未由一手来源确证TALL104,unresolved,不用此ID；替换GSE163787,https://depmap.org/portal/cell_line/ACH-000045
+ACH-000657,HepG2,A2780,reject_for_model,HepG2正确ID为ACH-000739,https://depmap.org/portal/cell_line/ACH-000657
+ACH-000681,A549,A549,retain_identity_only,表达release/profile仍需核验,https://depmap.org/portal/cell_line/ACH-000681
+ACH-000849,MDA-MB-468,MDA-MB-468,retain_identity_only,表达release/profile仍需核验,https://depmap.org/portal/cell_line/ACH-000849
+ACH-000934,T47D,未核实为T47D；Cellosaurus给出的T47D为ACH-000147,replace_id,使用已核实147；不猜原ID真实模型,https://www.cellosaurus.org/CVCL_0553
+ACH-000009,PC3,未核实为PC3；PC3正确ID为ACH-000090,replace_id,即便纠正PC3编号也不等于PC3M,https://depmap.org/portal/cell_line/ACH-000090
+ACH-000742,RKO,未核实为RKO；官方RKO为ACH-000943,replace_id,使用已核实943；不猜原ID真实模型,https://depmap.org/portal/cell_line/ACH-000943
+ACH-001088,HEK293T,未核实为293T,unresolved,不以HEKTE或HEK293代替293T,https://depmap.org/portal/cell_line/ACH-001088

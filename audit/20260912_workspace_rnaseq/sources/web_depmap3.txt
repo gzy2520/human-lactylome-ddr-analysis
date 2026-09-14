@@ -1,0 +1,396 @@
+DepMap Cell Line Summary (https://depmap.org/portal/cell_line/ACH-000681)
+citeturn24search0 [wordlim: 200] Crawled: 2 months ago;   * A549DepMap ID: ACH-000681
+  * A549
+
+DepMap ID: ACH-000681
+
+[Button: Overview][Button: Mutations][Button: Fusions][Button: Translocations]
+
+## Description
+
+  * Model
+  * Patient
+  * IDs
+
+#### Annotations
+
+###### Oncotree Subtype and Code
+
+Lung Adenocarcinoma (LUAD)
+
+###### Oncotree Primary Disease
+
+Non-Small Cell Lung Cancer
+
+###### Oncotree Lineage
+
+Lung
+
+#### Lineage Contexts
+
+###### Level 0
+
+Lung (LUNG)
+
+###### Level 1
+
+Non-Small Cell Lung Cancer (NSCLC)
+
+###### Level 2
+
+Lung Adenocarcinoma (LUAD)
+
+#### Molecular Subtypes
+
+###### Level 0
+
+CDKN2A_LoF (CDKN2A_LoF)
+
+###### Level 0
+
+KRAS (KRAS)
+
+###### Level 0
+
+MTAP_LoF (MTAP_LoF)
+
+###### Level 1
+
+KRAS p.G12 (KRASp.G12)
+
+###### Primary/Metastasis
+
+Primary
+
+###### Collection Site
+
+lung
+
+###### Source
+
+ATCC
+
+###### Catalog Number
+
+CCL-185
+
+#### Overview
+
+###### Age and Category
+
+58, Adult
+
+###### Sex
+
+Male
+
+###### Race
+
+caucasian
+
+#### Related Models
+
+ACH-002337
+
+ACH-003012
+
+#### Cell Line Name
+
+A549_LUNG
+
+#### CCLE Name
+
+A549_LUNG
+
+#### Aliases:
+
+A549
+
+#### Cellosaurus RRID
+
+CVCL_0023
+
+#### Sanger Model ID
+
+SIDM00903
+
+#### COSMIC ID
+
+905949
+
+## Oncogenic Alterations
+
+Gene  | Alteration  | Oncogenic  | Function
+--- | --- | --- | ---
+KRAS  | G12S  | Oncogenic  | Gain-of-function
+KEAP1  | G333C  | Oncogenic  | Loss-of-function
+_{v4.7}
+
+## Sequenced and profiled in the following datasets:
+
+CN (1 datasets)
+
+Copy Number WGS Public 26Q1 (Log2 transformed)
+
+CRISPR (1 datasets)
+
+CRISPR (DepMap Public 26Q1+Score, Chronos)
+
+Drug screen (9 datasets)
+
+Repurposing Primary Extended
+
+Drug sensitivity AUC (PRISM Repurposing Secondary Screen)
+
+Drug sensitivity AUC (CTD^2)
+
+Drug sensitivity AUC (Sanger GDSC1)
+
+Drug sensitivity AUC (Sanger GDSC2)
+
+Drug sensitivity replicate-level dose (CTD^2)
+
+Drug sensitivity replicate-level dose (Sanger GDSC1)
+
+Drug sensitivity replicate-level dose (Sanger GDSC2)
+
+Drug sensitivity replicate-level dose (PRISM Repurposing Secondary Screen)
+
+Expression (1 datasets)
+
+Expression Public 26Q1
+
+Methylation (1 datasets)
+
+Methylation (1kb upstream TSS)
+
+Mutations (3 datasets)
+
+Hotspot Mutations
+
+Damaging Mutations
+
+Mutation
+
+Protein Expression (1 datasets)
+
+Protein Array
+
+RNAi (3 datasets)
+
+RNAi (Achilles+DRIVE+Marcotte, DEMETER2)
+
+RNAi (Achilles, DEMETER2)
+
+RNAi (DRIVE, DEMETER2)
+
+Structural variants (2 datasets)
+
+Fusion--------------------------------------------------------------------------------
+A-549 | Cell - PubChem (https://pubchem.ncbi.nlm.nih.gov/cell/CVCL_0023)
+citeturn24search1 [wordlim: 200] Published: 4.7 years ago; Crawled: yesterday; # A-549 ... #### 1.2.12 DepMap IDACH-000681
+
+Medical Subject Headings (MeSH); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.3 ChEMBL Cell Line ID
+
+CHEMBL3307651
+
+ChEMBL; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.4 LINCS ID
+
+LCL-1601
+
+LINCS Data Portal; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.5 HMS LINCS ID
+
+50084
+
+Harvard Medical School (HMS) LINCS; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.6 Cell Line Ontology ID
+
+CLO_0001601
+
+Cell Line Ontology (CLO); ChEMBL
+
+CLO_0050025
+
+Cell Line Ontology (CLO)
+
+CLO_0001601
+
+CLO_0050025
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.7 Experimental Factor Ontology ID
+
+EFO_0001086
+
+ChEMBL; Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.8 BRENDA Tissue Ontology ID
+
+BTO_0000018
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.9 COSMIC ID
+
+905949
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.10 GDSC
+
+905949
+
+Genomics of Drug Sensitivity in Cancer (GDSC); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.11 Cell Model Passports
+
+SIDM00903
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.12 DepMap ID
+
+ACH-000681
+
+Dependency Map (DepMap); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.13 Wikidata
+
+Q4649475
+
+--------------------------------------------------------------------------------
+MCF-7 | Cell - PubChem (https://pubchem.ncbi.nlm.nih.gov/cell/CVCL_0031)
+citeturn24search2 [wordlim: 200] Published: 4.7 years ago; Crawled: 2 weeks ago; This page summarizes the data available in PubChem associated with the cell line MCF-7. ... An adenocarcinoma cell line established in 1970 from the pleural effusion of a 69 year old Caucasian female patient with breast carcinoma. ... #### 1.2.13 DepMap IDACH-000019
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.7 Experimental Factor Ontology ID
+
+EFO_0002082
+
+ChEMBL
+
+EFO_0001203
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.8 BRENDA Tissue Ontology ID
+
+BTO_0000093
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.9 NCI Thesaurus Code
+
+C18096
+
+NCI Thesaurus (NCIt)
+
+#### 1.2.10 COSMIC ID
+
+905946
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.11 GDSC
+
+905946
+
+Genomics of Drug Sensitivity in Cancer (GDSC); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.12 Cell Model Passports
+
+SIDM00148
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.13 DepMap ID
+
+ACH-000019
+
+Dependency Map (DepMap); Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.14 Wikidata
+
+Q1881253
+
+Swiss Institute of Bioinformatics Cellosaurus
+
+#### 1.2.15 GlyConnect Cell Line
+
+139
+
+--------------------------------------------------------------------------------
+Gene Set - MCF7 (https://maayanlab.cloud/Harmonizome/gene_set/MCF7/DepMap%2BCRISPR%2BGene%2BDependency)
+citeturn24search3 [wordlim: 200] Crawled: last month; External Link  | https://depmap.org/portal/cell_line/ACH-000019 ... 894 gene knockdowns changing fitness of MCF7 relative to other cell lines from the DepMap CRISPR Gene Dependency Dataset.
+
+# MCF7 Gene Set
+
+Dataset  | DepMap CRISPR Gene Dependency
+Category  | disease or phenotype associations
+Type  | cell line
+Description  | cell line derived from Breast Carcinoma Metastasis (Cell Model Passports, SIDM00148)
+External Link  | https://depmap.org/portal/cell_line/ACH-000019
+Similar Terms  | 
+Downloads & Tools  | The Enrichr link requires JavaScript. Image
+
+## Genes
+
+894 gene knockdowns changing fitness of MCF7 relative to other cell lines from the DepMap CRISPR Gene Dependency Dataset.
+
+Symbol  | Name  | Standardized Value
+--- | --- | ---
+BMP7  | bone morphogenetic protein 7  | 24.8103
+BCAS1  | breast carcinoma amplified sequence 1  | 21.654
+GABARAPL2  | GABA(A) receptor-associated protein-like 2  | 20.1161
+MBNL3  | muscleblind-like splicing regulator 3  | 15.8953
+CRB1  | crumbs family member 1, photoreceptor morphogenesis associated  | 13.9881
+SLC18B1  | solute carrier family 18, subfamily B, member 1  | 12.7014
+--------------------------------------------------------------------------------
+Enhanced anti-tumor effects by combination of tucatinib and radiation in HER2-overexpressing human cancer cell lines - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11302197/)
+citeturn24search4 [wordlim: 200] Published: 2.1 years ago; Crawled: last month; A549 DepMap Cell Line Summary.16.12.2023. https://depmap.org/portal/cell_line/ACH-000681?
+--------------------------------------------------------------------------------
+Altered benzo[a]pyrene adduct formation in nucleosomes establishes distinct mutational patterns in lung cancer - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC13010920/)
+citeturn24search5 [wordlim: 200] Published: 6 months ago; Crawled: 4 weeks ago; The expression data used to stratify these TSSs for A549 (65) and GM12878 (66) cell lines can be found at https://depmap.org/portal/cell_line/ACH-000681?
+--------------------------------------------------------------------------------
+A549 Cell Line Mutations | CAN-IMMUNE Database (https://canelib.erc.monash.edu.au/cell-lines/A549)
+citeturn24search6 [wordlim: 200] Crawled: 3 days ago; A549 ... External: Cellosaurus (CVCL_0023) DepMap (ACH-000681) COSMIC (COSS905949) Cell Model Passports (SIDM00903) NCIt (C3512) OncoTree (LUAD)
+--------------------------------------------------------------------------------
+Gene Set - A549 (https://maayanlab.cloud/Harmonizome/gene_set/A549/DepMap%2BCRISPR%2BGene%2BDependency)
+citeturn24search7 [wordlim: 200] Crawled: 2 months ago; External Link  | https://depmap.org/portal/cell_line/ACH-000681 ... 312 gene knockdowns changing fitness of A549 relative to other cell lines from the DepMap CRISPR Gene Dependency Dataset.
+--------------------------------------------------------------------------------
+A statistically rigorous multi-scale texture analysis framework for 3D spheroid characterization: temporal autocorrelation correction and molecular validation | Scientific Reports (https://doi.org/10.1038/s41598-026-51722-5)
+citeturn24search8 [wordlim: 200] Published: 4 months ago; Crawled: last month; DepMap provides RNA-sequencing quantification for A549 (ACH-000681) and H1299 (ACH-000510), generated through orthogonal measurement technology (RNA-seq vs. microscopy) on independent sample sets, enabling validation that framework discrimination corresponds to biological differences measured independently.
+--------------------------------------------------------------------------------
+(PDF) Deuterium Concentration as a Dual Regulator: Depletion and Enrichment Elicit Divergent Transcriptional Responses in A549 Lung Adenocarcinoma Cells (https://www.researchgate.net/publication/400745736_Deuterium_Concentration_as_a_Dual_Regulator_Depletion_and_Enrichment_Elicit_Divergent_Transcriptional_Responses_in_A549_Lung_Adenocarcinoma_Cells)
+citeturn24search9 [wordlim: 200] Published: 7 months ago; Crawled: 4 months ago; Available at: https://depmap.org/portal/cell_line/ACH-000681.
+--------------------------------------------------------------------------------
+IJMS | Free Full-Text | Deuterium Concentration as a Dual Regulator: Depletion and Enrichment Elicit Divergent Transcriptional Responses in A549 Lung Adenocarcinoma Cells (https://www.mdpi.com/1422-0067/27/6/2605/review_report)
+citeturn24search10 [wordlim: 200] Published: 6 months ago; Crawled: 6 days ago; Available at: https://depmap.org/portal/cell_line/ACH-000681. ... Comment 3: The conclusions drawn by the authors are predominantly based on A549 cells, which carry KRAS, STK11, and KEAP1 co-mutations.
+--------------------------------------------------------------------------------
+Cellosaurus cell line A-549 (CVCL_0023) (https://www.cellosaurus.org/CVCL_0023)
+citeturn24search11 [wordlim: 200] Published: 14.4 years ago; Crawled: yesterday; CVCL_D7UQ (Ubigene A-549 MAPK9 KO) CVCL_D7UR (Ubigene A-549 MAPKAPK3 KO) CVCL_D7US (Ubigene A-549 MAPKAPK5 KO) ... DepMap; ACH-000681
+--------------------------------------------------------------------------------
+https://doi.org/10.1038/s41598-026-51722-5 (https://www.nature.com/articles/s41598-026-51722-5_reference.pdf)
+citeturn24search12 [wordlim: 200] Published: 4 months ago; (DepMap ID: ACH-000681) and H1299 (DepMap ID: ACH-000510) cell lines ... A549 (DepMap
+--------------------------------------------------------------------------------
+Promotionsordnung (https://ul.qucosa.de/api/qucosa%3A103416/attachment/ATT-0/)
+citeturn24search13 [wordlim: 200] Published: 5 months ago; A549 DepMap Cell Line Summary.16.12.2023. https://depmap.org/portal/cell_line/ACH-000681?
+--------------------------------------------------------------------------------
+A Statistically Rigorous Multi-Scale Texture Analysis Framework for 3D Spheroid Characterization: Temporal Autocorrelation Correction and Molecular Validation (https://assets-eu.researchsquare.com/files/rs-8508394/v1_covered_9836613d-45ac-4c86-bf4e-bc7e588df19b.pdf?c=1770116195)
+citeturn24search14 [wordlim: 200] Crawled: 7 months ago; To establish baseline epithelial-mesenchymal transition (EMT) phenotypes of A549 (DepMap ID: ACH-000681) and H1299 (DepMap ID: ACH-000510) cell lines independent of experimental conditions, we analyzed RNA-sequencing data from the Cancer Dependency Map (DepMap) Public 24Q2 release^19,20,38.
+--------------------------------------------------------------------------------
+A Statistically Rigorous Multi-Scale Texture Analysis (https://assets-eu.researchsquare.com/files/rs-8508394/v1_covered_9836613d-45ac-4c86-bf4e-bc7e588df19b.pdf)
+citeturn24search15 [wordlim: 200] Published: 6 months ago; A549 (DepMap Model ID: ACH-000681) and H1299 (ACH-000510) were identified
+--------------------------------------------------------------------------------
+3. MATERIALI E METODI (https://unitesi.unipv.it/retrieve/c8457819-5b6b-4f34-8c1a-b5d30357584a/TESI%20MAGISTRALE%20ILARIA%20CHILLICO.pdf)
+citeturn24search16 [wordlim: 200] Published: 1.9 years ago; Le linee cellulari utilizzate erano ADK-17, ADK-18 e A549. ... L’indagine molecolare ha evidenziato due principali alterazioni oncogeniche: KRAS G12S e KEAP1 G333C (ATCC, American Type Culture Collection, Biological Resource Centre Website) (Depmap Portal Website, DepMap ID: ACH-000681).
+

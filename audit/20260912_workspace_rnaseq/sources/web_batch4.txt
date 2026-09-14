@@ -1,0 +1,583 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119834)
+citeturn6search0 [wordlim: 200] Published: 7.5 years ago; Crawled: 2 weeks ago; Series GSE119834 Query DataSets for GSE119834 ... Summary Glioblastoma is an incurable brain cancer characterized by high genetic and pathological heterogeneity. ... Overall design Dataset consists of total RNA isolated from either glioblastoma primary tissue or gliblastoma stem cell models and an analysis of gene expression signatures.
+Series GSE119834 Query DataSets for GSE119834
+Status Public on Mar 18, 2019
+Title CHROMATIN LANDSCAPES REVEAL DEVELOPMENTALLY ENCODED TRANSCRIPTIONAL STATES THAT DEFINE GLIOBLASTOMA [RNA-Seq]
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Glioblastoma is an incurable brain cancer characterized by high genetic and pathological heterogeneity. Here we mapped active chromatin landscapes with gene expression, whole-exomes, copy number profiles, and DNA methylomes across 44 glioblastoma stem cell (GSCs) models, 50 primary glioblastomas, and 10 neural stem cells (NSCs) with the goal of identifying essential super enhancer (SE)-associated genes and the core transcription factors that establish them and glioblastoma identity. Glioblastomas segregate with two dominant enhancer profiles that coopt unique developmental transcription factor regulatory programs to enforce tumor identity. From group specific enhancer profiles, we inferred core transcription factors that define subgroup identity. These transcription factors show higher activity in glioblastomas versus normal neural stem cells, are associated with poor clinical outcomes, and are required for glioblastoma growth in vitro and in vivo. Given challenges with genetically-defined targeted therapies for glioblastoma, we propose targeting underlying transcriptional identity may serve as an important therapeutic strategy.
+ 
+Overall design Dataset consists of total RNA isolated from either glioblastoma primary tissue or gliblastoma stem cell models and an analysis of gene expression signatures.
+For primary GBM samples, we have 50 GBM samples in total, 46 of which have H3k27ac ChIPseq data, 45 of which have RNAseq data, and 39 of which have methylation data (GBM74 has replicate data).
+For glioblastoma stem cell samples, we have 44 GSC samples in total, 43 of which have H3k27ac ChIPseq data, 44 of which have RNAseq data, and 41 of which have methylation data.
+For neural stem cell samples, we have 10 NSC samples in total, 9 of which have H3k27ac ChIPseq data, 9 of which have RNAseq data, and 9 of which have methylation data.
+ 
+Contributor(s) Mack SC, Singh I, Wang X, Hirsch R, Lin CY, Rich JN
+GSM3384810 GSC16 [RNA-Seq]
+GSM3384811 GSC17 [RNA-Seq]
+GSM3384812 GSC18 [RNA-Seq]
+GSM3384813 GSC19 [RNA-Seq]
+GSM3384814 GSC2 [RNA-Seq]
+GSM3384815 GSC20 [RNA-Seq]
+GSM3384816 GSC21 [RNA-Seq]
+GSM3384817 GSC22 [RNA-Seq]
+GSM3384818 GSC23 [RNA-Seq]
+GSM3384819 GSC24 [RNA-Seq]
+GSM3384820 GSC25 [RNA-Seq]
+GSM3384821 GSC26 [RNA-Seq]
+GSM3384822 GSC27 [RNA-Seq]
+GSM3384823 GSC28 [RNA-Seq]
+GSM3384824 GSC29 [RNA-Seq]
+GSM3384825 GSC3 [RNA-Seq]
+GSM3384826 GSC30 [RNA-Seq]
+GSM3384827 GSC31 [RNA-Seq]
+GSM3384828 GSC32 [RNA-Seq]
+GSM3384829 GSC33 [RNA-Seq]
+GSM3384830 GSC34 [RNA-Seq]
+GSM3384831 GSC35 [RNA-Seq]
+GSM3384832 GSC36 [RNA-Seq]
+GSM3384833 GSC37 [RNA-Seq]
+GSM3384834 GSC38 [RNA-Seq]
+GSM3384835 GSC39 [RNA-Seq]
+GSM3384836 GSC4 [RNA-Seq]
+GSM3384837 GSC40 [RNA-Seq]
+GSM3384838 GSC41 [RNA-Seq]
+GSM3384839 GSC42 [RNA-Seq]
+GSM3384840 GSC43 [RNA-Seq]
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE164585)
+citeturn6search1 [wordlim: 200] Published: 4.6 years ago; Crawled: 2 weeks ago; Series GSE164585 Query DataSets for GSE164585 ... GSE164585_RAW.tar 753.1 Mb (http)(custom) TAR (of H5, MTX, TSV)
+Series GSE164585 Query DataSets for GSE164585
+Status Public on Feb 15, 2022
+Title Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+Organism Mus musculus
+Experiment type Expression profiling by high throughput sequencing
+Genome binding/occupancy profiling by high throughput sequencing
+Summary The impact of vascular aging (VA) has been extensively studied, yet little is known regarding the cellular and molecular mechanism underlying age-related VA in aortic cellular subpopulations. Herein, we analyzed transcriptomes and transposase-accessible chromatin profiles from aortas of 4-, 26-, and 86-week-old mice using single-cell RNA sequencing and ATAC sequencing. By integrating the heterogeneous transcriptome and chromatin accessibility data, we identified cell-specific transcription factor (TF) regulatory networks and open chromatin states. Moreover, we found that aortic aging affects cell interactions, inflammation, cell type composition and dysregulation of transcriptional control. Endothelial cell (EC) 1 has higher gene set activity related to senescence, aging, and adipogenesis than EC 2. Construction of senescence trajectories showed that the senescence of EC 1 and fibroblasts is associated with distinct TF open chromatin states and an mRNA expression model. Our data provide a system-wide model for transcriptional and epigenetic regulation during aortic aging at single-cell resolution.
+ 
+Overall design Transcriptomes and transposase-accessible chromatin profiles from aortas of two 4-week-old, two 26-week-old, and two 86-week-old mice
+ 
+Contributor(s) Xie W, Ke Y, You Q, Li J, Chen L, Li D, Fang J, Chen X, Zhou Y, Chen L, Hong H
+Citation(s) 34879708
+Submission date Jan 11, 2021
+Last update date Feb 16, 2022
+Contact name Wenhui Xie
+ 
+Platforms (1)
+GPL24247 Illumina NovaSeq 6000 (Mus musculus)
+Samples (12)Image: Less... Less...            Image: More... More...
+GSM5014406 4-week-old_RNA-seq_rep1
+GSM5014407 4-week-old_RNA-seq_rep2
+GSM5014408 26-week-old_RNA-seq_rep1
+GSM5014409 26-week-old_RNA-seq_rep2
+GSM5014410 86-week-old_RNA-seq_rep1
+GSM5014411 86-week-old_RNA-seq_rep2
+GSM5014412 4-week-old_ATAC-seq_rep1
+GSM5014413 4-week-old_ATAC-seq_rep2
+GSM5014414 26-week-old_ATAC-seq_rep1
+GSM5014415 26-week-old_ATAC-seq_rep2
+GSM5014416 86-week-old_ATAC-seq_rep1
+GSM5014417 86-week-old_ATAC-seq_rep2
+Supplementary file Size Download File type/resource
+GSE164585_RAW.tar 753.1 Mb (http)(custom) TAR (of H5, MTX, TSV)
+GSE164585_merge_UMI_count.txt.gz 69.5 Mb (ftp)(http) TXT
+GSE164585_metadata.txt.gz 177.4 Kb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137233)
+citeturn6search2 [wordlim: 200] Published: 6.1 years ago; Crawled: 3 months ago; Series GSE137233 Query DataSets for GSE137233 ... GSE137233_RAW.tar 106.0 Mb (http)(custom) TAR (of CEL)
+Series GSE137233 Query DataSets for GSE137233
+Status Public on Aug 23, 2020
+Title HDAC3 ensures stepwise epidermal stratification via NCoR/SMRT-reliant mechanisms independent of its histone deacetylase activity (KLF4 microarray)
+Organism Mus musculus
+Experiment type Expression profiling by array
+Summary Chromatin modifiers play critical roles in epidermal development, but the functions of histone deacetylases in this context are poorly understood. We find that the Class I HDAC, HDAC3, is expressed broadly in embryonic epidermis, and is required for its orderly stepwise stratification. Stability of HDAC3 protein in vivo is reliant on NCoR and SMRT, which function redundantly in epidermal development. However, point mutations in the NCoR and SMRT Deacetylase Activating Domains, which are required for HDAC3’s enzymatic function, permit normal stratification, indicating that HDAC3’s roles in this context are independent of its histone deacetylase activity. HDAC3 functions both in conjunction with, and independent of, KLF4 to repress premature expression of different sets of terminal differentiation genes and suppresses expression of inflammatory cytokines through a RelA-dependent mechanism. These data identify HDAC3 as a hub coordinating multiple aspects of epidermal barrier acquisition.
+We used microarrays to determine transcriptional changes in Klf4 deleted epidermis compared to control.
+ 
+Overall design Epidermis was collected from E18.5 from 6 control and 5 mutant embryos derived from two separate litters.
+ 
+Contributor(s) Millar SE, Szigety KM
+Citation(s) 32467224
+Submission date Sep 10, 2019
+Last update date Aug 22, 2024
+Contact name Sarah E Millar
+E-mail(s) sarah.millar@mssm.edu
+Organization name Icahn School of Medicine at Mount Sinai
+Department Developmental, Cell and Regenerative Biology
+Street address Icahn Building, Floor 13 Room 020C, 1425 Madison Ave
+City New York
+State/province NY
+ZIP/Postal code 10029
+Country USA
+ 
+Platforms (1)
+GPL16570 [MoGene-2_0-st] Affymetrix Mouse Gene 2.0 ST Array [transcript (gene) version]
+Samples (11)Image: Less... Less...            Image: More... More...
+GSM4073698 5080_55668_KLF4 E18.5 MUT 11: Epidermis, Klf4 mutant 1
+GSM4073699 5080_55669_KLF4 E18.5 MUT 12: Epidermis, Klf4 mutant 2
+GSM4073700 5080_55670_KLF4 E18.5 CONT 13: Epidermis, control 1
+GSM4073701 5080_55671_KLF4 E18.5 CONT 14: Epidermis, control 2
+GSM4073702 KLF4 E18.5 CONT 1: Epidermis, control 3
+GSM4073703 KLF4 E18.5 CONT 2: Epidermis, control 4
+GSM4073704 KLF4 E18.5 CONT 3: Epidermis, control 5
+GSM4073705 KLF4 E18.5 CONT 4: Epidermis, control 6
+GSM4073706 KLF4 E18.5 MUT 1: Epidermis, Klf4 mutant 3
+GSM4073707 KLF4 E18.5 MUT 2: Epidermis, Klf4 mutant 4
+GSM4073708 KLF4 E18.5 MUT 3: Epidermis, Klf4 mutant 5
+This SubSeries is part of SuperSeries:
+GSE137235 HDAC3 ensures stepwise epidermal stratification via NCoR/SMRT-reliant mechanisms independent of its histone deacetylase activity
+Relations
+BioProject PRJNA564840
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE137233_RAW.tar 106.0 Mb (http)(custom) TAR (of CEL)
+Processed data included within Sample table--------------------------------------------------------------------------------
+Single-cell transcriptional and epigenetic dynamics during aortic aging in mice - - GEO DataSets - NCBI (https://www.ncbi.nlm.nih.gov/gds?LinkName=bioproject_gds&from_uid=691260)
+citeturn6search3 [wordlim: 200] Crawled: last week;     GSE164585
+
+Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+
+(Submitter supplied) The impact of vascular aging (VA) has been extensively studied, yet little is known regarding the cellular and molecular mechanism underlying age-related VA in aortic cellular subpopulations. Herein, we analyzed transcriptomes and transposase-accessible chromatin profiles from aortas of 4-, 26-, and 86-week-old mice using single-cell RNA sequencing and ATAC sequencing. By integrating the heterogeneous transcriptome and chromatin accessibility data, we identified cell-specific transcription factor (TF) regulatory networks and open chromatin states. more...
+
+Organism:
+    Mus musculus
+
+Type:
+    Expression profiling by high throughput sequencing; Genome binding/occupancy profiling by high throughput sequencing
+
+Platform:
+    GPL24247
+12 Samples
+    
+Download data: H5, MTX, TSV, TXT
+
+Series
+
+Accession:
+    GSE164585
+
+ID:
+    200164585
+
+## Supplemental Content
+
+### Related information
+
+  * PubMed
+
+Related PubMed entries
+
+  * Similar studies
+
+Similar studies
+
+  * BioProject
+
+BioProject links
+
+  * SRA
+
+Links to Short Read Archive Experiments
+
+
+  * Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+
+Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+
+Accession: GSE164585
+
+GEO DataSets
+
+  * GEO DataSet Links for BioProject (Select 691260) (1)--------------------------------------------------------------------------------
+Alzheimer's gene expression by cell type - SFG - - GEO DataSets - NCBI (https://www.ncbi.nlm.nih.gov/gds?LinkName=bioproject_gds&from_uid=515044)
+citeturn6search4 [wordlim: 200] Crawled: 2 weeks ago;     GSE125050
+
+Alzheimer's gene expression by cell type - SFG
+
+(Submitter supplied) AD patients all had Braak stages V or VI, and were also pathologically confirmed to have amyloid plaque. The "SAMPLE_ID" sample characteristic is a sample identifier internal to Genentech. The ID of this project in Genentech's ExpressionPlot database is PRJ0018621
+
+Organism:
+    Homo sapiens
+
+Type:
+    Expression profiling by high throughput sequencing
+
+Platform:
+    GPL16791
+113 Samples
+    
+Download data: TSV
+
+Series
+
+Accession:
+    GSE125050
+
+ID:
+    200125050
+
+## Supplemental Content
+
+### Related information
+
+  * PubMed
+
+Related PubMed entries
+
+  * Full text in PMC
+
+PMC links
+
+  * Similar studies
+
+Similar studies
+
+  * BioProject
+
+BioProject links
+
+  * SRA
+
+Links to Short Read Archive Experiments
+
+  * Taxonomy
+
+Taxonomy
+
+  * Alzheimer's gene expression by cell type - SFG
+
+Alzheimer's gene expression by cell type - SFG
+
+Accession: GSE125050
+
+GEO DataSets
+--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5014407)
+citeturn6search5 [wordlim: 200] Published: 4.6 years ago; Crawled: 2 weeks ago; Status Public on Feb 15, 2022 ... For single-cell ATAC-sequencing data, the Signac package (version 0.2.4) was then used to perform QC, integration of multiple datasets, data normalization, dimensional reduction, clustering, creation of a gene activity matrix, assignment of cell types, differential peak analysis, and differential motif activity analysis. ... Organization name Fujian Medical University Union Hospital ... GSE164585 Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+Sample GSM5014407 Query DataSets for GSM5014407
+Status Public on Feb 15, 2022
+Title 4-week-old_RNA-seq_rep2
+Sample type SRA
+ 
+Source name 4-week-old_aorta
+Organism Mus musculus
+Characteristics strain: C57BL/6J
+age: 4-week-old
+tissue: Aorta
+Extracted molecule total RNA
+Extraction protocol Whole mouse aortas were harvested from 4-week-old, 26-week-old, and 86-week-old male C57/BL6J mice. The isolated aorta included the aortic arch, as well as the ascending, descending, thoracic, and abdominal portions. Perivascular fat was dissected from the vascular tissue before dissociation. Single cells were captured in droplet emulsions using a GemCode Single-Cell Instrument (10X Genomics). Nuclei were isolated from cells dissociated from the aorta based on the protocol of the Nuclei Isolation for Single-Cell ATAC-Sequencing (10X Genomics).
+Single-cell mRNA-sequencing and single-cell ATAC-sequencing:
+Libraries for single-cell mRNA-sequencing were constructed as per the 10X Genomics protocol using the Single-Cell 3’ v2 Reagent Kits from 10X Genomics, whereas single-cell ATAC-sequencing libraries were prepared using the Chromium Single-Cell ATAC Library & Gel Bead Kit (#1000110, 10X Genomics).
+The applied cutoffs for QC metrics were as follows: total number of fragments in peaks > 3,000 and < 100,000; percentage of reads in peaks > 15; ratio of reads in genomic blacklist regions < 0.025; signal intensity of nucleosome < 10; TSS enrichment score > 2. Integration of multiple datasets with the same set of peaks was performed using the standard “merge” function in the Seurat package.
+Genome_build: mm10
+Supplementary_files_format_and_content: Matrix table with raw gene counts for every gene and every cell
+Supplementary_files_format_and_content: Peak text files for every cell
+ 
+Submission date Jan 11, 2021
+Last update date Feb 15, 2022
+Contact name Wenhui Xie
+E-mail(s) doctorxiewenhui@fjmu.edu.cn
+Phone 8615695907499
+Organization name Fujian Medical University Union Hospital
+Department Department of Geriatrics, Fujian Key Laboratory of Vascular Aging (Fujian Medical University)
+Street address Gulou District, Xinquan Road, No.29
+City Fuzhou
+State/province Fujian
+ZIP/Postal code 350001
+Country China
+ 
+Platform ID GPL24247
+Series (1)
+GSE164585 Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+Relations
+BioSample SAMN17284265
+SRA SRX9822337
+Supplementary file Size Download File type/resource
+GSM5014407_A078_barcodes.tsv.gz 34.2 Kb (ftp)(http) TSV
+GSM5014407_A078_features.tsv.gz 272.8 Kb (ftp)(http) TSV
+GSM5014407_A078_matrix.mtx.gz 56.5 Mb (ftp)(http) MTX
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file
+Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5014417)
+citeturn6search6 [wordlim: 200] Published: 4.6 years ago; Crawled: 2 weeks ago; Status Public on Feb 15, 2022 ... For single-cell ATAC-sequencing data, the Signac package (version 0.2.4) was then used to perform QC, integration of multiple datasets, data normalization, dimensional reduction, clustering, creation of a gene activity matrix, assignment of cell types, differential peak analysis, and differential motif activity analysis. ... Organization name Fujian Medical University Union Hospital ... GSE164585 Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM5014417 Query DataSets for GSM5014417
+Status Public on Feb 15, 2022
+Title 86-week-old_ATAC-seq_rep2
+Sample type SRA
+ 
+Source name 86-week-old_aorta
+Organism Mus musculus
+Characteristics strain: C57BL/6J
+age: 86-week-old
+tissue: Aorta
+Extracted molecule genomic DNA
+Extraction protocol Whole mouse aortas were harvested from 4-week-old, 26-week-old, and 86-week-old male C57/BL6J mice. The isolated aorta included the aortic arch, as well as the ascending, descending, thoracic, and abdominal portions. Perivascular fat was dissected from the vascular tissue before dissociation. Genome_build: mm10
+Supplementary_files_format_and_content: Matrix table with raw gene counts for every gene and every cell
+Supplementary_files_format_and_content: Peak text files for every cell
+ 
+Submission date Jan 11, 2021
+Last update date Feb 15, 2022
+Contact name Wenhui Xie
+E-mail(s) doctorxiewenhui@fjmu.edu.cn
+Phone 8615695907499
+Organization name Fujian Medical University Union Hospital
+Department Department of Geriatrics, Fujian Key Laboratory of Vascular Aging (Fujian Medical University)
+Street address Gulou District, Xinquan Road, No.29
+City Fuzhou
+State/province Fujian
+ZIP/Postal code 350001
+Country China
+ 
+Platform ID GPL24247
+Series (1)
+GSE164585 Single-cell transcriptional and epigenetic dynamics during aortic aging in mice
+Relations
+BioSample SAMN17284255
+SRA SRX9822347
+Supplementary file Size Download File type/resource
+GSM5014417_H084A_filtered_peak_bc_matrix.h5 31.5 Mb (ftp)(http) H5
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file
+Image--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3561846)
+citeturn6search7 [wordlim: 200] Published: 7.4 years ago; Crawled: 2 weeks ago; GSE125050 Alzheimer's gene expression by cell type - SFG
+Gene models were from our internal database and available in the manuscript supplementary material. "nRPKM" normalization was performed. This is similar to "RPKM" normalization but includes an extra step for sizeFactor adjustment and is described in the Methods of the manuscript. Supplementary files use Entrez Gene IDs, counts and nRPKM statistics.
+ 
+Submission date Jan 14, 2019
+Last update date Apr 17, 2019
+Contact name Brad A Friedman
+E-mail(s) friedmab@gene.com
+Organization name Genentech, Inc.
+Department Bioinformatics
+Street address 1 DNA Way
+City South San Francisco
+State/province CA
+ZIP/Postal code 94133
+Country USA
+ 
+Platform ID GPL16791
+Series (1)
+GSE125050 Alzheimer's gene expression by cell type - SFG
+Relations
+BioSample SAMN10741239
+SRA SRX5247799
+Supplementary file Size Download File type/resource
+GSM3561846_sample4.tsv.gz 288.8 Kb (ftp)(http) TSV
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3561863)
+citeturn6search8 [wordlim: 200] Published: 7.4 years ago; Crawled: 2 weeks ago; GSE125050 Alzheimer's gene expression by cell type - SFG
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM3561863 Query DataSets for GSM3561863
+Status Public on Apr 17, 2019
+Title 05-58 AD myeloid
+Sample type SRA
+ 
+Source name RNA from sorted cells
+Organism Homo sapiens
+Characteristics inventory_patient_id: 05-58
+Sex: Male
+cell type: myeloid
+diagnosis: AD
+apoe: 4/4
+expired_age: 72
+pmi: 4.16
+braak.score: VI
+Extracted molecule total RNA
+Extraction protocol Frozen tissue was dissociated on ice as described in manuscript and ethanol-fixed single-positive cells were sorted for each of four cell type markers, Astrocyte (Gfap+), Endothelial (Cd31+), Myeloid (CD11b+) and Neuron (NeuN+). RNA was extracted and amplified using Nugen Ovation V2. Libraries were then sequenced and analyzed as described in manuscript.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2500
+ 
+Data processing Reads were aligned to the GRCh38 genome using GSNAP and genes were counted using the HTSeqGenie Bioconductor package. Gene models were from our internal database and available in the manuscript supplementary material. "nRPKM" normalization was performed. This is similar to "RPKM" normalization but includes an extra step for sizeFactor adjustment and is described in the Methods of the manuscript. Supplementary files use Entrez Gene IDs, counts and nRPKM statistics.
+ 
+Submission date Jan 14, 2019
+Last update date Apr 17, 2019
+Contact name Brad A Friedman
+E-mail(s) friedmab@gene.com
+Organization name Genentech, Inc.
+Department Bioinformatics
+Street address 1 DNA Way
+City South San Francisco
+State/province CA
+ZIP/Postal code 94133
+Country USA
+ 
+Platform ID GPL16791
+Series (1)
+GSE125050 Alzheimer's gene expression by cell type - SFG
+Relations
+BioSample SAMN10741315
+SRA SRX5247816
+Supplementary file Size Download File type/resource
+GSM3561863_sample21.tsv.gz 236.4 Kb (ftp)(http) TSV
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3561871)
+citeturn6search9 [wordlim: 200] Published: 7.4 years ago; Crawled: 2 weeks ago; GSE125050 Alzheimer's gene expression by cell type - SFG
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM3561871 Query DataSets for GSM3561871
+Status Public on Apr 17, 2019
+Title 02-01 Control neuron
+Sample type SRA
+ 
+Source name RNA from sorted cells
+Organism Homo sapiens
+Characteristics inventory_patient_id: 02-01
+Sex: Female
+cell type: neuron
+diagnosis: Control
+apoe: 3/3
+expired_age: 88
+pmi: 3
+braak.score: IV
+Extracted molecule total RNA
+Extraction protocol Frozen tissue was dissociated on ice as described in manuscript and ethanol-fixed single-positive cells were sorted for each of four cell type markers, Astrocyte (Gfap+), Endothelial (Cd31+), Myeloid (CD11b+) and Neuron (NeuN+). RNA was extracted and amplified using Nugen Ovation V2. Libraries were then sequenced and analyzed as described in manuscript.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina HiSeq 2500
+ 
+Data processing Reads were aligned to the GRCh38 genome using GSNAP and genes were counted using the HTSeqGenie Bioconductor package. Gene models were from our internal database and available in the manuscript supplementary material. "nRPKM" normalization was performed. This is similar to "RPKM" normalization but includes an extra step for sizeFactor adjustment and is described in the Methods of the manuscript. Supplementary files use Entrez Gene IDs, counts and nRPKM statistics.
+ 
+Submission date Jan 14, 2019
+Last update date Apr 17, 2019
+Contact name Brad A Friedman
+E-mail(s) friedmab@gene.com
+Organization name Genentech, Inc.
+Department Bioinformatics
+Street address 1 DNA Way
+City South San Francisco
+State/province CA
+ZIP/Postal code 94133
+Country USA
+ 
+Platform ID GPL16791
+Series (1)
+GSE125050 Alzheimer's gene expression by cell type - SFG
+Relations
+BioSample SAMN10741307
+SRA SRX5247824
+Supplementary file Size Download File type/resource
+GSM3561871_sample29.tsv.gz 297.3 Kb (ftp)(http) TSV
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3561895)
+citeturn6search10 [wordlim: 200] Published: 7.4 years ago; Crawled: 2 weeks ago; GSE125050 Alzheimer's gene expression by cell type - SFG
+Gene models were from our internal database and available in the manuscript supplementary material. "nRPKM" normalization was performed. This is similar to "RPKM" normalization but includes an extra step for sizeFactor adjustment and is described in the Methods of the manuscript. Supplementary files use Entrez Gene IDs, counts and nRPKM statistics.
+ 
+Submission date Jan 14, 2019
+Last update date Dec 04, 2020
+Contact name Brad A Friedman
+E-mail(s) friedmab@gene.com
+Organization name Genentech, Inc.
+Department Bioinformatics
+Street address 1 DNA Way
+City South San Francisco
+State/province CA
+ZIP/Postal code 94133
+Country USA
+ 
+Platform ID GPL16791
+Series (1)
+GSE125050 Alzheimer's gene expression by cell type - SFG
+Relations
+BioSample SAMN10741347
+SRA SRX5247848
+Supplementary file Size Download File type/resource
+GSM3561895_sample53.tsv.gz 194.1 Kb (ftp)(http) TSV
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data provided as supplementary file--------------------------------------------------------------------------------
+Single-cell transcriptional and epigenetic dynamic... (ID 691260) - BioProject - NCBI (https://www.ncbi.nlm.nih.gov/bioproject/PRJNA691260)
+citeturn6search11 [wordlim: 200] Published: 5.7 years ago; Crawled: today; By integrating the heterogeneous transcriptome and chromatin accessibility data, we identified cell-specific transcription factor (TF) regulatory networks and open chromatin states. ... Endothelial cell (EC) 1 has higher gene set activity related to senescence, aging, and adipogenesis than EC 2. ... Accession  | PRJNA691260; GEO: GSE164585
+
+Accession: PRJNA691260 ID: 691260
+
+## Single-cell transcriptional and epigenetic dynamics during aortic aging in mice (house mouse)
+
+See Genome Information for Mus musculus
+
+Navigate Across
+
+89304 additional projects are related by organism.
+
+The impact of vascular aging (VA) has been extensively studied, yet little is known regarding the cellular and molecular mechanism underlying age-related VA in aortic cellular subpopulations. More...
+
+The impact of vascular aging (VA) has been extensively studied, yet little is known regarding the cellular and molecular mechanism underlying age-related VA in aortic cellular subpopulations. Herein, we analyzed transcriptomes and transposase-accessible chromatin profiles from aortas of 4-, 26-, and 86-week-old mice using single-cell RNA sequencing and ATAC sequencing. By integrating the heterogeneous transcriptome and chromatin accessibility data, we identified cell-specific transcription factor (TF) regulatory networks and open chromatin states. Moreover, we found that aortic aging affects cell interactions, inflammation, cell type composition and dysregulation of transcriptional control. Endothelial cell (EC) 1 has higher gene set activity related to senescence, aging, and adipogenesis than EC 2. Construction of senescence trajectories showed that the senescence of EC 1 and fibroblasts is associated with distinct TF open chromatin states and an mRNA expression model. Our data provide a system-wide model for transcriptional and epigenetic regulation during aortic aging at single-cell resolution. Overall design: Transcriptomes and transposase-accessible chromatin profiles from aortas of two 4-week-old, two 26-week-old, and two 86-week-old mice Less...
+
+Accession  | PRJNA691260; GEO: GSE164585
+Scope  | Multiisolate
+Organism  | Mus musculus[Taxonomy ID: 10090]Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae; Murinae; Mus; Mus; Mus musculus
+Publications  | Xie W et al., "Single-Cell RNA Sequencing and Assay for Transposase-Accessible Chromatin Using Sequencing Reveals Cellular and Molecular Dynamics of Aortic Aging in Mice.", Arterioscler Thromb Vasc Biol, 2022 Feb;42(2):156-171
+Submission  | Registration date: 11-Jan-2021
+Department of Geriatrics, Fujian Key Laboratory of Vascular Aging (Fujian Medical University), Fujian Medical University Union Hospital
+
+Project Data:
+
+Resource Name  | Number
+of Links
+--- | ---
+Sequence data
+SRA Experiments  | 12
+Publications
+PubMed  | 1
+Other datasets
+BioSample  | 12
+GEO DataSets  | 1
+
+GEO Data Details
+
+Parameter  | Value
+--- | ---
+Data volume, Supplementary Mbytes  | 823
+
+SRA Data Details
+
+Parameter  | Value
+--- | ---
+Data volume, Gbases  | 1,236
+Data volume, Tbytes  | 0.46
+
+## Supplemental Content
+
+### Related information
+
+  * BioSample
+
+All related BioSamples
+
+  * Genome
+
+Related Genomes
+
+  * GEO DataSets
+
+GEO DataSet links
+
+  * PubMed
+
+PubMed Links
+
+  * SRA
+
+All related SRA Experiments

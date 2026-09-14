@@ -26,3 +26,8 @@ data/candidate/*
 results/
 work/
 outputs/
+
+# Local reference copies and independent runtime/output directories
+local_reference/
+audit/20260912_workspace_rnaseq/DDR_Kla_manuscript_V3_text.txt
+audit/20260912_workspace_rnaseq/DDR_Kla_manuscript_V3_backup_text.txt

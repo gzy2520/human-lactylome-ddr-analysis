@@ -1,5 +1,10 @@
 #!/usr/bin/env Rscript
 
+# Historical workflow only; reject before any result deletion or rendering.
+if (!identical(Sys.getenv("KLA_ALLOW_LEGACY_30"), "1")) {
+  stop("Historical 30-group workflow disabled. Use workflow/preflight_kla31.R for this workspace; set KLA_ALLOW_LEGACY_30=1 only for intentional legacy reproduction.", call. = FALSE)
+}
+
 # The two supported paths converge at the same validated 30-group input:
 # `publication` uses the versioned release tables; `source` first rebuilds
 # their source-derived fields from downloaded processed proteomics files.

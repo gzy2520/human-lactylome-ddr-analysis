@@ -1,0 +1,231 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9830912)
+citeturn11search0 [wordlim: 200] Published: last month; Crawled: last week; Title HMC3, Control, Replicate 2, 24h ... Library strategy RNA-Seq ... Differential gene expression and transcript usage were analyzed with DESeq2, and DEXSeq, with stageR applied for multi-stage false discovery rate control.
+   NCBI > GEO > Accession DisplayImage: Help Not logged in | LoginImage: Help
+Image
+Image Image Image
+Image
+Image:  GEO help: Mouse over screen elements for information.
+[Input]Scope: [Select]   Format: [Select]   Amount: [Select]  GEO accession: [Input]   Image: Go
+Sample GSM9830912 Query DataSets for GSM9830912
+Status Public on Aug 06, 2026
+Title HMC3, Control, Replicate 2, 24h
+Sample type SRA
+ 
+Source name HMC-3
+Organism Homo sapiens
+Characteristics cell line: HMC-3
+cell type: Microglia
+treatment: control
+Treatment protocol Experiments were performed in triplicate biological replicates (n=3 independent cell cultures per condition). Irradiation was delivered using a 6 MV X-ray beam from an Elekta Synergy linear accelerator (Radiotherapy Department, Cannizzaro Hospital, Catania, Italy) at a dose rate of 3 Gy/min. HMC3 cells were exposed to 0 Gy (control) or 15 Gy (treated). After irradiation, cells were incubated at 37°C in a humidified atmosphere of 5% CO2 for 24 h
+Growth protocol HMC3 cells were cultured according to the recommendations by ATCC, where EMEM (ATCC® 30–2003TM) was used as the base medium and completed by adding 56 mL FBS (ATCC® 30–2020TM) to a 500 mL of base EMEM
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted using the RNeasy Mini Kit (Qiagen, Germantown, MD, USA, 74104). RNA integrity was assessed using the Agilent 2100 Bioanalyzer with the Eukaryote Total RNA Nano 6000 Assay (Agilent, Santa Clara, USA, 5067-1511), and quantification was performed using the Qubit RNA Broad Range Assay Kit (Invitrogen™, ThermoFisher, Carlsbad, CA, USA Q32851), with 500 ng of total RNA used as input for library preparation.
+Full-length cDNA libraries were prepared using the Oxford Nanopore Technologies (ONT) cDNA-PCR Barcoding Kit V14 (SQK‑PCB114.24, Oxford Nanopore Technologies, Oxford, UK). The protocol included a reverse transcription step with strand-switching primers, enabling capture of full-length polyadenylated transcripts and incorporation of unique molecular identifiers (UMIs) to enhance isoform-level resolution.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model PromethION
+ 
+Description Library name: Control_HMC3_R2
+Data processing Data generated during the sequencing were basecalled with MinKNOW. Then, long reads were processed using the Epi2me Labs, “wf-transcriptome pipeline”. The alignment to the reference genome was performed using Minimap2, followed by transcript assembly (StringTie2), annotation (GffCompare), and quantification (Salmon).
+Differential gene expression and transcript usage were analyzed with DESeq2, and DEXSeq, with stageR applied for multi-stage false discovery rate control.
+Assembly: GRCh38
+Supplementary files format and content: unfiltered_transcript_counts_with_genes.tsv
+ 
+Submission date Jun 23, 2026
+Last update date Aug 06, 2026
+Contact name Giuseppe Nicolò Conti
+E-mail(s) giuseppe.conti@phd.unict.it
+Organization name University of Catania
+Department Department of Biomedical and Biotechnological Sciences
+Street address Via San Sofia, 97
+City Catania
+State/province CT
+ZIP/Postal code 95100
+Country Italy
+ 
+Platform ID GPL26167
+Series (1)
+GSE336257 Long Reads RNAseq reveals an isoform switching pattern in healthy microglial cell lines exposed to radiotherapy.
+Relations
+BioSample SAMN61067873
+SRA SRX34013221
+Supplementary data files not provided--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143451)
+citeturn11search1 [wordlim: 200] Published: 6.7 years ago; Crawled: 5 months ago; Overall design RNA seq of PC-3M-1E8
+Series GSE143451 Query DataSets for GSE143451
+Status Public on Jul 22, 2020
+Title PC-3M-1E8 transcriptome
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary The transcriptome sequencing analyse the differential expression genes between scramble and nc886+ cells
+ 
+Overall design RNA seq of PC-3M-1E8
+ 
+Contributor(s) Kong L, Wang LY
+Citation(s) 32476259
+Submission date Jan 10, 2020
+Last update date Jul 22, 2020
+Contact name wang li yong
+E-mail(s) wly0410@163.com
+Phone 86-010-83950024
+Organization name Capital Medical University
+Department medical school
+Lab medical lab
+Street address No 10 xi tou tiao, you an gate
+City Peking
+State/province Peking
+ZIP/Postal code 100069
+Country China
+ 
+Platforms (1)
+GPL24676 Illumina NovaSeq 6000 (Homo sapiens)
+Samples (6)Image: Less... Less...            Image: More... More...
+GSM4259672 PC-3M-1E8-repeat1
+GSM4259673 PC-3M-1E8-repeat2
+GSM4259674 PC-3M-1E8-repeat3
+GSM4259675 PC-3M-1E8-nc886-repeat1
+GSM4259676 PC-3M-1E8-nc886-repeat2
+GSM4259677 PC-3M-1E8-nc886-repeat3
+Relations
+BioProject PRJNA600512
+SRA SRP241228
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE143451_meta_count.xls.gz 473.7 Kb (ftp)(http) XLS
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+Cellf-deception: human microglia clone 3 (HMC3) cells exhibit more astrocyte-like than microglia-like gene expression - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12623408/)
+citeturn11search2 [wordlim: 200] Published: 10 months ago; Crawled: last month; Motivated by interest in using HMC3 cells as potential research tools, we spot-checked some existing HMC3 RNA-seq datasets from Gene Expression Omnibus to validate the expression of common myeloid cell markers including ITGAM (CD11b), PTPRC (CD45), SYK, TYROBP (DAP12), CX3CR1, and Fc receptors. ... We conducted a comprehensive search on the PubMed (pubmed.ncbi.nlm.nih.gov/) research database to identify all articles published between 2009 and 12 July 2025 that included both “HMC3 AND Microglia” as search terms. ... While ATCC consistently provides high-quality cell lines for labs, we performed a quick assessment of RNA read quality and checked alignments for quality control purposes.
+Notably, HMC3 cells have also been distributed and used under different names including CHME-3, CHME-5, and C13-NJ cells (Russo et al., 2018). In 2016, it was discovered that ostensible CHME-5 cells being used by several labs at that time were in fact rat-derived cells (Garcia-Mesa et al., 2017), prompting the American Type Culture Collection (ATCC) to authenticate the human origin of the HMC3 cell line (product #CRL-3304).
+
+Motivated by interest in using HMC3 cells as potential research tools, we spot-checked some existing HMC3 RNA-seq datasets from Gene Expression Omnibus to validate the expression of common myeloid cell markers including ITGAM (CD11b), PTPRC (CD45), SYK, TYROBP (DAP12), CX3CR1, and Fc receptors. To our surprise, these markers were not expressed, prompting us to examine the research literature for insights as to whether HMC3 cells should be classified as microglia-derived. Indeed, some researchers have noted the lack of expected marker expression in HMC3 cells (Rawat and Spector, 2017; Rai et al., 2020), while others reported that HMC3 cells’ transcriptional profile more closely resembled that of U87 cells (Quiroga et al., 2022)—a glioblastoma-derived cell line commonly used to represent astrocyte biology—than profiles of myeloid lineage cells including iMG cells, the monocytic leukemia-derived THP-1 cell line, or primary cultures of microglia, macrophages, or monocytes (see our similar principal component analysis in Figure 1B). ## Materials and Methods
+
+### PubMed trend analysis of “HMC3 and microglia” publications
+
+We conducted a comprehensive search on the PubMed (pubmed.ncbi.nlm.nih.gov/) research database to identify all articles published between 2009 and 12 July 2025 that included both “HMC3 AND Microglia” as search terms. After downloading the search results, we compiled the number of relevant publications per year and created a table summarizing the annual publication counts.
+
+### Data access and cleaning
+
+RNA sequencing datasets derived from healthy human tissues, a variety of brain cell types, and various cell lines were collected from GEO, DepMap, and several papers (Supplementary Table S1). Control and diseased samples from each dataset were used as part of our analysis. All datasets used the HUGO gene symbols, and any datasets that used the human Ensembl gene nomenclature were converted through the R IDConverter package to enable gene-pair comparisons among different datasets (Wang et al., 2021). Additionally, we restricted genes within the datasets to those where 80% or higher of the samples had a non-zero observation in the specified gene. This restricted our training datasets to 8,723 genes.
+
+### Principal component analysis
+
+Figure 1B in this manuscript mimics Figure 1 from Quiroga et al. (GSE181153) but with fewer cell type comparisons (Quiroga et al., 2022). First, the gene-counts table was converted to transcripts per million. As performed by Quiroga et al., only genes with greater than 100 transcripts per million were kept in the analysis. Samples were then restricted to only include control non-treated samples, i.e., only “NONE_NONE” labels were kept. Additionally, To recreate the Quiroga PCA, iPSCs were not included in the plot despite the raw data including iPSCs. Of note, when the iPSC lines were included, they cluster with U87a and HMC3 lines (Supplementary Figure S1). Once samples and genes were removed, gene count data were processed using DES (Love et al., 2014), followed by variant stabilization (‘vst()’ function). Because our aim was to interrogate HMC3 lineage rather than develop a broadly generalizable tool, we did not perform k-fold cross-validation. Instead, model reliability was assessed through independent validation using datasets from Masuda et al. (2019) and Schirmer et al. (2019), which provided stringent external testing and demonstrated strong classifier performance. These single-nuclei and single-cells studies, respectively, were analyzed using pseudo-bulk strategies by aggregating expression data according to the cell-type annotation of the original publications.
+
+### Testing for rat sequencing reads
+
+FASTQ files were downloaded to a Google bucket from the Sequence Read Archive (SRA) for all HMC3 samples tested (GSE181153, GSE275256, GSE155408, specifically, SRR12347826, SRR12347827, SRR12347828, SRR15301012, SRR15301013, SRR15301082, SRR15301083, SRR30311414, SRR30311415, SRR30311416, SRR30311417, SRR30311418, SRR30311419, SRR30311420, SRR30311421, and SRR30311422). To test whether samples had more RNA sequencing reads that aligned to Rat (Rattus norvegicus) or Human (Homo sapiens) reads, we used xengsort (Zentgraf and Rahmann, 2021) https://gitlab.com/genomeinformatics/xengsort) to characterize reads according to their alignment preference. We used Ensembl GRCh38 release 114 cDNA and DNA FASTA files for the human reference and GRCr8 release 114 cDNA and DNA sequences for the rat genome reference. Briefly, the xengsort pipeline uses a memory-intensive step to index the reference genomes and then uses Cuckoo hashing for rapid assessment of k-mer fidelity in order to classify raw reads to the different references for each sample.
+
+Because of the previous challenges with deriving cell lines from R. norvegicus (rat), we assessed read origins based on the k-mer fidelity. To accomplish this task, we used a well-designed tool called xengsort (Zentgraf and Rahmann, 2021). Briefly, xengsort uses a large alignment-free k-mer store, i.e., a large key-value hash table, to assess whether the DNA or RNA reads best align to one, both, or neither of two references provided. Because of historical problems, it must be addressed explicitly by aligning the HMC3 sequencing reads with human vs. rat genomes and analyzing mismatches to ensure that the HMC3 datasets are in fact, human-derived cells and not rat-derived cells. Results from this analysis clearly show that data from the Armanville et al. and Quiroga et al. studies are primarily from the Homo sapiens genome (mean of 98.53% and 98.07%, respectively, Figure 7A). Surprisingly, the Baek et al. study did show many shared k-mers with the Rat reference (mean 30.69% shared between human and rat); but only 0.13% of the k-mers were rat-specific. Figure 6D.
+
+#### FIGURE 7.
+
+Open in a new tab
+
+Sequence read quality of the HMC3 cell lines. (A) Bar charts for the three HMC3 studies show the percentage of RNA sequencing k-mers that match with the Rat transcriptomic reference (Rattus norvegicus) or the Human transcriptomic reference (Hhomo sapiens). The x-axis indicates the percentage of k-mers that are unique to Rat, Human, Both, Neither, or are Ambiguous. More samples are present in the Armanville study than in previous analyses because we did not restrict to HMC3 lines. (B) Fraction of rRNA detected in reads that aligned to both Human and Rat in the Baek et al. samples.
+
+To further investigate, we traced the cell line’s reported origin in the Baek et al. study. To better understand the origin of the reads that mapped to both the human and rat genomes, we consulted the developers of xengsort. They helped identify that most of these “both” reads originated from ribosomal RNA (rRNA), which is highly conserved across species. When we applied this theory using SortMeRNA (Kopylova et al., 2012), a read-mapping tool (Materials and Methods), we found strong evidence supporting elevated shared content between rat and human reads in the Baek et al. dataset is likely the result of insufficient rRNA depletion in the library preparation prior to sequencing, rather than contamination or misidentification of the cell line (Figure 7B).
+
+--------------------------------------------------------------------------------
+Chemically Induced Senescence Prompts Functional Changes in Human Microglia-Like Cells - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11876530/)
+citeturn11search3 [wordlim: 200] Published: 1.5 years ago; Crawled: last month; RNA-seq data from HMC3 cells treated with vehicle (VEH) control, SLO half dose (SLO 1/2), and SLO full dose (SLO 1) have been deposited at GEO and are publicly available (GSE275256).
+For RT-qPCR, cDNA was synthesized from the extracted RNA using the SuperScriptTM VILO Mastermix. ACTB and HPRT1 genes were used as housekeeping genes. The relative expression of genes of interest was determined by qPCR using PowerUp SYBR Green Master Mix. Data were quantified using the ΔΔCT method. For a list of primers used in this study, refer to Supporting Information 1: Table S3. RNA-seq data from HMC3 cells treated with vehicle (VEH) control, SLO half dose (SLO 1/2), and SLO full dose (SLO 1) have been deposited at GEO and are publicly available (GSE275256). The dataset was processed and aligned by the IRIC genomic platform at the University of Montreal. Sequences were trimmed for sequencing adapters and low quality 3′ bases using Trimmomatic version 0.38 [39] and aligned to the reference human genome version GRCh38 using STAR version 2.7.1a [40]. The quality of the samples was assessed with MultiQC, a report is available as Supporting Information 2: File S1. Gene expressions were obtained as readcount directly from STAR to obtain normalized gene and transcript level expression. Differential analysis was performed using DESeq2 R package. Gene set enrichment analysis (GSEA) was performed using g:Profiler [41]. Further supporting information is available as supporting files, including raw reads and mapping statistics (Supporting Information 3: File S2), list of differentially expressed genes (Supporting Information 4: File S3) and GSEA enriched terms (Supporting Information 4: File S4).
+
+--------------------------------------------------------------------------------
+Molecular Signature of Neuroinflammation Induced in Cytokine-Stimulated Human Cortical Spheroids - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9138619/)
+citeturn11search4 [wordlim: 200] Published: 4.4 years ago; Crawled: last month; The RNA-seq data for the hCSs has been deposited under GEO accession number GSE200779, and for HMC3 and HOG under GEO accession number GSE200354.
+The cytokine concentrations and stimulation time points were chosen based on our previous studies, studies utilizing 2D cell models [17,18,19,20,21], and the only study published thus far that dealt with cytokine (TNFα) stimulation of a 3D human brain organoid [22]. Following stimulation, spheroids were harvested for RNA isolation and the RNA was subjected to RNA-seq analysis as described below. Unstimulated hCSs from the same batch were used as controls. For pro-inflammatory stimulation experiments with HMC3 and HOG cells, the cells were incubated with 100 ng/mL LPS (Sigma-Aldrich, L4391-1MG) (dissolved in PBS) for 24 h (24 h) with subsequent incubation with 5 ng/mL TNFα (in PBS) and 5 ng/mL IL-1β (in PBS). Following stimulation, HMC3 and HOG cells were harvested for RNA isolation and the RNA was subjected to RNA-seq analysis, as described below.
+
+### 2.5. RNA Isolation
+
+Each hCS was transferred with a cut-open P1000 tip to 300 μL TRIzol reagent (Thermo Fisher; 15596026), snap frozen in liquid nitrogen and stored at −20 °C. For RNA isolation, hCSs were thawed and lysed in 400 μL TRIzol at room temperature for 5 min, then broken into smaller pieces with a P200 tip and incubated for an additional 30 min on ice. HMC3 and HOG cell pellets were snap frozen upon collection, thawed in 400 μL TriZOL and incubated for 30 min on ice. Chloroform was added to the lysed hCSs, HMC3 and HOG cells, and total RNA was extracted, precipitated with 100% 2-propanol and glycogen, washed twice with ice-cold 75% ethanol and dissolved in nuclease-free water. RNA was stored at −20 °C until further processing.
+
+### 2.6. RNA-Seq Analysis
+
+For RNA-seq analysis (BGI Genomics, Shenzhen, China), equal amounts of total RNA samples from 4–5 hCSs were pooled to a total of 700 ng RNA or 1.5 μg total RNA per HMC3 and HOG sample was used. For the determination of total RNA sample quality (RNA concentration, RNA integrity number (RIN) value, 28S/18S and the fragment length distribution), an Agilent 2100 Bioanalyzer (Agilent RNA 6000 Nano Kit, Agilent Technologies, Waldbronn, Germany) was used. Bulk RNA-seq analysis of total RNA samples (RIN value over 7.0, except for the hCSs LPS + TNFα + IL-1β sample: RIN 6.1) was performed on a DNBseq platform with a read depth of 30,000 reads; clean reads were mapped to reference genome h38 using HISAT2 (v2.0.4) and between 17,000 and 18,000 genes were identified. For the identification of differentially expressed genes (DEGs), clean reads were mapped to reference by Bowtie2 (v2.2.5), RNA expression levels were calculated with RSEM (v1.2.12) [23], and DEGs were detected with PoissonDis, as previously described [24] (fold change, FC, equal to or over 2.00 and false discovery rate, FDR, equal to or below 0.001). For the basal expression levels of all genes (fragments per kilobase of exon per million mapped fragments, FPKM), see Supplementary Information S1. For gene nomenclature, Log_{2} FC-values relative to 0 h stimulation and FDR-corrected p-values of the DEGs, see Supplementary Information S2. The RNA-seq data for the hCSs has been deposited under GEO accession number GSE200779, and for HMC3 and HOG under GEO accession number GSE200354. The RNA-seq data was validated by qPCR analysis and we calculated per time point the one-tailed Pearson correlation coefficient between the Log_{2} FC-values as obtained by RNA-seq and the mean Log_{2} FC-values as obtained by qPCR.
+
+--------------------------------------------------------------------------------
+Cellosaurus cell line TALL-104 (CVCL_2771) (https://www.cellosaurus.org/CVCL_2771)
+citeturn11search5 [wordlim: 200] Published: 14.4 years ago; Crawled: 2 months ago; #### Cellosaurus TALL-104 (CVCL_2771) ... Species of origin  | Homo sapiens (Human) (NCBI Taxonomy: 9606) ... Web pages  | Provider; Galileo Research; -; https://web.archive.org/web/20181130194601/http://www.galileoresearch.it/en/pipeline/TALL-104.html
+
+#### Cellosaurus TALL-104 (CVCL_2771)
+
+[Text][XML][JSON]
+
+Cell line name  | TALL-104
+Accession  | CVCL_2771
+Resource Identification Initiative  | To cite this cell line use: TALL-104 (RRID:CVCL_2771)
+Comments  | Group: Patented cell line.
+Registration: International Depositary Authority, American Type Culture Collection (ATCC); CRL-11386.
+Characteristics: IL2 dependent.
+Omics: Proteomics; Quantitative.
+Omics: Transcriptomics; RNAseq.
+Miscellaneous: STR profile from personal communication of Leo, Isabelle Rose.
+Derived from site: In situ; Peripheral blood; UBERON=UBERON_0000178.
+Cell type: T-cell; CL=CL_0000084.
+Sequence variations  | 
+
+  * Gene fusion; HGNC; HGNC:76; ABL1 + HGNC; HGNC:8064; NUP214; Name(s)=NUP214-ABL1; Note=NUP214 exon 32 fused to ABL1 exon 2 (PubMed=15361874; PubMed=35354797).
+Disease  | Childhood T acute lymphoblastic leukemia (NCIt: C7953)
+Precursor T-cell acute lymphoblastic leukemia (ORDO: Orphanet_99861)
+Species of origin  | Homo sapiens (Human) (NCBI Taxonomy: 9606)
+Sex of cell  | Male
+Age at sampling  | 2Y
+Category  | Cancer cell line
+STR profile  | Source(s): ATCC=CRL-11386; Direct_author_submission
+Markers:
+Amelogenin X,Y
+CSF1PO 10,11
+D1S1656 16
+--------------------------------------------------------------------------------
+HDAC Inhibitors recapitulate Human Disease-Associated Microglia Signatures in vitro - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11482930/)
+citeturn11search6 [wordlim: 200] Published: 1.9 years ago; Crawled: last month; HMC3 microglia were treated for 24hrs with DMSO as control, Entinostat (10μM) or Vorinostat (1μM) followed by bulk RNA-Seq.
+For a comparison between the different inquired signatures, see Figure S3A. For a full list of differentially expressed genes between the different treatment conditions, see Table S4.
+
+#### Figure 3. Bulk RNAseq data from the HMC3 DAM model.
+
+Open in a new tab
+
+A. Heatmaps showing the expression of Cluster 11^{6} (left), Microglia 13^{10} (middle) and DAM1/DAM2^{1}(right) marker gene sets in bulk RNAseq data generated 24hrs following exposure to DMSO (control), Entinostat (red; 10μM) or Vorinostat (green; 1μM). Each column represents a single sample, each row a single gene represented in the respective marker set. Pairwise differential testing between DMSO control and each of the treatment conditions (Entinostat, 10μM; Vorinostat, 1μM) was conducted using a Wald test with the Benjamini-Hochberg correction (FDR alpha < 0.05). The legend represents Z scores, with lower scores indicated in red and higher scores indicated in blue. Data represents n=3 independent experiments for each treatment group with each n for all compounds being performed at the same time. B. Volcano Plots depicting the distribution of differentially expressed genes from different signatures (DAM1, DAM2^{1}, Cluster 11^{6}, Microglia 13^{10}) for each treatment condition (Entinostat or Vorinostat) in comparison to DMSO control. HMC3 microglia were treated for 24hrs with DMSO as control, Entinostat (10μM) or Vorinostat (1μM) followed by bulk RNA-Seq. Volcano plots depict all genes present in each marker set (DAM1: 10 genes; DAM2: 20 genes; Cluster 11: 89 genes, Microglia 13: 127 genes) plotted based on log2FC (fold change expression) and -log10(p value) with the ones significantly upregulated marked in red and labelled with the gene name. Plots are organized from Cluster 11 (top left), to DAM1 (bottom left), to DAM2 (top right) to Microglia 13 (bottom right). C. PCA plot of bulk RNAseq results from HMC3 microglia treated with DMSO, Vorinostat or Entinostat. Principal component analysis (PCA) was calculated on log-normalized bulk RNA-Seq data derived from compound-treated HMC3 microglia following 24hrs of exposure to DMSO (control; blue), Entinostat (10μM; red) or Vorinostat (1μM; green). Data represents n=3 independent experiments for each of the treatment group with each n for all compounds being performed at the same time. D. Pie chart depicting the number of significantly upregulated genes by Entinostat or Vorinostat for each of the queried marker signatures DAM1, DAM2, Cluster 11^{6}, Microglia 13^{10}. The number of significantly upregulated genes across all three replicates for each treatment group (Entinostat or Vorinostat) in comparison to DMSO control was identified and converted to a percentage of marker genes upregulated/ marker set. Data for DAM1 are depicted in purple, for DAM2 depicted in red, for Cluster 11 depicted in violet and for Microglia 13 depicted in teal. E. Signature-specific markers induced by Vorinostat and Entinostat. Markers significantly induced by Vorinostat and Entinostat for each signatured are depicted for DAM1 (purple), DAM2 (red), Cluster 11 (violet), Microglia 13 (teal).
+
+--------------------------------------------------------------------------------
+Prematurely Aged Human Microglia Exhibit Impaired Stress Response and Defective Nucleocytoplasmic Shuttling of ALS Associated FUS - Hartmann - 2025 - Aging Cell - Wiley Online Library (https://onlinelibrary.wiley.com/doi/10.1111/acel.70232?af=R)
+citeturn11search7 [wordlim: 200] Published: last year; Crawled: 2 weeks ago; acel70232-sup-0003-TableS4.xlsx Excel 2007 spreadsheet , 5.1 MB  | Table S4: Results and comprehensive analysis of bulk RNA-sequencing data between premature aged HMC3 and control cells.
+--------------------------------------------------------------------------------
+Analysis of differentially expressed long non-coding RNAs in LPS-induced human HMC3 microglial cells - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9795738/)
+citeturn11search8 [wordlim: 200] Published: 3.7 years ago; Crawled: last month; Our previous study of LPS/JQ1-treated HMC3 cells [10] determined their transcriptomes by RNA sequencing (RNA-seq), but limited the analysis to differentially expressed mRNAs (DEmRNAs), i.e. to protein-coding genes. ... The critical threshold (△CT) value was normalized by the expression of an internal control, glyceraldehyde-3-phosphate dehydrogenase (GAPDH).
+--------------------------------------------------------------------------------
+Long non-coding RNA LINC00926 regulates WNT10B signaling pathway thereby altering inflammatory gene expression in PTSD - PubMed (https://pubmed.ncbi.nlm.nih.gov/35551428/)
+citeturn11search9 [wordlim: 200] Published: 4.3 years ago; Crawled: last month; Regulation of IFNG expression by WNT10B in TALL-104 cells.
+--------------------------------------------------------------------------------
+ACAP1 Deficiency Predicts Inferior Immunotherapy Response in Solid Tumors - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC9740925/)
+citeturn11search10 [wordlim: 200] Published: 3.8 years ago; Crawled: last month; Recombinant human IL-2 (ProteinTech, Wuhan, China, #HZ-1015) was added to the TALL-104 culture media with a final concentration of 100 units/mL.
+--------------------------------------------------------------------------------
+A pharmacological toolkit for human microglia identifies Topoisomerase I inhibitors as immunomodulators for Alzheimer's disease - PubMed (https://pubmed.ncbi.nlm.nih.gov/38370689/)
+citeturn11search11 [wordlim: 200] Published: 2.6 years ago; Crawled: 3 weeks ago; A.Overview of the study design and sc-RNA sequencing analysis of compound-treated HMC3 microglia. ... Each dot is a single cell, colored by compound treatment condition - untreated (light grey), DMSO control (dark grey), Camptothecin (orange) Narciclasine (light blue), Torin2 (purple).
+--------------------------------------------------------------------------------
+Article
+https://doi.org/10.1038/s41467-023-44243-6 (https://inrepo02.dkfz.de/record/286656/files/s41467-023-44243-6.pdf?subformat=pdfa)
+citeturn11search12 [wordlim: 200] Published: 6 months ago; containing 150,000 cells (PC-3M), 145,000 cells (LNCaP-abl), 160,000 ... RNA preparation for RNA-seq and analysisPC-3M cells were cultured in the presence of DMSO or 360 nM KMI169 ... Data are deposited under GSE235595 [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+--------------------------------------------------------------------------------
+TYPE Original Research (https://www.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2025.1681811/pdf)
+citeturn11search13 [wordlim: 200] Published: 10 months ago; (pubmed.ncbi.nlm.nih.gov/) research database to identify all articles ... tools, we spot-checked some existing HMC3 RNA-seq datasets from
+--------------------------------------------------------------------------------
+Nucleic Acids Research, 2021 (https://repository.cshl.edu/id/eprint/39919/1/2021.Liu.BarcodedOligonuclotides.pdf)
+citeturn11search14 [wordlim: 200] Published: 6 months ago; 35 mRNAs from the second group were HMC3-enriched ... with RNA-seq expression data, showing a Pearson corre-
+--------------------------------------------------------------------------------
+PC-3M — human prostate carcinoma cell line – highly metastatic (https://theses.ncl.ac.uk/jspui/bitstream/10443/5003/1/Livermore%20K%20E%202020.pdf)
+citeturn11search15 [wordlim: 200] Published: 6.8 years ago; Crawled: 6.6 years ago; PC-3M — human prostate carcinoma cell line – highly metastatic ... RNA-seq — RNA sequencing
+--------------------------------------------------------------------------------
+Copyright Undertaking (https://theses.lib.polyu.edu.hk/bitstream/200/12156/3/6576.pdf)
+citeturn11search16 [wordlim: 200] Published: 3.8 years ago; microglia or HMC3 cells were treated with Veh control, IGFBPL1 (400 ng/ml, R&D system, ... cultures were collected for bulk RNA-seq analysis and qPCR or fixed for
+--------------------------------------------------------------------------------
+HHS Public Access (https://scholarworks.indianapolis.iu.edu/bitstream/1805/19375/1/nihms870552.pdf)
+citeturn11search17 [wordlim: 200] Published: 1.2 years ago; RNA was extracted using the Qiagen RNeasy Mini kit (Qiagen; Valencia, ... were cultured with IL-7 (10ng/ml), and TALL-104 cells with IL-2 (20ng/mL; R&D
+

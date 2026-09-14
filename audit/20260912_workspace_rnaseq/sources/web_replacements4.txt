@@ -1,0 +1,395 @@
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE236746)
+citeturn17search0 [wordlim: 200] Published: 3.2 years ago; Crawled: last week; Series GSE236746 Query DataSets for GSE236746 ... LncRNA-mRNA co-expression network and competing endogenous RNA (ceRNA) network were constructed to elucidate the potential molecular mechanisms of DM affecting RCT. ... GSE236746_mRNA.FPKM.txt.gz 2.8 Mb (ftp)(http) TXT
+Series GSE236746 Query DataSets for GSE236746
+Status Public on Nov 02, 2023
+Title Analysis of Differentially Expressed Genes in Torn Rotator Cuff Tendon Tissues in Diabetic Patients through RNA-sequencing
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Background Rotator cuff tears (RCT) is a common musculoskeletal disorder in the shoulder which cause pain and functional disability. Diabetes mellitus (DM) is characterized by impaired ability of producing or responding to insulin and has been reported to act as a risk factor of the progression of rotator cuff tendinopathy and tear. Long non-coding RNAs (lncRNAs) are involved in the development of various diseases, but little is known about their potential roles involved in RCT of diabetic patients.
+Methods RNA-Sequencing (RNA-Seq) was used in this study to profile differentially expressed lncRNAs and mRNAs in RCT samples between 3 diabetic and 3 nondiabetic patients. Gene ontology (GO) and Kyoto encyclopedia of genes and genomes (KEGG) pathway analysis were performed to annotate the function of the differentially expressed genes (DEGs). LncRNA-mRNA co-expression network and competing endogenous RNA (ceRNA) network were constructed to elucidate the potential molecular mechanisms of DM affecting RCT.
+Results In total, 505 lncRNAs and 388 mRNAs were detected to be differentially expressed in RCT samples between diabetic and nondiabetic patients. GO functional analysis indicated that related lncRNAs and mRNAs were involved in metabolic process, immune system process and others. KEGG pathway analysis indicated that related mRNAs were involved in ferroptosis, PI3K-Akt signaling pathway, Wnt signaling pathway, JAK-STAT signaling pathway and IL-17 signaling pathway and others. LncRNA-mRNA co-expression network was constructed, and ceRNA network showed the interaction of differentially expressed RNAs, comprising 5 lncRNAs, 2 mRNAs, and 142 miRNAs. TF regulation analysis revealed that STAT affected the progression of RCT by regulating the apoptosis pathway in diabetic patients.
+Conclusions We preliminarily dissected the differential expression profile of lncRNAs and mRNAs in torn rotator cuff tendon between diabetic and nondiabetic patients. And the bioinformatic analysis suggested some important RNAs and signaling pathways regarding inflammation and apoptosis were involved in diabetic RCT. Our findings offer a new perspective on the association between DM and progression of RCT.
+ 
+Overall design To elucidate the potential roles of diabetes affecting rotator cuff tears, we harvested the torn rotator cuff tendon between diabetic and nondiabetic patients and analyzed using RNA-Seq.
+ 
+Contributor(s) Yuan Z
+Citation(s) 38172847
+Submission date Jul 06, 2023
+Last update date Jan 16, 2024
+Contact name Ziyang Yuan
+E-mail(s) aa951598913@gmail.com
+Phone 18801213051
+Organization name Beijing Friendship Hospital
+Street address Yongan Road No.95
+City Beijing
+ZIP/Postal code 100053
+Country China
+ 
+Platforms (1)
+GPL24676 Illumina NovaSeq 6000 (Homo sapiens)
+Samples (6)Image: Less... Less...            Image: More... More...
+GSM7574837 Torn rotator cuff tendon, N-1
+GSM7574838 Torn rotator cuff tendon, N-2
+GSM7574839 Torn rotator cuff tendon, N-3
+GSM7574840 Torn rotator cuff tendon, DM-1
+GSM7574841 Torn rotator cuff tendon, DM-2
+GSM7574842 Torn rotator cuff tendon, DM-3
+BioProject PRJNA992130
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE236746_mRNA.FPKM.txt.gz 2.8 Mb (ftp)(http) TXT
+SRA Run SelectorImage: Help
+Raw data are available in SRA
+Processed data are available on Series record--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275256)
+citeturn17search1 [wordlim: 200] Published: 2.1 years ago; Crawled: 2 weeks ago; Comparative gene expression profiling of our RNA-seq data were conducted for VEH controls and each SLO doses (SLO 1, SLO1/2). ... GSE275256_summary_star_genes_readcount.stranded.annotated.tsv.gz 1.7 Mb (ftp)(http) TSV
+Series GSE275256 Query DataSets for GSE275256
+Status Public on Mar 12, 2025
+Title Chemically induced senescence prompts functional changes in human microglia-like cells
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary In response to various stressors, cells can enter a state called cellular senescence which is characterized by irreversible cell cycle arrest and a senescence-associated secretory phenotype (SASP). The progressive accumulation of senescent glial cells in the central nervous system (CNS) with aging suggests a potential role for senescence as driver of aging and inflammation in the brain. As the main immune cell population residing in the CNS, microglia are thought to play a pivotal role in the progression of age-associated neuroinflammation. Furthermore, due to their slow turnover, microglia are highly susceptible to undergoing cellular senescence. However, current understanding of age-related changes in microglia and their impact on brain aging is limited. Due to the challenge in accessing human primary microglia and the lack of models to adequately recapitulate aging, this knowledge is predominantly limited to rodent studies. Here, we chemically induced senescence in a human immortalized microglia cell line with a cocktail of senescence inducing molecules. We demonstrate that chemically induced senescent microglia adopt a pro-inflammatory phenotype, have reduced phagocytic activity and impaired calcium activity. Our results show that chemically induced senescence can mimic features of cellular aging and can provide insight on the impact of aging and cellular senescence on human microglia.
+ 
+Overall design To validate that a cocktail of the three small molecules SBI-026965, Lopinavir and O-151 (SLO) could induce features of aging in human microglia, we treated human immortalized microglia cells HMC3 for 6 consecutive days.
+We then performed bulk RNA seq of 3 different experimental groups (vehicle control, SLO full dose, as published in Fathi et al., 2021 (DOI: 10.1111/acel.13541) and SLO 1/2 dose) and validated our findings with an array of experiments evaluating aging features, including nuclear structure, proliferation, p21 expression, beta-galactosidase activity, secretion of proinflammatory molecules, phagocytosis and calcium imaging
+Comparative gene expression profiling of our RNA-seq data were conducted for VEH controls and each SLO doses (SLO 1, SLO1/2).
+ 
+Contributor(s) Armanville S, Tocco C, Haj Mohamad Z, Clarke D, Robitaille R, Drouin-Ouellet J
+Citation(s) 40041406
+Submission date Aug 20, 2024
+Last update date Mar 12, 2025
+Contact name Janelle Drouin-Ouellet
+E-mail(s) janelle.drouin-ouellet@umontreal.ca
+Organization name University of Montreal
+Department Pharmacy
+Street address 2940, chemin de Polytechnique Pavillon Jean Coutu
+City Montreal
+State/province Quebec
+ZIP/Postal code H3T 1J4
+Country Canada
+ 
+Platforms (1)
+GPL18573 Illumina NextSeq 500 (Homo sapiens)
+Samples (9)Image: Less... Less...            Image: More... More...
+GSM8473662 HMC3 cells, VEH control, replicate 1
+GSM8473663 HMC3 cells, VEH control, replicate 2
+GSM8473664 HMC3 cells, VEH control, replicate 3
+GSM8473665 HMC3 cells, SLO 1/2, replicate 1
+GSM8473666 HMC3 cells, SLO 1/2, replicate 2
+GSM8473667 HMC3 cells, SLO 1/2, replicate 3
+GSM8473668 HMC3 cells, SLO 1, replicate 1
+GSM8473669 HMC3 cells, SLO 1, replicate 2
+GSM8473670 HMC3 cells, SLO 1, replicate 3
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE275256_summary_star_genes_readcount.stranded.annotated.tsv.gz 1.7 Mb (ftp)(http) TSV
+GSE275256_summary_star_genes_tpm.stranded.annotated.tsv.gz 2.3 Mb (ftp)(http) TSV
+SRA Run SelectorImage: Help--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE269418)
+citeturn17search2 [wordlim: 200] Published: 2.3 years ago; Crawled: last month; Series GSE269418 Query DataSets for GSE269418 ... In order to study the effects of BAY 60-2770 on gene expression in tubular cells, we used the proximal tubular cell line HK-2 as a model. ... GSE269418_raw_counts.txt.gz 2.0 Mb (ftp)(http) TXT
+Series GSE269418 Query DataSets for GSE269418
+Status Public on Nov 05, 2024
+Title Effect of the sGC activator BAY 60-2770 on human proximal tubular (HK-2) cells under hypoxia and after TGF-β1 treatment
+Organism Homo sapiens
+Experiment type Expression profiling by high throughput sequencing
+Summary Increasing cGMP levels by modulating soluble guanylyl cyclase (sGC) can be renoprotective. While sGC stimulators can modulate cGMP levels, their application is limited as they require native sGC to function. sGC activators on the other hand can function with heme-free sGC. Therefore, we tested the renoprotective effects of the sGC activator BAY 60-2770 that also functions with oxidized sGC in an acute kidney injury (AKI) model with transition to chronic kidney disease (CKD). In order to study the effects of BAY 60-2770 on gene expression in tubular cells, we used the proximal tubular cell line HK-2 as a model. To mimic the ischemia and fibrosis observed in vivo, we subjected HK-2 cells to hypoxia and TGF-β1 treatment, respectively. RNASeq analysis showed that BAY 60-2770 had a significant influence on the expression of genes involved in fibrosis, inflammation and tissue damage after both hypoxia and TGF-β1 treatments.
+ 
+Overall design HK-2 cells were treated with BAY 60-2770 or solvent control and incubated for 24h either under hypoxia (0.3% oxygen) or normoxia. In another set of experiments, HK-2 cells were treated with TGF-β1 alone or in combination with BAY 60-2770 and incubated for 24h under normoxia. Analysis of RNA-seq data was performed using DESeq2 with a multifactor design within two experiments, comparing both treatment effects and sGC activator status to the respective controls.
+ 
+Contributor(s) Lichtenberger F, Sieckmann T, Patzak A, Khedkar PH
+Citation missing Has this study been published? Please login to update or notify GEO.
+Submission date Jun 09, 2024
+Last update date Nov 05, 2024
+Contact name Pratik Hemant Khedkar
+E-mail(s) pratik.khedkar@charite.de
+Organization name Charité - Universitätsmedizin Berlin
+Department Institute of Translational Physiology
+Street address Charitéplatz 1
+City Berlin
+ZIP/Postal code 10117
+Country Germany
+ 
+Platforms (1)
+GPL34281 Illumina NovaSeq X (Homo sapiens)
+Samples (24)Image: Less... Less...            Image: More... More...
+GSM8315280 HK2 cells, normoxia, sGC activator, biol rep 1, RNA 01
+GSM8315281 HK2 cells, normoxia, sGC activator, biol rep 2, RNA 02
+GSM8315282 HK2 cells, normoxia, sGC activator, biol rep 3, RNA 03
+GSM8315283 HK2 cells, normoxia, solvent control, biol rep 1, RNA 04
+GSM8315284 HK2 cells, normoxia, solvent control, biol rep 2, RNA 05
+GSM8315285 HK2 cells, normoxia, solvent control, biol rep 3, RNA 06
+GSM8315286 HK2 cells, normoxia, solvent control, biol rep 4, RNA 07
+GSM8315287 HK2 cells, normoxia, TGF-β1, biol rep 1, RNA 08
+GSM8315288 HK2 cells, normoxia, TGF-β1, biol rep 2, RNA 09
+GSM8315289 HK2 cells, normoxia, TGF-β1, biol rep 3, RNA 10
+GSM8315290 HK2 cells, normoxia, TGF-β1, biol rep 4, RNA 11
+GSM8315291 HK2 cells, normoxia, TGF-β1, biol rep 5, RNA 12
+GSM8315292 HK2 cells, normoxia, TGF-β1+ sGC activator, biol rep 1, RNA 13
+GSM8315293 HK2 cells, normoxia, TGF-β1+ sGC activator, biol rep 2, RNA 14
+GSM8315294 HK2 cells, normoxia, TGF-β1+ sGC activator, biol rep 3, RNA 15
+GSM8315295 HK2 cells, normoxia, TGF-β1+ sGC activator, biol rep 4, RNA 16
+GSM8315296 HK2 cells, normoxia, TGF-β1+ sGC activator, biol rep 5, RNA 17
+GSM8315297 HK2 cells, normoxia, solvent control, biol rep 5, RNA 18
+GSM8315298 HK2 cells, hypoxia, sGC activator, biol rep 1, RNA 21
+GSM8315299 HK2 cells, hypoxia, sGC activator, biol rep 2, RNA 22
+GSM8315300 HK2 cells, hypoxia, sGC activator, biol rep 3, RNA 23
+GSM8315301 HK2 cells, hypoxia, solvent control, biol rep 1, RNA 31
+GSM8315302 HK2 cells, hypoxia, solvent control, biol rep 2, RNA 32
+GSM8315303 HK2 cells, hypoxia, solvent control, biol rep 3, RNA 33
+Relations
+BioProject PRJNA1121890
+Download family Format
+SOFT formatted family file(s) SOFTImage: Help
+MINiML formatted family file(s) MINiMLImage: Help
+Series Matrix File(s) TXTImage: Help
+Supplementary file Size Download File type/resource
+GSE269418_raw_counts.txt.gz 2.0 Mb (ftp)(http) TXT
+SRA Run SelectorImage: Help--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5390613)
+citeturn17search3 [wordlim: 200] Published: 5.2 years ago; Crawled: 3 weeks ago; Extracted molecule total RNA ... Column names correspond to the raw file names and the row names correspond to the NCBI Gene ID ... GSE178411 Whole-transcriptome analysis illustrates evolving transcriptional human response to injury in acute wounds and scars
+Counts per gene were generated using the Bioconductor Rsubread package version 1.32.4, using the inbuilt hg38 gene annotations
+Genes were filtered using the Bioconductor edgeR package version 3.24.3, using the filterByExpr function to remove unexpressed or unreliable genes.
+Genome_build: GRCh38
+Supplementary_files_format_and_content: Matrix table containing raw gene counts per sample. Column names correspond to the raw file names and the row names correspond to the NCBI Gene ID
+ 
+Submission date Jun 17, 2021
+Last update date Jun 03, 2024
+Contact name James William MacDonald
+E-mail(s) jmacdon@uw.edu
+Organization name University of Washington
+Department Environmental and Occupational Health Sciences
+Street address 4225 Roosevelt Way NE
+City Seattle
+State/province WA
+ZIP/Postal code 98105-6099
+Country USA
+ 
+Platform ID GPL24676
+Series (1)
+GSE178411 Whole-transcriptome analysis illustrates evolving transcriptional human response to injury in acute wounds and scars
+Relations
+BioSample SAMN19763783
+SRA SRX11172849
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8315288)
+citeturn17search4 [wordlim: 200] Published: 2.3 years ago; Crawled: last month;    NCBI > GEO > Accession Display Image: Help Not logged in | Login Image: Help ... Libraries were constructed using the NEBNext Ultra II Poly(A) mRNA Kit with 400 ng total RNA following the manufacturers protocol ... Extraction of read counts and summarizing on gene level was performed using tximeta ... GSE269418 Effect of the sGC activator BAY 60-2770 on human proximal tubular (HK-2) cells under hypoxia and after TGF-β1 treatment
+Cells were incubated under hypoxia (0.3% oxygen) or normoxia for 24h.
+Growth protocol HK-2 cells were maintained in DMEM/F-12 (1:1) supplemented with 10% fetal bovine serum, 1% gluatmine and antiobiotics in a humidified environment with 5% carbon dioxide.
+Extracted molecule total RNA
+Extraction protocol Total RNA was extracted using the RNA STAT-60 reagent. The extracted RNA was then purified using the NucleoSpin kit, following the manufacturer's protocol.
+Libraries were constructed using the NEBNext Ultra II Poly(A) mRNA Kit with 400 ng total RNA following the manufacturers protocol
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq X
+ 
+Data processing Sequence reads were mapped to Homo sapiens GRCh38 111 using salmon with --gcBias and --validateMappings flags
+Extraction of read counts and summarizing on gene level was performed using tximeta
+Normalization of count data and statistical analysis was performed using DESeq2
+Assembly: hg38
+Supplementary files format and content: Tab delimited text file containing gene level summarized raw counts for each sample
+ 
+Submission date Jun 09, 2024
+Last update date Nov 05, 2024
+Contact name Pratik Hemant Khedkar
+E-mail(s) pratik.khedkar@charite.de
+Organization name Charité - Universitätsmedizin Berlin
+Department Institute of Translational Physiology
+Street address Charitéplatz 1
+City Berlin
+ZIP/Postal code 10117
+Country Germany
+ 
+Platform ID GPL34281
+Series (1)
+GSE269418 Effect of the sGC activator BAY 60-2770 on human proximal tubular (HK-2) cells under hypoxia and after TGF-β1 treatment
+Relations
+BioSample SAMN41767795
+SRA SRX24853690
+Supplementary data files not provided
+SRA Run SelectorImage: Help--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8473667)
+citeturn17search5 [wordlim: 200] Published: 1.5 years ago; Crawled: 3 months ago; Transcriptome libraries were generated using the KAPA RNA HyperPrep (Roche) using a poly-A selection (Thermo Scientific). ... Assembly: Trimmed sequences were aligned to the reference human genome version GRCh38 (gene annotation from Gencode version 40, based on Ensembl 106) using STAR version 2.7.1a ... GSE275256 Chemically induced senescence prompts functional changes in human microglia-like cells
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NextSeq 500
+ 
+Description SLO_1-2_3
+Data processing Sequences were trimmed for sequencing adapters and low quality 3' bases using Trimmomatic version 0.38
+Read count extraction and normalization were performed using STAR to obtain normalized gene and transcript level expression in TPM values.
+Assembly: Trimmed sequences were aligned to the reference human genome version GRCh38 (gene annotation from Gencode version 40, based on Ensembl 106) using STAR version 2.7.1a
+Supplementary files format and content: tab-separated text file includes raw read counts for each sample (summary_star_genes_readcount.stranded.annotated)
+Supplementary files format and content: tab-separated text file includes TPM values for each sample (summary_star_genes_tpm.stranded.annotated)
+ 
+Submission date Aug 20, 2024
+Last update date Mar 12, 2025
+Contact name Janelle Drouin-Ouellet
+E-mail(s) janelle.drouin-ouellet@umontreal.ca
+Organization name University of Montreal
+Department Pharmacy
+Street address 2940, chemin de Polytechnique Pavillon Jean Coutu
+City Montreal
+State/province Quebec
+ZIP/Postal code H3T 1J4
+Country Canada
+ 
+Platform ID GPL18573
+Series (1)
+GSE275256 Chemically induced senescence prompts functional changes in human microglia-like cells
+Relations
+BioSample SAMN43270334
+SRA SRX25771844
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8315302)
+citeturn17search6 [wordlim: 200] Published: 2.3 years ago; Crawled: 4 months ago; Libraries were constructed using the NEBNext Ultra II Poly(A) mRNA Kit with 400 ng total RNA following the manufacturers protocol ... Extraction of read counts and summarizing on gene level was performed using tximeta ... GSE269418 Effect of the sGC activator BAY 60-2770 on human proximal tubular (HK-2) cells under hypoxia and after TGF-β1 treatment
+Libraries were constructed using the NEBNext Ultra II Poly(A) mRNA Kit with 400 ng total RNA following the manufacturers protocol
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq X
+ 
+Data processing Sequence reads were mapped to Homo sapiens GRCh38 111 using salmon with --gcBias and --validateMappings flags
+Extraction of read counts and summarizing on gene level was performed using tximeta
+Normalization of count data and statistical analysis was performed using DESeq2
+Assembly: hg38
+Supplementary files format and content: Tab delimited text file containing gene level summarized raw counts for each sample
+ 
+Submission date Jun 09, 2024
+Last update date Nov 05, 2024
+Contact name Pratik Hemant Khedkar
+E-mail(s) pratik.khedkar@charite.de
+Organization name Charité - Universitätsmedizin Berlin
+Department Institute of Translational Physiology
+Street address Charitéplatz 1
+City Berlin
+ZIP/Postal code 10117
+Country Germany
+ 
+Platform ID GPL34281
+Series (1)
+GSE269418 Effect of the sGC activator BAY 60-2770 on human proximal tubular (HK-2) cells under hypoxia and after TGF-β1 treatment
+Relations
+BioSample SAMN41767781
+SRA SRX24853704
+Supplementary data files not provided
+SRA Run SelectorImage: Help--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7574839)
+citeturn17search7 [wordlim: 200] Published: 3.2 years ago; Crawled: last week;    NCBI > GEO > Accession Display Image: Help Not logged in | Login Image: Help ... Hisat2 tools soft were used to map with reference genome.Quantification of gene expression levelsGene expression levels were estimated by fragments per kilobase of transcript per million fragments mapped. ... GSE236746 Analysis of Differentially Expressed Genes in Torn Rotator Cuff Tendon Tissues in Diabetic Patients through RNA-sequencing
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Data processing Raw data (raw reads) of fastq format were firstly processed through in-house perl scripts.
+Hisat2 tools soft were used to map with reference genome.
+Quantification of gene expression levelsGene expression levels were estimated by fragments per kilobase of transcript per million fragments mapped.
+Differential expression analysis of two groups was performed using the DESeq2.
+Assembly: hg38
+Supplementary files format and content: TXT file includes FPKM values for each Sample
+ 
+Submission date Jul 06, 2023
+Last update date Nov 02, 2023
+Contact name Ziyang Yuan
+E-mail(s) aa951598913@gmail.com
+Phone 18801213051
+Organization name Beijing Friendship Hospital
+Street address Yongan Road No.95
+City Beijing
+ZIP/Postal code 100053
+Country China
+ 
+Platform ID GPL24676
+Series (1)
+GSE236746 Analysis of Differentially Expressed Genes in Torn Rotator Cuff Tendon Tissues in Diabetic Patients through RNA-sequencing
+Relations
+BioSample SAMN36344338
+SRA SRX20927818
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA--------------------------------------------------------------------------------
+GEO Accession viewer (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7574842)
+citeturn17search8 [wordlim: 200] Published: 3.2 years ago; Crawled: last month; A total amount of 1 μg RNA per sample was used as input material for the RNA sample preparations. ... Hisat2 tools soft were used to map with reference genome.Quantification of gene expression levelsGene expression levels were estimated by fragments per kilobase of transcript per million fragments mapped. ... GSE236746 Analysis of Differentially Expressed Genes in Torn Rotator Cuff Tendon Tissues in Diabetic Patients through RNA-sequencing
+Status Public on Nov 02, 2023
+Title Torn rotator cuff tendon, DM-3
+Sample type SRA
+ 
+Source name Torn rotator cuff tendon
+Organism Homo sapiens
+Characteristics tissue: Torn rotator cuff tendon
+disease state: diabetic
+Extracted molecule total RNA
+Extraction protocol The total RNA was extracted according to the instruction manual of the TRlzol Reagent (Life technologies, California, USA).
+A total amount of 1 μg RNA per sample was used as input material for the RNA sample preparations. Sequencing libraries were generated using Hieff NGS Ultima Dual-mode mRNA Library Prep Kit for Illumina (Yeasen Biotechnology (Shanghai) Co., Ltd.) following manufacturer’s recommendations and index codes were added to attribute sequences to each sample.
+ 
+Library strategy RNA-Seq
+Library source transcriptomic
+Library selection cDNA
+Instrument model Illumina NovaSeq 6000
+ 
+Data processing Raw data (raw reads) of fastq format were firstly processed through in-house perl scripts.
+Hisat2 tools soft were used to map with reference genome.
+Quantification of gene expression levelsGene expression levels were estimated by fragments per kilobase of transcript per million fragments mapped.
+Differential expression analysis of two groups was performed using the DESeq2.
+Assembly: hg38
+Supplementary files format and content: TXT file includes FPKM values for each Sample
+ 
+Submission date Jul 06, 2023
+Last update date Nov 02, 2023
+Contact name Ziyang Yuan
+E-mail(s) aa951598913@gmail.com
+Phone 18801213051
+Organization name Beijing Friendship Hospital
+Street address Yongan Road No.95
+City Beijing
+ZIP/Postal code 100053
+Country China
+ 
+Platform ID GPL24676
+Series (1)
+GSE236746 Analysis of Differentially Expressed Genes in Torn Rotator Cuff Tendon Tissues in Diabetic Patients through RNA-sequencing
+Relations
+BioSample SAMN36344335
+SRA SRX20927821
+Supplementary data files not provided
+SRA Run SelectorImage: Help
+Raw data are available in SRA--------------------------------------------------------------------------------
+Immune-related inflammatory gene in hypertrophic scar: prognostic and molecular mechanisms via integrated machine learning-WGCNA analysis - PMC (https://pmc.ncbi.nlm.nih.gov/articles/PMC12602242/)
+citeturn17search9 [wordlim: 200] Published: 10 months ago; Crawled: last month; Finally, three datasets including GSE178411 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178411), GSE181540 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+--------------------------------------------------------------------------------
+chronoswound/docs/GSE178411_DATASET_CARD.md at main · s4hra1i/chronoswound · GitHub (https://ithub.global.ssl.fastly.net/s4hra1i/chronoswound/blob/main/docs/GSE178411_DATASET_CARD.md)
+citeturn17search10 [wordlim: 200] Published: 2.3 years ago; Crawled: 2 weeks ago; # GSE178411_DATASET_CARD.md ...   * GEO record: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi? ... The committed sample metadata are derived from GEO sample records by `scripts/parse_gse178411_metadata.py`.
+--------------------------------------------------------------------------------
+GSE269418 — Effect of the sGC activator BAY 60-2770 on human proximal tubular (HK-2) cells under hypo… | GEO dataset | BioTransfer (https://usebiotransfer.org/tools/geo-finder/GSE269418/)
+citeturn17search11 [wordlim: 200] Published: 1.9 years ago; Crawled: last month; GSE269418 Homo sapiens Expression profiling by high throughput sequencing 24 samples 2024/11/05 GPL34281 ... NCBI GEO page ↗ Open GSE269418 in finder → Find more human RNA-seq datasets →
+--------------------------------------------------------------------------------
+Immune-related inflammatory gene in hypertrophic scar: prognostic and molecular mechanisms via integrated machine learning-WGCNA analysis (https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1645721/pdf)
+citeturn17search12 [wordlim: 200] Published: 10 months ago; Finally, three datasets including GSE178411 (https:// ... acc=GSE178411),GSE181540 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+--------------------------------------------------------------------------------
+rs old.pdf (https://polyemarket.com/?_=%2Fesm%2Fart%253A10.1038%252Fs41467-026-69540-8%2FMediaObjects%2F41467_2026_69540_MOESM4_ESM.pdf%2368f7FIu3a1zrrucOExhMGezd%2BwGW%2BWoA6KjvFB0eE1Tg3OI%3D)
+citeturn17search13 [wordlim: 200] Published: 8 months ago; The RNA-seq data generated in this study have been deposited in the NCBI Gene Expression Omnibus (GEO) database under accession codes GSE283228 [https:// ... acc=GSE113619], GSE178411 [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?
+--------------------------------------------------------------------------------
+Identification of novel hub genes and pathways predictive of fibrosis progression in cancer-related lymphedema through integrated multi-omics (https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1625972/pdf)
+citeturn17search14 [wordlim: 200] Published: 1.1 years ago; (https://www.ncbi.nlm.nih.gov/geo/), including multiple datasets ... (GSE178411) included 108 samples. ... human/browse/HRA000901) (15); and (2) a bulk RNA-seq dataset ... identiﬁed for the CRL (GSE255848) and HTS (GSE178411) ... A predominant limitation in current research on CRL-related
+--------------------------------------------------------------------------------
+Briefings in Bioinformatics, 2025, 26(5), bbaf469 (https://pdfs.semanticscholar.org/552c/52f45de6e6826de7d665746893de90706de8.pdf)
+citeturn17search15 [wordlim: 200] Published: 5 months ago; richness to reconstruct cell-type-specific gene expression [16]. ... (GEO, https://www.ncbi.nlm.nih.gov/geo)database under the accession numbers GSE173377, GSE275256, ... immune cellular bulk RNA-seq datasets GSE173377, GSE275256,
+--------------------------------------------------------------------------------
+Spatiotemporally controlled restoration of GAS6 signaling via mRNA therapy promotes scarless healing in preclinical models (https://www.nature.com/articles/s41467-026-69540-8.pdf)
+citeturn17search16 [wordlim: 200] Published: 5 months ago; The datasets GSE113619, GSE178411, GSE53986, GSE241132, andGSE186527 were obtained from the Gene Expression Omnibus (GEO)database (https://www.ncbi.nlm.nih.gov/geo/).
+--------------------------------------------------------------------------------
+ARTICLE IN PRESS (https://www.nature.com/articles/s41467-026-69449-2_reference.pdf)
+citeturn17search17 [wordlim: 200] Published: 6 months ago; scar formation, we further reanalyzed another publicly available bulk RNA-seq dataset(GSE178411), which includes 108 human samples across uninjured skin (n = 26), early
+

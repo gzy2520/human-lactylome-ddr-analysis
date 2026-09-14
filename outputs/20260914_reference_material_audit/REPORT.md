@@ -14,9 +14,11 @@
 |GSC|GSE266884：优先GSM8255530、GSM8255531，MES28 shMCT1Control|与PXD070007/PXD069969同一论文，且MES28就是六个原模型之一。仅覆盖一个模型，不能声称六模型RNA齐全；另两份shKU70对照不自动合并成四份独立重复。|
 |NSC|保留GSE119834的9个NSC RNA样本候选|GEO确认NSC培养物而非整块脑组织；符合NSC类别的外部背景。未找到ENSA/HMP1的精确RNA，继续保留具体模型未匹配的标记。|
 
+DepMap 的9个细胞模型参照已在服务器固定到官方 `DepMap Public 24Q4`（2024-12-16）：蛋白编码基因 TPM 矩阵、`Model.csv` 和 `OmicsProfiles.csv` 均已下载并通过目录公布的 MD5。当前 `DepMap Public 26Q1` 目录对相应文件只返回元数据而不给可用 URL，因此 24Q4 是明确记录的可复现回退版本；这些外部亲本表达仍不能代表各自的 KO、感染或共培养条件，且分析前必须用 ACH 模型 ID 和稳定基因 ID 完成行列及尺度核对。
+
 GSE181540虽然GEO统一标为RIP-Seq，但NS input样本明确注明抗体为none，采用rRNA去除total RNA、未做免疫富集；只有input臂可作为普通bulk候选。IP臂、甲基化峰表不能纳入。论文有Gallus gallus参考基因组文字，而GEO写人类hg19，存在来源内矛盾：取材与input建库证据支持候选资格，真正分析前应核验reads与参考基因组，不能直接信任全部处理结果。PC-3M处理表为RefSeq NM转录本主键，需稳定版本映射至Ensembl/Entrez；不能走Symbol合并。
 
-证据：[皮肤论文取材与方法](https://doi.org/10.3389/fcell.2021.748703)、[皮肤input样本](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5505085)、[PC-3M系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235595)、[GSC系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266884)、[同源蛋白/RNA论文](https://doi.org/10.1038/s41556-025-01839-y)、[NSC系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119834)。
+证据：[皮肤论文取材与方法](https://doi.org/10.3389/fcell.2021.748703)、[皮肤input样本](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5505085)、[PC-3M系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235595)、[GSC系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266884)、[同源蛋白/RNA论文](https://doi.org/10.1038/s41556-025-01839-y)、[NSC系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119834)、[DepMap公开目录接口说明](https://forum.depmap.org/t/provide-an-open-endpoint-for-latest-version-retrieval/4652)。
 
 新版31组候选见`rnaseq_reference_candidate_31.csv`，保留原GroupID、PriorSource和全部AnalysisReady=FALSE。替换候选不表示完成矩阵验收。旧20260912审计注册表保留作为历史快照。
 

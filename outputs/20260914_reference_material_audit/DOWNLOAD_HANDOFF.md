@@ -9,8 +9,8 @@ RNA 候选的下载已转移到服务器 `192.168.3.45` 的独立目录：
 RNA 下载任务分别写入服务器 `logs/`：
 
 - `download_20260914.log`：GEO 的 SOFT、series metadata、表达补充文件；GTEx V8 counts/TPM 和样本/供体注释；ENCODE HUVEC 两个 GRCh38 RSEM gene-quantification 文件。状态和 SHA-256 在 `metadata/download_status.tsv`。
-- `gdc_download_20260914.log`：GDC 清单中的 1,017 个 STAR-count UUID，按 `config/gdc_star_counts_manifest_20260914.tsv` 的官方 MD5 下载。状态和实际 MD5 在 `metadata/gdc_star_counts_download_status.tsv`。
-- `geo_raw_resolution_20260914.log`：将清单中的 GSM/SRX 解析为 SRA run 和 ENA FASTQ。完成后生成 `metadata/geo_selected_raw_fastq_manifest_20260914.tsv`；未解析项会保留为显式状态，不会被猜测替代。
+- `gdc_download_20260914.log`：GDC 清单中的 1,017 个 STAR-count UUID，按 `config/gdc_star_counts_manifest_20260914.tsv` 的官方 MD5 下载。已全部完成；状态和实际 MD5 在 `metadata/gdc_star_counts_download_status.tsv`。
+- `geo_raw_resolution_20260914.log`：将清单中的 GSM/SRX 解析为 SRA run 和 ENA FASTQ。已解析全部137个 FASTQ；下载队列仍在运行，未解析项会保留为显式状态，不会被猜测替代。
 
 GSE163787 的 GEO 矩阵目录实际使用 GPL20301/GPL21103 两个文件名，已在服务器用平台文件补取；选定的 GSM4987488/SRX9725233 对应 GPL20301。历史默认文件名失败记录保留在状态历史中，最新状态快照已标记为被平台文件替代。
 

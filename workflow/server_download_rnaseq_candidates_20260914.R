@@ -4,8 +4,8 @@
 set.seed(25)
 
 args <- commandArgs(trailingOnly=TRUE)
-if (length(args) != 2L) {
-  stop('Usage: Rscript --vanilla server_download_rnaseq_candidates_20260914.R <server_root> <specification_tsv>')
+if (length(args) < 2L || length(args) > 3L) {
+  stop('Usage: Rscript --vanilla server_download_rnaseq_candidates_20260914.R <server_root> <specification_tsv> [TaskID[,TaskID...]]')
 }
 root <- normalizePath(args[[1]], mustWork=FALSE)
 spec_path <- normalizePath(args[[2]], mustWork=TRUE)
@@ -16,6 +16,12 @@ spec <- read.delim(spec_path, check.names=FALSE, stringsAsFactors=FALSE, na.stri
 need <- c('TaskID','Source','Accession','GroupIDs','SelectedSamples','URL','RelativeTarget','Action','SelectionContract')
 stopifnot(identical(names(spec), need), nrow(spec) > 0L, !anyDuplicated(spec$TaskID))
 file.copy(spec_path, file.path(root, 'metadata', 'download_specification.tsv'), overwrite=TRUE)
+all_spec <- spec
+if (length(args) == 3L) {
+  selected_tasks <- strsplit(args[[3]], ',', fixed=TRUE)[[1]]
+  spec <- spec[spec$TaskID %in% selected_tasks, , drop=FALSE]
+  stopifnot(nrow(spec) > 0L)
+}
 
 status_path <- file.path(root, 'metadata', 'download_status.tsv')
 status_head <- c('TimestampUTC','TaskID','Source','Accession','GroupIDs','SelectedSamples','SourceURL','RelativeTarget','State','Bytes','SHA256','Detail')
@@ -106,7 +112,7 @@ for (i in seq_len(nrow(spec))) {
   if (identical(task$Action, 'geo_bundle')) run_geo(task) else if (identical(task$Action, 'direct')) fetch(task, task$URL, task$RelativeTarget) else stop('Unknown action: ', task$Action)
 }
 
-raw_queue <- spec[spec$Source == 'GEO', c('TaskID','Accession','GroupIDs','SelectedSamples','SelectionContract')]
+raw_queue <- all_spec[all_spec$Source == 'GEO', c('TaskID','Accession','GroupIDs','SelectedSamples','SelectionContract')]
 raw_queue$RawReadState <- 'not_downloaded: resolve selected GSM to exact runs after processed-material QC; use Ensembl/Entrez for later analysis'
 write.table(raw_queue, file.path(root, 'metadata', 'raw_read_resolution_queue.tsv'), sep='\t', row.names=FALSE, quote=TRUE)
 writeLines(c(

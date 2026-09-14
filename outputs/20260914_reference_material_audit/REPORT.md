@@ -18,6 +18,8 @@ DepMap 的9个细胞模型参照已在服务器固定到官方 `DepMap Public 24
 
 GSE181540虽然GEO统一标为RIP-Seq，但NS input样本明确注明抗体为none，采用rRNA去除total RNA、未做免疫富集；只有input臂可作为普通bulk候选。IP臂、甲基化峰表不能纳入。论文有Gallus gallus参考基因组文字，而GEO写人类hg19，存在来源内矛盾：取材与input建库证据支持候选资格，真正分析前应核验reads与参考基因组，不能直接信任全部处理结果。PC-3M处理表为RefSeq NM转录本主键，需稳定版本映射至Ensembl/Entrez；不能走Symbol合并。
 
+GSE163787 的 GEO 目录实际提供 GPL20301/GPL21103 两个分平台 series matrix 文件，而不是统一文件名；服务器已补取两者，并将选定的 GSM4987488/SRX9725233 追到 GPL20301。该系列摘要仍说明样本是人鼠混合细胞系基准，因此只把 TALL-104 目标库作为候选，后续必须按平台/物种和单个 run 做核验。
+
 证据：[皮肤论文取材与方法](https://doi.org/10.3389/fcell.2021.748703)、[皮肤input样本](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5505085)、[PC-3M系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235595)、[GSC系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266884)、[同源蛋白/RNA论文](https://doi.org/10.1038/s41556-025-01839-y)、[NSC系列](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119834)、[DepMap公开目录接口说明](https://forum.depmap.org/t/provide-an-open-endpoint-for-latest-version-retrieval/4652)。
 
 新版31组候选见`rnaseq_reference_candidate_31.csv`，保留原GroupID、PriorSource和全部AnalysisReady=FALSE。替换候选不表示完成矩阵验收。旧20260912审计注册表保留作为历史快照。

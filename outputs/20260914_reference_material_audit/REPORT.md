@@ -41,11 +41,11 @@ GSE181540虽然GEO统一标为RIP-Seq，但NS input样本明确注明抗体为no
 |HEK293T|PXD030304，Control_HEK293T_lys|身份一致；属于401条过程质控裂解物run，不能视为401个生物重复。|
 |HMC3|PXD028737，普通proteinGroups，H0/H24|模型一致。|
 |两组HK-2|PXD072220，前三个Log2Quantity列|身份是HK-2；内部列amostra1/3/4与公开Control_1/3/4的显式重命名映射尚未找到，暂保留样本别名证据缺口。|
-|MCF10A|PXD002400，evidence.txt中10A前缀|身份一致，但存在下述高优先级蛋白鉴定质量问题。|
+|MCF10A|PXD002400，evidence.txt中10A前缀|身份一致；来源参数为Protein FDR=1、PSM FDR=0.01，按本项目要求保留来源处理方案并如实披露。|
 
 ## 需要处理的问题
 
-1. **高优先级：MCF10A蛋白层FDR未控制。** 直接读取本地msms.zip/parameters.txt得到`Protein FDR=1`、`PSM FDR=0.01`。对应论文也说明关闭蛋白FDR。当前`load_pxd002400()`仅按10A raw前缀、非reverse/contaminant、合法UniProt提取Leading Razor Protein，没有蛋白层FDR过滤。合法稳定ID不等于受控鉴定错误率。建议重搜并控制蛋白FDR，或换一个MCF10A普通全蛋白来源；当前先标记，未改冻结结果。证据：[原论文](https://doi.org/10.1186/s13059-015-0742-x)及本目录`PXD002400_parameter_evidence.txt`。
+1. **来源参数披露：MCF10A。** 直接读取本地msms.zip/parameters.txt得到`Protein FDR=1`、`PSM FDR=0.01`，对应论文也说明关闭蛋白FDR。按老师确认的项目规则，不对Kla或普通全蛋白另加概率/蛋白FDR阈值，也不因此排除或重处理该来源；当前`load_pxd002400()`保留既有10A raw前缀、非reverse/contaminant和合法UniProt提取规则。此参数必须随结果披露，且不得写成蛋白层1% FDR。证据：[原论文](https://doi.org/10.1186/s13059-015-0742-x)及本目录`PXD002400_parameter_evidence.txt`。
 2. **中优先级：HK-2样本别名证据。** 现有脚本按前三列而非明确样本名选择，实际是amostra1/3/4。与公开Control_1/3/4编号相符，但没有显式rename manifest，不能把推断写成逐run证明。现阶段属于证据不足，不是已经证实选错。
 3. **用途限制：技术重复/汇总参照。** ProCan细胞系为技术重复/均值，HEK293T为过程控制；PC-3M有合并SILAC通道。它们可支持检测背景，但不能因此成为独立生物重复。sample-only包已排除aggregate，这次未改变其策略。
 4. **标签与配置漂移。** 旧`reference_proteome_selection.json`仍推荐海马PXD043880，当前31组是PXD050470；代码也残留非当前使用的TALL-1/Jurkat和PC-3备选分支。重建必须以冻结31组注册表和实际选择器为准。HK-2旧SampleGroup仍写mannitol，而当前显示标签/命名依据已写缺氧-复氧；不能用旧名字反推实验条件。本次不改稳定组键。
@@ -57,4 +57,4 @@ GSE181540虽然GEO统一标为RIP-Seq，但NS input样本明确注明抗体为no
 
 从当前工作树执行`Rscript --vanilla workflow/audit_reference_materials_20260914.R /Users/gzy2520/Desktop/Research/kla`。脚本读取原工作区源文件但仅向本目录输出，使用R和seed 25；不使用Symbol进行蛋白或基因集合分析。`reference_source_files.csv`记录20文件SHA，`source_headers.csv`记录表头/压缩包成员，`targeted_checks.csv`记录检查与未定项，`proteome_material_review_31.csv`逐组记录结论。
 
-初次检查中HCT116/MDA-MB-468别名和HK-2多行表头造成的检查脚本假阴性，已依照实际源格式纠正；它们不是生产流程选错数据的证据。当前所有布尔结构检查通过，NA行明确表示仅描述或证据待补。此通过不消除MCF10A FDR和HK-2别名问题。
+初次检查中HCT116/MDA-MB-468别名和HK-2多行表头造成的检查脚本假阴性，已依照实际源格式纠正；它们不是生产流程选错数据的证据。当前所有布尔结构检查通过，NA行明确表示仅描述或证据待补。此通过不消除HK-2别名证据缺口；MCF10A的FDR设置作为保留来源方案的参数披露。

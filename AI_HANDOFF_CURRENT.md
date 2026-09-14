@@ -8,8 +8,8 @@
 3. 已有修正包冻结；新脚本放R或workflow，新结果放outputs下独立日期任务目录。不得运行旧30组流程覆盖已有结果。
 4. results现在是独立空目录；renv/library为独立目录（包缓存链接保留），不再通过整个目录链接到旧工作树。勿直接修改包缓存内部文件，依赖按renv管理。
 5. 本地扩展输入为独立副本。原始大数据未迁入；需全量重建时先明确源根与独立输出位置。旧纠正脚本仍有KLA_SOURCE_ROOT等参数，不能假定无参数就是当前新分析入口。
-6. 旧add_data审计及Gemini原文是历史记录；RNA候选入口看docs/MATCHED_RNASEQ_REFERENCE_CATALOG_31.md，2026-09-14补充版为outputs/20260914_reference_material_audit/rnaseq_reference_candidate_31.csv。全部AnalysisReady=FALSE。按同组织/取材类别纳入，条件差异单独记录；本轮新增瘢痕邻近皮肤、PC-3M及MES28候选。普通全蛋白MCF10A的Protein FDR=1，HK-2内部/公开run别名未锁，见同目录REPORT.md；未改冻结结果。
-7. 下一步锁定RNA样本/文件版本/建库、下载并做稳定ID和单位QC；处理Pro/Inh配对和研究来源复用。外部亲本RNA不能当KO/感染条件匹配。
+6. 旧add_data审计及Gemini原文是历史记录；RNA候选入口看docs/MATCHED_RNASEQ_REFERENCE_CATALOG_31.md，2026-09-14补充版为outputs/20260914_reference_material_audit/rnaseq_reference_candidate_31.csv。全部AnalysisReady=FALSE。按同组织/取材类别纳入，条件差异单独记录；本轮新增瘢痕邻近皮肤、PC-3M及MES28候选。普通全蛋白MCF10A来源参数为Protein FDR=1、PSM FDR=0.01，按老师确认不另加概率/FDR阈值但必须披露；HK-2内部/公开run别名未锁，见同目录REPORT.md；未改冻结结果。
+7. RNA下载已转到服务器`192.168.3.45:/home/user/gzy/kla31-rnaseq-20260914`，合同为`config/rnaseq_server_download_20260914.tsv`；GEO/GTEx/ENCODE、GDC STAR counts和GEO raw-read解析任务均有独立日志与SHA/MD5记录。下载后仍须锁定样本/文件版本/建库、做稳定ID和单位QC；处理Pro/Inh配对和研究来源复用。外部亲本RNA不能当KO/感染条件匹配。
 8. 提交应明确描述变更，只提交代码、合同和应发布的结果；原始下载、临时输出、私人草稿不混入。推送当前研究分支，不推main，不自动合并。
 
 启动检查：Rscript --vanilla workflow/preflight_kla31.R

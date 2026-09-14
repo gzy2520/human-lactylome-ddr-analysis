@@ -1,0 +1,5 @@
+"CohortLabel"	"GroupIDs"	"ProjectID"	"SampleType"	"FileCount"
+"TCGA_ESCA_ESCC_primary"	"KLA31_10"	"TCGA-ESCA"	"Primary Tumor"	95
+"TCGA_LIHC_HCC_primary"	"KLA31_12"	"TCGA-LIHC"	"Primary Tumor"	371
+"TCGA_PRAD_primary"	"KLA31_11"	"TCGA-PRAD"	"Primary Tumor"	501
+"TCGA_LIHC_adjacent_liver"	"KLA31_09"	"TCGA-LIHC"	"Solid Tissue Normal"	50

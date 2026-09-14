@@ -10,7 +10,8 @@ Rscript --vanilla workflow/preflight_kla31.R
 
 - [当前工作约定](AI_HANDOFF_CURRENT.md)
 - [RNA候选清单](docs/MATCHED_RNASEQ_REFERENCE_CATALOG_31.md)
-- [2026-09-14组织匹配补充与普通全蛋白复审](outputs/20260914_reference_material_audit/REPORT.md)：新增RNA候选；MCF10A蛋白FDR问题、HK-2样本别名证据缺口单列。
+- [2026-09-14组织匹配补充与普通全蛋白复审](outputs/20260914_reference_material_audit/REPORT.md)：新增RNA候选；披露MCF10A来源FDR参数，HK-2样本别名证据缺口单列。
+- [RNA服务器下载交接](outputs/20260914_reference_material_audit/DOWNLOAD_HANDOFF.md)：清单、服务器隔离路径、校验和后续验收边界。
 - [此前add_data工作区审计](audit/20260912_workspace_rnaseq/REPORT.md)（历史快照，其分支状态不描述当前工作树）
 - 31组冻结注册表：`audit/20260912_workspace_rnaseq/groups_31.csv`
 - 已有sample-only基线：`corrected_final_result_20260905_sample_only/`；`final_result`仅为其本地快捷入口，不代表最终批准的新版本。

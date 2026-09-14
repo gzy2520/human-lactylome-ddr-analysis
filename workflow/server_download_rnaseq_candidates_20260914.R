@@ -76,12 +76,20 @@ geo_supplements <- function(gse) {
   excluded_arm <- identical(gse, 'GSE235595') & grepl('KI169(Ctrl)?_counts', names, ignore.case=TRUE)
   sort(names[(ext | archive_name) & !non_expression & !excluded_arm])
 }
+geo_matrix_files <- function(gse) {
+  html <- suppressWarnings(system2('wget', c('-qO-', geo_url(gse, 'matrix')), stdout=TRUE, stderr=FALSE))
+  hits <- unlist(regmatches(html, gregexpr('href="[^"]+_series_matrix\\.txt\\.gz"', html, perl=TRUE)), use.names=FALSE)
+  names <- gsub('^href="|"$', '', hits)
+  names <- unique(basename(names[nzchar(names)]))
+  names <- sort(names[grepl('_series_matrix\\.txt\\.gz$', names, ignore.case=TRUE)])
+  if (!length(names)) names <- paste0(gse, '_series_matrix.txt.gz')
+  names
+}
 run_geo <- function(task) {
   gse <- task$Accession
-  fixed <- c(
-    setNames(geo_url(gse, 'soft', paste0(gse, '_family.soft.gz')), paste0('metadata/', gse, '_family.soft.gz')),
-    setNames(geo_url(gse, 'matrix', paste0(gse, '_series_matrix.txt.gz')), paste0('metadata/', gse, '_series_matrix.txt.gz'))
-  )
+  matrix_names <- geo_matrix_files(gse)
+  fixed <- c(setNames(geo_url(gse, 'soft', paste0(gse, '_family.soft.gz')), paste0('metadata/', gse, '_family.soft.gz')),
+             setNames(geo_url(gse, 'matrix', matrix_names), paste0('metadata/', matrix_names)))
   for (relative in names(fixed)) fetch(task, fixed[[relative]], file.path(task$RelativeTarget, relative))
   supp <- geo_supplements(gse)
   if (!length(supp)) {

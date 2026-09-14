@@ -92,9 +92,26 @@ r[,`:=`(PriorSource=Source,ReviewDate='2026-09-14',InclusionBasis='same anatomic
 r[GroupID %in% c('KLA31_03','KLA31_04'),`:=`(Source='GSE181540',
   ReferenceKey=ifelse(GroupID=='KLA31_03','GSE181540_HS_input','GSE181540_adjacent_NS_input'),
   SampleSelection=ifelse(GroupID=='KLA31_03','GSM5505079;GSM5505081;GSM5505083','GSM5505085;GSM5505087;GSM5505089'),
-  EvidenceStatus='material_verified',AssayAndUnits='rRNA-depleted total RNA input; no IP; PE150; reported FPKM; hg19/Ensembl annotation',
+  EvidenceStatus='material_verified',AssayAndUnits='rRNA-depleted total RNA input; no IP; PE150; reported Ensembl count columns and FPKM; hg19 annotation',
   Limitations='Paper confirms paired HS and adjacent full-thickness skin. Include only input libraries (antibody none), exclude all IP. GEO library_strategy RIP-Seq conflicts with input protocol; document exception. Paper Gallus-gallus alignment sentence conflicts with GEO human hg19; verify actual reads/alignment and complete matrix before analysis.',
   EvidenceURL='https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE181540;https://doi.org/10.3389/fcell.2021.748703')]
+r[GroupID=='KLA31_01',`:=`(AssayAndUnits='human bulk RNA-seq; released transcript-level ENST FPKM; selected FASTQ retained for gene-level reprocessing',
+  Limitations='Non-diabetic torn rotator-cuff tendon only. The GEO matrix is transcript-level FPKM and must not be summed as gene FPKM; use the selected FASTQ files and one declared gene-level pipeline. Do not substitute healthy tendon.')]
+r[GroupID=='KLA31_08',`:=`(SampleSelection='GSM3890639-GSM3890656; all 18 BPH transition-zone samples; clinical covariates pending',
+  AssayAndUnits='human bulk polyA/riboZero; source per-sample RPKM with versioned Ensembl IDs',
+  Limitations='The GEO archive contains all 18 BPH samples as per-sample Ensembl RPKM files. Retain source-native RPKM rather than inventing counts; audit treatment and clinical covariates before any model.')]
+r[GroupID=='KLA31_25',`:=`(SampleSelection='GSM6175912;GSM6175918;GSM6175922 (WT untreated HEK293T)',
+  AssayAndUnits='human bulk stranded mRNA; source RSEM gene-level expected_count, TPM and FPKM; versioned Ensembl IDs',
+  Limitations='Three WT untreated HEK293T RSEM gene-result files are present in the GEO archive. Exclude IFN-beta and all ZAPL/ZAPS knockout samples; strip Ensembl version only under a recorded mapping rule.')]
+depmap <- fread('config/depmap_expression_20260914.tsv')
+depmap_expression <- depmap[FileName=='OmicsExpressionProteinCodingGenesTPMLogp1.csv']
+stopifnot(nrow(depmap_expression)==1L)
+depmap_groups <- unlist(strsplit(depmap_expression$GroupIDs, ';', fixed=TRUE), use.names=FALSE)
+stopifnot(identical(sort(depmap_groups), sort(c('KLA31_13','KLA31_14','KLA31_15','KLA31_16','KLA31_18','KLA31_19','KLA31_20','KLA31_21','KLA31_24'))))
+r[GroupID %in% depmap_groups,`:=`(
+  AssayAndUnits='bulk; DepMap Public 24Q4; OmicsExpressionProteinCodingGenesTPMLogp1.csv (source scale)',
+  Limitations=paste0(Limitations, ' DepMap Public 24Q4 expression, Model and OmicsProfiles files were downloaded and passed published MD5 checks; retain source scale and resolve duplicate stable-ID columns before analysis.')
+)]
 r[GroupID=='KLA31_22',`:=`(Source='GSE235595',ReferenceKey='GSE235595_PC3M_DMSO',
   SampleSelection='GSM7506018;GSM7506019;GSM7506020',EvidenceStatus='material_verified',
   AssayAndUnits='bulk RNA-seq; hg19; processed transcript counts indexed by RefSeq NM',

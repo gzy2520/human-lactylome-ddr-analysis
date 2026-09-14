@@ -78,16 +78,21 @@ if geo is not None:
     counts = Counter(row.get("State", "") for row in latest.values())
     print("processed_geo_gtex_encode_latest:", " ".join(f"{key}={value}" for key, value in sorted(counts.items())))
 
-raw_manifest = rows_from("metadata/geo_selected_raw_fastq_manifest_20260914.tsv")
+raw_manifest_path = "metadata/ena_fastq_active_manifest.tsv"
+raw_manifest = rows_from(raw_manifest_path)
+if raw_manifest is None:
+    raw_manifest_path = "metadata/geo_selected_raw_fastq_manifest_20260914.tsv"
+    raw_manifest = rows_from(raw_manifest_path)
 if raw_manifest is not None:
     resolved = [r for r in raw_manifest if r.get("ResolutionState") == "resolved"]
-    print(f"ena_manifest: rows={len(raw_manifest)} resolved={len(resolved)}")
+    print(f"ena_manifest: file={raw_manifest_path} rows={len(raw_manifest)} resolved={len(resolved)}")
 ena = rows_from("metadata/ena_fastq_download_status.tsv")
 if ena is not None:
-    complete = [r for r in ena if r.get("State") == "complete"]
-    failed = [r for r in ena if r.get("State") == "failed"]
+    latest = {r.get("RelativeTarget", ""): r for r in ena}
+    complete = [r for r in latest.values() if r.get("State") == "complete"]
+    failed = [r for r in latest.values() if r.get("State") == "failed"]
     matches = [r for r in complete if r.get("ExpectedMD5") == r.get("ObservedMD5")]
-    print(f"ena_status: status={len(ena)} complete={len(complete)} failed={len(failed)} md5_match={len(matches)}")
+    print(f"ena_status: records={len(ena)} unique_files={len(latest)} complete={len(complete)} failed={len(failed)} md5_match={len(matches)}")
 else:
     print("ena_status: not created yet (the current file may still be downloading)")
 

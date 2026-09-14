@@ -1,5 +1,7 @@
 # 31组 Kla / 全蛋白组的 bulk RNA-seq 参照候选（已审计）
 
+**2026-09-14补充**：按同一解剖组织与取材类别重新核查，新增瘢痕/邻近皮肤GSE181540、PC-3M GSE235595及同研究MES28 GSE266884候选；见[补充报告](../outputs/20260914_reference_material_audit/REPORT.md)和[新版31组候选](../outputs/20260914_reference_material_audit/rnaseq_reference_candidate_31.csv)。以下为2026-09-12历史候选，新增版仍全部AnalysisReady=FALSE。
+
 更新：2026-09-12。**这是来源核查与候选注册表，不是已下载验收的表达矩阵。** 原Gemini版本存在物种、组织、细胞系和技术错误，已归档至 [原版](../audit/20260912_workspace_rnaseq/Gemini_catalog_original.md)，不能使用其编号或R代码直接分析。
 
 当前生物学范围为31组（9非肿瘤组织、3肿瘤组织、12癌细胞组、7非癌细胞/培养模型）。31组对应22个Kla PXD与18个全蛋白参考PXD，不代表31组同受试者配对RNA。

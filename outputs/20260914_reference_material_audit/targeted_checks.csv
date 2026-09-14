@@ -1,0 +1,16 @@
+Check,Pass,Evidence
+Liver workbook distinguishes ANTs / DNTs / CISs,TRUE,DNTs;ANTs;CISs
+Liver sheet profile DNTs,,rows 2617 p<0.05 459 Change up;down;stable
+Liver sheet profile ANTs,,rows 4254 p<0.05 288 Change up;down;stable
+Liver sheet profile CISs,,rows 5198 p<0.05 317 Change up;down;stable
+Scar and adjacent-skin ordinary-proteome columns separated,TRUE,"Abundance: F1: Sample, HSP1;Abundance: F2: Sample, HSP2;Abundance: F3: Sample, HSP3;Abundance: F4: Sample, HSP4;Abundance: F5: Sample, NSP1;Abundance: F6: Sample, NSP2;Abundance: F7: Sample, NSP3;Abundance: F8: Sample, NSP4"
+HepG2 protein file has nine pro replicates,TRUE,LFQ intensity SIRT1KO_pro_rep1;LFQ intensity SIRT1KO_pro_rep2;LFQ intensity SIRT1KO_pro_rep3;LFQ intensity SIRT3KO_pro_rep1;LFQ intensity SIRT3KO_pro_rep2;LFQ intensity SIRT3KO_pro_rep3;LFQ intensity WT_pro_rep1;LFQ intensity WT_pro_rep2;LFQ intensity WT_pro_rep3
+Atlas exact cell row MCF7,TRUE,SIDM00148;MCF7
+Atlas exact cell row HCT-116,TRUE,SIDM00783;HCT-116
+Atlas exact cell row A549,TRUE,SIDM00903;A549
+Atlas exact cell row MDA-MB-468,TRUE,SIDM00628;MDA-MB-468
+Atlas exact cell row T47D,TRUE,SIDM00097;T47D
+Atlas exact cell row RKO,TRUE,SIDM01090;RKO
+HEK293T control lysate identity,TRUE,Control_HEK293T_lys run entries 401
+HK2 selector takes first three log2 columns,TRUE,[1] 05set25_MarceloLamas_amostra1.raw.PG.Log2Quantity;[2] 05set25_MarceloLamas_amostra3.raw.PG.Log2Quantity;[3] 05set25_MarceloLamas_amostra4.raw.PG.Log2Quantity
+HK2 raw filename alias evidence,,"Processed headers use amostra1/3/4, public raw names use Control_1/3/4; correspondence inferred from numbering and historical registry, explicit rename manifest not located."

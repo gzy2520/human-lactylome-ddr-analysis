@@ -1,0 +1,6 @@
+PSM FDR	0.01
+Protein FDR	0.01
+Site FDR	0.01
+Match between runs	False
+Fasta file	C:\Users\Toxi_search\Desktop\Protein DB\Uniprot_human_20160718.fasta
+AIF threshold FDR	0.01

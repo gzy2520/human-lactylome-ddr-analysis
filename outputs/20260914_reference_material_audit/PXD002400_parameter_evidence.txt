@@ -1,0 +1,6 @@
+PSM FDR	0.01
+Protein FDR	1
+Site FDR	0.01
+Match between runs	False
+Fasta file	D:\db\hg19_predicted_peptides_sprot_trembl_DB.fasta;D:\db\small_peptides\hg19_uniprot_18_11_14.fa
+AIF threshold FDR	0.01

@@ -1,0 +1,47 @@
+^SAMPLE = GSM4494786
+!Sample_title = Control MCF7-Replicate 3
+!Sample_geo_accession = GSM4494786
+!Sample_status = Public on Apr 10 2023
+!Sample_submission_date = Apr 23 2020
+!Sample_last_update_date = Apr 10 2023
+!Sample_type = SRA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = Cell culture/Human cancer cell line
+!Sample_organism_ch1 = Homo sapiens
+!Sample_taxid_ch1 = 9606
+!Sample_characteristics_ch1 = tag: MCF7 untreated
+!Sample_characteristics_ch1 = cell type: MCF7
+!Sample_characteristics_ch1 = bacterial treatment: untreated
+!Sample_characteristics_ch1 = xenograft cell count: ---
+!Sample_growth_protocol_ch1 = MCF7 cells were seeded in 10% serum supplemented DMEM media and allowed to grow for 24 hours. Cells were then treated with 100 ng/ml of BFT in 2% serum supplemented DMEM. Medium in the control group was changed to 2% serum supplemented DMEM. 3 days post tretment, cells were harvested in 0.25% trypsin/EDTA, neutralized with 10% FBS supplemented DMEM and centrifuged. Pellets were resuspended in serum free media and equal volume of matrigel was added to the cell suspension. 5 million cells were implanted on to the 4th mammary fat pad of SCID-NOD mice on either side with E2 supplementation. Tumors were allowed to grow for 8 weeks and monitored after which tumors were resected. The resecetd tumors were dissociated and tumor cells were isolated and subjected to in vivo limiting dilution; cells ranging from 5000 to 500000 were implanted in different mammary fat pads of SCID-NOD mice and tumors were allowed to grow. At the end of 8 weeks, resulting tumors were resected and RNA sequencing was performed.
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = RNA extracted on the QIAGEN QIAcube devise using their RNeasy Mini-QIAcube kit following manufacturer's protocol.
+!Sample_extract_protocol_ch1 = Using the Illumina TruSeq Stranded Total RNA kit, quality-controlled total RNA was purified to mRNA with poly-T magnetic beads, fragmented, and then reverse transcribed into cDNA.  Fragments of 150~200bp were selected and the library PCR amplified.
+!Sample_description = ANag-CON3
+!Sample_data_processing = Single-end 75nt sequencing on Illumina NextSeq 500
+!Sample_data_processing = Base calling with RTA version 2.4.11
+!Sample_data_processing = Data filtering to strip adapters with bcl2fastq 2.17.1.14
+!Sample_data_processing = Read alignment to NCBI Homo sapiens sequence GRCh38.p12 April-'18, with CLCGenomicsServer 9.1.1 with: Mismatch cost =2, Insertion cost = 3, Deletion cost = 3, Length fraction = 0.8, Similarity fraction = 0.8
+!Sample_data_processing = FPKM calculation with CLCGenomicsServer 10.0.1 as above
+!Sample_data_processing = FPKM vaues log2 converted (FPKM = 0 ignored) and quantile normalized with Partek Genomics Suite v7.0
+!Sample_data_processing = Genome_build: NCBI GRCh38.p12
+!Sample_data_processing = Supplementary_files_format_and_content: Single tab-delimeted text file of quantile normalized log2 FPKM values for all samples. Raw FPKM values of 0 are represented as Nulls in log space.
+!Sample_platform_id = GPL18573
+!Sample_contact_name = Dipali,,Sharma
+!Sample_contact_laboratory = Cancer Research Building I
+!Sample_contact_department = School of Medicine
+!Sample_contact_institute = The Johns Hopkins University
+!Sample_contact_address = 1550 Orleans Street
+!Sample_contact_city = Baltimore
+!Sample_contact_state = Maryland
+!Sample_contact_zip/postal_code = 21231
+!Sample_contact_country = USA
+!Sample_instrument_model = NextSeq 500
+!Sample_library_selection = cDNA
+!Sample_library_source = transcriptomic
+!Sample_library_strategy = RNA-Seq
+!Sample_relation = BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14681324
+!Sample_relation = SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX8167267
+!Sample_supplementary_file_1 = NONE
+!Sample_series_id = GSE149241
+!Sample_data_row_count = 0

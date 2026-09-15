@@ -1,0 +1,4 @@
+"SampleID","Rows","Columns","FirstID","EnsemblRows","DuplicatedFirstID","MissingValues","NonfiniteValues","NegativeValues","StableIDMappingReady","URL","MD5"
+"GSM7708662",42112,"Gene_id;Gene_name;Chr;Start;End;Strand;Length;Counts;TPM;FPKM","gene-MIR6859-1",0,0,72,72,0,FALSE,"https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7708nnn/GSM7708662/suppl/GSM7708662_NC1.gene.txt.gz","d25f2d54e3581102994312433a602ba4"
+"GSM7708663",42112,"Gene_id;Gene_name;Chr;Start;End;Strand;Length;Counts;TPM;FPKM","gene-MIR6859-1",0,0,72,72,0,FALSE,"https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7708nnn/GSM7708663/suppl/GSM7708663_NC2.gene.txt.gz","a1431fb5d18f7f73cc6328d6f2563bc6"
+"GSM7708664",42112,"Gene_id;Gene_name;Chr;Start;End;Strand;Length;Counts;TPM;FPKM","gene-MIR6859-1",0,0,72,72,0,FALSE,"https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7708nnn/GSM7708664/suppl/GSM7708664_NC3.gene.txt.gz","7b39c06513b6fa96059e306f97e8f29b"

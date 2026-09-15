@@ -1,5 +1,7 @@
 # 31组 RNA 参照：按解剖匹配与可整合性重新筛选
 
+**2026-09-15老师复核生效**：见[逐组审核与处理报告](../audit/20260915_teacher_review/REPORT.md)及[审核门槛表](../config/rnaseq_teacher_review_gate_20260915.csv)。下述HK-2旧来源停止作为主分析参照；DepMap单行表达和其他不足3个独立样本的来源仅作描述性备选。新的HK-2候选为GSE240748三个未处理对照，尚待文件与独立性验收。
+
 日期：2026-09-14。此文件是数据选路候选，不是表达分析结果。完整机器可读路由在 [rnaseq_source_routing_candidate_31.csv](../outputs/20260914_reference_material_audit/rnaseq_source_routing_candidate_31.csv)，候选注册表在 [rnaseq_reference_candidate_31.csv](../outputs/20260914_reference_material_audit/rnaseq_reference_candidate_31.csv)。两者全部保持 `AnalysisReady=FALSE`。
 
 ## 结论

@@ -1,5 +1,7 @@
 # RNA analysis start: 2026-09-15
 
+Teacher review now governs inclusion: see [review](../audit/20260915_teacher_review/REPORT.md) and `config/rnaseq_teacher_review_gate_20260915.csv`. Existing matrix QC is technical preparation only. DepMap model profiles and the two ENCODE files do not satisfy the preferred three-independent-replicate primary analysis criterion. Old GSE269418 HK-2 references are excluded from the primary candidate pending replacement validation.
+
 Server root: `/home/user/gzy/kla31-rnaseq-20260914`.
 
 Download acceptance at 05:28 UTC: strict FASTQ 12/12 complete, 12 MD5 matches, zero failures; GDC 1017/1017 and DepMap 3/3 verified by download status. This does not promote any biological reference to AnalysisReady.

@@ -33,5 +33,5 @@ for(s in sources) {
 write.csv(do.call(rbind,inventory),file.path(out,'resolved_reference_inventory.csv'),row.names=FALSE)
 write.csv(do.call(rbind,samp),file.path(out,'selected_samples.csv'),row.names=FALSE)
 write.csv(do.call(rbind,qc),file.path(out,'sample_qc.csv'),row.names=FALSE)
-writeLines(capture.output(sessionInfo()),file.path(out,'sessionInfo.txt'))
+writeLines(trimws(capture.output(sessionInfo()),which='right'),file.path(out,'sessionInfo.txt'))
 cat('NCBI_REFERENCE_MATRIX_QC_COMPLETE\n');print(do.call(rbind,inventory)[,1:7])

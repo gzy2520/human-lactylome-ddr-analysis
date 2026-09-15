@@ -64,11 +64,20 @@ def main(root: Path, manifest_path: Path) -> None:
         if destination.exists():
             destination.unlink()
         partial = Path(str(destination) + ".part")
+        expected_md5 = row["ExpectedMD5"].lower()
+        expected_size = int(row["ExpectedBytes"]) if row["ExpectedBytes"].isdigit() else None
+        if (
+            partial.exists()
+            and expected_size is not None
+            and partial.stat().st_size >= expected_size
+            and checksum(partial) != expected_md5
+        ):
+            quarantined = Path(f"{partial}.checksum-mismatch-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}")
+            partial.replace(quarantined)
         command = ["wget", "--continue", "--timeout=60", "--read-timeout=60", "--tries=5", "--waitretry=5", "--retry-connrefused", "--no-verbose", "--show-progress", "-O", str(partial), url]
         code = subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, check=False).returncode
-        if code == 0 and partial.exists() and checksum(partial) == row["ExpectedMD5"].lower():
-            expected_size = row["ExpectedBytes"]
-            if expected_size.isdigit() and partial.stat().st_size != int(expected_size):
+        if code == 0 and partial.exists() and checksum(partial) == expected_md5:
+            if expected_size is not None and partial.stat().st_size != expected_size:
                 append_status(status_path, row, str(target), "failed", partial, "MD5 matched but ENA byte count differed; retained .part")
                 continue
             partial.replace(destination)

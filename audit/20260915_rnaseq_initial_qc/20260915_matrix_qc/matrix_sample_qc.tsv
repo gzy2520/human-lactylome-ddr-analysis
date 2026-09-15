@@ -1,0 +1,14 @@
+"ReferenceKey"	"SampleID"	"Unit"	"Genes"	"Missing"	"Nonfinite"	"Negative"	"Detected"
+"DepMap_Public_24Q4_unique_Entrez"	"ACH-000971"	"TPMLogp1_as_released"	19159	0	0	0	15902
+"DepMap_Public_24Q4_unique_Entrez"	"ACH-000019"	"TPMLogp1_as_released"	19159	0	0	0	16123
+"DepMap_Public_24Q4_unique_Entrez"	"ACH-000943"	"TPMLogp1_as_released"	19159	0	0	0	14883
+"DepMap_Public_24Q4_unique_Entrez"	"ACH-000681"	"TPMLogp1_as_released"	19159	0	0	0	15994
+"DepMap_Public_24Q4_unique_Entrez"	"ACH-000147"	"TPMLogp1_as_released"	19159	0	0	0	16102
+"DepMap_Public_24Q4_unique_Entrez"	"ACH-000739"	"TPMLogp1_as_released"	19159	0	0	0	15552
+"DepMap_Public_24Q4_unique_Entrez"	"ACH-000849"	"TPMLogp1_as_released"	19159	0	0	0	16602
+"ENCSR000COZ_expected_count"	"ENCFF770MAV"	"expected_count"	58735	0	0	0	22102
+"ENCSR000COZ_expected_count"	"ENCFF779OCC"	"expected_count"	58735	0	0	0	21764
+"ENCSR000COZ_TPM"	"ENCFF770MAV"	"TPM"	58735	0	0	0	21734
+"ENCSR000COZ_TPM"	"ENCFF779OCC"	"TPM"	58735	0	0	0	21402
+"ENCSR000COZ_FPKM"	"ENCFF770MAV"	"FPKM"	58735	0	0	0	21717
+"ENCSR000COZ_FPKM"	"ENCFF779OCC"	"FPKM"	58735	0	0	0	21465

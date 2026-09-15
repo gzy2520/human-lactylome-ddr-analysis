@@ -2,7 +2,7 @@
 # Inspect the isolated server-side RNA download queues without exposing signed URLs.
 set -euo pipefail
 
-remote_host="${REMOTE_HOST:-192.168.3.45}"
+remote_host="${REMOTE_HOST:-user@100.121.229.123}"
 watch_seconds=""
 if [[ "${1:-}" == "--watch" ]]; then
   watch_seconds="${2:-60}"
@@ -16,7 +16,7 @@ elif [[ -n "${1:-}" ]]; then
 fi
 
 run_report() {
-  ssh -T -o BatchMode=yes -o ConnectTimeout=10 "$remote_host" 'bash -s' <<'REMOTE_REPORT'
+  ssh -T -o BatchMode=yes -o ConnectTimeout=10 -o HostKeyAlias=192.168.3.45 "$remote_host" 'bash -s' <<'REMOTE_REPORT'
 set -u
 server_root="/home/user/gzy/kla31-rnaseq-20260914"
 cd "$server_root"

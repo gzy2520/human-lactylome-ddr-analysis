@@ -1,0 +1,7 @@
+"ReferenceKey","GSE","GSM","SourceColumn","Condition"
+"HCT116_control","GSE253699","GSM8026675","HCT_NC_1","WT control; IMEM 10% FBS; not coculture; culture independence documentation pending"
+"HCT116_control","GSE253699","GSM8026676","HCT_NC_2","WT control; IMEM 10% FBS; not coculture; culture independence documentation pending"
+"HCT116_control","GSE253699","GSM8026677","HCT_NC_3","WT control; IMEM 10% FBS; not coculture; culture independence documentation pending"
+"RKO_DMSO","GSE318640","GSM9499692","C1_count","DMSO control; duration and concentration unreported; parental not GSK3B knockout"
+"RKO_DMSO","GSE318640","GSM9499693","C2_count","DMSO control; duration and concentration unreported; parental not GSK3B knockout"
+"RKO_DMSO","GSE318640","GSM9499694","C3_count","DMSO control; duration and concentration unreported; parental not GSK3B knockout"

@@ -1,5 +1,7 @@
 # RNA analysis start: 2026-09-15
 
+Latest resolution: [replicate replacement report](../audit/20260915_replicate_resolution/REPORT.md) and `config/rnaseq_replicate_resolution_gate_20260915.csv` supersede candidate fields below. Ten stable-ID count matrices (32 sample columns, 13 catalog rows) have passed numeric validation; condition/biological review remains separate. Tendon and PC-3M have NCBI-generated counts and no longer require FASTQ processing as the only route. Server connection now uses Tailscale; the download monitor defaults to the verified remote address.
+
 Teacher review now governs inclusion: see [review](../audit/20260915_teacher_review/REPORT.md) and `config/rnaseq_teacher_review_gate_20260915.csv`. Existing matrix QC is technical preparation only. DepMap model profiles and the two ENCODE files do not satisfy the preferred three-independent-replicate primary analysis criterion. Old GSE269418 HK-2 references are excluded from the primary candidate pending replacement validation.
 
 Server root: `/home/user/gzy/kla31-rnaseq-20260914`.

@@ -1,0 +1,5 @@
+Quantity,Against,Spearman,P,Verdict
+ExcessRate,log KlaProteinCount,0.93,0,depth-dependent
+ExcessRate,MeanRNA,-0.107,0.567,no significant depth dependence
+KlaDdrFraction (manuscript metric),KlaProteinCount,0.215,0.2446,no significant depth dependence
+DdrFractionPercentagePointDifference (manuscript metric),KlaProteinCount,0.187,0.3121,no significant depth dependence

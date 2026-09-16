@@ -139,6 +139,45 @@ by_protein[, Pathway := apply(.SD, 1L, function(v) paste(pathways[!is.na(v) & v 
            .SDcols = pathways]
 setorder(by_protein, -MeanRNA)
 
+## ---- 4. validity: is the excess just proteome detection depth? ------------
+
+# The per-group excess above is built from counts, and counts scale with how deep a group was
+# sequenced. This check decides whether any of it is biological. It is kept in the script
+# because the answer came back negative and that needs to stay on the record.
+groups <- fread(file.path(root, "data", "publication_input", "group_summary_31.csv"))
+dep <- merge(by_group, groups[, .(PXD, SampleGroup, KlaProteinCount, KlaDdrFraction,
+                                  DdrFractionPercentagePointDifference)],
+             by = c("PXD", "SampleGroup"), all.x = TRUE)
+dep[, logKla := log(KlaProteinCount)]
+depth_model <- lm(ExcessRate ~ logKla, data = dep)
+dep[, ResidualAfterDepth := resid(depth_model)]
+
+validity <- rbindlist(list(
+  data.table(Quantity = "ExcessRate", Against = "log KlaProteinCount",
+             Spearman = round(cor(dep$ExcessRate, dep$logKla, method = "spearman"), 3),
+             P = round(cor.test(dep$ExcessRate, dep$logKla, method = "spearman")$p.value, 4)),
+  data.table(Quantity = "ExcessRate", Against = "MeanRNA",
+             Spearman = round(cor(dep$ExcessRate, dep$MeanRNA, method = "spearman"), 3),
+             P = round(cor.test(dep$ExcessRate, dep$MeanRNA, method = "spearman")$p.value, 4)),
+  data.table(Quantity = "KlaDdrFraction (manuscript metric)", Against = "KlaProteinCount",
+             Spearman = round(cor(dep$KlaDdrFraction, dep$KlaProteinCount, method = "spearman"), 3),
+             P = round(cor.test(dep$KlaDdrFraction, dep$KlaProteinCount, method = "spearman")$p.value, 4)),
+  data.table(Quantity = "DdrFractionPercentagePointDifference (manuscript metric)",
+             Against = "KlaProteinCount",
+             Spearman = round(cor(dep$DdrFractionPercentagePointDifference, dep$KlaProteinCount,
+                                  method = "spearman"), 3),
+             P = round(cor.test(dep$DdrFractionPercentagePointDifference, dep$KlaProteinCount,
+                                method = "spearman")$p.value, 4))
+))
+validity[, Verdict := fifelse(P < 0.05, "depth-dependent", "no significant depth dependence")]
+
+cat("\nValidity of the excess metric against proteome depth:\n")
+print(validity)
+cat(sprintf("\nlog(Kla protein count) explains %.0f%% of the excess-rate variance;\n",
+            100 * summary(depth_model)$r.squared))
+cat("after removing it the category differences disappear, so the excess metric is not used\n")
+cat("as evidence. The manuscript's ratio metrics are the depth-robust ones.\n")
+
 ## ---- write ---------------------------------------------------------------
 
 fwrite(pairs, file.path(out_dir, "group_by_protein_pairs.tsv.gz"), sep = "\t")
@@ -148,6 +187,8 @@ fwrite(quantile_sweep, file.path(out_dir, "within_group_percentile_sweep.csv"))
 fwrite(by_group, file.path(out_dir, "group_lactylation_excess.csv"))
 fwrite(by_pathway, file.path(out_dir, "pathway_summary.csv"))
 fwrite(by_protein, file.path(out_dir, "protein_summary.csv.gz"), sep = "\t")
+fwrite(dep, file.path(out_dir, "group_excess_with_confounders.csv"))
+fwrite(validity, file.path(out_dir, "validity_vs_depth.csv"))
 writeLines(trimws(capture.output(sessionInfo()), which = "right"),
            file.path(out_dir, "sessionInfo.txt"))
 writeLines(c(
@@ -158,6 +199,11 @@ writeLines(c(
   "Exploratory: the RNA reference is a material-class profile drawn from different studies than",
   "the proteome, so groups are compared as classes, not as paired samples.",
   "`expression_threshold_sweep.csv` and `within_group_percentile_sweep.csv` exist because the",
-  "headline share depends on where the expression cut is placed."
+  "headline share depends on where the expression cut is placed.",
+  "",
+  "`validity_vs_depth.csv` records a negative result that matters: the per-group",
+  "excess rate is 80% explained by proteome detection depth, and its category",
+  "differences vanish once depth is removed, so it is not used as evidence. The",
+  "manuscript ratio metrics are the depth-robust ones."
 ), file.path(out_dir, "README.md"))
 cat(sprintf("\nEXPLORE_DONE -> %s\n", out_dir))

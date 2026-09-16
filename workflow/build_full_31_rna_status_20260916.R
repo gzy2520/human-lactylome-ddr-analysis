@@ -1,9 +1,12 @@
 #!/usr/bin/env Rscript
 # A full 31-row ledger: distinguish analysis-ready sources from queued and blocked candidates.
 args <- commandArgs(TRUE)
-stopifnot(length(args) == 1L)
+stopifnot(length(args) >= 1L)
 suppressPackageStartupMessages(library(data.table))
 out_dir <- args[[1L]]
+# Optional second argument: the 2026-09-16 expression extraction output directory. When it is
+# supplied the ledger also records, per group row, which matrix now exists for it.
+expr_dir <- if (length(args) >= 2L) args[[2L]] else NA_character_
 dir.create(out_dir, recursive=TRUE, showWarnings=FALSE)
 
 catalog <- fread('outputs/20260914_reference_material_audit/rnaseq_reference_candidate_31.csv')
@@ -122,12 +125,45 @@ out[, SelectedSamplePerturbation := ConfirmedPerturbation]
 out[, VehicleExposure := ConfirmedVehicleExposure]
 out[, StableID := fifelse(!is.na(ConfirmedStableID), ConfirmedStableID, GateStableID)]
 out[, InAnalysisNow := ScopeStatus == 'STARTED_SOURCE_LOCAL']
+
+# ---- expression matrices produced by the 2026-09-16 server-side extraction ---------------
+if (!is.na(expr_dir) && file.exists(file.path(expr_dir, 'group_index.csv'))) {
+  gi <- fread(file.path(expr_dir, 'group_index.csv'))
+  stopifnot(all(c('GroupID','ReferenceKey','Samples','Genes') %in% names(gi)))
+  out <- merge(out, gi[, .(GroupID, ExpressionReferenceKey=ReferenceKey,
+                           ExpressionSamples=Samples, ExpressionGenes=Genes)],
+               by='GroupID', all.x=TRUE, sort=FALSE)
+  out[, ExpressionStatus := fifelse(is.na(ExpressionSamples), 'PENDING', 'EXPRESSION_MATRIX_READY')]
+} else {
+  out[, `:=`(ExpressionReferenceKey=NA_character_, ExpressionSamples=NA_integer_,
+             ExpressionGenes=NA_integer_, ExpressionStatus='PENDING')]
+}
+
+# Caveats established while building the matrices, appended to the existing limitation text.
+expr_caveat <- data.table(
+  GroupID=c('KLA31_02','KLA31_05','KLA31_06','KLA31_08','KLA31_17','KLA31_29','KLA31_30'),
+  Caveat=c(
+    'GTEx donors are not certified healthy and no cause-of-death or trauma exclusion could be verified from the public release, so no health claim is made for this reference.',
+    'GTEx donors are not certified healthy and no neurological-disease exclusion could be verified. 243 hippocampus samples are annotated but only 197 carry an expression row in this release; the 46 annotated sub-dissections without expression were dropped.',
+    'Gestational age, singleton status and sampling layer are absent from the GEO record, so the planned term-singleton filter could not be applied and is not claimed. All 21 control-group placentas are included; PE and IUGR are excluded by the source file.',
+    'All 18 donors are recorded as taking a 5-alpha-reductase inhibitor and most an alpha-blocker. This is background clinical medication rather than an experimental arm, but it is a real expression confounder and is disclosed rather than corrected.',
+    'Accepted as a single-sample descriptive reference: no within-group variance is estimable and this row cannot carry an error bar.',
+    'recount3 sra.gene_sums holds base-level coverage sums rather than read counts, so the archived counts block for this group is on a coverage scale; the derived TPM is unaffected because the conversion cancels the read-length factor.',
+    'Eight of the nine selected libraries are available. GSM3384848 (NSC10, NM55) exists in GEO as an untreated NSC RNA-seq library but is absent from NCBI\'s reprocessed count table, so it could not be included without de-novo requantification. The protein-matched ENSA model (GSM3384849) is present.'
+  )
+)
+out <- merge(out, expr_caveat, by='GroupID', all.x=TRUE, sort=FALSE)
+out[!is.na(Caveat) & Caveat != '', Limitations := paste0(Limitations, ' [2026-09-16 expression build] ', Caveat)]
+out[, Caveat := NULL]
+
 setcolorder(out, c('GroupID','PXD','SampleGroup','Category','ScopeStatus','InAnalysisNow',
   'Source','CurrentGSE','CurrentReferenceKey','CurrentSamples','MatrixQCComplete',
+  'ExpressionStatus','ExpressionReferenceKey','ExpressionSamples','ExpressionGenes',
   'DataSituation','RequiredBeforeStart','SelectedSamplePerturbation','VehicleExposure','StableID',
   'MatrixSampleN','NumericQCPass','EvidenceStatus','AssayAndUnits','Limitations'))
 out <- out[, .SD, .SDcols=c('GroupID','PXD','SampleGroup','Category','ScopeStatus','InAnalysisNow',
   'Source','CurrentGSE','CurrentReferenceKey','CurrentSamples','MatrixQCComplete',
+  'ExpressionStatus','ExpressionReferenceKey','ExpressionSamples','ExpressionGenes',
   'DataSituation','RequiredBeforeStart','SelectedSamplePerturbation','VehicleExposure','StableID',
   'MatrixSampleN','NumericQCPass','EvidenceStatus','AssayAndUnits','Limitations')]
 
@@ -146,6 +182,11 @@ writeLines(c(
   '# Full 31-group RNA status (2026-09-16)', '',
   'This is the master ledger for all 31 proteome/Kla group rows. It distinguishes the 13 rows already in source-local analysis from 18 rows with confirmed candidates queued for selection or matrix QC. Zero rows are currently blocked.',
   'Queued means a verified eligible candidate source exists with matching unperturbed biological replicates (or accepted n=1 descriptive reference), pending stable-ID mapping, sample freezing, or local matrix QC.',
-  'The 13 started rows use material/cell identity matching and selected samples with no knockdown, overexpression or experimental drug. DMSO vehicle controls remain explicitly marked and separated from untreated sources.'
+  'The 13 started rows use material/cell identity matching and selected samples with no knockdown, overexpression or experimental drug. DMSO vehicle controls remain explicitly marked and separated from untreated sources.',
+  '',
+  'ExpressionStatus records the outcome of the 2026-09-16 server-side expression build: every one of the 31 group rows now has a per-group log2(TPM + 0.5) matrix keyed by stable Ensembl gene identifiers, with cleaned counts archived alongside where the source provides them. ExpressionSamples and ExpressionGenes give the size of that matrix; three rows share the HCT116 matrix and two share the HK-2 matrix, so 31 rows map onto 28 distinct matrices.',
+  'The matrices are expression profiles only. No row was compared against another here; the cross-tissue comparison is a separate downstream step.',
+  'Limitations entries carrying the "[2026-09-16 expression build]" marker are caveats established while assembling those matrices.'
 ), file.path(out_dir, 'README.md'))
-cat('FULL_31_STATUS_PASS: started=13 queued=18 blocked=0\n')
+cat(sprintf('FULL_31_STATUS_PASS: started=13 queued=18 blocked=0 expression_ready=%d\n',
+            out[ExpressionStatus == 'EXPRESSION_MATRIX_READY', .N]))

@@ -1,0 +1,8 @@
+Metric,Value,Percent
+group_x_protein_pairs,11067,100
+kla_detected,3085,27.88
+reference_detected,6470,58.46
+not_kla_pairs,7982,72.12
+not_kla_below_group_median_expression,4364,39.43
+not_kla_above_group_median_expression,3618,32.69
+not_kla_above_median_and_reference_detected,2319,20.95

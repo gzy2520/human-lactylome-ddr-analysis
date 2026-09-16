@@ -1,0 +1,8 @@
+Pathway,Pairs,Proteins,KlaDetectionRate,ReferenceDetectionRate,HighExpressionRate
+MMR,744,24,35.5,68.3,50.9
+NHEJ,2542,82,31.4,61.3,48.9
+BER,1674,54,30,61.6,53.2
+AEJ,1240,40,29.4,53.9,38.4
+NER,1519,49,26.5,59.1,50
+HR,5146,166,26.2,54.8,45.6
+FA,1085,35,20.2,37.3,22.5

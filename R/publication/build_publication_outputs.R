@@ -82,11 +82,11 @@ category_labels <- c(
 )
 default_category_counts <- c(
   normal_tissue = 9L,
-  cancer_tissue = 2L,
+  cancer_tissue = 3L,
   cancer_cells = 12L,
   normal_cells = 7L
 )
-expected_group_count <- as.integer(Sys.getenv("KLA_PUBLICATION_EXPECTED_GROUPS", unset = "30"))
+expected_group_count <- as.integer(Sys.getenv("KLA_PUBLICATION_EXPECTED_GROUPS", unset = "31"))
 category_count_override <- Sys.getenv("KLA_PUBLICATION_CATEGORY_COUNTS", unset = "")
 pathway_order <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
 pathway_weights <- stats::setNames(seq_along(pathway_order), pathway_order)

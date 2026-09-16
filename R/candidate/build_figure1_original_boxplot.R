@@ -62,7 +62,7 @@ output_dir <- normalizePath(
 )
 values_path <- file.path(candidate_dir, "figure1_sample_boxplot_values.csv")
 count_path <- file.path(candidate_dir, "biological_sample_count_record.csv")
-expected_group_count <- as.integer(Sys.getenv("KLA_CANDIDATE_EXPECTED_GROUPS", unset = "30"))
+expected_group_count <- as.integer(Sys.getenv("KLA_CANDIDATE_EXPECTED_GROUPS", unset = "31"))
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 stop_if(file.exists(values_path), paste0("Missing Figure 1 sample input: ", values_path))

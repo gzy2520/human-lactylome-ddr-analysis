@@ -38,7 +38,7 @@ output_dir <- normalizePath(
   Sys.getenv("KLA_CANDIDATE_OUTPUT", unset = file.path(project_root, "results", "candidate")),
   mustWork = FALSE
 )
-expected_group_count <- as.integer(Sys.getenv("KLA_PUBLICATION_EXPECTED_GROUPS", unset = "30"))
+expected_group_count <- as.integer(Sys.getenv("KLA_PUBLICATION_EXPECTED_GROUPS", unset = "31"))
 expected_category_counts <- as.integer(strsplit(
   Sys.getenv("KLA_PUBLICATION_CATEGORY_COUNTS", unset = "normal_tissue=9;cancer_tissue=2;cancer_cells=12;normal_cells=7"),
   "[;]"

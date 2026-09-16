@@ -104,7 +104,12 @@ figure_stems <- c(
   "Supplementary_Figure_S1b_Kla_proteome_UpSet",
   "Supplementary_Figure_S2a_DDR_pathway_matrices_cell_lines",
   "Supplementary_Figure_S2b_DDR_pathway_summary_cancer_cell_lines",
-  "Supplementary_Figure_S2c_DDR_pathway_summary_normal_cell_lines"
+  "Supplementary_Figure_S2c_DDR_pathway_summary_normal_cell_lines",
+  # Figure 3 is also emitted as an unboxed variant and a blue-frame alias; the renderer
+  # produces them into the same directory and the audited result tree carries them
+  "Figure_3a_reference_regulator_percentiles_no_frame",
+  "Figure_3b_Kla_regulator_percentiles_no_frame",
+  "Figure_3b_Kla_regulator_percentiles_with_blue_frame"
 )
 expected_figures <- as.vector(outer(figure_stems, c(".png", ".pdf"), paste0))
 actual_figures <- list.files(figure_dir, recursive = TRUE, full.names = FALSE)
@@ -115,9 +120,10 @@ expected_workbooks <- c(
   "Supplementary_Table_S1_Kla_Data.xlsx",
   "Supplementary_Table_S2_Reference_Data.xlsx",
   "Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx",
-  "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx",
-  "Supplementary_Table_S5_Lactylation_Regulators.xlsx",
-  "Supplementary_Table_S6_Venn_Membership.xlsx"
+  # 31-group scope renumbering requested by the teacher: S4 Venn, S5 Pathway, S6 Regulators
+  "Supplementary_Table_S4_Venn_Membership.xlsx",
+  "Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx",
+  "Supplementary_Table_S6_Lactylation_Regulators.xlsx"
 )
 actual_workbooks <- list.files(supplementary_dir, recursive = TRUE, full.names = FALSE)
 assert(setequal(actual_workbooks, expected_workbooks), "Results contain a supplementary workbook outside Tables S1-S6, or a required table is missing.")
@@ -127,9 +133,9 @@ expected_sheets <- list(
   Supplementary_Table_S1_Kla_Data.xlsx = c("Group_Summary", "Kla_Protein_Membership", "Kla_DDR_Membership"),
   Supplementary_Table_S2_Reference_Data.xlsx = c("Reference_Group_Summary", "Reference_Protein_Membership", "Reference_DDR_Membership"),
   Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx = "Human_DDR_GO_Annotations",
-  Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx = c("NonTumorTissues", "TumorTissues", "CancerCellLines", "NormalCellLines"),
-  Supplementary_Table_S5_Lactylation_Regulators.xlsx = c("Regulator_Annotations", "Regulator_ID_Mapping"),
-  Supplementary_Table_S6_Venn_Membership.xlsx = c("AllKla_Members", "KlaDDR_Members", "Reference_Members", "ReferenceDDR_Members", "Set_Counts", "Region_Counts")
+  Supplementary_Table_S4_Venn_Membership.xlsx = c("AllKla_Members", "KlaDDR_Members", "Reference_Members", "ReferenceDDR_Members", "Set_Counts", "Region_Counts"),
+  Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx = c("NonTumorTissues", "TumorTissues", "CancerCellLines", "NormalCellLines"),
+  Supplementary_Table_S6_Lactylation_Regulators.xlsx = c("Regulator_Annotations", "Regulator_ID_Mapping")
 )
 for (filename in names(expected_sheets)) {
   assert(identical(excel_sheets(file.path(supplementary_dir, filename)), expected_sheets[[filename]]), paste("Unexpected workbook sheet layout:", filename))
@@ -138,28 +144,30 @@ for (filename in names(expected_sheets)) {
 s1_path <- file.path(supplementary_dir, "Supplementary_Table_S1_Kla_Data.xlsx")
 s2_path <- file.path(supplementary_dir, "Supplementary_Table_S2_Reference_Data.xlsx")
 s3_path <- file.path(supplementary_dir, "Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx")
-s4_path <- file.path(supplementary_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
-s5_path <- file.path(supplementary_dir, "Supplementary_Table_S5_Lactylation_Regulators.xlsx")
+# Under the 31-group renumbering the pathway panel is Table S5 and the regulator
+# workbook is Table S6; the variables below are named for their content, not their number.
+pathway_path <- file.path(supplementary_dir, "Supplementary_Table_S5_Pathway_Protein_Ranking.xlsx")
+regulator_path <- file.path(supplementary_dir, "Supplementary_Table_S6_Lactylation_Regulators.xlsx")
 kla_membership <- fread(file.path(input_dir, "kla_protein_membership_31.csv"))
 reference_membership <- fread(file.path(input_dir, "reference_protein_membership_31.csv"))
-assert(nrow(read_excel(s1_path, sheet = "Group_Summary")) == 31L, "S1 Group_Summary must have 30 rows.")
+assert(nrow(read_excel(s1_path, sheet = "Group_Summary")) == 31L, "S1 Group_Summary must have 31 rows.")
 assert(nrow(read_excel(s1_path, sheet = "Kla_Protein_Membership")) == nrow(kla_membership), "S1 Kla membership row count changed.")
 assert(nrow(read_excel(s1_path, sheet = "Kla_DDR_Membership")) == sum(is_true(kla_membership$IsDdr)), "S1 Kla-DDR membership row count changed.")
-assert(nrow(read_excel(s2_path, sheet = "Reference_Group_Summary")) == 31L, "S2 Reference_Group_Summary must have 30 rows.")
+assert(nrow(read_excel(s2_path, sheet = "Reference_Group_Summary")) == 31L, "S2 Reference_Group_Summary must have 31 rows.")
 assert(nrow(read_excel(s2_path, sheet = "Reference_Protein_Membership")) == nrow(reference_membership), "S2 reference membership row count changed.")
 assert(nrow(read_excel(s2_path, sheet = "Reference_DDR_Membership")) == sum(is_true(reference_membership$IsDdr)), "S2 reference DDR membership row count changed.")
 assert(nrow(read_excel(s3_path, sheet = "Human_DDR_GO_Annotations", col_types = "text")) == nrow(fread(file.path(input_dir, "human_ddr_go_annotations.tsv"), sep = "\t", quote = "")), "S3 GO annotation row count changed.")
-assert(md5_file(s4_path) == md5_file(s4_input), "S4 must be copied unchanged from its frozen release asset.")
-assert(md5_file(s5_path) == md5_file(s5_input), "S5 must be copied unchanged from its frozen release asset.")
+assert(md5_file(pathway_path) == md5_file(s4_input), "S4 must be copied unchanged from its frozen release asset.")
+assert(md5_file(regulator_path) == md5_file(s5_input), "S5 must be copied unchanged from its frozen release asset.")
 
-s6_path <- file.path(supplementary_dir, "Supplementary_Table_S6_Venn_Membership.xlsx")
-s6_regions <- as.data.table(read_excel(s6_path, sheet = "Region_Counts"))
-assert(nrow(s6_regions) == 60L, "S6 must retain all 15 Venn regions for each of its four analyses.")
-assert(all(s6_regions[, .N, by = Analysis]$N == 15L) && uniqueN(s6_regions[, .(Analysis, Region)]) == 60L, "Each S6 analysis must contain exactly 15 unique Venn regions, including zero-count regions.")
+venn_path <- file.path(supplementary_dir, "Supplementary_Table_S4_Venn_Membership.xlsx")
+s6_regions <- as.data.table(read_excel(venn_path, sheet = "Region_Counts"))
+assert(nrow(s6_regions) == 60L, "The Venn workbook must retain all 15 regions for each of its four analyses.")
+assert(all(s6_regions[, .N, by = Analysis]$N == 15L) && uniqueN(s6_regions[, .(Analysis, Region)]) == 60L, "Each Venn analysis must contain exactly 15 unique regions, including zero-count regions.")
 venn_sources <- c(AllKla = "venn_all_kla.csv", KlaDDR = "venn_kla_ddr.csv", Reference = "venn_reference.csv", ReferenceDDR = "venn_reference_ddr.csv")
 for (analysis_name in names(venn_sources)) {
   membership <- fread(file.path(input_dir, venn_sources[[analysis_name]]))
-  output_membership <- read_excel(s6_path, sheet = paste0(analysis_name, "_Members"))
+  output_membership <- read_excel(venn_path, sheet = paste0(analysis_name, "_Members"))
   expected_regions <- membership[, .N, by = Region]
   observed_regions <- s6_regions[Analysis == analysis_name]
   reconstructed <- expected_regions$N[match(observed_regions$Region, expected_regions$Region)]

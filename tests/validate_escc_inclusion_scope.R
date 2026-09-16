@@ -111,12 +111,17 @@ stop_if(uniqueN(all_venn$BaseAccession) == nrow(all_venn) && nrow(all_venn) == 5
 stop_if(uniqueN(ddr_venn$BaseAccession) == nrow(ddr_venn) && nrow(ddr_venn) == 401L,
   "Expanded Kla-DDR union does not contain 401 unique BaseAccessions.")
 stop_if(sum(ddr_venn$In_cancer_tissue == TRUE) == 192L, "Expanded tumor Kla-DDR membership is not 192.")
-old_all_venn <- fread(file.path(project_root, "data", "publication_input", "venn_all_kla.csv"))
-old_ddr_venn <- fread(file.path(project_root, "data", "publication_input", "venn_kla_ddr.csv"))
-stop_if(length(setdiff(all_venn$BaseAccession, old_all_venn$BaseAccession)) == 72L,
-  "The expanded all-Kla union did not add exactly 72 BaseAccessions.")
-stop_if(length(setdiff(ddr_venn$BaseAccession, old_ddr_venn$BaseAccession)) == 2L,
-  "The expanded Kla-DDR union did not add exactly 2 BaseAccessions.")
+# The expansion used to be validated as a delta against the then-frozen pre-ESCC input
+# (+72 all-Kla, +2 Kla n DDR). That input was promoted to the 31-group scope on 2026-09-16,
+# so the candidate scope and the publication scope are now the same set and the promotion
+# itself is recorded in git and in docs/PUBLICATION_INPUT_SCOPE.md. What is asserted here is
+# that they agree, which is the property that matters now.
+published_all_venn <- fread(file.path(project_root, "data", "publication_input", "venn_all_kla.csv"))
+published_ddr_venn <- fread(file.path(project_root, "data", "publication_input", "venn_kla_ddr.csv"))
+stop_if(setequal(all_venn$BaseAccession, published_all_venn$BaseAccession),
+  "The candidate all-Kla union no longer matches the publication input scope.")
+stop_if(setequal(ddr_venn$BaseAccession, published_ddr_venn$BaseAccession),
+  "The candidate Kla-DDR union no longer matches the publication input scope.")
 reference_venn <- fread(file.path(publication_dir, "venn_reference.csv"))
 reference_ddr_venn <- fread(file.path(publication_dir, "venn_reference_ddr.csv"))
 stop_if(uniqueN(reference_venn$BaseAccession) == nrow(reference_venn) && nrow(reference_venn) == 24397L,

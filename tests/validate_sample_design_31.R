@@ -9,21 +9,21 @@ stop_if <- function(condition, message) {
   if (!isTRUE(condition)) stop(message, call. = FALSE)
 }
 
-groups <- fread(file.path(project_root, "data", "publication_input", "group_summary_30.csv"))
-design <- fread(file.path(project_root, "data", "candidate", "sample_design_30.csv"), na.strings = c("", "NA"))
+groups <- fread(file.path(project_root, "data", "publication_input", "group_summary_31.csv"))
+design <- fread(file.path(project_root, "data", "candidate", "sample_design_31.csv"), na.strings = c("", "NA"))
 required <- c(
   "RowOrder", "PXD", "SampleGroup", "Category", "KlaN", "ReferenceN",
   "KlaSampleDesign", "ReferenceSampleDesign", "Aggregation", "MatchClass"
 )
 stop_if(identical(names(design), required), "Candidate sample design schema changed.")
-stop_if(nrow(groups) == 30L && nrow(design) == 30L, "Candidate sample design must contain 30 rows.")
+stop_if(nrow(groups) == 31L && nrow(design) == 31L, "Candidate sample design must contain 31 rows.")
 stop_if(!anyDuplicated(design[, .(PXD, SampleGroup)]), "Candidate sample design has duplicate group keys.")
 stop_if(
   setequal(
     paste(groups$PXD, groups$SampleGroup, sep = "__"),
     paste(design$PXD, design$SampleGroup, sep = "__")
   ),
-  "Candidate sample design does not match the frozen 30-group scope."
+  "Candidate sample design does not match the frozen 31-group scope."
 )
 stop_if(
   !any(!is.na(design$KlaN) & (design$KlaN < 0 | design$KlaN != floor(design$KlaN))),
@@ -37,4 +37,4 @@ stop_if(all(nchar(trimws(design$KlaSampleDesign)) > 0), "A Kla sample-design lab
 stop_if(all(nchar(trimws(design$ReferenceSampleDesign)) > 0), "A reference sample-design label is empty.")
 stop_if(all(nchar(trimws(design$Aggregation)) > 0), "An aggregation label is empty.")
 stop_if(all(nchar(trimws(design$MatchClass)) > 0), "A match-class label is empty.")
-message("PASS: candidate sample design covers the exact frozen 30-group scope.")
+message("PASS: candidate sample design covers the exact frozen 31-group scope.")

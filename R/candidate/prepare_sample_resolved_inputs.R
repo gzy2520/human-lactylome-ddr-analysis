@@ -386,17 +386,17 @@ stop_if(
   "Tier B samples must not claim a paired whole-proteome source file."
 )
 
-frozen_kla_membership <- fread(file.path(input_dir, "kla_protein_membership_30.csv"), check.names = FALSE)
+frozen_kla_membership <- fread(file.path(input_dir, "kla_protein_membership_31.csv"), check.names = FALSE)
 kla_ddr_lookup <- unique(frozen_kla_membership[
   IsDdr %in% c(TRUE, "TRUE", "True", 1, "1"),
   .(PXD, PublicationGroup = SampleGroup, BaseAccession)
 ])
 stop_if(
-  uniqueN(kla_ddr_lookup$BaseAccession) == 399L,
+  uniqueN(kla_ddr_lookup$BaseAccession) == 401L,
   "Frozen publication Kla-DDR membership must contain 399 BaseAccessions."
 )
 
-frozen_reference_membership <- fread(file.path(input_dir, "reference_protein_membership_30.csv"), check.names = FALSE)
+frozen_reference_membership <- fread(file.path(input_dir, "reference_protein_membership_31.csv"), check.names = FALSE)
 reference_ddr_rows <- frozen_reference_membership[IsDdr %in% c(TRUE, "TRUE", "True", 1, "1")]
 reference_ddr_lookup <- unique(rbindlist(lapply(seq_len(nrow(reference_ddr_rows)), function(index) {
   mapped_accessions <- split_accessions(reference_ddr_rows$MappedBaseAccessions[[index]])
@@ -493,7 +493,7 @@ paired_summary <- merge(
 )
 paired_summary[, DeltaPercentagePoints := (KlaDdrFraction - WholeProteomeDdrFraction) * 100]
 
-frozen_groups <- fread(file.path(input_dir, "group_summary_30.csv"))
+frozen_groups <- fread(file.path(input_dir, "group_summary_31.csv"))
 observed_kla_group <- kla_records[, .(
   SourceKlaProteinCount = uniqueN(BaseAccession),
   SourceKlaDdrProteinCount = uniqueN(BaseAccession[IsDdr == TRUE])

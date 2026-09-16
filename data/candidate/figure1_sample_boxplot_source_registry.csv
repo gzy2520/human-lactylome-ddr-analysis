@@ -50,6 +50,12 @@ PXD063047,normal pregnancy placenta,Con_3,replicate,MaxQuant site table / sample
 PXD063266,PC-3M,1,replicate,Author MaxQuant site workbook / sample localization,PXD063266/search_results/LactylSites.xlsx,Lactylome (Kla)
 PXD063266,PC-3M,2,replicate,Author MaxQuant site workbook / sample localization,PXD063266/search_results/LactylSites.xlsx,Lactylome (Kla)
 PXD063266,PC-3M,3,replicate,Author MaxQuant site workbook / sample localization,PXD063266/search_results/LactylSites.xlsx,Lactylome (Kla)
+PXD064038,MEC and NEC ESCC groups,MEC_1,ESCC with lymph-node metastasis,MaxQuant La (K)Sites / sample localization,data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Lactylome (Kla)
+PXD064038,MEC and NEC ESCC groups,MEC_2,ESCC with lymph-node metastasis,MaxQuant La (K)Sites / sample localization,data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Lactylome (Kla)
+PXD064038,MEC and NEC ESCC groups,MEC_3,ESCC with lymph-node metastasis,MaxQuant La (K)Sites / sample localization,data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Lactylome (Kla)
+PXD064038,MEC and NEC ESCC groups,NEC_1,ESCC without lymph-node metastasis,MaxQuant La (K)Sites / sample localization,data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Lactylome (Kla)
+PXD064038,MEC and NEC ESCC groups,NEC_2,ESCC without lymph-node metastasis,MaxQuant La (K)Sites / sample localization,data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Lactylome (Kla)
+PXD064038,MEC and NEC ESCC groups,NEC_3,ESCC without lymph-node metastasis,MaxQuant La (K)Sites / sample localization,data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Lactylome (Kla)
 PXD064912,human sperm,Rep 1,replicate,Author supplementary PTM table / sample probability,PXD064912/supplementary/europepmc/mmc1.xlsx,Lactylome (Kla)
 PXD064912,human sperm,Rep 2,replicate,Author supplementary PTM table / sample probability,PXD064912/supplementary/europepmc/mmc1.xlsx,Lactylome (Kla)
 PXD064912,human sperm,Rep 3,replicate,Author supplementary PTM table / sample probability,PXD064912/supplementary/europepmc/mmc1.xlsx,Lactylome (Kla)
@@ -133,6 +139,100 @@ PXD060185,MDA-MB-468,PXD030304_aggregate,aggregate,whole-proteome / validated_re
 PXD060185,T-47D,PXD030304_aggregate,aggregate,whole-proteome / validated_reference_membership,PXD030304/search_results/ProCan-DepMapSanger_protein_matrix_6692_averaged.txt,Whole proteome
 PXD063047,normal pregnancy placenta,PXD010154_aggregate,aggregate,whole-proteome / validated_reference_membership,PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Whole proteome
 PXD063266,PC-3M,PXD022005_aggregate,aggregate,whole-proteome / validated_reference_membership,PXD022005/search_results/txt_proteomics.zip,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-001T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-002T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-003T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-004T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-005T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-006T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-007T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-008T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-009T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-010T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-011T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-012T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-013T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-014T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-015T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-016T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-017T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-018T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-019T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-020T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-021T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-022T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-023T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-024T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-025T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-026T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-027T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-028T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-029T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-030T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-031T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-032T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-033T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-034T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-035T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-036T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-037T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-038T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-039T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-040T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-041T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-042T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-043T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-044T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-045T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-046T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-047T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-048T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-049T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-050T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-051T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-052T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-053T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-054T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-055T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-056T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-057T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-058T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-059T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-060T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-061T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-062T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-063T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-064T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-065T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-066T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-067T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-068T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-069T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-070T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-071T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-072T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-073T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-074T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-075T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-076T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-077T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-078T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-079T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-080T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-081T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-082T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-083T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-084T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-085T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-086T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-087T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-088T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-089T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-090T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-091T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-092T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-093T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
+PXD064038,MEC and NEC ESCC groups,ESCC-094T,ESCC tumor tissue,whole-proteome / external PXD065830 individual ESCC-T columns,data/PXD065830/supplementary/Dataset1.xlsx,Whole proteome
 PXD064912,human sperm,L1,L sperm,whole-proteome / deposited_sample_table,PXD066517/search_results/20240275.tsv,Whole proteome
 PXD064912,human sperm,L10,L sperm,whole-proteome / deposited_sample_table,PXD066517/search_results/20240275.tsv,Whole proteome
 PXD064912,human sperm,L11,L sperm,whole-proteome / deposited_sample_table,PXD066517/search_results/20240275.tsv,Whole proteome

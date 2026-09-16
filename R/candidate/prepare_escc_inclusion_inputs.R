@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 # Build an isolated 2026-09-03 scope that adds the representative ESCC
-# lactylome group PXD064038. The frozen 30-group publication input is never
+# lactylome group PXD064038. The previous pre-ESCC publication input is never
 # edited. The six MEC/NEC samples are represented by one publication group,
 # while their source-defined sample observations are retained for candidate
 # plots. The reference is the ordinary, non-lactylated ESCC tumor arm of
@@ -155,9 +155,9 @@ dir.create(candidate_input_dir, recursive = TRUE, showWarnings = FALSE)
 
 current_publication_dir <- file.path(project_root, "data", "publication_input")
 current_candidate_dir <- file.path(project_root, "data", "candidate")
-current_groups <- fread(file.path(current_publication_dir, "group_summary_30.csv"), check.names = FALSE)
-current_kla_membership <- fread(file.path(current_publication_dir, "kla_protein_membership_30.csv"), check.names = FALSE)
-current_reference_membership <- fread(file.path(current_publication_dir, "reference_protein_membership_30.csv"), check.names = FALSE)
+current_groups <- fread(file.path(current_publication_dir, "group_summary_31.csv"), check.names = FALSE)
+current_kla_membership <- fread(file.path(current_publication_dir, "kla_protein_membership_31.csv"), check.names = FALSE)
+current_reference_membership <- fread(file.path(current_publication_dir, "reference_protein_membership_31.csv"), check.names = FALSE)
 current_all_venn <- fread(file.path(current_publication_dir, "venn_all_kla.csv"), check.names = FALSE)
 current_kla_ddr_venn <- fread(file.path(current_publication_dir, "venn_kla_ddr.csv"), check.names = FALSE)
 current_reference_venn <- fread(file.path(current_publication_dir, "venn_reference.csv"), check.names = FALSE)
@@ -490,9 +490,9 @@ for (filename in setdiff(current_publication_files, "INPUT_MANIFEST.csv")) {
   stop_if(file.copy(file.path(current_publication_dir, filename), file.path(publication_input_dir, filename), overwrite = TRUE),
     paste0("Could not copy publication input: ", filename))
 }
-fwrite(expanded_groups, file.path(publication_input_dir, "group_summary_30.csv"), na = "")
-fwrite(expanded_kla_membership, file.path(publication_input_dir, "kla_protein_membership_30.csv"), na = "")
-fwrite(expanded_reference_membership, file.path(publication_input_dir, "reference_protein_membership_30.csv"), na = "")
+fwrite(expanded_groups, file.path(publication_input_dir, "group_summary_31.csv"), na = "")
+fwrite(expanded_kla_membership, file.path(publication_input_dir, "kla_protein_membership_31.csv"), na = "")
+fwrite(expanded_reference_membership, file.path(publication_input_dir, "reference_protein_membership_31.csv"), na = "")
 fwrite(expanded_all_venn, file.path(publication_input_dir, "venn_all_kla.csv"), na = "")
 fwrite(expanded_kla_ddr_venn, file.path(publication_input_dir, "venn_kla_ddr.csv"), na = "")
 fwrite(expanded_reference_venn, file.path(publication_input_dir, "venn_reference.csv"), na = "")
@@ -516,7 +516,7 @@ candidate_files <- c(
   "sample_boxplot_reconciliation.csv",
   "sample_boxplot_source_registry.csv",
   "biological_sample_count_record.csv",
-  "sample_design_30.csv"
+  "sample_design_31.csv"
 )
 for (filename in candidate_files) {
   stop_if(file.copy(file.path(current_candidate_dir, filename), file.path(candidate_input_dir, filename), overwrite = TRUE),
@@ -676,7 +676,7 @@ sample_count_record <- rbindlist(list(sample_count_record, new_sample_count_reco
 setorder(sample_count_record, RowOrder, PXD, SampleGroup)
 fwrite(sample_count_record, file.path(candidate_input_dir, "biological_sample_count_record.csv"), na = "")
 
-sample_design <- fread(file.path(candidate_input_dir, "sample_design_30.csv"), check.names = FALSE, na.strings = c("", "NA"))
+sample_design <- fread(file.path(candidate_input_dir, "sample_design_31.csv"), check.names = FALSE, na.strings = c("", "NA"))
 new_sample_design <- data.table(
   RowOrder = group_row_order,
   PXD = group_pxd,
@@ -691,7 +691,7 @@ new_sample_design <- data.table(
 )
 sample_design <- rbindlist(list(sample_design, new_sample_design), fill = TRUE)
 setorder(sample_design, RowOrder, PXD, SampleGroup)
-fwrite(sample_design, file.path(candidate_input_dir, "sample_design_30.csv"), na = "")
+fwrite(sample_design, file.path(candidate_input_dir, "sample_design_31.csv"), na = "")
 
 sheets_for_scores <- s4_sheets[c("TumorTissues", "NonTumorTissues", "CancerCellLines", "NormalCellLines")]
 pathway_scores <- rbindlist(lapply(sheets_for_scores, function(sheet) {

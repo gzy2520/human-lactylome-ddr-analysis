@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 # Build only Supplementary Tables S1-S6 named in DDR_Kla_manuscript_V3.docx.
-# Inputs are frozen to the final 30-group publication boundary.  All set
+# Inputs are frozen to the final 31-group publication boundary.  All set
 # operations use BaseAccession; symbols and protein names are display fields.
 
 suppressPackageStartupMessages({
@@ -89,10 +89,10 @@ copy_frozen_workbook <- function(filename) {
   assert(md5_file(source) == md5_file(target), paste("Frozen supplementary workbook changed while copying:", filename))
 }
 
-groups <- fread(input_path("group_summary_30.csv"))
+groups <- fread(input_path("group_summary_31.csv"))
 assert(nrow(groups) %in% c(30L, 31L), "Supplementary Tables must begin with 30 or 31 Kla groups.")
-kla_membership <- fread(input_path("kla_protein_membership_30.csv"))
-reference_membership <- fread(input_path("reference_protein_membership_30.csv"))
+kla_membership <- fread(input_path("kla_protein_membership_31.csv"))
+reference_membership <- fread(input_path("reference_protein_membership_31.csv"))
 require_columns(kla_membership, c("PXD", "SampleGroup", "BaseAccession", "IsDdr"), "Kla membership")
 require_columns(reference_membership, c("PXD", "SampleGroup", "SourceProteinID", "IsDdr"), "Reference membership")
 
@@ -210,7 +210,7 @@ if (is_31_group) {
   
   message("PASS: built Supplementary Tables S1-S3, S4 (Venn), S5 (Pathway), S6 (Regulators) for 31-group scope.")
 } else {
-  # 30-group frozen publication scope layout
+  # 31-group frozen publication scope layout
   copy_frozen_workbook("Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
   copy_frozen_workbook("Supplementary_Table_S5_Lactylation_Regulators.xlsx")
   write_workbook(venn_sheets, "Supplementary_Table_S6_Venn_Membership.xlsx")

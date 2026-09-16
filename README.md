@@ -16,7 +16,7 @@ Rscript --vanilla workflow/preflight_kla31.R
 - 31组冻结注册表：`audit/20260912_workspace_rnaseq/groups_31.csv`
 - 已有sample-only基线：`corrected_final_result_20260905_sample_only/`；`final_result`仅为其本地快捷入口，不代表最终批准的新版本。
 - 新脚本放`R/`、`workflow/`；新输出放`outputs/<日期_任务>/`，不写回已有结果目录。
-- 原30组说明保存在`docs/history/`，旧`workflow/run_pipeline.R`须显式启用历史模式才能运行。
+- 历史说明保存在`docs/history/`，旧`workflow/run_pipeline.R`须显式启用历史模式才能运行。
 
 本地已独立复制31组扩展输入（约26 MB）和R库目录；未复制45 GB原始蛋白数据。输入哈希清单见`config/kla31_local_inputs_sha256.csv`。外部视觉参考仍为`/Users/gzy2520/Desktop/renew/kla`；当前未跟踪Word副本在被忽略的`local_reference/manuscript/`，不替换main内的文稿。
 

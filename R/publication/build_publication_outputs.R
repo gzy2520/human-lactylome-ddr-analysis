@@ -44,9 +44,9 @@ input_path <- function(filename) file.path(input_dir, filename)
 md5_file <- function(path) digest::digest(file = path, algo = "md5", serialize = FALSE)
 
 required_inputs <- c(
-  "group_summary_30.csv",
-  "regulator_kla_percentiles_30.csv",
-  "regulator_reference_percentiles_30.csv",
+  "group_summary_31.csv",
+  "regulator_kla_percentiles_31.csv",
+  "regulator_reference_percentiles_31.csv",
   "pathway_display.csv",
   "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx",
   "Supplementary_Table_S5_Lactylation_Regulators.xlsx",
@@ -136,7 +136,7 @@ pathway_colours <- stats::setNames(pathway_display$Color, pathway_display$Pathwa
 
 is_true <- function(x) as.character(x) %in% c("TRUE", "True", "true", "1", "T")
 
-groups <- fread(input_path("group_summary_30.csv")) |>
+groups <- fread(input_path("group_summary_31.csv")) |>
   as_tibble() |>
   arrange(RowOrder) |>
   mutate(
@@ -458,7 +458,7 @@ draw_percentile_heatmap <- function(
   }
 }
 
-kla_percentiles <- fread(input_path("regulator_kla_percentiles_30.csv")) |>
+kla_percentiles <- fread(input_path("regulator_kla_percentiles_31.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, RelativeKlaPercentile)
 
@@ -483,7 +483,7 @@ file.copy(
   overwrite = TRUE
 )
 
-reference_percentiles <- fread(input_path("regulator_reference_percentiles_30.csv")) |>
+reference_percentiles <- fread(input_path("regulator_reference_percentiles_31.csv")) |>
   as_tibble() |>
   transmute(PXD, SampleGroup, RegulatorBaseAccession, WholeProteomeRelativePercentile)
 

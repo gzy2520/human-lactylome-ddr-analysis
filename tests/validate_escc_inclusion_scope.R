@@ -55,7 +55,7 @@ expected_audit <- c(
 stop_if(all(unname(expected_audit) == unname(audit_values[names(expected_audit)])),
   "The ESCC inclusion audit does not match the recorded scope.")
 
-groups <- fread(file.path(publication_dir, "group_summary_30.csv"))
+groups <- fread(file.path(publication_dir, "group_summary_31.csv"))
 stop_if(nrow(groups) == 31L, "Expanded publication input does not contain 31 groups.")
 stop_if(!anyDuplicated(groups[, .(PXD, SampleGroup)]), "Expanded publication groups are not unique.")
 stop_if(any(groups$PXD == "PXD064038" & groups$SampleGroup == "MEC and NEC ESCC groups"),
@@ -85,13 +85,13 @@ stop_if(
 stop_if(selected_group$MatchMode == "BaseAccession_external_ESCC_tumor",
   "PXD064038 reference mode changed unexpectedly.")
 
-membership <- fread(file.path(publication_dir, "kla_protein_membership_30.csv"))
+membership <- fread(file.path(publication_dir, "kla_protein_membership_31.csv"))
 selected_membership <- membership[PXD == "PXD064038" & SampleGroup == "MEC and NEC ESCC groups"]
 stop_if(nrow(selected_membership) == 1239L && uniqueN(selected_membership$BaseAccession) == 1239L,
   "PXD064038 Kla membership does not contain 1239 unique BaseAccessions.")
 stop_if(sum(selected_membership$IsDdr == TRUE) == 92L, "PXD064038 Kla-DDR membership does not contain 92 BaseAccessions.")
 
-reference_membership <- fread(file.path(publication_dir, "reference_protein_membership_30.csv"))
+reference_membership <- fread(file.path(publication_dir, "reference_protein_membership_31.csv"))
 selected_reference_membership <- reference_membership[
   PXD == "PXD064038" & SampleGroup == "MEC and NEC ESCC groups"
 ]

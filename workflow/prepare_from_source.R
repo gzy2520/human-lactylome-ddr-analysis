@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# Prepare the exact 30-group publication input from downloaded processed
+# Prepare the exact 31-group publication input from downloaded processed
 # ProteomeXchange/iProX source files.  The historical per-dataset parsers run
 # in a disposable staging directory; only the candidate publication input is
 # retained under work/.  Manual source assets (S4, S5, regulator percentiles
@@ -83,7 +83,7 @@ build_venn <- function(membership, groups, ddr_only) {
     all.x = TRUE,
     sort = FALSE
   )
-  assert(!anyNA(membership$Category), "A source membership row is outside the final 30 groups.")
+  assert(!anyNA(membership$Category), "A source membership row is outside the final 31 groups.")
   accessions <- sort(unique(membership$BaseAccession))
   out <- data.table(BaseAccession = accessions)
   for (category in categories) {
@@ -184,10 +184,10 @@ run(
 run(
   "Rscript",
   c(file.path(stage_dir, "R", "analyze_ddr_fraction.R"), stage_dir),
-  "30-group BaseAccession membership"
+  "31-group BaseAccession membership"
 )
 
-groups <- fread(file.path(frozen_input, "group_summary_30.csv"))
+groups <- fread(file.path(frozen_input, "group_summary_31.csv"))
 assert(nrow(groups) == 30L && !anyDuplicated(groups[, .(PXD, SampleGroup)]),
   "The frozen release must define exactly 30 unique groups.")
 target_keys <- key(groups)
@@ -203,25 +203,25 @@ source_summary <- fread(file.path(
 source_summary <- source_summary[match(target_keys, key(source_summary))]
 assert(!anyNA(source_summary$PXD), "A final group was not recovered from downloaded source data.")
 source_summary <- source_summary[, ..publication_columns]
-compare_table(source_summary, groups, c("RowOrder", "PXD", "SampleGroup"), "group_summary_30.csv")
+compare_table(source_summary, groups, c("RowOrder", "PXD", "SampleGroup"), "group_summary_31.csv")
 
 source_kla <- fread(file.path(
   stage_dir, "work", "intermediate", "expanded_ddr_by_accession",
   "kla_proteins_by_sample_group.csv"
 ))
 source_kla <- source_kla[key(source_kla) %in% target_keys]
-frozen_kla <- fread(file.path(frozen_input, "kla_protein_membership_30.csv"))
+frozen_kla <- fread(file.path(frozen_input, "kla_protein_membership_31.csv"))
 compare_table(source_kla, frozen_kla, c("PXD", "SampleGroup", "BaseAccession"),
-  "kla_protein_membership_30.csv")
+  "kla_protein_membership_31.csv")
 
 source_reference <- fread(file.path(
   stage_dir, "work", "intermediate", "expanded_ddr_by_accession",
   "reference_proteins_by_sample_group.csv"
 ))
 source_reference <- source_reference[key(source_reference) %in% target_keys]
-frozen_reference <- fread(file.path(frozen_input, "reference_protein_membership_30.csv"))
+frozen_reference <- fread(file.path(frozen_input, "reference_protein_membership_31.csv"))
 compare_table(source_reference, frozen_reference,
-  c("PXD", "SampleGroup", "SourceProteinID"), "reference_protein_membership_30.csv")
+  c("PXD", "SampleGroup", "SourceProteinID"), "reference_protein_membership_31.csv")
 source_reference_for_venn <- expand_reference_membership(
   source_reference, source_ddr_accessions
 )
@@ -257,5 +257,5 @@ for (filename in list.files(frozen_input, full.names = FALSE, no.. = TRUE)) {
     paste("Could not materialize validated release input:", filename)
   )
 }
-message("PASS: downloaded-source processing reproduced all source-derived 30-group tables.")
+message("PASS: downloaded-source processing reproduced all source-derived 31-group tables.")
 message("Validated publication input: ", candidate_dir)

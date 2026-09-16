@@ -77,8 +77,8 @@ match_linetypes <- c(
   process_control = "dotted"
 )
 
-groups <- fread(file.path(input_dir, "group_summary_30.csv"), check.names = FALSE)
-design <- fread(file.path(candidate_dir, "sample_design_30.csv"), na.strings = c("", "NA"))
+groups <- fread(file.path(input_dir, "group_summary_31.csv"), check.names = FALSE)
+design <- fread(file.path(candidate_dir, "sample_design_31.csv"), na.strings = c("", "NA"))
 stop_if(nrow(groups) == expected_group_count,
   paste0("Publication input must contain ", expected_group_count, " groups."))
 stop_if(nrow(design) == expected_group_count,

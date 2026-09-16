@@ -83,7 +83,7 @@ for (col_idx in t_cols) {
 }
 
 # Template for 48 regulators in reference percentiles table
-ref_csv_path <- file.path(pub_input_dir, "regulator_reference_percentiles_30.csv")
+ref_csv_path <- file.path(pub_input_dir, "regulator_reference_percentiles_31.csv")
 dt_ref_orig <- fread(ref_csv_path)
 
 # Extract unique 48 regulators template from an existing group
@@ -151,7 +151,7 @@ if ("id" %in% names(dt_kla_raw)) dt_kla_raw <- dt_kla_raw[!is.na(id)]
 sample_tokens <- c("MEC_1", "MEC_2", "MEC_3", "NEC_1", "NEC_2", "NEC_3")
 stop_if(all(paste("Intensity", sample_tokens) %in% names(dt_kla_raw)), "Missing intensity columns in Kla file.")
 
-kla_csv_path <- file.path(pub_input_dir, "regulator_kla_percentiles_30.csv")
+kla_csv_path <- file.path(pub_input_dir, "regulator_kla_percentiles_31.csv")
 dt_kla_orig <- fread(kla_csv_path)
 
 # Extract 49 unique regulator rows template from an existing group

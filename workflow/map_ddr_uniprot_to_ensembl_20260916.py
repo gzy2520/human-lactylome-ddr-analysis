@@ -91,7 +91,7 @@ def main(out_dir, idmap_path, gene2ensembl_path):
 
     # the project's cached ENSEMBLPROT -> UniProt mapping, inverted
     cached = {}
-    with open(os.path.join(ROOT, "data/publication_input/reference_protein_membership_30.csv"),
+    with open(os.path.join(ROOT, "data/publication_input/reference_protein_membership_31.csv"),
               newline="", encoding="utf-8-sig") as fh:
         for r in csv.DictReader(fh):
             if r["IdentifierType"] != "ENSEMBLPROT":

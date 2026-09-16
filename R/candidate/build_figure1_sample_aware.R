@@ -18,7 +18,7 @@ project_root <- if (length(args)) {
 }
 
 input_dir <- file.path(project_root, "data", "publication_input")
-design_path <- file.path(project_root, "data", "candidate", "sample_design_30.csv")
+design_path <- file.path(project_root, "data", "candidate", "sample_design_31.csv")
 output_dir <- file.path(project_root, "results", "candidate")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -53,10 +53,10 @@ stop_if <- function(condition, message) {
 }
 format_n <- function(x) ifelse(is.na(x), "NR", as.character(x))
 
-groups <- fread(file.path(input_dir, "group_summary_30.csv"))
+groups <- fread(file.path(input_dir, "group_summary_31.csv"))
 design <- fread(design_path, na.strings = c("", "NA"))
-stop_if(nrow(groups) == 30L, "Frozen publication input must contain 30 groups.")
-stop_if(nrow(design) == 30L, "Candidate sample design must contain 30 groups.")
+stop_if(nrow(groups) == 31L, "Frozen publication input must contain 31 groups.")
+stop_if(nrow(design) == 31L, "Candidate sample design must contain 31 groups.")
 stop_if(!anyDuplicated(groups[, .(PXD, SampleGroup)]), "Publication groups are not unique.")
 stop_if(!anyDuplicated(design[, .(PXD, SampleGroup)]), "Candidate design rows are not unique.")
 
@@ -203,7 +203,7 @@ candidate_plot <- ggplot(data, aes(y = PlotRow)) +
   labs(
     x = "GO-DDR annotated protein fraction (%)",
     y = NULL,
-    title = "DDR annotation across the 30 publication sample groups",
+    title = "DDR annotation across the 31 publication sample groups",
     subtitle = "Blue = whole proteome reference; orange = Kla. Solid/dashed/dotted lines indicate same-study, external, and caveat/process references.\nRight: n (Kla/reference) and delta (Kla minus reference).",
     caption = "Each point is a publication sample-group summary. NR indicates that a common biological sample count was not recoverable from the processed evidence; it is not imputed. Per-group Kla sample structure and the reference relation (also encoded by line style) are tabulated in the supplementary sample design."
   ) +

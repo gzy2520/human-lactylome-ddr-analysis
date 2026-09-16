@@ -41,8 +41,8 @@ assert(
   "A stale Kla statistics table must not be recorded as a reference-source file."
 )
 assert(
-  any(grepl("group_summary_30.csv", analyzer_lines, fixed = TRUE)),
-  "Source membership construction must take its scope from the frozen final 30-group contract."
+  any(grepl("group_summary_31.csv", analyzer_lines, fixed = TRUE)),
+  "Source membership construction must take its scope from the frozen 31-group contract."
 )
 assert(
   !any(grepl("kla_regulator_intensity_availability_audit.csv", analyzer_lines, fixed = TRUE)),
@@ -71,6 +71,6 @@ assert(
 )
 assert(
   !any(grepl('extract_pxd014870(', core_lines, fixed = TRUE)),
-  "A source parser outside the final 30-group publication scope must not run."
+  "A source parser outside the final 31-group publication scope must not run."
 )
 message("PASS: source preparation has no stale-reference-cache dependency.")

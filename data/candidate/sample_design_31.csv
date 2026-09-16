@@ -1,0 +1,32 @@
+RowOrder,PXD,SampleGroup,Category,KlaN,ReferenceN,KlaSampleDesign,ReferenceSampleDesign,Aggregation,MatchClass
+1,PXD033146,pathological rotator cuff tendon,normal_tissue,,,HA119TPLa matched samples,HA119TQ matched samples,protein union,same_study_sample
+2,PXD036307,normal human lung,normal_tissue,,,normal lung tissue,healthy lung tissue,dataset aggregate,external_tissue
+3,PXD046800,hypertrophic scar,normal_tissue,4,4,HSP1-HSP4,HSP1-HSP4,sample-group union,same_study_sample
+4,PXD046800,adjacent skin,normal_tissue,4,4,NSP1-NSP4,NSP1-NSP4,sample-group union,same_study_sample
+5,PXD050470,human hippocampus,normal_tissue,3,3,H072/H081/H0187,H072/H081/H0187,sample union,same_biospecimen
+6,PXD063047,normal pregnancy placenta,normal_tissue,,,normal placenta tissue,healthy placenta tissue,protein union,external_tissue
+7,PXD064912,human sperm,normal_tissue,,,human sperm samples,human sperm DIA proteome,repeat union,same_material
+8,PXD066054,BPH,normal_tissue,5,5,BPH samples,NAT1-NAT5,condition union,same_study_sample
+9,PXD075377,adjacent liver,normal_tissue,,,adjacent liver cohort,ANTs/Non-rec/Rec samples,protein union,external_adjacent
+10,PXD064038,MEC and NEC ESCC groups,cancer_tissue,6,94,MEC_1;MEC_2;MEC_3;NEC_1;NEC_2;NEC_3,ESCC-001T;ESCC-002T;ESCC-006T;ESCC-009T;ESCC-010T;ESCC-019T;ESCC-035T;ESCC-040T;ESCC-041T;ESCC-044T;ESCC-049T;ESCC-017T;ESCC-055T;ESCC-057T;ESCC-059T;ESCC-063T;ESCC-065T;ESCC-066T;ESCC-082T;ESCC-086T;ESCC-075T;ESCC-078T;ESCC-092T;ESCC-069T;ESCC-072T;ESCC-003T;ESCC-004T;ESCC-005T;ESCC-011T;ESCC-013T;ESCC-020T;ESCC-029T;ESCC-032T;ESCC-037T;ESCC-024T;ESCC-028T;ESCC-043T;ESCC-046T;ESCC-050T;ESCC-051T;ESCC-007T;ESCC-018T;ESCC-021T;ESCC-027T;ESCC-052T;ESCC-056T;ESCC-061T;ESCC-062T;ESCC-053T;ESCC-058T;ESCC-068T;ESCC-074T;ESCC-083T;ESCC-084T;ESCC-090T;ESCC-080T;ESCC-091T;ESCC-094T;ESCC-067T;ESCC-076T;ESCC-087T;ESCC-008T;ESCC-015T;ESCC-016T;ESCC-023T;ESCC-031T;ESCC-033T;ESCC-036T;ESCC-042T;ESCC-034T;ESCC-038T;ESCC-039T;ESCC-045T;ESCC-022T;ESCC-026T;ESCC-012T;ESCC-014T;ESCC-025T;ESCC-030T;ESCC-047T;ESCC-054T;ESCC-048T;ESCC-060T;ESCC-064T;ESCC-079T;ESCC-088T;ESCC-089T;ESCC-077T;ESCC-081T;ESCC-093T;ESCC-070T;ESCC-071T;ESCC-073T;ESCC-085T,six Kla samples versus 94 external ESCC-T source observations,external_disease
+11,PXD066054,prostate cancer,cancer_tissue,5,5,prostate cancer samples,PCa1-PCa5,condition union,same_study_sample
+12,PXD075377,HCC,cancer_tissue,,,HCC cohort,CISs/Non-rec/Rec samples,protein union,external_disease
+14,PXD060185,MCF7,cancer_cells,,,MCF7 samples,MCF7 SIDM00148,sample union,external_cell_line
+15,PXD028488,HCT116,cancer_cells,,,HCT116 enrichment,HCT-116 SIDM00783,sample union,external_cell_line
+16,PXD053474,HCT116,cancer_cells,,,HCT116 subcellular fractions,HCT-116 SIDM00783,compartment union,external_cell_line
+17,PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,,,HCT116/Roseburia conditions,matched DA samples,dataset aggregate,same_study_sample
+18,PXD028488,TALL-104,cancer_cells,3,3,TALL-104 enrichment,TALL-104 non-enrichment samples 1-3,sample union,same_study_sample
+19,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,,,HepG2 WT/SIRT1-KO/SIRT3-KO,SIRT proteinGroups,condition union,same_study_caveat
+20,PXD054919,A549,cancer_cells,,,A549 samples,A549 SIDM00903,dataset aggregate,external_cell_line
+21,PXD060185,MDA-MB-468,cancer_cells,,,MDA-MB-468 samples,MDA-MB-468 SIDM00628,sample union,external_cell_line
+22,PXD060185,T-47D,cancer_cells,,,T-47D samples,T47D SIDM00097,sample union,external_cell_line
+23,PXD063266,PC-3M,cancer_cells,,,PC-3M samples,PC-3M heavy SILAC channel,dataset aggregate,external_cell_line
+24,PXD070007,glioblastoma stem cells,cancer_cells,6,6,GSC models G2907/G3028/G3264/GSC23/MES28/RKI,same six GSC models,model union,same_biospecimen
+25,PXD078013,RKO WT and GSK3B KO,cancer_cells,4,,RKO WT2 + GSK3B-KO2,RKO SIDM01090,condition union,external_cell_line
+28,PXD028488,HEK293T,normal_cells,,,HEK293T control lysate,HEK293T control lysate,sample union,process_control
+29,PXD028737,HMC3,normal_cells,2,2,HMC3 H0/H24,H0/H24,sample union,same_study_sample
+30,PXD058534,pretreated HK-2,normal_cells,,3,pretreated HK-2,amostra1/amostra3/amostra4,protein union,external_cell_line
+31,PXD078736,HK-2 control and mannitol,normal_cells,6,3,HK-2 control3 + mannitol3,amostra1/amostra3/amostra4,condition union,external_cell_line
+32,PXD060185,MCF10A,normal_cells,,,MCF10A baseline,MCF-10A baseline,sample union,external_cell_line
+33,PXD070007,neural stem cells,normal_cells,2,2,NSC models ENSA/HMP1,ENSA/HMP1,model union,same_biospecimen
+34,PXD073311,HUVEC control and Pg infection,normal_cells,,3,HUVEC control/Pg infection,A0h_1/A0h_2/A0h_3,dataset aggregate,same_biospecimen

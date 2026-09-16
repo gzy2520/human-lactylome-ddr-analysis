@@ -36,7 +36,7 @@ stop_if(nrow(s1_groups) == 31L, "S1 Group_Summary must contain exactly 31 groups
 escc_row <- s1_groups[PXD == "PXD064038" & SampleGroup == "MEC and NEC ESCC groups"]
 stop_if(nrow(escc_row) == 1L, "PXD064038 group missing in S1.")
 stop_if(escc_row$KlaProteinCount == 1239L && escc_row$KlaDdrProteinCount == 92L, "PXD064038 Kla counts in S1 are incorrect.")
-input_kla <- fread(file.path(candidate_pub_dir, "kla_protein_membership_30.csv"))
+input_kla <- fread(file.path(candidate_pub_dir, "kla_protein_membership_31.csv"))
 stop_if(nrow(s1_kla) == nrow(input_kla), "S1 Kla membership row count does not match input.")
 stop_if(nrow(s1_ddr) == sum(input_kla$IsDdr == TRUE), "S1 Kla-DDR membership row count does not match input.")
 
@@ -52,7 +52,7 @@ escc_ref_row <- s2_groups[PXD == "PXD064038" & SampleGroup == "MEC and NEC ESCC 
 stop_if(escc_ref_row$ReferencePXD == "PXD065830", "PXD064038 must reference PXD065830 in S2.")
 stop_if(escc_ref_row$ReferenceProteinCount == 8083L && escc_ref_row$ReferenceDdrProteinCount == 420L,
   "PXD064038 reference counts in S2 are incorrect.")
-input_ref <- fread(file.path(candidate_pub_dir, "reference_protein_membership_30.csv"))
+input_ref <- fread(file.path(candidate_pub_dir, "reference_protein_membership_31.csv"))
 stop_if(nrow(s2_ref) == nrow(input_ref), "S2 reference membership row count does not match input.")
 stop_if(nrow(s2_ddr) == sum(input_ref$IsDdr == TRUE), "S2 reference DDR membership row count does not match input.")
 

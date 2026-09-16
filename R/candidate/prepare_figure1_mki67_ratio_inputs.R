@@ -236,8 +236,8 @@ sample_values <- fread(file.path(candidate_dir, "figure1_sample_boxplot_values.c
 registry <- fread(file.path(candidate_dir, "figure1_sample_boxplot_source_registry.csv"), check.names = FALSE)
 whole_values <- sample_values[Dataset == "Whole proteome"]
 whole_registry <- registry[Dataset == "Whole proteome"]
-stop_if(nrow(whole_values) == 118L, "Whole-proteome Figure 1 source input must contain 118 observations.")
-stop_if(uniqueN(whole_values[, .(PXD, SampleGroup, SampleID)]) == 118L,
+stop_if(nrow(whole_values) == 212L, "Whole-proteome Figure 1 source input must contain 212 observations.")
+stop_if(uniqueN(whole_values[, .(PXD, SampleGroup, SampleID)]) == 212L,
   "Whole-proteome Figure 1 observations are not unique.")
 
 observation_columns <- c(

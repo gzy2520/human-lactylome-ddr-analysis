@@ -634,20 +634,20 @@ input_dir <- file.path(project_root, "data", "publication_input")
 candidate_dir <- file.path(project_root, "data", "candidate")
 dir.create(candidate_dir, recursive = TRUE, showWarnings = FALSE)
 
-groups <- fread(file.path(input_dir, "group_summary_30.csv"), check.names = FALSE)
+groups <- fread(file.path(input_dir, "group_summary_31.csv"), check.names = FALSE)
 design <- fread(file.path(candidate_dir, "group_sample_design.csv"), check.names = FALSE, na.strings = c("", "NA"), fill = TRUE)
-membership <- fread(file.path(input_dir, "kla_protein_membership_30.csv"), check.names = FALSE)
-reference_membership <- fread(file.path(input_dir, "reference_protein_membership_30.csv"), check.names = FALSE)
+membership <- fread(file.path(input_dir, "kla_protein_membership_31.csv"), check.names = FALSE)
+reference_membership <- fread(file.path(input_dir, "reference_protein_membership_31.csv"), check.names = FALSE)
 pathway_scores <- read_frozen_pathway_scores(file.path(
   input_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx"
 ))
-stop_if(nrow(groups) == 30L, "Frozen release must contain exactly 30 groups.")
-stop_if(nrow(design) == 30L, "Sample design must contain exactly 30 groups.")
+stop_if(nrow(groups) == 31L, "Frozen release must contain exactly 31 groups.")
+stop_if(nrow(design) == 31L, "Sample design must contain exactly 31 groups.")
 groups[, GroupKey := paste(PXD, SampleGroup, sep = "__")]
 design[, GroupKey := paste(PXD, SampleGroup, sep = "__")]
 stop_if(!anyDuplicated(groups$GroupKey), "Frozen groups are not unique.")
 stop_if(!anyDuplicated(design$GroupKey), "Sample design rows are not unique.")
-stop_if(setequal(groups$GroupKey, design$GroupKey), "Sample design does not cover the frozen 30-group scope.")
+stop_if(setequal(groups$GroupKey, design$GroupKey), "Sample design does not cover the frozen 31-group scope.")
 
 sample_records <- list()
 registry <- list()
@@ -831,7 +831,7 @@ for (item in single_groups) {
     add_records(read_maxquant_single_group(path, item$pxd, item$group, item$id, item$class))
     add_source(item$pxd, item$group, item$id, item$class, "MaxQuant site table / single sample", path)
   } else {
-    source_path <- file.path(input_dir, "kla_protein_membership_30.csv")
+    source_path <- file.path(input_dir, "kla_protein_membership_31.csv")
     accessions <- membership[PXD == item$pxd & SampleGroup == item$group, BaseAccession]
     add_records(records(item$pxd, item$group, item$id, accessions,
       "validated_publication_membership", source_path, item$class, "dataset_union"))
@@ -1161,10 +1161,10 @@ figure1_values <- rbindlist(list(
 ), fill = TRUE)
 setorder(figure1_values, RowOrder, Dataset, SampleID)
 
-stop_if(nrow(figure1_values[Dataset == "Lactylome (Kla)"]) == 92L,
-  "The source-defined Kla sample count must be 92.")
-stop_if(nrow(figure1_values[Dataset == "Whole proteome"]) == 118L,
-  "The source-defined whole-proteome sample count must be 118.")
+stop_if(nrow(figure1_values[Dataset == "Lactylome (Kla)"]) == 98L,
+  "The source-defined Kla sample count must be 98.")
+stop_if(nrow(figure1_values[Dataset == "Whole proteome"]) == 212L,
+  "The source-defined whole-proteome sample count must be 212.")
 stop_if(all(is.finite(figure1_values$DdrFractionPercentage)),
   "A Figure 1 sample fraction is not finite.")
 stop_if(all(figure1_values$DdrFractionPercentage >= 0 & figure1_values$DdrFractionPercentage <= 100),

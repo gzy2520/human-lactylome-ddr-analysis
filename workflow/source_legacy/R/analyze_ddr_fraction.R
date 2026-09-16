@@ -24,7 +24,7 @@ pairing_path <- file.path(
   project_root, "config", "sample_group_catalog.csv"
 )
 final_scope_path <- file.path(
-  project_root, "data", "publication_input", "group_summary_30.csv"
+  project_root, "data", "publication_input", "group_summary_31.csv"
 )
 primary_path <- file.path(
   project_root, "work", "intermediate", "kla_by_dataset",
@@ -87,7 +87,7 @@ split_protein_identifiers <- function(values) {
 
 mapping_input_path <- file.path(
   project_root,
-  "data", "publication_input", "reference_protein_membership_30.csv"
+  "data", "publication_input", "reference_protein_membership_31.csv"
 )
 if (!file.exists(mapping_input_path)) {
   stop("Frozen ENSEMBLPROT-to-UniProt mapping input is missing: ", mapping_input_path)

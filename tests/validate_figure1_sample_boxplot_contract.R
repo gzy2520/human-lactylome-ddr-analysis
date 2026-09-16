@@ -37,17 +37,17 @@ stop_if(all(required_values %in% names(values)), "Combined Figure 1 value table 
 stop_if(all(required_counts %in% names(counts)), "Sample-count record is missing required columns.")
 stop_if(all(required_registry %in% names(registry)), "Combined Figure 1 source registry is missing required columns.")
 
-stop_if(nrow(counts) == 30L, "The sample-count record must cover 30 publication groups.")
-stop_if(nrow(values) == 210L, "The combined Figure 1 input must contain 210 observations.")
-stop_if(nrow(values[Dataset == "Lactylome (Kla)"]) == 92L,
-  "The combined Figure 1 input must contain 92 Kla observations.")
-stop_if(nrow(values[Dataset == "Whole proteome"]) == 118L,
-  "The combined Figure 1 input must contain 118 whole-proteome observations.")
-stop_if(uniqueN(values[, .(PXD, SampleGroup)]) == 30L,
-  "The combined Figure 1 input does not cover the 30-group publication scope.")
-stop_if(uniqueN(values[, .(PXD, SampleGroup, Dataset)]) == 60L,
+stop_if(nrow(counts) == 31L, "The sample-count record must cover 31 publication groups.")
+stop_if(nrow(values) == 310L, "The combined Figure 1 input must contain 310 observations.")
+stop_if(nrow(values[Dataset == "Lactylome (Kla)"]) == 98L,
+  "The combined Figure 1 input must contain 98 Kla observations.")
+stop_if(nrow(values[Dataset == "Whole proteome"]) == 212L,
+  "The combined Figure 1 input must contain 212 whole-proteome observations.")
+stop_if(uniqueN(values[, .(PXD, SampleGroup)]) == 31L,
+  "The combined Figure 1 input does not cover the 31-group publication scope.")
+stop_if(uniqueN(values[, .(PXD, SampleGroup, Dataset)]) == 62L,
   "The combined Figure 1 input does not contain both datasets for all groups.")
-stop_if(uniqueN(registry[, .(PXD, SampleGroup, Dataset)]) == 60L,
+stop_if(uniqueN(registry[, .(PXD, SampleGroup, Dataset)]) == 62L,
   "The source registry does not contain both datasets for all groups.")
 stop_if(!anyDuplicated(values[, .(PXD, SampleGroup, Dataset, SampleID)]),
   "A combined Figure 1 observation is duplicated.")
@@ -88,7 +88,7 @@ count_check <- merge(
   by = c("RowOrder", "PXD", "SampleGroup", "Dataset"),
   all.x = TRUE
 )
-stop_if(nrow(count_check) == 60L, "The combined Figure 1 count check does not cover 60 dataset rows.")
+stop_if(nrow(count_check) == 62L, "The combined Figure 1 count check does not cover 62 dataset rows.")
 count_ok <- !is.na(count_check$ExpectedN) & !is.na(count_check$ActualN) & (
   count_check$ExpectedN == count_check$ActualN |
     (count_check$ActualN == 1L & count_check$ExpectedN > 1L & count_check$AggregateOnly)
@@ -98,4 +98,4 @@ stop_if(all(count_ok), paste(
   "explicit aggregate observation may represent multiple source replicates."
 ))
 
-message("PASS: combined Figure 1 boxplot inputs cover 92 Kla and 118 whole-proteome observations across 30 groups.")
+message("PASS: combined Figure 1 boxplot inputs cover 98 Kla and 212 whole-proteome observations across 31 groups.")

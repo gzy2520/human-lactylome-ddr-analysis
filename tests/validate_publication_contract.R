@@ -35,38 +35,38 @@ for (index in seq_len(nrow(manifest))) {
   assert(md5_file(path) == manifest$MD5[[index]], paste("Frozen input checksum changed:", filename))
 }
 
-groups <- fread(file.path(input_dir, "group_summary_30.csv"))
-assert(nrow(groups) == 30L, "The project must begin with exactly 30 publication groups.")
+groups <- fread(file.path(input_dir, "group_summary_31.csv"))
+assert(nrow(groups) == 31L, "The project must begin with exactly 31 publication groups.")
 assert(!anyDuplicated(groups[, .(PXD, SampleGroup)]), "Publication groups must be unique.")
 expected_categories <- data.table(
   Category = c("cancer_cells", "cancer_tissue", "normal_cells", "normal_tissue"),
-  N = c(12L, 2L, 7L, 9L)
+  N = c(12L, 3L, 7L, 9L)
 )
 observed_categories <- groups[, .N, by = Category][order(Category)]
-assert(identical(observed_categories, expected_categories), "Publication category counts must remain 12/2/7/9.")
+assert(identical(observed_categories, expected_categories), "Publication category counts must remain 12/3/7/9.")
 
 group_keys <- paste(groups$PXD, groups$SampleGroup, sep = "__")
-for (filename in c("kla_protein_membership_30.csv", "reference_protein_membership_30.csv", "regulator_kla_percentiles_30.csv", "regulator_reference_percentiles_30.csv")) {
+for (filename in c("kla_protein_membership_31.csv", "reference_protein_membership_31.csv", "regulator_kla_percentiles_31.csv", "regulator_reference_percentiles_31.csv")) {
   data <- fread(file.path(input_dir, filename))
   keys <- unique(paste(data$PXD, data$SampleGroup, sep = "__"))
   assert(setequal(keys, group_keys), paste("Frozen input contains a non-final group:", filename))
 }
 
 kla_ddr <- fread(file.path(input_dir, "venn_kla_ddr.csv"))
-assert(nrow(kla_ddr) == 399L && uniqueN(kla_ddr$BaseAccession) == 399L, "The final Kla-DDR union must contain 399 BaseAccessions.")
+assert(nrow(kla_ddr) == 401L && uniqueN(kla_ddr$BaseAccession) == 401L, "The final Kla-DDR union must contain 401 BaseAccessions.")
 set_sizes <- c(
   normal_tissue = sum(is_true(kla_ddr$In_normal_tissue)),
   cancer_tissue = sum(is_true(kla_ddr$In_cancer_tissue)),
   cancer_cells = sum(is_true(kla_ddr$In_cancer_cells)),
   normal_cells = sum(is_true(kla_ddr$In_normal_cells))
 )
-assert(identical(as.integer(set_sizes), c(183L, 178L, 381L, 292L)), "Final pathway panels must contain 183/178/381/292 proteins.")
+assert(identical(as.integer(set_sizes), c(183L, 192L, 381L, 292L)), "Final pathway panels must contain 183/192/381/292 proteins.")
 
 pathways <- c("BER", "NER", "MMR", "FA", "HR", "AEJ", "NHEJ")
 s4_input <- file.path(input_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
 s4_specs <- list(
   list(key = "normal_tissue", sheet = "NonTumorTissues", rows = 183L),
-  list(key = "cancer_tissue", sheet = "TumorTissues", rows = 178L),
+  list(key = "cancer_tissue", sheet = "TumorTissues", rows = 192L),
   list(key = "cancer_cells", sheet = "CancerCellLines", rows = 381L),
   list(key = "normal_cells", sheet = "NormalCellLines", rows = 292L)
 )
@@ -140,12 +140,12 @@ s2_path <- file.path(supplementary_dir, "Supplementary_Table_S2_Reference_Data.x
 s3_path <- file.path(supplementary_dir, "Supplementary_Table_S3_Human_DDR_GO_Annotations.xlsx")
 s4_path <- file.path(supplementary_dir, "Supplementary_Table_S4_Pathway_Protein_Ranking.xlsx")
 s5_path <- file.path(supplementary_dir, "Supplementary_Table_S5_Lactylation_Regulators.xlsx")
-kla_membership <- fread(file.path(input_dir, "kla_protein_membership_30.csv"))
-reference_membership <- fread(file.path(input_dir, "reference_protein_membership_30.csv"))
-assert(nrow(read_excel(s1_path, sheet = "Group_Summary")) == 30L, "S1 Group_Summary must have 30 rows.")
+kla_membership <- fread(file.path(input_dir, "kla_protein_membership_31.csv"))
+reference_membership <- fread(file.path(input_dir, "reference_protein_membership_31.csv"))
+assert(nrow(read_excel(s1_path, sheet = "Group_Summary")) == 31L, "S1 Group_Summary must have 30 rows.")
 assert(nrow(read_excel(s1_path, sheet = "Kla_Protein_Membership")) == nrow(kla_membership), "S1 Kla membership row count changed.")
 assert(nrow(read_excel(s1_path, sheet = "Kla_DDR_Membership")) == sum(is_true(kla_membership$IsDdr)), "S1 Kla-DDR membership row count changed.")
-assert(nrow(read_excel(s2_path, sheet = "Reference_Group_Summary")) == 30L, "S2 Reference_Group_Summary must have 30 rows.")
+assert(nrow(read_excel(s2_path, sheet = "Reference_Group_Summary")) == 31L, "S2 Reference_Group_Summary must have 30 rows.")
 assert(nrow(read_excel(s2_path, sheet = "Reference_Protein_Membership")) == nrow(reference_membership), "S2 reference membership row count changed.")
 assert(nrow(read_excel(s2_path, sheet = "Reference_DDR_Membership")) == sum(is_true(reference_membership$IsDdr)), "S2 reference DDR membership row count changed.")
 assert(nrow(read_excel(s3_path, sheet = "Human_DDR_GO_Annotations", col_types = "text")) == nrow(fread(file.path(input_dir, "human_ddr_go_annotations.tsv"), sep = "\t", quote = "")), "S3 GO annotation row count changed.")
@@ -168,4 +168,4 @@ for (analysis_name in names(venn_sources)) {
   assert(identical(as.integer(observed_regions$ProteinCount), as.integer(reconstructed)), paste("S6 region counts changed for", analysis_name))
 }
 
-message("PASS: exact 30-group scope, 399 BaseAccessions, four signed pathway panels, UpSet figures, and Tables S1-S6 only.")
+message("PASS: exact 31-group scope, 401 BaseAccessions, four signed pathway panels, UpSet figures, and Tables S1-S6 only.")

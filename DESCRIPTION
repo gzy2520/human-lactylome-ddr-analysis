@@ -1,6 +1,6 @@
 Package: klaPublicationAnalysis
 Type: Project
-Title: Frozen 30-Group Human Lactylome DDR Publication Analysis
+Title: Frozen 31-Group Human Lactylome DDR Publication Analysis
 Version: 1.0.0
 Authors@R: person("Project", "Team", role = c("aut", "cre"), email = "not-used@example.invalid")
 Description: Rebuilds only the manuscript figures and variable Supplementary

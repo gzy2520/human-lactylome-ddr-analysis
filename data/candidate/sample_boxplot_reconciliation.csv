@@ -8,6 +8,7 @@ RowOrder,PXD,SampleGroup,FrozenKlaProteinCount,FrozenKlaDdrProteinCount,FrozenKl
 7,PXD064912,human sperm,231,7,3.03030303030303,231,7,3,deposited_supplementary_table,TRUE,TRUE,PASS
 8,PXD066054,BPH,2118,142,6.70443814919736,2118,142,5,deposited_spectronaut_table,TRUE,TRUE,PASS
 9,PXD075377,adjacent liver,1775,113,6.36619718309859,1775,113,1,deposited_group_union,TRUE,TRUE,PASS
+10,PXD064038,MEC and NEC ESCC groups,1239,92,7.42534301856336,1239,92,6,deposited_sample_table,TRUE,TRUE,PASS
 11,PXD066054,prostate cancer,2125,143,6.72941176470588,2125,143,5,deposited_spectronaut_table,TRUE,TRUE,PASS
 12,PXD075377,HCC,1798,121,6.72969966629588,1798,121,1,deposited_group_union,TRUE,TRUE,PASS
 14,PXD060185,MCF7,1235,132,10.6882591093117,1235,132,1,deposited_sample_table,TRUE,TRUE,PASS

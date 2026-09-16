@@ -46,8 +46,8 @@ required_audit <- c(required_audit, unlist(lapply(denominators, function(label) 
   paste0("MKI67_over_", label), paste0("MKI67_over_", label, "_Status")
 ))))
 stop_if(all(required_audit %in% names(audit)), "The MKI67 ratio source audit schema is incomplete.")
-stop_if(nrow(audit) == 118L, "The source audit must contain the 118 whole-proteome observations.")
-stop_if(uniqueN(audit$ObsKey) == 118L, "The source audit observation keys are not unique.")
+stop_if(nrow(audit) == 212L, "The source audit must contain the 212 whole-proteome observations.")
+stop_if(uniqueN(audit$ObsKey) == 212L, "The source audit observation keys are not unique.")
 stop_if(all(audit$Dataset == "Whole proteome"), "The source audit contains a non-whole-proteome record.")
 stop_if(all(audit$Category %in% categories), "The source audit contains an unknown category.")
 stop_if(all(nzchar(trimws(audit$SourceFile))), "The source audit contains an empty source path.")
@@ -60,7 +60,7 @@ required_values <- c(
   "Denominator", "RatioLabel", "Ratio"
 )
 stop_if(all(required_values %in% names(values)), "The MKI67 ratio sample-value schema is incomplete.")
-stop_if(nrow(values) == 130L, "The MKI67 ratio sample-value table must contain 130 valid ratios.")
+stop_if(nrow(values) == 274L, "The MKI67 ratio sample-value table must contain 274 valid ratios.")
 stop_if(all(values$Dataset == "Whole proteome"), "The ratio sample-value table contains a non-whole-proteome record.")
 stop_if(all(values$Category %in% categories), "The ratio sample-value table contains an unknown category.")
 stop_if(all(values$Denominator %in% denominators), "The ratio sample-value table contains an unknown denominator.")
@@ -70,7 +70,7 @@ stop_if(uniqueN(values[, .(ObsKey, Denominator)]) == nrow(values),
 stop_if(all(values$RatioLabel == paste0("MKI67 / ", values$Denominator)),
   "The ratio labels do not match their denominator.")
 
-expected_n <- c(ACTB = 44L, TUBB = 51L, H3C1 = 35L)
+expected_n <- c(ACTB = 49L, TUBB = 145L, H3C1 = 80L)
 observed_n <- values[, .(N = .N), by = Denominator]
 stop_if(all(expected_n[observed_n$Denominator] == observed_n$N),
   "The valid MKI67 ratio counts changed.")

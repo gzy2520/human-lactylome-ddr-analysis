@@ -35,6 +35,20 @@ require_file <- function(file_path) {
   file_path
 }
 
+# The source registry mixes two conventions: most entries are relative to the PXD data root,
+# but the few added by the ESCC inclusion carry a leading "data/" and are relative to the
+# project root. Resolve both without disturbing the other consumers of that registry.
+resolve_source_file <- function(source_file) {
+  direct <- file.path(source_root, source_file)
+  if (file.exists(direct)) return(direct)
+  stripped <- sub("^data/", "", source_file)
+  if (!identical(stripped, source_file)) {
+    alternate <- file.path(source_root, stripped)
+    if (file.exists(alternate)) return(alternate)
+  }
+  stop(paste0("Required source file is missing: ", direct), call. = FALSE)
+}
+
 target_labels <- c("MKI67", "ACTB", "TUBB", "H3C1")
 target_accessions <- c(MKI67 = "P46013", ACTB = "P60709", TUBB = "P07437", H3C1 = "P68431")
 denominator_labels <- c("ACTB", "TUBB", "H3C1")
@@ -510,6 +524,23 @@ if (any(observations$SourceFile == source_file)) {
     "peptide count, not protein expression intensity",
     "source contains peptide counts only"
   ))
+}
+
+# PXD064038 / MEC and NEC ESCC groups: its whole-proteome side is the external PXD065830
+# ESCC tumour matrix, one column per ESCC-T sample, matched by sample identifier. The
+# lactylome side of this group carries no MKI67 measurement at all - P46013 is absent from
+# its La(K)Sites table - so only the whole-proteome observations are resolved here.
+source_file <- "data/PXD065830/supplementary/Dataset1.xlsx"
+if (any(observations$SourceFile == source_file)) {
+  file_path <- resolve_source_file(source_file)
+  data <- as.data.table(read_excel(file_path, sheet = "2.a protein raw information",
+                                   skip = 1L, col_types = "text"))
+  columns <- make_suffix_column_map(
+    observations[SourceFile == source_file, SampleID], names(data),
+    function(sample_id) sample_id
+  )
+  add_source_table(source_file, SourceFile == source_file, data, choose_accession_column(data), columns,
+    "PXD065830 ESCC-T protein matrix", "value", "identity")
 }
 
 parsed <- rbindlist(parsed_values, fill = TRUE)

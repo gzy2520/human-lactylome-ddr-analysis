@@ -1,0 +1,9 @@
+metric,value
+panel_accessions,2795
+mapped_to_ensembl_gene,2088
+unambiguous_gene_mapping,2009
+multi_gene_mapping,79
+no_ensembl_gene,707
+routes_agree,879
+routes_disagree,3
+route2_unavailable,1206

@@ -1,0 +1,12 @@
+genes,17340
+reference_matrices,28
+group_rows,31
+samples_total,1898
+weight_A_median,0.0000
+weight_A_min,0.0000
+weight_A_max,1.0000
+AB_mean_abs_delta,0.19114
+AB_median_abs_delta,0.21498
+AB_p99_abs_delta,0.27455
+AB_genes_delta_gt_0.5,0
+AB_median_gene_correlation,0.9898

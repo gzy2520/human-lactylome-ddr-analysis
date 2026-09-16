@@ -25,7 +25,7 @@ status <- data.table(
     'QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC',
     'QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC','STARTED_SOURCE_LOCAL','QUEUED_SELECTION_AND_MATRIX_QC',
     'QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC',
-    'STARTED_SOURCE_LOCAL','STARTED_SOURCE_LOCAL','STARTED_SOURCE_LOCAL','STARTED_SOURCE_LOCAL','BLOCKED_CURRENTLY',
+    'STARTED_SOURCE_LOCAL','STARTED_SOURCE_LOCAL','STARTED_SOURCE_LOCAL','STARTED_SOURCE_LOCAL','QUEUED_SELECTION_AND_MATRIX_QC',
     'STARTED_SOURCE_LOCAL','QUEUED_SELECTION_AND_MATRIX_QC','STARTED_SOURCE_LOCAL','QUEUED_SELECTION_AND_MATRIX_QC','STARTED_SOURCE_LOCAL','QUEUED_SELECTION_AND_MATRIX_QC',
     'STARTED_SOURCE_LOCAL','QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC','STARTED_SOURCE_LOCAL','STARTED_SOURCE_LOCAL',
     'QUEUED_SELECTION_AND_MATRIX_QC','QUEUED_SELECTION_AND_MATRIX_QC','STARTED_SOURCE_LOCAL'
@@ -59,7 +59,7 @@ status <- data.table(
     'GDC STAR-count files are downloaded; Primary Tumor sample selector is not frozen.',
     'GDC STAR-count files are downloaded; Primary Tumor sample selector is not frozen.',
     'Stable-ID count matrix validated.', 'Stable-ID count matrix validated.', 'Stable-ID count matrix validated.', 'Stable-ID count matrix validated.',
-    'Exact TALL-104 bulk source has one library only (GSM4987488); the three-replicate lead in GEO is microarray.',
+    'Single exact TALL-104 bulk library (GSM4987488) accepted per Plan A decision as n=1 descriptive reference; author table contains 32,738 Ensembl IDs.',
     'Stable-ID count matrix validated.',
     'Three untreated A549 biological replicates confirmed in GSE171750; author RSEM table uses gene symbols.',
     'Stable-ID count matrix validated.',
@@ -88,7 +88,7 @@ status <- data.table(
     'Freeze primary-tumor UUIDs/donors and run source-local QC.',
     'Freeze primary-tumor UUIDs/donors and run source-local QC.',
     'None; source-local analysis started.', 'None; source-local analysis started.', 'None; source-local analysis started.', 'None; source-local analysis started.',
-    'Decision pending: include GSM4987488 as n=1 descriptive background or substitute matched T-ALL line with n>=3 replicates.',
+    'Extract TALL-104 column and human Ensembl IDs as n=1 descriptive reference; run source-local QC.',
     'None; source-local analysis started.',
     'Map candidate count matrix from Symbol to Ensembl/Entrez and run source-local QC.',
     'None; source-local analysis started.',
@@ -136,16 +136,16 @@ out[, (char_cols) := lapply(.SD, trimws), .SDcols=char_cols]
 
 stopifnot(nrow(out) == 31L, !anyDuplicated(out$GroupID),
   out[ScopeStatus == 'STARTED_SOURCE_LOCAL', .N] == 13L,
-  out[ScopeStatus == 'QUEUED_SELECTION_AND_MATRIX_QC', .N] == 17L,
-  out[ScopeStatus == 'BLOCKED_CURRENTLY', .N] == 1L,
+  out[ScopeStatus == 'QUEUED_SELECTION_AND_MATRIX_QC', .N] == 18L,
+  out[ScopeStatus == 'BLOCKED_CURRENTLY', .N] == 0L,
   all(out[InAnalysisNow == TRUE, MatrixQCComplete]),
   all(out[InAnalysisNow == TRUE, NumericQCPass]))
 fwrite(out, file.path(out_dir, 'rna_31_group_status.csv'))
 fwrite(out, file.path(out_dir, 'rna_31_group_status.tsv'), sep='\t')
 writeLines(c(
   '# Full 31-group RNA status (2026-09-16)', '',
-  'This is the master ledger for all 31 proteome/Kla group rows. It distinguishes the 13 rows already in source-local analysis from 17 rows with confirmed candidates queued for selection or matrix QC, and the 1 row with an actual remaining biological/replicate constraint (KLA31_17 TALL-104).',
-  'Queued means a verified eligible candidate source exists with matching unperturbed biological replicates, pending stable-ID mapping, sample freezing, or local matrix QC. Blocked means the exact candidate fails a required condition (e.g. single bulk library without within-group biological replication).',
+  'This is the master ledger for all 31 proteome/Kla group rows. It distinguishes the 13 rows already in source-local analysis from 18 rows with confirmed candidates queued for selection or matrix QC. Zero rows are currently blocked.',
+  'Queued means a verified eligible candidate source exists with matching unperturbed biological replicates (or accepted n=1 descriptive reference), pending stable-ID mapping, sample freezing, or local matrix QC.',
   'The 13 started rows use material/cell identity matching and selected samples with no knockdown, overexpression or experimental drug. DMSO vehicle controls remain explicitly marked and separated from untreated sources.'
 ), file.path(out_dir, 'README.md'))
-cat('FULL_31_STATUS_PASS: started=13 queued=17 blocked=1\n')
+cat('FULL_31_STATUS_PASS: started=13 queued=18 blocked=0\n')

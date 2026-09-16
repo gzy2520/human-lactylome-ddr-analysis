@@ -4,6 +4,8 @@ Latest resolution: [replicate replacement report](../audit/20260915_replicate_re
 
 **2026-09-16 analysis scope**: the user confirmed that material/cell identity is the primary matching criterion and selected RNA samples must have no knockdown, overexpression or experimental drug. The confirmed source-local list is [here](../audit/20260916_confirmed_rna_list/confirmed_source_local_rna_list.csv): 10 source matrices for 13 catalog rows, all with at least three samples. DMSO vehicle controls are labelled and analysed separately from untreated samples. Source-local `log2(CPM + 0.5)` QC/summary analysis is in `outputs/20260916_source_local_rna_analysis`; raw values from distinct studies remain unmerged.
 
+The 13-row list is an analysis subset, not the full catalog. The mandatory 31-row master ledger is [here](../audit/20260916_full_31_rna_status/rna_31_group_status.csv): 13 started rows, 13 queued rows with a candidate file/source but unfinished selection or matrix QC, and 5 currently blocked rows with a concrete replication, stable-ID, or material-identity gap.
+
 Teacher review now governs inclusion: see [review](../audit/20260915_teacher_review/REPORT.md) and `config/rnaseq_teacher_review_gate_20260915.csv`. Existing matrix QC is technical preparation only. DepMap model profiles and the two ENCODE files do not satisfy the preferred three-independent-replicate primary analysis criterion. Old GSE269418 HK-2 references are excluded from the primary candidate pending replacement validation.
 
 Server root: `/home/user/gzy/kla31-rnaseq-20260914`.

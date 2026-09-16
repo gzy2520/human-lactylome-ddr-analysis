@@ -1,0 +1,11 @@
+ReferenceKey,GroupIDs,AnatomicalOrCellIdentityMatch,SelectedSamplePerturbation,VehicleExposure,NoDrugOrGeneticPerturbation,MatrixN,StableID,IncludeSourceLocalAnalysis,Rationale
+tendon_nondiabetic,KLA31_01,TRUE,none,FALSE,TRUE,3,Entrez,TRUE,Nondiabetic torn rotator-cuff tendon matches the pathological tendon material class.
+sperm_GroupI,KLA31_07,TRUE,none,FALSE,TRUE,4,Entrez,TRUE,Human sperm reference; selected source samples have no experimental perturbation.
+MCF7_DMSO7d,KLA31_13,TRUE,vehicle only,TRUE,TRUE,3,Entrez,TRUE,"MCF7 identity matches; selected samples are DMSO vehicle controls, with no drug or genetic perturbation."
+HCT116_control,KLA31_14;KLA31_15;KLA31_16,TRUE,none,FALSE,TRUE,3,Ensembl,TRUE,"HCT116 WT control samples; the selected samples have no FSTL3 exposure, co-culture, drug or genetic perturbation."
+HepG2_DMSO24h,KLA31_18,TRUE,vehicle only,TRUE,TRUE,3,Entrez,TRUE,"HepG2 identity matches; selected samples are DMSO vehicle controls, with no JQ1/OTX or genetic perturbation."
+MDAMB468_DMSO7d,KLA31_20,TRUE,vehicle only,TRUE,TRUE,3,Entrez,TRUE,"MDA-MB-468 identity matches; selected samples are DMSO vehicle controls, with no abemaciclib or genetic perturbation."
+PC3M_DMSO,KLA31_22,TRUE,vehicle only,TRUE,TRUE,3,Entrez,TRUE,"PC-3M identity matches; selected samples are DMSO vehicle controls, with no KMI169 treatment."
+RKO_DMSO,KLA31_24,TRUE,vehicle only,TRUE,TRUE,3,Ensembl,TRUE,"RKO identity matches; selected samples are DMSO vehicle controls, with no EZA or genetic perturbation."
+HK2_untreated,KLA31_27;KLA31_28,TRUE,none,FALSE,TRUE,3,Entrez,TRUE,"HK-2 identity matches; selected WT samples are untreated, not TGF-beta1 treated."
+HUVEC_untreated,KLA31_31,TRUE,none,FALSE,TRUE,4,Entrez,TRUE,HUVEC identity matches; selected passage-3 donor samples are unstimulated and untreated.

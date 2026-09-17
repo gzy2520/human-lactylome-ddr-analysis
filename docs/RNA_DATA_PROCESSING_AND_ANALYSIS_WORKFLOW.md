@@ -36,7 +36,7 @@
 ### 1.2 核心分析约束与生信规范
 - **严禁使用 Gene Symbol 进行分析**：Gene Symbol 存在别名混淆、版本退役和命名漂移风险；全流程以不可变的 **Ensembl Gene ID**（`ENSG...`，GRCh38 / Ensembl v111）和 UniProt **BaseAccession** 为唯一主键，Symbol 仅用于最终展示。
 - **固定随机种子**：涉及所有随机化、抖动采样及数值计算，严格固定随机种子为 `25`（项目统一标识）。
-- **材料类别参考谱属性（Reference Profile）**：31 组 RNA-seq 数据来自公开发表的权威高质量队列（GTEx、TCGA、DepMap、GEO、ENCODE），与项目中的 Kla 质谱样品为**材料类别级匹配**，而非同受试者严格配对。因此，所有跨组学比较均在类别尺度（Material Class）进行，绝不伪造配对检验。
+- **材料类别参考谱属性（Reference Profile）**：31 组 RNA-seq 数据来自公开发表的权威高质量队列（GEO 18 组、GTEx v8 2 组、TCGA/GDC 4 组、recount3 1 组），与项目中的 Kla 质谱样品为**材料类别级匹配**，而非同受试者严格配对。因此，所有跨组学比较均在类别尺度（Material Class）进行，绝不伪造配对检验。
 - **版本控制与目录隔离**：脚本受 Git 严密追踪；代码与输出目录完全隔离，避免历史错误数据污染。
 
 ---
@@ -53,7 +53,7 @@
 │   ├── KLA31_03: 增生性瘢痕组织 (GSE181540)
 │   ├── KLA31_04: 瘢痕邻近未受损皮肤 (GSE181540)
 │   ├── KLA31_05: 人海马脑区 (GTEx v8)
-│   ├── KLA31_06: 正常足月妊娠胎盘 (GSE114691)
+│   ├── KLA31_06: 正常妊娠胎盘 (GSE114691；GEO 无孕周字段，未做足月筛选)
 │   ├── KLA31_07: 人精子 (GSE65683)
 │   ├── KLA31_08: 良性前列腺增生 BPH (GSE132714)
 │   └── KLA31_09: 癌旁正常肝组织 (TCGA-LIHC Solid Tissue Normal)
@@ -82,6 +82,8 @@
 ```
 
 > [!IMPORTANT]
+> **关于括号中的 `DepMap ACH-*`**：这是**蛋白组侧**用于锁定细胞系身份的模型编号，**不是 RNA 来源**；本流程的 RNA 全部来自 GSE / GTEx / TCGA / recount3。
+>
 > **共享参照显式追踪**：  
 > 三个 HCT116 组（KLA31_14/15/16）以及两个 HK-2 组（KLA31_27/28）分别共享同一份转录组基线，因此实际包含 **28 个独立参考矩阵**。在下游归一化及膨胀至 31 组时，通过 [`outputs/20260916_qsmooth_31group/group_expansion_31.csv`](../outputs/20260916_qsmooth_31group/group_expansion_31.csv) 显式记录 `ReferenceKey`，杜绝重复计算伪自由度。
 
@@ -136,7 +138,7 @@ flowchart TD
 | **GEO 单一 Ensembl Counts** (`h_single_ensembl_counts`) | KLA31_14/15/16 (HCT116)<br>KLA31_24 (RKO) | 各 3 | 作者 raw counts 矩阵 | 去除版本后缀（如 `.15`），通过 `rowsum` 对相同无版本 ENSG 进行折叠合并。 |
 | **GEO 作者 Symbol Counts** (`h_single_symbol_counts`) | KLA31_19 (A549)<br>KLA31_21 (T-47D) | 各 3 ~ 4 | GSE171750 RSEM counts<br>GSE283812 raw counts | 仅在原作者未提供稳定 ID 时调用。经 NCBI 官方 `gene_info` 严格单射过滤为 Entrez，再映射至 ENSG，杜绝直接使用 Symbol（详见 3.3 节）。 |
 | **GEO RSEM 分数型计数** (`h_rsem_per_sample`) | KLA31_25 (HEK293T 未处理) | 3 | `GSE203529_RAW.tar` 内单样本 RSEM 文件 | 从 tar 归档提取解压，读取 `expected_count`（EM 算法估计的分数型计数值），基于全集外显子并集长度换算 TPM。 |
-| **GEO FPKM / RPKM** (`h_per_sample_rpkm`, `h_xlsx_fpkm`, `h_single_ensembl_fpkm`) | KLA31_03/04 (瘢痕及皮肤)<br>KLA31_08 (BPH)<br>KLA31_17 (TALL-104) | 1 ~ 18 | 压缩包单样本 RPKM (BPH)<br>Excel 工作簿 (GSE181540)<br>作者 CSV (GSE163787) | 1. 对 GSE181540，由 Python `openpyxl` 流式导出 TSV；<br>2. 对 BPH，解压 tar.gz 提取 18 例 transition-zone 样本 RPKM 并取共有基因；<br>3. 全部基于统一 Ensembl 111 长度标尺再归一化为 TPM。 |
+| **GEO FPKM / RPKM** (`h_per_sample_rpkm`, `h_xlsx_fpkm`, `h_single_ensembl_fpkm`) | KLA31_03/04 (瘢痕及皮肤)<br>KLA31_08 (BPH)<br>KLA31_17 (TALL-104) | 1 ~ 18 | 压缩包单样本 RPKM (BPH)<br>Excel 工作簿 (GSE181540)<br>作者 CSV (GSE163787) | 1. 对 GSE181540，因服务器无 `openpyxl`/`pandas`，由 Python 标准库 `zipfile` + `ElementTree` 直接解析 xlsx 导出 TSV；<br>2. 对 BPH，解压 tar.gz 提取 18 例 transition-zone 样本 RPKM 并取共有基因；<br>3. 全部基于统一 Ensembl 111 长度标尺再归一化为 TPM。 |
 
 ---
 
@@ -160,7 +162,7 @@ flowchart TD
      }
      END { if (g != "") print g"\t"len }
      ```
-  4. 生成 [`metadata/annotation/human_gene_lengths_ensembl111.tsv`](../metadata/annotation/human_gene_lengths_ensembl111.tsv)（包含 61,000+ 个 Ensembl 基因的物理非重叠外显子总长度，单位 bp）。
+  4. 生成 [`metadata/annotation/human_gene_lengths_ensembl111.tsv`](../metadata/annotation/human_gene_lengths_ensembl111.tsv)（包含 63,241 个 Ensembl 基因的物理非重叠外显子总长度，单位 bp）。
 - **唯一物理基准地位**：全套 31 组数据中所有涉及“从 Counts 算 TPM”或“从 FPKM/RPKM 重算 TPM”的步骤，**全部且唯一使用该表**，彻底抹平了不同作者、不同历史版本 GTF 带来的基因长度系统偏差。
 
 ---
@@ -233,13 +235,13 @@ $$Y_{g,s} = \log_2(\text{TPM}_{g,s} + 0.5)$$
 
 1. **核心 QC 指标体系**：
    - **`LibrarySize`**：文库测序深度总读数（GTEx 与 TCGA 中位深度 $> 5 \times 10^7$ reads）；
-   - **`GenesDetected`**：有效检出基因数（Counts > 0 基因数通常在 25,000 ~ 38,000）；
-   - **`ZeroFraction`**：零表达基因比例（通常在 35% ~ 50% 之间，过高则提示测序深度不足）；
+   - **`GenesDetected`**：有效检出基因数（实测跨度较大，13,564 ~ 55,681：GTEx/TCGA 深层队列偏高，单细胞系与小样本队列偏低）；
+   - **`ZeroFraction`**：零表达基因比例（实测 8.1% ~ 64.9%）；
    - **`TPMTotal`**：总 TPM 校验（严格等于 $1.0 \times 10^6$，确保代数正确）。
 2. **组内生物学重复一致性检验（Spearman Correlation）**：
    - 为避免全基因集中数万个零表达基因虚假拉高相关系数，QC 算法先筛选出在组内至少半数样本中 $\text{TPM} \ge 1.0$ 的稳健表达基因集（通常为 12,000 ~ 15,000 基因）；
    - 在该子集上计算组内所有生物学重复样本的两两 Spearman 秩相关系数矩阵（$r_s$），提取极小值 `PairwiseSpearmanMin` 与极大值 `PairwiseSpearmanMax`；
-   - **检验结果**：所有细胞系与同质材料组的生物学重复 $r_s$ 均 $> 0.95$（如 MCF10A 为 0.970 ~ 0.972，HMC3 为 0.965 ~ 0.981）；即使是具有一定供体异质性的 GSE114691 胎盘队列（21 例独立供体），两两相关系数极小值也达到 **0.889**（极大值 0.968），证实全部纳入样本具备高度可靠的生物学可重复性。
+   - **检验结果（实测）**：组内重复一致性呈明显的来源依赖性。技术重复型细胞系极高（MCF10A **0.970 ~ 0.972**，HMC3 **0.986 ~ 0.988**）；而供体异质的临床队列自然偏低——**28 组中有 14 组极小值低于 0.95**，最低为 BPH 0.34、TCGA-PRAD 0.35、TCGA-LIHC 原发 0.44、NSC 0.52、ESCC 0.58、海马 0.59、精子 0.60、肺 0.70。**该指标反映材料本身的生物学异质性（不同供体、不同个体），不是数据质量缺陷**；样本可用性应以 `LibrarySize`、`ZeroFraction` 与 `TPMTotal` 为准，相关系数仅作来源特性描述。
 3. **输出的标准化审计资产**（存放于 [`outputs/20260916_expression_extraction/`](../outputs/20260916_expression_extraction/)）：
    - `group_manifest.csv`：28 个独立参考组的完整元数据、源文件 MD5、提取路由与基因/样本统计；
    - `group_sample_qc.csv`：全量 1,898 个独立测序样本的单样本 QC 明细；
@@ -293,7 +295,7 @@ $$Y_{g,s} = \log_2(\text{TPM}_{g,s} + 0.5)$$
 - 未归类 DDR 相关（**unassigned**, 115 基因）
 
 > [!NOTE]
-> **关键逻辑修正**：S4 注释表中的方向状态包括 `+1`（上调促活）、`-1`（下调抑制）和 `0`（未判定方向性）。早期代码错误将 `0` 判定为非成员，导致基因错误坍缩至单一通路。现已严格修正为包含全部有效成员。
+> **关键逻辑修正**：S4 注释表中的方向状态包括 `+1`（上调促活）、`-1`（下调抑制）和 `0`（**未判定方向性，不代表该蛋白不属于此通路**）。早期代码的成员判据只排除了空字符串，因而**把 `0` 也当成了成员**，导致每个基因同时匹配全部 8 条通路、按顺序坍缩到第一条（BER），热图只剩单个分面。现已修正为要求状态为 `+1` 或 `-1` 才算该通路成员。
 
 ---
 
@@ -342,6 +344,8 @@ $$Y_{g,s} = \log_2(\text{TPM}_{g,s} + 0.5)$$
 ---
 
 ## 8. 目录文件结构对照
+
+> **注意**：`metadata/annotation/` 下的三个注释标尺文件是**服务器端产物**（`/home/user/gzy/kla31-rnaseq-20260914/metadata/annotation/`），不在本地仓库中；Stage 0 脚本需在服务器上运行才能重建。
 
 ```
 .

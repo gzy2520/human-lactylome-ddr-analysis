@@ -302,38 +302,43 @@ $$Y_{g,s} = \log_2(\text{TPM}_{g,s} + 0.5)$$
 
 ## 6. 分析内容与结果
 
-### 6.1 每个（材料 × DDR 蛋白）对的检出状态分解（11,067 对）
+### 6.1 三个来源在每一个（材料 × DDR 蛋白）对上的联合状态（11,067 对）
 
-对 31 个材料类别 × 357 个 DDR 基因构成的 **11,067 个观测对**，分别记录乳酰化组（Kla）与**配对的未富集全蛋白参照组**（Ref）是否检出，得到如下 2×2：
+每个观测对同时有三个来源的测量：**乳酰化组（Kla）**、**配对的未富集全蛋白参照组（Ref）**、**该基因的转录本水平（RNA）**。三者联合分布如下：
 
-| Kla \ Ref | Ref+（全蛋白检出） | Ref− |
+| Kla | Ref | 转录本 | 对数 | 占比 |
+|---|---|---|---|---|
+| + | + | 高于组内中位 | 1,749 | 15.8% |
+| + | + | 低于组内中位 | 849 | 7.7% |
+| + | − | 高于组内中位 | 182 | 1.6% |
+| + | − | 低于组内中位 | 305 | 2.8% |
+| − | + | 高于组内中位 | 2,319 | 21.0% |
+| − | + | 低于组内中位 | 1,553 | 14.0% |
+| − | − | 高于组内中位 | 1,299 | 11.7% |
+| − | − | 低于组内中位 | 2,811 | 25.4% |
+| | | **合计** | **11,067** | **100%** |
+
+### 6.2 以转录本水平为主线看两套质谱的检出率
+
+| 转录本水平 | 对数 | 全蛋白组（Ref）检出率 | 乳酰化组（Kla）检出率 |
+|---|---|---|---|
+| 高于组内中位 | 5,549 | **73.3%** | **34.8%** |
+| 低于组内中位 | 5,518 | **43.5%** | **20.9%** |
+
+转录本水平高低与两套质谱的检出率同向：转录本高时，全蛋白组检出率 73.3%、乳酰化组 34.8%；转录本低时分别降至 43.5% 与 20.9%。两个来源的检出率在任何一档都保持约 2 倍的差距。
+
+各联合状态对应的转录本水平中位数：
+
+| 状态 | 对数 | $\log_2(\text{TPM}+0.5)$ 中位数 |
 |---|---|---|
-| **Kla+** | 2,598 | 487 |
-| **Kla−** | **3,872** | **4,110** |
-
-**说明各轴各自提供了什么：**
-
-- 左下格 **3,872 对**（蛋白在全蛋白参照组中检出、但不在乳酰化组中）**完全由蛋白质组自身给出**，不需要转录组——全蛋白对照组已经证明蛋白存在。这正是项目原有的"Kla 分数 vs 参考分数"比较所依据的信息。
-- 转录组的信息**只体现在右下格**（Kla−/Ref−，两套质谱均未检出，4,110 对）。该格按转录本水平进一步拆分：
-
-| Kla−/Ref− 内按转录本拆分 | 对数 | 占比 |
-|---|---|---|
-| 转录本低于组内中位数 | 2,811 | 68.4% |
-| 转录本高于组内中位数 | 1,299 | 31.6% |
-
-即：两套质谱都没检出这一格中，约三分之二可归因于转录本本身偏低（蛋白很可能确实不存在），约三分之一转录本并不低而两套质谱都未捕获。
+| Kla+ / Ref+ | 2,598 | 5.14 |
+| Kla− / Ref+ | 3,872 | 4.56 |
+| Kla+ / Ref− | 487 | 4.09 |
+| Kla− / Ref− | 4,110 | 3.53 |
 
 > [!NOTE]
-> **结论范围**：以上为检出状态的**描述性分解**。它说明转录组可用于**解释缺失来源**（区分"确实没有"与"未被捕获"），本流程不对乳酰化选择性作因果或机制推断。
-
-### 6.2 三种检出状态对应的表达水平
-
-- Kla+ / Ref+：$\log_2(\text{TPM} + 0.5)$ 中位数 **5.14**
-- Kla− / Ref+：中位数 **4.56**
-- Kla+ / Ref−：中位数 **4.09**
-- Kla− / Ref−：中位数 **3.53**
-
-表达水平与检出状态呈同向梯度：两套质谱都检出的组合表达最高，都没检出的表达最低。此为描述性观察，未作统计检验。
+> 以上为**检出状态与表达水平的联合描述**，未作统计检验，也不对乳酰化选择性作机制推断。
+> 关于"哪个来源提供了什么"的说明见 1.1 节：`Kla−/Ref+`（蛋白在全蛋白组检出、未在乳酰化组检出）这一状态由蛋白质组自身即可判定，转录组补充的是 `Kla−/Ref−`（两套质谱均未检出）内部"转录本本身偏低"与"转录本不低但未被捕获"的区分。
 
 ### 6.3 阴性对照：基于计数的"超额乳酰化率"受质谱深度主导
 
@@ -344,74 +349,3 @@ $$Y_{g,s} = \log_2(\text{TPM}_{g,s} + 0.5)$$
 
 **记录**：该指标不成立，不作为分析结论使用（见 [`outputs/20260917_rna_assisted_ddr/validity_vs_depth.csv`](../outputs/20260917_rna_assisted_ddr/validity_vs_depth.csv)）。项目原有的**比值型**指标（`KlaDdrFraction`、`DdrFractionPercentagePointDifference`）经同一检验不受深度显著影响（$\rho$ 0.19 ~ 0.22，$p$ 0.24 ~ 0.31），比率自带归一化。
 
-## 7. 出版级图表成果汇总
-
-全部图表均采用顶刊（Nature/Cell 风格）标准重构，支持系统矢量字体（Arial Unicode MS），并输出 300 DPI PNG 与 cairo-PDF：
-
-| 图表编号 | 图像文件 | 尺寸 (in) | 核心内容与视觉重构亮点 |
-|---|---|---|---|
-| **RNA_1** | [`RNA_1_DDR_panel_expression_31groups.png`](../results/rna_reference_31group/RNA_1_DDR_panel_expression_31groups.png) | 11.0 × 13.5 | **357 DDR 基因 × 31 组材料表达热图**。<br>• 顶部集成四大生物类别彩色 Banner（n=9, n=3, n=12, n=7）；<br>• 左侧 8 大 DDR 通路采用独立科研色标分面；<br>• 31 列标注生物学材料名称（如 Tendon, Lung, ESCC, HCC）；<br>• 9 阶高对比度 RdBu 渐变。 |
-| **RNA_2a** | [`RNA_2a_non_detection_meaning.png`](../results/rna_reference_31group/RNA_2a_non_detection_meaning.png) | 6.8 × 5.0 | **乳酰化未检出状态分解柱状图**。<br>• 柱顶标明精确对数，柱内嵌白色百分比；<br>• 突出标注 21.0%“表达翻译但未乳酰化”的核心生物学特异性。 |
-| **RNA_2b** | [`RNA_2b_expression_by_detection_state.png`](../results/rna_reference_31group/RNA_2b_expression_by_detection_state.png) | 6.8 × 5.0 | **检出状态对应的表达密度曲线**。<br>• 柔和半透明填充配合清晰轮廓线；<br>• 虚线标示三状态真实中位数（4.94 vs 4.56 vs 3.53）；<br>• 右上角卡片化图例。 |
-| **RNA_2** | [`RNA_2_lactylome_transcriptome_coupling.png`](../results/rna_reference_31group/RNA_2_lactylome_transcriptome_coupling.png) | 12.8 × 5.2 | **主刊级 2a + 2b 组合复合图**。<br>• Nature 风格加粗 A/B 标签，直接用于论文正文或扩展数据展示。 |
-
----
-
-## 8. 目录文件结构对照
-
-> **注意**：`metadata/annotation/` 下的三个注释标尺文件是**服务器端产物**（`/home/user/gzy/kla31-rnaseq-20260914/metadata/annotation/`），不在本地仓库中；Stage 0 脚本需在服务器上运行才能重建。
-
-```
-.
-├── metadata/
-│   └── annotation/
-│       ├── human_gene_lengths_ensembl111.tsv     # Stage 0: 统一外显子并集非重叠基因长度标尺 (bp)
-│       ├── human_grch37_transcript_to_gene.tsv   # Stage 0: GSE114691 胎盘跨组装转录本映射表
-│       └── human_symbol_to_entrez.tsv            # Stage 0: 官方 Symbol 至 Entrez 严格单射字典
-├── audit/
-│   ├── 20260916_full_31_rna_status/
-│   │   └── rna_31_group_status.csv               # 31 组 RNA 样本元数据与审计底册
-│   ├── 20260916_expression_matrices/
-│   │   ├── group_manifest.csv                    # 28 组原始提取元数据与 MD5 校验
-│   │   ├── group_sample_qc.csv                   # 1,898 个测序样本单样本 QC 明细
-│   │   └── group_gene_summary.csv                # 各组基因平均表达与检出率统计
-│   └── 20260917_rna_assisted_ddr/
-│       ├── absence_decomposition.csv             # 四状态频数与比例
-│       ├── expression_threshold_sweep.csv        # TPM 绝对阈值扫描
-│       ├── within_group_percentile_sweep.csv     # 组内分位数扫描
-│       └── validity_vs_depth.csv                 # 质谱深度混杂阴性对照
-├── outputs/
-│   ├── 20260916_expression_extraction/
-│   │   ├── matrices/                             # 28 组单组 log2tpm 与 counts 压缩矩阵
-│   │   └── group_manifest.csv / group_sample_qc.csv
-│   ├── 20260916_qsmooth_31group/
-│   │   ├── matrices/
-│   │   │   └── qsmooth_A_collapsed_log2tpm.tsv.gz # 归一化后 17,340 × 28 参考表达矩阵
-│   │   └── group_expansion_31.csv                # 28 矩阵向 31 组的显式扩展映射
-│   ├── 20260916_ddr_panel_31group/
-│   │   ├── kla_ddr_annotation.csv                # DDR 八通路与 GO 注释表
-│   │   └── kla_ddr_expression_31groups.tsv.gz    # 377 个 DDR 蛋白对应表达子矩阵
-│   └── 20260917_rna_assisted_ddr/
-│       └── group_by_protein_pairs.tsv.gz         # 11,067 组对详细判定底表
-├── results/
-│   └── rna_reference_31group/                    # 出版级最终图表与数据包
-│       ├── RNA_1_DDR_panel_expression_31groups.png / .pdf
-│       ├── RNA_2a_non_detection_meaning.png / .pdf
-│       ├── RNA_2b_expression_by_detection_state.png / .pdf
-│       ├── RNA_2_lactylome_transcriptome_coupling.png / .pdf
-│       ├── RNA_1_ddr_panel_genes.csv
-│       ├── RNA_2_non_detection_counts.csv
-│       ├── README.md
-│       └── sessionInfo.txt
-└── workflow/
-    ├── server_prepare_gene_annotation_20260916.sh    # Stage 0: 外显子并集长度计算
-    ├── server_prepare_grch37_transcript_map_20260916.sh # Stage 0: GRCh37 转录本映射生成
-    ├── lib_kla31_expression_20260916.R           # Stage 2: 矩阵提取、换算与 QC 辅助库
-    ├── build_31_expression_matrices_20260916.R   # Stage 2: 31 组多源矩阵提取主脚本
-    ├── finalize_31_expression_matrices_20260916.R # Stage 3: 提取底册与元数据汇总
-    ├── qsmooth_31group_20260916.R                # Stage 4: qsmooth 跨组织归一化
-    ├── map_ddr_uniprot_to_ensembl_20260916.py    # Stage 5: UniProt-Ensembl 双向映射
-    ├── overlay_ddr_panel_20260916.py             # Stage 5: DDR 八通路面板覆盖
-    ├── explore_rna_assisted_ddr_20260917.R       # Stage 6: 四状态分解与生物学解析
-    └── plot_rna_reference_31group_20260917.R     # Stage 7: 出版级图表绘制脚本
-```

@@ -72,10 +72,29 @@ def main(out_dir, idmap_path, gene2ensembl_path):
             if acc:
                 panel.setdefault(acc, set()).add("DdrGoUniverse")
 
+    # lactylation writer / eraser / reader enzymes. These are not DDR proteins, so they are
+    # not in the DDR sets, but the regulator expression panel needs them mapped the same way.
+    reg_path = os.path.join(ROOT, "data/publication_input", "regulator_kla_percentiles_31.csv")
+    with open(reg_path, newline="", encoding="utf-8-sig") as fh:
+        for row in csv.DictReader(fh):
+            acc = (row.get("RegulatorBaseAccession") or "").strip()
+            if acc:
+                panel.setdefault(acc, set()).add("LactylationRegulator")
+
+    # every lactylated protein, for the "genes behind the lactylated proteins" question
+    with open(os.path.join(ROOT, "data/publication_input/venn_all_kla.csv"),
+              newline="", encoding="utf-8-sig") as fh:
+        for row in csv.DictReader(fh):
+            acc = (row.get("BaseAccession") or "").strip()
+            if acc:
+                panel.setdefault(acc, set()).add("KlaUnion")
+
     ids = set(panel)
     n_go = sum(1 for a in panel if "DdrGoUniverse" in panel[a])
+    n_reg = sum(1 for a in panel if "LactylationRegulator" in panel[a])
     print(f"accessions to map: {len(ids)} "
-          f"(Kla n DDR {len(kla)}, reference DDR {len(ref)}, GO universe {n_go})")
+          f"(Kla n DDR {len(kla)}, reference DDR {len(ref)}, GO universe {n_go}, "
+          f"lactylation regulators {n_reg}, Kla union {sum(1 for a in panel if 'KlaUnion' in panel[a])})")
 
     hits = {acc: {"gene": set(), "protein": set(), "entrez": set()} for acc in ids}
     with gzip.open(idmap_path, "rt", encoding="utf-8") as fh:

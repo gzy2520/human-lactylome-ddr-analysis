@@ -9,7 +9,7 @@
 #   RNA_1   DDR-panel expression across the 31 material classes, faceted by DDR pathway,
 #           with biological category header tracks and material labels.
 #   RNA_2a  Decomposition of lactylome non-detection (11,067 pairs):
-#           distinguishing non-expression from unlactylated baseline (21.0%).
+#           proteome-only 2x2, with the RNA split confined to the cell both assays missed.
 #   RNA_2b  Transcript expression distribution behind each detection state with medians.
 #   RNA_2   Unified publication-ready composite panel combining 2a and 2b.
 #
@@ -235,65 +235,71 @@ ggsave(file.path(out_dir, "RNA_1_DDR_panel_expression_31groups.pdf"), g, width =
 
 ## ---- RNA_2: what non-detection means -------------------------------------
 
-status <- pairs[, .(Status = fifelse(KlaDetected, "Captured as Kla",
-                              fifelse(RefDetected & ExprPct > 0.5, "Present, expressed, not Kla",
-                              fifelse(ExprPct > 0.5, "Expressed, not detected",
-                                      "Low transcript"))))]
-status_levels <- c("Captured as Kla", "Present, expressed, not Kla", "Expressed, not detected", "Low transcript")
-status_display <- c(
-  "Captured as Kla" = "Captured\nas Kla",
-  "Present, expressed, not Kla" = "Present, expressed,\nnot lactylated",
-  "Expressed, not detected" = "Expressed, not\ndetected in proteome",
-  "Low transcript" = "Low transcript\n(< median TPM)"
+# The proteome alone already gives a 2x2: the lactylome (Kla) against the matched
+# non-enriched whole-proteome reference (Ref). Its Kla-/Ref+ cell - protein present, not
+# lactylated - needs no transcriptome at all. What the transcriptome adds is confined to the
+# Kla-/Ref- cell, where both assays missed the protein: it separates "the protein is genuinely
+# not there" from "the transcript is there and both assays still missed it".
+CELL_NEITHER <- "Kla- / Ref-\nmissed by both assays"
+pairs[, Cell := fifelse(KlaDetected & RefDetected, "Kla+ / Ref+",
+                 fifelse(KlaDetected & !RefDetected, "Kla+ / Ref-",
+                 fifelse(!KlaDetected & RefDetected, "Kla- / Ref+\nprotein present,\nnot lactylated",
+                         CELL_NEITHER)))]
+pairs[, Transcript := fifelse(ExprPct > 0.5, "transcript above group median",
+                                                "transcript below group median")]
+
+cell_levels <- c("Kla+ / Ref+", "Kla+ / Ref-",
+                 "Kla- / Ref+\nprotein present,\nnot lactylated", CELL_NEITHER)
+segment_levels <- c("proteome result", "transcript below group median", "transcript above group median")
+
+bars <- rbind(
+  pairs[Cell != CELL_NEITHER, .(Segment = "proteome result", N = .N), by = Cell],
+  pairs[Cell == CELL_NEITHER, .(Segment = as.character(Transcript), N = .N),
+        by = .(Cell, Transcript)][, .(Cell, Segment, N)]
 )
-status[, Status := factor(Status, levels = status_levels)]
-counts <- status[, .N, by = Status][order(Status)]
-counts[, Pct := 100 * N / sum(N)]
-counts[, DisplayLabel := status_display[as.character(Status)]]
-counts[, DisplayLabel := factor(DisplayLabel, levels = unname(status_display))]
+bars[, Segment := as.character(Segment)]
+bars[, Cell := factor(Cell, levels = cell_levels)]
+bars[, Segment := factor(Segment, levels = segment_levels)]
+counts <- bars[order(Cell, Segment)]
+counts[, Label := fifelse(Segment == "proteome result", format(N, big.mark = ","), format(N, big.mark = ","))]
 
-status_colors <- c(
-  "Captured\nas Kla" = "#E67E22",
-  "Present, expressed,\nnot lactylated" = "#C0392B",
-  "Expressed, not\ndetected in proteome" = "#2980B9",
-  "Low transcript\n(< median TPM)" = "#95A5A6"
-)
+cell_labels <- c("Kla+ / Ref+", "Kla+ / Ref-",
+                 "Kla- / Ref+\nprotein present,\nnot lactylated", CELL_NEITHER)
+counts[, DisplayLabel := factor(Cell, levels = cell_levels,
+                                labels = c("Kla+ / Ref+", "Kla+ / Ref-",
+                                           "Kla- / Ref+\nprotein present,\nnot lactylated",
+                                           "Kla- / Ref-\nmissed by\nboth assays"))]
 
-p_2a <- ggplot(counts, aes(DisplayLabel, N, fill = DisplayLabel)) +
-  geom_hline(yintercept = seq(1000, 5000, 1000), colour = "#EDF0F2", linewidth = 0.45) +
-  geom_col(width = 0.58, colour = "#2C3437", linewidth = 0.35, alpha = 0.90) +
-  geom_text(aes(y = N + 120, label = comma(N)), size = 3.8, fontface = "bold",
-            family = publication_font, colour = text_dark) +
-  geom_text(aes(y = N / 2, label = sprintf("%.1f%%", Pct)), size = 3.6, fontface = "bold",
-            family = publication_font, colour = "white") +
-  annotate("label", x = 2, y = 3750, 
-           label = "21.0% biologically selective:\nTranscribed & translated,\nspecifically non-lactylated",
-           size = 2.9, family = publication_font, colour = "#900C3F", fill = "#FDEDEC",
-           fontface = "italic", lineheight = 0.95) +
-  geom_segment(aes(x = 2, xend = 2, y = 3300, yend = 2650),
-               arrow = arrow(length = unit(0.18, "cm"), type = "closed"),
-               colour = "#C0392B", linewidth = 0.5) +
-  scale_fill_manual(values = status_colors) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.18)), labels = comma, limits = c(0, 5200)) +
-  labs(title = "Decomposition of Lactylome Non-Detection",
-       subtitle = "11,067 (group \u00d7 Kla \u2229 DDR protein) pairs across 31 material classes",
-       x = NULL, y = "Number of pairs") +
-  theme_minimal(base_size = 10, base_family = publication_font) +
-  theme(
-    legend.position = "none",
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major.y = element_blank(),
-    axis.line.x = element_line(colour = "#4A5158", linewidth = 0.5),
-    axis.line.y = element_line(colour = "#4A5158", linewidth = 0.5),
-    axis.text.x = element_text(size = 8.5, colour = text_dark, lineheight = 1.05, margin = margin(t = 6)),
-    axis.text.y = element_text(size = 8.5, colour = text_body),
-    axis.title.y = element_text(size = 9.5, face = "bold", colour = text_dark, margin = margin(r = 8)),
-    plot.title = element_text(size = 12.5, face = "bold", colour = text_dark, margin = margin(b = 3)),
-    plot.subtitle = element_text(size = 8.5, colour = "#5A626A", margin = margin(b = 10)),
-    plot.margin = margin(12, 14, 10, 10)
-  )
+p_2a <- ggplot(counts, aes(DisplayLabel, N, fill = Segment)) +
+  geom_col(width = 0.66) +
+  geom_text(data = counts[Segment == "proteome result"],
+            aes(y = N, label = Label), vjust = -0.5, size = 3.5, fontface = "bold",
+            family = publication_font, colour = text_dark, show.legend = FALSE) +
+  geom_text(data = counts[Cell == CELL_NEITHER & Segment != "proteome result"],
+            aes(y = N, label = Label), position = position_stack(vjust = 0.5),
+            size = 3.1, fontface = "bold", family = publication_font,
+            colour = "white", show.legend = FALSE) +
+  scale_fill_manual(values = c("proteome result" = "#8C97A3",
+                               "transcript below group median" = "#C9CFD6",
+                               "transcript above group median" = "#B2182B"),
+                    breaks = c("transcript below group median", "transcript above group median"),
+                    drop = FALSE,
+                    name = "transcript level within the Kla- / Ref- cell") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +
+  labs(title = "Detection status of the DDR panel across the 31 groups",
+       subtitle = sprintf(paste0("%s pairs, by lactylome (Kla) and matched whole-proteome ",
+                                 "reference (Ref);\nonly the last bar is split by transcript level."),
+                          format(nrow(pairs), big.mark = ",")),
+       x = NULL, y = "pairs") +
+  theme_minimal(base_size = 9, base_family = publication_font) +
+  theme(panel.grid.major.x = element_blank(), panel.grid.minor = element_blank(),
+        axis.text.x = element_text(size = 7, colour = text_body, lineheight = 1.05),
+        legend.position = "top", legend.title = element_text(size = 7.2, colour = text_body),
+        legend.text = element_text(size = 7.2, colour = text_body),
+        plot.title = element_text(size = 12, face = "bold", colour = text_dark),
+        plot.subtitle = element_text(size = 7.6, colour = text_body))
 
+# density panel: the same pairs, split three ways by what the proteome said
 dens <- pairs[, .(Status = fifelse(KlaDetected, "Captured as Kla",
                             fifelse(RefDetected, "In reference proteome only", "Neither")),
                   RNA = RNA)]
@@ -303,7 +309,6 @@ status_dens_colors <- c(
   "In reference proteome only" = "#2980B9",
   "Neither" = "#95A5A6"
 )
-
 medians <- dens[, .(Median = median(RNA)), by = Status]
 
 p_2b <- ggplot(dens, aes(RNA, fill = Status, colour = Status)) +
@@ -324,7 +329,8 @@ p_2b <- ggplot(dens, aes(RNA, fill = Status, colour = Status)) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
   labs(x = expression(log[2]*"(TPM + 0.5)"), y = "Density",
        title = "Expression Distribution by Detection State",
-       subtitle = "Transcript abundance across 11,067 pairs; dashed lines denote group medians") +
+       subtitle = sprintf("Transcript abundance across %s pairs; dashed lines mark the group medians",
+                         format(nrow(pairs), big.mark = ","))) +
   theme_minimal(base_size = 10, base_family = publication_font) +
   theme(
     legend.position = "top",
@@ -350,7 +356,7 @@ p_combined <- p_2a + p_2b + plot_layout(widths = c(1.05, 1.15)) +
   plot_annotation(tag_levels = 'A') &
   theme(plot.tag = element_text(size = 14, face = "bold", family = publication_font, colour = text_dark))
 
-save_panel(p_2a, "RNA_2a_non_detection_meaning", 6.8, 5.0)
+save_panel(p_2a, "RNA_2a_non_detection_meaning", 7.8, 4.9)
 save_panel(p_2b, "RNA_2b_expression_by_detection_state", 6.8, 5.0)
 save_panel(p_combined, "RNA_2_lactylome_transcriptome_coupling", 12.8, 5.2)
 
@@ -359,7 +365,7 @@ save_panel(p_combined, "RNA_2_lactylome_transcriptome_coupling", 12.8, 5.2)
 fwrite(panel[, .(BaseAccession, EnsemblGeneID, PathwayLabel,
                  Annotation = PathwayLabel)],
        file.path(out_dir, "RNA_1_ddr_panel_genes.csv"))
-fwrite(counts[, .(Status, Pairs = N, Percent = round(Pct, 2))],
+fwrite(counts[, .(PairStatus = as.character(Cell), Segment = as.character(Segment), Pairs = N)],
        file.path(out_dir, "RNA_2_non_detection_counts.csv"))
 writeLines(trimws(capture.output(sessionInfo()), which = "right"),
            file.path(out_dir, "sessionInfo.txt"))
@@ -372,7 +378,8 @@ writeLines(c(
   "       row-scaled so patterns rather than absolute level are visible. Category annotation banner",
   "       and per-pathway color strips included.",
   "RNA_2a The state of every (group \u00d7 panel protein) pair: captured as Kla (27.9%), present in",
-  "       reference proteome but unlactylated (21.0%), expressed but not detected (11.7%), or low transcript (39.4%).",
+  "       Only the Kla-/Ref- cell needs the transcriptome: it separates a genuinely",
+  "       absent protein from one both assays missed.",
   "RNA_2b Expression density distributions by detection state with medians.",
   "RNA_2  Publication composite panel integrating 2a and 2b.", "",
   "The RNA reference is a material-class profile from different studies than the proteome,",

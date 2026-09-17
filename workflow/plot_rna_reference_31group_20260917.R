@@ -371,21 +371,23 @@ writeLines(trimws(capture.output(sessionInfo()), which = "right"),
            file.path(out_dir, "sessionInfo.txt"))
 
 writeLines(c(
-  "# RNA reference panels (Publication Refined 2026-09-17)", "",
+  "# RNA reference panels (2026-09-17)", "",
   "Companion panels to the 31-group proteome figures. They read the qsmooth-smoothed",
-  "log2(TPM + 0.5) reference profile and the Kla \u2229 DDR panel lifted onto it.", "",
-  "RNA_1  DDR-panel expression across the material classes, rows grouped by DDR pathway,",
-  "       row-scaled so patterns rather than absolute level are visible. Category annotation banner",
-  "       and per-pathway color strips included.",
-  "RNA_2a The state of every (group \u00d7 panel protein) pair: captured as Kla (27.9%), present in",
-  "       Only the Kla-/Ref- cell needs the transcriptome: it separates a genuinely",
-  "       absent protein from one both assays missed.",
-  "RNA_2b Expression density distributions by detection state with medians.",
-  "RNA_2  Publication composite panel integrating 2a and 2b.", "",
-  "The RNA reference is a material-class profile from different studies than the proteome,",
-  "so these panels compare classes, not paired samples.",
-  "Expression is judged within each group, not against an absolute cut-off; the sweeps in",
-  "outputs/20260917_rna_assisted_ddr/ show how the shares move with the cut."
+  "log2(TPM + 0.5) reference profile and the Kla n DDR panel lifted onto it.", "",
+  "RNA_1  DDR-panel expression across the 31 material classes: faceted by DDR pathway,",
+  "       genes ordered by mean expression within each block, columns ordered by material",
+  "       category, row-scaled so pattern rather than absolute level is visible.",
+  "RNA_2a Detection status of every (group x panel protein) pair, classified by the lactylome",
+  "       (Kla) and the matched whole-proteome reference (Ref). The proteome alone gives the",
+  "       2x2; only the Kla-/Ref- cell is split by transcript level.",
+  "RNA_2b Transcript-level density behind each detection state, with group medians.",
+  "RNA_2  Composite of 2a and 2b.", "",
+  "Scope: descriptive. The panels report where each pair falls and what the transcriptome",
+  "adds to the one cell the proteome cannot resolve; no mechanism is inferred.",
+  "The RNA reference is a material-class profile drawn from different studies than the",
+  "proteome, so groups are compared as classes, not as paired samples.",
+  "Expression is judged within each group rather than against an absolute cut-off; the",
+  "sweeps in outputs/20260917_rna_assisted_ddr/ show how the splits move with the cut."
 ), file.path(out_dir, "README.md"))
 
 # Copy to delivery folder

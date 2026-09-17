@@ -70,6 +70,7 @@ pairs <- rbindlist(lapply(seq_len(nrow(ledger)), function(i) {
     RNA = rna31[panel$EnsemblGeneIDs, match(g, colnames(rna31))]
   )
 }))
+pairs[, TPM := 2^RNA - 0.5]
 pairs[, ExprPct := frank(RNA, ties.method = "average") / .N, by = GroupID]
 
 ## ---- 1. absence of protein versus absence of transcript -------------------

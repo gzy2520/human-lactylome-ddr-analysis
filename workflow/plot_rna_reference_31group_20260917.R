@@ -248,12 +248,18 @@ CELL_ORDER <- c("Kla+ / Ref+", "Kla+ / Ref-", "Kla- / Ref+", "Kla- / Ref-")
 CELL_LABELS <- c("Kla+ / Ref+", "Kla+ / Ref-",
                  "Kla- / Ref+\nprotein in whole\nproteome only",
                  "Kla- / Ref-\nneither assay")
-RNA_LOW <- "transcript below\ngroup median"
-RNA_HIGH <- "transcript above\ngroup median"
+# expression is called on an absolute threshold, not a within-group rank: TPM >= 1 is the
+# conventional "expressed" cut and the one the project's own QC uses. A rank cut would force
+# every group to the same high/low split and erase the between-material difference, which is
+# the whole point of a cross-material panel.
+TPM_CUT <- 1
+RNA_LOW <- "TPM < 1"
+RNA_HIGH <- "TPM \u2265 1"
 pairs[, Cell := fifelse(KlaDetected & RefDetected, "Kla+ / Ref+",
                  fifelse(KlaDetected & !RefDetected, "Kla+ / Ref-",
                  fifelse(!KlaDetected & RefDetected, "Kla- / Ref+", "Kla- / Ref-")))]
-pairs[, RNAlevel := fifelse(ExprPct > 0.5, RNA_HIGH, RNA_LOW)]
+pairs[, TPM := 2^RNA - 0.5]
+pairs[, RNAlevel := fifelse(TPM >= TPM_CUT, RNA_HIGH, RNA_LOW)]
 
 three <- pairs[, .(N = .N), by = .(Cell, RNAlevel)]
 three[, Cell := factor(Cell, levels = CELL_ORDER)]
@@ -268,6 +274,9 @@ p_2a <- ggplot(three, aes(CellLabel, N)) +
   geom_text(data = three[RNAlevel == RNA_LOW & N >= 400], aes(y = N, label = Label),
             position = position_stack(vjust = 0.5), size = 3.2, fontface = "bold",
             family = publication_font, colour = text_dark) +
+  geom_text(data = three[RNAlevel == RNA_LOW & N < 400], aes(y = N, label = Label),
+            position = position_stack(vjust = 0.5), nudge_x = 0.4, hjust = 0,
+            size = 2.9, fontface = "bold", family = publication_font, colour = text_body) +
   geom_text(data = three[RNAlevel == RNA_HIGH & N >= 400], aes(y = N, label = Label),
             position = position_stack(vjust = 0.5), size = 3.2, fontface = "bold",
             family = publication_font, colour = "white") +
@@ -284,7 +293,7 @@ p_2a <- ggplot(three, aes(CellLabel, N)) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.16))) +
   labs(title = "Three sources on every DDR panel pair",
        subtitle = sprintf(paste0("%s (group \u00d7 Kla \u2229 DDR protein) pairs, by lactylome, matched ",
-                                 "whole-proteome reference\nand transcript level of the same gene"),
+                                 "whole-proteome reference\nand expression call (TPM \u2265 1) of the same gene"),
                           format(nrow(pairs), big.mark = ",")),
        x = NULL, y = "pairs") +
   theme_minimal(base_size = 9, base_family = publication_font) +
@@ -313,7 +322,7 @@ p_2b <- ggplot(rate_long, aes(RNAlevel, DetectionRate, fill = Assay)) +
                                "lactylome (Kla)" = "#E67E22"), name = NULL) +
   scale_y_continuous(limits = c(0, 100), expand = expansion(mult = c(0, 0.12))) +
   labs(title = "Detection rate by transcript level",
-       subtitle = sprintf("n = %s pairs below and %s above the group median transcript level",
+       subtitle = sprintf("n = %s pairs with TPM < 1 and %s with TPM \u2265 1",
                           format(by_rna[RNAlevel == RNA_LOW, Pairs], big.mark = ","),
                           format(by_rna[RNAlevel == RNA_HIGH, Pairs], big.mark = ",")),
        x = NULL, y = "detection rate (%)") +
@@ -368,8 +377,8 @@ writeLines(c(
   "is applied and no mechanism is inferred.",
   "The RNA reference is a material-class profile drawn from different studies than the proteome,",
   "so groups are compared as classes, not as paired samples.",
-  "Transcript level is judged within each group rather than against an absolute cut-off; the",
-  "sweeps in outputs/20260917_rna_assisted_ddr/ show how the splits move with the cut."
+  "Expression is called at an absolute TPM >= 1, not a within-group rank, so the split differs",
+  "between materials; the sweeps in outputs/20260917_rna_assisted_ddr/ show how it moves with the cut."
 ), file.path(out_dir, "README.md"))
 
 # Copy to delivery folder

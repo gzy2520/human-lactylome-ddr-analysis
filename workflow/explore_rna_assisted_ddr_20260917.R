@@ -30,7 +30,8 @@ set.seed(25)
 
 ## ---- inputs --------------------------------------------------------------
 
-expr_dir <- file.path(root, "outputs", "20260916_qsmooth_31group")
+# Cross-tissue matrices carry the HGNC rename fix (2026-09-18); see build_symbol_lookup().
+expr_dir <- file.path(root, "outputs", "20260918_qsmooth_31group_hgnc")
 panel_dir <- file.path(root, "outputs", "20260916_ddr_panel_31group")
 
 mat <- fread(file.path(expr_dir, "matrices", "qsmooth_A_collapsed_log2tpm.tsv.gz"))

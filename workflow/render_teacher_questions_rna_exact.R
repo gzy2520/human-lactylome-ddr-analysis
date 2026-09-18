@@ -6,8 +6,11 @@
 # Tasks & User Requirements Addressed:
 #   1. Cross-Tissue Normalization:
 #      - Strictly utilizes qsmooth-normalized matrices:
-#        * Sample level: outputs/20260916_qsmooth_31group/matrices/qsmooth_B_full_log2tpm.tsv.gz
-#        * Group level: outputs/20260916_qsmooth_31group/matrices/qsmooth_A_collapsed_log2tpm.tsv.gz
+#        * Sample level: outputs/20260918_qsmooth_31group_hgnc/matrices/qsmooth_B_full_log2tpm.tsv.gz
+#        * Group level: outputs/20260918_qsmooth_31group_hgnc/matrices/qsmooth_A_collapsed_log2tpm.tsv.gz
+#        These carry the HGNC-rename-corrected symbol mapping (see build_symbol_lookup in
+#        lib_kla31_expression_20260916.R), which restores the genes the earlier symbol route
+#        dropped from two author matrices and so from the shared cross-tissue gene space.
 #   2. Cell Proliferation Rate (20-gene hallmark score):
 #      - Per-tissue distribution across all 31 biological materials with individual sample points
 #        (Horizontal comprehensive boxplot + sample jitter dots + sample size n labeled).
@@ -96,7 +99,10 @@ message(">>> Loading sample metadata, 31-group status, and qsmooth expression ma
 qc <- fread(file.path(root, "outputs", "20260916_expression_extraction", "group_sample_qc.csv"))
 status <- fread(file.path(root, "audit", "20260916_full_31_rna_status", "rna_31_group_status.csv"))
 groups_31 <- fread(file.path(root, "data", "publication_input", "group_summary_31.csv"))
-group_exp <- fread(file.path(root, "outputs", "20260916_qsmooth_31group", "group_expansion_31.csv"))
+# Cross-tissue matrices recomputed after the HGNC rename fix (2026-09-18); the 2026-09-16 set,
+# which lost every gene carried only under a pre-rename symbol, is kept alongside it.
+qsmooth_dir <- file.path("outputs", "20260918_qsmooth_31group_hgnc")
+group_exp <- fread(file.path(root, qsmooth_dir, "group_expansion_31.csv"))
 
 group2cat <- setNames(status$Category, status$GroupID)
 qc[, Category := vapply(strsplit(GroupIDs, ";", fixed = TRUE), function(g) {
@@ -105,16 +111,16 @@ qc[, Category := vapply(strsplit(GroupIDs, ";", fixed = TRUE), function(g) {
 }, character(1))]
 qc[, Category := factor(Category, levels = category_order)]
 
-# 1. Sample-level qsmooth-normalized expression matrix (17,340 genes x 1,898 samples)
-qsmooth_b_path <- file.path(root, "outputs", "20260916_qsmooth_31group", "matrices", "qsmooth_B_full_log2tpm.tsv.gz")
+# 1. Sample-level qsmooth-normalized expression matrix (genes x 1,898 samples)
+qsmooth_b_path <- file.path(root, qsmooth_dir, "matrices", "qsmooth_B_full_log2tpm.tsv.gz")
 stopifnot(file.exists(qsmooth_b_path))
 qb_dt <- read_table_gz(qsmooth_b_path)
 gid_col <- names(qb_dt)[1L]
 full_samples <- setdiff(names(qb_dt), gid_col)
 message(sprintf("Loaded qsmooth_B: %d genes x %d samples", nrow(qb_dt), length(full_samples)))
 
-# 2. Group/reference-level qsmooth-normalized collapsed matrix (17,340 genes x 28 references)
-qsmooth_a_path <- file.path(root, "outputs", "20260916_qsmooth_31group", "matrices", "qsmooth_A_collapsed_log2tpm.tsv.gz")
+# 2. Group/reference-level qsmooth-normalized collapsed matrix (genes x 28 references)
+qsmooth_a_path <- file.path(root, qsmooth_dir, "matrices", "qsmooth_A_collapsed_log2tpm.tsv.gz")
 stopifnot(file.exists(qsmooth_a_path))
 qa_dt <- read_table_gz(qsmooth_a_path)
 qa_gid_col <- names(qa_dt)[1L]
@@ -638,7 +644,17 @@ resolve_ensg <- function(ensg_str, entrez_ensg_str) {
 }
 reg_map[, EnsemblGeneID := mapply(resolve_ensg, EnsemblGeneIDs, EnsemblGeneViaEntrez)]
 
-# Expand across 31 groups from qsmooth_A (with valid fallback for AARS1 and CSRP2BP)
+# Expand across 31 groups from qsmooth_A.
+# Every regulator must resolve there. An earlier version fell back to the un-smoothed group
+# means and, when those were missing too, to the mean of three unrelated cell lines: that put
+# AARS1 and CSRP2BP on a different scale from their neighbours and invented a value for the
+# A549 column. It is a hard error now. The HGNC rename fix is what puts those two genes back
+# into the shared gene space; if this ever fails again, the mapping is wrong, not the data.
+reg_absent <- setdiff(reg_map$EnsemblGeneID, all_qa_genes)
+if (length(reg_absent)) {
+  stop("regulator(s) absent from the qsmooth matrix, refusing to impute: ",
+       paste(reg_absent, collapse = ", "), call. = FALSE)
+}
 reg_qsmooth_list <- list()
 for (i in seq_len(nrow(group_exp))) {
   gid <- group_exp$GroupID[[i]]
@@ -649,17 +665,7 @@ for (i in seq_len(nrow(group_exp))) {
     sym <- reg_map$GeneSymbol[[j]]
     ensg <- reg_map$EnsemblGeneID[[j]]
     
-    val <- NA_real_
-    if (ensg %in% all_qa_genes) {
-      val <- qa_dt[get(qa_gid_col) == ensg, get(ref_k)]
-    } else {
-      val_sum <- summary_dt[ReferenceKey == ref_k & StableGeneID == ensg, MeanLog2TPM]
-      if (length(val_sum) == 1L && is.finite(val_sum)) {
-        val <- val_sum
-      } else {
-        val <- mean(summary_dt[grepl("cancer_cells", ref_k) | ReferenceKey %in% c("MCF7_DMSO7d", "HCT116_control", "HepG2_DMSO24h"), ][StableGeneID == ensg, MeanLog2TPM], na.rm = TRUE)
-      }
-    }
+    val <- qa_dt[get(qa_gid_col) == ensg, get(ref_k)]
     
     reg_qsmooth_list[[length(reg_qsmooth_list) + 1L]] <- data.table(
       GroupID = gid,

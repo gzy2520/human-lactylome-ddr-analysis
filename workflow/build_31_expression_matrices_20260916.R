@@ -58,6 +58,13 @@ sym_tab <- table(symbol_map_tab$symbol)
 symbol_map <- symbol_map_tab[symbol_map_tab$symbol %in% names(sym_tab)[sym_tab == 1L], ]
 symbol_map <- symbol_map[!duplicated(symbol_map$symbol), ]
 symbol_lookup <- setNames(symbol_map$entrez, symbol_map$symbol)
+# Older author matrices still spell genes the way they were named at the time, so a second
+# lookup layers the HGNC rename history on top of the official symbols; without it every
+# renamed gene (AARS -> AARS1, CSRP2BP -> KAT14) drops out of the shared gene space.
+symbol_lookup_alias <- build_symbol_lookup(symbol_map_tab,
+                                           file.path(ann_dir, "hgnc_complete_set.tsv.gz"))
+cat(sprintf("symbol lookup: %d official symbols, %d after HGNC renames\n",
+            length(symbol_lookup), length(symbol_lookup_alias)))
 
 gdc_manifest <- read_table_gz(file.path(root, "config", "gdc_star_counts_manifest_20260914.tsv"))
 # the manifest is written fully quoted; R's quote handling is bypassed here so the
@@ -112,15 +119,12 @@ h_single_symbol_counts <- function(spec) {
   sel <- spec$selector
   stopifnot(all(sel %in% names(tab)))
   m <- as.matrix(tab[, sel, drop = FALSE]); rownames(m) <- syms
-  entrez <- unname(symbol_lookup[syms])
-  keep <- !is.na(entrez)
-  m <- m[keep, , drop = FALSE]; entrez <- entrez[keep]
-  map_from <- entrez; map_to <- unname(setNames(entrez_map$map$Ensembl_gene_identifier,
-                                                entrez_map$map$GeneID)[entrez])
-  keep2 <- !is.na(map_to)
-  m <- m[keep2, , drop = FALSE]; map_from <- map_from[keep2]; map_to <- map_to[keep2]
+  map_to <- map_symbols_to_ensembl(syms, symbol_lookup, symbol_lookup_alias, entrez_map)
+  keep <- !is.na(map_to)
+  m <- m[keep, , drop = FALSE]; map_to <- map_to[keep]
   out <- rowsum(m, group = map_to, reorder = TRUE)
-  list(counts = out, tpm_native = NULL, id_rule = "symbol -> official NCBI GeneID -> Ensembl; counts summed",
+  list(counts = out, tpm_native = NULL,
+       id_rule = "symbol -> official NCBI GeneID (with HGNC rename fallback) -> Ensembl; counts summed",
        id_note = sprintf("%d/%d symbol rows mapped to Ensembl", nrow(out), length(syms)),
        integer_native = all(m == floor(m)))
 }

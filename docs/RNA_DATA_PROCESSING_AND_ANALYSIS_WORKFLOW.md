@@ -86,7 +86,7 @@
 > **关于括号中的 `DepMap ACH-*`**：这是**蛋白组侧**用于锁定细胞系身份的模型编号，**不是 RNA 来源**；本流程的 RNA 全部来自 GSE / GTEx / TCGA / recount3。
 >
 > **共享参照显式追踪**：  
-> 三个 HCT116 组（KLA31_14/15/16）以及两个 HK-2 组（KLA31_27/28）分别共享同一份转录组基线，因此实际包含 **28 个独立参考矩阵**。在下游归一化及膨胀至 31 组时，通过 [`outputs/20260916_qsmooth_31group/group_expansion_31.csv`](../outputs/20260916_qsmooth_31group/group_expansion_31.csv) 显式记录 `ReferenceKey`，杜绝重复计算伪自由度。
+> 三个 HCT116 组（KLA31_14/15/16）以及两个 HK-2 组（KLA31_27/28）分别共享同一份转录组基线，因此实际包含 **28 个独立参考矩阵**。在下游归一化及膨胀至 31 组时，通过 [`outputs/20260918_qsmooth_31group_hgnc/group_expansion_31.csv`](../outputs/20260918_qsmooth_31group_hgnc/group_expansion_31.csv) 显式记录 `ReferenceKey`，杜绝重复计算伪自由度。（2026-09-18 起改用这一版：`20260916_qsmooth_31group` 由符号映射尚未补入 HGNC 旧名的矩阵算出，缺失全部改名基因。）
 
 ---
 

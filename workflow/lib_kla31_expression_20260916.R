@@ -56,6 +56,69 @@ build_entrez_map <- function(mapping) {
   list(map = kept, dropped_ambiguous_entrez = length(ambiguous))
 }
 
+# Symbol -> GeneID for the author matrices whose rows are symbols.
+#
+# Today's official symbols alone are not enough: a 2020-era matrix still spells genes the way
+# they were named then, so every gene renamed since (AARS -> AARS1, CSRP2BP -> KAT14,
+# ADCK3 -> COQ8A, ACPP -> ACP3) fails to resolve and is silently dropped. Because the
+# cross-tissue gene space is the intersection over all reference matrices, one matrix losing a
+# gene removes it from every downstream comparison, so the gap is not local to that matrix.
+#
+# HGNC is the authority for human symbol changes and records renames in prev_symbol, so those
+# are layered on top of the official map. prev_symbol is used rather than alias_symbol because
+# an alias is only a former name of convenience and can legitimately have been applied to more
+# than one locus; merging on those would fuse distinct genes.
+#
+# Tier 1  official symbol -> GeneID   (one symbol -> one GeneID only, as before)
+# Tier 2  HGNC prev_symbol -> GeneID  (accepted only when unambiguous and not itself an
+#                                      official symbol resolving to a different gene)
+build_symbol_lookup <- function(symbol_map_tab, hgnc_path) {
+  counts <- table(symbol_map_tab$symbol)
+  uno <- symbol_map_tab[symbol_map_tab$symbol %in% names(counts)[counts == 1L], ]
+  uno <- uno[!duplicated(uno$symbol), ]
+  official <- setNames(as.character(uno$entrez), uno$symbol)
+
+  if (!file.exists(hgnc_path)) return(official)
+
+  h <- read_table_gz(hgnc_path, quote = "\"")
+  if (!all(c("symbol", "prev_symbol", "entrez_id") %in% names(h))) return(official)
+  h <- h[!is.na(h$entrez_id) & nzchar(as.character(h$entrez_id)), ]
+  h <- h[!is.na(h$prev_symbol) & nzchar(h$prev_symbol), c("prev_symbol", "entrez_id")]
+
+  # one row per (alias, GeneID): the field is pipe-delimited and may list several renames
+  prev <- strsplit(as.character(h$prev_symbol), "|", fixed = TRUE)
+  prev <- data.frame(alias = trimws(unlist(prev)),
+                     entrez = rep(as.character(h$entrez_id), lengths(prev)),
+                     stringsAsFactors = FALSE)
+  prev <- prev[nzchar(prev$alias), ]
+  prev <- unique(prev)
+
+  n_target <- table(prev$alias)
+  prev <- prev[prev$alias %in% names(n_target)[n_target == 1L], ]
+  # an alias that is itself an official symbol must agree with where that symbol points
+  official_target <- unname(official[prev$alias])
+  prev <- prev[is.na(official_target) | official_target == prev$entrez, ]
+  prev <- prev[!prev$alias %in% names(official) & !duplicated(prev$alias), ]
+
+  c(official, setNames(prev$entrez, prev$alias))
+}
+
+# Retry the rows a symbol lookup could not resolve, then drop any alias-derived row whose
+# Ensembl gene another row of the same matrix already claims. Several Entrez IDs can share one
+# ENSG, so the guard has to run on the Ensembl key that rowsum() groups by; guarding on GeneID
+# alone would still let an alias row merge into an unrelated gene and inflate its counts.
+map_symbols_to_ensembl <- function(syms, official_lookup, alias_lookup, entrez_map) {
+  to_ensg <- function(e) unname(setNames(entrez_map$map$Ensembl_gene_identifier,
+                                         entrez_map$map$GeneID)[e])
+  off_ensg <- to_ensg(unname(official_lookup[syms]))
+  aug_ensg <- to_ensg(unname(alias_lookup[syms]))
+
+  n_claim <- table(aug_ensg[!is.na(aug_ensg)])
+  collided <- names(n_claim)[n_claim > 1L]
+  aug_ensg[!is.na(aug_ensg) & aug_ensg %in% collided & is.na(off_ensg)] <- NA_character_
+  aug_ensg
+}
+
 # ENST -> ENSG through the same table. The table stores versioned transcript IDs
 # ("ENST00000263100.8") while source matrices key on the bare accession, so versions are
 # stripped on both sides before matching.

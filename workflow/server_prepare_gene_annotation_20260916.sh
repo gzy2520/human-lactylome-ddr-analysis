@@ -4,11 +4,13 @@
 # Produces, once, on the server:
 #   metadata/annotation/human_gene_lengths_ensembl111.tsv   gene_id(ENSG, version-stripped) <TAB> merged-exon length (bp)
 #   metadata/annotation/human_symbol_to_entrez.tsv          GeneSymbol <TAB> GeneID  (NCBI gene_info, taxid 9606)
+#   metadata/annotation/hgnc_complete_set.tsv.gz            HGNC complete set (symbol / prev_symbol / entrez_id)
 #
 # The length table is the single length reference used for every counts->TPM conversion in
 # stage 2, so that all count-based groups are normalised identically. No gene symbol is used
 # as an analysis identifier anywhere; the symbol table exists only to convert two author
-# matrices (GSE171750, GSE283812) whose rows are symbols into official NCBI GeneIDs.
+# matrices (GSE171750, GSE283812) whose rows are symbols into official NCBI GeneIDs, and the
+# HGNC set supplies the rename history those 2020-era matrices still depend on.
 #
 # Usage: server_prepare_gene_annotation_20260916.sh <server_root>
 set -euo pipefail
@@ -65,4 +67,19 @@ if [ ! -s "${gene_info}" ]; then
 fi
 zcat "${gene_info}" | awk -F'\t' 'BEGIN{OFS="\t"} $1=="9606" {print $3, $2}' > "${ann}/human_symbol_to_entrez.tsv"
 echo "SYMBOL_MAP_ROWS=$(wc -l < "${ann}/human_symbol_to_entrez.tsv")"
+
+# ---- 4. HGNC complete set (rename history for the symbol-routed author matrices) ----------
+# gene_info above carries only today's official symbol, so a matrix written when AARS was
+# still called AARS loses every gene that has been renamed since. HGNC is the nomenclature
+# authority and records those renames in prev_symbol, which build_symbol_lookup() layers on
+# top of the official table.
+hgnc=${ann}/hgnc_complete_set.tsv.gz
+if [ ! -s "${hgnc}" ]; then
+  curl -L --fail --retry 5 --retry-delay 5 \
+    -o "${hgnc}.part" \
+    https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
+  gzip -c "${hgnc}.part" > "${hgnc}"
+  rm -f "${hgnc}.part"
+fi
+echo "HGNC_ROWS=$(zcat "${hgnc}" | wc -l)"
 echo "ANNOTATION_PREP_DONE"

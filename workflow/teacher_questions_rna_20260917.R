@@ -38,10 +38,11 @@ save_panel <- function(plot, stem, width, height) {
 
 ## ---- inputs --------------------------------------------------------------
 
-mat <- fread(file.path(root, "outputs", "20260916_qsmooth_31group", "matrices",
+# Cross-tissue matrices carry the HGNC rename fix (2026-09-18); see build_symbol_lookup().
+qsmooth_dir <- file.path("outputs", "20260918_qsmooth_31group_hgnc")
+mat <- fread(file.path(root, qsmooth_dir, "matrices",
                        "qsmooth_A_collapsed_log2tpm.tsv.gz"))
-expansion <- fread(file.path(root, "outputs", "20260916_qsmooth_31group",
-                             "group_expansion_31.csv"))
+expansion <- fread(file.path(root, qsmooth_dir, "group_expansion_31.csv"))
 ledger <- fread(file.path(root, "audit", "20260916_full_31_rna_status", "rna_31_group_status.csv"))
 mapping <- fread(file.path(root, "outputs", "20260916_ddr_panel_31group",
                            "ddr_uniprot_to_ensembl.tsv"))

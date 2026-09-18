@@ -30,11 +30,15 @@ set.seed(25)
 
 ## ---- inputs --------------------------------------------------------------
 
+# fread() only reads gzip itself when R.utils is installed, which it is not here; shelling out
+# to gzcat keeps this consistent with the other stages and independent of that package.
+read_table_gz <- function(p) data.table::fread(cmd = paste("gzcat", shQuote(p)))
+
 # Cross-tissue matrices carry the HGNC rename fix (2026-09-18); see build_symbol_lookup().
 expr_dir <- file.path(root, "outputs", "20260918_qsmooth_31group_hgnc")
 panel_dir <- file.path(root, "outputs", "20260916_ddr_panel_31group")
 
-mat <- fread(file.path(expr_dir, "matrices", "qsmooth_A_collapsed_log2tpm.tsv.gz"))
+mat <- read_table_gz(file.path(expr_dir, "matrices", "qsmooth_A_collapsed_log2tpm.tsv.gz"))
 expansion <- fread(file.path(expr_dir, "group_expansion_31.csv"))
 ledger <- fread(file.path(root, "audit", "20260916_full_31_rna_status", "rna_31_group_status.csv"))
 

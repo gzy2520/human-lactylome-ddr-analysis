@@ -132,7 +132,9 @@ def main(qsmooth_dir, mapping_dir, out_dir):
         ref_col = {r: i for i, r in enumerate(per_ref)}
         columns = [r["GroupID"] for r in expansion]
         col_index = [ref_col[r["ReferenceKey"]] for r in expansion]
-        shared = [r["SharedReference"] == "True" for r in expansion]
+        # R's fwrite writes logicals as "TRUE"/"FALSE", not Python's "True", so compare
+        # case-insensitively; a literal == "True" here silently reported 0 shared rows.
+        shared = [str(r["SharedReference"]).strip().lower() == "true" for r in expansion]
         genes_index = {}
         for line in fh:
             p = line.rstrip("\n").split("\t")

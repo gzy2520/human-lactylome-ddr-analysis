@@ -295,7 +295,7 @@ p_2a <- ggplot(three, aes(CellLabel, N)) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.16))) +
   labs(title = "Three sources on every DDR panel pair",
        subtitle = sprintf(paste0("%s (group \u00d7 Kla \u2229 DDR protein) pairs, by lactylome, matched ",
-                                 "whole-proteome reference\nand expression call (TPM \u2265 1) of the same gene"),
+                                 "whole-proteome reference\nand expression call (qsmooth TPM \u2265 1) of the same gene"),
                           format(nrow(pairs), big.mark = ",")),
        x = NULL, y = "pairs") +
   theme_minimal(base_size = 9, base_family = publication_font) +
@@ -324,7 +324,7 @@ p_2b <- ggplot(rate_long, aes(RNAlevel, DetectionRate, fill = Assay)) +
                                "lactylome (Kla)" = "#E67E22"), name = NULL) +
   scale_y_continuous(limits = c(0, 100), expand = expansion(mult = c(0, 0.12))) +
   labs(title = "Detection rate by transcript level",
-       subtitle = sprintf("n = %s pairs with TPM < 1 and %s with TPM \u2265 1",
+       subtitle = sprintf("n = %s pairs with qsmooth TPM < 1 and %s with qsmooth TPM \u2265 1",
                           format(by_rna[RNAlevel == RNA_LOW, Pairs], big.mark = ","),
                           format(by_rna[RNAlevel == RNA_HIGH, Pairs], big.mark = ",")),
        x = NULL, y = "detection rate (%)") +
@@ -367,10 +367,12 @@ writeLines(c(
   "matched un-enriched whole proteome (Ref), and the transcriptome (RNA). These panels record",
   "the RNA side of that: the qsmooth-smoothed expression profile, and how the transcript level",
   "relates to what each proteomics assay picks up.", "",
-  "RNA_1   Expression of the 357 Kla n DDR genes across the 31 material classes. Faceted by DDR",
+  sprintf("RNA_1   Expression of the %d Kla n DDR genes across the 31 material classes. Faceted by DDR",
+          nrow(panel)),
   "        pathway, genes ordered by mean expression within each block, columns ordered by",
   "        material category, row-scaled so pattern rather than absolute level is visible.",
-  "RNA_2a  Joint state of all 11,067 pairs: the four Kla/Ref combinations, each split by whether",
+  sprintf("RNA_2a  Joint state of all %s pairs: the four Kla/Ref combinations, each split by whether",
+          format(nrow(pairs), big.mark = ",")),
   "        the gene's transcript is expressed (TPM >= 1) or low (TPM < 1).",
   "RNA_2b  The same pairs read from the RNA side: detection rate of each assay at expressed (TPM >= 1)",
   "        and low (TPM < 1) transcript level.",

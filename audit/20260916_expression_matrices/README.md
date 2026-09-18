@@ -1,5 +1,12 @@
 # 31-group RNA expression matrices (server-side extraction, 2026-09-16)
 
+> **Frozen snapshot of 2026-09-16.** The live matrices are
+> [`outputs/20260916_expression_extraction/`](../../outputs/20260916_expression_extraction/), which
+> differ in two places after the 2026-09-18 HGNC-rename fix: `GSE171750_A549_untreated` is
+> 23,771 genes (here 22,360) and `GSE283812_T47D_vehicle` is 19,154 (here 18,815), and their
+> `IDRule` now records the HGNC fallback. Cite the `outputs/` copy for anything current; this
+> directory is kept only as the pre-fix record.
+
 Groups: 28 unique reference matrices covering all 31 proteome/Kla group rows (three rows share the HCT116 reference, two share the HK-2 reference).
 Samples: 1898 in total. Genes per matrix: 18815 to 61365.
 

@@ -78,10 +78,23 @@ build_symbol_lookup <- function(symbol_map_tab, hgnc_path) {
   uno <- uno[!duplicated(uno$symbol), ]
   official <- setNames(as.character(uno$entrez), uno$symbol)
 
-  if (!file.exists(hgnc_path)) return(official)
+  # Falling back to the official-only table is not a neutral degradation: it is exactly the
+  # mapping that dropped every renamed gene, and via the intersection it removes those genes
+  # from the whole cross-material analysis. Readable-but-wrong is worse than noisy, so say so.
+  if (!file.exists(hgnc_path)) {
+    warning("HGNC file not found at ", hgnc_path, "; falling back to official symbols only, ",
+            "which drops every renamed gene (AARS -> AARS1, CSRP2BP -> KAT14, ...). ",
+            "Run workflow/server_prepare_gene_annotation_20260916.sh to fetch it.",
+            call. = FALSE)
+    return(official)
+  }
 
   h <- read_table_gz(hgnc_path, quote = "\"")
-  if (!all(c("symbol", "prev_symbol", "entrez_id") %in% names(h))) return(official)
+  if (!all(c("symbol", "prev_symbol", "entrez_id") %in% names(h))) {
+    warning("HGNC file at ", hgnc_path, " lacks symbol/prev_symbol/entrez_id; using ",
+            "official symbols only, which drops every renamed gene.", call. = FALSE)
+    return(official)
+  }
   h <- h[!is.na(h$entrez_id) & nzchar(as.character(h$entrez_id)), ]
   h <- h[!is.na(h$prev_symbol) & nzchar(h$prev_symbol), c("prev_symbol", "entrez_id")]
 

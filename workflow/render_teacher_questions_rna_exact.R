@@ -1002,7 +1002,7 @@ plot_ddr_by_tissue <- ggplot(sample_31_ddr_dt, aes(x = DDRExpressionMedian, y = 
   ) +
   labs(
     title = "Transcriptomic DDR gene expression distribution across 31 biological materials (sample points on qsmooth)",
-    subtitle = "Sample median log2(qsmooth TPM + 0.5) across 357 DDR genes | Red diamonds = group mean | n = sample count",
+    subtitle = sprintf("Sample median log2(qsmooth TPM + 0.5) across %d DDR genes | Red diamonds = group mean | n = sample count", length(ddr_in_qb)),
     x = "DDR gene expression (sample median log2(qsmooth TPM + 0.5))",
     y = NULL
   ) +
@@ -1054,7 +1054,7 @@ plot_ddr_by_tissue_facet <- ggplot(sample_31_ddr_dt, aes(x = DDRExpressionMedian
   scale_x_continuous(limits = c(1.2, x_max_ddr), breaks = seq(1.5, 6.5, by = 1), expand = c(0.01, 0)) +
   labs(
     title = "Transcriptomic DDR gene expression distribution across 31 biological materials (faceted by category)",
-    subtitle = "qsmooth-normalized RNA-seq | 357 DDR genes | Red diamonds = group mean | n = sample count",
+    subtitle = sprintf("qsmooth-normalized RNA-seq | %d DDR genes | Red diamonds = group mean | n = sample count", length(ddr_in_qb)),
     x = "DDR gene expression (sample median log2(qsmooth TPM + 0.5))",
     y = NULL
   ) +

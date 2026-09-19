@@ -190,13 +190,20 @@ tpm_from_counts <- function(counts, lengths_bp) {
   rate / rep(colSums(rate), each = nrow(rate)) * 1e6
 }
 
-# FPKM and RPKM are the same quantity on different scales; both convert to TPM by
-# dividing by gene length and re-scaling to a 1e6 sum.
+# FPKM and RPKM are already LENGTH-NORMALISED (counts per kb per million reads):
+#   FPKM_i = counts_i / (length_kb_i * libsize_M).
+# Hence the correct conversion is a plain re-scaling to a 1e6 sum:
+#   TPM_i = FPKM_i / sum(FPKM) * 1e6   (== (counts_i/len_i) / sum(counts/len) * 1e6).
+# Dividing by gene length a SECOND time (as an early version of this helper
+# did: rate = fpkm / len_kb) is mathematically wrong: it is equivalent to
+# counts / length^2 and systematically suppresses long genes (e.g. most DDR
+# genes). Fixed 2026-09-19 after audit of the 31-group RNA deliverables:
+# the two FPKM-sourced matrices (GSE132714_BPH, GSE163787_TALL104) were the
+# only ones off-scale.
 fpkm_to_tpm <- function(fpkm, lengths_bp) {
   common <- intersect(rownames(fpkm), names(lengths_bp))
   stopifnot(length(common) > 1000L)
-  len_kb <- lengths_bp[common] / 1000
-  rate <- sweep(fpkm[common, , drop = FALSE], 1L, len_kb, "/")
+  rate <- fpkm[common, , drop = FALSE]
   rate / rep(colSums(rate), each = nrow(rate)) * 1e6
 }
 

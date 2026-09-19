@@ -12,8 +12,8 @@
 #      - Per-tissue boxplot with all 1,898 individual sample dots.
 #      - Per-tissue ranked barplot with error bars and sample counts n.
 #      - 4-category Scheme B boxplot.
-#      - 31-group DDR expressed gene fraction boxplot.
-#   3. Lactylation Regulators Heatmap (48 regulators across 31 materials on qsmooth):
+#      - 28-material DDR expressed gene fraction boxplot.
+#   3. Lactylation Regulators Heatmap (48 regulators across 28 independent RNA materials on qsmooth):
 #      - qsmooth log2(TPM + 0.5) expression heatmap (continuous gradient, 10 highlight boxes).
 #      - Gene-standardized Z-score heatmap (blue-white-red, 10 highlight boxes).
 #      - Unboxed clean companion versions for both.
@@ -95,6 +95,16 @@ groups_31 <- fread(file.path(root, "data", "publication_input", "group_summary_3
 
 qsmooth_dir <- file.path(root, "outputs", "20260918_qsmooth_31group_hgnc")
 group_exp <- fread(file.path(qsmooth_dir, "group_expansion_31.csv"))
+# Primary analysis basis (2026-09-19 revision): 28 INDEPENDENT reference
+# materials, not the 31 proteomics-side rows. HCT116 (KLA31_14/15/16) and HK-2
+# (KLA31_27/28) share one RNA baseline each, so the 31-row expansion would
+# enter the same RNA numbers 3x / 2x into every group-level statistic. Keep
+# one GroupID per ReferenceKey: KLA31_14 for HCT116_control and KLA31_27 for
+# HK2_untreated. The loop below therefore iterates over 28 rows; where the
+# number 31 appears in comments, it refers to the proteomics-side rows.
+group_exp_use <- group_exp[!duplicated(group_exp$ReferenceKey)]
+stopifnot(nrow(group_exp_use) == 28L, !anyDuplicated(group_exp_use$ReferenceKey))
+message("Group-level analysis uses 28 independent RNA reference materials (shared HCT116/HK-2 baselines collapsed to KLA31_14 / KLA31_27)")
 
 # 1. Sample-level qsmooth matrix (18,332 genes x 1,898 samples)
 qsmooth_b_path <- file.path(qsmooth_dir, "matrices", "qsmooth_B_full_log2tpm.tsv.gz")
@@ -136,11 +146,11 @@ sample_prolif_dt <- data.table(
 )
 sample_prolif_dt <- merge(sample_prolif_dt, qc[, .(SampleID, ReferenceKey, GroupIDs)], by = "SampleID")
 
-# Map samples to 31 group rows
+# Map samples to the group rows (28 independent RNA materials; see group_exp_use above)
 sample_31_prolif_list <- list()
-for (i in seq_len(nrow(group_exp))) {
-  gid <- group_exp$GroupID[[i]]
-  ref_k <- group_exp$ReferenceKey[[i]]
+for (i in seq_len(nrow(group_exp_use))) {
+  gid <- group_exp_use$GroupID[[i]]
+  ref_k <- group_exp_use$ReferenceKey[[i]]
   sub_s <- copy(sample_prolif_dt[ReferenceKey == ref_k])
   sub_s[, GroupID := gid]
   sample_31_prolif_list[[i]] <- sub_s
@@ -163,7 +173,7 @@ grp_prolif_dt <- sample_31_prolif_dt[, .(
 grp_prolif_dt[, X := match(Category, category_order)]
 
 fwrite(sample_31_prolif_dt, file.path(out_dir, "figure1b_hallmark_proliferation_sample_values.csv"))
-fwrite(grp_prolif_dt, file.path(out_dir, "figure1b_hallmark_proliferation_31groups.csv"))
+fwrite(grp_prolif_dt, file.path(out_dir, "figure1b_hallmark_proliferation_28materials.csv"))
 
 # --- 1A. Per-Tissue Proliferation Boxplot with Individual Sample Dots ---
 setorder(grp_prolif_dt, Category, ProliferationMedian)
@@ -217,7 +227,7 @@ plot_prolif_by_tissue_box <- ggplot(sample_31_prolif_dt, aes(x = ProliferationSc
   ) +
   scale_x_continuous(limits = c(1.0, 7.6), breaks = seq(1.0, 7.0, by = 1.0), expand = c(0.01, 0)) +
   labs(
-    title = "Cell proliferation score distribution across 31 biological materials (sample points on qsmooth)",
+    title = "Cell proliferation score distribution across 28 independent RNA materials (sample points on qsmooth)",
     subtitle = paste0("Mean log2(qsmooth TPM + 0.5) over ", length(g2m_genes), " official MSigDB Hallmark G2M Checkpoint genes | Red diamonds = mean | n = sample count"),
     x = "Proliferation score (Hallmark G2M Checkpoint mean log2(qsmooth TPM + 0.5))",
     y = NULL
@@ -266,7 +276,7 @@ plot_prolif_by_tissue_bar <- ggplot(grp_prolif_bar, aes(x = ProliferationMedian,
   ) +
   scale_x_continuous(limits = c(0, 8.5), breaks = seq(0, 8, by = 1), expand = expansion(mult = c(0, 0.08))) +
   labs(
-    title = "Cell proliferation score ranking across 31 biological materials (official MSigDB Hallmark)",
+    title = "Cell proliferation score ranking across 28 independent RNA materials (official MSigDB Hallmark)",
     subtitle = "Group median log2(qsmooth TPM + 0.5) over 196 Hallmark G2M Checkpoint genes | Error bars = IQR",
     x = "Proliferation score (median log2(qsmooth TPM + 0.5))",
     y = NULL
@@ -291,7 +301,7 @@ stem_prolif_bar <- file.path(out_dir, "Figure_1b_RNA_proliferation_hallmark_by_t
 ggsave(paste0(stem_prolif_bar, ".png"), plot_prolif_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
 ggsave(paste0(stem_prolif_bar, ".pdf"), plot_prolif_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
 
-# --- 1C. Scheme B Primary Figure 1b: 31-Group Proliferation Boxplot (ANOVA) ---
+# --- 1C. Scheme B Primary Figure 1b: 28-material Proliferation Boxplot (ANOVA) ---
 grp_prolif_counts <- grp_prolif_dt[, .(N = .N, MaxScore = max(ProliferationMedian)), by = .(Category, X)]
 grp_prolif_cat_stats <- grp_prolif_dt[, .(
   Mean = mean(ProliferationMedian),
@@ -321,7 +331,7 @@ plot_prolif_cat_box <- ggplot(grp_prolif_dt, aes(x = X, y = ProliferationMedian,
   scale_x_continuous(breaks = seq_along(category_order), labels = unname(category_labels[category_order]), limits = c(0.5, length(category_order) + 0.5), expand = c(0, 0)) +
   scale_y_continuous(limits = c(1.0, y_max_cat_prolif), breaks = scales::pretty_breaks(n = 6), expand = c(0, 0)) +
   labs(
-    title = "Cell proliferation score across four biological categories (31 groups, official Hallmark)",
+    title = "Cell proliferation score across four biological categories (28 independent RNA materials, official Hallmark)",
     subtitle = sub_prolif_cat,
     x = NULL, y = "Proliferation score (Hallmark G2M Checkpoint mean log2(TPM + 0.5))"
   ) +
@@ -338,7 +348,7 @@ plot_prolif_cat_box <- ggplot(grp_prolif_dt, aes(x = X, y = ProliferationMedian,
     plot.margin = margin(12, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
   ) + coord_cartesian(clip = "off")
 
-stem_prolif_cat <- file.path(out_dir, "Figure_1b_RNA_proliferation_hallmark_31groups_boxplot")
+stem_prolif_cat <- file.path(out_dir, "Figure_1b_RNA_proliferation_hallmark_28materials_boxplot")
 ggsave(paste0(stem_prolif_cat, ".png"), plot_prolif_cat_box, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
 ggsave(paste0(stem_prolif_cat, ".pdf"), plot_prolif_cat_box, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
@@ -372,9 +382,9 @@ sample_ddr_dt <- data.table(
 sample_ddr_dt <- merge(sample_ddr_dt, qc[, .(SampleID, ReferenceKey, GroupIDs)], by = "SampleID")
 
 sample_31_ddr_list <- list()
-for (i in seq_len(nrow(group_exp))) {
-  gid <- group_exp$GroupID[[i]]
-  ref_k <- group_exp$ReferenceKey[[i]]
+for (i in seq_len(nrow(group_exp_use))) {
+  gid <- group_exp_use$GroupID[[i]]
+  ref_k <- group_exp_use$ReferenceKey[[i]]
   sub_s <- copy(sample_ddr_dt[ReferenceKey == ref_k])
   sub_s[, GroupID := gid]
   sample_31_ddr_list[[i]] <- sub_s
@@ -398,7 +408,7 @@ grp_ddr_dt <- sample_31_ddr_dt[, .(
 grp_ddr_dt[, X := match(Category, category_order)]
 
 fwrite(sample_31_ddr_dt, file.path(out_dir, "figure1a_fixed_ddr_sample_values.csv"))
-fwrite(grp_ddr_dt, file.path(out_dir, "figure1a_fixed_ddr_31groups.csv"))
+fwrite(grp_ddr_dt, file.path(out_dir, "figure1a_fixed_ddr_28materials.csv"))
 
 # --- 2A. Per-Tissue DDR Expression Boxplot with Sample Points ---
 setorder(grp_ddr_dt, Category, DDRExpressionMedian)
@@ -428,7 +438,7 @@ plot_ddr_by_tissue_box <- ggplot(sample_31_ddr_dt, aes(x = DDRExpressionMedian, 
   scale_fill_manual(values = category_fills, labels = c(normal_tissue = "non-tumor tissues", cancer_tissue = "tumor tissues", normal_cells = "normal cell lines", cancer_cells = "cancer cell lines"), name = "Biological category") +
   scale_x_continuous(limits = c(1.2, x_max_ddr), breaks = seq(1.5, 6.5, by = 1.0), expand = c(0.01, 0)) +
   labs(
-    title = "Transcriptomic DDR gene expression distribution across 31 biological materials (sample points on qsmooth)",
+    title = "Transcriptomic DDR gene expression distribution across 28 independent RNA materials (sample points on qsmooth)",
     subtitle = paste0("Sample median log2(qsmooth TPM + 0.5) across ", length(ddr_genes), " fixed DDR genes | Red diamonds = group mean | n = sample count"),
     x = "DDR gene expression (sample median log2(qsmooth TPM + 0.5))", y = NULL
   ) +
@@ -458,7 +468,7 @@ plot_ddr_by_tissue_bar <- ggplot(grp_ddr_bar, aes(x = DDRExpressionMedian, y = B
   scale_fill_manual(values = category_fills, labels = c("non-tumor tissues", "tumor tissues", "normal cell lines", "cancer cell lines"), name = "Biological category") +
   scale_x_continuous(limits = c(0, 6.8), breaks = seq(0, 6, by = 1), expand = expansion(mult = c(0, 0.08))) +
   labs(
-    title = "Transcriptomic DDR gene expression ranking across 31 biological materials",
+    title = "Transcriptomic DDR gene expression ranking across 28 independent RNA materials",
     subtitle = paste0("Group median log2(qsmooth TPM + 0.5) across ", length(ddr_genes), " fixed DDR genes | Error bars = IQR"),
     x = "DDR gene expression (median log2(qsmooth TPM + 0.5))", y = NULL
   ) +
@@ -476,7 +486,7 @@ stem_ddr_bar <- file.path(out_dir, "Figure_1a_RNA_DDR_expression_by_tissue_barpl
 ggsave(paste0(stem_ddr_bar, ".png"), plot_ddr_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
 ggsave(paste0(stem_ddr_bar, ".pdf"), plot_ddr_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
 
-# --- 2C. Scheme B Primary Figure 1a: DDR Expression Boxplot (31 Groups, ANOVA) ---
+# --- 2C. Scheme B Primary Figure 1a: DDR Expression Boxplot (28 materials, ANOVA) ---
 aov_ddr_cat <- summary(aov(DDRExpressionMedian ~ Category, data = grp_ddr_dt))[[1L]]
 sub_ddr_cat <- paste0("Four-category one-way ANOVA p = ", format_q_value(aov_ddr_cat["Category", "Pr(>F)"]), " (F = ", sprintf("%.2f", aov_ddr_cat["Category", "F value"]), ")")
 
@@ -487,7 +497,7 @@ plot_ddr_cat_box <- ggplot(grp_ddr_dt, aes(x = X, y = DDRExpressionMedian, fill 
   scale_fill_manual(values = category_fills, guide = "none", drop = FALSE) +
   scale_x_continuous(breaks = seq_along(category_order), labels = unname(category_labels[category_order]), limits = c(0.5, length(category_order) + 0.5), expand = c(0, 0)) +
   scale_y_continuous(limits = c(1.5, 6.0), breaks = seq(2, 6, by = 1), expand = c(0, 0)) +
-  labs(title = "DDR gene expression across four biological categories (31 groups, fixed panel)", subtitle = sub_ddr_cat, x = NULL, y = "DDR gene expression (median log2(qsmooth TPM + 0.5))") +
+  labs(title = "DDR gene expression across four biological categories (28 independent RNA materials, fixed panel)", subtitle = sub_ddr_cat, x = NULL, y = "DDR gene expression (median log2(qsmooth TPM + 0.5))") +
   theme_minimal(base_family = publication_font, base_size = 14) +
   theme(
     panel.grid.major.x = element_blank(), panel.grid.minor = element_blank(), panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.50),
@@ -499,11 +509,11 @@ plot_ddr_cat_box <- ggplot(grp_ddr_dt, aes(x = X, y = DDRExpressionMedian, fill 
     plot.margin = margin(12, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
   )
 
-stem_ddr_cat <- file.path(out_dir, "Figure_1a_RNA_DDR_expression_31groups_boxplot")
+stem_ddr_cat <- file.path(out_dir, "Figure_1a_RNA_DDR_expression_28materials_boxplot")
 ggsave(paste0(stem_ddr_cat, ".png"), plot_ddr_cat_box, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
 ggsave(paste0(stem_ddr_cat, ".pdf"), plot_ddr_cat_box, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
-# --- 2D. 31-Group DDR Gene Fraction Boxplot ---
+# --- 2D. 28-material DDR Gene Fraction Boxplot ---
 aov_frac_31 <- summary(aov(DdrFractionMedian ~ Category, data = grp_ddr_dt))[[1L]]
 sub_frac_31 <- paste0("Four-category one-way ANOVA p = ", format_q_value(aov_frac_31["Category", "Pr(>F)"]), " (F = ", sprintf("%.2f", aov_frac_31["Category", "F value"]), ")")
 
@@ -514,7 +524,7 @@ plot_frac_31 <- ggplot(grp_ddr_dt, aes(x = X, y = DdrFractionMedian, fill = Cate
   scale_fill_manual(values = category_fills, guide = "none", drop = FALSE) +
   scale_x_continuous(breaks = seq_along(category_order), labels = unname(category_labels[category_order]), limits = c(0.5, length(category_order) + 0.5), expand = c(0, 0)) +
   scale_y_continuous(limits = c(2.0, 4.0), breaks = seq(2.0, 4.0, by = 0.5), labels = function(y) paste0(y, "%"), expand = c(0, 0)) +
-  labs(title = "DDR annotated gene fraction in transcriptome (31 groups, qsmooth)", subtitle = sub_frac_31, x = NULL, y = "GO-DDR expressed gene fraction (%)") +
+  labs(title = "DDR annotated gene fraction in transcriptome (28 independent RNA materials, qsmooth)", subtitle = sub_frac_31, x = NULL, y = "GO-DDR expressed gene fraction (%)") +
   theme_minimal(base_family = publication_font, base_size = 14) +
   theme(
     panel.grid.major.x = element_blank(), panel.grid.minor = element_blank(), panel.grid.major.y = element_line(colour = grid_colour, linewidth = 0.50), panel.border = element_blank(),
@@ -526,7 +536,7 @@ plot_frac_31 <- ggplot(grp_ddr_dt, aes(x = X, y = DdrFractionMedian, fill = Cate
     plot.margin = margin(12, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
   )
 
-stem_frac_31 <- file.path(out_dir, "Figure_1a_RNA_DDR_fraction_31groups_boxplot")
+stem_frac_31 <- file.path(out_dir, "Figure_1a_RNA_DDR_fraction_28materials_boxplot")
 ggsave(paste0(stem_frac_31, ".png"), plot_frac_31, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
 ggsave(paste0(stem_frac_31, ".pdf"), plot_frac_31, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
@@ -552,9 +562,9 @@ sample_kla_dt <- data.table(
 sample_kla_dt <- merge(sample_kla_dt, qc[, .(SampleID, ReferenceKey, GroupIDs)], by = "SampleID")
 
 sample_31_kla_list <- list()
-for (i in seq_len(nrow(group_exp))) {
-  gid <- group_exp$GroupID[[i]]
-  ref_k <- group_exp$ReferenceKey[[i]]
+for (i in seq_len(nrow(group_exp_use))) {
+  gid <- group_exp_use$GroupID[[i]]
+  ref_k <- group_exp_use$ReferenceKey[[i]]
   sub_s <- copy(sample_kla_dt[ReferenceKey == ref_k])
   sub_s[, GroupID := gid]
   sample_31_kla_list[[i]] <- sub_s
@@ -576,7 +586,7 @@ grp_kla_dt <- sample_31_kla_dt[, .(
 grp_kla_dt[, X := match(Category, category_order)]
 
 fwrite(sample_31_kla_dt, file.path(out_dir, "figure1a_lactylated_gene_sample_values.csv"))
-fwrite(grp_kla_dt, file.path(out_dir, "figure1a_lactylated_gene_31groups.csv"))
+fwrite(grp_kla_dt, file.path(out_dir, "figure1a_lactylated_gene_28materials.csv"))
 
 # --- 4A. Per-Tissue Lactylated Gene Expression Boxplot with Sample Points ---
 setorder(grp_kla_dt, Category, KlaExpressionMedian)
@@ -606,7 +616,7 @@ plot_kla_by_tissue_box <- ggplot(sample_31_kla_dt, aes(x = KlaExpressionMedian, 
   scale_fill_manual(values = category_fills, labels = c(normal_tissue = "non-tumor tissues", cancer_tissue = "tumor tissues", normal_cells = "normal cell lines", cancer_cells = "cancer cell lines"), name = "Biological category") +
   scale_x_continuous(limits = c(1.5, x_max_kla), breaks = seq(2.0, 6.0, by = 1.0), expand = c(0.01, 0)) +
   labs(
-    title = "Transcriptomic expression distribution of lactylated protein genes across 31 materials",
+    title = "Transcriptomic expression distribution of lactylated protein genes across 28 independent RNA materials",
     subtitle = paste0("Sample median log2(qsmooth TPM + 0.5) across ", length(kla_union_genes), " lactylated protein genes | Red diamonds = group mean | n = sample count"),
     x = "Lactylated protein gene expression (sample median log2(qsmooth TPM + 0.5))", y = NULL
   ) +
@@ -636,7 +646,7 @@ plot_kla_by_tissue_bar <- ggplot(grp_kla_bar, aes(x = KlaExpressionMedian, y = B
   scale_fill_manual(values = category_fills, labels = c("non-tumor tissues", "tumor tissues", "normal cell lines", "cancer cell lines"), name = "Biological category") +
   scale_x_continuous(limits = c(0, 6.5), breaks = seq(0, 6, by = 1), expand = expansion(mult = c(0, 0.08))) +
   labs(
-    title = "Transcriptomic expression ranking of lactylated protein genes across 31 materials",
+    title = "Transcriptomic expression ranking of lactylated protein genes across 28 independent RNA materials",
     subtitle = paste0("Group median log2(qsmooth TPM + 0.5) across ", length(kla_union_genes), " lactylated protein genes | Error bars = IQR"),
     x = "Lactylated protein gene expression (median log2(qsmooth TPM + 0.5))", y = NULL
   ) +
@@ -654,7 +664,7 @@ stem_kla_bar <- file.path(out_dir, "Figure_1a_RNA_lactylated_gene_expression_by_
 ggsave(paste0(stem_kla_bar, ".png"), plot_kla_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
 ggsave(paste0(stem_kla_bar, ".pdf"), plot_kla_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
 
-# --- 4C. Primary Figure 1a: DDR vs Lactylated Gene Expression Comparison (31 Groups, Two-Way ANOVA) ---
+# --- 4C. Primary Figure 1a: DDR vs Lactylated Gene Expression Comparison (28 materials, Two-Way ANOVA) ---
 grp_dual <- merge(grp_ddr_dt[, .(GroupID, Category, CategoryLabel, X, DDRExpressionMedian)],
                   grp_kla_dt[, .(GroupID, KlaExpressionMedian)], by = "GroupID")
 
@@ -669,9 +679,18 @@ grp_expr_long[, GeneSet := factor(GeneSet, levels = c("DDRExpressionMedian", "Kl
 
 expr_aov_31 <- aov(MedianExpression ~ Category * GeneSet, data = grp_expr_long)
 expr_aov_tab_31 <- summary(expr_aov_31)[[1L]]
-cat_p_31 <- expr_aov_tab_31["Category", "Pr(>F)"]
-cat_f_31 <- expr_aov_tab_31["Category", "F value"]
-expr_sub_31 <- paste0("Two-way ANOVA Category factor p = ", format_q_value(cat_p_31), " (F = ", sprintf("%.2f", cat_f_31), ")")
+# NB (2026-09-19): summary(aov) right-pads term row names with spaces when the
+# model contains an interaction ("Category           "), and data.frame
+# indexing with the unpadded name silently returns NA -> the subtitle used to
+# read "p = NA (F = NA)". Match on the trimmed names explicitly.
+aov_row <- function(tab, term) {
+  rn <- trimws(rownames(tab))
+  stopifnot(term %in% rn)
+  tab[rn == term, , drop = FALSE][1L, ]
+}
+cat_p_31 <- aov_row(expr_aov_tab_31, "Category")[["Pr(>F)"]]
+cat_f_31 <- aov_row(expr_aov_tab_31, "Category")[["F value"]]
+expr_sub_31 <- paste0("Two-way ANOVA Category factor (28 independent RNA materials) p = ", format_q_value(cat_p_31), " (F = ", sprintf("%.2f", cat_f_31), ")")
 
 dodge_w <- 0.72
 grp_expr_summary <- grp_expr_long[, .(
@@ -695,7 +714,7 @@ plot_fig1a_dual <- ggplot(grp_expr_long, aes(x = CategoryLabel, y = MedianExpres
   scale_y_continuous(limits = c(y_min_e31, y_max_e31), breaks = scales::pretty_breaks(n = 6), expand = expansion(mult = c(0, 0))) +
   guides(fill = guide_legend(nrow = 1, byrow = TRUE, keyheight = grid::unit(0.55, "cm"), keywidth = grid::unit(0.85, "cm"))) +
   labs(
-    title = "Expression of DDR genes and lactylated protein genes across four categories (31 groups, qsmooth)",
+    title = "Expression of DDR genes and lactylated protein genes across four categories (28 independent RNA materials, qsmooth)",
     subtitle = expr_sub_31,
     x = NULL, y = "Group median log2(qsmooth TPM + 0.5)", fill = NULL
   ) +
@@ -712,7 +731,7 @@ plot_fig1a_dual <- ggplot(grp_expr_long, aes(x = CategoryLabel, y = MedianExpres
     plot.margin = margin(10, 16, 12, 12), plot.background = element_rect(fill = "white", colour = NA)
   )
 
-stem_dual_31 <- file.path(out_dir, "Figure_1a_RNA_DDR_and_lactylated_gene_expression_31groups_boxplot")
+stem_dual_31 <- file.path(out_dir, "Figure_1a_RNA_DDR_and_lactylated_gene_expression_28materials_boxplot")
 ggsave(paste0(stem_dual_31, ".png"), plot_fig1a_dual, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
 ggsave(paste0(stem_dual_31, ".pdf"), plot_fig1a_dual, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
@@ -721,7 +740,7 @@ message(">>> Task 3 complete: Figure 1a lactylated protein gene expression figur
 # ==============================================================================
 # SECTION 5: LACTYLATION REGULATORS — QSMOOTH HEATMAP (FIGURE 3 STYLE)
 # ==============================================================================
-message(">>> Task 4: Building RNA regulator qsmooth heatmaps across 31 groups (Figure 3 style)...")
+message(">>> Task 4: Building RNA regulator qsmooth heatmaps across 28 independent RNA materials (Figure 3 style)...")
 
 role_order <- c("Writer", "Eraser", "Writer-Eraser", "Reader")
 
@@ -752,11 +771,11 @@ reg_map[, EnsemblGeneID := mapply(resolve_ensg, EnsemblGeneIDs, EnsemblGeneViaEn
 stopifnot(all(reg_map$EnsemblGeneID %in% all_qa_genes))
 message("Verified: All 48 unique regulators (49 role entries) present natively in qsmooth_A!")
 
-# Expand across 31 groups from qsmooth_A (0 imputation, 0 fallback)
+# Expand across the 28 independent reference materials from qsmooth_A (0 imputation, 0 fallback)
 reg_qsmooth_list <- list()
-for (i in seq_len(nrow(group_exp))) {
-  gid <- group_exp$GroupID[[i]]
-  ref_k <- group_exp$ReferenceKey[[i]]
+for (i in seq_len(nrow(group_exp_use))) {
+  gid <- group_exp_use$GroupID[[i]]
+  ref_k <- group_exp_use$ReferenceKey[[i]]
   
   for (j in seq_len(nrow(reg_map))) {
     acc <- reg_map$BaseAccession[[j]]
@@ -782,10 +801,10 @@ reg_qsmooth_dt <- rbindlist(reg_qsmooth_list)
 reg_qsmooth_dt <- merge(reg_qsmooth_dt, status[, .(GroupID, PXD, SampleGroup, Category)], by = "GroupID")
 reg_qsmooth_dt <- merge(reg_qsmooth_dt, groups_31[, .(PXD, SampleGroup, ReferenceLabelEn, RowOrder)], by = c("PXD", "SampleGroup"))
 
-# Calculate Z-score per gene across 31 groups
+# Calculate Z-score per gene across the 28 independent materials
 reg_qsmooth_dt[, QsmoothZScore := (QsmoothLog2TPM - mean(QsmoothLog2TPM)) / sd(QsmoothLog2TPM), by = .(DisplayName, Role)]
 
-fwrite(reg_qsmooth_dt, file.path(out_dir, "regulator_rna_qsmooth_31.csv"))
+fwrite(reg_qsmooth_dt, file.path(out_dir, "regulator_rna_qsmooth_28materials.csv"))
 
 # Factor levels
 reg_qsmooth_dt[, CategoryLabel := factor(as.character(Category), levels = category_order, labels = unname(heatmap_category_labels[category_order]))]
@@ -961,12 +980,12 @@ if (dir.exists(ext_renew_top)) {
     # 1. Proliferation (Official Hallmark G2M Checkpoint)
     "Figure_1b_RNA_proliferation_hallmark_by_tissue_boxplot.png",
     "Figure_1b_RNA_proliferation_hallmark_by_tissue_barplot.png",
-    "Figure_1b_RNA_proliferation_hallmark_31groups_boxplot.png",
+    "Figure_1b_RNA_proliferation_hallmark_28materials_boxplot.png",
     # 2. Fixed DDR Panel (371 genes)
     "Figure_1a_RNA_DDR_expression_by_tissue_boxplot.png",
     "Figure_1a_RNA_DDR_expression_by_tissue_barplot.png",
-    "Figure_1a_RNA_DDR_expression_31groups_boxplot.png",
-    "Figure_1a_RNA_DDR_fraction_31groups_boxplot.png",
+    "Figure_1a_RNA_DDR_expression_28materials_boxplot.png",
+    "Figure_1a_RNA_DDR_fraction_28materials_boxplot.png",
     # 3. Lactylation Regulators Heatmaps (qsmooth)
     "Figure_3c_RNA_regulator_qsmooth_heatmap.png",
     "Figure_3c_RNA_regulator_qsmooth_heatmap_no_frame.png",
@@ -975,7 +994,7 @@ if (dir.exists(ext_renew_top)) {
     # 4. Lactylated Protein Genes Expression (5,224 genes)
     "Figure_1a_RNA_lactylated_gene_expression_by_tissue_boxplot.png",
     "Figure_1a_RNA_lactylated_gene_expression_by_tissue_barplot.png",
-    "Figure_1a_RNA_DDR_and_lactylated_gene_expression_31groups_boxplot.png"
+    "Figure_1a_RNA_DDR_and_lactylated_gene_expression_28materials_boxplot.png"
   )
   for (tp in top_png_names) {
     src_tp <- file.path(out_dir, tp)

@@ -5,13 +5,27 @@
 #     (Ensembl ENSG for the merged output); gene symbols are never a join key;
 #   * TPM is computed from counts against one shared merged-exon length table, so
 #     count-based groups are normalised identically; FPKM/RPKM sources are converted
-#     with the same length table and are flagged as converted;
+#     by column rescaling (the length table defines the retained genes only);
 #   * ambiguous stable-ID collapses are resolved by an explicit, recorded rule rather
 #     than a silent join.
 #
 # Base R only: the server runs R 4.1.2 with no data.table / Bioconductor packages.
 
 suppressPackageStartupMessages(library(parallel))
+
+assert_empty_output <- function(path) {
+  if (file.exists(path) && (!dir.exists(path) ||
+      length(list.files(path, all.files = TRUE, no.. = TRUE)))) {
+    stop("Refusing non-empty output: ", path,
+         ". Use a new dated directory; existing objects are not a valid cache.", call. = FALSE)
+  }
+}
+
+rescale_to_tpm <- function(rate) {
+  stopifnot(is.matrix(rate), all(is.finite(rate)), all(rate >= 0),
+            all(is.finite(colSums(rate))), all(colSums(rate) > 0))
+  sweep(rate, 2L, colSums(rate), "/") * 1e6
+}
 
 ## ---- reading -------------------------------------------------------------
 
@@ -187,7 +201,7 @@ tpm_from_counts <- function(counts, lengths_bp) {
   stopifnot(length(common) > 1000L)
   len_kb <- lengths_bp[common] / 1000
   rate <- sweep(counts[common, , drop = FALSE], 1L, len_kb, "/")
-  rate / rep(colSums(rate), each = nrow(rate)) * 1e6
+  rescale_to_tpm(rate)
 }
 
 # FPKM and RPKM are already LENGTH-NORMALISED (counts per kb per million reads):
@@ -204,7 +218,7 @@ fpkm_to_tpm <- function(fpkm, lengths_bp) {
   common <- intersect(rownames(fpkm), names(lengths_bp))
   stopifnot(length(common) > 1000L)
   rate <- fpkm[common, , drop = FALSE]
-  rate / rep(colSums(rate), each = nrow(rate)) * 1e6
+  rescale_to_tpm(rate)
 }
 
 log2_tpm <- function(tpm) log2(tpm + 0.5)

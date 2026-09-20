@@ -5,3 +5,12 @@ renv/activate.R -whitespace
 # Preserve byte-exact historical evidence and its recorded hashes.
 audit/20260912_workspace_rnaseq/** -text -whitespace
 docs/history/** -text -whitespace
+
+# Preserve captured console evidence and generated session records verbatim.
+audit/20260919_project_review/*.txt -text -whitespace
+audit/20260919_rna_repair/*.log -text -whitespace
+outputs/20260919_repair_release/**/sessionInfo.txt -text -whitespace
+# Python CSV exports retain their recorded CRLF bytes in release fingerprints.
+audit/20260919_rna_repair/**/*.csv -text whitespace=cr-at-eol
+audit/20260919_rna_repair/*.csv -text whitespace=cr-at-eol
+outputs/20260919_repair_release/*.csv -text whitespace=cr-at-eol

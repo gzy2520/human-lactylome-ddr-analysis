@@ -18,11 +18,12 @@
 # Read as exploratory. The RNA reference is a material-class profile from different studies than
 # the proteome, so this compares classes, not paired samples.
 #
-# Usage: explore_rna_assisted_ddr_20260917.R <project_root> [out_dir]
+# Usage: explore_rna_assisted_ddr_20260917.R <project_root> <out_dir> <qsmooth_dir> <panel_dir>
 args <- commandArgs(TRUE)
-stopifnot(length(args) >= 1L)
+stopifnot(length(args) == 4L)
 root <- normalizePath(args[[1L]], mustWork = TRUE)
 out_dir <- if (length(args) >= 2L) args[[2L]] else file.path(root, "outputs", "20260917_rna_assisted_ddr")
+if (dir.exists(out_dir) && length(list.files(out_dir, all.files = TRUE, no.. = TRUE))) stop("Non-empty output: ", out_dir)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 suppressPackageStartupMessages(library(data.table))
@@ -35,8 +36,8 @@ set.seed(25)
 read_table_gz <- function(p) data.table::fread(cmd = paste("gzcat", shQuote(p)))
 
 # Cross-tissue matrices carry the HGNC rename fix (2026-09-18); see build_symbol_lookup().
-expr_dir <- file.path(root, "outputs", "20260918_qsmooth_31group_hgnc")
-panel_dir <- file.path(root, "outputs", "20260916_ddr_panel_31group")
+expr_dir <- normalizePath(args[[3L]], mustWork = TRUE)
+panel_dir <- normalizePath(args[[4L]], mustWork = TRUE)
 
 mat <- read_table_gz(file.path(expr_dir, "matrices", "qsmooth_A_collapsed_log2tpm.tsv.gz"))
 expansion <- fread(file.path(expr_dir, "group_expansion_31.csv"))

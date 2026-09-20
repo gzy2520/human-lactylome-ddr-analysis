@@ -1,0 +1,95 @@
+CURRENT HEAD
+b05872d2331f82edb3457e808435b270cec2a389
+FROZEN missing 0 of 163 
+character(0)
+LOCAL INPUT missing 6 of 32 
+LOCAL INPUT hash mismatch 1 
+QC samples 1898 unique 1898 refs 28 
+DIRECTORY results/rna_teacher_questions 
+figure1a_fixed_ddr_31groups.csv rows 31 unique sample NA unique refs 28 mtime 2026-09-18 17:00:30.520852 
+figure1b_hallmark_proliferation_31groups.csv rows 31 unique sample NA unique refs 28 mtime 2026-09-18 17:00:28.543871 
+figure1a_fixed_ddr_sample_values.csv rows 1907 unique sample 1898 unique refs 28 mtime 2026-09-18 17:00:30.520421 
+DIRECTORY outputs/20260917_delivery_31group/rna 
+figure1a_fixed_ddr_31groups.csv rows 31 unique sample NA unique refs 28 mtime 2026-09-18 17:00:36.73041 
+figure1a_fixed_ddr_28materials.csv rows 28 unique sample NA unique refs 28 mtime 2026-09-19 19:05:59.416521 
+figure1b_hallmark_proliferation_31groups.csv rows 31 unique sample NA unique refs 28 mtime 2026-09-18 17:00:36.735641 
+figure1b_hallmark_proliferation_28materials.csv rows 28 unique sample NA unique refs 28 mtime 2026-09-19 19:05:59.41985 
+figure1a_fixed_ddr_sample_values.csv rows 1898 unique sample 1898 unique refs 28 mtime 2026-09-19 19:05:59.418472 
+MATRICES A 18332 28 B 18332 1898 stable TRUE duplicate ids 0 duplicate samples 0 finite TRUE metadata match TRUE 
+A deviation from unsmoothed: max 0.0008745567 changed entries 91000 of 513296 
+WEIGHTS A 
+ stable_gene_id         Weight       
+ Length:18332       Min.   :0.00000  
+ Class :character   1st Qu.:0.00000  
+ Mode  :character   Median :0.00000  
+                    Mean   :0.05455  
+                    3rd Qu.:0.00000  
+                    Max.   :1.00000  
+WEIGHTS B 
+ stable_gene_id         Weight      
+ Length:18332       Min.   :0.2510  
+ Class :character   1st Qu.:0.2737  
+ Mode  :character   Median :0.2794  
+                    Mean   :0.3542  
+                    3rd Qu.:0.2840  
+                    Max.   :0.9802  
+AB comparison
+        stable_gene_id MeanAbsDelta MaxAbsDelta Correlation
+                <char>        <num>       <num>       <num>
+    1: ENSG00000000003   0.29728367   1.2981934   0.9703485
+    2: ENSG00000000005   0.08906263   0.2406677   0.9948424
+    3: ENSG00000000419   0.24641756   0.5858046   0.9806697
+    4: ENSG00000000457   0.21436063   0.5713323   0.9854113
+    5: ENSG00000000460   0.21783641   0.5739662   0.9873709
+   ---                                                     
+18328: ENSG00000272636   0.15502567   0.3929907   0.9963325
+18329: ENSG00000273045   0.18734491   0.5796158   0.9895655
+18330: ENSG00000273079   0.11756921   0.3572352   0.9929829
+18331: ENSG00000273173   0.22050265   0.7354017   0.9954220
+18332: ENSG00000273274   0.11897810   0.3688639   0.9882638
+GROUP CATEGORY
+    GroupID   ReferenceKey Samples SharedReference
+     <char>         <char>   <int>          <lgcl>
+1: KLA31_14 HCT116_control       3            TRUE
+2: KLA31_15 HCT116_control       3            TRUE
+3: KLA31_16 HCT116_control       3            TRUE
+4: KLA31_27  HK2_untreated       3            TRUE
+5: KLA31_28  HK2_untreated       3            TRUE
+PROTEOME VALIDATION
+                                 Check Observed Expected   Pass
+                                <char>    <int>    <int> <lgcl>
+1:                   31-group registry       31       31   TRUE
+2:   Figure 1 DDR fraction sample rows      272      272   TRUE
+3:    Figure 1 MKI67 ratio sample rows      264      264   TRUE
+4:        Figure 2 pathway sample rows      504      504   TRUE
+5:           Figure 2 rows per pathway       72       72   TRUE
+6: All corrected input rows are sample        1        1   TRUE
+7:   Reused whole-proteome source keys       11       11   TRUE
+SOURCE_CHAIN GSE103520_MCF10A_control max_delta 0 
+SOURCE_CHAIN GSE114691_control_placenta max_delta 0 
+SOURCE_CHAIN GSE119834_NSC max_delta 0 
+SOURCE_CHAIN GSE132714_BPH max_delta 0 
+SOURCE_CHAIN GSE163787_TALL104 max_delta 0 
+SOURCE_CHAIN GSE171750_A549_untreated max_delta 0 
+SOURCE_CHAIN GSE181540_adjacent_NS_input max_delta 0 
+SOURCE_CHAIN GSE181540_HS_input max_delta 0 
+SOURCE_CHAIN GSE203529_HEK293T_WT max_delta 0 
+SOURCE_CHAIN GSE266884_MES28_vector_control max_delta 0 
+SOURCE_CHAIN GSE275256_HMC3_vehicle max_delta 0 
+SOURCE_CHAIN GSE283812_T47D_vehicle max_delta 0 
+SOURCE_CHAIN GTEx_v8_Hippocampus max_delta 0 
+SOURCE_CHAIN GTEx_v8_Lung max_delta 0 
+SOURCE_CHAIN HCT116_control max_delta 0 
+SOURCE_CHAIN HepG2_DMSO24h max_delta 0 
+SOURCE_CHAIN HK2_untreated max_delta 0 
+SOURCE_CHAIN HUVEC_untreated max_delta 0 
+SOURCE_CHAIN MCF7_DMSO7d max_delta 0 
+SOURCE_CHAIN MDAMB468_DMSO7d max_delta 0 
+SOURCE_CHAIN PC3M_DMSO max_delta 0 
+SOURCE_CHAIN RKO_DMSO max_delta 0 
+SOURCE_CHAIN sperm_GroupI max_delta 0 
+SOURCE_CHAIN TCGA_ESCA_ESCC max_delta 0 
+SOURCE_CHAIN TCGA_LIHC_normal max_delta 0 
+SOURCE_CHAIN TCGA_LIHC_primary max_delta 0 
+SOURCE_CHAIN TCGA_PRAD_primary max_delta 0 
+SOURCE_CHAIN tendon_nondiabetic max_delta 0 

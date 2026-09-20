@@ -1,0 +1,17 @@
+>>> Loading sample metadata, 31-group status, and 18,332-gene qsmooth matrices...
+Group-level analysis uses 28 independent RNA reference materials (shared HCT116/HK-2 baselines collapsed to KLA31_14 / KLA31_27)
+Loaded qsmooth_B: 18332 genes x 1898 samples
+Loaded qsmooth_A: 18332 genes x 28 reference columns
+>>> Task 1: Calculating proliferation score using official MSigDB Hallmark G2M Checkpoint...
+Frozen Hallmark G2M Checkpoint: 196 Ensembl genes
+>>> Task 1 complete: Figure 1b Hallmark proliferation figures saved.
+>>> Task 2: Calculating fixed DDR gene set expression across tissues and categories...
+Fixed DDR panel: 371 genes present in 18,332 space
+>>> Task 2 complete: Figure 1a fixed DDR figures saved.
+>>> Task 3: Calculating expression of genes corresponding to lactylated proteins across tissues...
+Lactylated protein genes (KlaUnion): 5224 genes present in 18,332 space
+>>> Task 3 complete: Figure 1a lactylated protein gene expression figures saved.
+>>> Task 4: Building RNA regulator qsmooth heatmaps across 28 independent RNA materials (Figure 3 style)...
+Verified: All 48 unique regulators (49 role entries) present natively in qsmooth_A!
+>>> Task 4 complete: Figure 3c RNA regulator qsmooth heatmaps saved.
+RNA_CORE_RENDER_PASS: 28 materials; 1898 unique sample points; output only:  /tmp/kla_repair_render_preview_20260919 

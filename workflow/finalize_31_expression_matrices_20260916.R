@@ -18,6 +18,10 @@ ref2groups <- tapply(contract$GroupIDs, contract$ReferenceKey,
 
 obj_files <- sort(list.files(file.path(out_dir, "objects"), pattern = "\\.rds$", full.names = TRUE))
 stopifnot(length(obj_files) > 0L)
+expected_refs <- unique(contract$ReferenceKey)
+stopifnot(setequal(sub("\\.rds$", "", basename(obj_files)), expected_refs),
+          length(obj_files) == length(expected_refs),
+          !file.exists(file.path(out_dir, "group_failures.csv")))
 
 manifest_rows <- list(); qc_rows <- list(); gene_rows <- list()
 for (f in obj_files) {
@@ -26,6 +30,8 @@ for (f in obj_files) {
   if (!is.null(ref2groups[[o$ReferenceKey]])) o$GroupIDs <- ref2groups[[o$ReferenceKey]]
   mat_file <- file.path("matrices", paste0(o$ReferenceKey, "_log2tpm.tsv.gz"))
   cnt_file <- file.path("matrices", paste0(o$ReferenceKey, "_counts.tsv.gz"))
+  stopifnot(file.exists(file.path(out_dir, mat_file)),
+            is.null(o$counts) || file.exists(file.path(out_dir, cnt_file)))
   manifest_rows[[o$ReferenceKey]] <- data.frame(
     ReferenceKey = o$ReferenceKey, GroupIDs = o$GroupIDs, GroupLabel = o$GroupLabel,
     SourceKind = prov$SourceKind, SourcePath = prov$SourcePath, SelectorValue = prov$SelectorValue,
@@ -53,10 +59,16 @@ manifest <- do.call(rbind, manifest_rows)
 qc <- do.call(rbind, qc_rows)
 genes <- do.call(rbind, gene_rows)
 rownames(manifest) <- NULL; rownames(qc) <- NULL; rownames(genes) <- NULL
+stopifnot(!anyDuplicated(qc$SampleID), nrow(manifest) == 28L,
+          all(manifest$Samples == vapply(manifest$ReferenceKey, function(k)
+            as.numeric(unique(contract$ExpectedN[contract$ReferenceKey == k])), numeric(1L))))
 
 write.csv(manifest, file.path(out_dir, "group_manifest.csv"), row.names = FALSE)
 write.csv(qc, file.path(out_dir, "group_sample_qc.csv"), row.names = FALSE)
 write.csv(genes, file.path(out_dir, "group_gene_summary.csv"), row.names = FALSE)
+write.csv(contract, file.path(out_dir, "finalization_contract.csv"), row.names = FALSE)
+write.csv(data.frame(Path=contract_path,MD5=unname(tools::md5sum(contract_path))),
+          file.path(out_dir, "finalization_contract_fingerprint.csv"), row.names = FALSE)
 
 # one row per group row (31), so a shared matrix is listed once per group it backs
 group_rows <- do.call(rbind, lapply(seq_len(nrow(manifest)), function(i) {
@@ -91,7 +103,8 @@ lines <- c(
   "* TPM is computed from counts against one shared merged-exon length table",
   "  (Ensembl release 111, metadata/annotation/human_gene_lengths_ensembl111.tsv), so every",
   "  count-based group is normalised the same way. Matrices built from a source that ships only",
-  "  FPKM/RPKM are converted with the same table and are marked as converted in the manifest.",
+  "  FPKM/RPKM are rescaled by column sum without a second length division; the length table",
+  "  only defines the retained gene set for these sources. The manifest records the actual route.",
   "* Row keys are stable Ensembl gene identifiers with the version suffix removed (ENSG...,",
   "  ENSG..._PAR_Y for pseudoautosomal duplicates). Gene symbols are never a join key: the two",
   "  author matrices whose rows are symbols (GSE171750, GSE283812) go through the official NCBI",

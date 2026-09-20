@@ -1,0 +1,3 @@
+PASS: FPKM formula, length-order invariance, invalid inputs, stale-output rejection
+[1] TRUE
+PASS: existing output protected; incomplete finalize rejected before metadata writes

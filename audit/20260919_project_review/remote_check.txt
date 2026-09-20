@@ -1,0 +1,4 @@
+GSE132714_BPH stored_old_formula_max_error 0 correct_log2_max_change 6.501166 correct_log2_median_change 0.5911485 
+matrix_md5 f5c23f55cf7151ac96a555b4db84608a 
+GSE163787_TALL104 stored_old_formula_max_error 0 correct_log2_max_change 5.219513 correct_log2_median_change 0.09945899 
+matrix_md5 c1e0689080176df25bce31da9a4e555a 

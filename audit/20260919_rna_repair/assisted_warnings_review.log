@@ -1,0 +1,70 @@
+Kla n DDR panel mapped 1:1 into the profile: 371 proteins
+
+Per-group lactylation excess over expression expectation:
+     GroupID                SampleGroup      Category   Obs   Exp ExcessRate
+      <char>                     <char>        <char> <int> <num>      <num>
+ 1: KLA31_18 HepG2 WT and SIRT1 or SIRT  cancer_cells   258  77.1      0.488
+ 2: KLA31_16 HCT116 control and Rosebur  cancer_cells   234 115.5      0.319
+ 3: KLA31_23    glioblastoma stem cells  cancer_cells   220 112.3      0.290
+ 4: KLA31_27            pretreated HK-2  normal_cells   207 120.7      0.233
+ 5: KLA31_30          neural stem cells  normal_cells   164  79.9      0.227
+ 6: KLA31_20                 MDA-MB-468  cancer_cells   183 112.7      0.189
+ 7: KLA31_31 HUVEC control and Pg infec  normal_cells   172 105.0      0.181
+ 8: KLA31_11            prostate cancer cancer_tissue   132  97.8      0.092
+ 9: KLA31_29                     MCF10A  normal_cells   108  74.8      0.090
+10: KLA31_08                        BPH normal_tissue   131  98.7      0.087
+11: KLA31_09             adjacent liver normal_tissue   105  77.1      0.075
+12: KLA31_12                        HCC cancer_tissue   112  86.7      0.068
+13: KLA31_26                       HMC3  normal_cells   149 127.6      0.058
+14: KLA31_21                      T-47D  cancer_cells   147 131.6      0.041
+15: KLA31_13                       MCF7  cancer_cells   125 110.8      0.038
+16: KLA31_28  HK-2 control and mannitol  normal_cells   125 120.7      0.012
+17: KLA31_19                       A549  cancer_cells   112 115.5     -0.010
+18: KLA31_24        RKO WT and GSK3B KO  cancer_cells   107 113.6     -0.018
+19: KLA31_10    MEC and NEC ESCC groups cancer_tissue    84 103.5     -0.053
+20: KLA31_05          human hippocampus normal_tissue    28  78.8     -0.137
+21: KLA31_15                     HCT116  cancer_cells    61 115.5     -0.147
+22: KLA31_01 pathological rotator cuff  normal_tissue    27  95.0     -0.183
+23: KLA31_02          normal human lung normal_tissue    27  95.7     -0.185
+24: KLA31_07                human sperm normal_tissue     5  77.2     -0.195
+25: KLA31_06  normal pregnancy placenta normal_tissue    12  87.5     -0.203
+26: KLA31_22                      PC-3M  cancer_cells    37 114.2     -0.208
+27: KLA31_04              adjacent skin normal_tissue    27 108.4     -0.219
+28: KLA31_25                    HEK293T  normal_cells    39 121.5     -0.222
+29: KLA31_17                   TALL-104  cancer_cells    34 119.0     -0.229
+30: KLA31_14                     HCT116  cancer_cells    29 115.5     -0.233
+31: KLA31_03          hypertrophic scar normal_tissue    15 106.0     -0.245
+     GroupID                SampleGroup      Category   Obs   Exp ExcessRate
+      <char>                     <char>        <char> <int> <num>      <num>
+
+By category:
+        Category     n MeanExcessRate
+          <char> <int>          <num>
+1:  normal_cells     7          0.082
+2:  cancer_cells    12          0.043
+3: cancer_tissue     3          0.036
+4: normal_tissue     9         -0.134
+
+Spearman(excess rate, mean RNA) = -0.146
+Warning in cor.test.default(dep$ExcessRate, dep$MeanRNA, method = "spearman") :
+  Cannot compute exact p-value with ties
+
+Validity of the excess metric against proteome depth:
+                                                   Quantity             Against
+                                                     <char>              <char>
+1:                                               ExcessRate log KlaProteinCount
+2:                                               ExcessRate             MeanRNA
+3:                       KlaDdrFraction (manuscript metric)     KlaProteinCount
+4: DdrFractionPercentagePointDifference (manuscript metric)     KlaProteinCount
+   Spearman      P                         Verdict
+      <num>  <num>                          <char>
+1:    0.931 0.0000                 depth-dependent
+2:   -0.146 0.4344 no significant depth dependence
+3:    0.215 0.2446 no significant depth dependence
+4:    0.187 0.3121 no significant depth dependence
+
+log(Kla protein count) explains 80% of the excess-rate variance;
+after removing it the category differences disappear, so the excess metric is not used
+as evidence. The manuscript's ratio metrics are the depth-robust ones.
+
+EXPLORE_DONE -> /tmp/kla_assisted_warning_review_20260920

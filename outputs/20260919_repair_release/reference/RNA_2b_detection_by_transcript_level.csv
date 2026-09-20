@@ -1,0 +1,3 @@
+TranscriptLevel,Pairs,KlaDetectionRate,RefDetectionRate
+TPM < 1,515,13.01,21.75
+TPM ≥ 1,10986,28.66,60.37

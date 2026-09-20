@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # ==============================================================================
-# Master Script: Render RNA-seq Core Figures for 31 Biological Materials
+# Render RNA-seq Core Figures for 28 RNA references linked to 31 proteome rows
 # (Teacher Revision — Official MSigDB Hallmark Proliferation & Fixed DDR/Kla Panels)
 #
 # Deliverables Addressed:
@@ -22,11 +22,9 @@
 #      - Per-tissue ranked barplot with error bars and sample counts n.
 #      - Parallel DDR vs Kla-target gene expression comparison across 4 categories (Figure 1a style).
 #
-# All quantitative analyses are strictly performed on the updated 18,332-gene qsmooth matrices:
-#   - outputs/20260918_qsmooth_31group_hgnc/matrices/qsmooth_B_full_log2tpm.tsv.gz (sample level)
-#   - outputs/20260918_qsmooth_31group_hgnc/matrices/qsmooth_A_collapsed_log2tpm.tsv.gz (group level)
+# All quantitative analyses read the explicit qsmooth directory supplied on the command line.
 #
-# Usage: Rscript workflow/render_teacher_questions_rna_exact.R [project_root] [out_dir]
+# Usage: Rscript workflow/render_teacher_questions_rna_exact.R <project_root> <out_dir> <qsmooth_dir> <expression_dir> <panel_dir>
 # ==============================================================================
 
 suppressPackageStartupMessages({
@@ -36,16 +34,31 @@ suppressPackageStartupMessages({
   library(scales)
   library(ragg)
   library(matrixStats)
-  library(msigdbr)
 })
 
 # Personal symbol random seed
 set.seed(25)
 
 args <- commandArgs(trailingOnly = TRUE)
+stopifnot(length(args) == 5L)
 root <- if (length(args) >= 1L) normalizePath(args[[1L]], mustWork = TRUE) else normalizePath(".", mustWork = TRUE)
 out_dir <- if (length(args) >= 2L) args[[2L]] else file.path(root, "results", "rna_teacher_questions")
+if (dir.exists(out_dir) && length(list.files(out_dir, all.files = TRUE, no.. = TRUE)))
+  stop("Refusing non-empty output directory: ", out_dir)
+qsmooth_dir <- normalizePath(args[[3L]], mustWork = TRUE)
+expression_dir <- normalizePath(args[[4L]], mustWork = TRUE)
+panel_dir <- normalizePath(args[[5L]], mustWork = TRUE)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+
+# Wrap displayed text to the actual figure width; preserve data and plot geometry.
+save_rna_plot <- function(filename, plot, width, height, ...) {
+  for (key in c("title", "subtitle")) {
+    lab <- plot$labels[[key]]
+    if (is.character(lab) && length(lab) == 1L)
+      plot$labels[[key]] <- paste(strwrap(lab, width = floor(width * if (key == "title") 7 else 9)), collapse = "\n")
+  }
+  ggplot2::ggsave(filename, plot = plot, width = width, height = height, ...)
+}
 
 publication_font <- "Arial Unicode MS"
 charcoal <- "#2F3437"
@@ -89,11 +102,10 @@ read_table_gz <- function(p) {
 # ==============================================================================
 message(">>> Loading sample metadata, 31-group status, and 18,332-gene qsmooth matrices...")
 
-qc <- fread(file.path(root, "outputs", "20260916_expression_extraction", "group_sample_qc.csv"))
+qc <- fread(file.path(expression_dir, "group_sample_qc.csv"))
 status <- fread(file.path(root, "audit", "20260916_full_31_rna_status", "rna_31_group_status.csv"))
 groups_31 <- fread(file.path(root, "data", "publication_input", "group_summary_31.csv"))
 
-qsmooth_dir <- file.path(root, "outputs", "20260918_qsmooth_31group_hgnc")
 group_exp <- fread(file.path(qsmooth_dir, "group_expansion_31.csv"))
 # Primary analysis basis (2026-09-19 revision): 28 INDEPENDENT reference
 # materials, not the 31 proteomics-side rows. HCT116 (KLA31_14/15/16) and HK-2
@@ -126,15 +138,15 @@ message(sprintf("Loaded qsmooth_A: %d genes x %d reference columns", nrow(qa_dt)
 # ==============================================================================
 message(">>> Task 1: Calculating proliferation score using official MSigDB Hallmark G2M Checkpoint...")
 
-# Query official MSigDB Hallmark collection for human
-h_df <- as.data.table(msigdbr(species = "Homo sapiens", collection = "H"))
-g2m_df <- h_df[gs_name == "HALLMARK_G2M_CHECKPOINT"]
-g2m_genes <- intersect(g2m_df$ensembl_gene, qb_dt[[gid_col]])
-message(sprintf("MSigDB Hallmark G2M Checkpoint: %d genes present in 18,332 qsmooth space", length(g2m_genes)))
-
-# Archive official gene set definition
-fwrite(g2m_df[ensembl_gene %in% g2m_genes, .(gene_symbol, ensembl_gene, entrez_id = ncbi_gene)],
-       file.path(out_dir, "official_hallmark_g2m_checkpoint_genes_mapped.csv"))
+# Frozen stable-ID panel from the previously accepted Hallmark deliverable.
+# Rendering must not fetch a changing remote gene-set definition.
+hallmark_path <- file.path(root, "config", "rna_hallmark_g2m_checkpoint_frozen_20260919.csv")
+g2m_df <- fread(hallmark_path)
+stopifnot(!anyDuplicated(g2m_df$ensembl_gene), nrow(g2m_df) == 196L,
+          all(g2m_df$ensembl_gene %in% qb_dt[[gid_col]]))
+g2m_genes <- g2m_df$ensembl_gene
+fwrite(g2m_df, file.path(out_dir, "official_hallmark_g2m_checkpoint_genes_mapped.csv"))
+message(sprintf("Frozen Hallmark G2M Checkpoint: %d Ensembl genes", length(g2m_genes)))
 
 # Sample-level proliferation score: mean log2(qsmooth TPM + 0.5) over 196 hallmark genes
 sub_prolif <- as.matrix(qb_dt[match(g2m_genes, get(gid_col)), full_samples, with = FALSE])
@@ -250,8 +262,8 @@ plot_prolif_by_tissue_box <- ggplot(sample_31_prolif_dt, aes(x = ProliferationSc
   )
 
 stem_prolif_box <- file.path(out_dir, "Figure_1b_RNA_proliferation_hallmark_by_tissue_boxplot")
-ggsave(paste0(stem_prolif_box, ".png"), plot_prolif_by_tissue_box, width = 14.0, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_prolif_box, ".pdf"), plot_prolif_by_tissue_box, width = 14.0, height = 11.5, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_prolif_box, ".png"), plot_prolif_by_tissue_box, width = 14.0, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_prolif_box, ".pdf"), plot_prolif_by_tissue_box, width = 14.0, height = 11.5, bg = "white", device = cairo_pdf)
 
 # --- 1B. Per-Tissue Proliferation Barplot (Ranked by Score) ---
 grp_prolif_bar <- copy(grp_prolif_dt)
@@ -298,8 +310,8 @@ plot_prolif_by_tissue_bar <- ggplot(grp_prolif_bar, aes(x = ProliferationMedian,
   )
 
 stem_prolif_bar <- file.path(out_dir, "Figure_1b_RNA_proliferation_hallmark_by_tissue_barplot")
-ggsave(paste0(stem_prolif_bar, ".png"), plot_prolif_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_prolif_bar, ".pdf"), plot_prolif_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_prolif_bar, ".png"), plot_prolif_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_prolif_bar, ".pdf"), plot_prolif_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
 
 # --- 1C. Scheme B Primary Figure 1b: 28-material Proliferation Boxplot (ANOVA) ---
 grp_prolif_counts <- grp_prolif_dt[, .(N = .N, MaxScore = max(ProliferationMedian)), by = .(Category, X)]
@@ -349,8 +361,8 @@ plot_prolif_cat_box <- ggplot(grp_prolif_dt, aes(x = X, y = ProliferationMedian,
   ) + coord_cartesian(clip = "off")
 
 stem_prolif_cat <- file.path(out_dir, "Figure_1b_RNA_proliferation_hallmark_28materials_boxplot")
-ggsave(paste0(stem_prolif_cat, ".png"), plot_prolif_cat_box, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_prolif_cat, ".pdf"), plot_prolif_cat_box, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_prolif_cat, ".png"), plot_prolif_cat_box, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_prolif_cat, ".pdf"), plot_prolif_cat_box, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
 message(">>> Task 1 complete: Figure 1b Hallmark proliferation figures saved.")
 
@@ -359,7 +371,7 @@ message(">>> Task 1 complete: Figure 1b Hallmark proliferation figures saved.")
 # ==============================================================================
 message(">>> Task 2: Calculating fixed DDR gene set expression across tissues and categories...")
 
-ddr_annot <- fread(file.path(root, "outputs", "20260916_ddr_panel_31group", "kla_ddr_annotation.csv"))
+ddr_annot <- fread(file.path(panel_dir, "kla_ddr_annotation.csv"))
 ddr_genes <- unique(ddr_annot$EnsemblGeneID[!is.na(ddr_annot$EnsemblGeneID) & nzchar(ddr_annot$EnsemblGeneID)])
 ddr_genes <- intersect(ddr_genes, qb_dt[[gid_col]])
 message(sprintf("Fixed DDR panel: %d genes present in 18,332 space", length(ddr_genes)))
@@ -453,8 +465,8 @@ plot_ddr_by_tissue_box <- ggplot(sample_31_ddr_dt, aes(x = DDRExpressionMedian, 
   )
 
 stem_ddr_box <- file.path(out_dir, "Figure_1a_RNA_DDR_expression_by_tissue_boxplot")
-ggsave(paste0(stem_ddr_box, ".png"), plot_ddr_by_tissue_box, width = 14.0, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_ddr_box, ".pdf"), plot_ddr_by_tissue_box, width = 14.0, height = 11.5, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_ddr_box, ".png"), plot_ddr_by_tissue_box, width = 14.0, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_ddr_box, ".pdf"), plot_ddr_by_tissue_box, width = 14.0, height = 11.5, bg = "white", device = cairo_pdf)
 
 # --- 2B. Per-Tissue DDR Expression Barplot (Ranked) ---
 grp_ddr_bar <- copy(grp_ddr_dt)
@@ -483,8 +495,8 @@ plot_ddr_by_tissue_bar <- ggplot(grp_ddr_bar, aes(x = DDRExpressionMedian, y = B
   )
 
 stem_ddr_bar <- file.path(out_dir, "Figure_1a_RNA_DDR_expression_by_tissue_barplot")
-ggsave(paste0(stem_ddr_bar, ".png"), plot_ddr_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_ddr_bar, ".pdf"), plot_ddr_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_ddr_bar, ".png"), plot_ddr_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_ddr_bar, ".pdf"), plot_ddr_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
 
 # --- 2C. Scheme B Primary Figure 1a: DDR Expression Boxplot (28 materials, ANOVA) ---
 aov_ddr_cat <- summary(aov(DDRExpressionMedian ~ Category, data = grp_ddr_dt))[[1L]]
@@ -510,8 +522,8 @@ plot_ddr_cat_box <- ggplot(grp_ddr_dt, aes(x = X, y = DDRExpressionMedian, fill 
   )
 
 stem_ddr_cat <- file.path(out_dir, "Figure_1a_RNA_DDR_expression_28materials_boxplot")
-ggsave(paste0(stem_ddr_cat, ".png"), plot_ddr_cat_box, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_ddr_cat, ".pdf"), plot_ddr_cat_box, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_ddr_cat, ".png"), plot_ddr_cat_box, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_ddr_cat, ".pdf"), plot_ddr_cat_box, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
 # --- 2D. 28-material DDR Gene Fraction Boxplot ---
 aov_frac_31 <- summary(aov(DdrFractionMedian ~ Category, data = grp_ddr_dt))[[1L]]
@@ -537,8 +549,8 @@ plot_frac_31 <- ggplot(grp_ddr_dt, aes(x = X, y = DdrFractionMedian, fill = Cate
   )
 
 stem_frac_31 <- file.path(out_dir, "Figure_1a_RNA_DDR_fraction_28materials_boxplot")
-ggsave(paste0(stem_frac_31, ".png"), plot_frac_31, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_frac_31, ".pdf"), plot_frac_31, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_frac_31, ".png"), plot_frac_31, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_frac_31, ".pdf"), plot_frac_31, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
 message(">>> Task 2 complete: Figure 1a fixed DDR figures saved.")
 
@@ -547,7 +559,7 @@ message(">>> Task 2 complete: Figure 1a fixed DDR figures saved.")
 # ==============================================================================
 message(">>> Task 3: Calculating expression of genes corresponding to lactylated proteins across tissues...")
 
-mapping_ddr <- fread(file.path(root, "outputs", "20260916_ddr_panel_31group", "ddr_uniprot_to_ensembl.tsv"))
+mapping_ddr <- fread(file.path(panel_dir, "ddr_uniprot_to_ensembl.tsv"))
 kla_union_genes <- unique(mapping_ddr[grepl("KlaUnion", PanelMembership) & NGeneIDs == 1L & !is.na(EnsemblGeneIDs), EnsemblGeneIDs])
 kla_union_genes <- intersect(kla_union_genes, qb_dt[[gid_col]])
 message(sprintf("Lactylated protein genes (KlaUnion): %d genes present in 18,332 space", length(kla_union_genes)))
@@ -631,8 +643,8 @@ plot_kla_by_tissue_box <- ggplot(sample_31_kla_dt, aes(x = KlaExpressionMedian, 
   )
 
 stem_kla_box <- file.path(out_dir, "Figure_1a_RNA_lactylated_gene_expression_by_tissue_boxplot")
-ggsave(paste0(stem_kla_box, ".png"), plot_kla_by_tissue_box, width = 14.0, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_kla_box, ".pdf"), plot_kla_by_tissue_box, width = 14.0, height = 11.5, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_kla_box, ".png"), plot_kla_by_tissue_box, width = 14.0, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_kla_box, ".pdf"), plot_kla_by_tissue_box, width = 14.0, height = 11.5, bg = "white", device = cairo_pdf)
 
 # --- 4B. Per-Tissue Lactylated Gene Expression Barplot (Ranked) ---
 grp_kla_bar <- copy(grp_kla_dt)
@@ -661,8 +673,8 @@ plot_kla_by_tissue_bar <- ggplot(grp_kla_bar, aes(x = KlaExpressionMedian, y = B
   )
 
 stem_kla_bar <- file.path(out_dir, "Figure_1a_RNA_lactylated_gene_expression_by_tissue_barplot")
-ggsave(paste0(stem_kla_bar, ".png"), plot_kla_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_kla_bar, ".pdf"), plot_kla_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_kla_bar, ".png"), plot_kla_by_tissue_bar, width = 14.0, height = 10.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_kla_bar, ".pdf"), plot_kla_by_tissue_bar, width = 14.0, height = 10.5, bg = "white", device = cairo_pdf)
 
 # --- 4C. Primary Figure 1a: DDR vs Lactylated Gene Expression Comparison (28 materials, Two-Way ANOVA) ---
 grp_dual <- merge(grp_ddr_dt[, .(GroupID, Category, CategoryLabel, X, DDRExpressionMedian)],
@@ -732,8 +744,8 @@ plot_fig1a_dual <- ggplot(grp_expr_long, aes(x = CategoryLabel, y = MedianExpres
   )
 
 stem_dual_31 <- file.path(out_dir, "Figure_1a_RNA_DDR_and_lactylated_gene_expression_28materials_boxplot")
-ggsave(paste0(stem_dual_31, ".png"), plot_fig1a_dual, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(paste0(stem_dual_31, ".pdf"), plot_fig1a_dual, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
+save_rna_plot(paste0(stem_dual_31, ".png"), plot_fig1a_dual, width = 8.5, height = 7.0, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(paste0(stem_dual_31, ".pdf"), plot_fig1a_dual, width = 8.5, height = 7.0, bg = "white", device = cairo_pdf)
 
 message(">>> Task 3 complete: Figure 1a lactylated protein gene expression figures saved.")
 
@@ -802,7 +814,7 @@ reg_qsmooth_dt <- merge(reg_qsmooth_dt, status[, .(GroupID, PXD, SampleGroup, Ca
 reg_qsmooth_dt <- merge(reg_qsmooth_dt, groups_31[, .(PXD, SampleGroup, ReferenceLabelEn, RowOrder)], by = c("PXD", "SampleGroup"))
 
 # Calculate Z-score per gene across the 28 independent materials
-reg_qsmooth_dt[, QsmoothZScore := (QsmoothLog2TPM - mean(QsmoothLog2TPM)) / sd(QsmoothLog2TPM), by = .(DisplayName, Role)]
+reg_qsmooth_dt[, QsmoothZScore := (QsmoothLog2TPM - mean(QsmoothLog2TPM)) / sd(QsmoothLog2TPM), by = .(RegulatorBaseAccession, Role)]
 
 fwrite(reg_qsmooth_dt, file.path(out_dir, "regulator_rna_qsmooth_28materials.csv"))
 
@@ -889,10 +901,10 @@ build_qsmooth_heatmap <- function(include_boxes) {
 p_qsm_framed <- build_qsmooth_heatmap(include_boxes = TRUE)
 p_qsm_unboxed <- build_qsmooth_heatmap(include_boxes = FALSE)
 
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap.png"), p_qsm_framed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap.pdf"), p_qsm_framed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap_no_frame.png"), p_qsm_unboxed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap_no_frame.pdf"), p_qsm_unboxed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap.png"), p_qsm_framed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap.pdf"), p_qsm_framed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap_no_frame.png"), p_qsm_unboxed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_heatmap_no_frame.pdf"), p_qsm_unboxed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
 
 # --- 5B. Standardized Qsmooth Z-Score Heatmap ---
 z_palette <- c("#2166AC", "#4393C3", "#92C5DE", "#F7F7F7", "#FDDBC7", "#F4A582", "#D6604D", "#B2182B")
@@ -944,62 +956,26 @@ build_qsmooth_z_heatmap <- function(include_boxes) {
 p_z_framed <- build_qsmooth_z_heatmap(include_boxes = TRUE)
 p_z_unboxed <- build_qsmooth_z_heatmap(include_boxes = FALSE)
 
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap.png"), p_z_framed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap.pdf"), p_z_framed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap_no_frame.png"), p_z_unboxed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
-ggsave(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap_no_frame.pdf"), p_z_unboxed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap.png"), p_z_framed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap.pdf"), p_z_framed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap_no_frame.png"), p_z_unboxed, width = 16.5, height = 11.5, dpi = 300, bg = "white", device = ragg::agg_png)
+save_rna_plot(file.path(out_dir, "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap_no_frame.pdf"), p_z_unboxed, width = 16.5, height = 11.5, bg = "white", device = cairo_pdf)
 
 message(">>> Task 4 complete: Figure 3c RNA regulator qsmooth heatmaps saved.")
 
 # ==============================================================================
-# SECTION 6: SYNCHRONIZATION TO DELIVERY DIRECTORIES
+# SECTION 6: LOCAL PROVENANCE (publication is a separate, explicit step)
 # ==============================================================================
-message(">>> Synchronizing all newly generated deliverables...")
-
-# 1. Local delivery dir
-deliv_dir <- file.path(root, "outputs", "20260917_delivery_31group", "rna")
-if (dir.exists(deliv_dir)) {
-  file.copy(list.files(out_dir, full.names = TRUE), deliv_dir, overwrite = TRUE)
-}
-
-# 2. External desktop delivery dirs
-ext_renew_top <- "/Users/gzy2520/Desktop/renew/kla"
-ext_renew_rna_upper <- file.path(ext_renew_top, "RNA")
-ext_renew_rna_lower <- file.path(ext_renew_top, "rna")
-
-if (dir.exists(ext_renew_top)) {
-  # Deliver all files (PDF, PNG, CSV) to RNA subfolder
-  dir.create(ext_renew_rna_upper, recursive = TRUE, showWarnings = FALSE)
-  file.copy(list.files(out_dir, full.names = TRUE), ext_renew_rna_upper, overwrite = TRUE)
-  if (dir.exists(ext_renew_rna_lower)) {
-    file.copy(list.files(out_dir, full.names = TRUE), ext_renew_rna_lower, overwrite = TRUE)
-  }
-  
-  # Copy primary publication PNGs to ext_renew_top
-  top_png_names <- c(
-    # 1. Proliferation (Official Hallmark G2M Checkpoint)
-    "Figure_1b_RNA_proliferation_hallmark_by_tissue_boxplot.png",
-    "Figure_1b_RNA_proliferation_hallmark_by_tissue_barplot.png",
-    "Figure_1b_RNA_proliferation_hallmark_28materials_boxplot.png",
-    # 2. Fixed DDR Panel (371 genes)
-    "Figure_1a_RNA_DDR_expression_by_tissue_boxplot.png",
-    "Figure_1a_RNA_DDR_expression_by_tissue_barplot.png",
-    "Figure_1a_RNA_DDR_expression_28materials_boxplot.png",
-    "Figure_1a_RNA_DDR_fraction_28materials_boxplot.png",
-    # 3. Lactylation Regulators Heatmaps (qsmooth)
-    "Figure_3c_RNA_regulator_qsmooth_heatmap.png",
-    "Figure_3c_RNA_regulator_qsmooth_heatmap_no_frame.png",
-    "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap.png",
-    "Figure_3c_RNA_regulator_qsmooth_zscore_heatmap_no_frame.png",
-    # 4. Lactylated Protein Genes Expression (5,224 genes)
-    "Figure_1a_RNA_lactylated_gene_expression_by_tissue_boxplot.png",
-    "Figure_1a_RNA_lactylated_gene_expression_by_tissue_barplot.png",
-    "Figure_1a_RNA_DDR_and_lactylated_gene_expression_28materials_boxplot.png"
-  )
-  for (tp in top_png_names) {
-    src_tp <- file.path(out_dir, tp)
-    if (file.exists(src_tp)) file.copy(src_tp, ext_renew_top, overwrite = TRUE)
-  }
-}
-
-cat("\nALL_4_REQUIRED_DELIVERABLES_SUCCESSFULLY_GENERATED_AND_DELIVERED!\n")
+fwrite(grp_expr_long, file.path(out_dir, "figure1a_rna_ddr_and_lactylated_28materials.csv"))
+stopifnot(nrow(grp_prolif_dt) == 28L, nrow(grp_ddr_dt) == 28L,
+          nrow(grp_kla_dt) == 28L, nrow(sample_31_ddr_dt) == 1898L,
+          uniqueN(sample_31_ddr_dt$SampleID) == 1898L,
+          is.finite(cat_p_31), is.finite(cat_f_31))
+input_paths <- c(qsmooth_a_path, qsmooth_b_path, hallmark_path,
+                 file.path(expression_dir, "group_sample_qc.csv"),
+                 file.path(qsmooth_dir, "group_expansion_31.csv"),
+                 file.path(panel_dir, c("kla_ddr_annotation.csv", "ddr_uniprot_to_ensembl.tsv")))
+fwrite(data.table(Path = input_paths, MD5 = unname(tools::md5sum(input_paths))),
+       file.path(out_dir, "render_input_fingerprints.csv"))
+writeLines(capture.output(sessionInfo()), file.path(out_dir, "sessionInfo.txt"))
+cat("RNA_CORE_RENDER_PASS: 28 materials; 1898 unique sample points; output only: ", out_dir, "\n")

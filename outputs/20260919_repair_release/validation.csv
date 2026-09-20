@@ -1,0 +1,93 @@
+Check,Pass
+28 reference matrices / 1898 unique samples,TRUE
+31 mappings / 28 reference keys,TRUE
+TPM totals and valid IDs in server verification,TRUE
+matrix shape and finite values,TRUE
+stable unique Ensembl IDs,TRUE
+sample metadata complete,TRUE
+source-to-qsmooth input GSE103520_MCF10A_control,TRUE
+expected source correction scope GSE103520_MCF10A_control,TRUE
+source-to-qsmooth input GSE114691_control_placenta,TRUE
+expected source correction scope GSE114691_control_placenta,TRUE
+source-to-qsmooth input GSE119834_NSC,TRUE
+expected source correction scope GSE119834_NSC,TRUE
+source-to-qsmooth input GSE132714_BPH,TRUE
+expected source correction scope GSE132714_BPH,TRUE
+source-to-qsmooth input GSE163787_TALL104,TRUE
+expected source correction scope GSE163787_TALL104,TRUE
+source-to-qsmooth input GSE171750_A549_untreated,TRUE
+expected source correction scope GSE171750_A549_untreated,TRUE
+source-to-qsmooth input GSE181540_adjacent_NS_input,TRUE
+expected source correction scope GSE181540_adjacent_NS_input,TRUE
+source-to-qsmooth input GSE181540_HS_input,TRUE
+expected source correction scope GSE181540_HS_input,TRUE
+source-to-qsmooth input GSE203529_HEK293T_WT,TRUE
+expected source correction scope GSE203529_HEK293T_WT,TRUE
+source-to-qsmooth input GSE266884_MES28_vector_control,TRUE
+expected source correction scope GSE266884_MES28_vector_control,TRUE
+source-to-qsmooth input GSE275256_HMC3_vehicle,TRUE
+expected source correction scope GSE275256_HMC3_vehicle,TRUE
+source-to-qsmooth input GSE283812_T47D_vehicle,TRUE
+expected source correction scope GSE283812_T47D_vehicle,TRUE
+source-to-qsmooth input GTEx_v8_Hippocampus,TRUE
+expected source correction scope GTEx_v8_Hippocampus,TRUE
+source-to-qsmooth input GTEx_v8_Lung,TRUE
+expected source correction scope GTEx_v8_Lung,TRUE
+source-to-qsmooth input HCT116_control,TRUE
+expected source correction scope HCT116_control,TRUE
+source-to-qsmooth input HepG2_DMSO24h,TRUE
+expected source correction scope HepG2_DMSO24h,TRUE
+source-to-qsmooth input HK2_untreated,TRUE
+expected source correction scope HK2_untreated,TRUE
+source-to-qsmooth input HUVEC_untreated,TRUE
+expected source correction scope HUVEC_untreated,TRUE
+source-to-qsmooth input MCF7_DMSO7d,TRUE
+expected source correction scope MCF7_DMSO7d,TRUE
+source-to-qsmooth input MDAMB468_DMSO7d,TRUE
+expected source correction scope MDAMB468_DMSO7d,TRUE
+source-to-qsmooth input PC3M_DMSO,TRUE
+expected source correction scope PC3M_DMSO,TRUE
+source-to-qsmooth input RKO_DMSO,TRUE
+expected source correction scope RKO_DMSO,TRUE
+source-to-qsmooth input sperm_GroupI,TRUE
+expected source correction scope sperm_GroupI,TRUE
+source-to-qsmooth input TCGA_ESCA_ESCC,TRUE
+expected source correction scope TCGA_ESCA_ESCC,TRUE
+source-to-qsmooth input TCGA_LIHC_normal,TRUE
+expected source correction scope TCGA_LIHC_normal,TRUE
+source-to-qsmooth input TCGA_LIHC_primary,TRUE
+expected source correction scope TCGA_LIHC_primary,TRUE
+source-to-qsmooth input TCGA_PRAD_primary,TRUE
+expected source correction scope TCGA_PRAD_primary,TRUE
+source-to-qsmooth input tendon_nondiabetic,TRUE
+expected source correction scope tendon_nondiabetic,TRUE
+fixed_ddr 28 materials,TRUE
+fixed_ddr 1898 samples,TRUE
+lactylated_gene 28 materials,TRUE
+lactylated_gene 1898 samples,TRUE
+proliferation scope,TRUE
+regulators 49 role entries x 28 references,TRUE
+"dual table 56 rows, two scores per material",TRUE
+core PDF inventory,TRUE
+core PNG pairs,TRUE
+no missing statistics label Figure_1a_RNA_DDR_and_lactylated_gene_expression_28materials_boxplot.pdf,TRUE
+no missing statistics label Figure_1a_RNA_DDR_expression_28materials_boxplot.pdf,TRUE
+no missing statistics label Figure_1a_RNA_DDR_expression_by_tissue_barplot.pdf,TRUE
+no missing statistics label Figure_1a_RNA_DDR_expression_by_tissue_boxplot.pdf,TRUE
+no missing statistics label Figure_1a_RNA_DDR_fraction_28materials_boxplot.pdf,TRUE
+no missing statistics label Figure_1a_RNA_lactylated_gene_expression_by_tissue_barplot.pdf,TRUE
+no missing statistics label Figure_1a_RNA_lactylated_gene_expression_by_tissue_boxplot.pdf,TRUE
+no missing statistics label Figure_1b_RNA_proliferation_hallmark_28materials_boxplot.pdf,TRUE
+no missing statistics label Figure_1b_RNA_proliferation_hallmark_by_tissue_barplot.pdf,TRUE
+no missing statistics label Figure_1b_RNA_proliferation_hallmark_by_tissue_boxplot.pdf,TRUE
+no missing statistics label Figure_3c_RNA_regulator_qsmooth_heatmap_no_frame.pdf,TRUE
+no missing statistics label Figure_3c_RNA_regulator_qsmooth_heatmap.pdf,TRUE
+no missing statistics label Figure_3c_RNA_regulator_qsmooth_zscore_heatmap_no_frame.pdf,TRUE
+no missing statistics label Figure_3c_RNA_regulator_qsmooth_zscore_heatmap.pdf,TRUE
+reference PDF inventory,TRUE
+reference PNG pairs,TRUE
+no missing statistics label RNA_1_DDR_panel_expression_31groups.pdf,TRUE
+no missing statistics label RNA_2_lactylome_transcriptome_coupling.pdf,TRUE
+no missing statistics label RNA_2a_three_source_joint.pdf,TRUE
+no missing statistics label RNA_2b_detection_by_transcript_level.pdf,TRUE
+no historical 31-group core deliverables,TRUE

@@ -1,0 +1,74 @@
+                                                                                                                        Path
+                                                                                                                      <char>
+1:                     data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/candidate_input/sample_design_30.csv
+2:                   data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input/group_summary_30.csv
+3:          data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input/kla_protein_membership_30.csv
+4:    data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input/reference_protein_membership_30.csv
+5:       data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input/regulator_kla_percentiles_30.csv
+6: data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input/regulator_reference_percentiles_30.csv
+                                                                                                    Path
+                                                                                                  <char>
+1: data/candidate/escc_inclusion_20260903_pxd065830_tumor_reference/publication_input/INPUT_MANIFEST.csv
+Frozen hash mismatches 0 
+AB genes max delta >0.5 14775 max 1.708813 genes mean delta >0.5 0 
+results/rna_teacher_questions/figure1a_fixed_ddr_31groups.csv 
+            Df Sum Sq Mean Sq F value Pr(>F)  
+Category     3  8.785   2.928   3.925  0.019 *
+Residuals   27 20.142   0.746                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+Category     3 1.0644  0.3548   21.85 2.18e-07 ***
+Residuals   27 0.4384  0.0162                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+outputs/20260917_delivery_31group/rna/figure1a_fixed_ddr_28materials.csv 
+            Df Sum Sq Mean Sq F value Pr(>F)  
+Category     3  7.097  2.3656   2.937 0.0537 .
+Residuals   24 19.334  0.8056                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+Category     3  1.099  0.3663   22.26 4.09e-07 ***
+Residuals   24  0.395  0.0165                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+outputs/20260917_delivery_31group/rna/figure1a_fixed_ddr_31groups.csv 
+            Df Sum Sq Mean Sq F value Pr(>F)  
+Category     3  8.785   2.928   3.925  0.019 *
+Residuals   27 20.142   0.746                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+Category     3 1.0644  0.3548   21.85 2.18e-07 ***
+Residuals   27 0.4384  0.0162                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+PROTEOME SAMPLE figure1_mki67_ratio_sample_values.csv 264 all_sample TRUE 
+PROTEOME SAMPLE figure1_pathway_summary_sample_boxplot_values.csv 504 all_sample TRUE 
+PROTEOME SAMPLE figure1_sample_boxplot_values.csv 272 all_sample TRUE 
+GSE132714_BPH local_matrix_md5 f5c23f55cf7151ac96a555b4db84608a 
+GSE163787_TALL104 local_matrix_md5 c1e0689080176df25bce31da9a4e555a 
+DUAL columns GroupID ReferenceKey PXD SampleGroup Category CategoryLabel ReferenceLabelEn RowOrder KlaExpressionMedian KlaExpressionMean KlaExpressionSD KlaExpressionSEM KlaExpressionIQR N X 
+Within material score correlation 0.9693074 
+                 Df Sum Sq Mean Sq F value Pr(>F)  
+Category          3   9.03  3.0086   3.937 0.0137 *
+GeneSet           1   0.10  0.1046   0.137 0.7130  
+Category:GeneSet  3   0.65  0.2170   0.284 0.8367  
+Residuals        48  36.68  0.7642                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Paired sensitivity only, not replacement official test
+
+Error: GroupID
+          Df Sum Sq Mean Sq F value Pr(>F)
+Category   3   9.03   3.009   1.984  0.143
+Residuals 24  36.40   1.516               
+
+Error: GroupID:GeneSet
+                 Df Sum Sq Mean Sq F value   Pr(>F)    
+GeneSet           1 0.1046 0.10461   8.881  0.00651 ** 
+Category:GeneSet  3 0.6510 0.21699  18.421 2.03e-06 ***
+Residuals        24 0.2827 0.01178                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

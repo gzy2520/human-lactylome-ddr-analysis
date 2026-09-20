@@ -11,7 +11,7 @@
 # source actually provides counts. TPM is computed from counts with one shared merged-exon
 # length table (metadata/annotation/human_gene_lengths_ensembl111.tsv) so that count-based
 # groups are normalised identically; sources that ship only FPKM/RPKM are converted with the
-# same table and are flagged as converted in the manifest.
+# retained length-annotated gene set by column rescaling, without dividing by length again.
 #
 # Usage: build_31_expression_matrices_20260916.R <server_root> <contract_csv> <out_dir> [--only=KLA31_01,...]
 args <- commandArgs(TRUE)
@@ -27,6 +27,7 @@ if (length(args) >= 4L && grepl("^--only=", args[[4L]])) {
 script_dir <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)))
 source(file.path(script_dir, "lib_kla31_expression_20260916.R"))
 
+assert_empty_output(out_dir)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(file.path(out_dir, "matrices"), showWarnings = FALSE)
 dir.create(file.path(out_dir, "objects"), showWarnings = FALSE)
@@ -391,7 +392,8 @@ for (i in seq_len(nrow(contract))) {
   if (!is.null(only) && !group_id %in% only) next
   obj_path <- file.path(out_dir, "objects", paste0(spec$ReferenceKey, ".rds"))
   cat(sprintf("[%02d/%d] %s %s (%s)\n", i, nrow(contract), spec$GroupIDs, spec$ReferenceKey, spec$SourceKind))
-  if (file.exists(obj_path)) { cat("    cached\n"); next }
+  # Shared references recur in the 31-row contract. Reuse only objects built in THIS run.
+  if (spec$ReferenceKey %in% names(manifest_rows)) next
 
   res <- tryCatch({
     spec$selector <- if (spec$SelectorType == "run_sum") strsplit(spec$SelectorValue, ";", fixed = TRUE)[[1L]]
@@ -437,12 +439,13 @@ for (i in seq_len(nrow(contract))) {
   obj <- finish_group(spec$GroupIDs, spec$ReferenceKey, spec$GroupLabel,
                       list(SourceKind = spec$SourceKind, SourcePath = spec$SourcePath,
                            SelectorType = spec$SelectorType, SelectorValue = spec$SelectorValue,
-                           NativeValueRoute = if (!is.null(res$fpkm)) "FPKM/RPKM -> TPM (shared Ensembl 111 length table)"
-                                              else if (!is.null(res$counts)) "counts -> TPM (shared Ensembl 111 length table)"
+                           NativeValueRoute = if (!is.null(res$counts)) "counts -> TPM (shared Ensembl 111 length table)"
+                                              else if (!is.null(res$fpkm)) "FPKM/RPKM -> TPM (column rescaling; length-annotated gene filter only)"
                                               else "source-native TPM",
                            IDRule = res$id_rule, IDNote = res$id_note,
                            NativeValuesInteger = res$integer_native,
-                           SourceFileMD5 = if (file.exists(file.path(root, spec$SourcePath))) unname(tools::md5sum(file.path(root, spec$SourcePath))) else NA_character_,
+                           SourceFileMD5 = if (file.exists(file.path(root, spec$SourcePath)) &&
+                             !dir.exists(file.path(root, spec$SourcePath))) unname(tools::md5sum(file.path(root, spec$SourcePath))) else NA_character_,
                            Note = if (is.null(res$counts_note)) "" else res$counts_note),
                       counts, tpm, sample_meta)
   saveRDS(obj, obj_path, compress = "xz")
@@ -466,12 +469,19 @@ for (i in seq_len(nrow(contract))) {
   cat(sprintf("    OK  %d samples x %d genes\n", ncol(obj$tpm), nrow(obj$tpm)))
 }
 
-if (length(manifest_rows)) {
-  write.csv(do.call(rbind, manifest_rows), file.path(out_dir, "group_manifest.csv"), row.names = FALSE)
-  write.csv(do.call(rbind, qc_rows), file.path(out_dir, "group_sample_qc.csv"), row.names = FALSE)
-}
+# Stage 3 is the sole writer of complete group_manifest/group_sample_qc/group_index.
+# Partial extraction must never masquerade as complete metadata.
+write.csv(data.frame(ReferenceKey = names(manifest_rows)),
+          file.path(out_dir, "extraction_completed_references.csv"), row.names = FALSE)
+fingerprint_paths <- unique(c(contract_path,
+  file.path(script_dir, c("build_31_expression_matrices_20260916.R", "lib_kla31_expression_20260916.R")),
+  list.files(ann_dir, full.names = TRUE), file.path(root, "metadata/id_mapping/human_gene2ensembl.tsv")))
+fingerprint_paths <- fingerprint_paths[file.exists(fingerprint_paths) & !dir.exists(fingerprint_paths)]
+write.csv(data.frame(Path = fingerprint_paths, MD5 = unname(tools::md5sum(fingerprint_paths))),
+          file.path(out_dir, "extraction_input_fingerprints.csv"), row.names = FALSE)
 if (length(fail_rows)) {
   write.csv(do.call(rbind, fail_rows), file.path(out_dir, "group_failures.csv"), row.names = FALSE)
   cat("GROUPS_FAILED=", length(fail_rows), "\n", sep = "")
+  stop("Extraction failed; this output cannot be finalized", call. = FALSE)
 }
 cat("EXTRACTION_DONE groups_written=", length(manifest_rows), " failures=", length(fail_rows), "\n", sep = "")

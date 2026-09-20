@@ -1,16 +1,18 @@
-# 当前工作交接：31组 + bulk RNA-seq
+# 当前交接：31 组蛋白组 + 28 份 RNA 参考
 
-完成配置：2026-09-14。工作树创建于2026-09-12。
-分支：research/kla31-rnaseq-20260912；起点main bc02d1d。
+更新：2026-09-20（修复启动于 2026-09-19）。分支：`research/kla31-rnaseq-20260912`。
 
-1. 保留31组（9非肿瘤组织、3肿瘤组织、12癌细胞组、7非癌细胞/培养模型），ESCC不得再次遗漏。31组不是31个独立队列。
-2. 蛋白分析以BaseAccession，RNA以Ensembl/Entrez；Symbol只展示。优先R，随机种子25。
-3. 修正包原为冻结；2026-09-16经用户明确授权解除，因为冻结的是已被拒的初稿版本，现按31组重新分析。新脚本放R或workflow，新结果放outputs下独立日期任务目录。data/publication_input已由30组更新为31组（见该目录SCOPE.md），原30组版本备份在work/20260916_publication_input_30group_backup/；由旧30组输入派生的图表（corrected_final_result_20260905_sample_only/、audits/20260905_final_result/）尚未重算，重新使用前必须先重建。
-4. results现在是独立空目录；renv/library为独立目录（包缓存链接保留），不再通过整个目录链接到旧工作树。勿直接修改包缓存内部文件，依赖按renv管理。
-5. 本地扩展输入为独立副本。原始大数据未迁入；需全量重建时先明确源根与独立输出位置。旧纠正脚本仍有KLA_SOURCE_ROOT等参数，不能假定无参数就是当前新分析入口。
-6. 旧add_data审计及Gemini原文是历史记录；RNA候选入口看docs/MATCHED_RNASEQ_REFERENCE_CATALOG_31.md，2026-09-14补充版为outputs/20260914_reference_material_audit/rnaseq_reference_candidate_31.csv。全部AnalysisReady=FALSE。按同组织/取材类别纳入，条件差异单独记录；本轮新增瘢痕邻近皮肤、PC-3M及MES28候选。普通全蛋白MCF10A来源参数为Protein FDR=1、PSM FDR=0.01，按老师确认不另加概率/FDR阈值但必须披露；HK-2内部/公开run别名未锁，见同目录REPORT.md；未改冻结结果。
-7. RNA下载已转到服务器`192.168.3.45:/home/user/gzy/kla31-rnaseq-20260914`，合同为`config/rnaseq_server_download_20260914.tsv`；GEO/GTEx/ENCODE、GDC STAR counts、GEO raw-read解析和DepMap表达队列均有独立日志与SHA/MD5记录。DepMap因26Q1官方无验证码目录对这些文件不提供URL，固定使用官方目录提供的DepMap Public 24Q4（2024-12-16）Figshare链接，并保存目录快照；不与26Q1混用。下载后仍须锁定样本/文件版本/建库、做稳定ID和单位QC；处理Pro/Inh配对和研究来源复用。外部亲本RNA不能当KO/感染条件匹配。
-8. 提交应明确描述变更，只提交代码、合同和应发布的结果；原始下载、临时输出、私人草稿不混入。推送当前研究分支，不推main，不自动合并。
+1. 当前 RNA 发布入口是 `config/rna_current_release.csv`，修复验收见 `audit/20260919_rna_repair/REPORT.md`。旧审计见 `audit/20260919_project_review/REPORT.md`；旧目录不是当前交付。
+2. RNA 是 28 份不重复 ReferenceKey、1,898 个唯一样本，与 31 条蛋白组 GroupID 对应。HCT116 三行、HK-2 两行共用 RNA，在核心组图中只计一次。保留 31 行映射用于材料对照；SampleID 唯一不等同于供体独立。
+3. 蛋白组使用 BaseAccession，RNA 使用 Ensembl/Entrez；Symbol 只展示或用于原始符号源的一次性 ID 转换。优先 R，seed=25。
+4. 用户于本轮明确要求“显著性不用管”：不更换单因素/双因素 ANOVA，不修复配对模型、不重新选择检验。输入重建后原方法统计量随输入重新计算；此保留不表示统计假设已经验证。
+5. 修复 FPKM/RPKM 重复长度归一化、陈旧缓存、部分元数据覆盖、图标题和 NA 显示、文档错误及混版交付。Stage 2/渲染都要求独立输出目录；不要覆盖历史对象，不要把旧目录的文件整体复制进新发布。
+6. 大型原始 RNA 数据在 `user@100.121.229.123:/home/user/gzy/kla31-rnaseq-20260914`，SSH 使用 `HostKeyAlias=192.168.3.45`。初次提取脚本保存在 `workflow/releases/20260919_repair/`，后续重跑使用完整验证版 `workflow/releases/20260920_validated/`；本轮 expression 为 `outputs/20260919_expression_corrected`。本地同步主要矩阵和元数据，原始下载和对象保留服务器。
+7. 本轮没有修改蛋白组分析或旧冻结包。`final_result` 仍是旧冻结包快捷入口，不能当作当前 RNA 发布；原冻结 163 文件哈希检查继续保留。
+8. `workflow/preflight_kla31.R` 已改为检查当前发布和当前输入。旧检查在 `workflow/preflight_kla31_legacy_20260912.R`，其中候选路径与 AnalysisReady=FALSE 要求只是历史合同。
+9. 来源局限、NSC 模型匹配、胎盘取样限制、TALL-104 n=1 等没有被数值修复消除，详见方法文档。不得将外部 RNA 当作蛋白组同一样本的配对定量。
+10. 脚本放 workflow/R，结果放 dated outputs；发布以 SHA-256 清单固定。正式绘图器不再自动写桌面。提交和推送仅当前研究分支，不改 main、不合并。
 
-启动检查：Rscript --vanilla workflow/preflight_kla31.R
-历史main说明已归档至docs/history。
+运行：`Rscript --vanilla workflow/preflight_kla31.R`。
+
+本地全链重建：`bash workflow/rebuild_rna_release_20260919.sh <已验收的expression目录> <新日期标签>`。输出完成仍需视觉 QA，再更新当前发布清单。

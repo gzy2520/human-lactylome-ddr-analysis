@@ -1,4 +1,7 @@
 #!/usr/bin/env Rscript
+if (Sys.getenv("KLA_ALLOW_LEGACY_RNA") != "1") {
+  stop("Historical RNA renderer (20-gene panel/31-row expansion). Use rebuild_rna_release_20260919.sh. For historical reproduction only, set KLA_ALLOW_LEGACY_RNA=1 and choose a separate empty output directory.", call. = FALSE)
+}
 # The three questions the supervisor asked, answered from the transcriptome side.
 #
 #   1. cell proliferation rate

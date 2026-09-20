@@ -120,6 +120,8 @@ def read_panel(expr_dir, name, accessions, mapping, columns, genes_index):
 
 
 def main(qsmooth_dir, mapping_dir, out_dir):
+    if os.path.exists(out_dir) and os.listdir(out_dir):
+        raise RuntimeError(f"Refusing non-empty output: {out_dir}")
     os.makedirs(out_dir, exist_ok=True)
 
     # smoothed reference profile, one column per group row

@@ -1,0 +1,6 @@
+Role,Path
+expression,outputs/20260919_expression_corrected
+qsmooth,outputs/20260919_repair_qsmooth
+panel,outputs/20260919_repair_panel
+assisted,outputs/20260919_repair_assisted
+delivery,outputs/20260919_repair_release

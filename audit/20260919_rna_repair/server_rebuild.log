@@ -1,0 +1,81 @@
+symbol lookup: 193701 official symbols, 208997 after HGNC renames
+[01/31] KLA31_01 tendon_nondiabetic (ncbi_counts)
+    OK  3 samples x 27400 genes
+[02/31] KLA31_02 GTEx_v8_Lung (gtex_v8)
+    OK  578 samples x 55442 genes
+[03/31] KLA31_03 GSE181540_HS_input (xlsx_fpkm)
+    OK  3 samples x 19435 genes
+[04/31] KLA31_04 GSE181540_adjacent_NS_input (xlsx_fpkm)
+    OK  3 samples x 19435 genes
+[05/31] KLA31_05 GTEx_v8_Hippocampus (gtex_v8)
+    OK  197 samples x 55442 genes
+[06/31] KLA31_06 GSE114691_control_placenta (transcript_counts)
+    OK  21 samples x 51986 genes
+[07/31] KLA31_07 sperm_GroupI (ncbi_counts)
+    OK  4 samples x 27400 genes
+[08/31] KLA31_08 GSE132714_BPH (per_sample_rpkm)
+    OK  18 samples x 51986 genes
+[09/31] KLA31_09 TCGA_LIHC_normal (gdc_star)
+    OK  50 samples x 60386 genes
+[10/31] KLA31_10 TCGA_ESCA_ESCC (gdc_star)
+    OK  95 samples x 60386 genes
+[11/31] KLA31_11 TCGA_PRAD_primary (gdc_star)
+    OK  501 samples x 60386 genes
+[12/31] KLA31_12 TCGA_LIHC_primary (gdc_star)
+    OK  371 samples x 60386 genes
+[13/31] KLA31_13 MCF7_DMSO7d (ncbi_counts)
+    OK  3 samples x 27400 genes
+[14/31] KLA31_14 HCT116_control (single_ensembl_counts)
+    OK  3 samples x 58228 genes
+[15/31] KLA31_15 HCT116_control (single_ensembl_counts)
+[16/31] KLA31_16 HCT116_control (single_ensembl_counts)
+[17/31] KLA31_17 GSE163787_TALL104 (single_ensembl_fpkm)
+    OK  1 samples x 30853 genes
+[18/31] KLA31_18 HepG2_DMSO24h (ncbi_counts)
+    OK  3 samples x 27400 genes
+[19/31] KLA31_19 GSE171750_A549_untreated (single_symbol_counts)
+    OK  3 samples x 23771 genes
+[20/31] KLA31_20 MDAMB468_DMSO7d (ncbi_counts)
+    OK  3 samples x 27400 genes
+[21/31] KLA31_21 GSE283812_T47D_vehicle (single_symbol_counts)
+    OK  4 samples x 19154 genes
+[22/31] KLA31_22 PC3M_DMSO (ncbi_counts)
+    OK  3 samples x 27400 genes
+[23/31] KLA31_23 GSE266884_MES28_vector_control (ncbi_counts)
+    OK  4 samples x 27400 genes
+[24/31] KLA31_24 RKO_DMSO (single_ensembl_counts)
+    OK  3 samples x 58228 genes
+[25/31] KLA31_25 GSE203529_HEK293T_WT (rsem_per_sample)
+    OK  3 samples x 60337 genes
+[26/31] KLA31_26 GSE275256_HMC3_vehicle (annotated_star_counts)
+    OK  3 samples x 61365 genes
+[27/31] KLA31_27 HK2_untreated (ncbi_counts)
+    OK  3 samples x 27400 genes
+[28/31] KLA31_28 HK2_untreated (ncbi_counts)
+[29/31] KLA31_29 GSE103520_MCF10A_control (recount3_runs)
+    OK  3 samples x 57413 genes
+[30/31] KLA31_30 GSE119834_NSC (ncbi_counts)
+    OK  8 samples x 27400 genes
+[31/31] KLA31_31 HUVEC_untreated (ncbi_counts)
+    OK  4 samples x 27400 genes
+Warning messages:
+1: In structure(.Call(C_Rmd5, files), names = files) :
+  用于'/home/user/gzy/kla31-rnaseq-20260914/raw/gtex_v8'文件的md5运行失败
+2: In structure(.Call(C_Rmd5, files), names = files) :
+  用于'/home/user/gzy/kla31-rnaseq-20260914/raw/gtex_v8'文件的md5运行失败
+3: In structure(.Call(C_Rmd5, files), names = files) :
+  用于'/home/user/gzy/kla31-rnaseq-20260914/raw/gdc_star_counts'文件的md5运行失败
+4: In structure(.Call(C_Rmd5, files), names = files) :
+  用于'/home/user/gzy/kla31-rnaseq-20260914/raw/gdc_star_counts'文件的md5运行失败
+5: In structure(.Call(C_Rmd5, files), names = files) :
+  用于'/home/user/gzy/kla31-rnaseq-20260914/raw/gdc_star_counts'文件的md5运行失败
+6: In structure(.Call(C_Rmd5, files), names = files) :
+  用于'/home/user/gzy/kla31-rnaseq-20260914/raw/gdc_star_counts'文件的md5运行失败
+7: In doTryCatch(return(expr), name, parentenv, handler) :
+  强制改变过程中产生了NA
+EXTRACTION_DONE groups_written=28 failures=0
+Error in vapply(manifest$ReferenceKey, function(k) unique(contract$ExpectedN[contract$ReferenceKey ==  : 
+  值的种类必需是'double'，
+ 但FUN(X[[1]])结果的种类却是'character'
+Calls: stopifnot -> vapply
+停止执行

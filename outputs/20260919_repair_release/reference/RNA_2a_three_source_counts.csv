@@ -1,0 +1,9 @@
+PairStatus,TranscriptLevel,Pairs
+Kla+ / Ref+,TPM < 1,40
+Kla+ / Ref+,TPM ≥ 1,2668
+Kla+ / Ref-,TPM < 1,27
+Kla+ / Ref-,TPM ≥ 1,481
+Kla- / Ref+,TPM < 1,72
+Kla- / Ref+,TPM ≥ 1,3964
+Kla- / Ref-,TPM < 1,376
+Kla- / Ref-,TPM ≥ 1,3873

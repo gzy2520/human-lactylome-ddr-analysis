@@ -13,7 +13,7 @@
 # classes with hundreds of samples (GTEx lung, TCGA PRAD) dominate the quantile estimates.
 #
 # This is a normalisation, not a test: no group is tested against another, and a low weight
-# in one quantile region means only that the groups genuinely differ there.
+# in one quantile region does not distinguish biology from source/batch effects.
 #
 # Usage: qsmooth_31group_20260916.R <expression_dir> <out_dir> <contract_csv>
 args <- commandArgs(TRUE)
@@ -59,7 +59,8 @@ stopifnot(length(common) > 10000L)
 
 full <- do.call(cbind, lapply(mats, function(m) m[common, , drop = FALSE]))
 group_factor <- factor(rep(refs, vapply(mats, ncol, integer(1L))))
-stopifnot(ncol(full) == length(group_factor), all(table(group_factor) >= 1L))
+stopifnot(ncol(full) == length(group_factor), all(table(group_factor) >= 1L),
+          !anyDuplicated(colnames(full)), !anyDuplicated(rownames(full)))
 cat(sprintf("full matrix: %d genes x %d samples across %d groups\n",
             nrow(full), ncol(full), nlevels(group_factor)))
 
@@ -80,9 +81,9 @@ write_matrix(collapsed, file.path(out_dir, "matrices", "unified_groupmedian_log2
 
 ## ---- smooth ---------------------------------------------------------------
 
-# qsmooth returns a "qsmooth" object holding the smoothed matrix and one weight per gene:
+# qsmooth returns a smoothed matrix and one weight per sorted quantile position:
 # the weight is 1 where a global quantile normalization is applied and 0 where the groups are
-# left to their own quantiles, and it is smoothed across neighbouring genes.
+# left to their own quantiles, and it is smoothed across neighbouring quantile positions.
 run_qsmooth <- function(mat, groups, label) {
   cat(sprintf("qsmooth on %s (%d x %d) ...\n", label, nrow(mat), ncol(mat)))
   res <- qsmooth(object = mat, group_factor = groups)
@@ -97,9 +98,9 @@ b <- run_qsmooth(full, group_factor, "B full")
 
 write_matrix(a$smoothed, file.path(out_dir, "matrices", "qsmooth_A_collapsed_log2tpm.tsv.gz"))
 write_matrix(b$smoothed, file.path(out_dir, "matrices", "qsmooth_B_full_log2tpm.tsv.gz"))
-fwrite(data.table(stable_gene_id = rownames(a$smoothed), Weight = a$weights),
+fwrite(data.table(QuantileRank = seq_len(nrow(a$smoothed)), Weight = a$weights),
        file.path(out_dir, "qsmooth_weights_A.csv.gz"))
-fwrite(data.table(stable_gene_id = rownames(b$smoothed), Weight = b$weights),
+fwrite(data.table(QuantileRank = seq_len(nrow(b$smoothed)), Weight = b$weights),
        file.path(out_dir, "qsmooth_weights_B.csv.gz"))
 
 ## ---- A versus B -----------------------------------------------------------
@@ -154,10 +155,18 @@ summary_lines <- c(
   sprintf("AB_mean_abs_delta,%.5f", mean(cmp$MeanAbsDelta)),
   sprintf("AB_median_abs_delta,%.5f", median(cmp$MeanAbsDelta)),
   sprintf("AB_p99_abs_delta,%.5f", quantile(cmp$MeanAbsDelta, 0.99)),
-  sprintf("AB_genes_delta_gt_0.5,%d", sum(cmp$MeanAbsDelta > 0.5)),
+  sprintf("AB_genes_mean_abs_delta_gt_0.5,%d", sum(cmp$MeanAbsDelta > 0.5)),
+  sprintf("AB_genes_max_abs_delta_gt_0.5,%d", sum(cmp$MaxAbsDelta > 0.5)),
+  sprintf("AB_max_abs_delta,%.8f", max(cmp$MaxAbsDelta)),
+  sprintf("A_vs_input_max_abs_delta,%.8f", max(abs(a$smoothed - collapsed))),
+  sprintf("weight_B_median,%.8f", median(b$weights)),
   sprintf("AB_median_gene_correlation,%.4f", median(cmp$Correlation))
 )
 writeLines(summary_lines, file.path(out_dir, "summary.csv"))
+input_paths <- c(file.path(expr_dir, "group_index.csv"), contract_path,
+                 file.path(expr_dir, "matrices", paste0(refs, "_log2tpm.tsv.gz")))
+fwrite(data.table(Path = input_paths, MD5 = unname(tools::md5sum(input_paths))),
+       file.path(out_dir, "input_fingerprints.csv"))
 cat(paste(summary_lines, collapse = "\n"), "\n")
 writeLines(trimws(capture.output(sessionInfo()), which = "right"),
            file.path(out_dir, "sessionInfo.txt"))

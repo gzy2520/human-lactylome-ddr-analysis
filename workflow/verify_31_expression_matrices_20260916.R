@@ -8,7 +8,9 @@ stopifnot(length(args) == 1L)
 out_dir <- normalizePath(args[[1L]], mustWork = TRUE)
 
 obj_files <- sort(list.files(file.path(out_dir, "objects"), pattern = "\\.rds$", full.names = TRUE))
-stopifnot(length(obj_files) > 0L)
+stopifnot(length(obj_files) == 28L)
+manifest <- read.csv(file.path(out_dir, "group_manifest.csv"), stringsAsFactors = FALSE)
+stopifnot(nrow(manifest) == 28L, !anyDuplicated(manifest$ReferenceKey))
 
 fail <- character(0)
 note <- function(ok, msg) if (!isTRUE(ok)) fail <<- c(fail, msg)
@@ -50,13 +52,17 @@ for (f in obj_files) {
 
   q <- o$qc
   note(all(is.finite(q$TPMTotal)), paste(k, "QC table has non-finite values"))
-  rows[[k]] <- data.frame(ReferenceKey = k, GroupIDs = o$GroupIDs, Samples = ncol(tpm),
+  mi <- match(k, manifest$ReferenceKey)
+  note(!is.na(mi) && manifest$Samples[mi] == ncol(tpm) && manifest$Genes[mi] == nrow(tpm),
+       paste(k, "final manifest dimensions differ from object"))
+  rows[[k]] <- data.frame(ReferenceKey = k, GroupIDs = manifest$GroupIDs[mi], Samples = ncol(tpm),
                           Genes = nrow(tpm),
                           GenesWithoutLength = dropped_no_length,
                           MedianLibrarySize = if (is.null(cnt)) NA_real_ else median(colSums(cnt)),
                           # Inf here means the group has a single sample, so no pairwise
                           # correlation exists to report
-                          MinPairwiseSpearman = suppressWarnings(min(q$PairwiseSpearmanMin, na.rm = TRUE)),
+                          MinPairwiseSpearman = if (all(is.na(q$PairwiseSpearmanMin))) NA_real_
+                            else min(q$PairwiseSpearmanMin, na.rm = TRUE),
                           MedianZeroFraction = median(q$ZeroFraction),
                           ValueRoute = o$Provenance$NativeValueRoute,
                           stringsAsFactors = FALSE)

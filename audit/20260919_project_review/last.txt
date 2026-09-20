@@ -1,0 +1,28 @@
+PROTEOME SAMPLE figure1_mki67_ratio_sample_values.csv 264 all_sample TRUE 
+PROTEOME SAMPLE figure1_pathway_summary_sample_boxplot_values.csv 504 all_sample TRUE 
+PROTEOME SAMPLE figure1_sample_boxplot_values.csv 272 all_sample TRUE 
+GSE132714_BPH local_matrix_md5 f5c23f55cf7151ac96a555b4db84608a 
+GSE163787_TALL104 local_matrix_md5 c1e0689080176df25bce31da9a4e555a 
+DUAL columns GroupID ReferenceKey PXD SampleGroup Category CategoryLabel ReferenceLabelEn RowOrder KlaExpressionMedian KlaExpressionMean KlaExpressionSD KlaExpressionSEM KlaExpressionIQR N X 
+Within material score correlation 0.9693074 
+                 Df Sum Sq Mean Sq F value Pr(>F)  
+Category          3   9.03  3.0086   3.937 0.0137 *
+GeneSet           1   0.10  0.1046   0.137 0.7130  
+Category:GeneSet  3   0.65  0.2170   0.284 0.8367  
+Residuals        48  36.68  0.7642                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Paired sensitivity only, not replacement official test
+
+Error: GroupID
+          Df Sum Sq Mean Sq F value Pr(>F)
+Category   3   9.03   3.009   1.984  0.143
+Residuals 24  36.40   1.516               
+
+Error: GroupID:GeneSet
+                 Df Sum Sq Mean Sq F value   Pr(>F)    
+GeneSet           1 0.1046 0.10461   8.881  0.00651 ** 
+Category:GeneSet  3 0.6510 0.21699  18.421 2.03e-06 ***
+Residuals        24 0.2827 0.01178                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

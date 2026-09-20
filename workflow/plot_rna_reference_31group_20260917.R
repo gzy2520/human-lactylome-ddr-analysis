@@ -13,7 +13,7 @@
 #   RNA_2b  Transcript expression distribution behind each detection state with medians.
 #   RNA_2   Unified publication-ready composite panel combining 2a and 2b.
 #
-# Usage: plot_rna_reference_31group_20260917.R [project_root] [out_dir]
+# Usage: plot_rna_reference_31group_20260917.R [project_root] <out_dir> <qsmooth_dir> <panel_dir> <assisted_dir>
 
 suppressPackageStartupMessages({
   library(data.table)
@@ -27,8 +27,10 @@ suppressPackageStartupMessages({
 set.seed(25)
 
 args <- commandArgs(trailingOnly = TRUE)
+stopifnot(length(args) == 5L)
 root <- if (length(args) >= 1L) normalizePath(args[[1L]], mustWork = TRUE) else normalizePath(".", mustWork = TRUE)
 out_dir <- if (length(args) >= 2L) args[[2L]] else file.path(root, "results", "rna_reference_31group")
+if (dir.exists(out_dir) && length(list.files(out_dir, all.files = TRUE, no.. = TRUE))) stop("Non-empty output: ", out_dir)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 publication_font <- "Arial Unicode MS"
@@ -50,15 +52,17 @@ save_panel <- function(plot, stem, width, height) {
 ## ---- Inputs --------------------------------------------------------------
 
 # Cross-tissue matrices carry the HGNC rename fix (2026-09-18); see build_symbol_lookup().
-qsmooth_dir <- file.path("outputs", "20260918_qsmooth_31group_hgnc")
-mat <- read_table_gz(file.path(root, qsmooth_dir, "matrices",
+qsmooth_dir <- normalizePath(args[[3L]], mustWork = TRUE)
+panel_dir <- normalizePath(args[[4L]], mustWork = TRUE)
+assisted_dir <- normalizePath(args[[5L]], mustWork = TRUE)
+mat <- read_table_gz(file.path(qsmooth_dir, "matrices",
                                "qsmooth_A_collapsed_log2tpm.tsv.gz"))
-expansion <- fread(file.path(root, qsmooth_dir, "group_expansion_31.csv"))
+expansion <- fread(file.path(qsmooth_dir, "group_expansion_31.csv"))
 ledger <- fread(file.path(root, "audit", "20260916_full_31_rna_status", "rna_31_group_status.csv"))
-annotation <- fread(file.path(root, "outputs", "20260916_ddr_panel_31group", "kla_ddr_annotation.csv"))
-panel_expr <- read_table_gz(file.path(root, "outputs", "20260916_ddr_panel_31group",
+annotation <- fread(file.path(panel_dir, "kla_ddr_annotation.csv"))
+panel_expr <- read_table_gz(file.path(panel_dir,
                                       "kla_ddr_expression_31groups.tsv.gz"))
-pairs <- read_table_gz(file.path(root, "outputs", "20260917_rna_assisted_ddr",
+pairs <- read_table_gz(file.path(assisted_dir,
                                  "group_by_protein_pairs.tsv.gz"))
 
 rna <- as.matrix(mat[, -1L]); rownames(rna) <- mat[[1L]]
@@ -184,7 +188,15 @@ p_heat <- ggplot(long, aes(GroupID, Gene, fill = Z)) +
   )
 
 # Convert to gtable and recolor strips dynamically
+# Measure grobs on a font-aware device rather than the default PostScript device.
+metric_device <- tempfile(fileext = ".png")
+ragg::agg_png(metric_device, width = 11, height = 13.5, units = "in", res = 96)
 g <- ggplotGrob(p_heat)
+dev.off()
+unlink(metric_device)
+# Keep short pathway strips legible without changing genes, ordering or colours.
+panel_rows <- sort(unique(g$layout$t[grepl("^panel", g$layout$name)]))
+g$heights[panel_rows] <- unit(pmax(as.numeric(g$heights[panel_rows]), 6), "null")
 strips <- grep("strip-l", g$layout$name)
 for (idx in strips) {
   strip_box <- g$grobs[[idx]]$grobs[[1]]
@@ -215,8 +227,8 @@ top_anno_grob <- grobTree(
            gp = gpar(fill = "#5B5EA6", col = "white", lwd = 1.5)),
   textGrob("Non-tumor tissues (n=9)", x = unit(4.5/31, "npc"), y = unit(0.5, "npc"),
            gp = gpar(col = "white", fontface = "bold", fontsize = 8, fontfamily = publication_font)),
-  textGrob("Tumor tissues (n=3)", x = unit(10.5/31, "npc"), y = unit(0.5, "npc"),
-           gp = gpar(col = "white", fontface = "bold", fontsize = 8, fontfamily = publication_font)),
+  textGrob("Tumor tissues\n(n=3)", x = unit(10.5/31, "npc"), y = unit(0.5, "npc"),
+           gp = gpar(col = "white", fontface = "bold", fontsize = 7, lineheight = 0.85, fontfamily = publication_font)),
   textGrob("Cancer cell lines (n=12)", x = unit(18/31, "npc"), y = unit(0.5, "npc"),
            gp = gpar(col = "white", fontface = "bold", fontsize = 8, fontfamily = publication_font)),
   textGrob("Normal cell lines (n=7)", x = unit(27.5/31, "npc"), y = unit(0.5, "npc"),
@@ -269,22 +281,27 @@ three[, RNAlevel := factor(RNAlevel, levels = c(RNA_LOW, RNA_HIGH))]
 three[, CellLabel := factor(as.character(Cell), levels = CELL_ORDER, labels = CELL_LABELS)]
 three[, Label := format(N, big.mark = ",")]
 cell_totals <- three[, .(N = sum(N)), by = CellLabel]
+label_data <- copy(three)
+# ggplot stacks the second fill level (RNA_HIGH) below RNA_LOW.
+# Position labels using the FULL stack, not a separately stacked subset.
+label_data[, HighN := sum(N[RNAlevel == RNA_HIGH]), by = CellLabel]
+label_data[, LabelY := fifelse(RNAlevel == RNA_HIGH, N / 2, HighN + N / 2)]
 
 p_2a <- ggplot(three, aes(CellLabel, N)) +
   geom_col(aes(fill = RNAlevel), width = 0.68) +
-  # segments too small to hold their own label are annotated to the side instead
-  geom_text(data = three[RNAlevel == RNA_LOW & N >= 400], aes(y = N, label = Label),
-            position = position_stack(vjust = 0.5), size = 3.2, fontface = "bold",
-            family = publication_font, colour = text_dark) +
-  geom_text(data = three[RNAlevel == RNA_LOW & N < 400], aes(y = N, label = Label),
-            position = position_stack(vjust = 0.5), nudge_x = 0.4, hjust = 0,
-            size = 2.9, fontface = "bold", family = publication_font, colour = text_body) +
-  geom_text(data = three[RNAlevel == RNA_HIGH & N >= 400], aes(y = N, label = Label),
-            position = position_stack(vjust = 0.5), size = 3.2, fontface = "bold",
-            family = publication_font, colour = "white") +
-  geom_text(data = three[N < 400], aes(y = N, label = Label),
-            position = position_stack(vjust = 0.5), nudge_x = 0.42, hjust = 0,
-            size = 3.0, fontface = "bold", family = publication_font, colour = text_body) +
+  # Small segments are labelled just to the right, at their actual stack height.
+  geom_text(data = label_data[N >= 400], aes(y = LabelY, label = Label,
+            colour = RNAlevel), size = 3.2, fontface = "bold", family = publication_font,
+            show.legend = FALSE) +
+  scale_colour_manual(values = setNames(c(text_dark, "white"), c(RNA_LOW, RNA_HIGH)), guide = "none") +
+  geom_segment(data = label_data[N < 400],
+            aes(x = as.numeric(CellLabel) + 0.34, xend = as.numeric(CellLabel) + 0.39,
+                y = LabelY, yend = LabelY), inherit.aes = FALSE,
+            colour = text_body, linewidth = 0.3) +
+  geom_text(data = label_data[N < 400],
+            aes(x = as.numeric(CellLabel) + 0.41, y = LabelY, label = Label),
+            inherit.aes = FALSE, hjust = 0, size = 2.9, fontface = "bold",
+            family = publication_font, colour = text_body) +
   geom_text(data = cell_totals,
             aes(CellLabel, y = N,
                 label = sprintf("%s  (%.1f%%)", format(N, big.mark = ","), 100 * N / nrow(pairs))),
@@ -382,13 +399,8 @@ writeLines(c(
   "The RNA reference is a material-class profile drawn from different studies than the proteome,",
   "so groups are compared as classes, not as paired samples.",
   "Expression is called at an absolute TPM >= 1, not a within-group rank, so the split differs",
-  "between materials; the sweeps in outputs/20260917_rna_assisted_ddr/ show how it moves with the cut."
+  "between materials; the current assisted directory records the threshold sensitivity."
 ), file.path(out_dir, "README.md"))
 
-# Copy to delivery folder
-delivery_dir <- file.path(root, "outputs", "20260917_delivery_31group", "rna")
-if (dir.exists(delivery_dir)) {
-  file.copy(list.files(out_dir, full.names = TRUE), delivery_dir, overwrite = TRUE)
-}
-
+# Output stays in the explicit directory; publication is a separate operation.
 cat(sprintf("ALL_RNA_PLOTS_BEAUTIFIED_AND_SAVED -> %s\n", out_dir))

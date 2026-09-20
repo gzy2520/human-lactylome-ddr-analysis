@@ -1,0 +1,6 @@
+Seed,Value,Note
+seed,25,全局随机种子（R set.seed(25)；Python random/np.random.seed(25)）
+frozen_on,2026-09-20,特征字典冻结日期（此版为可行性冻结；乳酸轴Ensembl清单待服务器矩阵可用后另行冻结）
+qsmooth_note,qsmooth_A_is_descriptive_only,本地 regulator qsmooth 为跨28材料联合拟合产物；禁作前瞻预测主流程，仅可作标注敏感性分析
+id_rule,RNA_Ensembl_Protein_BaseAccession_Symbol_display_only,RNA键 Ensembl/Entrez；蛋白键 UniProt BaseAccession；Symbol仅展示
+software,R 4.4.3 + data.table/digest/ggplot2; glmnet/caret/pROC/PRROC unavailable local,正式训练所需正则化/评价包本地缺失亦为禁行佐证；模拟预演仅用base/stats

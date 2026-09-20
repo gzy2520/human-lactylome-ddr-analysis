@@ -1,0 +1,8 @@
+Gate,Result,BlocksTraining
+G1_label_comparable,FAIL: cross-study Kla counts / detection proportions use incompatible protocols+instruments+search spaces; no calibrated intensity/occupancy label,TRUE
+G2_independent_units,FAIL: 28 RNA refs / 31 proteome rows collapse to 19 leakage-connected components (shared RNA refs + shared PXDs); only 21 rows have any same-sample matched modality spanning just 3 PXDs; no paired RNA-protein design,TRUE
+G3_fold_label_variation,FAIL: per-fold label distribution for leave-study-out cannot be guaranteed with n=1 studies and single-observation groups,TRUE
+G4_no_unmanaged_sharing,FAIL: HCT116_control shared x3 + HK2_untreated shared x2; PXD066054/PXD075377/PXD028488/PXD060185/PXD070007 each span multiple materials; study==material confounding,TRUE
+G5_feature_availability,FAIL: lactate-axis expression matrices absent locally (server-only); measured lactate absent; same-sample total-protein absent for most groups,TRUE
+G6_confounding_not_deterministic,FAIL: detection depth (ReferenceProteinCount) spans 2193-14022; material category confounds study,TRUE
+G7_qsmooth_suitability,FAIL: qsmooth fitted jointly across all 28 refs incl. would-be test refs; cannot be refit train-only from local files,TRUE

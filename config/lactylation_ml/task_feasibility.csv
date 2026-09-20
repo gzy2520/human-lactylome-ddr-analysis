@@ -1,0 +1,7 @@
+TaskID,TaskName,LabelDefinition,LabelUnit,LabelLevel,AvailableSource,ComparableAcrossGroups,EffectiveN,ValidationPossible,Decision,Reason
+A1,材料层面Kla检出数预测,Kla检出蛋白数（去重BaseAccession计数）,count,material,group_summary_31.csv:31行,否,28个RNA参考/31条蛋白组记录但跨质谱不可比,否,不准入,"跨研究质谱强度未经校准；不同富集/仪器/解析流程的检出数直接拼成连续标签违反合同第6条；HCT116/HK-2共享参考复制后随机拆分即泄漏"
+A2,材料层面总蛋白校正的Kla比例预测,Kla蛋白数/总蛋白检出数（需同一样本分母）,proportion,material,data/candidate 仅3个PXD有21行配对样本其余为外部参考,否,仅21行配对且RNA仍为外部参考,否,不准入,分母口径跨研究不一致；RNA与蛋白组无同一样本配对；有效独立单元不足以支持留研究验证
+A3,材料层面位点占有率/校正强度预测,位点占有率或经总蛋白校正的修饰强度,intensity_ratio,material,无：本地无逐样本Kla强度矩阵；强度审计表为列名审计非定量矩阵,否,0,否,不准入,无可用标签；禁止用检出数改写为浓度/占有率
+B1,蛋白层面Kla检出预测（RNA表达预测某蛋白是否被乳酸化检出）,P(蛋白在某材料中Kla检出|RNA表达+蛋白背景）,probability,protein_x_material,kla_protein_membership_31.csv + reference_protein_membership_31.csv（背景可用）,部分可比但未检出≠阴性,名义11051对（旧版11067）但独立材料仅28且同蛋白跨材料高度依赖,否（分组后可用组过少）,"不准入正式训练，仅允许审计与代码预演","未检出不能作可靠阴性；未测量不能编码阴性；只有阳性清单时需PU学习；共享参考（HCT116/HK-2）连通分组后可用组过少；大量蛋白行≠独立材料"
+B2,位点层面Kla检出预测,位点检出概率,probability,site,无可靠位点级背景与统一坐标（本地只有蛋白成员表）,否,0,否,不准入,无位点身份统一表与检测背景；不能随机抽蛋白当阴性
+C,实测乳酸水平预测,实测乳酸浓度,concentration,sample,无：全仓无乳酸实测文件,否,0,否,不准入,禁止把LDHA表达/糖酵解评分/人工乳酸分数当实测乳酸

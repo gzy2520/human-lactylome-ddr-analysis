@@ -1,0 +1,8 @@
+FeatureSet,Role,Source,Level,IDKey,Status
+background_category,协变量（材料背景）,data/publication_input/group_summary_31.csv:Category,material,GroupID,本地可用
+log10_reference_protein_count,检测过程变量（全蛋白检测深度；仅作混杂诊断、不得作生物学预测信号）,data/publication_input/group_summary_31.csv:ReferenceProteinCount,material,GroupID,本地可用
+log10_kla_search_space_proxy,检测过程变量（Kla搜索空间代理；敏感性诊断用）,data/publication_input: Kla/Ref membership sizes,material,GroupID,本地可用
+regulator_qsmooth_28m,调控因子表达（48 regulators / 49 role entries；qsmooth A；仅探索）,outputs/20260919_repair_release/core/regulator_rna_qsmooth_28materials.csv,material,EnsemblGeneID+ReferenceKey,本地可用但qsmooth为全数据拟合产物、禁作前瞻预测主流程
+lactate_axis_expression,乳酸生成/转换/运输/去向表达（LDHA/LDHB/LDHD/SLC16A1/3/7/8/PDHA1/PDK1-4/PCK1-2/GLO1等；待Ensembl冻结）,需服务器矩阵解析（本地仅regulator子集）,material,Entrez/Ensembl,未冻结：禁作正式训练输入
+total_protein_expression,预测时可获得的总蛋白/目标蛋白表达,无同一样本配对的总蛋白定量矩阵,protein_or_material,UniProt BaseAccession,缺失：最需补充
+measured_lactate,实测乳酸,无,material_or_sample,NA,缺失：任务C禁行

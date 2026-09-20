@@ -1,0 +1,5 @@
+Category,n,median_Kla,min_Kla,max_Kla,median_RefDepth,Note
+normal_tissue,9,527,231,2118,6082,Each Category pools distinct PXDs; study and material effects inseparable
+cancer_tissue,3,1798,1239,2125,8083,Each Category pools distinct PXDs; study and material effects inseparable
+cancer_cells,12,1227.5,240,2602,3885,Each Category pools distinct PXDs; study and material effects inseparable
+normal_cells,7,1410,438,2164,6132,Each Category pools distinct PXDs; study and material effects inseparable

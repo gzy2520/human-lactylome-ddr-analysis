@@ -1,0 +1,32 @@
+GroupID,PXD,SampleGroup,ReferenceKey,Linkage,SharedReference,ConnGroup
+KLA31_01,PXD033146,pathological rotator cuff tendon,tendon_nondiabetic,external_reference_match,FALSE,1
+KLA31_02,PXD036307,normal human lung,GTEx_v8_Lung,external_reference_match,FALSE,2
+KLA31_03,PXD046800,hypertrophic scar,GSE181540_HS_input,same_study_different_RNA_ref,FALSE,3
+KLA31_04,PXD046800,adjacent skin,GSE181540_adjacent_NS_input,same_study_different_RNA_ref,FALSE,3
+KLA31_05,PXD050470,human hippocampus,GTEx_v8_Hippocampus,same_study_external_RNA,FALSE,4
+KLA31_06,PXD063047,normal pregnancy placenta,GSE114691_control_placenta,external_reference_match,FALSE,5
+KLA31_07,PXD064912,human sperm,sperm_GroupI,external_reference_match,FALSE,6
+KLA31_08,PXD066054,BPH,GSE132714_BPH,same_study_external_RNA,FALSE,7
+KLA31_09,PXD075377,adjacent liver,TCGA_LIHC_normal,external_reference_match,FALSE,8
+KLA31_10,PXD064038,MEC and NEC ESCC groups,TCGA_ESCA_ESCC,external_reference_match,FALSE,9
+KLA31_11,PXD066054,prostate cancer,TCGA_PRAD_primary,same_study_external_RNA,FALSE,7
+KLA31_12,PXD075377,HCC,TCGA_LIHC_primary,external_reference_match,FALSE,8
+KLA31_13,PXD060185,MCF7,MCF7_DMSO7d,external_reference_match,FALSE,10
+KLA31_14,PXD028488,HCT116,HCT116_control,external_reference_shared,TRUE,11
+KLA31_15,PXD053474,HCT116,HCT116_control,external_reference_shared,TRUE,11
+KLA31_16,PXD066351,HCT116 control and Roseburia co-culture,HCT116_control,external_reference_shared,TRUE,11
+KLA31_17,PXD028488,TALL-104,GSE163787_TALL104,external_reference_match,FALSE,11
+KLA31_18,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,HepG2_DMSO24h,external_reference_match,FALSE,12
+KLA31_19,PXD054919,A549,GSE171750_A549_untreated,external_reference_match,FALSE,13
+KLA31_20,PXD060185,MDA-MB-468,MDAMB468_DMSO7d,external_reference_match,FALSE,10
+KLA31_21,PXD060185,T-47D,GSE283812_T47D_vehicle,external_reference_match,FALSE,10
+KLA31_22,PXD063266,PC-3M,PC3M_DMSO,external_reference_match,FALSE,14
+KLA31_23,PXD070007,glioblastoma stem cells,GSE266884_MES28_vector_control,external_reference_match,FALSE,15
+KLA31_24,PXD078013,RKO WT and GSK3B KO,RKO_DMSO,external_reference_match,FALSE,16
+KLA31_25,PXD028488,HEK293T,GSE203529_HEK293T_WT,external_reference_match,FALSE,11
+KLA31_26,PXD028737,HMC3,GSE275256_HMC3_vehicle,external_reference_match,FALSE,17
+KLA31_27,PXD058534,pretreated HK-2,HK2_untreated,external_reference_shared,TRUE,18
+KLA31_28,PXD078736,HK-2 control and mannitol,HK2_untreated,external_reference_shared,TRUE,18
+KLA31_29,PXD060185,MCF10A,GSE103520_MCF10A_control,external_reference_match,FALSE,10
+KLA31_30,PXD070007,neural stem cells,GSE119834_NSC,external_reference_match,FALSE,15
+KLA31_31,PXD073311,HUVEC control and Pg infection,HUVEC_untreated,external_reference_match,FALSE,19

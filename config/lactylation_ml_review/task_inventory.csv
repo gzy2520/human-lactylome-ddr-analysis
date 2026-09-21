@@ -1,0 +1,7 @@
+TaskID,TaskName,LabelDefinition,LabelUnit,LabelLevel,RowDefinition,BackgroundRule,NRows,NPos,PosRate,FeatureSets,FoldDesign,Decision,BlockerOrNote
+A-S,同一研究内逐样本Kla定量预测,逐样本Kla检出蛋白数或校正强度,count_or_intensity,sample,单研究内蛋白组样本,需同一样本总蛋白分母,98个Kla样本行但RNA零配对,NA,NA（RNA样本与蛋白组样本ID交集=0）,不适用,不准入,RNA样本与蛋白组样本来自不同队列、零配对；样本级RNA预测子无合法X。最小补数：同一样本RNA+Kla配对（≥2研究，每研究≥4样本）
+A-M,跨材料Kla检出数预测,Kla检出蛋白数,count,material,31材料聚合,无统一分母,31,NA,NA,不可比,不适用,不准入,跨研究平台/归一化不一致（G1成立）；最小补数：可比定量标签+校准协议
+B-R,DDR panel蛋白×材料Kla检出预测（Ref限定）,P(该流程下Kla检出|Ref检出）,probability,protein_x_material,RefDetected==TRUE的(group,DDR蛋白）,组内Ref集为背景；未检出=该流程未检出≠不发生乳酸化,6744,2708,0.4015,目标基因表达/乳酸128均值/调控均值（UNSMOOTHED折内聚合）,19连通分组留一,准入并已训练,M0 fold-mean ROC=0.500；M1=0.639（M2/M3无进一步增益）；结论限DDR panel与现有流程，不泛化到新蛋白/新流程
+B-W,全蛋白组蛋白×材料Kla检出预测,同上（全蛋白组背景）,probability,protein_x_material,组内全Ref集,需全蛋白组BaseAccession→Ensembl 1:1桥（当前仅DDR 8219行桥+乳酸363行）,37785 vs 188218名义,NA,NA,需新建全蛋白组桥,未准入（桥缺失）,最小补数：全蛋白组1:1 ID桥+同源性分组；否则不得随机抽阴性
+B-S,位点层面Kla检出预测,位点检出概率,probability,site,统一位点坐标,无位点背景,0,0,NA,NA,不适用,不准入,最小补数：位点级统一坐标+检测背景
+C,实测乳酸浓度预测,实测乳酸浓度,concentration,sample,实测样本,需实测标签,0,0,NA,NA,不适用,不准入,全仓0乳酸文件；禁以LDHA/评分代替。最小补数：可对应的实测乳酸

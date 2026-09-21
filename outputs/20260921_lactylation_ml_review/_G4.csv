@@ -1,0 +1,2 @@
+Gate,Finding,Evidence,Verdict
+G4_no_unmanaged_sharing,HCT116x3+HK2x2共享成立；5个PXD跨多材料；但连通分组留一可锁同折，泄漏可管理,shared rows=5; multi-group PXDs PXD028488/PXD060185/PXD046800/PXD066054/PXD075377/PXD070007,纠正表述：“需分组管理”≠“无法处理”；须按19连通分组拆分、禁随机拆行

@@ -1,0 +1,2 @@
+Gate,Finding,Evidence,Verdict
+G5_feature_availability,“乳酸轴矩阵本地缺失”系误判：本工作区28矩阵本地齐备（28个log2tpm），128基因x28材料表达表可用；实测乳酸仍缺（0文件）；同一样本总蛋白仍缺,matrices present; material_gene_expression rows=3584; lactate files=0,纠正：乳酸表达特征可用（环境阻断解除）；实测乳酸/同一样本总蛋白缺失仍成立

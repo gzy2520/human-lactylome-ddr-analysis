@@ -1,0 +1,2 @@
+Gate,Finding,Evidence,Verdict
+G2_independent_units,31行/28参考重算连通=19个（fd3ace5为19，一致）；配对模态21行/3PXD；RNA-蛋白样本ID交集=0,"recompute conn=19 sizes=1,1,2,1,1,1,2,2,1,4,5,1,1,1,2,1,1,2,1; matched rows=21",已核实的方法学限制（材料级n小且连通；配对窄；RNA-蛋白零配对成立）

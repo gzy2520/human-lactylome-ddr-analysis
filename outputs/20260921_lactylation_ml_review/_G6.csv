@@ -1,0 +1,2 @@
+Gate,Finding,Evidence,Verdict
+G6_confounding,深度跨度2193-14022成立；Kla计数vs log10深度Spearman=0.189 p=0.308(n=31)不显著；研究==材料混杂成立需披露,group_summary_31.csv recompute,纠正强度：“完全决定”无计算支持；作协变量诊断而非一票否决

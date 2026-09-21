@@ -1,0 +1,2 @@
+Gate,Finding,Evidence,Verdict
+G7_qsmooth_suitability,qsmooth禁作前瞻主流程成立；但折内聚合替代可行（源log2tpm本地齐备，脚本02实际执行）,qsmooth joint fit; source matrices present -> fold-internal aggregation feasible,纠正：限制成立但有可行替代路径（已实现运行）

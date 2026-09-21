@@ -1,0 +1,4 @@
+FeatureSet,N,Source,IDKey
+target_gene_expr,364,"outputs/20260919_repair_assisted/group_by_protein_pairs.tsv.gz:EnsemblGeneID (371 DDR, 1:1 bridge)",Ensembl (RNA); protein key UniProt BaseAccession; Symbol display-only
+lactate_module_mean_128,128,config/lactate_metabolism/gene_module_membership.csv + membership_coverage.csv InCommonMatrix (128),Ensembl (RNA); protein key UniProt BaseAccession; Symbol display-only
+regulator_mean,48,outputs/20260919_repair_release/core/regulator_rna_qsmooth_28materials.csv (de-duplicated Ensembl),Ensembl (RNA); protein key UniProt BaseAccession; Symbol display-only

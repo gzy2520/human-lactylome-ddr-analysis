@@ -1,0 +1,8 @@
+Gate,Finding,Evidence,Verdict
+G1_label_comparable,跨研究统一连续Kla标签不可比：平台各异（TMT/LFQ/MaxQuant/Spectronaut/iTRAQ）；本地无data/PXD*强度值文件；fig1仅计数列,intensity_audit:31对平台各异; data/PXD* dirs=0; fig1 intensity cols=FALSE,已核实的方法学限制+数据缺失（跨研究拼标签禁行成立）
+G2_independent_units,31行/28参考重算连通=19个（fd3ace5为19，一致）；配对模态21行/3PXD；RNA-蛋白样本ID交集=0,"recompute conn=19 sizes=1,1,2,1,1,1,2,2,1,4,5,1,1,1,2,1,1,2,1; matched rows=21",已核实的方法学限制（材料级n小且连通；配对窄；RNA-蛋白零配对成立）
+G3_fold_label_variation,B-R限定集n=6744正例率=0.402；19折中19折测试集N>=20且正负各>=5；全部折训练集正负充足（最小训练正例=2324）,"folds_BRef_leaveConnOut.csv; testN=112,280,146,146,228,276,561,320,288,677,1193,303,175,177,627,193,287,432,323",部分纠正：“无法保证”过笼统；多数折可算PR/ROC/Brier，单行组折精度低但非不可行，应报告折构成
+G4_no_unmanaged_sharing,HCT116x3+HK2x2共享成立；5个PXD跨多材料；但连通分组留一可锁同折，泄漏可管理,shared rows=5; multi-group PXDs PXD028488/PXD060185/PXD046800/PXD066054/PXD075377/PXD070007,纠正表述：“需分组管理”≠“无法处理”；须按19连通分组拆分、禁随机拆行
+G5_feature_availability,“乳酸轴矩阵本地缺失”系误判：本工作区28矩阵本地齐备（28个log2tpm），128基因x28材料表达表可用；实测乳酸仍缺（0文件）；同一样本总蛋白仍缺,matrices present; material_gene_expression rows=3584; lactate files=0,纠正：乳酸表达特征可用（环境阻断解除）；实测乳酸/同一样本总蛋白缺失仍成立
+G6_confounding,深度跨度2193-14022成立；Kla计数vs log10深度Spearman=0.189 p=0.308(n=31)不显著；研究==材料混杂成立需披露,group_summary_31.csv recompute,纠正强度：“完全决定”无计算支持；作协变量诊断而非一票否决
+G7_qsmooth_suitability,qsmooth禁作前瞻主流程成立；但折内聚合替代可行（源log2tpm本地齐备，脚本02实际执行）,qsmooth joint fit; source matrices present -> fold-internal aggregation feasible,纠正：限制成立但有可行替代路径（已实现运行）

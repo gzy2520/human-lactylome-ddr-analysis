@@ -1,0 +1,2 @@
+Gate,Finding,Evidence,Verdict
+G1_label_comparable,跨研究统一连续Kla标签不可比：平台各异（TMT/LFQ/MaxQuant/Spectronaut/iTRAQ）；本地无data/PXD*强度值文件；fig1仅计数列,intensity_audit:31对平台各异; data/PXD* dirs=0; fig1 intensity cols=FALSE,已核实的方法学限制+数据缺失（跨研究拼标签禁行成立）

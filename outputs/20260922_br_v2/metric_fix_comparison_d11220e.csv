@@ -1,0 +1,13 @@
+Model,Metric,Value
+M0,old_rowwise_PR_AUC,0.3108
+M1,old_rowwise_PR_AUC,0.4312
+M2,old_rowwise_PR_AUC,0.4105
+M3,old_rowwise_PR_AUC,0.4385
+M0,new_threshold_AP,0.3216
+M1,new_threshold_AP,0.4313
+M2,new_threshold_AP,0.4106
+M3,new_threshold_AP,0.4385
+M0,new_trap_PR_AUC,0.314
+M1,new_trap_PR_AUC,0.4309
+M2,new_trap_PR_AUC,0.4101
+M3,new_trap_PR_AUC,0.4381

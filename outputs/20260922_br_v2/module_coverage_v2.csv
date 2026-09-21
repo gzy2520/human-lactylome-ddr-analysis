@@ -1,0 +1,7 @@
+ModuleID,Members,AvailInMatrices
+mact_generation_lactate,6,6
+mact_transport,4,4
+mact_pyruvate_entry,9,9
+mact_gluconeogenic,5,5
+mact_lactylcoa,5,5
+mact_glycogen,3,3

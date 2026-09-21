@@ -1,0 +1,33 @@
+Ensembl,Symbol,ModuleID,ModuleName,Role,KeyGene,EvidenceNote
+ENSG00000134333,LDHA,mact_generation_lactate,乳酸生成（丙酮酸→乳酸，L分支）,双向（催化方向随NADH/NAD与底物）,LDHA,GO:0019244/GO:0006089 + curated L-lactate conversion; 表达仅示乳酸代谢能力，非通量
+ENSG00000288299,LDHA,mact_generation_lactate,乳酸生成（丙酮酸→乳酸，L分支）,双向,LDHA,同上（第二稳定ID；矩阵缺失时自然剔除）
+ENSG00000111716,LDHB,mact_generation_lactate,乳酸生成（丙酮酸→乳酸，L分支）,双向（偏向乳酸→丙酮酸）,LDHB,同上；方向未赋符号
+ENSG00000166796,LDHC,mact_generation_lactate,乳酸生成（丙酮酸→乳酸，L分支）,双向,LDHC,同上
+ENSG00000171989,LDHAL6B,mact_generation_lactate,乳酸生成（丙酮酸→乳酸，L分支）,双向,LDHAL6B,GO:0019244
+ENSG00000166816,LDHD,mact_generation_lactate,乳酸生成（丙酮酸→乳酸，L分支）,双向（D型；与D-乳酸支路相关）,LDHD,PMID30931947边界：非L-乳酸氧化标志
+ENSG00000155380,SLC16A1,mact_transport,乳酸/丙酮酸转运,MCT1双向转运,SLC16A1,PMID11101640类边界：表达不固定净方向
+ENSG00000141526,SLC16A3,mact_transport,乳酸/丙酮酸转运,MCT4双向转运,SLC16A3,同上
+ENSG00000118596,SLC16A7,mact_transport,乳酸/丙酮酸转运,MCT2双向转运,SLC16A7,同上
+ENSG00000172270,BSG,mact_transport,乳酸/丙酮酸转运,转运辅助亚基（不直接转运）,BSG,curated Lactate transport
+ENSG00000060762,MPC1,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,输入复合体,MPC1,curated Pyruvate mitochondrial entry
+ENSG00000143158,MPC2,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,输入复合体,MPC2,同上
+ENSG00000131828,PDHA1,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,氧化入口酶,PDHA1,同上
+ENSG00000168291,PDHB,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,氧化入口酶,PDHB,同上
+ENSG00000152256,PDK1,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,抑制氧化入口（负调控角色）,PDK1,同上；多角色已按Role记录
+ENSG00000005882,PDK2,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,抑制氧化入口（负调控角色）,PDK2,同上
+ENSG00000100889,PCK2,mact_gluconeogenic,糖异生（乳酸→葡萄糖，肾脏/肝脏轴）,双向代谢节点,PCK2,GO:0006094 + curated Gluconeogenic branch
+ENSG00000124253,PCK1,mact_gluconeogenic,糖异生（乳酸→葡萄糖，肾脏/肝脏轴）,双向代谢节点,PCK1,同上
+ENSG00000165140,FBP1,mact_gluconeogenic,糖异生（乳酸→葡萄糖，肾脏/肝脏轴）,限速酶,FBP1,同上
+ENSG00000173599,PC,mact_gluconeogenic,糖异生（乳酸→葡萄糖，肾脏/肝脏轴）,入口酶,PC,同上
+ENSG00000131482,G6PC1,mact_gluconeogenic,糖异生（乳酸→葡萄糖，肾脏/肝脏轴）,限速酶,G6PC1,同上
+ENSG00000163541,SUCLG1,mact_lactylcoa,乳酸化底物形成（lactyl-CoA轴）,底物形成（非乳酸消耗酶）,SUCLG1,PMID39642882
+ENSG00000172340,SUCLG2,mact_lactylcoa,乳酸化底物形成（lactyl-CoA轴）,底物形成（非乳酸消耗酶）,SUCLG2,同上
+ENSG00000131069,ACSS2,mact_lactylcoa,乳酸化底物形成（lactyl-CoA轴）,底物形成,ACSS2,PMID39561764
+ENSG00000090861,AARS1,mact_lactylcoa,乳酸化底物形成（lactyl-CoA轴）,Writer（非乳酸消耗酶；经lactyl-AMP）,AARS1,DOI07992；Role=Writer遵循证据
+ENSG00000124608,AARS2,mact_lactylcoa,乳酸化底物形成（lactyl-CoA轴）,Writer（非乳酸消耗酶）,AARS2,同上
+ENSG00000120053,GOT1,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,转氨支路（多角色共享节点）,GOT1,GO:0006094；共享节点已记录
+ENSG00000166123,GPT2,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,转氨支路（多角色共享节点）,GPT2,curated Alanine pyruvate link
+ENSG00000146701,MDH2,mact_pyruvate_entry,丙酮酸线粒体入口（氧化去向轴）,TCA相关节点,MDH2,GO:0006094/TCA
+ENSG00000100994,PYGB,mact_glycogen,糖原上游（碳源支路）,糖原分解,PYGB,Reactome70221
+ENSG00000100504,PYGL,mact_glycogen,糖原上游（碳源支路）,糖原分解,PYGL,同上
+ENSG00000068976,PYGM,mact_glycogen,糖原上游（碳源支路）,糖原分解,PYGM,同上

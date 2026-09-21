@@ -1,0 +1,76 @@
+Contract Check: 6744 rows, 2708 positives, 19 ConnGroups, 31 GroupIDs, 28 ReferenceKeys, 364 BaseAccessions
+Missing values check: target_expr NAs = 0, module NAs = 0
+Starting 19-fold outer validation across models: M0, MP, MP_cal, ME, ME2, ME_P, ME2P, XEN
+--- Running Outer Fold 01 / 19 (ConnGroup 1) ---
+--- Running Outer Fold 02 / 19 (ConnGroup 2) ---
+--- Running Outer Fold 03 / 19 (ConnGroup 3) ---
+--- Running Outer Fold 04 / 19 (ConnGroup 4) ---
+--- Running Outer Fold 05 / 19 (ConnGroup 5) ---
+--- Running Outer Fold 06 / 19 (ConnGroup 6) ---
+--- Running Outer Fold 07 / 19 (ConnGroup 7) ---
+--- Running Outer Fold 08 / 19 (ConnGroup 8) ---
+--- Running Outer Fold 09 / 19 (ConnGroup 9) ---
+--- Running Outer Fold 10 / 19 (ConnGroup 10) ---
+--- Running Outer Fold 11 / 19 (ConnGroup 11) ---
+--- Running Outer Fold 12 / 19 (ConnGroup 12) ---
+--- Running Outer Fold 13 / 19 (ConnGroup 13) ---
+--- Running Outer Fold 14 / 19 (ConnGroup 14) ---
+--- Running Outer Fold 15 / 19 (ConnGroup 15) ---
+--- Running Outer Fold 16 / 19 (ConnGroup 16) ---
+--- Running Outer Fold 17 / 19 (ConnGroup 17) ---
+--- Running Outer Fold 18 / 19 (ConnGroup 18) ---
+--- Running Outer Fold 19 / 19 (ConnGroup 19) ---
+All 19 outer folds completed in 33.49 seconds.
+Outer predictions and fit artifacts saved to: outputs/20260921_br_v4_weight_only 
+
+=== B-R v4 Performance Summary ===
+
+--- Primary Metric: Equal-Weight (19 folds) ---
+    Model LogLoss      AP   Brier     ROC
+   <char>   <num>   <num>   <num>   <num>
+1:     M0 0.66624 0.36193 0.23655 0.50000
+2:     MP 0.57246 0.70271 0.19357 0.82395
+3: MP_cal 0.57046 0.70271 0.19362 0.82395
+4:     ME 0.66087 0.49215 0.23319 0.63910
+5:    ME2 0.67326 0.48845 0.23920 0.63655
+6:   ME_P 0.57317 0.71066 0.19413 0.82823
+7:   ME2P 0.59345 0.71029 0.20209 0.82892
+8:    XEN 0.69361 0.48640 0.24799 0.61672
+
+--- Secondary Metric: Group-Size Weighted ---
+    Model LogLoss      AP   Brier     ROC
+   <char>   <num>   <num>   <num>   <num>
+1:     M0 0.68258 0.40154 0.24460 0.50000
+2:     MP 0.57573 0.72076 0.19465 0.81528
+3: MP_cal 0.57832 0.72076 0.19682 0.81528
+4:     ME 0.68434 0.50547 0.24467 0.60721
+5:    ME2 0.69493 0.50288 0.24968 0.60710
+6:   ME_P 0.58476 0.72877 0.19896 0.81752
+7:   ME2P 0.60261 0.72875 0.20595 0.81772
+8:    XEN 0.71470 0.49822 0.25822 0.58804
+
+--- Reference Only: Pooled Across All Rows ---
+    Model LogLoss      AP   Brier     ROC
+   <char>   <num>   <num>   <num>   <num>
+1:     M0 0.68258 0.32165 0.24460 0.32048
+2:     MP 0.57573 0.65832 0.19465 0.75560
+3: MP_cal 0.57832 0.64084 0.19682 0.74859
+4:     ME 0.68434 0.43132 0.24467 0.52272
+5:    ME2 0.69493 0.40910 0.24968 0.48783
+6:   ME_P 0.58476 0.64436 0.19896 0.74278
+7:   ME2P 0.60261 0.61338 0.20595 0.72610
+8:    XEN 0.71470 0.37866 0.25822 0.47794
+
+=== Material-Level Calibration MAE (across 28 ReferenceKeys) ===
+    Model     MAE  MaxErr WeightedMAE
+   <char>   <num>   <num>       <num>
+1:     M0 0.17752 0.39979     0.17111
+2:     MP 0.17931 0.38976     0.17152
+3: MP_cal 0.18339 0.38715     0.17592
+4:     ME 0.18339 0.47053     0.17849
+5:    ME2 0.18627 0.48548     0.18608
+6:   ME_P 0.18787 0.44485     0.18129
+7:   ME2P 0.19342 0.48577     0.19057
+8:    XEN 0.19567 0.60627     0.19540
+
+V3 TRAINING AND EVALUATION COMPLETED SUCCESSFULLY.

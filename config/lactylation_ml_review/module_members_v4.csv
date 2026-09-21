@@ -1,0 +1,7 @@
+Ensembl,Symbol,Status,Module,Reason
+ENSG00000134333,LDHA,included,L_lactate_pyruvate_conversion,"Distinct gene; reversible conversion expression, not flux"
+ENSG00000288299,LDHA,excluded_alias,LDHA,Same Entrez 3939; absent in all 28 source matrices
+ENSG00000111716,LDHB,included,L_lactate_pyruvate_conversion,"Distinct gene; reversible conversion expression, not flux"
+ENSG00000166796,LDHC,included,L_lactate_pyruvate_conversion,"Distinct gene; reversible conversion expression, not flux"
+ENSG00000171989,LDHAL6B,included,L_lactate_pyruvate_conversion,"Distinct gene; reversible conversion expression, not flux"
+ENSG00000166816,LDHD,separate_descriptive,D_lactate_oxidation,D-lactate oxidation; not L-lactate generation; PMID37863926

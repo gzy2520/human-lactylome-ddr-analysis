@@ -1,0 +1,4 @@
+Version,MeanDelta,Worse,Better,Tied
+v3,0.020284536667509,9,10,0
+weight_only,0.020273009279397,9,10,0
+corrected_L,0.0133377683673991,10,9,0

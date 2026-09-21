@@ -1,0 +1,18 @@
+                      TestID Status
+                      <char> <char>
+1:       B1_inner_group_mean   PASS
+2:         B2_inner_no_outer   PASS
+3:     B3_four_gene_L_module   PASS
+4: B4_alternate_LDHA_missing   PASS
+5:          B5_source_target   PASS
+6:        B6_old_worse_count   PASS
+7:               B7_S2_scope   PASS
+                                                                  Details
+                                                                   <char>
+1:  Each candidate risk reproduced from 18 actual connected-group losses.
+2:                  Outer test groups absent from every inner risk table.
+3:                     Exact four-gene means; LDHD absent from L feature.
+4: Alternate LDHA mapping missing in 28 sources, not counted as measured.
+5:           All target features independently traced to source matrices.
+6:               Old 15/19 statement reproduced as 9/19 from predictions.
+7:             Exactly declared three models completed for all deletions.

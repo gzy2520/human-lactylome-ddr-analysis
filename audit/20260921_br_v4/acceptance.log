@@ -1,0 +1,42 @@
+=================================================================
+=== B-R v4 Automated Acceptance Test Suite ===
+=================================================================
+
+[PASS] A1_fold_counts: Each model has exactly 19 per-fold records
+       -> All 8 models have exactly 19 fold records
+[PASS] A2_fold_counts_match_raw: Per-fold N and Pos match direct count by group in raw predictions
+       -> Exact match across all 19 folds and 8 models
+[PASS] A3_sum_of_folds: Sum of fold N equals 6744 and Pos equals 2708
+       -> Total N = 6744, Total Pos = 2708 across all models
+[PASS] A4_unique_predictions: Exactly one valid outer prediction per observation per model
+       -> 6744 unique (GroupID, BaseAccession) rows, no NAs, bounded in [0, 1]
+[PASS] A5_m0_theoretical_properties: Fold M0 constant => ROC=0.500 exactly, AP=fold positive rate
+       -> ROC max dev = 0.00e+00, AP max dev = 0.00e+00
+[PASS] A6_grouped_matches_loop: by=ConnGroup results strictly match independent loop implementation
+       -> Numerical identity to machine precision (max abs diff < 1e-12)
+[PASS] A7_calibration_table_integrity: Calibration table row N, obs_rate, mean_pred match actual materials
+       -> Verified across all 28 ReferenceKeys and 31 GroupIDs
+[PASS] A8_synthetic_equal_vs_pooled: Synthetic test data correctly distinguishes equal-weight vs pooled
+       -> Equal-weight ROC = 0.500 vs Pooled ROC = 0.288 (diff=0.212); Equal AP = 0.490 vs Pooled AP = 0.141 (diff=0.349)
+[PASS] A9_metric_tie_and_order_invariance: AP and ROC are strictly invariant to permutation within tie blocks
+       -> 10 random permutations tested; 0 discrepancy
+[PASS] A10_ap_vs_pr_auc_trap_distinction: AP and trapezoidal PR-AUC are separately named and correctly differentiated
+       -> AP = 0.74702 != PRAUC_trap = 0.70685
+[PASS] A11_single_class_fold_handling: Single-class fold returns NA for AP/ROC with descriptive reason
+       -> Note: ; single-class fold: AP/PRAUC/ROC undefined (NA), Brier/LogLoss valid
+[PASS] A12_solver_optim_verification: Custom ridge logistic regression matches stats::optim BFGS to < 1e-4
+       -> Max abs diff = 5.93e-07, converged = TRUE
+[PASS] A13_solver_failure_safety: Solver failure safely sets failed=TRUE, converged=FALSE, without silent fallback
+       -> Failure recorded: linear_system_solve_error: Lapack routine dgesv: system is exactly singular: U[2,2] = 0
+[PASS] A14_isolation_outer_test_labels: Outer test labels have ZERO leakage into training, tuning, or predictions
+       -> Max prediction difference = 0, selected lambdas identical
+[PASS] A15_isolation_inner_val_labels: Inner validation labels have ZERO leakage into inner training features or scalers
+       -> Max feature difference = 0
+[PASS] A16_isolation_mp_crossfit_holdout: Holdout group labels in MP cross-fit do NOT affect their own features
+       -> Max holdout MP feature difference = 0
+[PASS] A17_s2_full_completion: S2 training sensitivity completed all 19 dropped groups with full retraining
+       -> 19 of 19 groups completed; checklist saved
+
+=================================================================
+ALL 17 ACCEPTANCE TESTS PASSED SUCCESSFULLY (0 FAILURES)!
+=================================================================

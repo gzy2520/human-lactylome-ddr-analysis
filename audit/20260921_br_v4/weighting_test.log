@@ -1,0 +1,1 @@
+PASS: actual inner selection equals 18 connected-group losses, independent of row and inner-fold sizes.

@@ -19,3 +19,6 @@ outputs/20260919_repair_release/*.csv -text whitespace=cr-at-eol
 audit/20260920_lactate_metabolism/*.log -text -whitespace
 config/lactate_metabolism/*sessionInfo.txt -text -whitespace
 outputs/20260920_lactate_metabolism/sessionInfo.txt -text -whitespace
+
+# Preserve verbatim B-R v4 console evidence.
+audit/20260921_br_v4/*.log -text -whitespace

@@ -20,3 +20,7 @@
 ## 乳酸代谢探索（2026-09-21）
 
 已按老师要求完成第一阶段来源/去向表达分析。新包：`outputs/20260920_lactate_metabolism/`；中文汇报在包内 `REPORT_老师汇报.md`，方法为 `docs/LACTATE_METABOLISM_METHODS_20260920.md`，审计为 `audit/20260920_lactate_metabolism/REPORT.md`。128实测基因、6 GO集合、10机制模块、23套图；17张表独立重跑一致。现有RNA发布入口不变。新图使用实际RNA对照条件标签，保留31条蛋白映射；不把Kla检出数当强度，不拟合相关/机器学习。BPH背景用药与跨研究比较须披露。
+
+## B-R 机器学习当前入口（v4，2026-09-21）
+
+以 `outputs/20260921_br_v4/` 和 `audit/20260921_br_v4/REPORT.md` 为当前修复版；冻结参数为 `config/lactylation_ml_review/model_config_v4.md`，入口 `workflow/lactylation_ml_review/run_v4.sh`（输出已存在会拒绝重建，应另用隔离副本）。v2/v3保留为历史，不沿用v3手写的“15/19折变差”（实际9/19）。v4内层按连通组等权选参；主模块为4基因L-乳酸/丙酮酸转换表达，LDHD的D-乳酸氧化分开展示。备用LDHA ID在28源矩阵均缺失，覆盖不能按NA占位行计数。`outputs/20260921_br_v4_weight_only/` 仅作权重修复对照。此任务是DDR蛋白流程检出预测，非乳酸浓度或修饰占有率；不改变正式RNA发布入口及冻结蛋白组结果。

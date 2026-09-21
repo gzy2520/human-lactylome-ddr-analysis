@@ -1,0 +1,5 @@
+GroupID,ReferenceKey,SharedReference,PXD,SampleGroup,KlaProteinCount,ReferenceProteinCount,KlaDdrProteinCount,KlaDdrFraction,ReferenceDdrProteinCount,ReferenceDdrFraction,ReferencePXD,ReferenceMatchNote,MetricBoundary
+KLA31_08,GSE132714_BPH,FALSE,PXD066054,BPH,2118,8169,142,0.0670443814919736,408,0.0499449136981271,PXD066054,同研究同样本精确匹配,Study/group protein union detection counts; no site occupancy or absolute modification abundance
+KLA31_09,TCGA_LIHC_normal,FALSE,PXD075377,adjacent liver,1775,4251,113,0.0636619718309859,194,0.0456363208656787,PXD065775,邻近组织精确匹配,Study/group protein union detection counts; no site occupancy or absolute modification abundance
+KLA31_11,TCGA_PRAD_primary,FALSE,PXD066054,prostate cancer,2125,8203,143,0.0672941176470588,412,0.0502255272461295,PXD066054,同研究同样本精确匹配,Study/group protein union detection counts; no site occupancy or absolute modification abundance
+KLA31_12,TCGA_LIHC_primary,FALSE,PXD075377,HCC,1798,5188,121,0.0672969966629588,271,0.0522359290670779,PXD065775,疾病组织精确匹配,Study/group protein union detection counts; no site occupancy or absolute modification abundance

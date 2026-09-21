@@ -1,0 +1,24 @@
+Figure,SourceTables,Renderer
+GO_0006089_page1,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+GO_0006094_page1,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+GO_0006096_page1,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+GO_0006099_page1,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+GO_0015727_page1,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+GO_0019244_page1,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_01,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_02,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_03,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_04,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_05,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_06,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_07,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_08,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_09,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+Mechanism_10,tables/material_gene_expression.csv; tables/membership_coverage.csv,workflow/lactate_metabolism/analyze.R
+LDHA_LDHB_samples_28,tables/sample_gene_expression.csv.gz; tables/materials_28.csv,workflow/lactate_metabolism/analyze.R
+Focus_samples_1,tables/sample_gene_expression.csv.gz; tables/materials_28.csv,workflow/lactate_metabolism/analyze.R
+Focus_samples_2,tables/sample_gene_expression.csv.gz; tables/materials_28.csv,workflow/lactate_metabolism/analyze.R
+Focus_samples_3,tables/sample_gene_expression.csv.gz; tables/materials_28.csv,workflow/lactate_metabolism/analyze.R
+Kla_detection_context,tables/focus_kla_detection_context.csv,workflow/lactate_metabolism/analyze.R
+Focus_contrasts,tables/focus_expression_differences.csv,workflow/lactate_metabolism/analyze.R
+Lactate_routes,evidence/literature_evidence.tsv; evidence/curated_mechanism_evidence.csv; workflow/lactate_metabolism/analyze.R,workflow/lactate_metabolism/analyze.R

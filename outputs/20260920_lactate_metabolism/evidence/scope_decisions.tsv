@@ -1,0 +1,14 @@
+Topic	Decision	Reason
+Three teacher GO terms	include complete human mapped annotations	Primary requested scope; direct and inherited annotations retained separately
+Gluconeogenesis	include GO and key enzyme panel	Relevant potential lactate carbon fate; tissue and physiological context required
+Glycolysis and transport	include GO and mechanism panel	Upstream production and exchange must not be omitted
+Glycogen fructose glycerol alanine	include compact mechanistic panels	Bounded upstream connections rather than all carbohydrate or amino acid genes
+Fructose minor pathways	document outside compact main-route panel	Reactome also lists ALDH1A1/GLYCTK alternatives; exhaustive upstream metabolism not claimed
+Lactyl substrate formation	include ACSS2 SUCLG1 SUCLG2 AARS1 AARS2	Substrate activation question; no repeat of entire writer eraser reader analysis
+D-lactate glyoxalase	include separately	Different stereochemistry and substrate route; not pooled as L-lactate production
+Bacterial bifid shunt and mixed acid fermentation	exclude nonhuman mechanisms	Human-only annotation contract; no microbiome measurements
+Fatty acids glutamine and broad amino acid metabolism	discuss as alternative carbon sources; no blanket gene expansion	TCA is not lactate specific; current scope would otherwise expand without bound
+Lactate receptor HCAR1 signaling	discuss as non-consuming signaling; no flux sink score	Receptor signaling is not evidence of bulk lactate disposal
+Module score and flux score	not calculated	Small overlapping bidirectional modules; no metabolite labels for calibration
+Correlation and ML	not fitted	No matched measured lactate or comparable independent Kla abundance labels
+GO0015721	rejected during term-name verification	It is bile acid/bile salt transport; correct lactate transport term is GO0015727

@@ -1,0 +1,29 @@
+ReferenceKey,RNALabel
+tendon_nondiabetic,Tendon (non-diabetic)
+GTEx_v8_Lung,Lung (GTEx)
+GSE181540_HS_input,Hypertrophic scar input
+GSE181540_adjacent_NS_input,Adjacent skin input
+GTEx_v8_Hippocampus,Hippocampus (GTEx)
+GSE114691_control_placenta,Placenta control
+sperm_GroupI,Sperm (group I)
+GSE132714_BPH,BPH (medicated cohort)
+TCGA_LIHC_normal,Adjacent liver (TCGA)
+TCGA_ESCA_ESCC,ESCC (TCGA)
+TCGA_PRAD_primary,Prostate cancer (TCGA)
+TCGA_LIHC_primary,HCC (TCGA)
+MCF7_DMSO7d,MCF7 DMSO 7d
+HCT116_control,HCT116 control
+GSE163787_TALL104,TALL-104
+HepG2_DMSO24h,HepG2 DMSO 24h
+GSE171750_A549_untreated,A549 untreated
+MDAMB468_DMSO7d,MDA-MB-468 DMSO 7d
+GSE283812_T47D_vehicle,T-47D vehicle
+PC3M_DMSO,PC-3M DMSO
+GSE266884_MES28_vector_control,MES28 vector control
+RKO_DMSO,RKO DMSO
+GSE203529_HEK293T_WT,HEK293T WT
+GSE275256_HMC3_vehicle,HMC3 vehicle
+HK2_untreated,HK-2 untreated
+GSE103520_MCF10A_control,MCF10A control
+GSE119834_NSC,NSC reference
+HUVEC_untreated,HUVEC untreated

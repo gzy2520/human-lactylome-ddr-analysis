@@ -1,0 +1,201 @@
+Ensembl,Symbol,Module,Term,Origin
+ENSG00000132326,PER2,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000134333,LDHA,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000288299,LDHA,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000111716,LDHB,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000166796,LDHC,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000166800,LDHAL6A,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000166816,LDHD,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000180902,D2HGDH,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000116288,PARK7,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000171989,LDHAL6B,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000124532,MRS2,lactate metabolic process,GO:0006089,GO annotation
+ENSG00000109107,ALDOC,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000074800,ENO1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000146701,MDH2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000282019,GPI,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000100889,PCK2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000285241,PCK2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000120053,GOT1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000105220,GPI,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000136872,ALDOB,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000165140,FBP1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000124253,PCK1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000173599,PC,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000111640,GAPDH,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000108515,ENO3,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000131482,G6PC1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000109819,PPARGC1A,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000111674,ENO2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000008405,CRY1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000149925,ALDOA,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000266953,pgi,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000130957,FBP2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000105679,GAPDHS,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000132326,PER2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000281500,SLC37A4,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000123836,PFKFB2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000102144,PGK1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000138207,RBP4,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000170950,PGK2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000164708,PGAM2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000158571,PFKFB1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000171314,PGAM1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000128272,ATF4,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000135094,SDS,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000079739,PGM1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000111669,TPI1,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000108528,SLC25A11,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000104635,SLC39A14,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000170525,PFKFB3,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000114268,PFKFB4,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000160741,CRTC2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000141349,G6PC3,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000152254,G6PC2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000278373,G6PC2,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000183048,SLC25A10,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000004864,SLC25A13,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000137700,SLC37A4,gluconeogenesis,GO:0006094,GO annotation
+ENSG00000109107,ALDOC,glycolysis,GO:0006096,GO annotation
+ENSG00000152556,PFKM,glycolysis,GO:0006096,GO annotation
+ENSG00000074800,ENO1,glycolysis,GO:0006096,GO annotation
+ENSG00000172331,BPGM,glycolysis,GO:0006096,GO annotation
+ENSG00000067225,PKM,glycolysis,GO:0006096,GO annotation
+ENSG00000282019,GPI,glycolysis,GO:0006096,GO annotation
+ENSG00000105679,GAPDHS,glycolysis,GO:0006096,GO annotation
+ENSG00000170950,PGK2,glycolysis,GO:0006096,GO annotation
+ENSG00000105220,GPI,glycolysis,GO:0006096,GO annotation
+ENSG00000136872,ALDOB,glycolysis,GO:0006096,GO annotation
+ENSG00000106633,GCK,glycolysis,GO:0006096,GO annotation
+ENSG00000188316,ENO4,glycolysis,GO:0006096,GO annotation
+ENSG00000067057,PFKP,glycolysis,GO:0006096,GO annotation
+ENSG00000143627,PKLR,glycolysis,GO:0006096,GO annotation
+ENSG00000262785,PKLR,glycolysis,GO:0006096,GO annotation
+ENSG00000156515,HK1,glycolysis,GO:0006096,GO annotation
+ENSG00000111669,TPI1,glycolysis,GO:0006096,GO annotation
+ENSG00000159322,ADPGK,glycolysis,GO:0006096,GO annotation
+ENSG00000102144,PGK1,glycolysis,GO:0006096,GO annotation
+ENSG00000141959,PFKL,glycolysis,GO:0006096,GO annotation
+ENSG00000171314,PGAM1,glycolysis,GO:0006096,GO annotation
+ENSG00000108515,ENO3,glycolysis,GO:0006096,GO annotation
+ENSG00000159399,HK2,glycolysis,GO:0006096,GO annotation
+ENSG00000156510,HKDC1,glycolysis,GO:0006096,GO annotation
+ENSG00000160883,HK3,glycolysis,GO:0006096,GO annotation
+ENSG00000164708,PGAM2,glycolysis,GO:0006096,GO annotation
+ENSG00000111674,ENO2,glycolysis,GO:0006096,GO annotation
+ENSG00000149925,ALDOA,glycolysis,GO:0006096,GO annotation
+ENSG00000266953,pgi,glycolysis,GO:0006096,GO annotation
+ENSG00000123836,PFKFB2,glycolysis,GO:0006096,GO annotation
+ENSG00000134333,LDHA,glycolysis,GO:0006096,GO annotation
+ENSG00000288299,LDHA,glycolysis,GO:0006096,GO annotation
+ENSG00000111640,GAPDH,glycolysis,GO:0006096,GO annotation
+ENSG00000158571,PFKFB1,glycolysis,GO:0006096,GO annotation
+ENSG00000079739,PGM1,glycolysis,GO:0006096,GO annotation
+ENSG00000175567,UCP2,glycolysis,GO:0006096,GO annotation
+ENSG00000226784,PGAM4,glycolysis,GO:0006096,GO annotation
+ENSG00000170525,PFKFB3,glycolysis,GO:0006096,GO annotation
+ENSG00000114268,PFKFB4,glycolysis,GO:0006096,GO annotation
+ENSG00000146701,MDH2,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000091140,DLD,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000117118,SDHB,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000101365,IDH3B,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000062485,CS,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000143252,SDHC,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000091483,FH,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000204370,SDHD,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000136143,SUCLA2,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000286001,"",tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000100412,ACO2,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000073578,SDHA,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000119689,DLST,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000166411,IDH3A,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000067829,IDH3G,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000163541,SUCLG1,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000172340,SUCLG2,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000214756,CSKMT,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000138413,IDH1,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000150768,DLAT,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000168291,PDHB,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000014641,MDH1,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000182054,IDH2,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000134056,KGD4,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000278461,KGD4,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000105953,OGDH,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000112992,NNT,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000138400,MDH1B,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000154079,SDHAF4,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000087299,L2HGDH,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000114021,NIT2,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000167985,SDHAF2,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000197444,OGDHL,tricarboxylic acid cycle,GO:0006099,GO annotation
+ENSG00000155380,SLC16A1,lactate transport,GO:0015727,GO annotation
+ENSG00000118596,SLC16A7,lactate transport,GO:0015727,GO annotation
+ENSG00000281917,SLC16A1,lactate transport,GO:0015727,GO annotation
+ENSG00000141526,SLC16A3,lactate transport,GO:0015727,GO annotation
+ENSG00000076555,ACACB,lactate transport,GO:0015727,GO annotation
+ENSG00000100156,SLC16A8,lactate transport,GO:0015727,GO annotation
+ENSG00000148942,SLC5A12,lactate transport,GO:0015727,GO annotation
+ENSG00000170571,EMB,lactate transport,GO:0015727,GO annotation
+ENSG00000256870,SLC5A8,lactate transport,GO:0015727,GO annotation
+ENSG00000262217,SLC5A8,lactate transport,GO:0015727,GO annotation
+ENSG00000134333,LDHA,pyruvate fermentation to lactate,GO:0019244,GO annotation
+ENSG00000288299,LDHA,pyruvate fermentation to lactate,GO:0019244,GO annotation
+ENSG00000111716,LDHB,pyruvate fermentation to lactate,GO:0019244,GO annotation
+ENSG00000166796,LDHC,pyruvate fermentation to lactate,GO:0019244,GO annotation
+ENSG00000166800,LDHAL6A,pyruvate fermentation to lactate,GO:0019244,GO annotation
+ENSG00000171989,LDHAL6B,pyruvate fermentation to lactate,GO:0019244,GO annotation
+ENSG00000090861,AARS1,Lactyl substrate formation,"",curated mechanism
+ENSG00000124608,AARS2,Lactyl substrate formation,"",curated mechanism
+ENSG00000131069,ACSS2,Lactyl substrate formation,"",curated mechanism
+ENSG00000162688,AGL,Glycogen upstream,"",curated mechanism
+ENSG00000136872,ALDOB,Fructose upstream,"",curated mechanism
+ENSG00000172270,BSG,Lactate transport,"",curated mechanism
+ENSG00000150768,DLAT,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000091140,DLD,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000170571,EMB,Lactate transport,"",curated mechanism
+ENSG00000165140,FBP1,Gluconeogenic branch,"",curated mechanism
+ENSG00000130957,FBP2,Gluconeogenic branch,"",curated mechanism
+ENSG00000131482,G6PC1,Gluconeogenic branch,"",curated mechanism
+ENSG00000141349,G6PC3,Gluconeogenic branch,"",curated mechanism
+ENSG00000198814,GK,Glycerol upstream,"",curated mechanism
+ENSG00000124767,GLO1,D-lactate and glyoxalase,"",curated mechanism
+ENSG00000167588,GPD1,Glycerol upstream,"",curated mechanism
+ENSG00000115159,GPD2,Glycerol upstream,"",curated mechanism
+ENSG00000167701,GPT,Alanine pyruvate link,"",curated mechanism
+ENSG00000166123,GPT2,Alanine pyruvate link,"",curated mechanism
+ENSG00000063854,HAGH,D-lactate and glyoxalase,"",curated mechanism
+ENSG00000138030,KHK,Fructose upstream,"",curated mechanism
+ENSG00000134333,LDHA,L-lactate conversion,"",curated mechanism
+ENSG00000288299,LDHA,L-lactate conversion,"",curated mechanism
+ENSG00000111716,LDHB,L-lactate conversion,"",curated mechanism
+ENSG00000166796,LDHC,L-lactate conversion,"",curated mechanism
+ENSG00000166816,LDHD,D-lactate and glyoxalase,"",curated mechanism
+ENSG00000060762,MPC1,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000143158,MPC2,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000173599,PC,Gluconeogenic branch,"",curated mechanism
+ENSG00000124253,PCK1,Gluconeogenic branch,"",curated mechanism
+ENSG00000100889,PCK2,Gluconeogenic branch,"",curated mechanism
+ENSG00000285241,PCK2,Gluconeogenic branch,"",curated mechanism
+ENSG00000131828,PDHA1,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000168291,PDHB,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000152256,PDK1,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000005882,PDK2,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000067992,PDK3,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000004799,PDK4,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000164951,PDP1,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000172840,PDP2,Pyruvate mitochondrial entry,"",curated mechanism
+ENSG00000079739,PGM1,Glycogen upstream,"",curated mechanism
+ENSG00000100994,PYGB,Glycogen upstream,"",curated mechanism
+ENSG00000100504,PYGL,Glycogen upstream,"",curated mechanism
+ENSG00000068976,PYGM,Glycogen upstream,"",curated mechanism
+ENSG00000155380,SLC16A1,Lactate transport,"",curated mechanism
+ENSG00000281917,SLC16A1,Lactate transport,"",curated mechanism
+ENSG00000141526,SLC16A3,Lactate transport,"",curated mechanism
+ENSG00000118596,SLC16A7,Lactate transport,"",curated mechanism
+ENSG00000100156,SLC16A8,Lactate transport,"",curated mechanism
+ENSG00000148942,SLC5A12,Lactate transport,"",curated mechanism
+ENSG00000256870,SLC5A8,Lactate transport,"",curated mechanism
+ENSG00000262217,SLC5A8,Lactate transport,"",curated mechanism
+ENSG00000163541,SUCLG1,Lactyl substrate formation,"",curated mechanism
+ENSG00000172340,SUCLG2,Lactyl substrate formation,"",curated mechanism
+ENSG00000149476,TKFC,Fructose upstream,"",curated mechanism

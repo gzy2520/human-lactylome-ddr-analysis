@@ -1,0 +1,17 @@
+Origin,Term,Module,AnnotatedOrMappedIDs,CommonMatrixIDs,MissingIDs
+GO annotation,GO:0006089,lactate metabolic process,11,10,1
+GO annotation,GO:0006094,gluconeogenesis,46,40,6
+GO annotation,GO:0006096,glycolysis,39,34,5
+GO annotation,GO:0006099,tricarboxylic acid cycle,33,31,2
+GO annotation,GO:0015727,lactate transport,10,8,2
+GO annotation,GO:0019244,pyruvate fermentation to lactate,6,5,1
+curated mechanism,"",Lactyl substrate formation,5,5,0
+curated mechanism,"",Glycogen upstream,5,5,0
+curated mechanism,"",Fructose upstream,3,3,0
+curated mechanism,"",Lactate transport,10,8,2
+curated mechanism,"",Pyruvate mitochondrial entry,12,12,0
+curated mechanism,"",Gluconeogenic branch,8,7,1
+curated mechanism,"",Glycerol upstream,3,3,0
+curated mechanism,"",D-lactate and glyoxalase,3,3,0
+curated mechanism,"",Alanine pyruvate link,2,2,0
+curated mechanism,"",L-lactate conversion,4,3,1

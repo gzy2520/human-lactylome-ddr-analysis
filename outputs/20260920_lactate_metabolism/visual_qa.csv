@@ -1,0 +1,24 @@
+Figure,PDF_SHA256,PNGExists,VisualReview,ReviewScope
+Focus_contrasts,97d7a3318fff0791491289c07c6beddeb22402f06d2b5ae899bc9128607daad0,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Focus_samples_1,00c7a4b39c3646436a1697cdddcdb3b902f51a3bec64fad634c2a7ec9a716569,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Focus_samples_2,161e949f3bf8eea5cc3b22df8a911a710a203b640232bad1332b072e4f866583,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Focus_samples_3,0575cd4d48f87a3b88ae7fee535a25299ab59f079245eafb817b7871a2d06ae1,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+GO_0006089_page1,bf761c812ace044da05fc7a3da8569c1369cc8aa192ae5d27a0f6a6e93d7ebe7,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+GO_0006094_page1,5acfca22d5d636067f0734f30e0055935b0548d392cad590d91964f41fce7ecb,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+GO_0006096_page1,5699de34df4c01a164b76b24b27c728212a14644708749e6bf3912ae2a54f0d0,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+GO_0006099_page1,dbd34b19f6a11ce729fc40499d0a95e16a16b2e8136ada547cc8b76110aacfca,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+GO_0015727_page1,dae6ef95450c7132c76e5f9856a718b6349b5a0ad8401d17612d9b7770da220f,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+GO_0019244_page1,a9c3a478a09e54ae9011cf800e2e671245e3951a2a19830c6ec642d0540fc833,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Kla_detection_context,6149cd09dd4dac32d4eec377856fd226745ba7e77faa1dbaf32e07e1fa4ab8d0,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+LDHA_LDHB_samples_28,0f74ea014b78f66c97c01a9925fcf6800c59f45c2416fc65a570e9a6a726efa8,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Lactate_routes,d096eeb38e4a62ed61ddd07cbc139a3274e156a0d9778ea5fe45ec523a781391,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_01,f9163b6b39486d825f12d9a1d209400d4ed3d115e6fc2fbff3eb368a27a9ae59,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_02,c82e0e07c8f7af835c42e8fd336d4d4267226c4842f4e57ccd9cf5697c5a6b8f,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_03,523159863d2211e303bf03c28d526976403f1ab9ac6995594e9c1107f36e2c40,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_04,1a2dd76da2bede1e825c80f66567f3e4c9b006a3829992870aeaad09a533c821,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_05,a1b999c3f15b8390b9a504df6002acb8a848f6a03440d77715b1ab3523a27c81,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_06,18743e88e8360ec3217938178cff01449e2f95b31e6efb34e575f166afdcf4c0,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_07,caedcb9d4ce36befe7e67791f4254f4bbb9b2eb441c2e7e1eb33623aeb646e3d,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_08,93afcedfa5f3b0ebd0954bacd593b66e256d67bc459bdebccb1ebe973c9cc1d1,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_09,abc1f356a6d05b154e18e27fbbdca94a0cb335e5f69bc3f7541c664606d65a71,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed
+Mechanism_10,0b3ebf3c5d36f213b0f786f6d2f35756b6fa869a594359697da98da432a5b0f2,True,PASS,Rendered PDF inspected; labels axes legends and route arrows reviewed

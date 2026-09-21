@@ -1,0 +1,3 @@
+Comparison,Tumor,Reference,Caveat
+HCC vs adjacent liver,TCGA_LIHC_primary,TCGA_LIHC_normal,Same TCGA project; pairing not asserted; external to Kla cohort
+Prostate cancer vs BPH,TCGA_PRAD_primary,GSE132714_BPH,Different RNA studies; BPH medications confound comparison

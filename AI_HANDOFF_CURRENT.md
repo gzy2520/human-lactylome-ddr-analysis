@@ -16,3 +16,7 @@
 运行：`Rscript --vanilla workflow/preflight_kla31.R`。
 
 本地全链重建：`bash workflow/rebuild_rna_release_20260919.sh <已验收的expression目录> <新日期标签>`。输出完成仍需视觉 QA，再更新当前发布清单。
+
+## 乳酸代谢探索（2026-09-21）
+
+已按老师要求完成第一阶段来源/去向表达分析。新包：`outputs/20260920_lactate_metabolism/`；中文汇报在包内 `REPORT_老师汇报.md`，方法为 `docs/LACTATE_METABOLISM_METHODS_20260920.md`，审计为 `audit/20260920_lactate_metabolism/REPORT.md`。128实测基因、6 GO集合、10机制模块、23套图；17张表独立重跑一致。现有RNA发布入口不变。新图使用实际RNA对照条件标签，保留31条蛋白映射；不把Kla检出数当强度，不拟合相关/机器学习。BPH背景用药与跨研究比较须披露。

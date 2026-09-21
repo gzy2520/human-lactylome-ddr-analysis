@@ -1,0 +1,11 @@
+Check,Pass
+28 unique references,TRUE
+1898 unique sample IDs,TRUE
+31 mappings,TRUE
+Unique stable IDs,TRUE
+Unique measured gene labels,TRUE
+Finite A/B subset,TRUE
+No material expansion in primary table,TRUE
+Focus delta reconstruction,TRUE
+No imputed missing genes,TRUE
+Existing offset retained,TRUE

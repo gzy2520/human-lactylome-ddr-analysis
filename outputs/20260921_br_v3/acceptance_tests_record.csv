@@ -1,0 +1,18 @@
+TestID,TestName,Status,Details
+A1_fold_counts,Each model has exactly 19 per-fold records,PASS,All 8 models have exactly 19 fold records
+A2_fold_counts_match_raw,Per-fold N and Pos match direct count by group in raw predictions,PASS,Exact match across all 19 folds and 8 models
+A3_sum_of_folds,Sum of fold N equals 6744 and Pos equals 2708,PASS,"Total N = 6744, Total Pos = 2708 across all models"
+A4_unique_predictions,Exactly one valid outer prediction per observation per model,PASS,"6744 unique (GroupID, BaseAccession) rows, no NAs, bounded in [0, 1]"
+A5_m0_theoretical_properties,"Fold M0 constant => ROC=0.500 exactly, AP=fold positive rate",PASS,"ROC max dev = 0.00e+00, AP max dev = 0.00e+00"
+A6_grouped_matches_loop,by=ConnGroup results strictly match independent loop implementation,PASS,Numerical identity to machine precision (max abs diff < 1e-12)
+A7_calibration_table_integrity,"Calibration table row N, obs_rate, mean_pred match actual materials",PASS,Verified across all 28 ReferenceKeys and 31 GroupIDs
+A8_synthetic_equal_vs_pooled,Synthetic test data correctly distinguishes equal-weight vs pooled,PASS,Equal-weight ROC = 0.500 vs Pooled ROC = 0.288 (diff=0.212); Equal AP = 0.490 vs Pooled AP = 0.141 (diff=0.349)
+A9_metric_tie_and_order_invariance,AP and ROC are strictly invariant to permutation within tie blocks,PASS,10 random permutations tested; 0 discrepancy
+A10_ap_vs_pr_auc_trap_distinction,AP and trapezoidal PR-AUC are separately named and correctly differentiated,PASS,AP = 0.74702 != PRAUC_trap = 0.70685
+A11_single_class_fold_handling,Single-class fold returns NA for AP/ROC with descriptive reason,PASS,"Note: ; single-class fold: AP/PRAUC/ROC undefined (NA), Brier/LogLoss valid"
+A12_solver_optim_verification,Custom ridge logistic regression matches stats::optim BFGS to < 1e-4,PASS,"Max abs diff = 5.93e-07, converged = TRUE"
+A13_solver_failure_safety,"Solver failure safely sets failed=TRUE, converged=FALSE, without silent fallback",PASS,"Failure recorded: linear_system_solve_error: Lapack routine dgesv: system is exactly singular: U[2,2] = 0"
+A14_isolation_outer_test_labels,"Outer test labels have ZERO leakage into training, tuning, or predictions",PASS,"Max prediction difference = 0, selected lambdas identical"
+A15_isolation_inner_val_labels,Inner validation labels have ZERO leakage into inner training features or scalers,PASS,Max feature difference = 0
+A16_isolation_mp_crossfit_holdout,Holdout group labels in MP cross-fit do NOT affect their own features,PASS,Max holdout MP feature difference = 0
+A17_s2_full_completion,S2 training sensitivity completed all 19 dropped groups with full retraining,PASS,19 of 19 groups completed; checklist saved

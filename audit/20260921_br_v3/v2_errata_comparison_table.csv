@@ -1,0 +1,19 @@
+Model,Metric,Old_Reported_Value,Old_Scope_In_Reality,Correct_Recalculated_Value,Difference_Reason
+M0,Equal-weight AP,0.3216,Pooled (6744 rows),0.3619287,08 script lacked by=ConnGroup; evaluated all 6744 rows as single pool; misattributed to AP definition differences
+M0,Equal-weight LogLoss,0.6826,Pooled (6744 rows),0.6662366,08 script evaluated overall pooled LogLoss instead of unweighted mean of 19 fold LogLosses
+M0,Equal-weight ROC,0.3205,Pooled (6744 rows),0.5000000,Per-fold M0 prediction is constant so per-fold ROC is identically 0.500; pooled ROC artifactually ranked cross-fold rates
+MP,Equal-weight AP,0.6583,Pooled (6744 rows),0.7027054,08 script evaluated pooled AP (0.6583) instead of 19-fold unweighted mean (0.7027)
+MP,Equal-weight LogLoss,0.5757,Pooled (6744 rows),0.5724599,08 script evaluated pooled LogLoss (0.5757) instead of 19-fold unweighted mean (0.5725)
+MP,Equal-weight ROC,0.7556,Pooled (6744 rows),0.8239471,08 script evaluated pooled ROC (0.7556) instead of 19-fold unweighted mean (0.7502)
+ME,Equal-weight AP,0.4313,Pooled (6744 rows),0.4921517,08 script evaluated pooled AP (0.4313) instead of 19-fold unweighted mean (0.4922)
+ME,Equal-weight LogLoss,0.6843,Pooled (6744 rows),0.6608651,08 script evaluated pooled LogLoss (0.6843) instead of 19-fold unweighted mean (0.6609)
+ME2,Equal-weight AP,0.4091,Pooled (6744 rows),0.4884488,08 script evaluated pooled AP (0.4091) instead of 19-fold unweighted mean (0.4884)
+ME2,Equal-weight LogLoss,0.6949,Pooled (6744 rows),0.6732676,08 script evaluated pooled LogLoss (0.6949) instead of 19-fold unweighted mean (0.6733)
+ME2P,Equal-weight AP,0.6134,Pooled (6744 rows),0.7103017,08 script evaluated pooled AP (0.6134) instead of 19-fold unweighted mean (0.7103)
+ME2P,Equal-weight LogLoss,0.6026,Pooled (6744 rows),0.5934501,08 script evaluated pooled LogLoss (0.6026) instead of 19-fold unweighted mean (0.5935)
+XEN,Equal-weight AP,0.3787,Pooled (6744 rows),0.4863957,08 script evaluated pooled AP (0.3787) instead of 19-fold unweighted mean (0.4864)
+XEN,Equal-weight LogLoss,0.7147,Pooled (6744 rows),0.6935960,08 script evaluated pooled LogLoss (0.7147) instead of 19-fold unweighted mean (0.6936)
+M0_calib,Material Calib MAE,0.0004,Grand mean diff,0.1775181,09 script lacked by=ReferenceKey; assigned grand mean difference across all 6744 rows rather than per-reference MAE
+MP_calib,Material Calib MAE,0.0137,Grand mean diff,0.1793081,09 script lacked by=ReferenceKey; assigned grand mean difference across all 6744 rows rather than per-reference MAE
+ME_calib,Material Calib MAE,0.0009,Grand mean diff,0.1833898,09 script lacked by=ReferenceKey; assigned grand mean difference across all 6744 rows rather than per-reference MAE
+ME2P_calib,Material Calib MAE,0.0029,Grand mean diff,0.1934222,09 script lacked by=ReferenceKey; assigned grand mean difference across all 6744 rows rather than per-reference MAE

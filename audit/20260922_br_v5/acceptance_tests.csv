@@ -1,0 +1,28 @@
+Test,Pass
+group evidence invariant to duplicate source rows,TRUE
+unseen uses training equal group prevalence,TRUE
+crossfit predictions exclude own held group labels,TRUE
+calibration row weights balance source groups,TRUE
+calibration stationary solution,TRUE
+outer labels cannot change fitted choices or predictions,TRUE
+inner groups exclude outer groups,TRUE
+inner loss counts each training group once per candidate,TRUE
+complete outer coverage,TRUE
+original MP exactly reproduced,TRUE
+probabilities finite and bounded,TRUE
+base R grouped LogLoss M0,TRUE
+base R grouped LogLoss MP,TRUE
+base R grouped LogLoss MP_cal,TRUE
+base R grouped LogLoss ME_P,TRUE
+base R grouped LogLoss ME2P,TRUE
+base R grouped LogLoss SHRINK,TRUE
+base R grouped LogLoss SHRINK_CAL,TRUE
+unchanged v4 metric M0,TRUE
+unchanged v4 metric MP,TRUE
+unchanged v4 metric MP_cal,TRUE
+unchanged v4 metric ME_P,TRUE
+unchanged v4 metric ME2P,TRUE
+complete S2 nested retraining,TRUE
+S2 unique drop-test-model combinations,TRUE
+no outer group in inner validation,TRUE
+all inner risks independently regrouped,TRUE

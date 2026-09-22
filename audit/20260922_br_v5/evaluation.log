@@ -1,0 +1,25 @@
+null device
+          1
+null device
+          1
+null device
+          1
+null device
+          1
+        Model   LogLoss        AP       ROC     Brier MaterialMAE
+       <char>     <num>     <num>     <num>     <num>       <num>
+1:         M0 0.6662366 0.3619287 0.5000000 0.2365487   0.1775181
+2:         MP 0.5724599 0.7027054 0.8239471 0.1935735   0.1793081
+3:     MP_cal 0.5704583 0.7027054 0.8239471 0.1936160   0.1833903
+4:       ME_P 0.5731733 0.7106641 0.8282263 0.1941318   0.1878655
+5:       ME2P 0.5865111 0.7121940 0.8289215 0.1996755   0.1922749
+6:     SHRINK 0.5653480 0.7085521 0.8264305 0.1911801   0.1817143
+7: SHRINK_CAL 0.5626701 0.7085521 0.8264305 0.1897533   0.1889079
+        Model    MeanDelta Better Worse BootstrapLow BootstrapHigh DeleteOneLow
+       <char>        <num>  <int> <int>        <num>         <num>        <num>
+1:     SHRINK -0.005110308     10     9  -0.01168027   0.001130426 -0.006063874
+2: SHRINK_CAL -0.007788259      9    10  -0.02871681   0.012807270 -0.012075184
+   DeleteOneHigh
+           <num>
+1:  -0.003818914
+2:  -0.003332947

@@ -1,0 +1,10 @@
+ID,Weight,Center,Strength
+original,row,half,2
+group_0.5,group,train_group,0.5
+group_2,group,train_group,2
+group_8,group,train_group,8
+group_32,group,train_group,32
+row_0.5,row,train_group,0.5
+row_2,row,train_group,2
+row_8,row,train_group,8
+row_32,row,train_group,32

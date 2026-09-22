@@ -1,0 +1,3 @@
+Figure,PDFRendered,Inspected,Result
+fig_paired_logloss,TRUE,TRUE,PASS
+fig_material_calibration,TRUE,TRUE,PASS

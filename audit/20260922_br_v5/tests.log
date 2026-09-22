@@ -1,0 +1,11 @@
+PASS group evidence invariant to duplicate source rows
+PASS unseen uses training equal group prevalence
+PASS crossfit predictions exclude own held group labels
+PASS calibration row weights balance source groups
+PASS calibration stationary solution
+PASS outer labels cannot change fitted choices or predictions
+PASS inner groups exclude outer groups
+PASS inner loss counts each training group once per candidate
+PASS complete outer coverage
+PASS original MP exactly reproduced
+PASS probabilities finite and bounded

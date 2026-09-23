@@ -1,0 +1,32 @@
+PXD,SampleGroup,GroupID,ReferenceKey,Category,KlaLabelEn,RNALabel,ReferenceUniqueAccessions,KlaUniqueAccessions,MatchedUniqueAccessions,DetectedKlaPercent,KlaOutsideReference,ReferencePXD,KlaProteinCount,ReferenceProteinCount,ReferenceMatchNote,ConnGroup
+PXD033146,pathological rotator cuff tendon,KLA31_01,tendon_nondiabetic,normal_tissue,Pathological rotator-cuff tendon,Tendon (non-diabetic),3984,571,484,12.14859437751,87,PXD033146,571,3984,同研究同样本精确匹配,1
+PXD036307,normal human lung,KLA31_02,GTEx_v8_Lung,normal_tissue,Normal human lung tissue,Lung (GTEx),12358,474,376,3.04256352160544,98,PXD010154,474,14022,器官组织精确匹配,2
+PXD046800,hypertrophic scar,KLA31_03,GSE181540_HS_input,normal_tissue,Hypertrophic scar tissue,Hypertrophic scar input,2193,402,350,15.9598723210214,52,PXD046800,402,2193,同研究同样本精确匹配,3
+PXD046800,adjacent skin,KLA31_04,GSE181540_adjacent_NS_input,normal_tissue,Adjacent skin tissue,Adjacent skin input,2205,527,468,21.2244897959184,59,PXD046800,527,2205,同研究同样本精确匹配,3
+PXD050470,human hippocampus,KLA31_05,GTEx_v8_Hippocampus,normal_tissue,Human hippocampus tissue,Hippocampus (GTEx),6082,853,786,12.9233804669517,67,PXD050470,853,6082,同一生物样本精确匹配,4
+PXD063047,normal pregnancy placenta,KLA31_06,GSE114691_control_placenta,normal_tissue,Normal-pregnancy placenta,Placenta control,10847,294,233,2.14805937125472,61,PXD010154,294,12395,器官组织精确匹配,2
+PXD064912,human sperm,KLA31_07,sperm_GroupI,normal_tissue,Human sperm,Sperm (group I),10680,231,228,2.13483146067416,3,PXD066517,231,10680,精确生物样本匹配,5
+PXD066054,BPH,KLA31_08,GSE132714_BPH,normal_tissue,Benign prostatic hyperplasia tissue,BPH (medicated cohort),8169,2118,2031,24.8622842453177,87,PXD066054,2118,8169,同研究同样本精确匹配,6
+PXD075377,adjacent liver,KLA31_09,TCGA_LIHC_normal,normal_tissue,Adjacent liver tissue,Adjacent liver (TCGA),4251,1775,1405,33.0510468125147,370,PXD065775,1775,4251,邻近组织精确匹配,7
+PXD064038,MEC and NEC ESCC groups,KLA31_10,TCGA_ESCA_ESCC,cancer_tissue,ESCC MEC/NEC groups,ESCC (TCGA),8083,1239,1091,13.4974638129407,148,PXD065830,1239,8083,"External ESCC tumor ordinary-proteome reference from iProX/PXD065830 Dataset1.xlsx, sheet 2.a protein raw information: only the 94 ESCC T samples are used; the 24 N non-tumor samples are excluded. The T union contains 8083 BaseAccessions and 420 DDR BaseAccessions. This is an independent ESCC tumor cohort, not a same-specimen paired measurement; comparison is by BaseAccession. PXD053809 is not selected because its deposited processed XLS is encrypted and is not currently auditable; PXD010154 remains healthy-esophagus background only.",8
+PXD066054,prostate cancer,KLA31_11,TCGA_PRAD_primary,cancer_tissue,Prostate cancer tissue,Prostate cancer (TCGA),8203,2125,2038,24.8445690601,87,PXD066054,2125,8203,同研究同样本精确匹配,6
+PXD075377,HCC,KLA31_12,TCGA_LIHC_primary,cancer_tissue,HCC tissue,HCC (TCGA),5188,1798,1532,29.5296838858905,266,PXD065775,1798,5188,疾病组织精确匹配,7
+PXD060185,MCF7,KLA31_13,MCF7_DMSO7d,cancer_cells,MCF7 cells,MCF7 DMSO 7d,3099,1235,873,28.1703775411423,362,PXD030304,1235,3099,精确细胞系匹配,9
+PXD028488,HCT116,KLA31_14,HCT116_control,cancer_cells,HCT116 cells,HCT116 control,4010,240,210,5.23690773067332,30,PXD030304,240,4010,精确细胞系匹配,9
+PXD053474,HCT116,KLA31_15,HCT116_control,cancer_cells,HCT116 cells (subcellular fractions),HCT116 control,4010,590,470,11.7206982543641,120,PXD030304,590,4010,精确细胞系匹配,9
+PXD066351,HCT116 control and Roseburia co-culture,KLA31_16,HCT116_control,cancer_cells,HCT116 cells (control and Roseburia co-culture),HCT116 control,8130,2398,2278,28.019680196802,120,PXD066351,2398,8130,同研究同样本精确匹配,9
+PXD028488,TALL-104,KLA31_17,GSE163787_TALL104,cancer_cells,TALL-104 cells (sodium lactate),TALL-104,3734,368,337,9.02517407605785,31,PXD028488,368,3734,同研究同样本精确匹配,9
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,KLA31_18,HepG2_DMSO24h,cancer_cells,"HepG2 cells (WT, SIRT1 KO and SIRT3 KO)",HepG2 DMSO 24h,6772,2602,2275,33.5942114589486,327,PXD050147,2602,6772,同研究但方法属性需确认,10
+PXD054919,A549,KLA31_19,GSE171750_A549_untreated,cancer_cells,A549 cells,A549 untreated,3448,1220,956,27.7262180974478,264,PXD030304,1220,3448,精确细胞系匹配,9
+PXD060185,MDA-MB-468,KLA31_20,MDAMB468_DMSO7d,cancer_cells,MDA-MB-468 cells,MDA-MB-468 DMSO 7d,3760,1612,1111,29.5478723404255,501,PXD030304,1612,3760,精确细胞系匹配,9
+PXD060185,T-47D,KLA31_21,GSE283812_T47D_vehicle,cancer_cells,T-47D cells,T-47D vehicle,3516,1301,932,26.5073947667804,369,PXD030304,1301,3516,精确细胞系匹配,9
+PXD063266,PC-3M,KLA31_22,PC3M_DMSO,cancer_cells,PC-3M cells,PC-3M DMSO,8049,384,316,3.92595353460057,68,PXD022005,384,8049,精确细胞系匹配,11
+PXD070007,glioblastoma stem cells,KLA31_23,GSE266884_MES28_vector_control,cancer_cells,Glioblastoma stem-cell models,MES28 vector control,8374,2564,2564,30.6185813231431,0,PXD069969,2564,8374,同一生物样本精确匹配,12
+PXD078013,RKO WT and GSK3B KO,KLA31_24,RKO_DMSO,cancer_cells,RKO cells (WT and GSK3B KO),RKO DMSO,3615,1217,1036,28.65836791148,181,PXD030304,1217,3615,精确细胞系匹配,9
+PXD028488,HEK293T,KLA31_25,GSE203529_HEK293T_WT,normal_cells,HEK293T cells,HEK293T WT,6441,438,366,5.68234746157429,72,PXD030304,438,6441,精确细胞系匹配,9
+PXD028737,HMC3,KLA31_26,GSE275256_HMC3_vehicle,normal_cells,HMC3 cells (normoxia and hypoxia),HMC3 vehicle,6132,1410,1277,20.8251793868232,133,PXD028737,1410,6132,同研究同样本精确匹配,13
+PXD058534,pretreated HK-2,KLA31_27,HK2_untreated,normal_cells,HK-2 cells (IR-CM treated),HK-2 untreated,4897,2164,1515,30.9373085562589,649,PXD072220,2164,4897,精确细胞系匹配,14
+PXD078736,HK-2 control and mannitol,KLA31_28,HK2_untreated,normal_cells,HK-2 cells (normoxia and hypoxia-reoxygenation),HK-2 untreated,4897,1250,981,20.0326730651419,269,PXD072220,1250,4897,精确细胞系匹配,14
+PXD060185,MCF10A,KLA31_29,GSE103520_MCF10A_control,normal_cells,MCF10A cells,MCF10A control,4839,947,548,11.3246538541021,399,PXD002400,947,4839,精确细胞系匹配,9
+PXD070007,neural stem cells,KLA31_30,GSE119834_NSC,normal_cells,Neural stem-cell models,NSC reference,7246,1527,1527,21.0736958321833,0,PXD069969,1527,7246,同一生物样本精确匹配,12
+PXD073311,HUVEC control and Pg infection,KLA31_31,HUVEC_untreated,normal_cells,HUVECs (control and P. gingivalis infection),HUVEC untreated,7794,1911,1886,24.1981011034129,25,PXD073311,1911,7794,同一生物样本精确匹配,15

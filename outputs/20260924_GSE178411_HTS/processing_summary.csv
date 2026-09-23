@@ -1,0 +1,2 @@
+Source,GroupID,RNAReferenceKey,SelectedSamples,UniqueDonors,SourceEntrezRows,MappedEnsemblRows,TPMGeneRows,OldPanelGenes,MatchedOldPanelGenes,SpearmanWithOldProfile,MedianRawLibrarySize,MinimumRawLibrarySize,MinimumGenesDetected,AmbiguousEntrezDropped
+GSE178411,KLA31_03,GSE178411_HTS,28,26,28395,25456,25375,128,128,0.888214190504218,30863973,23645053,19067,31

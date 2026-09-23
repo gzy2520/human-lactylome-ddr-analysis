@@ -1,0 +1,3 @@
+ReferenceKey,ExternalProfile,Scenario,TargetGroupID
+tendon_nondiabetic,outputs/20260924_GSE180836_tendon/tendon_material_profile.csv.gz,equal_source,KLA31_01
+GSE181540_HS_input,outputs/20260924_GSE178411_HTS/HTS_material_profile.csv.gz,equal_source,KLA31_03

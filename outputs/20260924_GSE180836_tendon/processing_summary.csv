@@ -1,0 +1,2 @@
+Source,GroupID,SelectedSamples,UniqueSubjects,Traumatic,Degenerative,SourceEnsemblRows,TPMGeneRows,OldPanelGenes,MatchedOldPanelGenes,SpearmanWithOldProfile,MinimumRawLibrarySize,MinimumGenesDetected
+GSE180836,KLA31_01,31,31,16,15,60671,60422,128,128,0.928316259445601,8113716,35945

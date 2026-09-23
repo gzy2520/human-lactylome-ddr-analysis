@@ -3,7 +3,8 @@
 suppressPackageStartupMessages(library(data.table))
 set.seed(25)
 args <- commandArgs(trailingOnly = TRUE)
-stopifnot(length(args) == 1L)
+stopifnot(length(args) == 1L || length(args) == 3L ||
+            (length(args) >= 4L && (length(args) - 1L) %% 3L == 0L))
 out <- args[[1L]]
 if (dir.exists(out) && length(list.files(out, all.files = TRUE, no.. = TRUE)))
   stop("Refusing to overwrite a nonempty output directory")
@@ -16,6 +17,44 @@ stopifnot(all(file.exists(c(labels_file, rna_file, module_file))))
 d <- fread(labels_file)
 e <- fread(rna_file)
 mem <- fread(module_file)
+if (length(args) == 1L) {
+  scenarios <- data.table(ProfileFile = character(), Mode = character(),
+                          ReferenceKey = character())
+} else if (length(args) == 3L) {
+  # Preserve the original scar-profile invocation used in the first expansion.
+  scenarios <- data.table(ProfileFile = args[[2L]], Mode = args[[3L]],
+                          ReferenceKey = "GSE181540_HS_input")
+} else {
+  scenarios <- data.table(matrix(args[-1L], ncol = 3L, byrow = TRUE))
+  setnames(scenarios, c("ProfileFile", "Mode", "ReferenceKey"))
+}
+stopifnot(!anyDuplicated(scenarios$ReferenceKey),
+          all(scenarios$Mode %in% c("replace", "equal_source")),
+          all(file.exists(scenarios$ProfileFile)))
+for (i in seq_len(nrow(scenarios))) {
+  profile_file <- scenarios$ProfileFile[[i]]
+  profile_mode <- scenarios$Mode[[i]]
+  original_key <- scenarios$ReferenceKey[[i]]
+  replacement <- fread(profile_file)
+  stopifnot(all(c("Ensembl", "Log2TPM", "ReferenceKey") %in% names(replacement)),
+            uniqueN(replacement$ReferenceKey) == 1L,
+            !anyDuplicated(replacement$Ensembl),
+            all(is.finite(replacement$Log2TPM)))
+  target_genes <- e[ReferenceKey == original_key, Ensembl]
+  stopifnot(length(target_genes) == 128L,
+            all(target_genes %in% replacement$Ensembl))
+  replacement <- replacement[Ensembl %in% target_genes,
+                             .(Ensembl, NewLog2TPM = Log2TPM)]
+  e <- merge(e, replacement, by = "Ensembl", all.x = TRUE)
+  if (profile_mode == "replace") {
+    e[ReferenceKey == original_key,
+      UnsmoothedLog2TPM := NewLog2TPM]
+  } else {
+    e[ReferenceKey == original_key,
+      UnsmoothedLog2TPM := (UnsmoothedLog2TPM + NewLog2TPM) / 2]
+  }
+  e[, NewLog2TPM := NULL]
+}
 setorder(d, ReferenceKey)
 stopifnot(nrow(d) == 28L, uniqueN(d$ReferenceKey) == 28L,
           uniqueN(d$ConnGroup) == 15L, uniqueN(e$Ensembl) == 128L,
@@ -186,10 +225,21 @@ fwrite(pred, file.path(out, "material_oof_predictions.csv"))
 fwrite(perf, file.path(out, "performance_summary.csv"))
 fwrite(rbindlist(selection), file.path(out, "selected_parameters.csv"))
 fwrite(rbindlist(inner_losses), file.path(out, "inner_tuning.csv"))
-fwrite(data.table(File = c(labels_file, rna_file, module_file),
-                  MD5 = unname(tools::md5sum(c(labels_file, rna_file,
-                                               module_file)))),
+files <- c(labels_file, rna_file, module_file, scenarios$ProfileFile)
+fwrite(data.table(File = files,
+                  MD5 = unname(tools::md5sum(files))),
        file.path(out, "input_md5.csv"))
+if (nrow(scenarios)) {
+  scenario_out <- merge(scenarios, d[, .(ReferenceKey, GroupIDs)],
+                        by = "ReferenceKey", sort = FALSE)
+  stopifnot(nrow(scenario_out) == nrow(scenarios))
+  setnames(scenario_out, c("ProfileFile", "Mode", "ReferenceKey", "GroupIDs"),
+           c("ExternalProfile", "Scenario", "ReferenceKey", "TargetGroupID"))
+} else {
+  scenario_out <- data.table(ExternalProfile = "", Scenario = "original",
+                             ReferenceKey = "", TargetGroupID = "")
+}
+fwrite(scenario_out, file.path(out, "scenario.csv"))
 writeLines(trimws(capture.output(sessionInfo()), which = "right"),
            file.path(out, "sessionInfo.txt"))
 print(perf)

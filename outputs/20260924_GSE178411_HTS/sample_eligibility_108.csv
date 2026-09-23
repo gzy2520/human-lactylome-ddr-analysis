@@ -1,0 +1,109 @@
+GSM,Title,LibraryStrategy,Organism,Characteristic01,Characteristic02,Characteristic03,Characteristic04,Characteristic05,Characteristic06,Characteristic07,Characteristic08,Characteristic09,Characteristic10,Characteristic11,SourceColumn,Eligibility
+GSM5390523,12-W: Patient 12 Early Wound,RNA-Seq,Homo sapiens,Patient 12,Skin,Early Wound,5,25,male,unknown,white,chemical,wound,upper extremity,12-W,exclude_other_material
+GSM5390524,13-W: Patient 13 Late wound,RNA-Seq,Homo sapiens,Patient 13,Skin,Late wound,--,34,male,yes,hispanic,chemical,wound,lower extremity,13-W,exclude_other_material
+GSM5390525,14-S: Patient 14 Normal scar,RNA-Seq,Homo sapiens,Patient 14,Skin,Normal scar,1631,29,female,unknown,black,flame,scar,upper extremity,14-S,exclude_other_material
+GSM5390526,16-D: Patient 15 Normal skin,RNA-Seq,Homo sapiens,Patient 15,Skin,Normal skin,5,34,male,unknown,white,flash,uninjured,n/a,16-D,exclude_other_material
+GSM5390527,17-S: Patient 16 Normal scar,RNA-Seq,Homo sapiens,Patient 16,Skin,Normal scar,718,19,female,yes,hispanic,contact,scar,hand,17-S,exclude_other_material
+GSM5390528,18-S: Patient 17 HTS,RNA-Seq,Homo sapiens,Patient 17,Skin,HTS,1468,44,male,unknown,asian,flame,scar,neck,18-S,include_HTS
+GSM5390529,30-W1: Patient 29 Early Wound,RNA-Seq,Homo sapiens,Patient 29,Skin,Early Wound,3,16,male,no,native american,flame,wound,back,30-W1,exclude_other_material
+GSM5390530,30-W4: Patient 29 Late wound,RNA-Seq,Homo sapiens,Patient 29,Skin,Late wound,10,16,male,no,native american,flame,wound,upper extremity,30-W4,exclude_other_material
+GSM5390531,31-D: Patient 30 Normal skin,RNA-Seq,Homo sapiens,Patient 30,Skin,Normal skin,8,30,male,no,asian,flame,uninjured,n/a,31-D,exclude_other_material
+GSM5390532,31-W1: Patient 30 Late wound,RNA-Seq,Homo sapiens,Patient 30,Skin,Late wound,8,30,male,no,asian,flame,wound,upper extremity,31-W1,exclude_other_material
+GSM5390533,31-W2: Patient 30 Late wound,RNA-Seq,Homo sapiens,Patient 30,Skin,Late wound,8,30,male,no,asian,flame,wound,hand,31-W2,exclude_other_material
+GSM5390534,32-D: Patient 31 Normal skin,RNA-Seq,Homo sapiens,Patient 31,Skin,Normal skin,7,50,male,no,white,flame,uninjured,n/a,32-D,exclude_other_material
+GSM5390535,33-D: Patient 32 Normal skin,RNA-Seq,Homo sapiens,Patient 32,Skin,Normal skin,10,59,female,no,white,flame,uninjured,n/a,33-D,exclude_other_material
+GSM5390536,33-W1: Patient 32 Late wound,RNA-Seq,Homo sapiens,Patient 32,Skin,Late wound,10,59,female,no,white,flame,wound,upper extremity,33-W1,exclude_other_material
+GSM5390537,33-WE1: Patient 32 Late wound,RNA-Seq,Homo sapiens,Patient 32,Skin,Late wound,19,59,female,no,white,flame,wound,sternum,33-WE1,exclude_other_material
+GSM5390538,34-D: Patient 33 Normal skin,RNA-Seq,Homo sapiens,Patient 33,Skin,Normal skin,unknown,2,male,no,white,other,uninjured,n/a,34-D,exclude_other_material
+GSM5390539,35-D: Patient 34 Normal skin,RNA-Seq,Homo sapiens,Patient 34,Skin,Normal skin,12,30,male,no,white,contact,uninjured,n/a,35-D,exclude_other_material
+GSM5390540,36-S: Patient 35 HTS,RNA-Seq,Homo sapiens,Patient 35,Skin,HTS,211,60,female,no,white,flame,scar,upper extremity,36-S,include_HTS
+GSM5390541,37-W: Patient 36 Late wound,RNA-Seq,Homo sapiens,Patient 36,Skin,Late wound,19,56,male,no,white,contact,wound,upper extremity,37-W,exclude_other_material
+GSM5390542,38-D: Patient 37 Normal skin,RNA-Seq,Homo sapiens,Patient 37,Skin,Normal skin,6,5,male,yes,white,scald,uninjured,n/a,38-D,exclude_other_material
+GSM5390543,38-WE: Patient 37 Early Wound,RNA-Seq,Homo sapiens,Patient 37,Skin,Early Wound,6,5,male,yes,white,scald,wound,lower extremity,38-WE,exclude_other_material
+GSM5390544,40-WE: Patient 39 Late wound,RNA-Seq,Homo sapiens,Patient 39,Skin,Late wound,8,53,male,no,white,flame,wound,abdomen,40-WE,exclude_other_material
+GSM5390545,41-D: Patient 40 Normal skin,RNA-Seq,Homo sapiens,Patient 40,Skin,Normal skin,7,3,female,no,white,flame,uninjured,n/a,41-D,exclude_other_material
+GSM5390546,41-WE: Patient 40 Early Wound,RNA-Seq,Homo sapiens,Patient 40,Skin,Early Wound,7,3,female,no,white,flame,wound,hand,41-WE,exclude_other_material
+GSM5390547,42-WE: Patient 41 Early Wound,RNA-Seq,Homo sapiens,Patient 41,Skin,Early Wound,6,44,male,no,white,flame,wound,lower extremity,42-WE,exclude_other_material
+GSM5390548,43-D: Patient 42 Normal skin,RNA-Seq,Homo sapiens,Patient 42,Skin,Normal skin,10,36,male,no,white,flame,uninjured,n/a,43-D,exclude_other_material
+GSM5390549,43-W2: Patient 42 Late wound,RNA-Seq,Homo sapiens,Patient 42,Skin,Late wound,10,36,male,no,white,flame,wound,hand,43-W2,exclude_other_material
+GSM5390550,43-WE: Patient 42 Late wound,RNA-Seq,Homo sapiens,Patient 42,Skin,Late wound,10,36,male,no,white,flame,wound,hand,43-WE,exclude_other_material
+GSM5390551,43-WE2: Patient 42 Late wound,RNA-Seq,Homo sapiens,Patient 42,Skin,Late wound,10,36,male,no,white,flame,wound,hand,43-WE2,exclude_other_material
+GSM5390552,44-D: Patient 43 Normal skin,RNA-Seq,Homo sapiens,Patient 43,Skin,Normal skin,11,4,female,no,white,flame,uninjured,n/a,44-D,exclude_other_material
+GSM5390553,44-WE: Patient 43 Late wound,RNA-Seq,Homo sapiens,Patient 43,Skin,Late wound,11,4,female,no,white,flame,wound,upper extremity,44-WE,exclude_other_material
+GSM5390554,45-S: Patient 44 HTS,RNA-Seq,Homo sapiens,Patient 44,Skin,HTS,1291,5,male,no,white,flame,scar,ear,45-S,include_HTS
+GSM5390555,45-W: Patient 44 Chronic wound,RNA-Seq,Homo sapiens,Patient 44,Skin,Chronic wound,1291,5,male,no,white,flame,wound,shoulder,45-W,exclude_other_material
+GSM5390556,46-D: Patient 45 Normal skin,RNA-Seq,Homo sapiens,Patient 45,Skin,Normal skin,3,32,male,no,white,contact,uninjured,n/a,46-D,exclude_other_material
+GSM5390557,46-WE: Patient 45 Early Wound,RNA-Seq,Homo sapiens,Patient 45,Skin,Early Wound,3,32,male,no,white,contact,wound,foot,46-WE,exclude_other_material
+GSM5390558,46-WE2: Patient 45 Early Wound,RNA-Seq,Homo sapiens,Patient 45,Skin,Early Wound,3,32,male,no,white,contact,wound,lower extremity,46-WE2,exclude_other_material
+GSM5390559,47-S: Patient 46 HTS,RNA-Seq,Homo sapiens,Patient 46,Skin,HTS,663,44,male,no,black,flame,scar,upper extremity,47-S,include_HTS
+GSM5390560,48-WE: Patient 47 Early Wound,RNA-Seq,Homo sapiens,Patient 47,Skin,Early Wound,5,45,male,yes,white,other,wound,hand,48-WE,exclude_other_material
+GSM5390561,49-S: Patient 48 HTS,RNA-Seq,Homo sapiens,Patient 48,Skin,HTS,575,54,female,no,asian,contact,scar,upper extremity,49-S,include_HTS
+GSM5390562,50-D: Patient 49 Normal skin,RNA-Seq,Homo sapiens,Patient 49,Skin,Normal skin,9,51,male,yes,white,flame,uninjured,n/a,50-D,exclude_other_material
+GSM5390563,51-W: Patient 50 Late wound,RNA-Seq,Homo sapiens,Patient 50,Skin,Late wound,17,6,male,no,white,flame,wound,lower extremity,51-W,exclude_other_material
+GSM5390564,53-WE: Patient 52 Early Wound,RNA-Seq,Homo sapiens,Patient 52,Skin,Early Wound,7,12,male,no,white,flame,wound,sternum,53-WE,exclude_other_material
+GSM5390565,54-W: Patient 53 Late wound,RNA-Seq,Homo sapiens,Patient 53,Skin,Late wound,14,1.75,male,no,multiracial,scald,wound,upper extremity,54-W,exclude_other_material
+GSM5390566,55-D: Patient 54 Normal skin,RNA-Seq,Homo sapiens,Patient 54,Skin,Normal skin,5,64,male,no,white,flame,uninjured,n/a,55-D,exclude_other_material
+GSM5390567,55-W: Patient 54 Early Wound,RNA-Seq,Homo sapiens,Patient 54,Skin,Early Wound,5,64,male,no,white,flame,wound,hand,55-W,exclude_other_material
+GSM5390568,56-D2: Patient 55 Normal skin,RNA-Seq,Homo sapiens,Patient 55,Skin,Normal skin,5,27,male,no,white,flame,uninjured,n/a,56-D2,exclude_other_material
+GSM5390569,56-W1: Patient 55 Early Wound,RNA-Seq,Homo sapiens,Patient 55,Skin,Early Wound,5,27,male,no,white,flame,wound,hand,56-W1,exclude_other_material
+GSM5390570,56-W2: Patient 55 Early Wound,RNA-Seq,Homo sapiens,Patient 55,Skin,Early Wound,5,27,male,no,white,flame,wound,hand,56-W2,exclude_other_material
+GSM5390571,57-W: Patient 56 Late wound,RNA-Seq,Homo sapiens,Patient 56,Skin,Late wound,8,21,female,no,white,flame,wound,hand,57-W,exclude_other_material
+GSM5390572,58-S: Patient 57 HTS,RNA-Seq,Homo sapiens,Patient 57,Skin,HTS,366,23,female,no,black,contact,scar,neck,58-S,include_HTS
+GSM5390573,58-WE: Patient 57 Early Wound,RNA-Seq,Homo sapiens,Patient 57,Skin,Early Wound,6,23,female,no,black,contact,wound,upper extremity,58-WE,exclude_other_material
+GSM5390574,59-W: Patient 58 Early Wound,RNA-Seq,Homo sapiens,Patient 58,Skin,Early Wound,3,72,male,unknown,unknown,flame,wound,lower extremity,59-W,exclude_other_material
+GSM5390575,60-W: Patient 59 Late wound,RNA-Seq,Homo sapiens,Patient 59,Skin,Late wound,21,70,female,no,white,flame,wound,abdomen,60-W,exclude_other_material
+GSM5390576,61-W: Patient 60 Chronic wound,RNA-Seq,Homo sapiens,Patient 60,Skin,Chronic wound,97,25,male,no,white,flame,wound,back,61-W,exclude_other_material
+GSM5390577,62-D: Patient 61 Normal skin,RNA-Seq,Homo sapiens,Patient 61,Skin,Normal skin,6,3,male,no,white,flame,uninjured,n/a,62-D,exclude_other_material
+GSM5390578,62-W: Patient 61 Early Wound,RNA-Seq,Homo sapiens,Patient 61,Skin,Early Wound,6,3,male,no,white,flame,wound,upper extremity,62-W,exclude_other_material
+GSM5390579,62-W2: Patient 61 Early Wound,RNA-Seq,Homo sapiens,Patient 61,Skin,Early Wound,6,3,male,no,white,flame,wound,back,62-W2,exclude_other_material
+GSM5390580,63-S: Patient 62 HTS,RNA-Seq,Homo sapiens,Patient 62,Skin,HTS,5287,15,female,yes,white,unknown,scar,hand,63-S,include_HTS
+GSM5390581,64-W: Patient 63 Early Wound,RNA-Seq,Homo sapiens,Patient 63,Skin,Early Wound,4,42,male,no,white,other,wound,lower extremity,64-W,exclude_other_material
+GSM5390582,67-W: Patient 65 Early Wound,RNA-Seq,Homo sapiens,Patient 65,Skin,Early Wound,3,17,male,no,white,flame,wound,lower extremity,67-W,exclude_other_material
+GSM5390583,68-W: Patient 66 Late wound,RNA-Seq,Homo sapiens,Patient 66,Skin,Late wound,8,37,male,no,white,flame,wound,lower extremity,68-W,exclude_other_material
+GSM5390584,70-W: Patient 68 Late wound,RNA-Seq,Homo sapiens,Patient 68,Skin,Late wound,11,56,female,no,white,scald,wound,lower extremity,70-W,exclude_other_material
+GSM5390585,73-W: Patient 70 Late wound,RNA-Seq,Homo sapiens,Patient 70,Skin,Late wound,9,59,male,no,white,scald,wound,lower extremity,73-W,exclude_other_material
+GSM5390586,74-D: Patient 71 Normal skin,RNA-Seq,Homo sapiens,Patient 71,Skin,Normal skin,14,10,male,no,white,unknown,uninjured,n/a,74-D,exclude_other_material
+GSM5390587,74-W: Patient 71 Late wound,RNA-Seq,Homo sapiens,Patient 71,Skin,Late wound,14,10,male,no,white,unknown,wound,lower extremity,74-W,exclude_other_material
+GSM5390588,76-D: Patient 73 Normal skin,RNA-Seq,Homo sapiens,Patient 73,Skin,Normal skin,289,1.8,male,no,native american,scald,uninjured,n/a,76-D,exclude_other_material
+GSM5390589,76-S: Patient 73 HTS,RNA-Seq,Homo sapiens,Patient 73,Skin,HTS,279,1.8,male,no,native american,scald,scar,face,76-S,include_HTS
+GSM5390590,78-D: Patient 75 Normal skin,RNA-Seq,Homo sapiens,Patient 75,Skin,Normal skin,7,31,female,no,native american,contact,uninjured,n/a,78-D,exclude_other_material
+GSM5390591,78-W2: Patient 75 Early Wound,RNA-Seq,Homo sapiens,Patient 75,Skin,Early Wound,7,31,female,no,native american,contact,wound,abdomen,78-W2,exclude_other_material
+GSM5390592,79-D: Patient 76 Normal skin,RNA-Seq,Homo sapiens,Patient 76,Skin,Normal skin,14,0.42,female,no,white,contact,uninjured,n/a,79-D,exclude_other_material
+GSM5390593,79-W1: Patient 76 Late wound,RNA-Seq,Homo sapiens,Patient 76,Skin,Late wound,14,0.42,female,no,white,contact,wound,lower extremity,79-W1,exclude_other_material
+GSM5390594,79-W3: Patient 76 Late wound,RNA-Seq,Homo sapiens,Patient 76,Skin,Late wound,14,0.42,female,no,white,contact,wound,abdomen,79-W3,exclude_other_material
+GSM5390595,80-D: Patient 77 Normal skin,RNA-Seq,Homo sapiens,Patient 77,Skin,Normal skin,5,71,female,no,white,flame,uninjured,n/a,80-D,exclude_other_material
+GSM5390596,80-WE: Patient 77 Early Wound,RNA-Seq,Homo sapiens,Patient 77,Skin,Early Wound,5,71,female,no,white,flame,wound,sternum,80-WE,exclude_other_material
+GSM5390597,81-D: Patient 78 Normal skin,RNA-Seq,Homo sapiens,Patient 78,Skin,Normal skin,8,58,male,no,white,flame,uninjured,n/a,81-D,exclude_other_material
+GSM5390598,81-W: Patient 78 Late wound,RNA-Seq,Homo sapiens,Patient 78,Skin,Late wound,8,58,male,no,white,flame,wound,lower extremity,81-W,exclude_other_material
+GSM5390599,83-D: Patient 80 Normal skin,RNA-Seq,Homo sapiens,Patient 80,Skin,Normal skin,10,53,female,no,black,flame,uninjured,n/a,83-D,exclude_other_material
+GSM5390600,83-W3: Patient 80 Late wound,RNA-Seq,Homo sapiens,Patient 80,Skin,Late wound,10,53,female,no,black,flame,wound,lower extremity,83-W3,exclude_other_material
+GSM5390601,83-WE3: Patient 80 Late wound,RNA-Seq,Homo sapiens,Patient 80,Skin,Late wound,10,53,female,no,black,flame,wound,lower extremity,83-WE3,exclude_other_material
+GSM5390602,84-S: Patient 81 HTS,RNA-Seq,Homo sapiens,Patient 81,Skin,HTS,1274,3,male,no,white,contact,scar,lower extremity,84-S,include_HTS
+GSM5390603,85-W1: Patient 82 Early Wound,RNA-Seq,Homo sapiens,Patient 82,Skin,Early Wound,6,54,female,unknown,white,unknown,wound,shoulder,85-W1,exclude_other_material
+GSM5390604,87-D: Patient 84 Normal skin,RNA-Seq,Homo sapiens,Patient 84,Skin,Normal skin,56,67,female,no,white,flame,uninjured,n/a,87-D,exclude_other_material
+GSM5390605,87-W: Patient 84 Chronic wound,RNA-Seq,Homo sapiens,Patient 84,Skin,Chronic wound,56,67,female,no,white,flame,wound,back,87-W,exclude_other_material
+GSM5390606,88-W: Patient 83 Early Wound,RNA-Seq,Homo sapiens,Patient 83,Skin,Early Wound,4,11,female,unknown,unknown,flame,wound,shoulder,88-W,exclude_other_material
+GSM5390607,E705-S: Patient 85 HTS,RNA-Seq,Homo sapiens,Patient 85,Skin,HTS,608,46,female,unknown,asian,unknown,scar,lower extremity,E705-S,include_HTS
+GSM5390608,E706-S: Patient 86 HTS,RNA-Seq,Homo sapiens,Patient 86,Skin,HTS,555,9,male,unknown,native american,unknown,scar,neck,E706-S,include_HTS
+GSM5390609,E707-W: Patient 87 Late wound,RNA-Seq,Homo sapiens,Patient 87,Skin,Late wound,27,30,male,unknown,native american,unknown,wound,lower extremity,E707-W,exclude_other_material
+GSM5390610,E708-W: Patient 88 Late wound,RNA-Seq,Homo sapiens,Patient 88,Skin,Late wound,22,10,male,unknown,native american,unknown,wound,sternum,E708-W,exclude_other_material
+GSM5390611,E710-W: Patient 89 Late wound,RNA-Seq,Homo sapiens,Patient 89,Skin,Late wound,20,35,male,unknown,native american,unknown,wound,lower extremity,E710-W,exclude_other_material
+GSM5390612,E711-S: Patient 90 HTS,RNA-Seq,Homo sapiens,Patient 90,Skin,HTS,1925,11,male,yes,unknown,unknown,scar,sternum,E711-S,include_HTS
+GSM5390613,E714-S: Patient 92 HTS,RNA-Seq,Homo sapiens,Patient 92,Skin,HTS,406,44,male,unknown,white,unknown,scar,neck,E714-S,include_HTS
+GSM5390614,E716-S: Patient 93 HTS,RNA-Seq,Homo sapiens,Patient 93,Skin,HTS,187,51,male,unknown,white,unknown,scar,sternum,E716-S,include_HTS
+GSM5390615,E717-S: Patient 94 HTS,RNA-Seq,Homo sapiens,Patient 94,Skin,HTS,167,60,male,unknown,black,unknown,scar,hand,E717-S,include_HTS
+GSM5390616,E722-S: Patient 95 HTS,RNA-Seq,Homo sapiens,Patient 95,Skin,HTS,835,7,female,unknown,asian,unknown,scar,upper extremity,E722-S,include_HTS
+GSM5390617,E724-D: Patient 96 Normal skin,RNA-Seq,Homo sapiens,Patient 96,Skin,Normal skin,147,11,male,unknown,white,unknown,uninjured,back,E724-D,exclude_other_material
+GSM5390618,E725-S: Patient 96 HTS,RNA-Seq,Homo sapiens,Patient 96,Skin,HTS,147,11,male,unknown,white,unknown,scar,sternum,E725-S,include_HTS
+GSM5390619,E728-W: Patient 97 Late wound,RNA-Seq,Homo sapiens,Patient 97,Skin,Late wound,19,unknown,female,unknown,white,unknown,wound,abdomen,E728-W,exclude_other_material
+GSM5390620,E731-S: Patient 98 HTS,RNA-Seq,Homo sapiens,Patient 98,Skin,HTS,418,1,female,unknown,white,unknown,scar,lower extremity,E731-S,include_HTS
+GSM5390621,E733-S: Patient 99 HTS,RNA-Seq,Homo sapiens,Patient 99,Skin,HTS,509,7,male,unknown,white,unknown,scar,lower extremity,E733-S,include_HTS
+GSM5390622,E735-S: Patient 100 HTS,RNA-Seq,Homo sapiens,Patient 100,Skin,HTS,241,19,male,unknown,white,unknown,scar,upper extremity,E735-S,include_HTS
+GSM5390623,E736-S: Patient 101 HTS,RNA-Seq,Homo sapiens,Patient 101,Skin,HTS,324,54,female,unknown,black,unknown,scar,upper extremity,E736-S,include_HTS
+GSM5390624,E738-S: Patient 102 HTS,RNA-Seq,Homo sapiens,Patient 102,Skin,HTS,307,4,male,unknown,white,unknown,scar,upper extremity,E738-S,include_HTS
+GSM5390625,E741-S: Patient 103 HTS,RNA-Seq,Homo sapiens,Patient 103,Skin,HTS,354,9,female,unknown,white,unknown,scar,upper extremity,E741-S,include_HTS
+GSM5390626,E742-S: Patient 104 HTS,RNA-Seq,Homo sapiens,Patient 104,Skin,HTS,201,unknown,male,unknown,white,unknown,scar,neck,E742-S,include_HTS
+GSM5390627,E746-S: Patient 106 HTS,RNA-Seq,Homo sapiens,Patient 106,Skin,HTS,470,3,male,unknown,white,unknown,scar,sternum,E746-S,include_HTS
+GSM5390628,E751-S: Patient 105 HTS,RNA-Seq,Homo sapiens,Patient 105,Skin,HTS,886,61,female,unknown,asian,unknown,scar,face,E751-S,include_HTS
+GSM5390629,E752-S: Patient 105 HTS,RNA-Seq,Homo sapiens,Patient 105,Skin,HTS,886,61,female,unknown,asian,unknown,scar,sternum,E752-S,include_HTS
+GSM5390630,E753-S: Patient 105 HTS,RNA-Seq,Homo sapiens,Patient 105,Skin,HTS,886,61,female,unknown,asian,unknown,scar,ear,E753-S,include_HTS

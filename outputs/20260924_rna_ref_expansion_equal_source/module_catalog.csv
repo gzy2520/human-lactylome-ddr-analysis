@@ -1,0 +1,17 @@
+Origin,Module,FeatureID,MeasuredGenes
+GO annotation,gluconeogenesis,M01,40
+GO annotation,glycolysis,M02,34
+GO annotation,lactate metabolic process,M03,10
+GO annotation,lactate transport,M04,8
+GO annotation,pyruvate fermentation to lactate,M05,5
+GO annotation,tricarboxylic acid cycle,M06,31
+curated mechanism,Alanine pyruvate link,M07,2
+curated mechanism,D-lactate and glyoxalase,M08,3
+curated mechanism,Fructose upstream,M09,3
+curated mechanism,Gluconeogenic branch,M10,7
+curated mechanism,Glycerol upstream,M11,3
+curated mechanism,Glycogen upstream,M12,5
+curated mechanism,L-lactate conversion,M13,3
+curated mechanism,Lactate transport,M14,8
+curated mechanism,Lactyl substrate formation,M15,5
+curated mechanism,Pyruvate mitochondrial entry,M16,12

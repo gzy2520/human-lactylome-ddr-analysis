@@ -1,0 +1,2 @@
+Scenario,ExternalProfile,TargetGroupID
+equal_source,outputs/20260924_GSE178411_HTS/HTS_material_profile.csv.gz,KLA31_03

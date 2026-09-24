@@ -86,6 +86,10 @@ lactate concentration, or a matched donor-level measurement. To truly grow
 training N, one needs new independent paired RNA and Kla/proteome labels; more
 RNA samples for the same fixed protein material cannot supply them.
 
+The source-held-out prediction plots, material-level comparison, and reusable
+captions are in [FIGURES.md](FIGURES.md). They display the modest material-MAE
+change alongside source-level errors and the narrow prediction range.
+
 ## Reproduction from the repository root
 
 ```bash

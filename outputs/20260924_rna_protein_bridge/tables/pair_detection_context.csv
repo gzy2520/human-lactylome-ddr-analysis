@@ -1,0 +1,3 @@
+Comparison,ReferenceGroup,TumorGroup,ReferenceKlaProteinCount,TumorKlaProteinCount,SharedKlaProteinCount,KlaProteinJaccard,ReferenceKlaDDRPercent,TumorKlaDDRPercent,ReferenceOrdinaryProteinCount,TumorOrdinaryProteinCount,FocusKlaChanged
+HCC vs adjacent liver,adjacent liver,HCC,1775,1798,1668,0.875590551181102,6.36619718309859,6.72969966629588,4251,5188,0
+Prostate cancer vs BPH,BPH,prostate cancer,2118,2125,2116,0.994828396803009,6.70443814919736,6.72941176470588,8169,8203,0

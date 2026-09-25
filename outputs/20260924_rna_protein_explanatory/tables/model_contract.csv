@@ -1,0 +1,10 @@
+Model,Outcome,Formula
+Protein_depth,ProteinDetected,ProteinDetected ~ LogDepth
+Protein_RNA,ProteinDetected,ProteinDetected ~ RNA
+Protein_RNA_depth,ProteinDetected,ProteinDetected ~ RNA + LogDepth
+Protein_gene_depth,ProteinDetected,ProteinDetected ~ factor(Ensembl) + LogDepth
+Protein_gene_RNA_depth,ProteinDetected,ProteinDetected ~ factor(Ensembl) + RNA + LogDepth
+Kla_protein_depth,KlaDetected,KlaDetected ~ ProteinDetected + LogDepth
+Kla_RNA_protein_depth,KlaDetected,KlaDetected ~ ProteinDetected + RNA + LogDepth
+Kla_gene_protein_depth,KlaDetected,KlaDetected ~ factor(Ensembl) + ProteinDetected + LogDepth
+Kla_gene_RNA_protein_depth,KlaDetected,KlaDetected ~ factor(Ensembl) + ProteinDetected + RNA + LogDepth

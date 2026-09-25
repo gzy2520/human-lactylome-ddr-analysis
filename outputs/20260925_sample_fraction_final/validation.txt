@@ -1,0 +1,6 @@
+PASS: unique sample IDs and material counts
+PASS: known donors do not cross outer source blocks
+PASS: material and source weights each sum to one
+PASS: held-out sample scores aggregate to saved material predictions
+PASS: source-level MAE independently recomputed
+PASS: all preparation and model input hashes match

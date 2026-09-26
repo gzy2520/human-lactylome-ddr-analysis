@@ -1,0 +1,22 @@
+#!/usr/bin/env Rscript
+suppressPackageStartupMessages(library(data.table))
+a<-commandArgs(TRUE);stopifnot(length(a)==2);root<-a[1];out<-a[2];if(dir.exists(out))stop('Fresh directory required');dir.create(out,recursive=TRUE)
+meta_path<-'outputs/20260925_sample_fraction_inputs_final/sample_metadata.csv';m<-fread(meta_path);setorder(m,ReferenceKey,SampleID)
+files<-setNames(file.path(root,'matrices',paste0(sort(unique(m$ReferenceKey)),'_log2tpm.tsv.gz')),sort(unique(m$ReferenceKey)))
+ids<-lapply(files,function(f){v<-fread(f,select=1)[[1]];stopifnot(!anyDuplicated(v));v})
+genes<-sort(Reduce(intersect,ids));stopifnot(length(genes)>128,all(grepl('^ENSG',genes)))
+x<-matrix(NA_real_,nrow(m),length(genes),dimnames=list(m$SampleID,genes))
+for(k in names(files)){
+ z<-fread(files[k]);ii<-which(m$ReferenceKey==k);ss<-m$SampleID[ii];stopifnot(all(ss%in%names(z)))
+ x[ii,]<-t(as.matrix(z[match(genes,z[[1]]),..ss]));rm(z);gc(FALSE)
+}
+stopifnot(all(is.finite(x)))
+old<-fread('outputs/20260925_sample_fraction_inputs_final/sample_rna128.csv.gz');g128<-grep('^ENSG',names(old),value=TRUE)
+stopifnot(all(g128%in%genes),max(abs(x[match(old$SampleID,m$SampleID),g128]-as.matrix(old[,..g128])))<1e-10)
+saveRDS(list(x=x,metadata=m),file.path(out,'full_rna.rds'),compress=FALSE)
+fwrite(data.table(Ensembl=genes),file.path(out,'gene_ids.csv'))
+fwrite(data.table(ReferenceKey=names(ids),SourceGenes=lengths(ids),CommonGenes=length(genes),ExcludedNotCommon=lengths(ids)-length(genes)),file.path(out,'coverage.csv'))
+paths<-c(script='workflow/full_rna_fraction/prepare.R',metadata=meta_path,previous128='outputs/20260925_sample_fraction_inputs_final/sample_rna128.csv.gz',files)
+fwrite(data.table(Role=names(paths),Path=unname(paths),SHA256=vapply(paths,digest::digest,character(1),algo='sha256',file=TRUE)),file.path(out,'input_sha256.csv'))
+fwrite(data.table(Path='full_rna.rds',SHA256=digest::digest(file=file.path(out,'full_rna.rds'),algo='sha256')),file.path(out,'matrix_sha256.csv'))
+cat('PASS:',nrow(x),'RNA records x',ncol(x),'common Ensembl genes; all 128 original features identical\n')

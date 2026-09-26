@@ -1,0 +1,4 @@
+PASS: exact same sample, donor, material, source and split assignment as 128-gene experiment
+PASS: all models cover all 374 internal test records and 1,898 source-held-out records
+PASS: internal test errors and within-five-point fractions independently recomputed
+PASS: model input hashes

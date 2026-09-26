@@ -1,0 +1,4 @@
+PASS: four direct-sample models, 1,898 rows per model per evaluation
+PASS: reconstructed training predictions reproduce all 112 frozen material fits within 1e-10
+PASS: source-held-out sample predictions reused unchanged
+PASS: no material aggregation before prediction; clipping only for percentage display and sample agreement metrics

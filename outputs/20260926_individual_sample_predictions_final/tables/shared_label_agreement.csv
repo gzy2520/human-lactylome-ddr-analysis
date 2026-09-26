@@ -1,0 +1,25 @@
+Model,Evaluation,Weighting,MAE,R2
+SampleBalanced128,Training fit,Record,9.56256543890305,0.0996211097230582
+SampleMaterialBalanced,Training fit,Record,9.03865046598162,0.148941267632835
+SampleBalanced,Training fit,Record,8.83426892327118,0.19671119691757
+SampleUnweighted,Training fit,Record,2.76509225118366,0.884028984725026
+SampleUnweighted,Source held out,Record,12.0710149999712,-0.41017433480026
+SampleMaterialBalanced,Source held out,Record,11.293712183543,-0.223834096228319
+SampleBalanced,Source held out,Record,11.7923820708727,-0.289151962250922
+SampleBalanced128,Source held out,Record,10.8944590719876,-0.108589664547925
+SampleBalanced128,Training fit,Material,8.40673205791903,0.100426790397277
+SampleMaterialBalanced,Training fit,Material,8.00352099972827,0.154736496022178
+SampleBalanced,Training fit,Material,7.82750736609691,0.190816496451346
+SampleUnweighted,Training fit,Material,7.1981573008869,0.243067183619645
+SampleUnweighted,Source held out,Material,9.83218462991735,-0.249724491952438
+SampleMaterialBalanced,Source held out,Material,8.54919433230175,-0.0285229348141565
+SampleBalanced,Source held out,Material,9.16347625034802,-0.184992952390987
+SampleBalanced128,Source held out,Material,9.4661051451851,-0.163004329440462
+SampleBalanced128,Training fit,Source,8.25248287092355,0.114963048766367
+SampleMaterialBalanced,Training fit,Source,8.13255220597196,0.117734581553757
+SampleBalanced,Training fit,Source,7.92169887107781,0.162943941737122
+SampleUnweighted,Training fit,Source,7.8412492467308,0.122784459613939
+SampleUnweighted,Source held out,Source,10.2043711911505,-0.316419550297397
+SampleMaterialBalanced,Source held out,Source,9.16396102064838,-0.124395848351251
+SampleBalanced,Source held out,Source,10.1615581825276,-0.400719679656491
+SampleBalanced128,Source held out,Source,9.88093536914359,-0.296224714917307

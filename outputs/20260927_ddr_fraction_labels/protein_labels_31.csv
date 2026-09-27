@@ -1,0 +1,63 @@
+GroupID,ReferenceKey,PXD,SampleGroup,Category,RNALabel,Target,Denominator,Numerator,KlaOutsideReference,ObservedPercent
+KLA31_01,tendon_nondiabetic,PXD033146,pathological rotator cuff tendon,normal_tissue,Tendon (non-diabetic),DDR,154,25,5,16.2337662337662
+KLA31_02,GTEx_v8_Lung,PXD036307,normal human lung,normal_tissue,Lung (GTEx),DDR,535,30,1,5.60747663551402
+KLA31_03,GSE181540_HS_input,PXD046800,hypertrophic scar,normal_tissue,Hypertrophic scar input,DDR,83,17,2,20.4819277108434
+KLA31_04,GSE181540_adjacent_NS_input,PXD046800,adjacent skin,normal_tissue,Adjacent skin input,DDR,89,28,3,31.4606741573034
+KLA31_05,GTEx_v8_Hippocampus,PXD050470,human hippocampus,normal_tissue,Hippocampus (GTEx),DDR,219,26,3,11.8721461187215
+KLA31_06,GSE114691_control_placenta,PXD063047,normal pregnancy placenta,normal_tissue,Placenta control,DDR,434,12,0,2.76497695852535
+KLA31_07,sperm_GroupI,PXD064912,human sperm,normal_tissue,Sperm (group I),DDR,461,7,0,1.51843817787419
+KLA31_08,GSE132714_BPH,PXD066054,BPH,normal_tissue,BPH (medicated cohort),DDR,408,138,4,33.8235294117647
+KLA31_09,TCGA_LIHC_normal,PXD075377,adjacent liver,normal_tissue,Adjacent liver (TCGA),DDR,194,74,39,38.1443298969072
+KLA31_10,TCGA_ESCA_ESCC,PXD064038,MEC and NEC ESCC groups,cancer_tissue,ESCC (TCGA),DDR,420,89,3,21.1904761904762
+KLA31_11,TCGA_PRAD_primary,PXD066054,prostate cancer,cancer_tissue,Prostate cancer (TCGA),DDR,412,139,4,33.7378640776699
+KLA31_12,TCGA_LIHC_primary,PXD075377,HCC,cancer_tissue,HCC (TCGA),DDR,271,96,25,35.4243542435424
+KLA31_13,MCF7_DMSO7d,PXD060185,MCF7,cancer_cells,MCF7 DMSO 7d,DDR,209,93,39,44.4976076555024
+KLA31_14,HCT116_control,PXD028488,HCT116,cancer_cells,HCT116 control,DDR,273,28,2,10.2564102564103
+KLA31_15,HCT116_control,PXD053474,HCT116,cancer_cells,HCT116 control,DDR,273,55,10,20.1465201465201
+KLA31_16,HCT116_control,PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,HCT116 control,DDR,504,241,12,47.8174603174603
+KLA31_17,GSE163787_TALL104,PXD028488,TALL-104,cancer_cells,TALL-104,DDR,253,37,0,14.6245059288538
+KLA31_18,HepG2_DMSO24h,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,HepG2 DMSO 24h,DDR,450,252,33,56
+KLA31_19,GSE171750_A549_untreated,PXD054919,A549,cancer_cells,A549 untreated,DDR,226,90,26,39.8230088495575
+KLA31_20,MDAMB468_DMSO7d,PXD060185,MDA-MB-468,cancer_cells,MDA-MB-468 DMSO 7d,DDR,230,114,82,49.5652173913044
+KLA31_21,GSE283812_T47D_vehicle,PXD060185,T-47D,cancer_cells,T-47D vehicle,DDR,228,110,49,48.2456140350877
+KLA31_22,PC3M_DMSO,PXD063266,PC-3M,cancer_cells,PC-3M DMSO,DDR,262,32,9,12.2137404580153
+KLA31_23,GSE266884_MES28_vector_control,PXD070007,glioblastoma stem cells,cancer_cells,MES28 vector control,DDR,495,238,0,48.0808080808081
+KLA31_24,RKO_DMSO,PXD078013,RKO WT and GSK3B KO,cancer_cells,RKO DMSO,DDR,252,95,18,37.6984126984127
+KLA31_25,GSE203529_HEK293T_WT,PXD028488,HEK293T,normal_cells,HEK293T WT,DDR,381,42,2,11.0236220472441
+KLA31_26,GSE275256_HMC3_vehicle,PXD028737,HMC3,normal_cells,HMC3 vehicle,DDR,425,148,9,34.8235294117647
+KLA31_27,HK2_untreated,PXD058534,pretreated HK-2,normal_cells,HK-2 untreated,DDR,304,150,70,49.3421052631579
+KLA31_28,HK2_untreated,PXD078736,HK-2 control and mannitol,normal_cells,HK-2 untreated,DDR,304,94,38,30.921052631579
+KLA31_29,GSE103520_MCF10A_control,PXD060185,MCF10A,normal_cells,MCF10A control,DDR,242,67,48,27.6859504132231
+KLA31_30,GSE119834_NSC,PXD070007,neural stem cells,normal_cells,NSC reference,DDR,459,173,0,37.6906318082789
+KLA31_31,HUVEC_untreated,PXD073311,HUVEC control and Pg infection,normal_cells,HUVEC untreated,DDR,512,184,0,35.9375
+KLA31_01,tendon_nondiabetic,PXD033146,pathological rotator cuff tendon,normal_tissue,Tendon (non-diabetic),DNA_repair,91,16,5,17.5824175824176
+KLA31_02,GTEx_v8_Lung,PXD036307,normal human lung,normal_tissue,Lung (GTEx),DNA_repair,325,18,1,5.53846153846154
+KLA31_03,GSE181540_HS_input,PXD046800,hypertrophic scar,normal_tissue,Hypertrophic scar input,DNA_repair,54,13,2,24.0740740740741
+KLA31_04,GSE181540_adjacent_NS_input,PXD046800,adjacent skin,normal_tissue,Adjacent skin input,DNA_repair,56,22,3,39.2857142857143
+KLA31_05,GTEx_v8_Hippocampus,PXD050470,human hippocampus,normal_tissue,Hippocampus (GTEx),DNA_repair,113,16,3,14.1592920353982
+KLA31_06,GSE114691_control_placenta,PXD063047,normal pregnancy placenta,normal_tissue,Placenta control,DNA_repair,256,9,0,3.515625
+KLA31_07,sperm_GroupI,PXD064912,human sperm,normal_tissue,Sperm (group I),DNA_repair,267,7,0,2.62172284644195
+KLA31_08,GSE132714_BPH,PXD066054,BPH,normal_tissue,BPH (medicated cohort),DNA_repair,232,91,4,39.2241379310345
+KLA31_09,TCGA_LIHC_normal,PXD075377,adjacent liver,normal_tissue,Adjacent liver (TCGA),DNA_repair,108,47,27,43.5185185185185
+KLA31_10,TCGA_ESCA_ESCC,PXD064038,MEC and NEC ESCC groups,cancer_tissue,ESCC (TCGA),DNA_repair,245,64,2,26.1224489795918
+KLA31_11,TCGA_PRAD_primary,PXD066054,prostate cancer,cancer_tissue,Prostate cancer (TCGA),DNA_repair,235,92,4,39.1489361702128
+KLA31_12,TCGA_LIHC_primary,PXD075377,HCC,cancer_tissue,HCC (TCGA),DNA_repair,151,61,20,40.3973509933775
+KLA31_13,MCF7_DMSO7d,PXD060185,MCF7,cancer_cells,MCF7 DMSO 7d,DNA_repair,132,67,29,50.7575757575758
+KLA31_14,HCT116_control,PXD028488,HCT116,cancer_cells,HCT116 control,DNA_repair,172,20,1,11.6279069767442
+KLA31_15,HCT116_control,PXD053474,HCT116,cancer_cells,HCT116 control,DNA_repair,172,35,9,20.3488372093023
+KLA31_16,HCT116_control,PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,HCT116 control,DNA_repair,304,173,10,56.9078947368421
+KLA31_17,GSE163787_TALL104,PXD028488,TALL-104,cancer_cells,TALL-104,DNA_repair,155,26,0,16.7741935483871
+KLA31_18,HepG2_DMSO24h,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,HepG2 DMSO 24h,DNA_repair,278,171,24,61.5107913669065
+KLA31_19,GSE171750_A549_untreated,PXD054919,A549,cancer_cells,A549 untreated,DNA_repair,145,65,17,44.8275862068966
+KLA31_20,MDAMB468_DMSO7d,PXD060185,MDA-MB-468,cancer_cells,MDA-MB-468 DMSO 7d,DNA_repair,141,81,61,57.4468085106383
+KLA31_21,GSE283812_T47D_vehicle,PXD060185,T-47D,cancer_cells,T-47D vehicle,DNA_repair,145,74,35,51.0344827586207
+KLA31_22,PC3M_DMSO,PXD063266,PC-3M,cancer_cells,PC-3M DMSO,DNA_repair,165,19,8,11.5151515151515
+KLA31_23,GSE266884_MES28_vector_control,PXD070007,glioblastoma stem cells,cancer_cells,MES28 vector control,DNA_repair,303,166,0,54.7854785478548
+KLA31_24,RKO_DMSO,PXD078013,RKO WT and GSK3B KO,cancer_cells,RKO DMSO,DNA_repair,163,73,15,44.7852760736196
+KLA31_25,GSE203529_HEK293T_WT,PXD028488,HEK293T,normal_cells,HEK293T WT,DNA_repair,230,30,1,13.0434782608696
+KLA31_26,GSE275256_HMC3_vehicle,PXD028737,HMC3,normal_cells,HMC3 vehicle,DNA_repair,260,104,7,40
+KLA31_27,HK2_untreated,PXD058534,pretreated HK-2,normal_cells,HK-2 untreated,DNA_repair,183,108,53,59.016393442623
+KLA31_28,HK2_untreated,PXD078736,HK-2 control and mannitol,normal_cells,HK-2 untreated,DNA_repair,183,66,27,36.0655737704918
+KLA31_29,GSE103520_MCF10A_control,PXD060185,MCF10A,normal_cells,MCF10A control,DNA_repair,149,43,37,28.8590604026846
+KLA31_30,GSE119834_NSC,PXD070007,neural stem cells,normal_cells,NSC reference,DNA_repair,283,126,0,44.5229681978799
+KLA31_31,HUVEC_untreated,PXD073311,HUVEC control and Pg infection,normal_cells,HUVEC untreated,DNA_repair,310,128,0,41.2903225806452

@@ -1,0 +1,164 @@
+[ {
+  "accession" : "PXD020746",
+  "title" : "Global Proteomic Analysis of Lysine lactylation in The Plant Pathogen Botrytis cinerea",
+  "projectDescription" : "Lysinelactylation , a recently discovered post-translational modification, plays a key role in the regulation of diverse cellular processes. Botrytis cinerea is a destructive necrotrophic fungal pathogen distributed worldwide with broad ranging hosts. However, the functions of  Lysine lactylation are unknown in B. cinerea or any other plant fungal pathogens.",
+  "dataProcessingProtocol" : "Bioinformatics Analysis Gene ontology (GO) of crotonylation proteome was performed from the UniProt-GOA database based on three categories: cellular component, molecular function, and biological process. The soft WoLF PSORT was used to predicate the subcellular localization of the crotonylated protein (Horton et al., 2007). Proteins secondary structures (β-strand, α-helix, coil) were analyzed by the online tool NetSurfP (Chou and Schwartz, 2011). Soft MoMo (motif-x algorithm) was used to analysis the sequences model of crotonylated proteins composed of amino acids in distinct positions of modify-21-mers (10 amino acids up- and downstream of the Kcr site) in all protein sequences. To define the conservation of crotonylation, the BLASTP was used to compare the crotonylated protein sequences of B. cinerea with Carica papaya (Liu et al., 2018b), Nicotiana tabacum (Sun et al., 2017), Oryza sativa (Liu et al., 2018c), Danio rerio (Kwon et al., 2018), and four human cell lines (Wei et al., 2017b;Wu et al., 2017;Xu et al., 2017;Huang et al., 2018). InterProScan was used to perform the protein domain functional annotation based on protein alignment method and the InterPro domain database. Kyoto Encyclopedia of Genes and Genomes (KEGG) database was employed to annotate protein pathway description (Kanehisa et al., 2004). Cytoscape software was used to analyze the protein-protein interactions whcih was obtained from the STRING database (Shannon et al., 2003;Szklarczyk et al., 2015). A two-tailed Fisher’s exact test was used to verify the enrichment of lysine lactylation proteins against all database proteins. All projects with a corrected p-valve <0.05 is considered significant.",
+  "sampleProcessingProtocol" : "Protein Extraction From B. cinerea The B. cinerea strain B05.10 was cultured on PDA plates (2% dextrose, 20% potato, and 1.5% agar) at 25℃ for 10 days, and then the conidia was collected and transferred into YEPD medium (2% glucose, 1% yeast extract, and 2% peptone) with shaking at 180 rpm for 14 h. The protein extraction was performed as previously described (Zhou et al., 2016). Briefly, the harvested mycelia were ground into powder in liquid nitrogen. Then the powder sample was suspended by lysis buffer (50 mM nicotinamide, 8 M urea, 65 mM dithiothreitol, 1% Triton-100, 0.1% protease inhibitor cocktail, 2 mM EDTA, and 3 μM Trichostatin A) and then sonicated. After centrifugation at 15,000 x g in 4℃ for 15 min, 15% cold TCA was used to precipitate the proteins at -20℃ for 2 h. The precipitates were washed three times with cold acetone after centrifugation at 4℃for 15 min. Finally, the target protein was redissolved in 8 M urea supplemented with 100 mM NH4CO3 (PH 8.0) and 2-D Quant kit (GE Healthcare) was used to determine protein concentration according to the manufacturer’s instructions.",
+  "projectTags" : [ ],
+  "keywords" : [ "Botrytis cinerea", "Lc-ms/ms", "Lysine lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2020-09-07",
+  "updatedDate" : "2020-08-05",
+  "submissionDate" : "2020-08-05",
+  "downloadCount" : 2503,
+  "avgDownloadsPerFile" : 278.1111,
+  "percentile" : 64,
+  "yearlyDownloads" : [ {
+    "year" : "2020",
+    "count" : 12
+  }, {
+    "year" : "2021",
+    "count" : 123
+  }, {
+    "year" : "2022",
+    "count" : 317
+  }, {
+    "year" : "2023",
+    "count" : 452
+  }, {
+    "year" : "2024",
+    "count" : 743
+  }, {
+    "year" : "2025",
+    "count" : 735
+  }, {
+    "year" : "2026",
+    "count" : 121
+  } ],
+  "submitters" : [ "Xianliang Ma" ],
+  "labPIs" : [ "Wenxing Liang" ],
+  "affiliations" : [ "Key Lab of Integrated Crop Pest Management of Shandong, College of Plant Health and Medicine, Qingdao Agricultural University, Qingdao, China" ],
+  "instruments" : [ "Q Exactive HF" ],
+  "softwares" : [ ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "whole body", "Trypanosoma brucei" ],
+  "organisms" : [ "Trypanosoma brucei" ],
+  "organismsPart" : [ "Whole body" ],
+  "diseases" : [ ],
+  "references" : [ "Gao M, Zhang N, Liang W. Systematic Analysis of Lysine Lactylation in the Plant Fungal Pathogen <i>Botrytis cinerea</i>. Front Microbiol. 2020 11:594743--pubMed:33193272--doi: 10.3389/fmicb.2020.594743" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "BC-2.raw", "BC-8.raw", "BC-7.raw", "combined.zip", "BC-5.raw", "BC-6.raw", "BC-1.raw", "BC-4.raw", "BC-3.raw" ],
+  "highlights" : {
+    "projectDescription" : [ "However, the functions of  Lysine <em>lactylation</em> are unknown in B. cinerea or any other plant fungal pathogens." ],
+    "dataProcessingProtocol" : [ "A two-tailed Fisher’s exact test was used to verify the enrichment of lysine <em>lactylation</em> proteins against all database proteins. All projects with a corrected p-valve <0.05 is considered significant." ],
+    "references" : [ "Systematic Analysis of Lysine <em>Lactylation</em> in the Plant Fungal Pathogen <i>Botrytis cinerea</i>. Front Microbiol. 2020 11:594743--pubMed:33193272--doi: 10.3389/fmicb.2020.594743" ],
+    "keywords" : [ "Lysine <em>lactylation</em>" ],
+    "title" : [ "Global Proteomic Analysis of Lysine <em>lactylation</em> in The Plant Pathogen Botrytis cinerea" ]
+  }
+}, {
+  "accession" : "PXD019323",
+  "title" : "Profiling the molecular states in the mouse ischemia and reperfusion cortex reveals a core regulation module of metabolic reprogramming",
+  "projectDescription" : "Molecular changes caused by metabolic reprogramming in ischemia and reperfusion cortex remain an unaddressed issue. Applying the quantitative proteomic and lactylproteomic analysis, we found that the molecular changes of ischemic brain tissues are quite different between ischemia and reperfusion stages. Conjoint analysis with a previous published transcriptome data further showed that the significant changes in protein levels and protein lactylations were mainly correlated with neurons in the reperfusion and ischemia stages, respectively. The significant upregulated lactylation of Aldoc, one of the glycolytic enzymes, at lysine 230 may contribute to the metabolic reprogramming by regulating glycolysis of astrocyte in ischemia phase, and which may further promote the lactate-derived lactylation of protein lysine residues. Our findings lay the foundation for future mechanistic studies of metabolic reprogramming from a novel perspective of lactylation, and illustrate that protein lactylations may play important roles in regulating the biological functions of neural cells after ischemic stroke.",
+  "dataProcessingProtocol" : "Proteome and lactylproteome data processing     Raw mass spectrometric data were processed in the MaxQuant environment, versions 1.5.2.8 and employing Andromeda for database search. The MS/MS spectra were matched against the mouse UniProt FASTA database concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 4 missing cleavages. Label free proteome analysis was performed in MaxQuant. The mass tolerance for precursor ions was set as 20 ppm in First search and 5 ppm in Main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification and lactylation modification and oxidation on Met were specified as variable modifications. For proteome and lactylproteome analysis, where possible, the identity of peptides present but not sequenced in a given run was obtained by transferring identifications across liquid chromatography (LC)-MS runs. For lactyopeptide identification, an Andromeda minimum score and minimum delta score threshold of 40 and 17 was used, respectively. Up to three missed cleavages were allowed for protease digestion and peptide had to be fully tryptic. FDR was adjusted to < 1% and minimum score for modified peptides was set > 40.  Proteome and lactylproteome bioinformatics data analysis     Bioinformatic analysis was performed using a pipeline writing with Perl an R.. Statistical analysis of proteome and lactylproteome was performed on logarithmized intensities for those values that were found to be quantified in one experimental condition. To identify significantly modulated proteins and lactyopetides, we have performed the three-samples replicates analysis and set a P-value cutoff of 0.05. Categorical annotation was supplied in the form of Gene Ontology (GO) biological process, molecular function, and cellular component and Kyoto Encyclopedia of Genes and Genomes (KEGG) for pathway annotation. For each category, a two-tailed Fisher’s exact test was employed to test the enrichment of the differentially modified protein against all identified proteins. The category with a corrected P-value < 0.05 was considered significant.",
+  "sampleProcessingProtocol" : "All brain samples were washed three times with ice-cold PBS, then lysed in chilled lysis buffer (8.0 M urea in 0.1 M NH4HCO3 + 1% protease inhibitor cocktail (Calbiochem, Darmstadt, Germany)) on ice for half an hour, followed by sonication three times on ice using a high intensity ultrasonic processor (Scientz). After that, the debris was removed by centrifugation at 12,000 g at 4 °C for 10 min and the supernatant was collected. The protein concentration of the supernatant was determined with BCA kit according to the manufacturer’s instructions. Protein solution was then reduced with 5 mM dithiothreitol (DTT) (Acros, Belgium) for 30 min at 56 °C and alkylated with 11 mM iodoacetamide (IAA) (Acros, Belgium) for 15 min at room temperature in the darkness. The protein sample was then diluted by adding 100 mM tetraethyl-ammonium bromide (TEAB) to urea concentration less than 2M. Finally, the protein samples were digested with trypsin at 1:50 trypsin-to-protein mass ratio for the first digestion overnight and 1:100 trypsin-to-protein mass ratio for a second 4 h-digestion at 37 °C.      The tryptic peptides were dissolved in buffer A (0.1% formic acid in water, v/v), then loaded onto a home-made reversed-phase analytical column (15-cm length, 75 μm i.d., 3 µm particle size) connected to an EASY-nLC 1000 UPLC system (Thermo Fisher Scientific). The gradient was comprised of an increase from 6% to 80% HPLC buffer B (0.1% formic acid in 98% acetonitrile, v/v) at a constant flow rate of 400 nL/min over 40 min (34 min for coelution studies). The eluted peptides were then ionized and analysed by tandem mass spectrometry (MS/MS) in Q-ExactiveTM Plus (Thermo Fisher Scientific) coupled online to the UPLC. Full mass spectrometry was acquired in the Orbitrap mass analyser over the range m/z 350 to 1,800 with a resolution of 70,000. The 12 most intense ions with charge ≥ 2 were fragmented with normalized collision energy (NCE) of 28 and tandem mass spectra were acquired with a mass resolution of 17,500. Fixed first mass was set as 100 m/z.",
+  "projectTags" : [ ],
+  "keywords" : [ "Reperfusion", "Ischemia", "Aldolase c", "Metabolic reprogramming", "Lactylation" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "geo:GSE183439" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2024-10-17",
+  "updatedDate" : "2020-05-21",
+  "submissionDate" : "2020-05-21",
+  "downloadCount" : 2970,
+  "avgDownloadsPerFile" : 84.85714,
+  "botCount" : 937,
+  "hubCount" : 1967,
+  "organicCount" : 66,
+  "percentile" : 68,
+  "yearlyDownloads" : [ {
+    "year" : "2024",
+    "count" : 167
+  }, {
+    "year" : "2025",
+    "count" : 2381
+  }, {
+    "year" : "2026",
+    "count" : 422
+  } ],
+  "submitters" : [ "Xiao-Yi Xiong" ],
+  "labPIs" : [ "Xiao-Yi Xiong" ],
+  "affiliations" : [ "Chengdu University of Traditional Chinese Medicine" ],
+  "instruments" : [ "Q Exactive Plus" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "brain", "Mus musculus (Mouse)" ],
+  "organisms" : [ "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Brain" ],
+  "diseases" : [ ],
+  "references" : [ "Xiong XY, Pan XR, Luo XX, Wang YF, Zhang XX, Yang SH, Zhong ZQ, Liu C, Chen Q, Wang PF, Chen XW, Yu SG, Yang QW. Astrocyte-derived lactate aggravates brain injury of ischemic stroke in mice by promoting the formation of protein lactylation. Theranostics. 2024 14(11):4297-4317--pubMed:39113798--doi: 10.7150/thno.96375" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "projectFileNames" : [ "S9755LQ_B2_1.raw", "S9755LPLA_B3_1.raw", "S9755LPLA_B1_2.raw", "S9755LQ_B5_2.raw", "S9755LQ_B7_1.raw", "S9755LPLA_B4_3.raw", "S9755LQ_B3_3.raw", "S9755LPLA_B7_3.raw", "S9755LQ_B2_2.raw", "S9755LQ_B4_1.raw", "S9755LQ_B4_2.raw", "S9755LQ_B6_1.raw", "S9755LQ_B7_2.raw", "S9755LQ_B1_1.raw", "S9755LPLA_B1_1.raw", "S9755LQ_B5_3.raw", "S9755LPLA_B4_2.raw", "S9755LQ_B4_3.raw", "S9755LQ_B6_2.raw", "S9755LPLA_B7_1.raw", "S9755LQ_B2_3.raw", "S9755LPLA_B3_3.raw", "S9755LQ_B1_2.raw", "S9755LPLA_B7_2.raw", "S9755LQ_B7_3.raw", "S9755LQ_B3_1.raw", "LPLa_txt.rar", "S9755LPLA_B4_1.raw", "S9755LQ_B6_3.raw", "S9755LPLA_B1_3.raw", "S9755LPLA_B3_2.raw", "LQ_txt.rar", "S9755LQ_B1_3.raw", "S9755LQ_B3_2.raw", "S9755LQ_B5_1.raw" ],
+  "highlights" : {
+    "projectDescription" : [ "Our findings lay the foundation for future mechanistic studies of metabolic reprogramming from a novel perspective of <em>lactylation</em>, and illustrate that protein <em>lactylations</em> may play important roles in regulating" ],
+    "dataProcessingProtocol" : [ "Carbamidomethyl on Cys was specified as fixed modification and <em>lactylation</em> modification and oxidation on Met were specified as variable modifications." ],
+    "references" : [ "Astrocyte-derived lactate aggravates brain injury of ischemic stroke in mice by promoting the formation of protein <em>lactylation</em>." ],
+    "keywords" : [ "<em>Lactylation</em>" ]
+  }
+}, {
+  "accession" : "PXD014870",
+  "title" : "Histone Kla is regulated by cellular glycolysis",
+  "projectDescription" : "We have identified a new histone modification, which is derived from glycolysis end product, lactate. By SILAC-MS/MS based quantification, and U-13C6 glucose labeling experiments, we demonstrate that histone Kla is regulated by cellular glycolysis pathway",
+  "dataProcessingProtocol" : "MS/MS data were searched by Maxquant. Ratio H/L of histone Kla or histone Kac modifications were normalized by corresbonding histone protein ratio derived from Maxquant.",
+  "sampleProcessingProtocol" : "IP using pan Kla or pan Kac antibodies were conducted either from SILAC cultured MCF-7 cells with indicated treatments, or from U-13C6 glucose labeled MCF-7 cells. Following IP, samples were deslated by ziptips and analyzed by Q-Exactive.",
+  "projectTags" : [ ],
+  "keywords" : [ "Human mcf-7 cells silac" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "geo:GSE115354" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2019-08-01",
+  "updatedDate" : "2019-08-01",
+  "submissionDate" : "2019-08-01",
+  "downloadCount" : 8852,
+  "avgDownloadsPerFile" : 402.36365,
+  "botCount" : 2815,
+  "hubCount" : 5894,
+  "organicCount" : 143,
+  "percentile" : 88,
+  "yearlyDownloads" : [ {
+    "year" : "2021",
+    "count" : 894
+  }, {
+    "year" : "2022",
+    "count" : 1763
+  }, {
+    "year" : "2023",
+    "count" : 1936
+  }, {
+    "year" : "2024",
+    "count" : 2486
+  }, {
+    "year" : "2025",
+    "count" : 1655
+  }, {
+    "year" : "2026",
+    "count" : 118
+  } ],
+  "submitters" : [ "Di Zhang" ],
+  "labPIs" : [ "Yingming Zhao (Lab Head)" ],
+  "affiliations" : [ "Ben May department of cancer research, The university of Chicago" ],
+  "instruments" : [ "Q Exactive" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ "SILAC" ],
+  "sampleAttributes" : [ "cell culture", "Homo sapiens (Human)", "breast cancer", "epithelial cell" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Cell culture", "Epithelial cell" ],
+  "diseases" : [ "Breast cancer" ],
+  "references" : [ "Zhang D, Tang Z, Huang H, Zhou G, Cui C, Weng Y, Liu W, Kim S, Lee S, Perez-Neut M, Ding J, Czyz D, Hu R, Ye Z, He M, Zheng YG, Shuman HA, Dai L, Ren B, Roeder RG, Becker L, Zhao Y. Metabolic regulation of gene expression by histone lactylation. Nature. 2019 574(7779):575-580--pubMed:31645732--doi: 10.1038/s41586-019-1678-1" ],
+  "experimentTypes" : [ "Affinity purification coupled with mass spectrometry proteomics" ],
+  "projectFileNames" : [ "MCF7_Hypoxia_SILAC_Kac_protein_normalization.zip", "MCF7_Hypoxia_SILAC_Kla_protein_normalization.raw", "MCF7_Hypoxia_SILAC_Kla_IP.zip", "MCF7_Rotenone_SILAC_Kla_Kac_protein_normalization.raw", "MCF7_DCA_SILAC_Kla_IP.zip", "MCF7_Rotenone_SILAC_Kla_IP.raw", "MCF7_Hypoxia_SILAC_Kac_protein_normalization.raw", "MCF7_DCA_SILAC_Kac_IP.zip", "MCF7_Hypoxia_SILAC_Kla_protein_normalization.zip", "MCF7_DCA_SILAC_Kla_IP.raw", "MCF7_Hypoxia_SILAC_Kla_IP.raw", "MCF7_Rotenone_SILAC_Kla_IP.zip", "MCF7_Hypoxia_SILAC_Kac_IP.zip", "MCF7_DCA_SILAC_Kac_IP.raw", "MCF7_U_13C6_Glucose_Kla_IP.raw", "MCF7_DCA_SILAC_Kla_Kac_protein_normalization.zip", "MCF7_Hypoxia_SILAC_Kac_IP.raw", "MCF7_Rotenone_SILAC_Kac_IP.zip", "MCF7_U_13C6_Glucose_Kla_IP.zip", "MCF7_Rotenone_SILAC_Kac_IP.raw", "MCF7_Rotenone_SILAC_Kla_Kac_protein_normalization.zip", "MCF7_DCA_SILAC_Kla_Kac_protein_normalization.raw" ],
+  "highlights" : {
+    "references" : [ "Metabolic regulation of gene expression by histone <em>lactylation</em>. Nature. 2019 574(7779):575-580--pubMed:31645732--doi: 10.1038/s41586-019-1678-1" ]
+  }
+} ]

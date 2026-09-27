@@ -1,0 +1,1072 @@
+[ {
+  "accession" : "PXD070427",
+  "title" : "A novel dual histone mark reader ZCWPW2 regulates meiotic recombination through lactylation and transcriptional control in humans and mice",
+  "projectDescription" : "Meiotic recombination ensures proper chromosome segregation and genetic diversity during gametogenesis, and its disruption leads to infertility. It is known that the dual histone methylation writer–reader system, in which PRDM9 deposits H3K4me3 and H3K36me3 marks at nucleosomes to specify recombination hotspots and ZCWPW1 functions as a reader recognizing these marks, is essential for meiotic recombination. However, the regulatory mechanism of this system remains unclear. Here, Deficiency of ZCWPW2 causes recombination defects, with impairment in homologous synapsis and DNA double-strand break repair. CUT&Tag and mass spectrometry analyses revealed that ZCWPW2 recognizes PRDM9-mediated dual histone methylation and interacts with ZCWPW1 to form a complex that recruits recombination-associated proteins to hotspots. Additionally, ZCWPW2 independently binds to promoter regions to regulate meiotic transcription. Lactylome and proteome analyses demonstrated that the ZCWPW1–ZCWPW2 complex interacts with and maintains the activity of lactate dehydrogenase LDHA, and together with ZCWPW2-driven transcription of lactylation writer EP300, to promote lactylation of recombination-associated proteins and stabilize their expression at hotspots. Collectively, we identified ZCWPW2 as a previously unrecognized yet indispensable factor supporting the function of PRDM9/ZCWPW1 during meiotic recombination, elucidated the molecular mechanism of the PRDM9/ZCWPW1/ZCWPW2 system in regulating recombination, and uncovered a critical role for lactylation in meiosis.",
+  "dataProcessingProtocol" : "1.2 LC-MS/MS Analysis 1.2.1 Mass Spectrometer  The tryptic peptides were dissolved in solvent A, directly loaded onto a home-made reversed-phase analytical column (25-cm length, 100 μm i.d.). The mobile phase consisted of solvent A (0.1% formic acid, 2% acetonitrile/in water) and solvent B (0.1% formic acid in acetonitrile). Peptides were separated with following gradient: 0-14 min，6%-24%B；14-16 min，24%-35%B；16-18 min，35%-80%B；18-20 min，80%B, and all at a constant flow rate of 500 nl/minon a NanoElute UHPLC system (Bruker Daltonics). The peptides were subjected to capillary source followed by the timsTOF Pro mass spectrometry. The electrospray voltage applied was 1.75 kV. Precursors and fragments were analyzed at the TOF detector. The timsTOF Pro was operated in data independent parallel accumulation serial fragmentation (dia-PASEF) mode. The full MS scan was set as300-1500（MS/MS scan range） and 20PASEF（MS/MS mode）-MS/MS scans were acquired per cycle. The MS/MS scan range was set as 400-850 and isolation window was set as7 m/z .  1.2.2 Database Search  The DIA data were processed using DIA-NN search engine (v.1.8). Tandem mass spectra were searched against the Homo_sapiens_9606_SP_20231220.fasta (20429 entries) concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 1 missing cleavages. Excision on N-term Met and carbamidomethyl on Cys were specified as fixed modification. FDR was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "1.1.1 Protein Extraction  The sample was removed from-80℃ and melted on ice. An appropriate amount of TEAB was added to adjust pH 8.0. 5 μ L of suspension was used for SDS-PAGE testing.  1.1.2 Trypsin Digestion  For digestion, the protein solution was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. The protein sample was then diluted by adding 200 mM TEAB to urea concentration less than 2 M. Finally, trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight and 1:100 trypsin-to-protein mass ratio for a second 4 h-digestion. Finally, the peptides were desalted by Strata X SPE column.",
+  "projectTags" : [ ],
+  "keywords" : [ "Meiotic recombination; zcwpw1–zcwpw2 complex; prdm9/zcwpw1/zcwpw2 system; ldha; ep300; lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2026-01-07",
+  "updatedDate" : "2025-11-07",
+  "submissionDate" : "2025-11-07",
+  "downloadCount" : 35,
+  "avgDownloadsPerFile" : 17.5,
+  "percentile" : 2,
+  "yearlyDownloads" : [ {
+    "year" : "2026",
+    "count" : 35
+  } ],
+  "submitters" : [ "Ying Shen" ],
+  "labPIs" : [ "Ying Shen" ],
+  "affiliations" : [ "West China Second University Hospital, Sichuan University" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "DIA-NN" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "Homo sapiens (Human)", "testis" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Testis" ],
+  "diseases" : [ ],
+  "references" : [ "Ruan T, Ma J, Shen G, Wang X, Yang Y, Zhuo L, Jiang C, Zhao G, Tian Y, Zhao S, Zhou R, Liu M, Tang X, Zhang Y, Zhao C, Zhang J, Li D, Jiang X, Mu D, Wang L, Shen Y. A novel dual histone mark reader ZCWPW2 regulates meiotic recombination through lactylation and transcriptional regulation in humans and mice. Nucleic Acids Res. 2026 54(3):gkag049--pubMed:41574437--doi: 10.1093/nar/gkag049" ],
+  "experimentTypes" : [ "Data-independent acquisition" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "RAW.d.zip", "search.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "<em>Lactylome</em> and proteome analyses demonstrated that the ZCWPW1–ZCWPW2 complex interacts with and maintains the activity of lactate dehydrogenase LDHA, and together with ZCWPW2-driven transcription of lactylation" ]
+  }
+}, {
+  "accession" : "PXD068838",
+  "title" : "A novel dual histone mark reader ZCWPW2 regulates meiotic recombination through lactylation and transcriptional control in humans and mice",
+  "projectDescription" : "Meiotic recombination ensures proper chromosome segregation and genetic diversity during gametogenesis, and its disruption leads to infertility. It is known that the dual histone methylation writer–reader system, in which PRDM9 deposits H3K4me3 and H3K36me3 marks at nucleosomes to specify recombination hotspots and ZCWPW1 functions as a reader recognizing these marks, is essential for meiotic recombination. However, the regulatory mechanism of this system remains unclear. Here, Deficiency of ZCWPW2 causes recombination defects, with impairment in homologous synapsis and DNA double-strand break repair. CUT&Tag and mass spectrometry analyses revealed that ZCWPW2 recognizes PRDM9-mediated dual histone methylation and interacts with ZCWPW1 to form a complex that recruits recombination-associated proteins to hotspots. Additionally, ZCWPW2 independently binds to promoter regions to regulate meiotic transcription. Lactylome and proteome analyses demonstrated that the ZCWPW1–ZCWPW2 complex interacts with and maintains the activity of lactate dehydrogenase LDHA, and together with ZCWPW2-driven transcription of lactylation writer EP300, to promote lactylation of recombination-associated proteins and stabilize their expression at hotspots. Collectively, we identified ZCWPW2 as a previously unrecognized yet indispensable factor supporting the function of PRDM9/ZCWPW1 during meiotic recombination, elucidated the molecular mechanism of the PRDM9/ZCWPW1/ZCWPW2 system in regulating recombination, and uncovered a critical role for lactylation in meiosis.",
+  "dataProcessingProtocol" : "1 Experimental Procedures  1.1 Sample Preparation  1.1.1 Protein Extraction  The sample was grinded with liquid nitrogen into cell powder and then transferred to a 5-mL centrifuge tube. After that, four volumes of lysis buffer (8 M urea, 1% protease inhibitor cocktail) was added to the cell powder, followed by sonication three minutes on ice using a high intensity ultrasonic processor (Scientz). (Note: For PTM experiments, inhibitors were also added to the lysis buffer, e.g. 3 μM TSA and 50 mM NAM for acetylation, 1% phosphatase inhibitor for phosphorylation). The remaining debris was removed by centrifugation at 12,000 g at 4 °C for 10 min. Finally, the supernatant was collected and the protein concentration was determined with BCA kit according to the manufacturer’s instructions.  1.1.2 Trypsin Digestion  The sample was slowly added to the final concentration of 20% (m/v) TCA to precipitate protein, then vortexed to mix and incubated for 2 h at 4 °C. The precipitate was collected by centrifugation at 4500 g for 5 min at 4 °C. The precipitated protein was washed with pre-cooled acetone for 3 times and dried for 1 min. The protein sample was then redissolved in 200 mM TEAB and ultrasonically dispersed. Trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight. The sample was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. Finally, the peptides were desalted by Strata X SPE column.  1.1.3 Affinity Enrichment  To enrich modified peptides, tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (Lot number xxx, PTM Bio) at 4°C overnight with gentle shaking. Then the beads were washed for four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturers instructions.  1.2 LC-MS/MS Analysis  1.2.1 Mass Spectrometer   Tryptic peptides dissolved in solvent A (0.1% FA) were directly loaded onto an Evotip following the protocol by the manufacturer. Peptides were separated with the preset Whisper 40-SPD (Samples per Day) method on the EvoSep One liquid chromatography system system (EvoSep), with the mobile phase consisted of solvent A and solvent B (0.1% FA in ACN). The peptides were subjected to capillary source followed by the timsTOF Pro2 mass spectrometry. The electrospray voltage applied was 1.5 kV. Precursors and fragments were analyzed with TOF detector. The timsTOF Pro was operated in data independent parallel accumulation serial fragmentation (dia-PASEF) mode.The full MS scan range was set as 300-1700 m/z and 8 PASEF scans were acquired per cycle. The MS/MS isolation window was set as 25 m/z in the range of 398-1023 m/z.  1.2.2 Database Search  The DIA data were processed using Spectronaut (v.18) software.Tandem mass spectra were searched against the Mus_musculus_10090_SP_20231220.fasta (17191 entries) concatenated with reverse decoy database.Trypsin/P was specified as cleavage enzyme allowing up to 4 missing cleavages. Carbamidomethyl on Cys was specified as fixed modification. Acetylation on protein N-terminal, oxidation on Met and L-lactylation were specified as variable modifications. False discovery rate (FDR) of protein, peptide and PSM was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "Liquid chromatography-tandem mass spectrometry (LC‒MS/MS) analysis Human testis was lysed in RIPA buffer supplemented with 1 mM PMSF and protease inhibitors (Applygen, P1265) on ice. Lysates were incubated with 5 μg anti-ZCWPW2 antibody (Sigma, HPA039839) overnight at 4 °C. Detailed Co-IP procedures were described in the Co-IP section above. Immunoprecipitated proteins were separated by SDS–PAGE and visualized by Coomassie Brilliant Blue staining. Gel bands were excised and processed for LC–MS/MS analysis. Mass spectrometry was performed at PTM Bio using a Q Exactive HF-X mass spectrometer (Thermo Fisher, USA) equipped with a nanoelectrospray ion source. Raw data were searched against the Homo sapiens reference proteome (UniProtKB) using MaxQuant (v1.6.15.0) with its integrated Andromeda search engine under default settings. Label-free quantification (LFQ) values were generated, and the results were processed in two steps: (i) removal of contaminants, reverse hits, and proteins identified by site only, and (ii) normalization of LFQ intensities using the median of commonly identified proteins. Missing values were imputed with the minimum detected intensity Mass spectrometry targeting total lactylation and proteome profiling Fresh testes from juvenile Zcwpw2 KO and WT mice were collected and processed by PTM Bio (Hangzhou, China). Samples were washed with PBS, pulverized using a Cryo-Prep™ CP02 system, and snap-frozen in liquid nitrogen. Proteins were extracted by sonication in lysis buffer, and concentrations were measured using a BCA assay (Beyotime, China). Equal amounts of protein were used for parallel proteomic and lactylation-modified peptide analyses. For lactylation profiling, proteins were digested with trypsin, and lactylation-modified peptides were enriched using a pan anti-L-lactylation antibody (PTM-1404, PTM Bio) at 4 °C overnight with gentle agitation. Peptides were eluted, vacuum-dried, desalted using C18 ZipTips (Millipore), and subjected to LC–MS/MS. Significant differences were defined as P < 0.05 with a fold change ≥ 1.2, based on the lactylation abundance of lactylation sites between groups. For total proteome analysis, the digested peptides without antibody enrichment were directly analyzed by LC–MS/MS. All mass spectrometry procedures followed the manufacturer's protocols (PTM Bio). Differentially expressed proteins were defined by P < 0.05 and fold change ≥ 1.2.",
+  "projectTags" : [ ],
+  "keywords" : [ "Meiotic recombination; zcwpw1–zcwpw2 complex; prdm9/zcwpw1/zcwpw2 system; ldha; ep300; lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2026-01-07",
+  "updatedDate" : "2025-09-25",
+  "submissionDate" : "2025-09-25",
+  "downloadCount" : 13,
+  "avgDownloadsPerFile" : 2.1666667,
+  "percentile" : 1,
+  "yearlyDownloads" : [ {
+    "year" : "2026",
+    "count" : 13
+  } ],
+  "submitters" : [ "Ying Shen" ],
+  "labPIs" : [ "Ying Shen" ],
+  "affiliations" : [ "West China Second University Hospital, Sichuan University" ],
+  "instruments" : [ "timsTOF Pro 2" ],
+  "softwares" : [ "Spectronaut" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "Homo sapiens (Human)", "testis", "Mus musculus (Mouse)" ],
+  "organisms" : [ "Homo sapiens (human)", "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Testis" ],
+  "diseases" : [ ],
+  "references" : [ "Ruan T, Ma J, Shen G, Wang X, Yang Y, Zhuo L, Jiang C, Zhao G, Tian Y, Zhao S, Zhou R, Liu M, Tang X, Zhang Y, Zhao C, Zhang J, Li D, Jiang X, Mu D, Wang L, Shen Y. A novel dual histone mark reader ZCWPW2 regulates meiotic recombination through lactylation and transcriptional regulation in humans and mice. Nucleic Acids Res. 2026 54(3):gkag049--pubMed:41574437--doi: 10.1093/nar/gkag049" ],
+  "experimentTypes" : [ "Data-independent acquisition" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "XB08709DPLa_KO1_S3-A11_1_11051.d.rar", "SEARCH.rar", "XB08709DPLa_WT87_S3-A9_1_11049.d.rar", "XB08709DPLa_WT29_S3-A8_1_11048.d.rar", "XB08709DPLa_KO2_S3-A12_1_11052.d.rar", "XB08709DPLa_KO3_S3-B1_1_11053.d.rar" ],
+  "highlights" : {
+    "projectDescription" : [ "<em>Lactylome</em> and proteome analyses demonstrated that the ZCWPW1–ZCWPW2 complex interacts with and maintains the activity of lactate dehydrogenase LDHA, and together with ZCWPW2-driven transcription of lactylation" ]
+  }
+}, {
+  "accession" : "PXD067368",
+  "title" : "Lactylation in Diabetic Cardiomyopathy",
+  "projectDescription" : "Lysine lactylation (Kla), is a newly found post-translational modification that has been found to be involved in the pathogenesis of many diseases. However, the specific effect of protein lactylation has not been reported on the development of diabetic cardiomyopathy (DCM). Here, the purpose of this study was determined whether protein lactylation was involved in the progression of DCM. LC-MS/MS was used to perform proteomic and lactate analysis on the heart tissues of db/m mice (Control group) and db/db mice (DCM group). Subsequently, a series of bioinformatics analyses were used to analyze the kla site and Kla modified proteins in two groups, including GO enrichment, KEGG enrichment, LASSO regression, Logistic regression, random forest (RF), VM-Recursive Feature Elimination (SVM-RFE) algorithm, and other analysis methods. The bioinformatics data analysis showed that the Kla sites in the DCM group were more than those in the Control group. In addition, subcellular localization analysis showed that Kla modified proteins were mainly located in mitochondria and cytoplasm. The protein lactylated modification mainly occurred on histone H2, and compared with the Control group, the modification of H4C1-K32 sites was significantly higher in the DCM group. Furthermore, there were 113 significantly modified kla sites corresponding to 78 modified proteins in the DCM group, while there were 37 significantly modified kla sites corresponding to 25 modified proteins in the Control group. These Kla modified proteins were involved in biological processes and pathways related to glucose metabolism and DCM. Finally, five kla sites were selected as candidate sites by using four machine learning methods, namely A2ASS6 _ K928 _ Ttn, A2ASS6 _ K13499 _ Ttn, Q61425 _ K212 _ Hadh, Q8K2B3 _ K517 _ Sdha, and Q9R0Y5 _ K100 _ Ak1. In conclusions, the present study first reported on the combination of lactylome and proteome of DCM, providing a reliable basis for further investigating the roles of Kla and Kla modified proteins in DCM.",
+  "dataProcessingProtocol" : "Proteome, lactylome analysis by LC-MS/MS Analysis The tryptic peptides were dissolved in solvent A, directly loaded onto a home-made reversed-phase analytical column (25-cm length, 100 mm i.d.). The mobile phase consisted of solvent A (0.1% formic acid, 2% acetonitrile/in water) and  solvent B (0.1% formic acid in acetonitrile). Following the Proteome analysis, peptides were separated with following gradient: 0-5 min，9%-24%B；5-6 min，24%-35%B；6-7 min，35%-80%B；7-8 min，80%B, and all at a constant flow rate of 600 nl/minon a NanoElute UHPLC system (Bruker Daltonics). For the lactylome analysis, peptides were separated with following gradient: 0-14 min, 6%-22%B；14-16 min, 22%-30%B；16-17 min，30%-80%B；17-20 min，80%B, and all at a constant flow rate of 450 nl/minon a NanoElute UHPLC system (Bruker Daltonics). The peptides were subjected to capillary source followed by the timsTOF HT mass spectrometry. The electrospray voltage applied was 1.6 kV. Precursors and fragments were analyzed at the TOF detector. The timsTOF Pro was operated in data independent parallel accumulation serial fragmentation (dia-PASEF) mode. Following the Proteome analysis, the full MS scan was set as 300-1500 (MS/MS scan range) and 21PASEF MS/MS mode-MS/MS scans were acquired per cycle. The MS/MS scan range was set as 380-1170 and isolation window was set as10 m/z. For the lactylome analysis, the full MS scan was set as100-1700(MS/MS scan range) and 8PASEF (MS/MS mode)-MS/MS scans were acquired per cycle. The MS/MS scan range was set as 425-1025 and isolation window was set as25 m/z . Database Search  The data were processed using Spectronaut (v.18) software.Tandem mass spectra were searched against the Mus_musculus_10090_SP_20231220.fasta (17191 entries) concatenated with reverse decoy database. In proteome analysis, trypsin/P was specified as cleavage enzyme, allowing up to 2 deletions for cleavage, while in lactylome analysis, up to 4 deletions for cleavage are allowed. Carbamidomethyl on Cys was specified as fixed modification. Acetylation on protein N-terminal, and oxidation on Met were specified as variable modifications. The false discovery rates (FDRs) were set at <1% for peptide-spectrum matches and sites and protein identifications. The intensity-based quantification of protein groups was extracted from the MaxQuant result files to represent the expression of a particular protein across samples. The levels of Kla-peptides were calculated based on the raw spectral intensity. To eliminate the level changes of Kla-peptides caused by the dynamics of protein levels, the abundance of each identified Kla-peptide was normalized with the corresponding protein abundance.",
+  "sampleProcessingProtocol" : "The DCM model was established using homozygous leptin receptor-deficient (db/db) mice, while heterozygous (db/m) mice served as the control group. All mice were raised on a normal diet under standard humidity and temperature. Both groups were maintained on a normal diet for 24 weeks. On the last day, the mice in the control group ( n=4 per group ) and DCM group ( n=4 per group) were sacrificed using CO2 anesthesia, and heart tissues were removed under sterile conditions for further detection.",
+  "projectTags" : [ ],
+  "keywords" : [ "Lactylome; proteome; protein lactylation; diabetic cardiomyopathy" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2026-05-24",
+  "updatedDate" : "2025-08-15",
+  "submissionDate" : "2025-08-15",
+  "downloadCount" : 0,
+  "avgDownloadsPerFile" : 0.0,
+  "percentile" : 0,
+  "submitters" : [ "Can Wei" ],
+  "labPIs" : [ "Can Wei" ],
+  "affiliations" : [ "Harbin Medical University" ],
+  "instruments" : [ "timsTOF HT" ],
+  "softwares" : [ "MaxQuant", "Spectronaut" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "Mus musculus (Mouse)", "heart" ],
+  "organisms" : [ "Mus musculus", "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Heart" ],
+  "diseases" : [ "Type 2 diabetes mellitus", "Normal" ],
+  "references" : [ "Ma D, Cai W, Yuan H, Shi M, Jin Y, Cui Y, Liu P, Liu X, Wei C. Integrative Investigation of Lactylome-Proteome Interplay in Diabetic Cardiomyopathy for Pinpointing Disease Development-Associated Pathways or Proteins. J Diabetes Res. 2026 2026(1):e3543697--pubMed:42029413--doi: 10.1155/jdr/3543697" ],
+  "experimentTypes" : [ "Bottom-up proteomics" ],
+  "sdrf" : "Heart Mus musculus Nt=vertebrates;vv=v1.1.0 Nt=acetyl;ac=unimod:1;pp=protein n-term;mt=variable Nt=beam-type collision-induced dissociation;ac=ms:1000422 Male Nt=carbamidomethyl;ac=unimod:4;ta=c;mt=fixed Nt=oxidation;ac=unimod:35;ta=m;mt=variable Lepr db/db Type 2 diabetes mellitus 20 ppm Nt=ms-proteomics;vv=v1.1.0 Tissue Adult Nt=timstof ht;ac=ms:1003404 Nt=label free sample;ac=ms:1002038 Nt=trypsin;ac=ms:1001251 Lepr db/+ V1.1.0 Normal Nt=data-dependent acquisition;ac=pride:0000627 C57blks Proteomic profiling by mass spectrometry Manual curation Nt=clinical-metadata;vv=v1.0.0 10 ppm",
+  "projectFileNames" : [ "XB05734DA_dbm1_Slot1-36_1_6605.d.zip", "XB05734B1DPLa_db3_Slot2-23_1_6661.d.zip", "XB05734B1DPLa_dbm2_Slot2-26_1_6667.d.zip", "XB05734DA_db2_Slot1-33_1_6600.d.zip", "XB05734B1DPLa_dbm3_Slot2-27_1_6669.d.zip", "XB05734B1DPLa_db1_Slot2-21_1_6657.d.zip", "PXD067368_community_annotated.sdrf.tsv", "XB05734B1DPLa_dbm1_Slot2-25_1_6665.d.zip", "XB05734DA_dbm2_Slot1-37_1_6606.d.zip", "XB05734B1DPLa_db4_Slot2-24_1_6663.d.zip", "XB05734DA_db3_Slot1-34_1_6602.d.zip", "XB05734B1DPLa_Results.zip", "XB05734DA_db4_Slot1-35_1_6603.d.zip", "XB05734DA_dbm3_Slot1-38_1_6608.d.zip", "XB05734B1DPLa_db2_Slot2-22_1_6659.d.zip", "XB05734DA_dbm4_Slot1-39_1_6609.d.zip", "XB05734B1DPLa_dbm4_Slot2-28_1_6671.d.zip", "XB05734DA_Results.zip", "XB05734DA_db1_Slot1-32_1_6599.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "In conclusions, the present study first reported on the combination of <em>lactylome</em> and proteome of DCM, providing a reliable basis for further investigating the roles of Kla and Kla modified proteins in" ],
+    "dataProcessingProtocol" : [ "For the <em>lactylome</em> analysis, the full MS scan was set as100-1700(MS/MS scan range) and 8PASEF (MS/MS mode)-MS/MS scans were acquired per cycle." ],
+    "keywords" : [ "<em>Lactylome</em>; proteome; protein lactylation; diabetic cardiomyopathy" ],
+    "references" : [ "Integrative Investigation of <em>Lactylome</em>-Proteome Interplay in Diabetic Cardiomyopathy for Pinpointing Disease Development-Associated Pathways or Proteins." ]
+  }
+}, {
+  "accession" : "PXD065104",
+  "title" : "Quantitative proteomic analysis using 4D-FastDIA in gastric cancer cells before and after loss-of-function mutation of STAT1-K193 lactylation.",
+  "projectDescription" : "In this study, we identified a significant lactylation modification at lysine 193 (K193) of STAT1 in gastric cancer tissues through an integrated proteomic and lysine lactylome analysis. Functional assays revealed that the loss of STAT1-K193 lactylation (STAT1-K193la) markedly suppresses gastric cancer cell proliferation, invasion, and metastatic potential. To further elucidate the downstream mechanisms mediated by STAT1-K193 lactylation, we aim to perform comparative proteomic profiling between wild-type STAT1 and the K193 lactylation-deficient mutant. This approach will help identify candidate effector proteins or signaling pathways regulated by STAT1-K193la, which will be subjected to further functional and mechanistic validation to better understand their roles in gastric tumor progression.",
+  "dataProcessingProtocol" : "The DIA data were processed using DIA-NN search engine (v.1.8). Tandem mass spectra were searched against Homo_sapiens_9606_SP_20230103.fasta (20389 entries) concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 1 missing cleavages. Excision on N-term Met and carbamidomethyl on Cys were specified as fixed modification. FDR was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "Sample prepared（自己增加的样品准备步骤） Two established cell lines, STAT1-WT and STAT1-K193R, were cultured under standard conditions. Cells in good morphological and growth condition were selected, harvested, and stored at -80°C to ensure sample integrity for subsequent proteomic analysis. Protein Extraction The sample was grinded with liquid nitrogen into cell powder and then transferred to a 5-mL centrifuge tube. After that, four volumes of lysis buffer (8 M urea, 1% protease inhibitor cocktail) was added to the cell powder, followed by sonication three minutes on ice using a high intensity ultrasonic processor (Scientz). (Note: For PTM experiments, inhibitors were also added to the lysis buffer, e.g. 3 μM TSA and 50 mM NAM for acetylation, 1% phosphatase inhibitor for phosphorylation). The remaining debris was removed by centrifugation at 12,000 g at 4 °C for 10 min. Finally, the supernatant was collected and the protein concentration was determined with BCA kit according to the manufacturer’s instructions. Trypsin Digestion The sample was slowly added to the final concentration of 20% (m/v) TCA to precipitate protein, then vortexed to mix and incubated for 2 h at 4 °C. The precipitate was collected by centrifugation at 4500 g for 5 min at 4 °C. The precipitated protein was washed with pre-cooled acetone for 3 times and dried for 1 min. The protein sample was then redissolved in 200 mM TEAB and ultrasonically dispersed. Trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight. The sample was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. Finally, the peptides were desalted by Strata X SPE column. LC-MS/MS Analysis The tryptic peptides were dissolved in solvent A, directly loaded onto a home-made reversed-phase analytical column (25-cm length, 100 μm i.d.). The mobile phase consisted of solvent A (0.1% formic acid, 2% acetonitrile/in water) and solvent B (0.1% formic acid in acetonitrile). Peptides were separated with following gradient: 0-14 min，6%-24%B；14-16 min，24%-35%B；16-18 min，35%-80%B；18-20 min，80%B, and all at a constant flow rate of 500 nl/minon a NanoElute UHPLC system (Bruker Daltonics). The peptides were subjected to capillary source followed by the timsTOF Pro mass spectrometry. The electrospray voltage applied was 1.75 kV. Precursors and fragments were analyzed at the TOF detector. The timsTOF Pro was operated in data independent parallel accumulation serial fragmentation (dia-PASEF) mode. The full MS scan was set as300-1500（MS/MS scan range） and 20PASEF（MS/MS mode）-MS/MS scans were acquired per cycle. The MS/MS scan range was set as 400-8500 and isolation window was set as7 m/z .",
+  "projectTags" : [ ],
+  "keywords" : [ "Proteomic analysis;4d-fastdia;gastric cancer; stat1; lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-09-05",
+  "updatedDate" : "2025-06-17",
+  "submissionDate" : "2025-06-17",
+  "downloadCount" : 117,
+  "avgDownloadsPerFile" : 16.714285,
+  "botCount" : 59,
+  "hubCount" : 57,
+  "organicCount" : 1,
+  "percentile" : 5,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 94
+  }, {
+    "year" : "2026",
+    "count" : 23
+  } ],
+  "submitters" : [ "Duanrui Liu" ],
+  "labPIs" : [ "Duanrui Liu" ],
+  "affiliations" : [ "Department of Clinical Laboratory, Shandong Provincial Hospital Affiliated to Shandong First Medical University" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "DIA-NN" ],
+  "quantificationMethods" : [ "Relative quantification" ],
+  "sampleAttributes" : [ "cell culture", "Homo sapiens (Human)" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Cell culture" ],
+  "diseases" : [ ],
+  "references" : [ ],
+  "experimentTypes" : [ "Bottom-up proteomics" ],
+  "projectFileNames" : [ "checksum.txt", "XA08562DA_WT_3_Slot1-26_1_30488.d.zip", "XA08562DA_K193_3_Slot1-29_1_30492.d.zip", "XA08562DA_WT_2_Slot1-25_1_30487.d.zip", "XA08562DA_K193_2_Slot1-28_1_30491.d.zip", "Result.zip", "XA08562DA_K193_1_Slot1-27_1_30490.d.zip", "XA08562DA_WT_1_Slot1-24_1_30486.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "In this study, we identified a significant lactylation modification at lysine 193 (K193) of STAT1 in gastric cancer tissues through an integrated proteomic and lysine <em>lactylome</em> analysis." ]
+  }
+}, {
+  "accession" : "PXD064912",
+  "title" : "Lactylated proteomic analysis of human sperm",
+  "projectDescription" : "The protein lactylated sites were identified in human sperm by LC-MS/MS.",
+  "dataProcessingProtocol" : "Data were processed with Spectronaut (v19.0) specifying trypsin/P cleavage, carbamidomethylation (fixed), and lactylation·(variable). The FDR thresholds for PSMs, peptides, and proteins were set at·1%. Kla sites with localization probability < 0.75 were excluded.",
+  "sampleProcessingProtocol" : "Three normal semen specimens were collected and sperm were obtained by 60% Percoll solution. Sperm were lysed by sonication in a buffer containing 8 M Urea, 75 mM NaCl, 50 mM Tris (pH 8.2), 10 mM DTT, protease/phosphatase inhibitors, 3 μM TSA, and 50 mM NAM. The lysate was incubated on ice for 1 h, centrifuged at 30,000 g for 60 min at 4°C, and the supernatant collected and quantified using the Bradford assay. Proteins were reduced, alkylated, trypsinized, and desalted using an OASIS HLB Vac cartridge. Lactylated peptides were enriched with anti-L-Lactyl Lysine antibody-conjugated agarose beads (PTM Bio), eluted, dried, desalted, and analyzed by LC-MS/MS using an Orbitrap Fusion Lumos mass spectrometer.",
+  "projectTags" : [ ],
+  "keywords" : [ "Human", "Sperm", "Proteomics", "Lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-12-22",
+  "updatedDate" : "2025-06-12",
+  "submissionDate" : "2025-06-12",
+  "downloadCount" : 50,
+  "avgDownloadsPerFile" : 10.0,
+  "botCount" : 25,
+  "hubCount" : 21,
+  "organicCount" : 4,
+  "percentile" : 3,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 12
+  }, {
+    "year" : "2026",
+    "count" : 38
+  } ],
+  "submitters" : [ "xiangzheng zhang" ],
+  "labPIs" : [ "xuejiang guo" ],
+  "affiliations" : [ "State Key Laboratory of Reproductive Medicine and Offspring Health, Department of Histology and Embryology, Nanjing Medical University" ],
+  "instruments" : [ "Orbitrap Fusion Lumos" ],
+  "softwares" : [ "Spectronaut" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "semen", "Homo sapiens (Human)", "sperm" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Sperm", "Semen" ],
+  "diseases" : [ "Normal" ],
+  "references" : [ "Yan M, Tu H, Tang S, Gai Z, Shi Q, Guo Y, Wang K, Xu X, Guo X, Li Y. Lactylated Proteomic Analysis Reveals Functional Implications of Lysine Lactylation In Asthenozoospermia. Mol Cell Proteomics. 2025 24(12):101439--pubMed:41192556--doi: 10.1016/j.mcpro.2025.101439" ],
+  "experimentTypes" : [ "Data-independent acquisition" ],
+  "sdrf" : "Nt=n6-lactoyllysine;ac=unimod:1986;ta=k;mt=variable Nt=beam-type collision-induced dissociation;ac=ms:1000422 Sperm Male Nt=carbamidomethyl;ac=unimod:4;ta=c;mt=fixed Nt=oxidation;ac=unimod:35;ta=m;mt=variable Nt=dia-acquisition;vv=v1.1.0 Nt=ms-proteomics;vv=v1.1.0 Nt=human;vv=v1.1.0 Adult Nt=data-independent acquisition;ac=pride:0000450 Cell Nt=trypsin;ac=ms:1001251 Semen V1.1.0 Nor-3 Homo sapiens Nor-2 Nor-1 Normal Label free sample Proteomic profiling by mass spectrometry Nt=orbitrap fusion lumos;ac=ms:1002732 Manual curation Normozoospermia lactylome",
+  "projectFileNames" : [ "PXD064912_community_annotated.sdrf.tsv", "HumanSperm_Nor-1_K-La_DIA_20240718.raw", "HumanSperm_Nor-3_K-La_DIA_20240718.raw", "P_0_HumanSperm.sne", "HumanSperm_Nor-2_K-La_DIA_20240718.raw" ],
+  "highlights" : {
+    "sdrf" : [ "trypsin;ac=ms:1001251 Semen V1.1.0 Nor-3 Homo sapiens Nor-2 Nor-1 Normal Label free sample Proteomic profiling by mass spectrometry Nt=orbitrap fusion lumos;ac=ms:1002732 Manual curation Normozoospermia <em>lactylome</em>" ]
+  }
+}, {
+  "accession" : "PXD062720",
+  "title" : "Lactylome and proteomics analyses of bladder cancer",
+  "projectDescription" : "Lactylome and proteomics analyses in bladder cancer cells treated with EPI",
+  "dataProcessingProtocol" : "For lactylation analysis, LC-MS/MS was conducted using a Bruker timeTOF Pro mass spectrometer combined with a NanoElute ultra-high-performance system (Bruker, GER).The raw MS data from each group of peptides were identified and quantified by using Maxquant (v1.6.15.0) software.Carbamidomethylation was considered a fixed modification. Methionine oxidation, N-terminal acetylation and lysine lactylation were considered variable modifications. The false discovery rate did not exceed 1%.",
+  "sampleProcessingProtocol" : "Bladder cancer cells isolated from CDXParental+EPI and CDXE-resistant+EPI tissues were snap-frozen in liquid nitrogen and supplemented with urea lysis buffer for protein extraction. After sonication (Scientz, CHN) thrice on ice, the supernatant was quantified using a BCA Kit (Beyotime, CHN). Subsequently, equal amounts of protein in each group were mixed dropwise with trichloroacetic acid (TCA, Sigma–Aldrich, CHN) at a final concentration of 20% and then precipitated at 4°C for 2 h. Then the pellet was collected and washed twice with pre-cooled acetone (Sigma–Aldrich). The pellet was resuspended in 200 mM triethylammonium bicarbonate buffer (TEAB, Sigma–Aldrich, CHN), treated with trypsin (trypsin/protein = 1:50, W/W, Promega, USA), and digested overnight for peptide preparation. Subsequently, the supernatant was incubated with 5 mM dithiothreitol (Sigma–Aldrich, CHN) at 37°C for 1 h and supplemented with 11 mM iodoacetamide (Sigma–Aldrich, CHN) for 30 min at room temperature (RT).",
+  "projectTags" : [ ],
+  "keywords" : [ "Epi chemotherapy", "Bladder cancer" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-06-10",
+  "updatedDate" : "2025-04-08",
+  "submissionDate" : "2025-04-08",
+  "downloadCount" : 292,
+  "avgDownloadsPerFile" : 58.4,
+  "percentile" : 11,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 257
+  }, {
+    "year" : "2026",
+    "count" : 35
+  } ],
+  "submitters" : [ "Xinyuan Li" ],
+  "labPIs" : [ "Xin Gou" ],
+  "affiliations" : [ "The First Affiliated Hospital of Chongqing Medical University" ],
+  "instruments" : [ "Orbitrap Fusion" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ "label-free quantification" ],
+  "sampleAttributes" : [ "cell culture", "Homo sapiens (Human)", "urinary bladder cancer" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Cell culture" ],
+  "diseases" : [ "Urinary bladder cancer" ],
+  "references" : [ "Li X, Zhang C, Mei Y, Zhong W, Fan W, Liu L, Feng Z, Bai X, Liu C, Xiao M, He W, Lin T, Gou X. Irinotecan alleviates chemoresistance to anthracyclines through the inhibition of AARS1-mediated BLM lactylation and homologous recombination repair. Signal Transduct Target Ther. 2025 10(1):214--pubMed:40634292--doi: 10.1038/s41392-025-02302-y" ],
+  "experimentTypes" : [ "Data-dependent acquisition" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "txt.zip", "FE458LPLa_A_3_Slot1-36_1_14669.d.zip", "FE458ELQ_A_1_Slot1-52_1_22387.d.zip", "FE458ELQ_A_3_Slot1-54_1_22391.d.zip", "FE458LPLa_A_1_Slot1-34_1_14665.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "<em>Lactylome</em> and proteomics analyses in bladder cancer cells treated with EPI" ],
+    "title" : [ "<em>Lactylome</em> and proteomics analyses of bladder cancer" ]
+  }
+}, {
+  "accession" : "PXD061494",
+  "title" : "Global profiling of Protein Lysine Lactylation in Mouse Cardiac Hypertrophy",
+  "projectDescription" : "In our study, we performed quantitative proteomics and Kla PTM analysis to investigate the alterations in protein lysine lactylation in a mouse model of cardiac hypertrophy. The results identified 159 Kla-modified sites across 80 proteins, with 72 proteins showing increased Kla levels in hypertrophic hearts. These modifications were primarily localized in mitochondrial and sarcomeric proteins, highlighting their roles in energy metabolism and cardiac remodeling.",
+  "dataProcessingProtocol" : "Database Search Raw data were processed with MaxQuant (v.1.6.15.0) against the human SwissProt database (20,422 entries) concatenated with a reverse decoy database. Trypsin specificity with up to two missed cleavages was set. Carbamidomethylation of cysteine was set as a fixed modification, and oxidation of methionine and N-terminal acetylation were set as variable modifications. False discovery rate (FDR) was adjusted to < 1%.   Bioinformatics Analysis The proteome was annotated with Gene Ontology (GO) terms from the UniProt-GOA database (http://www.ebi.ac.uk/GOA/), categorizing proteins into three main classifications: biological processes, cellular components, and molecular functions. For proteins not covered by UniProt-GOA, InterProScan was used to perform sequence-based annotations. Subcellular localization predictions were made using Wolfpsort for eukaryotic proteins, and motif analysis was carried out with the MoMo tool. Protein domains were annotated via InterProScan, leveraging the InterPro database for functional insights. The Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway annotation was performed using the KAAS tool, with subsequent mapping conducted through KEGG Mapper. Functional enrichment analysis for GO and KEGG terms was carried out using a two-tailed Fisher’s exact test, with terms considered significant at p < 0.05. Hierarchical clustering of differentially expressed proteins, based on enrichment results such as GO, Domain, Pathway, and Complex, was visualized as heat maps. Protein-protein interaction (PPI) networks were constructed using STRING (v11.0) with a confidence score threshold of ≥ 0.7 and visualized with the R package \"networkD3\".  Data Analysis The fold change (FC) was calculated by comparing the mean relative quantitative values of the modified Kla sites in the AB group to those in the WT group. Modified Kla sites were considered differentially regulated if the FC was greater than 1.5 (upregulated) or less than 1/1.5 (downregulated). Protein abundance between the AB and WT groups was assessed using quantitative data. A Student’s t-test was performed to calculate the p-value, and a p-value of less than 0.05 indicated statistical significance.",
+  "sampleProcessingProtocol" : "Pan-antibody-based PTM enrichment Fractionated peptides were dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris, 0.5% NP40, pH 8.0) and incubated with pan-Kla antibody-conjugated agarose beads overnight at 4°C with gentle shaking. Beads were washed four times with NETN buffer and twice with ddH2O, followed by elution with 0.1% trifluoroacetic acid. Eluted peptides were combined, vacuum-dried, and desalted with C18 ZipTips (Millipore).  Proteome and Lactylome Analysis by LC-MS/MS Four-dimensional label-free lactylation quantitative proteomic analysis was performed by Jingjie PTM BioLab Co., Ltd. (Hangzhou, China). Pan-Kla antibody-conjugated agarose beads were used to enrich lactylated proteins. The eluted peptides were desalted, combined, and analyzed using liquid chromatography and mass spectrometry (LC-MS/MS).  Peptides were dissolved in 0.1% formic acid in water (solvent A) and loaded onto a homemade reversed-phase analytical column. The gradient of solvent B (0.1% formic acid in acetonitrile) was 6%–24% over 70 min, 24%–35% in 14 min, increased to 80% in 3 min, and held at 80% for 3 min at a flow rate of 450 nL/min on a nanoElute UHPLC system (Bruker Daltonics). Peptides were analyzed using a timsTOF Pro mass spectrometer (Bruker Daltonics) operated in PASEF mode with 10 PASEF-MS/MS scans per cycle.",
+  "projectTags" : [ "Human proteome project", "Biology/disease-driven human proteome project (b/d-hpp)", "Cardiovascular (b/d-hpp)" ],
+  "keywords" : [ "Heart failure", "Mouse", "Cardiac hypertrophy", "Lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2026-09-06",
+  "updatedDate" : "2025-03-05",
+  "submissionDate" : "2025-03-05",
+  "downloadCount" : 0,
+  "avgDownloadsPerFile" : 0.0,
+  "percentile" : 0,
+  "submitters" : [ "Wengen Zhu" ],
+  "labPIs" : [ "Wengen Zhu" ],
+  "affiliations" : [ "The First Affiliated Hospital of Sun Yat-sen university" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ ],
+  "quantificationMethods" : [ "TMT" ],
+  "sampleAttributes" : [ "Mus musculus (Mouse)", "heart" ],
+  "organisms" : [ "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Heart" ],
+  "diseases" : [ ],
+  "references" : [ "Zhu W, Guo S, Yang Y, Dong Y, Liu C, Chen C. Global Profiling of Protein Lysine Lactylation in Mouse Cardiac Hypertrophy: A Lactylome Analysis. J Cardiovasc Dev Dis. 2026 13(7):297--pubMed:42505874--doi: 10.3390/jcdd13070297" ],
+  "experimentTypes" : [ "Bottom-up proteomics" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "YD060LPLa_SA2_Slot1-25_1_887.zip", "YD060LPLa_SA3_Slot1-26_1_889.zip", "YD060LPLa_A1_Slot1-27_1_891.zip", "YD060LPLa_SA1_Slot1-24_1_885.zip", "YD060LPLa_A3_Slot1-29_1_895.zip", "combined.zip", "YD060LPLa_A2_Slot1-28_1_893.zip" ],
+  "highlights" : {
+    "references" : [ "Global Profiling of Protein Lysine Lactylation in Mouse Cardiac Hypertrophy: A <em>Lactylome</em> Analysis. J Cardiovasc Dev Dis. 2026 13(7):297--pubMed:42505874--doi: 10.3390/jcdd13070297" ],
+    "sampleProcessingProtocol" : [ "Proteome and <em>Lactylome</em> Analysis by LC-MS/MS Four-dimensional label-free lactylation quantitative proteomic analysis was performed by Jingjie PTM BioLab Co., Ltd. (Hangzhou, China)." ]
+  }
+}, {
+  "accession" : "PXD059168",
+  "title" : "The lactylome of mice granulosa cells",
+  "projectDescription" : "Follicular GCs were obtained through intraperitoneal injections of 10, 5, 2, and 2 IU FSH at 12 h intervals. For the enrichment of Kla-modified peptides, the tryptic peptides were solubilized in NETN buffer (1 mM EDTA, 50 mM Tris–HCl, 100 mM NaCl, 0.5% NP-40, pH 8.0) and then incubated with prewashed beads (PTM Bio) at 4 °C for 12 h. Elution of the bound peptides was achieved using trifluoroacetic acid (0.1%). The eluted peptides were subsequently vacuum-dried and subjected to desalting using C18 ZipTips (Millipore) prior to LC‒MS/MS analysis.",
+  "dataProcessingProtocol" : "the MaxQuant search engine (v.1.6.6.0) was employed to process the MS/MS data. Tandem mass spectra were searched against the mice SwissProt database (20,366 entries) along with a reverse decoy database. The false discovery rate (FDR) was controlled at less than 1%. Relative quantitative values of modified peptides across different samples were determined by centralizing signal intensity values. After filtering for lysine lactylation sites (with a localization probability > 0.75), relative quantitative values for each sample were generated through two experiments. Normalization of quantified lysine lactylation peptide ratios was performed based on their respective protein expression levels.",
+  "sampleProcessingProtocol" : "LC-MS/MS analysis and database search for MS/MS analysis were conducted with the assistance of Jingjie PTM BioLabs (Hangzhou, China). Briefly, the tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile in water) and separated using a homemade reversed-phase analytical column (25 cm length, 100 μm i.d.) on a nanoElute UHPLC system (Bruker Daltonics). Following capillary introduction, the peptides underwent timsTOF Pro (Bruker Daltonics) mass spectrometry for analysis in parallel accumulation serial fragmentation (PASEF) mode.",
+  "projectTags" : [ ],
+  "keywords" : [ "The lactylome of mice granulosa cells" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "px:PXD059159", "pride.project:PXD059159" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-09-28",
+  "updatedDate" : "2024-12-23",
+  "submissionDate" : "2024-12-23",
+  "downloadCount" : 49,
+  "avgDownloadsPerFile" : 24.5,
+  "percentile" : 3,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 25
+  }, {
+    "year" : "2026",
+    "count" : 24
+  } ],
+  "submitters" : [ "Gang Wu" ],
+  "labPIs" : [ "GANG WU" ],
+  "affiliations" : [ "Nanjing Agricultural University," ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "ovary", "Mus musculus (Mouse)" ],
+  "organisms" : [ "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Ovary" ],
+  "diseases" : [ ],
+  "references" : [ "Wu G, Chen M, He T, Pan Y, Li C, Liu Z, Li H, Sheng Y, Dai W, Shen M, Liu H. Lactylation of CREB is required for FSH-induced proliferation and differentiation of ovarian granulosa cells. Nucleic Acids Res. 2025 53(17):gkaf882--pubMed:40966521--doi: 10.1093/nar/gkaf882" ],
+  "experimentTypes" : [ "Data-dependent acquisition" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "combined.zip", "ED157LPLa.zip" ],
+  "highlights" : {
+    "keywords" : [ "The <em>lactylome</em> of mice granulosa cells" ],
+    "title" : [ "The <em>lactylome</em> of mice granulosa cells" ]
+  }
+}, {
+  "accession" : "PXD058534",
+  "title" : "The lactylome data of renal tubular epithelial cells",
+  "projectDescription" : "The global lactylome analysis conducted to identify lactylated proteins in pretreated HK-2 cells.",
+  "dataProcessingProtocol" : "The resulting MS/MS data were processed using MaxQuant search engine (v.1.6.15.0). Tandem mass spectra were searched against the Homo_sapiens_9606_SP_20220107.fasta (20376 entries) concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme. The mass tolerance for precursor ions was set as 20 ppm in first search and 20 ppm in main search, and the mass tolerance for fragment ions was set as 20 ppm. Carbamidomethyl on cysteine was specified as fixed modification, and acetylation on protein N-terminal, oxidation on methionine and lactylation on lysine were specified as variable modifications. FDR was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "Lactylated peptides were identified using a Bruker timeTOF Pro mass spectrometer equipped with a NanoElute ultra-high-performance system (Bruker, GER)",
+  "projectTags" : [ ],
+  "keywords" : [ "Renal tubular epithelial cell", "Lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-11-05",
+  "updatedDate" : "2024-12-03",
+  "submissionDate" : "2024-12-03",
+  "downloadCount" : 50,
+  "avgDownloadsPerFile" : 25.0,
+  "percentile" : 3,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 18
+  }, {
+    "year" : "2026",
+    "count" : 32
+  } ],
+  "submitters" : [ "Xinyuan Li" ],
+  "labPIs" : [ "Xinyuan Li" ],
+  "affiliations" : [ "The First Affiliated Hospital of Chongqing Medical University" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "cell culture", "Homo sapiens (Human)" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Cell culture" ],
+  "diseases" : [ ],
+  "references" : [ "Yu H, Yin H, Mei Y, Bai X, Zhang C, Feng Z, Li M, Chen H, Liang S, Gou X, Zhong W, He W, Li J, Lin T, Li X. Nucleophosmin 1 lactylation in graft kidney induces ferroptotic trigger waves that exacerbate delayed graft function. Nat Commun. 2025 17(1):277--pubMed:41350284--doi: 10.1038/s41467-025-66991-3" ],
+  "experimentTypes" : [ "Data-dependent acquisition" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "txt.zip", "HK2.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "The global <em>lactylome</em> analysis conducted to identify lactylated proteins in pretreated HK-2 cells." ],
+    "title" : [ "The <em>lactylome</em> data of renal tubular epithelial cells" ]
+  }
+}, {
+  "accession" : "PXD058023",
+  "title" : "Protein lactylation promotes AKI–CKD transition in mice",
+  "projectDescription" : "Interstitial renal inflammation contributes to the transition from acute kidney injury (AKI) to chronic kidney disease (CKD). Recently, protein lactylation modification has emerged as a novel mechanism mediating chronic organ damage. We investigated lactylated protein profiles and the role of protein lactylation during AKI progression. Severe and moderate AKI mouse models were constructed by bilateral renal ischemia for 35 and 25 min respectively. The lactylation enhancer and inhibitors were used to verify the effect of protein lactylation. Lactylated proteomics was used to detect lactylated protein changes in kidneys, and the lactylated proteins related to kidney injury were screened for verification. We observed significantly higher lactate and protein lactylation levels in the severe than in the moderate AKI model 1–28 days post-injury. Inhibition of protein lactylation protected against renal interstitial fibrosis. In vitro and in vivo experiments demonstrated that protein lactylation activated Nod-like receptor protein 3 (NLRP3) inflammasomes, promoting the AKI–CKD transition. Comprehensive lactylome profiling of severe AKI models revealed a role for lactylated proteins in metabolic pathways, primarily the tricarboxylic acid (TCA) cycle where the rate-limiting enzyme, citrate synthase (CS), exhibited significantly elevated lactylation levels 3–7 days post-AKI induction; K370 was the most significant lysine residue. In vitro, following hypoxia/reoxygenation, the modified/lactylated K370T group significantly decreased CS activity and mitochondrial function. Furthermore, CS-K370 lactylation activated the NLRP3 inflammasome. Lactylation of CS promotes the AKI–CKD transition through NLRP3 inflammasome activation. Inhibition of CS lactylation shows therapeutic potential for preventing this transition.",
+  "dataProcessingProtocol" : "MaxQuant (v.1.6.6.0) was used to analyze MS/MS data. Concatenated human UniProt and reverse decoy databases were used to search the tandem mass spectra. Up to four missed cleavages were allowed for trypsin/P cleavage. Mass tolerance for precursor ions was fixed at 20 ppm for presearch and 5 ppm for main search. The fixed modification specified carbamidomethylation on Cys, while the variable modifications specified acetylation and oxidation on Met. Minimum modified peptide score set above 40 and false discovery rate below 1%.",
+  "sampleProcessingProtocol" : "Mouse kidney tissue samples were ground thoroughly into powder using a precooled mortar and liquid nitrogen. Four volumes of lysis buffer were added to the powder, containing 50 mM NAM, 3 μM TSA, 1% Protease Inhibitor Cocktail, and 8 M urea. Mixtures were ultrasonicated three times on ice. Debris was eliminated by centrifugation at 12,000 g for 10 min at 4°C. The supernatant was obtained and its protein concentration was assessed by the BCA kit (Beyotime, China). For protein digestion, equal amounts of each sample were gathered and volume adjusted with lysis solution. The protein samples were subsequently processed with 5 mM dithiothreitol, 11 mM iodoacetamide, and 100 mM TEAB. Finally, trypsin was added during the initial overnight digestion at a trypsin-to-protein mass ratio of 1:50, and during the subsequent 4h digestion at a ratio of 1:100.",
+  "projectTags" : [ ],
+  "keywords" : [ "Mouse; kidney; lc-msms; lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-07-07",
+  "updatedDate" : "2024-11-19",
+  "submissionDate" : "2024-11-19",
+  "downloadCount" : 196,
+  "avgDownloadsPerFile" : 19.6,
+  "botCount" : 78,
+  "hubCount" : 115,
+  "organicCount" : 3,
+  "percentile" : 8,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 176
+  }, {
+    "year" : "2026",
+    "count" : 20
+  } ],
+  "submitters" : [ "kehong chen" ],
+  "labPIs" : [ "Kehong Chen" ],
+  "affiliations" : [ "Department of Nephrology, Daping hospital, Army Medical Center, Army Medical University, Chongqing, China" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "kidney", "Mus musculus (Mouse)" ],
+  "organisms" : [ "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Kidney" ],
+  "diseases" : [ ],
+  "references" : [ ],
+  "experimentTypes" : [ "Data-dependent acquisition", "Bottom-up proteomics" ],
+  "projectFileNames" : [ "SA285LPLa_AKI3d1_Slot1-13_1_8771.d.zip", "checksum.txt", "SA285LPLa_AKI3d3_Slot2-15_1_8849.d.zip", "SA285LPLa_AKI7d2_Slot1-17_1_8779.d.zip", "combined.zip", "SA285LPLa_AKI7d1_Slot1-16_1_8777.d.zip", "SA285LPLa_AKI3d2_Slot1-14_1_8773.d.zip", "SA285LPLa_control1_Slot1-19_1_8783.d.zip", "SA285LPLa_control2_Slot1-20_1_8785.d.zip", "SA285LPLa_control3_Slot1-21_1_8787.d.zip", "SA285LPLa_AKI7d3_Slot1-18_1_8781.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "Comprehensive <em>lactylome</em> profiling of severe AKI models revealed a role for lactylated proteins in metabolic pathways, primarily the tricarboxylic acid (TCA) cycle where the rate-limiting enzyme, citrate" ]
+  }
+}, {
+  "accession" : "PXD056805",
+  "title" : "H3K14la drives endothelial dysfunction in sepsis-induced ARDS via promoting SLC40A1/TFR-mediated ferroptosis",
+  "projectDescription" : "Background: Pulmonary endothelial cell (EC) activation is a key factor in acute respiratory distress syndrome (ARDS). In sepsis, increased glycolysis leads to lactate buildup, which induces lysine lactylation (Kla) on histones and other proteins. However, the role of protein lactylation in EC dysfunction during sepsis-induced ARDS remains unclear. Methods: Integrative lactylome and proteome analysis was performed to identify the global lactylome profiling in lung tissues of septic mice. Cut&Tag analysis were used to identify the transcriptional targets of histone H3 lysine 14 lactylation (H3K14la) in ECs. Results: Septic mice exhibited elevated levels of lactate and H3K14la in lung tissues, particularly in pulmonary ECs. Suppressing glycolysis reduced both H3K14la and EC activation, suggesting a link between glycolysis and lactylation. Moreover, H3K14la was found to be enriched at promoter regions of ferroptosis-related genes such as transferrin receptor (TFRC) and solute carrier family 40 member 1 (SLC40A1), which contributed to EC activation and lung injury under septic conditions. Conclusions: We for the first time reported the role of lactate-dependent H3K14 lactylation in regulating EC ferroptosis to promote vascular dysfunction during sepsis-induced lung injury. Our findings suggest that manipulation of glycolysis/H3K14la/ferroptosis axis may provide novel therapeutic approaches for sepsis-associated ARDS.",
+  "dataProcessingProtocol" : "LC-MS/MS Analysis The LC-MS/MS Assay was performed at PTM Biolabs. The tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile in water), directly loaded onto a home-made reversed-phase analytical column (25-cm length, 100 μm i.d.). Peptides were separated with a gradient from 7% to 24% solvent B (0.1% formic acid in acetonitrile) over 42 min, 24% to 32% in 12 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 450 nL/min on a nanoElute UHPLC system (Bruker Daltonics). The peptides were subjected to Capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry. The electrospray voltage applied was 1.75 kV. Precursors and fragments were analyzed at the TOF detector, with a MS/MS scan range from 100 to 1700 m/z. The timsTOF Pro was operated in parallel accumulation serial fragmentation (PASEF) mode. Precursors with charge states 0 to 5 were selected for fragmentation, and 10 PASEF-MS/MS scans were acquired per cycle. The dynamic exclusion was set to 30 s.",
+  "sampleProcessingProtocol" : "LC-MS/MS Analysis The LC-MS/MS Assay was performed at PTM Biolabs. The tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile in water), directly loaded onto a home-made reversed-phase analytical column (25-cm length, 100 μm i.d.). Peptides were separated with a gradient from 7% to 24% solvent B (0.1% formic acid in acetonitrile) over 42 min, 24% to 32% in 12 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 450 nL/min on a nanoElute UHPLC system (Bruker Daltonics). The peptides were subjected to Capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry. The electrospray voltage applied was 1.75 kV. Precursors and fragments were analyzed at the TOF detector, with a MS/MS scan range from 100 to 1700 m/z. The timsTOF Pro was operated in parallel accumulation serial fragmentation (PASEF) mode. Precursors with charge states 0 to 5 were selected for fragmentation, and 10 PASEF-MS/MS scans were acquired per cycle. The dynamic exclusion was set to 30 s.",
+  "projectTags" : [ ],
+  "keywords" : [ "Lactylation; ferroptosis; endothelial dysfunction; sepsis; lung injury" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-05-07",
+  "updatedDate" : "2024-10-15",
+  "submissionDate" : "2024-10-15",
+  "downloadCount" : 611,
+  "avgDownloadsPerFile" : 47.0,
+  "botCount" : 65,
+  "hubCount" : 543,
+  "organicCount" : 3,
+  "percentile" : 23,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 492
+  }, {
+    "year" : "2026",
+    "count" : 119
+  } ],
+  "submitters" : [ "Erzhen Chen" ],
+  "labPIs" : [ "Erzhen Chen" ],
+  "affiliations" : [ "1 Department of Emergency, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "lung", "Mus musculus (Mouse)" ],
+  "organisms" : [ "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Lung" ],
+  "diseases" : [ ],
+  "references" : [ "Gong F, Zheng X, Xu W, Xie R, Liu W, Pei L, Zhong M, Shi W, Qu H, Mao E, Yang Z, Li R, Chen E, Chen Y. H3K14la drives endothelial dysfunction in sepsis-induced ARDS by promoting SLC40A1/transferrin-mediated ferroptosis. MedComm (2020). 2025 6(2):e70049--pubMed:39822760--doi: 10.1002/mco2.70049" ],
+  "experimentTypes" : [ "Data-dependent acquisition" ],
+  "projectFileNames" : [ "ZD055LPLa_G3M7_Slot1-37_1_3570.d.zip", "ZD055LPLa_G1M6_Slot1-31_1_3558.d.zip", "ZD055LPLa_G1M4_Slot1-29_1_3554.d.zip", "ZD055LPLa_G3M3_Slot1-36_1_3568.d.zip", "ZD055LPLa_G3M8_Slot1-38_1_3572.d.zip", "ZD055LPLa_G1M8_Slot1-32_1_3560.d.zip", "ZD055LPLa_G3M9_Slot1-39_1_3574.d.zip", "ZD055LPLa_G1M5_Slot1-30_1_3556.d.zip", "ZD055LPLa_G1M9_Slot1-33_1_3562.d.zip", "checksum.txt", "ZD055LPLa_G3M1_Slot1-34_1_3564.d.zip", "ZD055LPLa_G3M2_Slot1-35_1_3566.d.zip", "combined.zip", "ZD055LPLa_G1M3_Slot1-28_1_3552.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "Methods: Integrative <em>lactylome</em> and proteome analysis was performed to identify the global <em>lactylome</em> profiling in lung tissues of septic mice." ]
+  }
+}, {
+  "accession" : "PXD053029",
+  "title" : "YTHDC1 lactylation promotes RCC progression by regulating phase-separation to enhance the stabilities of BCL2 and E2F2 mRNAs",
+  "projectDescription" : "To obtain the global landscape of lactylation in hypoxia-treated RCC cells, we treated cells with 24 h hypoxia to induce maximum amount of hyperlactylated proteins and performed proteome and lactylome detection upon ACHN cells. Presented here is the raw data for the lactylome.",
+  "dataProcessingProtocol" : "The resulting MS/MS data were processed using Maxquant search engine (v.1.5.2.8). Tandem mass spectra were searched against human uniprot database concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 4 missing cleavages. The mass tolerance for precursor ions was set as 20 ppm in First search and 5 ppm in Main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification and acetylation modification and oxidation on Met were specified as variable modifications. FDR was adjusted to < 1% and minimum score for modified peptides was set > 40. Read less",
+  "sampleProcessingProtocol" : "Sample was sonicated three times on ice using a high intensity ultrasonic processor (Scientz) in lysis buffer (8 M urea, 1% Protease Inhibitor Cocktail). (Note: For PTM experiments, inhibitors were also added to the lysis buffer, e.g. 3 μM TSA and 50 mM NAM for acetylation.) The remaining debris was removed by centrifugation at 12,000 g at 4 °C for 10 min. Finally, the supernatant was collected and the protein concentration was determined with BCA kit according to the manufacturer’s instructions. For digestion, the protein solution was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. The protein sample was then diluted by adding 100 mM TEAB to urea concentration less than 2M. Finally, trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight and 1:100 trypsin-to-protein mass ratio for a second 4 h-digestion. To enrich modified peptides, tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (Lot number 001, PTM Bio) at 4°C overnight with gentle shaking. Then the beads were washed four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturer’s instructions. The tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile/in water), directly loaded onto a home-made reversed-phase analytical column (25-cm length, 75/100 μm i.d.). Peptides were separated with a gradient from 6% to 24% solvent B (0.1% formic acid in acetonitrile) over 70 min, 24% to 35% in 14 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 450 nL/min on a nanoElute UHPLC system (Bruker Daltonics).The peptides were subjected to capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry. The electrospray voltage applied was 1.60 kV. Precursors and fragments were analyzed at the TOF detector, with a MS/MS scan range from 100 to 1700 m/z. The timsTOF Pro was operated in parallel accumulation serial fragmentation (PASEF) mode. Precursors with charge states 0 to 5 were selected for fragmentation, and 10 PASEF-MS/MS scans were acquired per cycle. The dynamic exclusion was set to 30 s.",
+  "projectTags" : [ ],
+  "keywords" : [ "Renal cancer", "Phase separation", "Ythdc1", "Bcl2", "E2f2", "Lactylation" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "pride.project:PXD052772", "pride.project:PXD058173" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-07-18",
+  "updatedDate" : "2024-06-12",
+  "submissionDate" : "2024-06-12",
+  "downloadCount" : 173,
+  "avgDownloadsPerFile" : 24.714285,
+  "percentile" : 7,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 150
+  }, {
+    "year" : "2026",
+    "count" : 23
+  } ],
+  "submitters" : [ "yuangui tang" ],
+  "labPIs" : [ "junfang zheng" ],
+  "affiliations" : [ "Dr Junfang Zheng, Beijing Key Laboratory of Cancer Invasion and Metastasis Research, Department of Biochemistry and Molecular Biology, School of Basic Medical Sciences, Capital Medical University, Beijing 100069, China (lab head)" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "kidney cancer", "cell culture", "Homo sapiens (Human)" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Cell culture" ],
+  "diseases" : [ "Kidney cancer" ],
+  "references" : [ "null--pubMed:0--doi: 10.1016/J.MOLCEL.2025.06.017" ],
+  "experimentTypes" : [ "Data-dependent acquisition", "Bottom-up proteomics" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "H24_2_Slot2-21_1_5367.d.zip", "combined.zip", "C_3_Slot2-20_1_5364.d.zip", "H24_3_Slot2-21_1_5368.d.zip", "C_1_Slot2-20_1_5362.d.zip", "H24_1_Slot2-21_1_5366.d.zip", "C_2_Slot2-20_1_5363.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "Presented here is the raw data for the <em>lactylome</em>." ]
+  }
+}, {
+  "accession" : "PXD052772",
+  "title" : "YTHDC1 lactylation promotes RCC progression by regulating phase-separation to enhance the stabilities of BCL2 and E2F2 mRNAs",
+  "projectDescription" : "To obtain the global landscape of lactylation in hypoxia-treated RCC cells, we treated cells with 24 h hypoxia to induce maximum amount of hyperlactylated proteins and performed proteome and lactylome detection upon ACHN cells. Presented here is the raw data for the proteome.",
+  "dataProcessingProtocol" : "The resulting MS/MS data were processed using Maxquant search engine (v.1.5.2.8). Tandem mass spectra were searched against human uniprot database concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 4 missing cleavages. The mass tolerance for precursor ions was set as 20 ppm in First search and 5 ppm in Main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification and acetylation modification and oxidation on Met were specified as variable modifications. FDR was adjusted to < 1% and minimum score for modified peptides was set > 40.",
+  "sampleProcessingProtocol" : "Sample was sonicated three times on ice using a high intensity ultrasonic processor (Scientz) in lysis buffer (8 M urea, 1% Protease Inhibitor Cocktail). (Note: For PTM experiments, inhibitors were also added to the lysis buffer, e.g. 3 μM TSA and 50 mM NAM for acetylation.) The remaining debris was removed by centrifugation at 12,000 g at 4 °C for 10 min. Finally, the supernatant was collected and the protein concentration was determined with BCA kit according to the manufacturer’s instructions. For digestion, the protein solution was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. The protein sample was then diluted by adding 100 mM TEAB to urea concentration less than 2M. Finally, trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight and 1:100 trypsin-to-protein mass ratio for a second 4 h-digestion. To enrich modified peptides, tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (Lot number 001, PTM Bio) at 4°C overnight with gentle shaking. Then the beads were washed four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturer’s instructions.  The tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile/in water), directly loaded onto a home-made reversed-phase analytical column (25-cm length, 75/100 μm i.d.). Peptides were separated with a gradient from 6% to 24% solvent B (0.1% formic acid in acetonitrile) over 70 min, 24% to 35% in 14 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 450 nL/min on a nanoElute UHPLC system (Bruker Daltonics).The peptides were subjected to capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry. The electrospray voltage applied was 1.60 kV. Precursors and fragments were analyzed at the TOF detector, with a MS/MS scan range from 100 to 1700 m/z. The timsTOF Pro was operated in parallel accumulation serial fragmentation (PASEF) mode. Precursors with charge states 0 to 5 were selected for fragmentation, and 10 PASEF-MS/MS scans were acquired per cycle. The dynamic exclusion was set to 30 s.",
+  "projectTags" : [ ],
+  "keywords" : [ "Renal cancer", "Lactylation" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "pride.project:PXD058173", "pride.project:PXD053029" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-07-18",
+  "updatedDate" : "2024-06-01",
+  "submissionDate" : "2024-06-01",
+  "downloadCount" : 183,
+  "avgDownloadsPerFile" : 22.875,
+  "percentile" : 7,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 167
+  }, {
+    "year" : "2026",
+    "count" : 16
+  } ],
+  "submitters" : [ "yuangui tang" ],
+  "labPIs" : [ "Junfang Zheng" ],
+  "affiliations" : [ "Beijing Key Laboratory of Cancer Invasion and Metastasis Research, Department of Biochemistry and Molecular Biology, School of Basic Medical Sciences, Capital Medical University, Beijing 100069, China" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "kidney cancer", "Homo sapiens (Human)" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ ],
+  "diseases" : [ "Kidney cancer" ],
+  "references" : [ "null--pubMed:0--doi: 10.1016/J.MOLCEL.2025.06.017" ],
+  "experimentTypes" : [ "Data-dependent acquisition" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "FA026LQ_H24_3_Slot2-16_1_5102.d.zip", "FA026LQ_H24_1_Slot2-16_1_5098.d.zip", "txt.zip", "mqpar.xml", "FA026LQ_H24_2_Slot2-16_1_5099.d.zip", "FA026LQ_C_1_Slot2-15_1_5094.d.zip", "FA026LQ_C_3_Slot2-15_1_5096.d.zip", "FA026LQ_C_2_Slot2-15_1_5095.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "To obtain the global landscape of lactylation in hypoxia-treated RCC cells, we treated cells with 24 h hypoxia to induce maximum amount of hyperlactylated proteins and performed proteome and <em>lactylome</em>" ]
+  }
+}, {
+  "accession" : "PXD048244",
+  "title" : "Lactylation of nucleus pulposus cells",
+  "projectDescription" : "Nucleus pulposus (NP) resides in hypoxic microenvironment due to the avascular structure of intervertebral disc (IVD). Intracellular lactate drives lysine lactylation (Kla) as a newly epigenetic modification. However, the impact of Kla on NPCs remains unknown. Using liquid chromatography-tandem mass spectrometry (LC-MS/MS), we showed a global lactylome profiling on NPCs cultured in normoxia and hypoxia environment and found that 3510 lactylation sites on 1052 proteins in NPCs on non-histone proteins. Moreover, there are 18 proteins with 129 Kla sites exclusively detected in the normoxia group, and 117 Kla sites in 27 proteins were specific in hypoxia group. Together, our dates reveals that Kla plays an important role in regulating cellular metabolism and may contribute to IDD progression.",
+  "dataProcessingProtocol" : "Mass Spectrometer: The tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile/in water), directly loaded onto a home-made reversed-phase analytical column (25-cm length, 75/100 μm i.d.). Peptides were separated with a gradient from 6% to 24% solvent B (0.1% formic acid in acetonitrile) over 70 min, 24% to 35% in 14 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 450 nL/min on a nanoElute UHPLC system (Bruker Daltonics). The peptides were subjected to capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry. The electrospray voltage applied was 1.60 kV. Precursors and fragments were analyzed at the TOF detector, with a MS/MS scan range from 100 to 1700 m/z. The timsTOF Pro was operated in parallel accumulation serial fragmentation (PASEF) mode. Precursors with charge states 0 to 5 were selected for fragmentation, and 10 PASEF-MS/MS scans were acquired per cycle. The dynamic exclusion was set to 30 s. Database Search: The resulting MS/MS data were processed using MaxQuant search engine (v.1.6.15.0). Tandem mass spectra were searched against the human SwissProt database (20422 entries) concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 2 missing cleavages. The mass tolerance for precursor ions was set as 20 ppm in first search and 5 ppm in main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification, and acetylation on protein N-terminal and oxidation on Met were specified as variable modifications. FDR was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "NPCs were isolated from the central NP tissues of IVDs in male Sprague-Dawley rats weighing 220 g. NP tissues were separated and then digested using 0.25% trypsin at 37°C for 30 minutes, followed by type II collagenase digestion at 37°C for 3 hours. The isolated cells were cultured in DMEM/F12 medium supplemented with 10% fetal bovine serum (Gibco) and 1% penicillin/streptomycin (Gibco) in 5% CO2 incubator at 37°C. NPCs were divided into two groups: normoxia control group (NC, cultured in 21% O2) and hypoxic group (HY, cultured in 1% O2) for 24 hours and then were collected for further analysis.  Protein Extraction: Sample was sonicated three times on ice using a high intensity ultrasonic processor (Scientz) in lysis buffer (8 M urea, 1% protease inhibitor cocktail). (Note: For PTM experiments, inhibitors were also added to the lysis buffer, e.g. 3 μM TSA and 50 mM NAM for acetylation, 1% phosphatase inhibitor for phosphorylation). The remaining debris was removed by centrifugation at 12,000 g at 4 °C for 10 min. Finally, the supernatant was collected and the protein concentration was determined with BCA kit according to the  Trypsin Digestion: For digestion, the protein solution was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. The protein sample was then diluted by adding 100 mM TEAB to urea concentration less than 2 M. Finally, trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight and 1:100 trypsin-to-protein mass ratio for a second 4 h-digestion. Finally, the peptides were desalted by C18 SPE column. HPLC Fractionation: The sample was fractionated into fractions by high pH reverse-phase HPLC using Agilent 300 Extend C18 column (5 μm particles, 4.6 mm ID, 250 mm length). Briefly, peptides were separated with a gradient of 2% to 60% acetonitrile in 10 mM ammonium bicarbonate pH 10 over 80 min into 80 fractions. Then, the peptides were combined into 9 fractions and dried by vacuum centrifuging. Pan-antibody-based PTM enrichment: To enrich modified peptides, tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (Lot number xxx, PTM Bio) at 4°C overnight with gentle shaking. Then the beads were washed for four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturer’s instructions.",
+  "projectTags" : [ ],
+  "keywords" : [ "Intervertebral disc degeneration", "Lactylation", "Nucleus pulposus cells" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2025-05-06",
+  "updatedDate" : "2024-01-04",
+  "submissionDate" : "2024-01-04",
+  "downloadCount" : 558,
+  "avgDownloadsPerFile" : 39.857143,
+  "botCount" : 45,
+  "hubCount" : 509,
+  "organicCount" : 4,
+  "percentile" : 21,
+  "yearlyDownloads" : [ {
+    "year" : "2025",
+    "count" : 396
+  }, {
+    "year" : "2026",
+    "count" : 162
+  } ],
+  "submitters" : [ "Jun Dai" ],
+  "labPIs" : [ "Jun Dai" ],
+  "affiliations" : [ "The Second Affiliated Hospital of Soochow University" ],
+  "instruments" : [ "autoflex" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "cell culture", "Rattus norvegicus (Rat)" ],
+  "organisms" : [ "Rattus norvegicus (rat)" ],
+  "organismsPart" : [ "Cell culture" ],
+  "diseases" : [ ],
+  "references" : [ "Sheng L, Xu H, Wang Y, Ni J, Xiang T, Xu H, Zhou X, Wei K, Dai J. Systematic analysis of lysine lactylation in nucleus pulposus cells. iScience. 2024 27(11):111157--pubMed:39524337--doi: 10.1016/j.isci.2024.111157" ],
+  "experimentTypes" : [ "Data-dependent acquisition" ],
+  "projectFileNames" : [ "AE141LQ_NC1_Slot1-19_1_10314.d.zip", "AE141LPLa_NC2_Slot2-15_1_10722.d.zip", "AE141LPLa_NC3_Slot2-16_1_10724.d.zip", "AE141LQ_HY1_Slot1-22_1_10318.d.zip", "AE141LPLa_HY2_Slot2-18_1_10728.d.zip", "AE141LQ_HY2_Slot1-23_1_10319.d.zip", "AE141LQ_NC3_Slot1-21_1_10316.d.zip", "AE141LPLa_NC1_Slot2-14_1_10720.d.zip", "checksum.txt", "AE141LQ_NC2_Slot1-20_1_10315.d.zip", "AE141LPLa_HY3_Slot2-19_1_10730.d.zip", "combined.zip", "PLa-combined.zip", "AE141LPLa_HY1_Slot2-17_1_10726.d.zip", "AE141LQ_HY3_Slot1-24_1_10320.d.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "Using liquid chromatography-tandem mass spectrometry (LC-MS/MS), we showed a global <em>lactylome</em> profiling on NPCs cultured in normoxia and hypoxia environment and found that 3510 lactylation sites on 1052" ]
+  }
+}, {
+  "accession" : "PXD046631",
+  "title" : "Lysine lactylation of mouse ischemia reperfusion heart",
+  "projectDescription" : "We analyzed the lactylomes and proteomes of infarcted myocardium in mice subjected to sham treatment, myocardial infarction (MI) for 30 min or MI followed by I/R for 6 h using liquid chromatography-tandem mass spectrometry (LC–MS/MS) system.",
+  "dataProcessingProtocol" : "MS/MS data were processed using the MaxQuant search engine (v.1.6.15.0). Tandem mass spectra were searched against the human SwissProt database (20,422 entries) concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 2 missing cleavages. The mass tolerance for precursor ions was set as 20 ppm in the first search and 5 ppm in the main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification, and acetylation on protein N-terminal and oxidation on Met were specified as variable modifications. The false discovery rate (FDR) was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "Protein preprocessing for LC-MS/MS Left ventricular samples were collected in liquid nitrogen and grinded into powder. Further sonication of the tissue fragments was performed on ice in a urea-containing lysis buffer (8 M urea, 1% protease inhibitor cocktail, 3 μM trichostatin A (TSA), 50 mM N-acetylmuramic acid (NAM) and 2 mM EDTA) using a high-intensity ultrasonic processor (Xiaomei Ultrasonic Instrument (Kunshan) Co., Ltd., XM-26A). Lysed tissue was centrifuged at 12,000 × g at 4 °C for 10 min, and the supernatant was collected. Protein concentrations was determined using a BCA kit according to the manufacturer’ s instructions (P0011, Beyotime, China). Equal amounts of protein were retrieved from each sample, and the final volume was adjusted using the lysis buffer to ensure equal concentration. Trichloroacetic acid (TCA) was slowly added to a final concentration of 20% and briefly vortexed for precipitation at 4 °C for 2 h. The sample was then centrifuged at 4500 × g for 5 min, and the supernatant was discarded. The precipitate was rinsed with precooled acetone. After air drying, tetraethylammonium bromide (TEAB) was added to a final concentration of 200 mM. Then, the precipitate was sonicated. Trypsin was added at a ratio of 1: 50 (trypson: protein, m/m), and the sample was digested at 37 °C overnight. Dithiothreitol (DTT) was added into the solution at the final concentration of 5 mM for reduction at 56 °C for 30 min. Iodoacetamide (IAM) was finally added to a final concentration of 11 mM to alklyate reduced cysteine residues. The sample was incubated at room temperature for 15 min, protected from light. LC-MS/MS analysis Tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile in water). Then, peptides were separated using a nanoElute ultra-high-performance liquid chromatography (UHPLC) system (Bruker Daltonics, Inc., Billerica, MA, USA). Solvent B was 0.1 % formic acid in acetonitrile. All steps were performed at a constant flow rate of 450 nl/min, with liquid level gradient setting: 0-42 min, 7%-24% B; 42-54 min, 24%-32% B; 54-57 min, 32%-80% B; 57-60 min, 80% B. After separation by UHPLC system, 40 μg of peptides per sample were loaded onto a capillary column for ionizatoin. Samples were analyzed by the timsTOF Pro mass spectrometer (Bruker Daltonics). The electrospray voltage applied was 1.60 kV. Precursor and fragment ions were analyzed at the time-of-flight (TOF) detector, with an MS/MS scan range of 100-1700 m/z. The timsTOF Pro was operated in parallel accumulation-serial fragmentation (PASEF) mode. Precursor ions with charge states of 0-5 were selected for fragmentation, and 10 PASEF-MS/MS scans were acquired per cycle. The dynamic exclusion setting was 30 s.  Enrichment of lactylated peptides To enrich for lactylated peptides, digested peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed pan-lactylation antibody beads (PTM-1404, PTM Bio) at 4 °C overnight with gentle shaking. Then, the beads were washed for four times with NETN buffer and twice with water. Bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore, ZTC18M096) according to the manufacturer’ s instructions.",
+  "projectTags" : [ ],
+  "keywords" : [ "Heart", "Mouse", "Lysine lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2024-11-20",
+  "updatedDate" : "2023-11-03",
+  "submissionDate" : "2023-11-03",
+  "downloadCount" : 1735,
+  "avgDownloadsPerFile" : 82.61905,
+  "percentile" : 53,
+  "yearlyDownloads" : [ {
+    "year" : "2024",
+    "count" : 25
+  }, {
+    "year" : "2025",
+    "count" : 1504
+  }, {
+    "year" : "2026",
+    "count" : 206
+  } ],
+  "submitters" : [ "le wang" ],
+  "labPIs" : [ "Le Wang" ],
+  "affiliations" : [ "State Key Laboratory of Cardiovascular Disease, Fuwai Hospital, National Center for Cardiovascular Diseases, Chinese Academy of Medical Sciences and Peking Union Medical College, Beijing 100037, China" ],
+  "instruments" : [ "Bruker Daltonics timsTOF series" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "Mus musculus (Mouse)", "heart", "acute myocardial infarction" ],
+  "organisms" : [ "Mus musculus", "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Heart" ],
+  "diseases" : [ "Acute myocardial infarction" ],
+  "references" : [ "Wang L, Li D, Yao F, Feng S, Tong C, Rao R, Zhong M, Wang X, Feng W, Hu Z, Jin B, Wang L, Hu S, Zhou B. Serpina3k lactylation protects from cardiac ischemia reperfusion injury. Nat Commun. 2025 16(1):1012--pubMed:39856050--doi: 10.1038/s41467-024-55589-w" ],
+  "experimentTypes" : [ "Data-dependent acquisition", "Bottom-up proteomics" ],
+  "sdrf" : "Heart Nt=label free sample;ac=ms:1002038 Nt=trypsin;ac=ms:1001251 Mus musculus Nt=vertebrates;vv=v1.1.0 Nt=timstof pro;ac=ms:1003005 V1.1.0 Nt=carbamidomethyl;ac=unimod:4;ta=c;mt=fixed Nt=oxidation;ac=unimod:35;ta=m;mt=variable Nt=ms-proteomics;vv=v1.1.0 Nt=data-dependent acquisition;ac=pride:0000627 Nt=sdrf-skeleton-gen;vv=v2.0.0 Proteomic profiling by mass spectrometry",
+  "projectFileNames" : [ "MI_30_1_Slot2-39_1_14095.d.zip", "KLa_MI_6h_3_Slot1-6_1_5753.d.zip", "KLa_SHAM_2_Slot1-8_1_5757.d.zip", "SHAM_3_Slot2-38_1_14093.d.zip", "SHAM_1_Slot2-36_1_14091.d.zip", "txt.zip", "MI_30_2_Slot2-40_1_14096.d.zip", "IR_6h_2_Slot2-34_1_14088.d.zip", "IR_6h_1_Slot2-33_1_14087.d.zip", "combined.zip", "SHAM_2_Slot2-37_1_14092.d.zip", "KLa_SHAM_1_Slot1-7_1_5755.d.zip", "KLa_SHAM_3_Slot1-9_1_5759.d.zip", "KLa_MI_6h_2_Slot1-5_1_5751.d.zip", "KLa_MI30_1_Slot1-10_1_5761.d.zip", "KLa_MI30_2_Slot1-11_1_5763.d.zip", "MI_30_3_Slot2-41_1_14097.d.zip", "IR_6h_3_Slot2-35_1_14089.d.zip", "KLa_MI_6h_1_Slot1-4_1_5749.d.zip", "KLa_MI30_3_Slot1-12_1_5765.d.zip", "PXD046631_community_annotated.sdrf.tsv" ],
+  "highlights" : {
+    "projectDescription" : [ "We analyzed the <em>lactylomes</em> and proteomes of infarcted myocardium in mice subjected to sham treatment, myocardial infarction (MI) for 30 min or MI followed by I/R for 6 h using liquid chromatography-tandem" ]
+  }
+}, {
+  "accession" : "PXD046488",
+  "title" : "Global Analysis of Lysine Lactylation of Germinated Seeds in Wheat",
+  "projectDescription" : "Protein lactylation is a newly discovered posttranslational modification (PTM) and involved in multiple biological processes both in mammalian cells and rice grains. However, the function of lysine lactylation remains unexplored in wheat. In this study, we performed the first comparative proteomes and lysine lactylomes during seed germination of wheat. In total, 8,000 proteins and 927 lactylated sites in 394 proteins were identified at 0 and 12 hour after imbibition (HAI). Functional enrichment analysis showed that glycolysis and the TCA cycle related proteins were significantly enriched, and more differentially lactylated proteins were enriched in up-regulated lactylated proteins at 12 HAI vs 0 HAI through KEGG pathway and protein domain enrichment analysis compared to down-regulated lactylated proteins. Meanwhile, ten particularly preferred amino acids near lactylation sites were found in the embryos of germinated seeds: AA*KlaT, A***KlaD********A, KlaA**T****K, K******A*Kla, K*Kla********K, KlaA******A, Kla*A, KD****Kla, K********Kla and KlaG. These results supplied a comprehensive profile of lysine lactylation of wheat and indicated that protein lysine lactylation played important functions in several biological processes.",
+  "dataProcessingProtocol" : "The obtained MS/MS raw data of lactylated peptides were processed by MaxQuant with integrated Andromeda search engine (v.1.5.2.8). The tandem mass spectra were searched against UniProt_Triticum database (146,090 sequences, released March, 2015) concatenated with reverse decoy database. The parameters in MaxQuant were performed according to Zhang et al. The minimum peptide length was set to 7. All the other parameters in MaxQuant were set as default values. The site localization probability was set as >0.75.",
+  "sampleProcessingProtocol" : "QiMin 23, the common wheat variety (Triticum aestivum L.), was used in the study. The seeds were washed three times in distilled water and then imbibed in a dark growth chamber at 21°C. The embryos of 0, 6, 12, 24 and 48 h after imbibition (HAI) were collected respectively with three biological replicates, and then were snap-frozen for 1 minute with liquid nitrogen and stored at -80°C for further western blotting, proteome or acetylome analysis. Proteins of QiMin 23 embryos were extracted with a modified phenol isolation proto-col. In brief, embryos were ground into fine powder in liquid nitrogen and homog-enized in lysis buffer (0.5 M Tris 8.0, 1 M sucrose, 50 mM ascorbic acid, 0.1 M KCl, 1 % NaDOC, 1 % NP40, 10 mM EDTA, 10 mM DTT, and 1 % protease inhibitor cocktail; the final pH was 8.0). The resulting solution was sonicated on ice for 30 min and then added equal volume of tris-saturated phenol (pH 8.0). The remaining debris were depleted by centrifugation for 10 min at 16 000g. Next, the supernatant was added to four volumes of precipitation buffer (methanol with 0.1 M ammonium acetate, precooled at -20 ℃ before use) and stored at -20 ℃ overnight. The pellet was collected though centrifugation at 16,000 g for 10 min and then was rinsed with cold methanol for three times. Add 0.4 mL lysis buffer to the final protein pellet and the protein concentration was estimated with 2D Quant kit (GE Healthcare).",
+  "projectTags" : [ ],
+  "keywords" : [ "Posttranslational modification; lactylome; seed germination; wheat" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2024-01-26",
+  "updatedDate" : "2023-10-30",
+  "submissionDate" : "2023-10-30",
+  "downloadCount" : 1200,
+  "avgDownloadsPerFile" : 109.09091,
+  "botCount" : 207,
+  "hubCount" : 985,
+  "organicCount" : 8,
+  "percentile" : 42,
+  "yearlyDownloads" : [ {
+    "year" : "2024",
+    "count" : 106
+  }, {
+    "year" : "2025",
+    "count" : 1013
+  }, {
+    "year" : "2026",
+    "count" : 81
+  } ],
+  "submitters" : [ "Xianliang Ma" ],
+  "labPIs" : [ "Weiwei Guo" ],
+  "affiliations" : [ "College of Agronomy, Qingdao Agricultural University, Qingdao Shandong, China" ],
+  "instruments" : [ "Q Exactive HF" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "whole body", "Triticum aestivum (Wheat)" ],
+  "organisms" : [ "Triticum aestivum (wheat)" ],
+  "organismsPart" : [ "Whole body" ],
+  "diseases" : [ ],
+  "references" : [ "Zhu J, Guo W, Lan Y. Global Analysis of Lysine Lactylation of Germinated Seeds in Wheat. Int J Mol Sci. 2023 24(22):16195--pubMed:38003390--doi: 10.3390/ijms242216195" ],
+  "experimentTypes" : [ "Bottom-up proteomics" ],
+  "projectFileNames" : [ "10.raw", "1.raw", "txt.rar", "3.raw", "8.raw", "9.raw", "2.raw", "7.raw", "4.raw", "5.raw", "6.raw" ],
+  "highlights" : {
+    "keywords" : [ "Posttranslational modification; <em>lactylome</em>; seed germination; wheat" ],
+    "projectDescription" : [ "In this study, we performed the first comparative proteomes and lysine <em>lactylomes</em> during seed germination of wheat." ]
+  }
+}, {
+  "accession" : "PXD046495",
+  "title" : "Lactylome analysis reveals potential target modified proteins in the retina of form-deprivation myopia",
+  "projectDescription" : "Myopia has become the major cause of visual impairment worldwide. Although the pathogenesis of myopia remains controversial, proteomics studies suggest that dysregulation of retinal metabolism is potentially involved in the pathology of myopia. Lysine lactylation of proteins plays a key role in regulating cellular metabolism, but little is known about its role in the form-deprived myopic retina. In this study, we performed lactylation proteomic analysis of the retinas of form-deprived myopic guinea pigs and found downregulated levels of lactylation of metabolism-critical enzymes in the retina. As the first report on retinal lactylation in myopic eyes, this study provides a reliable basis for further studies on retinal lactylation in myopic eyes.",
+  "dataProcessingProtocol" : "The resulting MS/MS data were processed using the MaxQuant search engine (v.1.6.15.0). Search the UniProt database for tandem mass spectra of guinea pigs (Cavia porcellus). A series of bioinformatics analyses, such as GO functional annotation, KEGG pathway enrichment analysis, subcellular localization, protein-protein interaction network, and Motif analysis, were then performed.",
+  "sampleProcessingProtocol" : "After 2 weeks of form deprivation, guinea pigs were executed with an overdose of barbiturates. Six retinas from each group were taken for subsequent protein extraction, trypsin digestion, modified peptide enrichment, LC-MS/MS assay, and bioinformatics analysis.",
+  "projectTags" : [ ],
+  "keywords" : [ "Form-deprivation myopia", "Lactate", "Aerobic glycolysis", "Retina", "Lysine lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2024-10-17",
+  "updatedDate" : "2023-10-30",
+  "submissionDate" : "2023-10-30",
+  "downloadCount" : 348,
+  "avgDownloadsPerFile" : 174.0,
+  "botCount" : 149,
+  "hubCount" : 167,
+  "organicCount" : 32,
+  "percentile" : 13,
+  "yearlyDownloads" : [ {
+    "year" : "2024",
+    "count" : 28
+  }, {
+    "year" : "2025",
+    "count" : 292
+  }, {
+    "year" : "2026",
+    "count" : 28
+  } ],
+  "submitters" : [ "jiaojiao Feng" ],
+  "labPIs" : [ "Hongsheng Bi" ],
+  "affiliations" : [ "Affiliated Eye Hospital of Shandong University of Traditional Chinese Medicine" ],
+  "instruments" : [ "timsTOF" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "retina", "myopia", "Cavia porcellus (Guinea pig)" ],
+  "organisms" : [ "Cavia porcellus (guinea pig)" ],
+  "organismsPart" : [ "Retina" ],
+  "diseases" : [ "Myopia" ],
+  "references" : [ "Feng J, Chen X, Li R, Xie Y, Zhang X, Guo X, Zhao L, Xu Z, Song Y, Song J, Bi H. Lactylome analysis reveals potential target modified proteins in the retina of form-deprivation myopia. iScience. 2024 27(9):110606--pubMed:39246443--doi: 10.1016/j.isci.2024.110606" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "projectFileNames" : [ "checksum.txt", "txt.zip", "GE039LPLa.d.zip" ],
+  "highlights" : {
+    "references" : [ "<em>Lactylome</em> analysis reveals potential target modified proteins in the retina of form-deprivation myopia. iScience. 2024 27(9):110606--pubMed:39246443--doi: 10.1016/j.isci.2024.110606" ],
+    "title" : [ "<em>Lactylome</em> analysis reveals potential target modified proteins in the retina of form-deprivation myopia" ]
+  }
+}, {
+  "accession" : "PXD045802",
+  "title" : "Quantitative Proteome and Lysine Lactylome of Proteins in the Cortex of Sham and CCI Mouse",
+  "projectDescription" : "Quantitative proteome and lysine lactylome analyses were conducted on proteins extracted from the cortex of sham and controlled cortical impact (CCI) mice.",
+  "dataProcessingProtocol" : "The resulting MS/MS data were processed using MaxQuant search engine (v.1.6.15.0). Tandem mass spectra were searched against the human SwissProt database (20422 entries) concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 2 missing cleavages. The mass tolerance for precursor ions was set as 20 ppm in first search and 5 ppm in main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification, and acetylation on protein N-terminal and oxidation on Met were specified as variable modifications. FDR was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "Protein Extraction: The sample was grinded with liquid nitrogen into cell powder and then transferred to a 5-mL centrifuge tube. After that, four volumes of lysis buffer (8 M urea, 1% protease inhibitor cocktail) was added to the cell powder, followed by sonication three times on ice using a high intensity ultrasonic processor (Scientz). (Note: For PTM experiments, inhibitors were also added to the lysis buffer, e.g. 3 μM TSA and 50 mM NAM for acetylation, 1% phosphatase inhibitor for phosphorylation). The remaining debris was removed by centrifugation at 12,000 g at 4 °C for 10 min. Finally, the supernatant was collected and the protein concentration was determined with BCA kit according to the manufacturer’s instructions. Trypsin Digestion: For digestion, the protein solution was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. The protein sample was then diluted by adding 100 mM TEAB to urea concentration less than 2 M. Finally, trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight and 1:100 trypsin-to-protein mass ratio for a second 4 h-digestion. Finally, the peptides were desalted by C18 SPE column. Pan-antibody-based PTM enrichment: To enrich modified peptides, tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (Lot number xxx, PTM Bio) at 4°C overnight with gentle shaking. Then the beads were washed for four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturer’s instructions. 4D Mass Spectrometer: The tryptic peptides were dissolved in solvent A (0.1% formic acid, 2% acetonitrile/in water), directly loaded onto a home-made reversed-phase analytical column (25-cm length, 75/100 μm i.d.). Peptides were separated with a gradient from 6% to 24% solvent B (0.1% formic acid in acetonitrile) over 70 min, 24% to 35% in 14 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 450 nL/min on a nanoElute UHPLC system (Bruker Daltonics). The peptides were subjected to capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry. The electrospray voltage applied was 1.60 kV. Precursors and fragments were analyzed at the TOF detector, with a MS/MS scan range from 100 to 1700 m/z. The timsTOF Pro was operated in parallel accumulation serial fragmentation (PASEF) mode. Precursors with charge states 0 to 5 were selected for fragmentation, and 10 PASEF-MS/MS scans were acquired per cycle. The dynamic exclusion was set to 30 s.",
+  "projectTags" : [ ],
+  "keywords" : [ "Mouse", "Cortex", "Lactylation" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "pride.project:PXD045404" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2026-03-02",
+  "updatedDate" : "2023-09-29",
+  "submissionDate" : "2023-09-29",
+  "downloadCount" : 0,
+  "avgDownloadsPerFile" : 0.0,
+  "percentile" : 0,
+  "submitters" : [ "Weiji Weng" ],
+  "labPIs" : [ "Junfeng Feng" ],
+  "affiliations" : [ "Brain Injury Center, Renji Hospital, School of Medicine, Shanghai Jiao Tong University; Shanghai Institute of Head Trauma, Shanghai, China, 200127." ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ "MaxQuant" ],
+  "sampleAttributes" : [ "neuron", "brain disease", "brain", "Mus musculus (Mouse)" ],
+  "organisms" : [ "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Brain", "Neuron" ],
+  "diseases" : [ "Brain disease" ],
+  "references" : [ "Weng W, He Z, Ma Z, Huang J, Han Y, Feng Q, Qi W, Peng Y, Wang J, Gu J, Wang W, Lin Y, Jiang G, Jiang J, Feng J. Tufm lactylation regulates neuronal apoptosis by modulating mitophagy in traumatic brain injury. Cell Death Differ. 2025 32(3):530-545--pubMed:39496783--doi: 10.1038/s41418-024-01408-0" ],
+  "experimentTypes" : [ "Affinity purification coupled with mass spectrometry proteomics" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "FE296LPLa_C4_Slot2-21_1_21467.zip", "FE296LPLa_C3_Slot2-20_1_21465.zip", "FE296LPLa_S2_Slot2-14_1_21453.zip", "FE296LPLa_C2_Slot2-19_1_21463.zip", "FE296LPLa_S4_Slot2-16_1_21457.zip", "FE296LPLa_S1_Slot2-13_1_21451.zip", "FE296LPLa_C5_Slot2-22_1_21469.zip", "MS_identified_information.xlsx", "FE296LPLa_S5_Slot2-17_1_21459.zip", "FE296LPLa_S3_Slot2-15_1_21455.zip", "FE296LPLa_C1_Slot2-18_1_21461.zip" ],
+  "highlights" : {
+    "projectDescription" : [ "Quantitative proteome and lysine <em>lactylome</em> analyses were conducted on proteins extracted from the cortex of sham and controlled cortical impact (CCI) mice." ],
+    "title" : [ "Quantitative Proteome and Lysine <em>Lactylome</em> of Proteins in the Cortex of Sham and CCI Mouse" ]
+  }
+}, {
+  "accession" : "PXD040514",
+  "title" : "Analysis of Lysine Lactylation in CD4+ T cells of normal and EAU mouse",
+  "projectDescription" : "Primary CD4+ T cells were isolated from normal and EAU mice spleens and used for lactylome analysis.",
+  "dataProcessingProtocol" : "The MaxQuant search engine (v.1.6.15.0) processed the MS/MS data. The human SwissProt database (20422 items) and reverse decoy database were used to search tandem mass spectra. FDR<1%. By centralizing the signal intensity levels across many samples, the relative quantitative values of changed peptides were determined. After filtering lysine Kla sites (localization probability >0.75), two experiments were used to determine the relative quantitative values of each sample. All of the quantified lysine Kla peptide ratios were adjusted in accordance with the respective protein expression levels. The KEGG and GO database was used to annotate the protein pathways.",
+  "sampleProcessingProtocol" : "CD4+ T cells isolated from normal and EAU mice were sonicated by ultrasonic processor in lysis buffer. Then the protein solution was digested with trypsin two times. Tryptic peptides were soaked in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 100 mM NaCl, 0.5% NP-40, pH 8.0) and then incubated with prewashed beads (PTM-1404, PTM Bio) at 4 °C overnight to enrich Kla modified peptides. Trifluoroacetic acid (0.1%) was used to elute the bound peptides. The bound peptides were eluted using trifluoroacetic acid (0.1%). For LC-MS/MS analysis, the eluted peptides were vacuum-dried and desalted using C18 ZipTips (Millipore). Jingjie PTM Biolabs (Hangzhou, China) provided assistance with the LC-MS/MS analysis. Tryptic peptides were resolved in solvent A (0.1% formic acid, 2% acetonitrile/in water) and then separated by the Nano Elute HPLC system (Bruker Daltonics) at a flow rate of 450nL/min. The peptides were exposed to a capillary source before being subjected to mass spectrometry using timsTOF Pro (Bruker Daltonics) in parallel accumulation serial fragmentation (PASEF) mode.",
+  "projectTags" : [ ],
+  "keywords" : [ "Lactylation; cd4+ t cell; eau" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2023-08-29",
+  "updatedDate" : "2023-03-01",
+  "submissionDate" : "2023-03-01",
+  "downloadCount" : 1724,
+  "avgDownloadsPerFile" : 287.33334,
+  "percentile" : 53,
+  "yearlyDownloads" : [ {
+    "year" : "2023",
+    "count" : 536
+  }, {
+    "year" : "2024",
+    "count" : 509
+  }, {
+    "year" : "2025",
+    "count" : 652
+  }, {
+    "year" : "2026",
+    "count" : 27
+  } ],
+  "submitters" : [ "Shengping Hou" ],
+  "labPIs" : [ "Shengping Hou" ],
+  "affiliations" : [ "The first affiliated hospital of Chongqing Medical University" ],
+  "instruments" : [ "Bruker Daltonics timsTOF series" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "spleen", "T cell", "Mus musculus (Mouse)" ],
+  "organisms" : [ "Mus musculus (mouse)" ],
+  "organismsPart" : [ "Spleen", "T cell" ],
+  "diseases" : [ ],
+  "references" : [ "Fan W, Wang X, Zeng S, Li N, Wang G, Li R, He S, Li W, Huang J, Li X, Liu J, Hou S. Global lactylome reveals lactylation-dependent mechanisms underlying T<sub>H</sub>17 differentiation in experimental autoimmune uveitis. Sci Adv. 2023 9(42):eadh4655--pubMed:37851814--doi: 10.1126/sciadv.adh4655" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "EE369LQB1_Control_Slot1-41_1_21398.d.zip", "Proteomic-Search.zip", "EE369LPLaB1_EAU_Slot1-53_1_21418.d.zip", "EE369LPLaB1_Control_Slot1-52_1_21416.d.zip", "Lactylome-Search.zip", "EE369LQB1_EAU_Slot1-42_1_21400.d.zip" ],
+  "highlights" : {
+    "references" : [ "Global <em>lactylome</em> reveals lactylation-dependent mechanisms underlying T<sub>H</sub>17 differentiation in experimental autoimmune uveitis." ],
+    "projectDescription" : [ "Primary CD4+ T cells were isolated from normal and EAU mice spleens and used for <em>lactylome</em> analysis." ],
+    "projectFileNames" : [ "<em>Lactylome</em>-Search.zip" ]
+  }
+}, {
+  "accession" : "PXD038833",
+  "title" : "Analysis of proteome refines key molecular reprogramming mechanisms during oil production in Nannochloropsis oceanica",
+  "projectDescription" : "To examine the mechanisms during oil production and integrate analysis of lactylation in N. oceanica, protein expression profiles were tracked after nitrogen deprivation for three days using 4D label-free proteome method. Under nitrogen deprivation (ND) and nitrogen repletion (NR) cultivation conditions, we mapped proteome of proliferating microalgal cells.",
+  "dataProcessingProtocol" : "The resulting MS/MS data were processed using MaxQuant search engine (v.1.6.15.0). Tandem mass spectra were searched against Nannochloropsis protein database concatenated with reverse decoy database. FDR was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "Total proteins from microalgal cells were extracted. The sample was fractionated into fractions by high pH reverse-phase HPLC using Agilent 300 Extend C18 column (5 μm particles, 4.6 mm ID, 250 mm length). tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (Lot number PTM-1404, PTM Bio, Hangzhou) at 4°C overnight with gentle shaking. Then the beads were washed for four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturer’s instructions. The peptides were subjected to capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry.",
+  "projectTags" : [ ],
+  "keywords" : [ "Nannochloropsis", "Lc-ms", "Proteome", "Nitrogene deprivation" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "geo:GSE260894", "px:PXD038775", "pride.project:PXD038775", "geo:GSE261019" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2024-07-03",
+  "updatedDate" : "2022-12-15",
+  "submissionDate" : "2022-12-15",
+  "downloadCount" : 365,
+  "avgDownloadsPerFile" : 182.5,
+  "percentile" : 13,
+  "yearlyDownloads" : [ {
+    "year" : "2024",
+    "count" : 71
+  }, {
+    "year" : "2025",
+    "count" : 283
+  }, {
+    "year" : "2026",
+    "count" : 11
+  } ],
+  "submitters" : [ "Li Wei" ],
+  "labPIs" : [ "Li WEI" ],
+  "affiliations" : [ "Hainan Normal University" ],
+  "instruments" : [ "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "cell culture", "Nannochloropsis oceanica strain IMET1" ],
+  "organisms" : [ "Nannochloropsis oceanica strain imet1" ],
+  "organismsPart" : [ "Cell culture" ],
+  "diseases" : [ ],
+  "references" : [ "Ouyang L, Wang J, Zhu H, Wu Y, Wei L. Integration of Epigenome and Lactylome Reveals the Regulation of Lipid Production in <i>Nannochloropsis oceanica</i>. J Agric Food Chem. 2024--pubMed:38842303--doi: 10.1021/acs.jafc.4c01807" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "NannoLQB1.d.zip", "txt.rar" ],
+  "highlights" : {
+    "references" : [ "Integration of Epigenome and <em>Lactylome</em> Reveals the Regulation of Lipid Production in <i>Nannochloropsis oceanica</i>. J Agric Food Chem. 2024--pubMed:38842303--doi: 10.1021/acs.jafc.4c01807" ]
+  }
+}, {
+  "accession" : "PXD038775",
+  "title" : "Analysis of lactylome refines key molecular reprogramming mechanisms during oil production in Nannochloropsis oceanica",
+  "projectDescription" : "Lysine lactylation as a type of posttranslational modifications (PTMs) is recently associated with chromatin remodeling and gene transcription, but lysine lactylation of histone and non-histone proteins has not yet been studied in Nannochloropsis oceanica. To examine the prevalence and function of lactylation in N. oceanica, protein lactylation modification profiles were tracked after nitrogen deprivation for three days using 4D label-free proteome method. Under nitrogen deprivation (ND) and nitrogen repletion (NR) cultivation conditions, we mapped lactylome of proliferating microalgal cells.",
+  "dataProcessingProtocol" : "The resulting MS/MS data were processed using MaxQuant search engine (v.1.6.15.0). Tandem mass spectra were searched against Nannochloropsis protein database concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 2 missing cleavages. The mass tolerance for precursor ions was set as 20 ppm in first search and 5 ppm in main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification, and acetylation on protein N-terminal and oxidation on Met were specified as variable modifications. FDR was adjusted to < 1%.",
+  "sampleProcessingProtocol" : "Total proteins from microalgal cells were extracted and digested by trypsin. The sample was fractionated into fractions by high pH reverse-phase HPLC using Agilent 300 Extend C18 column (5 μm particles, 4.6 mm ID, 250 mm length). tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (Lot number PTM-1404, PTM Bio, Hangzhou) at 4°C overnight with gentle shaking. Then the beads were washed for four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturer’s instructions. The peptides were subjected to capillary source followed by the timsTOF Pro (Bruker Daltonics) mass spectrometry.",
+  "projectTags" : [ ],
+  "keywords" : [ "Nannochloropsis", "Lc-ms", "Lactylome", "Lactylation", "Nitrogene deprivation" ],
+  "doi" : "",
+  "otherOmicsLinks" : [ "geo:GSE260894", "pride.project:PXD038833", "geo:GSE261019", "px:PXD038833" ],
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2024-07-03",
+  "updatedDate" : "2022-12-13",
+  "submissionDate" : "2022-12-13",
+  "downloadCount" : 384,
+  "avgDownloadsPerFile" : 192.0,
+  "percentile" : 14,
+  "yearlyDownloads" : [ {
+    "year" : "2024",
+    "count" : 35
+  }, {
+    "year" : "2025",
+    "count" : 330
+  }, {
+    "year" : "2026",
+    "count" : 19
+  } ],
+  "submitters" : [ "Li Wei" ],
+  "labPIs" : [ "Li WEI" ],
+  "affiliations" : [ "Hainan Normal University" ],
+  "instruments" : [ "autoflex", "timsTOF Pro" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "cell culture", "Nannochloropsis oceanica strain IMET1" ],
+  "organisms" : [ "Nannochloropsis oceanica strain imet1" ],
+  "organismsPart" : [ "Cell culture" ],
+  "diseases" : [ ],
+  "references" : [ "Ouyang L, Wang J, Zhu H, Wu Y, Wei L. Integration of Epigenome and Lactylome Reveals the Regulation of Lipid Production in <i>Nannochloropsis oceanica</i>. J Agric Food Chem. 2024--pubMed:38842303--doi: 10.1021/acs.jafc.4c01807" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "sdrf" : "",
+  "projectFileNames" : [ "NannoLPLa.d.zip", "txt.rar" ],
+  "highlights" : {
+    "projectDescription" : [ "Under nitrogen deprivation (ND) and nitrogen repletion (NR) cultivation conditions, we mapped <em>lactylome</em> of proliferating microalgal cells." ],
+    "references" : [ "Integration of Epigenome and <em>Lactylome</em> Reveals the Regulation of Lipid Production in <i>Nannochloropsis oceanica</i>. J Agric Food Chem. 2024--pubMed:38842303--doi: 10.1021/acs.jafc.4c01807" ],
+    "keywords" : [ "<em>Lactylome</em>" ],
+    "title" : [ "Analysis of <em>lactylome</em> refines key molecular reprogramming mechanisms during oil production in Nannochloropsis oceanica" ]
+  }
+}, {
+  "accession" : "PXD033146",
+  "title" : "Quantitative Proteome and Lysine Lactylome of Proteins within Pathological Site of Rotator Cuff Tendinopathy",
+  "projectDescription" : "Lysine lactylation (Kla) is a newly discovered posttranslational modification showing the addition of an L-lactate-derived lactyl group to the lysine residue. Histone lactylation has been found to regulate the downstream genes expression involved in the process of infection clearance, homeostasis retore, and tumorigenesis. Like other metabolite mediated PTMs, which the cellular levels of these metabolites affect the stoichiometry of the corresponding PTMs, the level of Kla also responds to the intracellular lactate concentration in a dose-dependent fashion associated with glycolysis metabolism. It has long been noted that manipulation of glycolysis metabolism could affect the tendon cell function, tendon homeostasis, and healing process of tendon.Nonetheless, the lactylation sites and regulations in tendinopathy remain unexplored.",
+  "dataProcessingProtocol" : "The resulting MS/MS raw data were analyzed using MaxQuant search engine (v1.6.15.0). Tandem mass spectra were searched against the Homo_sapiens_9606_SP_20201214.fasta concatenated with a reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to no more than four missing cleavages. The minimum length of peptide segment was set to seven amino acid residues, and the maximum modification number of peptide segment was set to 5 The mass tolerances for the precursor ions were set to 20 ppm in the first search and 4.5 ppm in the main search. The quantitative method was TMT-6plex, and FDR of protein identification and PSM identification was adjusted to <1%.",
+  "sampleProcessingProtocol" : "Protein Extraction The sample was taken out from -80 °C, and a proper amount of tissue sample was weighed and placed into a mortar precooled with liquid nitrogen, and then fully grounded to powder by adding liquid nitrogen. After that, four volumes of lysis buffer was added to the tissue powder, followed by sonication. The remaining debris was removed by centrifugation at 12,000 g at 4 °C for 10 min. Finally, the supernatant was collected and the protein concentration was determined with BCA kit Proteins extractions from the same group were pooled and used for the following steps. Trypsin Digestion For digestion, the protein solution was reduced with 5 mM dithiothreitol for 30 min at 56 °C and alkylated with 11 mM iodoacetamide for 15 min at room temperature in darkness. The protein sample was then diluted by adding 100 mM tetraethyl-ammonium bromide to urea concentration less than 2M. Finally, trypsin was added at 1:50 trypsin-to-protein mass ratio for the first digestion overnight and 1:100 trypsin-to-protein mass ratio for a second 4 h-digestion. TMT Labeling After trypsin digestion, peptide was desalted by Strata X C18 SPE column (Phenomenex) and vacuum-dried. Peptide was reconstituted in 0.5 M TEAB and processed according to the manufacturer’s protocol for TMT kit (Thermo Fisher). Briefly, one unit of TMT reagent were thawed and reconstituted in acetonitrile. The peptide mixtures were then incubated for 2 h at room temperature and pooled, desalted and dried by vacuum centrifugation. HPLC Fractionation The tryptic peptides were fractionated into fractions by high pH reverse-phase HPLC using Thermo Betasil C18 column (5 μm particles, 4.6 mm ID, 250 mm length). Briefly, peptides were first separated with a gradient of 8% to 32% acetonitrile (pH 9.0) over 60 min into 60 fractions. Then, the peptides were combined into 4 fractions and dried by vacuum centrifuging. Affinity Enrichment Bio-material-based post-translational modification (PTM) enrichment (for phosphorylation): Peptide mixtures were first incubated with Fe-IMAC microspheres suspension with vibration in loading buffer (50% acetonitrile/6% trifluoroacetic acid). The Fe-IMAC microspheres with enriched phosphopeptides were collected by centrifugation. To remove nonspecifically adsorbed peptides, the Fe-IMAC microspheres were washed with 50% acetonitrile/6% trifluoroacetic acid and 30% acetonitrile/0.1% trifluoroacetic acid sequentially. To elute the enriched phosphopeptides from the Fe-IMAC microspheres, elution buffer containing 10% NH4OH was added and the enriched phosphopeptides were eluted with vibration. The supernatant containing phosphopeptides was collected and lyophilized for LC-MS/MS analysis. LC-MS/MS Analysis The tryptic peptides were dissolved in 0.1% formic acid (solvent A), directly loaded onto a home-made reversed-phase analytical column (15-cm length, 75 μm i.d.). The gradient was comprised of an increase from 6% to 23% solvent B (0.1% formic acid in 98% acetonitrile) over 26 min, 23% to 35% in 8 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 400 nL/min on an EASY-nLC 1000 UPLC system. The peptides were subjected to NSI source followed by tandem mass spectrometry (MS/MS) in Q Exactive™ HF-X (Thermo) coupled online to the UPLC. The electrospray voltage applied was 2.0 kV. The m/z scan range was 350 to 1800 for full scan, and intact peptides were detected in the Orbitrap at a resolution of 70,000. Peptides were then selected for MS/MS using NCE setting as 28 and the fragments were detected in the Orbitrap at a resolution of 17,500. A data-dependent procedure that alternated between one MS scan followed by 20 MS/MS scans with 15.0s dynamic exclusion. Automatic gain control (AGC) was set at 5E4. Fixed first mass was set as 100 m/z.",
+  "projectTags" : [ ],
+  "keywords" : [ "Rct;tendon; lysine lactylation;lc ms/ms" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2023-05-10",
+  "updatedDate" : "2022-04-11",
+  "submissionDate" : "2022-04-11",
+  "downloadCount" : 1978,
+  "avgDownloadsPerFile" : 131.86667,
+  "botCount" : 248,
+  "hubCount" : 1639,
+  "organicCount" : 91,
+  "percentile" : 57,
+  "yearlyDownloads" : [ {
+    "year" : "2023",
+    "count" : 792
+  }, {
+    "year" : "2024",
+    "count" : 483
+  }, {
+    "year" : "2025",
+    "count" : 698
+  }, {
+    "year" : "2026",
+    "count" : 5
+  } ],
+  "submitters" : [ "Yuan Lin" ],
+  "labPIs" : [ "Pengbin Yin" ],
+  "affiliations" : [ "Department of Orthopedics, The Fourth Medical Centre, Chinese PLA General Hospital, Beijing, China National Clinical Research Center for Orthopedics, Sports Medicine & Rehabilitation, Beijing, China" ],
+  "instruments" : [ "Q Exactive HF" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ "TMT" ],
+  "sampleAttributes" : [ "tendon", "Homo sapiens (Human)" ],
+  "organisms" : [ "Homo sapiens (human)" ],
+  "organismsPart" : [ "Tendon" ],
+  "diseases" : [ ],
+  "references" : [ "Lin Y, Chen M, Wang D, Yu Y, Chen R, Zhang M, Yu H, Huang X, Rao M, Wang Y, Li Y, Yan J, Yin P. Multi-Proteomic Analysis Reveals the Effect of Protein Lactylation on Matrix and Cholesterol Metabolism in Tendinopathy.  J Proteome Res. 2023--pubMed:37159428--doi: 10.1021/acs.jproteome.2c00756" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "projectFileNames" : [ "HA119TPLa_Fr2.raw", "HA119TQ_6.raw", "search_result-HA119TPLa.zip", "HA119TQ_3.raw", "HA119TQ_9.raw", "HA119TPLa_Fr3.raw", "HA119TQ_1.raw", "HA119TQ_5.raw", "HA119TPLa_Fr1.raw", "HA119TQ_7.raw", "HA119TPLa_Fr4.raw", "search_result-HA119TQ.zip", "HA119TQ_8.raw", "HA119TQ_4.raw", "HA119TQ_2.raw" ],
+  "highlights" : {
+    "title" : [ "Quantitative Proteome and Lysine <em>Lactylome</em> of Proteins within Pathological Site of Rotator Cuff Tendinopathy" ]
+  }
+}, {
+  "accession" : "PXD032921",
+  "title" : "Post-translational changes in Phialophora verrucosa via lysine lactylation during prolonged presence in a patient with a CARD9-related immune disorder",
+  "projectDescription" : "Lysine lactylation (Kla) is a newly discovered histone post-translational modification (PTM), playing important roles in regulating transcription in macrophages. Increasing evidence demonstrates that lysine lactylation plays an important regulatory role in metabolic processes in both bacterial and human cells. However, little is known about the extent and function of lysine lactylation in fungi, here investigated with the black yeast Phialophora verrucosaverrucose as a model organism. WeHere, we report the first proteomic survey of this modification in P. verrucosa. We performed a global lactylation analysis of P. verrucosa using high accuracy bottom-up nano-LC-MS/MS in combination wwith the enrichment of lactylated peptides from digested cell lysates and subsequent peptide identification. In total, 636 lactylation sites on 420 lactylated proteins were identified in this pathogen, of which contained in 26 types of modification motifs. Our results show that over 85% of lactylated proteins were distributed in cytoplasm, mitochondria, and nucleus. The identified proteins were found to be involved associated toin diverse biological processes and were significantly enriched in the melanin biosynthesis process. Most strikingly, Kla was found in 23 structural constituent proteins of ribosome, indicating an impact of Kla in protein synthesis . Moreover, 12 lactylated proteins participated in fungal pathogenicity, suggesting a potential role for Kla in this process. Protein interaction network analysis suggested that a mass of protein interactions are regulated by lactylation.  Together, our findings reveal widespread roles for lysine lactylation in regulating metabolism and melanin biosynthesis in P. verrucosa. Our data provide a rich resource for functional analyses of lactylation and facilitate the dissection of metabolic networks in this pathogen. The combined data sets represent the first report of the lactylome of P. verrucosa and provide a good foundation for further explorations of Kla in clinical fungal pathogens.",
+  "dataProcessingProtocol" : "Database  Search The resulting MS/MS data were processed using the MaxQuan t search engine (v1.6.15.0). Tandem mass spectra were searched against the database Phialophora_verrucosa_39412_TX_BMU5_combine_20201207_cdhit1.fasta (27369 sequences), an anti-library  was added to calculate the false positive rate (FDR ) caused by random matching, and a common contamination library was added to the database to eliminate the influence of contaminating proteins in the identification results.",
+  "sampleProcessingProtocol" : "Protein Extraction  Fungal material was grinded to powder using liquid nitrogen and transferred to a 5-mL centrifuge tube. Four volumes of lysis buffer (8 M urea, 1% Triton-100, 10 mM dithiothreitol [DTT], 1% Protease Inhibitor Cocktail (Roche cOmplete™) was added, followed by sonication three times on ice using a high intensity ultrasonic processor (Ningbo Scientz Biotechnol., Zhejiang, China). The remaining debris was removed by centrifugation at 20,000 g at 4°C for 10 min. Protein was precipitated with cold 20% trichloroacetic acid (TCA) for 2 h at –20°C. After centrifugation at 12,000 g, 4°C for 10 min, the supernatant was discarded. The remaining precipitate was washed three times with cold acetone. The protein was redissolved in 8 M urea and the concentration was determined with BCA kit (Tiangen, Beijing, China) according to the manufacturer’s instructions.",
+  "projectTags" : [ ],
+  "keywords" : [ "Phialophora verrucosa", "Lc-ms/ms" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2022-10-15",
+  "updatedDate" : "2022-04-02",
+  "submissionDate" : "2022-04-02",
+  "downloadCount" : 871,
+  "avgDownloadsPerFile" : 174.2,
+  "botCount" : 350,
+  "hubCount" : 498,
+  "organicCount" : 23,
+  "percentile" : 32,
+  "yearlyDownloads" : [ {
+    "year" : "2023",
+    "count" : 262
+  }, {
+    "year" : "2024",
+    "count" : 188
+  }, {
+    "year" : "2025",
+    "count" : 354
+  }, {
+    "year" : "2026",
+    "count" : 67
+  } ],
+  "submitters" : [ "Yinggai Song" ],
+  "labPIs" : [ "Yinggai Song" ],
+  "affiliations" : [ "peling university first hospital" ],
+  "instruments" : [ "Q Exactive" ],
+  "softwares" : [ ],
+  "quantificationMethods" : [ "TMT" ],
+  "sampleAttributes" : [ "Fungi", "Phialophora verrucosa", "phaeohyphomycosis", "fungal sporangiophore" ],
+  "organisms" : [ "Fungi", "Phialophora verrucosa" ],
+  "organismsPart" : [ "Fungal sporangiophore" ],
+  "diseases" : [ "Phaeohyphomycosis" ],
+  "references" : [ "Song Y, Liu X, Stielow JB, de Hoog S, Li R. Post-translational changes in <i>Phialophora verrucosa via</i> lysine lactylation during prolonged presence in a patient with a <i>CARD9</i>-related immune disorder. Front Immunol. 2022 13:966457--pubMed:36003392--doi: 10.3389/fimmu.2022.966457" ],
+  "experimentTypes" : [ "Gel-based experiment" ],
+  "projectFileNames" : [ "checksum.txt", "txt_1.zip", "HA070TPLaB1_Fr2.raw", "HA070TPLaB1_Fr3.raw", "HA070TPLaB1_Fr1.raw", "HA070TPLaB1_Fr4.raw" ],
+  "highlights" : {
+    "projectDescription" : [ "The combined data sets represent the first report of the <em>lactylome</em> of P. verrucosa and provide a good foundation for further explorations of Kla in clinical fungal pathogens." ]
+  }
+}, {
+  "accession" : "PXD031526",
+  "title" : "Systematic Identification of the Lysine lactylation in the Protozoan Parasite Toxoplasma gondii",
+  "projectDescription" : "Lysine lactylation (Kla) is a new posttranslational modification (PTM) identified in histone and nonhistone proteins of several eukaryotic cells that directly activate gene expression and DNA replication. However, very little is known about their scope and cellular distribution in apicomplexan parasites that are important to public and animal health. Toxoplasma gondii, the agent of toxoplasmosis, is one of obligate intracellular apicomplexan parasite that can infect all kinds of nucleated cells of animals and humans. Using this parasite as model organism, herein, we produced the first global lysine lactylome profile through LC-MS/MS. Overall, a total of 983 Kla sites occurred on 523 lactylated proteins were identified in Toxoplasma tachyzoites, the acute toxoplasmosis-causing stage. Bioinformatics analysis revealed that these lactylated proteins are evolutionarily conserved and involved in a wide variety of cellular functions such as energy metabolism, gene regulation and protein biosynthesis. Moreover, the results from subcellular localization analysis and IFA showed that the majority of lactylated T. gondii proteins localized in the nucleus, indicating a potential impact of Kla on gene regulation. Notably, an extensive batch of parasite-specific proteins unique to Apicomplexa is lactylated in T. gondii. Our findings revealed that Kla was widespread in the early branching eukaryotic cell, and that lactylated proteins, including a crowd of unique parasite proteins, were involved in a remarkably diverse array of cellular functions. These valuable data will improve our understanding of the evolution of Kla while potentially providing novel therapeutic avenues.",
+  "dataProcessingProtocol" : "Gene Ontology (GO) of lactylation proteome was derived from the ToxoDB 58.0 and UniProt-GOA database based on three categories: biological process, molecular function, and cellular component. When a single peptide was found to be matched to two or more different proteins, manual inspection of these data from ToxoDB 58.0 was performed to determine the protein from which the peptide was likely derived. For the identified Kla substrates not annotated by ToxoDB 58.0 and UniProt-GOA database, the InterProScan software then could be used to annotate protein’s GO function based on protein sequence alignment. InterPro domain database was used to annotate the identified proteins domain functional description with InterProScan based on protein sequence alignment. The Kyoto Encyclopedia of Genes and Genomes (KEGG) database description of identified proteins was annotated and mapped by using KEGG online service tools KAAS and KEGG mapper, respectively. WoLF PSORT was used for subcellular localization predication.",
+  "sampleProcessingProtocol" : "The parasites washed with cold phosphate-buffered saline (PBS) were resuspended in lysis buffer [1% SDS, 1% protease inhibitors, 1% phosphatase inhibitor, 3 μM Trichostatin A (TSA) and 50 mM Nicotinamide (NAM)] and sonicated on ice for 3 min, pause for 3 s per 3 s for 30% intensity. Sonicated lysates were centrifuged for 20 min at 4 °C at 16,000 × g. Collected protein supernatants were added successively with 1 volume and 4 volumes of pre-cooled acetone for precipitation at 4 °C for 2 h. The air-dried protein precipitate was resuspended in 200 mM TEAB and digested overnight with trypsin (Promega) at a 1:50 trypsin-to-protein mass ratio at 37 °C. The digested peptides were reduced with 5 mM DTT at 56 °C for 30 min and alkylated with 11 mM iodoacetamide (IAA) at room temperature (RT) for 15 min in the dark. Then, the alkylated peptide lysates were resolubilized in IP buffer (50 mM Tris-Cl, 0.5% NP-40, 100 mM NaCl, and 1 mM EDTA pH8.0) and mixed overnight with anti-L-lactyllysine antibody-conjugated agarose beads (PTM-1404; PTM Bio., Hangzhou, China) at 4 °C with gentle shaking. Beads were washed 4 times with IP buffer and twice with water. Peptides were eluted from beads with 0.1% trifluoroacetic acid (TFA) and vacuumed-dried. The dried peptides were desalted using C18 ZipTips (EMD Millipore).",
+  "projectTags" : [ ],
+  "keywords" : [ "Toxoplasma gondii", "Lc-msms", "Lysine lactylation" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2022-06-09",
+  "updatedDate" : "2022-02-09",
+  "submissionDate" : "2022-02-09",
+  "downloadCount" : 358,
+  "avgDownloadsPerFile" : 179.0,
+  "botCount" : 104,
+  "hubCount" : 237,
+  "organicCount" : 17,
+  "percentile" : 13,
+  "yearlyDownloads" : [ {
+    "year" : "2022",
+    "count" : 96
+  }, {
+    "year" : "2023",
+    "count" : 40
+  }, {
+    "year" : "2024",
+    "count" : 24
+  }, {
+    "year" : "2025",
+    "count" : 172
+  }, {
+    "year" : "2026",
+    "count" : 26
+  } ],
+  "submitters" : [ "Feng Tan" ],
+  "labPIs" : [ "Feng Tan" ],
+  "affiliations" : [ "Department of Parasitology, School of Basic Medical Sciences, Wenzhou Medical University, Wenzhou, Zhejiang, China" ],
+  "instruments" : [ "Q Exactive HF" ],
+  "softwares" : [ ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "Toxoplasma gondii" ],
+  "organisms" : [ "Toxoplasma gondii" ],
+  "organismsPart" : [ ],
+  "diseases" : [ ],
+  "references" : [ "Zhao W, Yu H, Liu X, Wang T, Yao Y, Zhou Q, Zheng X, Tan F. Systematic identification of the lysine lactylation in the protozoan parasite Toxoplasma gondii. Parasit Vectors. 2022 15(1):180--pubMed:35610722--doi: 10.1186/s13071-022-05315-6" ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "projectFileNames" : [ "checksum.txt", "lactylation_in_Toxoplasma.d.rar", "lactylation_in_Toxoplasma_txt.rar" ],
+  "highlights" : {
+    "projectDescription" : [ "Using this parasite as model organism, herein, we produced the first global lysine <em>lactylome</em> profile through LC-MS/MS." ]
+  }
+}, {
+  "accession" : "PXD023011",
+  "title" : "Lysine lactylation critically regulated energy metabolism of the protozoan parasite Trypanosoma brucei",
+  "projectDescription" : "Lysine lactylation, a new post-translational modification identified on histones of human and mouse cells, stimulates gene transcription from chromatin directly. However, very little is known in the scope and cellular distribution of lactylated proteins. In the present study, we conducted the first proteome-wide survey of lactylated sites in Trypanosoma brucei, a unicellular parasite causing human African sleeping sickness and livestock nagana disease, using LC-MS/MS to identify peptides enriched by immuno-purification with an anti-lactyllysine antibody. Overall, we identified 387 unique lysine lactylated sites in 257 lactylated proteins with diverse cellular localizations and biological functions. Lactylated proteins are involved in a wide variety of cellular functions such as metabolism and gene regulation. Further, we demonstrate that the lactate-derived lactylation in trypanosome is regulated by glucose metabolism. Collectively, our findings provide the first comprehensive view of the lactylome of T. brucei and suggest that lysine lactylation in trypanosomes involves a diverse array of cellular functions.",
+  "dataProcessingProtocol" : "Database Search The resulting MS/MS data were processed using Maxquant search engine (v.1.5.2.8). Tandem mass spectra were searched against the UniProtKB database Trypanosoma brucei brucei (strain 927/4 GUTat10.1, 8,587 sequences, release time 2017.10) concatenated with reverse decoy database. Trypsin/P was specified as cleavage enzyme allowing up to 4 missing cleavages. The mass tolerance for precursor ions was set as 20 ppm in First search and 5 ppm in Main search, and the mass tolerance for fragment ions was set as 0.02 Da. Carbamidomethyl on Cys was specified as fixed modification and lactylation and oxidation on Met were specified as variable modifications. FDR was adjusted to < 1% and minimum score for modified peptides was set > 40. Protein annotation and functional enrichment GO annotation was derived from the UniProt-GOA database. For the proteins which were not annotated by the UniProt-GOA database, the InterProScan software was used to annotate each protein’s GO function based on protein sequence alignment. Domain functional description was annotated by Interproscan, and the InterPro domain database was used. The KEGG online service tool KAAS was use to annotate the KEGG database description for proteins, and the annotation result was mapped on the KEGG pathway database using the KEGG service tool KEGG Mapper. Wolfpsort was used to predict subcellular localization. All functional enrichment was performed using a two-tailed Fisher’s exact test. For further hierarchical clustering based on different protein functional classification, all of the categories generated after enrichment along with their p values were collated; we subsequently filtered for those categories which were at least enriched in one of the clusters with a p value <0.05. This filtered p value matrix was transformed by the function x = −log10 (p value). Finally, these x values were z-transformed for each functional category. These z scores were then clustered by one-way hierarchical clustering (Euclidean distance, average linkage clustering) in Genesis. Cluster membership was visualized by a heat map using the “heatmap.2” function from the “gplots” R-package. Motif Analysis Soft MoMo (motif-x algorithm) was used to analysis the model of sequences constituted with amino acids in specific positions of modify-21-mers (10 amino acids upstream and downstream of the site, but phosphorylation with modify-13-mers that 6 amino acids upstream and downstream of the site) in all protein sequences. And all the database protein sequences were used as background database parameter. Minimum number of occurrences was set to 20. Emulate original motif-x was ticked, and other parameters with default. Enrichment-based Clustering For further hierarchical clustering based on differentially modified protein functional classification (such as: GO, Domain, Pathway, Complex). We first collated all the categories obtained after enrichment along with their P values, and then filtered for those categories which were at least enriched in one of the clusters with P value <0.05. This filtered P value matrix was transformed by the function x = −log10 (P value). Finally, these x values were z-transformed for each functional category. These z scores were then clustered by one-way hierarchical clustering (Euclidean distance, average linkage clustering) in Genesis. Cluster membership were visualized by a heat map using the “heatmap.2” function from the “gplots” R-package.",
+  "sampleProcessingProtocol" : "Parasite cultivation and purification T. brucei were maintained in vivo using BALB/c mice, and the trypanosomes were inoculated intraperitoneally into healthy mice for serial passage. Trypanosomes were purified from the blood of infected mice over DEAE-cellulose (Sigma) when the parasitemia level reached 1×108 cells per ml. The trypanosomes were extracted from cellular blood elements of the suspension using a previously described method (Lanham and Godfrey, 1970). Protein extraction Parasites were incubated with a phenol extraction buffer (4-fold more buffer compared with parasite suspension) containing 10 mM dithiothreitol (Sigma), 1% protease inhibitors (Millipore), 1% phosphatase inhibitor (Millipore), 50 μM PR-619 (Selleck), 3 μM TSA (Selleck), 50 mM NAM (Sigma) and 2 mM EDTA; the mixture was ultrasonically treated. Next, an equal volume of Tris balance of phenol (Solarbio) was added and the mixture was centrifuged at 5,500 g for 10 min at 4°C. The supernatant was subsequently extracted and 5 times the volume of 0.1 M ammonium acetate/methanol was added to perform an overnight extraction; the precipitated protein was washed with methanol and acetone. Finally, 8 M urea was precipitated for redissolution, and protein concentration was determined using the BCA kit (Beyotime). Trypsin digestion Dithiothreitol was added to the protein solution to a final concentration of 5 mM and reduced at 56°C for 30 min. Then, this mixture was alkylated with iodoacetamide (Sigma) to 11 mM for 15 min at room temperature in darkness. Finally, the urea concentration of the sample was diluted to less than 2 M by adding 100 mM NH4HCO. Finally, trypsin (Promega) was added at a 1:50 trypsin-to-protein mass ratio for the first digestion which was performed overnight at 37°C; a second 4 h-digestion was performed using a 1:100 trypsin-to-protein mass ratio. HPLC Fractionation The tryptic peptides (20 mg) were separated into fractions using high pH reverse-phase HPLC (Thermo Betasil C18 column, 5-μm particles, 10-mm i.d., 250-mm length). Briefly, peptides were first separated with a gradient of 8% to 32% acetonitrile (pH 9.0) over 60 min into 60 fractions. Then, the peptides were combined into 4 fractions and dried by vacuum centrifugation. Affinity Enrichment Tryptic peptides dissolved in NETN buffer (100 mM NaCl, 1 mM EDTA, 50 mM Tris-HCl, 0.5% NP-40, pH 8.0) were incubated with pre-washed antibody beads (PTM Bio) at 4°C overnight with gentle shaking. Then the beads were washed four times with NETN buffer and twice with H2O. The bound peptides were eluted from the beads with 0.1% trifluoroacetic acid. Finally, the eluted fractions were combined and vacuum-dried. For LC-MS/MS analysis, the resulting peptides were desalted with C18 ZipTips (Millipore) according to the manufacturer’s instructions. LC-MS/MS Analysis The tryptic peptides were dissolved in 0.1% formic acid (solvent A), directly loaded onto a home-made reversed-phase analytical column (15-cm length, 75 μm i.d.). The gradient was comprised of an increase from 6% to 23% solvent B (0.1% formic acid in 98% acetonitrile) over 26 min, 23% to 35% in 8 min and climbing to 80% in 3 min then holding at 80% for the last 3 min, all at a constant flow rate of 400 nL/min on an EASY-nLC 1000 UPLC system. The peptides were subjected to NSI source followed by tandem mass spectrometry (MS/MS) in Q ExactiveTM Plus (Thermo) coupled online to the UPLC. The electrospray voltage applied was 2.0 kV. The m/z scan range was 350 to 1800 for full scan, and intact peptides were detected in the Orbitrap at a resolution of 70,000. Peptides were then selected for MS/MS using NCE setting as 28 and the fragments were detected in the Orbitrap at a resolution of 17,500. A data-dependent procedure that alternated between one MS scan followed by 20 MS/MS scans with 15.0s dynamic exclusion. Automatic gain control (AGC) was set at 5E4. Fixed first mass was set as 100 m/z.",
+  "projectTags" : [ ],
+  "keywords" : [ "Lysine lactylation; trypanosoma brucei; energy metabolism; glycolysis" ],
+  "doi" : "",
+  "submissionType" : "PARTIAL",
+  "publicationDate" : "2021-10-01",
+  "updatedDate" : "2020-12-09",
+  "submissionDate" : "2020-12-09",
+  "downloadCount" : 3019,
+  "avgDownloadsPerFile" : 167.72223,
+  "botCount" : 651,
+  "hubCount" : 2355,
+  "organicCount" : 13,
+  "percentile" : 68,
+  "yearlyDownloads" : [ {
+    "year" : "2021",
+    "count" : 8
+  }, {
+    "year" : "2022",
+    "count" : 248
+  }, {
+    "year" : "2023",
+    "count" : 286
+  }, {
+    "year" : "2024",
+    "count" : 1111
+  }, {
+    "year" : "2025",
+    "count" : 1137
+  }, {
+    "year" : "2026",
+    "count" : 229
+  } ],
+  "submitters" : [ "Naiwen Zhang" ],
+  "labPIs" : [ "Qijun Chen" ],
+  "affiliations" : [ "Key Laboratory of Livestock Infectious Diseases in Northeast China, Ministry of Education, Key Laboratory of Zoonosis, College of Animal Science and Veterinary Medicine, Shenyang Agricultural University, 120 Dongling Road, Shenyang 110866, China. 2 The Research Unit for Pathogenic Mechanisms of Zoonotic Parasites, Chinese Academy of Medical Sciences, 120 Dongling Road, Shenyang 110866, China." ],
+  "instruments" : [ "Q Exactive Plus" ],
+  "softwares" : [ "MaxQuant" ],
+  "quantificationMethods" : [ ],
+  "sampleAttributes" : [ "Trypanosoma brucei" ],
+  "organisms" : [ "Trypanosoma brucei" ],
+  "organismsPart" : [ ],
+  "diseases" : [ ],
+  "references" : [ ],
+  "experimentTypes" : [ "Shotgun proteomics" ],
+  "projectFileNames" : [ "K9169PILa_Tb_2_4.raw", "K9169PILa_Tb_1_2.raw", "K9169PILa_Tb_2_2.raw", "K9169PILa_Tb_3_3.raw", "K9169PILa_Tb_2_1.raw", "K9169PILa_Tb_2_search.zip", "K9169PILa_Tb_3_1.raw", "K9169PILa_Tb_1_4.raw", "K9169PILa_Tb_1_mqpar.xml", "K9169PILa_Tb_2_3.raw", "K9169PILa_Tb_3_search.zip", "K9169PILa_Tb_3_mqpar.xml", "K9169PILa_Tb_2_mqpar.xml", "K9169PILa_Tb_1_search.zip", "K9169PILa_Tb_3_4.raw", "K9169PILa_Tb_1_1.raw", "K9169PILa_Tb_1_3.raw", "K9169PILa_Tb_3_2.raw" ],
+  "highlights" : {
+    "projectDescription" : [ "Collectively, our findings provide the first comprehensive view of the <em>lactylome</em> of T. brucei and suggest that lysine lactylation in trypanosomes involves a diverse array of cellular functions." ]
+  }
+} ]

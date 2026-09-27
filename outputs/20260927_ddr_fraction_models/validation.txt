@@ -1,0 +1,7 @@
+PASS: 62 target/group counts independently re-counted from protein membership.
+PASS: both splits identical to previous full-RNA split.
+PASS: all 16 metric rows independently recomputed.
+PASS: both saved models reload and reproduce all 1898 full-fit predictions within 1e-10.
+PASS: top-gene importance covers all 18332 Ensembl inputs.
+PASS: source blocks do not split material references.
+PASS: both model release manifests verified.

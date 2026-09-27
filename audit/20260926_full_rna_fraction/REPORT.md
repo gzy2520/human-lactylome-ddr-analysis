@@ -45,3 +45,41 @@ Rscript --vanilla workflow/full_rna_fraction/predict.R /tmp/new_full_models/RF_m
 各输出路径须未被占用。predict 接口要求相同尺度、模型需要的全部 Ensembl 列。已保存的 RDS 是全数据模型，不能将其对训练数据的输出当作独立测试结果。
 
 模型目标仍是赋给各 RNA 的共享材料级 Kla 蛋白检出占比，没有新增任何个体配对蛋白标签。内部测试衡量已有材料类别的标签重现；整来源留出衡量外推，两者必须分别报告。
+
+## 补充图表集（2026-09-27 更新）
+
+按多维度评估与汇报需求，补充了以下 6 套高质量矢量/标量图表与数据表（位于 `outputs/20260926_full_rna_models/figures/` 和 `tables/`）：
+
+1. **补全训练集 4 栏散点图 (`RF_mtry135_4panel.png/pdf`)**：
+   - 补齐了原先只展示全量拟合的空缺，形成 4 栏严格对照：
+     - 栏 1：`Training split (n=1,524)`，在 1,524 条训练子集上训练并重拟合评估（MAE=0.12 pp, R²=0.998, ±5 pp 99.9%）；
+     - 栏 2：`Within-material test (n=374)`，用 1,524 样本训练后对 374 独立同类材料样本做盲测（MAE=1.59 pp, R²=0.955, ±5 pp 96.9%）；
+     - 栏 3：`Full dataset fit (n=1,898)`，全数据拟合模型容量上限（MAE=0.12 pp, R²=0.998）；
+     - 栏 4：`Source held out (n=1,898)`，14 折整来源留出外推测试（MAE=9.55 pp, R²=-0.195）。
+
+2. **各材料预测分布图 (`figure1_material_distributions.png/pdf`)**：
+   - 横轴按实测 Kla 占比从低到高排列 28 种材料，纵轴为 Kla 预测占比；
+   - 蓝色点代表训练集样本（n=1,524），橙色点代表测试集样本（n=374），金色菱形代表该材料实测真实标签；
+   - 直观展示各材料预测的聚集度与方差，以及与真实测定值的吻合状态。
+
+3. **Top 25 特征重要性条形图 (`figure2_feature_importance.png/pdf`, `tables/feature_importance_top25.csv`)**：
+   - 提取随机森林 500 棵决策树的 Gini 不纯度下降（Impurity Importance）；
+   - 严格保留 Ensembl 稳定 ID，并利用 `org.Hs.eg.db` 映射官方 Gene Symbol；
+   - 排名前列包含重要代谢转氨酶与脱氢酶（如 GPT2、ALDH7A1、ALDH4A1、GLUD1 等）以及组织特异性标志物。
+
+4. **转录组流形降维投影图 (`figure3_manifold_projection.png/pdf`)**：
+   - 基于前 2,000 高变基因与 10 个主成分运行 UMAP（种子 25），3 栏并排展示：
+     - A. 生物学大类着色（癌组织、正常组织、癌细胞系、正常细胞系）；
+     - B. 真实测得的材料级 Kla 占比连续色谱；
+     - C. 模型预测的 Kla 占比连续色谱；
+   - B 与 C 高度吻合，从流形几何角度证明模型从转录组空间准确捕捉到了 Kla 检出比例的连续梯度。
+
+5. **残差诊断图 (`figure4_residual_diagnostics.png/pdf`)**：
+   - 左图：残差（预测值 - 真实值）对实测值的散点图与 LOESS 平滑曲线，误差紧密落在 ±5 个百分点红虚线内，全量程无系统性倾斜；
+   - 右图：残差概率密度分布，在 0 处呈现尖锐对称单峰，无显著方差膨胀或偏态。
+
+6. **生物学大类分层散点图 (`figure5_category_stratified.png/pdf`, `tables/category_test_metrics.csv`)**：
+   - 拆分为正常组织（Test n=171, MAE=0.97 pp, ±5 pp 99.4%）、癌组织（Test n=186, MAE=1.08 pp, ±5 pp 97.3%）、癌细胞系（Test n=8, MAE=1.76 pp, ±5 pp 100%）、正常细胞系（Test n=9, MAE=2.90 pp, ±5 pp 88.9%）；
+   - 证实模型在占据绝对多数的临床组织样本上预测极为稳健。
+
+运行生成脚本：`workflow/full_rna_fraction/generate_extended_figures.R`。

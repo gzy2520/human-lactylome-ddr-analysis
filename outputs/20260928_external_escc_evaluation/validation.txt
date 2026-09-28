@@ -1,0 +1,8 @@
+PASS: eight material/target label rows recounted from protein membership.
+PASS: all NAC columns excluded.
+PASS: 46 new RNA IDs, zero overlap with frozen 1898 training records.
+PASS: 18332 model genes all present; every counted gene has GENCODE19 length; TPM sums to 1e6.
+PASS: both frozen model hashes unchanged; every new and reused RNA prediction reproduced.
+PASS: summary MAE and prediction means independently recomputed.
+SCOPE: independent RNA cohort + new proteome cohort, tissue-matched only; two shared material labels, not 46 paired individual labels.
+LIMIT: clinical pretreatment history of RNA cohort not verified; proteome and Kla column counts differ (25 vs 22 per untreated tissue group).

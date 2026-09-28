@@ -1,0 +1,7 @@
+File,URL,SHA256,Bytes
+audit/20260927_external_material/raw/PMC13195773.xml,https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13195773/fullTextXML,3966ac10ce64067e5707f82ec8de766280be56118d624bd3f76275461a07bd53,172991
+audit/20260927_external_material/raw/PMC13195773_supp_complete.zip,https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13195773/supplementaryFiles,9e147220478dcbc6f01aeaf86eddb688b02bc5456c4366a785e4324d0c10d192,11904310
+audit/20260927_external_material/raw/GSE130078_download.tar,https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE130078&format=file,f2058d2c07b02072a78eec3b9ce2977fc51a4b1e94098bc8c11f6529a750f455,13803520
+audit/20260927_external_material/raw/gencode.v19.annotation.gtf.gz,https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.annotation.gtf.gz,9909e8123a40eca090c3f8e501633f7cc65cd6c4adb83b95009745eca3564d70,37991892
+audit/20260927_external_material/raw/PMC6900598.xml,https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6900598/fullTextXML,4d0c38b5d4f5b75781640259104e3ed7fd219c403effcb37fe9e6fda950ed121,120121
+audit/20260927_external_material/raw/PMC6900598_supp.zip,https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6900598/supplementaryFiles,b98881d2b527e3c7371e276046179c567fe9c0c98a847f575da0670d28c6f3b8,8469887

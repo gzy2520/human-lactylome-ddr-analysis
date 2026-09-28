@@ -10,7 +10,7 @@ for(i in seq_along(fs)){
  d<-fread(fs[i]);d[,Gene:=sub('[.].*','',Gene_id)];stopifnot(!anyDuplicated(d$Gene),all(need%in%d$Gene),all(d$Assigned_count>=0))
  d[,Length:=len$ExonicLength[match(Gene,len$Gene)]];lost<-sum(d$Assigned_count[is.na(d$Length)])/sum(d$Assigned_count);stopifnot(lost<.01,all(is.finite(d$Length[match(need,d$Gene)])))
  d[,Rate:=Assigned_count/Length];total<-sum(d$Rate,na.rm=TRUE);d[,TPM:=1e6*Rate/total];stopifnot(abs(sum(d$TPM,na.rm=TRUE)-1e6)<1e-5)
- x[i,]<-log2(d$TPM[match(need,d$Gene)]+1)
+ x[i,]<-log2(d$TPM[match(need,d$Gene)]+0.5) # Match frozen training matrices.
  material<-if(grepl('_cancer',fs[i]))'ESCC_untreated'else'ESCC_adjacent_untreated'
  meta[[i]]<-data.table(SampleID=rownames(x)[i],ReferenceKey='GSE130078',Material=material,DonorKey=sub('.*(Patient_[0-9]+).*','\\1',basename(fs[i])),SourceFile=fs[i],Library='rRNA-depleted total RNA',ExperimentalPerturbation='No KO/KD/OE or drug perturbation documented for tissue RNA',PretreatmentHistory='Not reported in inspected clinical table; not verified as treatment-naive')
  qc[[i]]<-data.table(SampleID=rownames(x)[i],InputGenes=nrow(d),ModelGenes=length(need),MissingModelGenes=0,GenesWithoutLength=sum(is.na(d$Length)),FractionReadsWithoutLength=lost,CountSum=sum(d$Assigned_count),TPMSum=sum(d$TPM,na.rm=TRUE))

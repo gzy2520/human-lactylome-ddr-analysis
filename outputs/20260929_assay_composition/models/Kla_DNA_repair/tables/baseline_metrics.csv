@@ -1,0 +1,5 @@
+Evaluation,MAE,Within5
+Training fit,1.67436395065805,100
+Training split,1.67436395065781,100
+Source held out,2.45242114475703,100
+Within-material test,1.65878436602765,100

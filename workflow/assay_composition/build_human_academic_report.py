@@ -3,7 +3,9 @@
 build_human_academic_report.py
 Generates a natural, rigorous, professional Chinese academic research report (.docx)
 for the four within-assay composition targets (Figure 1a definition).
-Completely removes AI meta-commentary, coaching language, and exaggerated rhetoric.
+Embeds the complete set of diagnostic figures (internal test, source heldout, external ESCC,
+plus material distributions, top 25 with symbols, UMAP, residuals, category stratified).
+Completely free of AI meta-commentary, coaching language, and exaggerated rhetoric.
 Strictly adheres to Chinese academic thesis/report standards and OOXML validation.
 """
 
@@ -382,7 +384,7 @@ def create_report():
     )
 
     # 三、模型训练与内部留出结果
-    add_h1("三、模型训练与内部留出结果")
+    add_h1("三、四目标模型训练与内部留出结果")
     add_body(
         "图 1 展示了四个模型在 374 条独立内部测试样本上的预测散点分布；图 2 展示了 14 折来源留出下的表现。"
     )
@@ -407,19 +409,71 @@ def create_report():
         "这说明 RNA 表达特征即使在来源留出条件下也能提供一定的有效信息，但整体误差相较内部测试有所上升。"
     )
 
-    # 四、外部独立队列的材料级对照验证
-    add_h1("四、外部独立队列的材料级对照验证")
+    # 四、Kla 组模型的扩展诊断与机制图表 (补全 5 类图)
+    add_h1("四、Kla 组模型的扩展诊断与机制解析")
+    add_body(
+        "为深入评估核心关注的 Kla 修饰目标（Kla_DDR 与 Kla_DNA_repair），本节提供了材料分布、变量重要性、流形投影及残差诊断等扩展图表："
+    )
+
+    # 4.1 Kla_DDR 扩展图
+    add_h2("4.1 Kla 组 · DDR 占比模型扩展图集")
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure1_material_distributions.png",
+        "图 3 Kla 组 · DDR 占比模型在 28 种材料内部的预测分布与实测值对比图 (金色菱形为材料参考值)",
+        width_cm=15.5
+    )
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DDR/figures/top25.png",
+        "图 4 Kla 组 · DDR 占比模型训练集 Top 25 变量重要性条形图 (带官方 Gene Symbol 标注)",
+        width_cm=12.5
+    )
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure3_manifold_projection.png",
+        "图 5 Kla 组 · DDR 占比模型转录组 UMAP 流形投影图 (生物分类、实测值与预测值色谱对照)",
+        width_cm=15.5
+    )
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure4_residual_diagnostics.png",
+        "图 6 Kla 组 · DDR 占比模型残差诊断图 (LOESS 趋势平滑与误差概率密度分布)",
+        width_cm=15.0
+    )
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure5_category_stratified.png",
+        "图 7 Kla 组 · DDR 占比模型按生物学大类 (正常/癌组织、正常/癌细胞系) 分层的盲测散点图",
+        width_cm=15.5
+    )
+
+    # 4.2 Kla_DNA_repair 扩展图
+    add_h2("4.2 Kla 组 · DNA repair 占比模型扩展图集")
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DNA_repair/figures/figure1_material_distributions.png",
+        "图 8 Kla 组 · DNA repair 占比模型在 28 种材料内部的预测分布与实测值对比图",
+        width_cm=15.5
+    )
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DNA_repair/figures/top25.png",
+        "图 9 Kla 组 · DNA repair 占比模型训练集 Top 25 变量重要性条形图 (带官方 Gene Symbol 标注)",
+        width_cm=12.5
+    )
+    add_figure(
+        "outputs/20260929_assay_composition/models/Kla_DNA_repair/figures/figure4_residual_diagnostics.png",
+        "图 10 Kla 组 · DNA repair 占比模型残差诊断图",
+        width_cm=15.0
+    )
+
+    # 五、外部独立队列的材料级对照验证
+    add_h1("五、外部独立队列的材料级对照验证")
     add_body(
         "为评估模型跨实验队列的泛化表现，我们检索并引入了 2026 年新公布的华山医院食管鳞癌蛋白质组与乳酸化组数据（PXD063945 / PMC13195773），"
         "以及韩国 YSH 队列 46 例配对食管癌切片组织 RNA 数据（GSE130078）。"
         "在完全冻结四个模型的前提下，直接输入外部 RNA 并与新质谱计算出的材料参考值进行比对。"
     )
     add_body(
-        "预测散点与分布如图 3 所示，具体数值详见表 2。"
+        "预测散点与分布如图 11 所示，具体数值详见表 2。"
     )
     add_figure(
         "outputs/20260929_assay_composition/figures/external_newRNA.png",
-        "图 3 冻结模型在外部独立食管鳞癌队列 (GSE130078 组织 RNA vs PXD063945 质谱参考值) 中的预测分布图",
+        "图 11 冻结模型在外部独立食管鳞癌队列 (GSE130078 组织 RNA vs PXD063945 质谱参考值) 中的预测分布图",
         width_cm=15.5
     )
 
@@ -461,9 +515,9 @@ def create_report():
         "Kla-Repair 参考值为 5.932%，模型预测均值为 4.899%（误差 1.033 个百分点），未优于无 RNA 基线。",
         bold_prefix="癌旁预测偏低：")
 
-    # 五、结果分析与适用边界
-    add_h1("五、结果分析与适用边界")
-    add_h2("5.1 为什么组学内占比在外部肿瘤中吻合度更好？")
+    # 六、结果分析与适用边界
+    add_h1("六、结果分析与适用边界")
+    add_h2("6.1 为什么组学内占比在外部肿瘤中吻合度更好？")
     add_body(
         "此前基于两组学交集比值的预测模型在外部验证中出现约 9 个百分点的偏移，"
         "主要原因在于抗体富集深度差异改变了两套质谱检出列表的交集大小。"
@@ -472,7 +526,7 @@ def create_report():
         "这类基础组分构成在同类肿瘤细胞中表现出较高的稳态特性，因而减少了跨实验室富集深度波动带来的影响。"
     )
 
-    add_h2("5.2 癌旁组织偏离的可能原因与客观限制")
+    add_h2("6.2 癌旁组织偏离的可能原因与客观限制")
     add_body(
         "癌旁组织中 Kla 占比预测偏低，可能与以下因素有关：",
         bold_prefix="潜在限制："
@@ -489,15 +543,15 @@ def create_report():
         "无法排除人群遗传背景、生活方式及未知临床治疗史对基线修饰水平的影响。",
         bold_prefix="非个体配对限制：")
 
-    add_h2("5.3 结论与建议")
+    add_h2("6.3 总结与后续建议")
     add_body(
         "综上所述，当前模型在肿瘤组织内的表现支持其作为‘已知材料体系内基于全转录组特征重现组学内通路占比’的有效工具。"
         "但面对正常/癌旁组织或更广泛的非肿瘤材料时，模型尚不能做到无条件准确预测。"
         "若要在未来开展真正的盲测应用，仍需在固定模型的前提下，引入小批量同批次配对基准数据进行局部标定。"
     )
 
-    # 六、交付文件与数据索引
-    add_h1("六、交付文件与数据索引")
+    # 七、交付文件与数据索引
+    add_h1("七、交付文件与数据索引")
     add_caption("表 3 四目标模型交付产出文件路径索引表", is_table=True)
     add_three_line_table(
         headers=["文件类别", "相对路径 / 文件名", "规格说明"],
@@ -507,6 +561,11 @@ def create_report():
             ["内部测试图", "outputs/20260929_assay_composition/figures/internal_test.png/.pdf", "四目标内部留出预测 4 联散点图"],
             ["跨来源留出图", "outputs/20260929_assay_composition/figures/source_heldout.png/.pdf", "14 折来源留出交叉验证对比散点图"],
             ["外部盲测图", "outputs/20260929_assay_composition/figures/external_newRNA.png/.pdf", "GSE130078 组织 RNA 盲测外部质谱参考值分布图"],
+            ["Kla-DDR 材料图", "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure1_material_distributions.png", "28 种材料预测分布箱线/散点图"],
+            ["Kla-DDR 特征图", "outputs/20260929_assay_composition/models/Kla_DDR/figures/top25.png", "Top 25 变量重要性条形图 (带 Gene Symbol)"],
+            ["Kla-DDR 流形图", "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure3_manifold_projection.png", "1,898 样本转录组 UMAP 流形三联色谱图"],
+            ["Kla-DDR 残差图", "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure4_residual_diagnostics.png", "LOESS 平滑残差与误差密度分布图"],
+            ["Kla-DDR 分层图", "outputs/20260929_assay_composition/models/Kla_DDR/figures/figure5_category_stratified.png", "四大生物分类分层散点图"],
             ["主报告文件", "reports/图1a口径四目标RNA预测模型及外部盲测实验报告_20260929.docx", "本项目的完整正式学术 Word 报告"],
             ["桌面同步副本", "/Users/gzy2520/Desktop/ML_图1a四目标_20260929.docx", "直接供审阅与交付的桌面端 Word 副本"]
         ],

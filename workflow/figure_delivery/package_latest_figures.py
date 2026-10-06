@@ -14,7 +14,7 @@ manifest, decisions = [], []
 
 def csv_write(path, headers, rows):
     with path.open('w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator='\n')
         writer.writerow(headers)
         writer.writerows(rows)
 

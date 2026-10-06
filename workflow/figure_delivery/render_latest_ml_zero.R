@@ -2,22 +2,28 @@
 # Preserve the latest figure content while changing nonnegative axis origins.
 suppressPackageStartupMessages({library(data.table);library(ggplot2);library(ragg);library(patchwork);library(uwot)})
 set.seed(25)
-out <- 'outputs/20261006_figures_latest/ML'
+out <- Sys.getenv('KLA_ML_FIGURE_OUTPUT', 'outputs/20261006_figures_latest/ML')
 dir.create(out,recursive=TRUE,showWarnings=FALSE)
 meta <- fread('outputs/20260925_sample_fraction_inputs_final/sample_metadata.csv')
 setorder(meta,ReferenceKey,SampleID)
-b <- readRDS('outputs/20260926_full_rna_inputs/full_rna.rds')
-stopifnot(identical(rownames(b$x),meta$SampleID))
-v <- apply(b$x,2,var)
-pc <- prcomp(b$x[,order(v,decreasing=TRUE)[1:2000]],scale.=TRUE,rank.=10)
-set.seed(25)
-u <- uwot::umap(pc$x[,1:10],n_neighbors=20,min_dist=.3,seed=25,n_threads=1)
-um <- data.table(SampleID=meta$SampleID,Raw1=u[,1],Raw2=u[,2],
-                 UMAP1=u[,1]-min(u[,1]),UMAP2=u[,2]-min(u[,2]))
+cache <- Sys.getenv('KLA_UMAP_CACHE', '')
+if (nzchar(cache)) {
+ um <- fread(cache)
+ stopifnot(identical(um$SampleID,meta$SampleID))
+} else {
+ b <- readRDS('outputs/20260926_full_rna_inputs/full_rna.rds')
+ stopifnot(identical(rownames(b$x),meta$SampleID))
+ v <- apply(b$x,2,var)
+ pc <- prcomp(b$x[,order(v,decreasing=TRUE)[1:2000]],scale.=TRUE,rank.=10)
+ set.seed(25)
+ u <- uwot::umap(pc$x[,1:10],n_neighbors=20,min_dist=.3,seed=25,n_threads=1)
+ um <- data.table(SampleID=meta$SampleID,Raw1=u[,1],Raw2=u[,2],
+                  UMAP1=u[,1]-min(u[,1]),UMAP2=u[,2]-min(u[,2]))
+ rm(b,pc);gc(FALSE)
+}
 stopifnot(max(abs(diff(um$Raw1)-diff(um$UMAP1)))<1e-10,
           max(abs(diff(um$Raw2)-diff(um$UMAP2)))<1e-10)
 fwrite(um,file.path(out,'umap_coordinates.csv.gz'))
-rm(b,pc);gc(FALSE)
 titles <- c(Proteome_DDR='DDR / all proteome proteins',Kla_DDR='DDR / all Kla proteins',
  Proteome_DNA_repair='DNA repair / all proteome proteins',Kla_DNA_repair='DNA repair / all Kla proteins',
  DDR='Historical: Kla-DDR / proteome DDR',DNA_repair='Historical: Kla-DNA repair / proteome DNA repair',
@@ -29,6 +35,9 @@ split_cols <- c('Training split'='#2B5C8F','Within-material test'='#E6550D')
 zx <- function(pad=.05)scale_x_continuous(limits=c(0,NA),expand=expansion(mult=c(0,pad)))
 zy <- function()scale_y_continuous(limits=c(0,NA),expand=expansion(mult=c(0,.05)))
 base <- theme_minimal(base_size=11,base_family='Arial')+theme(panel.grid.minor=element_blank())
+if (Sys.getenv('KLA_FIGURE_NO_GRID','0') == '1')
+ base <- base + theme(panel.grid=element_blank(),panel.grid.major=element_blank(),
+                     axis.line=element_line(colour='grey55',linewidth=.3))
 axis_audit <- list()
 save <- function(g,folder,stem,w=11,h=7,zero=c('x','y')){
  dir.create(folder,recursive=TRUE,showWarnings=FALSE)
@@ -42,6 +51,7 @@ save <- function(g,folder,stem,w=11,h=7,zero=c('x','y')){
  }
  for(ext in c('png','pdf'))ggsave(file.path(folder,paste0(stem,'.',ext)),g,width=w,height=h,dpi=240,
    device=if(ext=='png')agg_png else cairo_pdf,bg='white')
+ if (Sys.getenv('KLA_SAVE_PLOTS','0') == '1') saveRDS(g,file.path(folder,paste0(stem,'.rds')))
 }
 configs <- list()
 for(t in targets)configs[[t]] <- list(folder=paste0('outputs/20260929_assay_composition/models/',t),

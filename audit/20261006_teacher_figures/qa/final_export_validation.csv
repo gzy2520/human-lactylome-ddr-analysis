@@ -1,0 +1,9 @@
+Test,Pass,Detail
+No decorative dividers Figure_S1a_DDR_fraction_by_PXD,TRUE,""
+No decorative dividers Figure_S1b_MKI67_over_H3C1_by_PXD,TRUE,""
+No decorative dividers Figure_S1b_MKI67_over_H3C1_11_detected_only,TRUE,""
+Lactate route original canvas,TRUE,13 x 6 inches at 160 dpi; white background visually checked
+Matrix title and original canvas Figure_S3a_DDR_pathway_matrix_tumor_tissues,TRUE,PNG rendered from checked Cairo PDF; title also visually checked
+Matrix title and original canvas Figure_S3b_DDR_pathway_matrix_non_tumor_tissues,TRUE,PNG rendered from checked Cairo PDF; title also visually checked
+Matrix title and original canvas Figure_S4a_DDR_pathway_matrix_cancer_cell_lines,TRUE,PNG rendered from checked Cairo PDF; title also visually checked
+Matrix title and original canvas Figure_S4b_DDR_pathway_matrix_normal_cell_lines,TRUE,PNG rendered from checked Cairo PDF; title also visually checked

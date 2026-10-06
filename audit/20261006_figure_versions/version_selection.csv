@@ -1,0 +1,8 @@
+﻿图组,权威来源,状态,版本依据,选择或替换说明
+蛋白组主附图,/Users/gzy2520/.codex/worktrees/cd42/kla31-rnaseq-20260912/corrected_final_result_20260905_sample_only,当前,sample-only 修复发布 c349c7f；与原 figure_refine-fork、RNA 工作树及 20260917 蛋白组复制版逐图一致,不重复收录七通路无面板编号别名、ACTB/TUBB 重复别名和蓝框重复别名；旧配套图归档
+RNA,/Users/gzy2520/.codex/worktrees/cd42/kla31-rnaseq-20260912/outputs/20260919_repair_release,当前,config/rna_current_release.csv,排除修复前 31/28 混版目录；31 行映射参考视图单独标注
+乳酸代谢,/Users/gzy2520/.codex/worktrees/cd42/kla31-rnaseq-20260912/outputs/20260920_lactate_metabolism/figures,当前探索结果,outputs/20260920_lactate_metabolism/release_sha256.csv,不收录 pre_labels、pre_mapping_qa、pre_visual 试跑目录
+四目标机器学习,outputs/20260929_assay_composition,当前,9443340 训练；ba51602 扩展图；training_importance_annotated.csv；comparison_metrics.csv,保留 Symbol+Ensembl、材料实测参考菱形、三面板 UMAP、训练/测试颜色、四目标汇总和基线指标
+两目标机器学习,outputs/20260928_report_revision,历史目标的有效修订版,c8e5b25；workflow/report_revision/README.md,旧外部 log2(TPM+1) 图不收录；历史结果不混入四目标当前结果
+全蛋白占比机器学习,outputs/20260926_full_rna_models,历史目标,1e12b82；generate_extended_figures.R；feature_importance_top25.csv,Top25 保留最新版全量拟合模型重要性，明确其不同于当前四目标的训练子集重要性
+20261004 图片包,outputs/20261004_all_figures,已被本包替代,79187de；本次版本核对,旧重绘丢失符号/参考菱形/分类 UMAP 面板并漏收四目标汇总；本包恢复这些内容

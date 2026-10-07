@@ -1,0 +1,10 @@
+{
+  "OMPVersion": "18.4.10",
+  "RequestedModel": "google-antigravity/gemini-3.1-pro",
+  "GeminiSucceeded": false,
+  "GeminiHTTPStatus": 400,
+  "GeminiError": "User location is not supported for the API use.",
+  "FallbackObserved": "deepseek/deepseek-v4-flash",
+  "ReviewMode": "text_only",
+  "PlotsRenderedBy": "R ggplot2"
+}

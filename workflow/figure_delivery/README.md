@@ -1,5 +1,7 @@
 # 乳酸化图片汇总与机器学习零起点重绘
 
+2026-10-07 图二单图修订：本次“图二”指用户截图中的左右箱线面板，最终确认两个面板均使用 RNA。左图为 DDR 与乳酸化蛋白对应基因的转录表达，右图为 Hallmark G2M RNA 增殖评分；使用 28 份去重材料。运行 `render_rna_figure2_refined.R` 后运行 `package_rna_figure2_refined.py`，输出至 `outputs/20261007_rna_figure2_refined` 和桌面“图二_RNA单图美化_20261007”。仅交付两个独立单图，均无网格、无上方比较括号或 ns/星号；详见 `audit/20261007_rna_figure2_refined/README.md`。此编号来自当前论文排版，冻结 RNA 源文件仍叫 Figure_1a/1b，不要与此前编号为 Figure_2 的 UpSet/七通路图混淆。
+
 2026-10-06 教师修订交付：`outputs/20261006_teacher_figures` 与桌面“乳酸化全部图片_无网格与统计标注_20261006”在以上版本基础上去除全部背景网格，补充来源聚类的组间比较，生成正文图 1–3 及可编辑 ML 表。方法和版本说明见 `audit/20261006_teacher_figures/REPORT.md`，图注单列保存。旧输出保留。
 
 复现依次运行：

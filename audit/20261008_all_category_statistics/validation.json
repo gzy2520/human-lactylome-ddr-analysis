@@ -1,0 +1,17 @@
+{
+  "NewlyRendered": 13,
+  "CurrentStatisticalFigures": 15,
+  "CurrentFigures": 111,
+  "UnchangedOtherFigures": 96,
+  "PrespecifiedNewContrasts": 60,
+  "Estimable": 50,
+  "SignificantBH": 5,
+  "IndependentlyCheckedWeightedEstimates": true,
+  "IndependentlyCheckedBH": true,
+  "AllThirteenPNGVisuallyChecked": true,
+  "OldDataLayersUnchanged": true,
+  "NoBackgroundGrid": true,
+  "ManifestSHA256Verified": true,
+  "ZIPCRCAndContentsVerified": true,
+  "RepresentativePDFsVisuallyChecked": true
+}

@@ -1,5 +1,7 @@
 # 乳酸化图片汇总与机器学习零起点重绘
 
+2026-10-08 无统计标注选图版：`render_selection_no_statistics.R` 与 `package_selection_no_statistics.py` 输出 111 对当前独立 PNG/PDF，去除生物学显著性横线、星号、ns/NE、P/q 值及检验副标题；保留数据点、误差线和机器学习评价指标。两张 RNA 主图采用最新无横线美化版，不覆盖此前统计版本。详见 `audit/20261008_figure_selection_no_statistics/README.md`。
+
 2026-10-08 全套分类统计补齐：`render_all_category_statistics.R` 在此前两张 RNA 单图之外重绘其余 13 张四类别 barplot/boxplot，包括蛋白组 DDR 占比、七个 Kla 通路、三个 MKI67 比值、RNA DDR 表达与检出基因占比。`package_all_category_statistics.py` 交付 111 对当前单图和 15 对统计图便捷包，逐图注明处理范围；材料明细图保留描述性展示，未新增材料级检验。无组合图，旧版本保留。详见 `audit/20261008_all_category_statistics/README.md`。
 
 2026-10-08 图二统计标注修订：两个 RNA 单图均以肿瘤组织为参照，分别与其余三类比较；左图分别在 DDR 和 Kla 蛋白对应基因集内检验，共 6 条彩色比较横线，右图为 3 条横线。沿用来源平衡、来源聚类 CR2 检验，BH 分别校正左图 6 次和右图 3 次检验，全部如实标为 ns。运行 `render_rna_figure2_tumor_reference.R` 和 `package_rna_figure2_tumor_reference.py`；新输出为 `outputs/20261008_rna_figure2_tumor_reference`，详见 `audit/20261008_rna_figure2_tumor_reference/README.md`。无网格、不组合，旧版保留。

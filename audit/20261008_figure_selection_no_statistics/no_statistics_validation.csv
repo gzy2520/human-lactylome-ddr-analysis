@@ -1,0 +1,14 @@
+Stem,DataLayersUnchanged,ComparisonLayers,SubtitleRemoved,CaptionRemoved
+Figure_1a_DDR_fraction_boxplot,TRUE,0,TRUE,TRUE
+Figure_1b_MKI67_over_H3C1_boxplot,TRUE,0,TRUE,TRUE
+Figure_2c_DDR_pathway_summary_BER_barplot,TRUE,0,TRUE,TRUE
+Figure_2d_DDR_pathway_summary_NER_barplot,TRUE,0,TRUE,TRUE
+Figure_2e_DDR_pathway_summary_MMR_barplot,TRUE,0,TRUE,TRUE
+Figure_2f_DDR_pathway_summary_FA_barplot,TRUE,0,TRUE,TRUE
+Figure_2g_DDR_pathway_summary_HR_barplot,TRUE,0,TRUE,TRUE
+Figure_2h_DDR_pathway_summary_AEJ_barplot,TRUE,0,TRUE,TRUE
+Figure_2i_DDR_pathway_summary_NHEJ_barplot,TRUE,0,TRUE,TRUE
+Figure_1_companion_MKI67_over_ACTB_boxplot,TRUE,0,TRUE,TRUE
+Figure_1_companion_MKI67_over_TUBB_boxplot,TRUE,0,TRUE,TRUE
+Figure_1a_RNA_DDR_expression_28materials_boxplot,TRUE,0,TRUE,TRUE
+Figure_1a_RNA_DDR_fraction_28materials_boxplot,TRUE,0,TRUE,TRUE

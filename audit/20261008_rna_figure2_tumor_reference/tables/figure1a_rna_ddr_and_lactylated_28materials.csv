@@ -1,0 +1,113 @@
+GroupID,Category,CategoryLabel,X,GeneSet,MedianExpression
+KLA31_01,normal_tissue,"non-tumor
+tissues",1,DDR genes,3.90316733774336
+KLA31_02,normal_tissue,"non-tumor
+tissues",1,DDR genes,3.90817853045692
+KLA31_03,normal_tissue,"non-tumor
+tissues",1,DDR genes,4.51193914604679
+KLA31_04,normal_tissue,"non-tumor
+tissues",1,DDR genes,4.68974081748249
+KLA31_05,normal_tissue,"non-tumor
+tissues",1,DDR genes,2.73715399311227
+KLA31_06,normal_tissue,"non-tumor
+tissues",1,DDR genes,3.49767121015473
+KLA31_07,normal_tissue,"non-tumor
+tissues",1,DDR genes,2.93385460521737
+KLA31_08,normal_tissue,"non-tumor
+tissues",1,DDR genes,4.20819688125165
+KLA31_09,normal_tissue,"non-tumor
+tissues",1,DDR genes,2.67018398523329
+KLA31_10,cancer_tissue,"tumor
+tissues",2,DDR genes,4.37555058668234
+KLA31_11,cancer_tissue,"tumor
+tissues",2,DDR genes,3.94693729541938
+KLA31_12,cancer_tissue,"tumor
+tissues",2,DDR genes,3.34103659775955
+KLA31_13,cancer_cells,"cancer
+cell lines",4,DDR genes,4.65999390201853
+KLA31_14,cancer_cells,"cancer
+cell lines",4,DDR genes,4.97473623986131
+KLA31_17,cancer_cells,"cancer
+cell lines",4,DDR genes,5.19456710379611
+KLA31_18,cancer_cells,"cancer
+cell lines",4,DDR genes,2.98497119919297
+KLA31_19,cancer_cells,"cancer
+cell lines",4,DDR genes,4.91287007702382
+KLA31_20,cancer_cells,"cancer
+cell lines",4,DDR genes,4.69411941008675
+KLA31_21,cancer_cells,"cancer
+cell lines",4,DDR genes,5.56011177462112
+KLA31_22,cancer_cells,"cancer
+cell lines",4,DDR genes,4.70675287359439
+KLA31_23,cancer_cells,"cancer
+cell lines",4,DDR genes,4.70120943130924
+KLA31_24,cancer_cells,"cancer
+cell lines",4,DDR genes,4.85183187913927
+KLA31_25,normal_cells,"normal
+cell lines",3,DDR genes,5.16033143472305
+KLA31_26,normal_cells,"normal
+cell lines",3,DDR genes,5.41616015341987
+KLA31_27,normal_cells,"normal
+cell lines",3,DDR genes,5.11974145489116
+KLA31_29,normal_cells,"normal
+cell lines",3,DDR genes,2.77759336513709
+KLA31_30,normal_cells,"normal
+cell lines",3,DDR genes,3.12744252286752
+KLA31_31,normal_cells,"normal
+cell lines",3,DDR genes,4.50599988334608
+KLA31_01,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,4.01361257651468
+KLA31_02,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,4.19878465656866
+KLA31_03,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,4.57291454603702
+KLA31_04,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,4.74243911863234
+KLA31_05,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,3.12470406917595
+KLA31_06,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,3.62705475585602
+KLA31_07,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,2.79477632369786
+KLA31_08,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,4.30822615920829
+KLA31_09,normal_tissue,"non-tumor
+tissues",1,Lactylated protein genes,3.06330356603296
+KLA31_10,cancer_tissue,"tumor
+tissues",2,Lactylated protein genes,4.34146827788851
+KLA31_11,cancer_tissue,"tumor
+tissues",2,Lactylated protein genes,4.21229244150263
+KLA31_12,cancer_tissue,"tumor
+tissues",2,Lactylated protein genes,3.57993600436706
+KLA31_13,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.30043511537305
+KLA31_14,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.58988092077036
+KLA31_17,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.78609203291233
+KLA31_18,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,2.6028459761494
+KLA31_19,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.85194198781049
+KLA31_20,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.52906455709103
+KLA31_21,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,5.09805733987187
+KLA31_22,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.5706265070631
+KLA31_23,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.48441181631181
+KLA31_24,cancer_cells,"cancer
+cell lines",4,Lactylated protein genes,4.53832161934781
+KLA31_25,normal_cells,"normal
+cell lines",3,Lactylated protein genes,4.75375010222184
+KLA31_26,normal_cells,"normal
+cell lines",3,Lactylated protein genes,5.00386342977333
+KLA31_27,normal_cells,"normal
+cell lines",3,Lactylated protein genes,4.75215507055292
+KLA31_29,normal_cells,"normal
+cell lines",3,Lactylated protein genes,2.64177786127332
+KLA31_30,normal_cells,"normal
+cell lines",3,Lactylated protein genes,3.05181041720212
+KLA31_31,normal_cells,"normal
+cell lines",3,Lactylated protein genes,4.36861549749768

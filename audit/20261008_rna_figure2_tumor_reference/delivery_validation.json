@@ -1,0 +1,21 @@
+{
+  "Panels": 2,
+  "PNG": 2,
+  "PDF": 2,
+  "SVG": 2,
+  "TumorReference": true,
+  "ExpressionBrackets": 6,
+  "ProliferationBrackets": 3,
+  "AllLabelsNS": true,
+  "FrozenInputFilesIdentical": true,
+  "AllPointValuesPreserved": true,
+  "NoBackgroundGrid": true,
+  "WeightedEstimatesIndependentlyChecked": true,
+  "BHIndependentlyChecked": true,
+  "BracketEndpointsColoursAndLabelsChecked": true,
+  "PNGAndPDFVisuallyChecked": true,
+  "VectorSVGChecked": true,
+  "PackageAndZipSHA256Verified": true,
+  "IndexedFiles": 18,
+  "ZipSHA256": "76cc76d8c47eb5bee99dd55288987d5b377cfc1e9350407d829ead987dd8b9a2"
+}

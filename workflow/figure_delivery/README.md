@@ -1,5 +1,7 @@
 # 乳酸化图片汇总与机器学习零起点重绘
 
+2026-10-08 图二统计标注修订：两个 RNA 单图均以肿瘤组织为参照，分别与其余三类比较；左图分别在 DDR 和 Kla 蛋白对应基因集内检验，共 6 条彩色比较横线，右图为 3 条横线。沿用来源平衡、来源聚类 CR2 检验，BH 分别校正左图 6 次和右图 3 次检验，全部如实标为 ns。运行 `render_rna_figure2_tumor_reference.R` 和 `package_rna_figure2_tumor_reference.py`；新输出为 `outputs/20261008_rna_figure2_tumor_reference`，详见 `audit/20261008_rna_figure2_tumor_reference/README.md`。无网格、不组合，旧版保留。
+
 2026-10-07 图二单图修订：本次“图二”指用户截图中的左右箱线面板，最终确认两个面板均使用 RNA。左图为 DDR 与乳酸化蛋白对应基因的转录表达，右图为 Hallmark G2M RNA 增殖评分；使用 28 份去重材料。运行 `render_rna_figure2_refined.R` 后运行 `package_rna_figure2_refined.py`，输出至 `outputs/20261007_rna_figure2_refined` 和桌面“图二_RNA单图美化_20261007”。仅交付两个独立单图，均无网格、无上方比较括号或 ns/星号；详见 `audit/20261007_rna_figure2_refined/README.md`。此编号来自当前论文排版，冻结 RNA 源文件仍叫 Figure_1a/1b，不要与此前编号为 Figure_2 的 UpSet/七通路图混淆。
 
 2026-10-06 教师修订交付：`outputs/20261006_teacher_figures` 与桌面“乳酸化全部图片_无网格与统计标注_20261006”在以上版本基础上去除全部背景网格，补充来源聚类的组间比较，生成正文图 1–3 及可编辑 ML 表。方法和版本说明见 `audit/20261006_teacher_figures/REPORT.md`，图注单列保存。旧输出保留。

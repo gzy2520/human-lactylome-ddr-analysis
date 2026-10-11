@@ -1,0 +1,9 @@
+is-shallow-repository=false
+root_commits=e5a89ac59bf37c5424b3f23cfaa414f1fb409bf6
+commit e5a89ac59bf37c5424b3f23cfaa414f1fb409bf6
+Author:     gzy2520 <2894107596@qq.com>
+AuthorDate: Fri Aug 7 18:11:11 2026 +0800
+Commit:     gzy2520 <2894107596@qq.com>
+CommitDate: Fri Aug 7 18:11:11 2026 +0800
+
+    Establish reproducible Kla analysis baseline

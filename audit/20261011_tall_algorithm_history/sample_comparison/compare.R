@@ -1,0 +1,42 @@
+suppressPackageStartupMessages(library(data.table))
+out<-'audit/20261011_tall_algorithm_history/sample_comparison'
+src<-'/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files'
+p<-fread(file.path(src,'proteins.csv'));psm<-fread(file.path(src,'DB search psm.csv'));pp<-fread(file.path(src,'protein-peptides.csv'))
+base<-function(x)sub('-[0-9]+$','',sub('\\|.*$','',sub('^(sp|tr)\\|','',trimws(x))))
+ids<-function(x) {x<-base(unlist(strsplit(as.character(x),'[;,]')));sort(unique(x[!is.na(x)&grepl('^(?:[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9][A-Z][A-Z0-9]{2}[0-9](?:[A-Z0-9]{3}[0-9])?)$',x)]))}
+pos<-function(x){x<-suppressWarnings(as.numeric(x));is.finite(x)&x>0}
+strip<-function(x)gsub('\\([^)]*\\)|\\[[^]]*\\]','',sub('^[A-Z]\\.([A-Z].*)\\.[A-Z]$','\\1',x))
+f<-fread('data/publication_input/kla_protein_membership_31.csv')[PXD=='PXD028488'&SampleGroup=='TALL-104']
+g<-fread('data/publication_input/human_ddr_go_annotations.tsv');ddr<-ids(g[(is.na(`TAXON ID`)|`TAXON ID`==9606)&`GENE PRODUCT DB`=='UniProtKB'&!grepl('(^|\\|)NOT($|\\|)',QUALIFIER),`GENE PRODUCT ID`])
+mp<-unique(data.table(PeptideClean=strip(pp$Peptide),BaseAccession=base(pp$`Protein Accession`),Start=pp$Start))[!is.na(Start)]
+evidence<-rbindlist(lapply(seq_len(nrow(psm)),function(i){r<-psm[i];a<-ids(gsub(':',';',r$Accession,fixed=TRUE));if(!length(a))return(NULL);pep<-strip(r$Peptide);data.table(SourceRow=i+1L,SourceFile=r$`Source File`,BaseAccession=a,Peptide=r$Peptide,AScore=r$AScore,Score=r$`-10lgP`,Lac=grepl('K[0-9]+:Lac',r$AScore)|grepl('K\\(\\+72\\.02\\)',r$Peptide),Mapping=a%in%mp[PeptideClean==pep,BaseAccession],ExcludedAcc=grepl('DECOY|REV|REVERSED|CON_|CONTAM|CRAP',r$Accession,ignore.case=TRUE))}))
+evidence[,Pass:=Lac & Mapping & Score>=20 & !ExcludedAcc];fwrite(evidence,file.path(out,'psm_accession_evidence.csv'))
+summary<-list();details<-list()
+for(s in 1:3){raw<-paste0('TALL-NaLAC-enrichment-',s,'.raw');old<-ids(p$Accession[pos(p[[paste('Area Sample',s)]])]);new<-unique(evidence[SourceFile==raw&Pass,BaseAccession]);psma<-unique(evidence[SourceFile==raw&Lac&Score>=20&!ExcludedAcc,BaseAccession]);oldnum<-intersect(old,f[IsDdr==TRUE,BaseAccession]);newnum<-intersect(new,ddr);lacarea<-ids(pp$`Protein Accession`[grepl('K\\(\\+72\\.02\\)',pp$Peptide)&pos(pp[[paste('Area Sample',s)]])]);other<-unique(evidence[SourceFile!=raw&Pass,BaseAccession]);allid<-sort(unique(c(old,new,f$BaseAccession)));dt<-data.table(Sample=s,RawFile=raw,BaseAccession=allid,OldProteinAreaPositive=allid%in%old,FrozenKla=allid%in%f$BaseAccession,IsDdr=allid%in%ddr,OldNumerator=allid%in%oldnum,NewLacPsmMapped=allid%in%new,NewNumerator=allid%in%newnum,SameSampleLacPsmBeforeMapping=allid%in%psma,SameSampleLacPeptideAreaPositive=allid%in%lacarea,OtherSampleMappedLacPsm=allid%in%other)
+ dt[,Change:=fcase(OldNumerator&!NewNumerator,'old_DDR_removed',!OldNumerator&NewNumerator,'new_DDR_added',OldNumerator&NewNumerator,'DDR_retained',OldProteinAreaPositive&!NewLacPsmMapped,'non_numerator_denominator_removed',!OldProteinAreaPositive&NewLacPsmMapped,'new_denominator_added',default='other')]
+ details[[s]]<-dt
+ summary[[s]]<-data.table(Sample=s,OldTotal=length(old),OldDDR=length(oldnum),OldPercent=100*length(oldnum)/length(old),AllProteinGoDDR=length(intersect(old,ddr)),AllProteinGoPercent=100*length(intersect(old,ddr))/length(old),NewTotal=length(new),NewDDR=length(newnum),NewPercent=100*length(newnum)/length(new),IntersectionTotal=length(intersect(old,new)),RemovedTotal=length(setdiff(old,new)),AddedTotal=length(setdiff(new,old)),OldDDRRetained=length(intersect(oldnum,newnum)),OldDDRRemoved=length(setdiff(oldnum,newnum)),NewDDRAdded=length(setdiff(newnum,oldnum)),RemovedOldDDRWithOtherSamplePsm=length(intersect(setdiff(oldnum,newnum),other)),RemovedOldDDRWithSameSampleLacPeptideArea=length(intersect(setdiff(oldnum,newnum),lacarea)),RemovedOldDDRMappingFailure=length(intersect(setdiff(oldnum,newnum),psma)))
+}
+su<-rbindlist(summary);d<-rbindlist(details);fwrite(su,file.path(out,'per_sample_algorithm_comparison.csv'));fwrite(d,file.path(out,'all_accession_comparison.csv'));fwrite(d[Change%in%c('old_DDR_removed','new_DDR_added')],file.path(out,'ddr_numerator_changes.csv'));print(su);print(d[Change%in%c('old_DDR_removed','new_DDR_added'),.(Sample,BaseAccession,Change,SameSampleLacPsmBeforeMapping,SameSampleLacPeptideAreaPositive,OtherSampleMappedLacPsm)])
+# Resolve frozen group union membership acquired in unenriched source runs.
+nsrc<-sub('Enrichment-Search files/TALL-NALAC-Search files','Nonenrichment-Search files/TALL-Nonenrichment-Search files',src,fixed=TRUE)
+np<-fread(file.path(nsrc,'DB search psm.csv'));npp<-fread(file.path(nsrc,'protein-peptides.csv'))
+nmap<-unique(data.table(PeptideClean=strip(npp$Peptide),BaseAccession=base(npp$`Protein Accession`),Start=npp$Start))[!is.na(Start)]
+ni<-which((grepl('K[0-9]+:Lac',np$AScore)|grepl('K\\(\\+72\\.02\\)',np$Peptide))&np[['-10lgP']]>=20 & !grepl('DECOY|REV|REVERSED|CON_|CONTAM|CRAP',np$Accession,ignore.case=TRUE))
+non<-rbindlist(lapply(ni,function(i){pep<-strip(np$Peptide[i]);ac<-intersect(ids(gsub(':',';',np$Accession[i],fixed=TRUE)),nmap[PeptideClean==pep,BaseAccession]);if(length(ac))data.table(SourceRow=i+1L,RawFile=np$`Source File`[i],BaseAccession=ac,Peptide=np$Peptide[i])}))
+fwrite(non,file.path(out,'nonenrichment_lac_evidence.csv'))
+d[,NonenrichedMappedLac:=BaseAccession%in%non$BaseAccession]
+fwrite(d,file.path(out,'all_accession_comparison.csv'));fwrite(d[Change%in%c('old_DDR_removed','new_DDR_added')],file.path(out,'ddr_numerator_changes.csv'))
+print(d[Change=='old_DDR_removed',.(Sample,BaseAccession,OtherSampleMappedLacPsm,NonenrichedMappedLac)])
+now<-fread(cmd='gzip -dc deliverables/20261011_lactylation_ddr_sample_rebuilt/inputs/ddr_protein_membership.csv.gz')[PXD=='PXD028488'&SampleGroup=='TALL-104'&Dataset=='Lactylome (Kla)']
+latest<-unique(evidence[Pass==TRUE,.(SampleID=SourceFile,BaseAccession)]);latest[,IsDdr:=BaseAccession%in%ddr];latest[,SourceFile:=file.path(src,'DB search psm.csv')];fwrite(latest,file.path(out,'corrected_colon_mapping_membership.csv'))
+additions<-latest[!now,on=.(SampleID,BaseAccession)];fwrite(additions,file.path(out,'missing_in_current_12_71_membership.csv'))
+print(additions[,.(Missing=.N,DdrMissing=sum(IsDdr)),by=SampleID]);print(su[,.(OldMean=mean(OldPercent),NewMean=mean(NewPercent),NewSD=sd(NewPercent),NewSEM=sd(NewPercent)/sqrt(.N))])
+stages<-rbindlist(lapply(1:3,function(s){raw<-paste0('TALL-NaLAC-enrichment-',s,'.raw');old<-d[Sample==s&OldProteinAreaPositive,BaseAccession];od<-d[Sample==s&OldNumerator,BaseAccession];cur<-now[SampleID==raw,BaseAccession];cd<-intersect(cur,ddr);new<-latest[SampleID==raw,BaseAccession];nd<-intersect(new,ddr);rbindlist(lapply(list(list(stage='current_12.71',set=cur,ddr=cd),list(stage='complete_legacy_11.42',set=new,ddr=nd)),function(st)data.table(Sample=s,Stage=st$stage,Total=length(st$set),DDR=length(st$ddr),Percent=100*length(st$ddr)/length(st$set),OldIntersection=length(intersect(old,st$set)),OldRemoved=length(setdiff(old,st$set)),AddedBeyondOld=length(setdiff(st$set,old)),OldDDRRetained=length(intersect(od,st$ddr)),OldDDRRemoved=length(setdiff(od,st$ddr)),NewDDRAdded=length(setdiff(st$ddr,od)))))}))
+fwrite(stages,file.path(out,'current_and_corrected_vs_old.csv'))
+arm<-fread(cmd='gzip -dc audit/20261011_tall_algorithm_history/arm_scope/arm_sample_membership.csv.gz')[EnrichmentStatus=='Enriched',.(SampleID=SampleName,BaseAccession)]
+key<-function(x)paste(x$SampleID,x$BaseAccession,sep='|')
+setcheck<-data.table(Check='All enriched sample accession memberships exactly match original parser',Pass=setequal(key(arm),key(latest)),IndependentRows=nrow(latest),OriginalParserRows=nrow(arm),IndependentOnly=length(setdiff(key(latest),key(arm))),OriginalOnly=length(setdiff(key(arm),key(latest))))
+fwrite(setcheck,file.path(out,'original_parser_membership_set_check.csv'));print(setcheck)
+ascores<-regmatches(evidence$AScore,gregexpr('K[0-9]+:Lac:[0-9.]+',evidence$AScore));evidence[,AScore20:=vapply(ascores,function(x)any(as.numeric(sub('.*:','',x))>=20),logical(1))]
+aset<-unique(evidence[Pass==TRUE&AScore20==TRUE,.(SampleID=SourceFile,BaseAccession)]);aset[,IsDdr:=BaseAccession%in%ddr];fwrite(aset,file.path(out,'ascore20_membership.csv'));ast<-aset[,.(ProteinCount=.N,DdrProteinCount=sum(IsDdr),Percent=100*mean(IsDdr)),by=SampleID];fwrite(ast,file.path(out,'ascore20_counts.csv'));print(ast);print(ast[,.(Mean=mean(Percent),SD=sd(Percent),SEM=sd(Percent)/sqrt(.N))])

@@ -2,7 +2,7 @@
 suppressPackageStartupMessages({library(data.table);library(ggplot2);library(patchwork);library(ragg)})
 set.seed(25)
 args<-commandArgs(TRUE)
-release<-if(length(args))args[1] else 'deliverables/20261011_lactylation_ddr_sample_rebuilt'
+release<-if(length(args))args[1] else 'deliverables/20261011_lactylation_ddr_tall_verified'
 figdir<-file.path(release,'figures');tabdir<-file.path(release,'tables')
 dir.create(figdir,recursive=TRUE,showWarnings=FALSE)
 m<-fread(file.path(tabdir,'display_mapping_31.csv'))

@@ -2,7 +2,7 @@
 suppressPackageStartupMessages(library(data.table))
 set.seed(25)
 audit <- 'audit/20261011_ddr_sample_recovery'
-out <- 'deliverables/20261011_lactylation_ddr_sample_rebuilt'
+out <- 'deliverables/20261011_lactylation_ddr_tall_verified'
 read <- function(p) {f<-file.path(audit,p); if(grepl('gz$',f)) fread(cmd=paste('gzip -dc',shQuote(f))) else fread(f)}
 keys <- c('PXD','SampleGroup','Dataset','SampleID')
 cols <- c(keys,'BaseAccession','SourceFile','UnitType','Condition','SemEligible','Evidence')
@@ -13,8 +13,9 @@ e <- read('base_rebuild/escc_kla_membership.csv.gz')
 e[,`:=`(SemEligible=TRUE,Evidence='Positive sample-specific localization evidence in each MEC/NEC source column')]
 e <- e[,..cols]
 x <- read('existing_samples/recomputed_membership.csv.gz')
-t <- x[Case=='TALL_Kla_legacy_mapping']
-t[,`:=`(PXD='PXD028488',SampleGroup='TALL-104',Dataset='Lactylome (Kla)',UnitType='source_sample',Condition='NaLAC',SemEligible=TRUE,Evidence=Method)]
+t <- fread(cmd='gzip -dc audit/20261011_tall_algorithm_history/arm_scope/arm_sample_membership.csv.gz')[EnrichmentStatus=='Enriched']
+setnames(t,'SampleName','SampleID')
+t[,`:=`(PXD='PXD028488',SampleGroup='TALL-104',Dataset='Lactylome (Kla)',UnitType='source_sample',Condition='NaLAC',SemEligible=TRUE,Evidence='Original extract_pxd028488 parser; full multi-accession parsing; per-raw Lac PSM and peptide-position mapping')]
 t <- t[,..cols]
 s <- x[Case=='ESCC_proteome']
 s[,`:=`(PXD='PXD064038',SampleGroup='MEC and NEC ESCC groups',Dataset='Whole proteome',UnitType='source_sample',Condition='ESCC tumor tissue',SemEligible=TRUE,Evidence=Method)]

@@ -1,0 +1,140 @@
+   Sample OldTotal OldDDR OldPercent AllProteinGoDDR AllProteinGoPercent
+    <int>    <int>  <int>      <num>           <int>               <num>
+1:      1     1662     29   1.744886             114            6.859206
+2:      2     1686     30   1.779359             112            6.642942
+3:      3     1678     31   1.847437             117            6.972586
+   NewTotal NewDDR NewPercent IntersectionTotal RemovedTotal AddedTotal
+      <int>  <int>      <num>             <int>        <int>      <int>
+1:      196     21   10.71429               179         1483         17
+2:      201     25   12.43781               184         1502         17
+3:      198     22   11.11111               181         1497         17
+   OldDDRRetained OldDDRRemoved NewDDRAdded RemovedOldDDRWithOtherSamplePsm
+            <int>         <int>       <int>                           <int>
+1:             20             9           1                               7
+2:             23             7           2                               3
+3:             21            10           1                               6
+   RemovedOldDDRWithSameSampleLacPeptideArea RemovedOldDDRMappingFailure
+                                       <int>                       <int>
+1:                                         0                           0
+2:                                         0                           0
+3:                                         0                           0
+    Sample BaseAccession          Change SameSampleLacPsmBeforeMapping
+     <int>        <char>          <char>                        <lgcl>
+ 1:      1        O75367 old_DDR_removed                         FALSE
+ 2:      1        P09874 old_DDR_removed                         FALSE
+ 3:      1        P18858 old_DDR_removed                         FALSE
+ 4:      1        P25205 old_DDR_removed                         FALSE
+ 5:      1        P26583 old_DDR_removed                         FALSE
+ 6:      1        Q14566 old_DDR_removed                         FALSE
+ 7:      1        Q14676 old_DDR_removed                         FALSE
+ 8:      1        Q7Z3K3   new_DDR_added                          TRUE
+ 9:      1        Q7Z4V5 old_DDR_removed                         FALSE
+10:      1        Q99459 old_DDR_removed                         FALSE
+11:      2        P18858 old_DDR_removed                         FALSE
+12:      2        P25205 old_DDR_removed                         FALSE
+13:      2        Q13330   new_DDR_added                          TRUE
+14:      2        Q14566 old_DDR_removed                         FALSE
+15:      2        Q14683 old_DDR_removed                         FALSE
+16:      2        Q14839 old_DDR_removed                         FALSE
+17:      2        Q5UIP0   new_DDR_added                          TRUE
+18:      2        Q7L7L0 old_DDR_removed                         FALSE
+19:      2        Q9NYB0 old_DDR_removed                         FALSE
+20:      3        P25205 old_DDR_removed                         FALSE
+21:      3        P26583 old_DDR_removed                         FALSE
+22:      3        P39748 old_DDR_removed                         FALSE
+23:      3        P45973 old_DDR_removed                         FALSE
+24:      3        Q14566 old_DDR_removed                         FALSE
+25:      3        Q14683 old_DDR_removed                         FALSE
+26:      3        Q14839 old_DDR_removed                         FALSE
+27:      3        Q5UIP0   new_DDR_added                          TRUE
+28:      3        Q7Z4V5 old_DDR_removed                         FALSE
+29:      3        Q9NYB0 old_DDR_removed                         FALSE
+30:      3        Q9UIG0 old_DDR_removed                         FALSE
+    Sample BaseAccession          Change SameSampleLacPsmBeforeMapping
+     <int>        <char>          <char>                        <lgcl>
+    SameSampleLacPeptideAreaPositive OtherSampleMappedLacPsm
+                              <lgcl>                  <lgcl>
+ 1:                            FALSE                    TRUE
+ 2:                            FALSE                    TRUE
+ 3:                            FALSE                    TRUE
+ 4:                            FALSE                   FALSE
+ 5:                            FALSE                    TRUE
+ 6:                            FALSE                   FALSE
+ 7:                            FALSE                    TRUE
+ 8:                            FALSE                   FALSE
+ 9:                            FALSE                    TRUE
+10:                            FALSE                    TRUE
+11:                            FALSE                    TRUE
+12:                            FALSE                   FALSE
+13:                            FALSE                    TRUE
+14:                            FALSE                   FALSE
+15:                            FALSE                    TRUE
+16:                            FALSE                    TRUE
+17:                            FALSE                    TRUE
+18:                            FALSE                   FALSE
+19:                            FALSE                   FALSE
+20:                            FALSE                   FALSE
+21:                            FALSE                    TRUE
+22:                            FALSE                    TRUE
+23:                            FALSE                    TRUE
+24:                            FALSE                   FALSE
+25:                            FALSE                    TRUE
+26:                            FALSE                    TRUE
+27:                            FALSE                    TRUE
+28:                            FALSE                    TRUE
+29:                            FALSE                   FALSE
+30:                            FALSE                   FALSE
+    SameSampleLacPeptideAreaPositive OtherSampleMappedLacPsm
+                              <lgcl>                  <lgcl>
+    Sample BaseAccession OtherSampleMappedLacPsm NonenrichedMappedLac
+     <int>        <char>                  <lgcl>               <lgcl>
+ 1:      1        O75367                    TRUE                FALSE
+ 2:      1        P09874                    TRUE                FALSE
+ 3:      1        P18858                    TRUE                FALSE
+ 4:      1        P25205                   FALSE                 TRUE
+ 5:      1        P26583                    TRUE                FALSE
+ 6:      1        Q14566                   FALSE                 TRUE
+ 7:      1        Q14676                    TRUE                 TRUE
+ 8:      1        Q7Z4V5                    TRUE                FALSE
+ 9:      1        Q99459                    TRUE                FALSE
+10:      2        P18858                    TRUE                FALSE
+11:      2        P25205                   FALSE                 TRUE
+12:      2        Q14566                   FALSE                 TRUE
+13:      2        Q14683                    TRUE                FALSE
+14:      2        Q14839                    TRUE                FALSE
+15:      2        Q7L7L0                   FALSE                 TRUE
+16:      2        Q9NYB0                   FALSE                 TRUE
+17:      3        P25205                   FALSE                 TRUE
+18:      3        P26583                    TRUE                FALSE
+19:      3        P39748                    TRUE                FALSE
+20:      3        P45973                    TRUE                FALSE
+21:      3        Q14566                   FALSE                 TRUE
+22:      3        Q14683                    TRUE                FALSE
+23:      3        Q14839                    TRUE                FALSE
+24:      3        Q7Z4V5                    TRUE                FALSE
+25:      3        Q9NYB0                   FALSE                 TRUE
+26:      3        Q9UIG0                   FALSE                 TRUE
+    Sample BaseAccession OtherSampleMappedLacPsm NonenrichedMappedLac
+     <int>        <char>                  <lgcl>               <lgcl>
+                      SampleID Missing DdrMissing
+                        <char>   <int>      <int>
+1: TALL-NaLAC-enrichment-1.raw      23          0
+2: TALL-NaLAC-enrichment-3.raw      22          0
+3: TALL-NaLAC-enrichment-2.raw      23          1
+    OldMean  NewMean    NewSD    NewSEM
+      <num>    <num>    <num>     <num>
+1: 1.790561 11.42107 0.902602 0.5211175
+                                                                     Check
+                                                                    <char>
+1: All enriched sample accession memberships exactly match original parser
+     Pass IndependentRows OriginalParserRows IndependentOnly OriginalOnly
+   <lgcl>           <int>              <int>           <int>        <int>
+1:   TRUE             595                595               0            0
+                      SampleID ProteinCount DdrProteinCount  Percent
+                        <char>        <int>           <int>    <num>
+1: TALL-NaLAC-enrichment-1.raw          161              15  9.31677
+2: TALL-NaLAC-enrichment-3.raw          165              18 10.90909
+3: TALL-NaLAC-enrichment-2.raw          169              21 12.42604
+       Mean       SD       SEM
+      <num>    <num>     <num>
+1: 10.88397 1.554785 0.8976555

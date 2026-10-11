@@ -1,5 +1,7 @@
 # 乳酸化调控基因与 DDR 蛋白占比：逐样本重建版
 
+后续核验发现本版TALL的12.71%漏拆PEAKS多accession，完整解析均值为11.421069%。当前更正图见`deliverables/20261011_lactylation_ddr_tall_verified/`，算法对照见`audit/20261011_tall_algorithm_history/README.md`。本文件保留历史记录。
+
 2026-10-11。交付主文件：`Combined_RNA_DDR.pdf`，共4页；各页独立PDF及300 dpi PNG位于`figures/`。
 
 ## 图形内容

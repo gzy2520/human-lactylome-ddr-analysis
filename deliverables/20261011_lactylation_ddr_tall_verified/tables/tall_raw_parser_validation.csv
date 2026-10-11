@@ -1,0 +1,2 @@
+Check,Pass,IndependentRows,OriginalParserRows,IndependentOnly,OriginalOnly
+All enriched sample accession memberships exactly match original parser,TRUE,595,595,0,0

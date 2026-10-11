@@ -1,0 +1,7 @@
+Sample,Stage,Total,DDR,Percent,OldIntersection,OldRemoved,AddedBeyondOld,OldDDRRetained,OldDDRRemoved,NewDDRAdded
+1,current_12.71,173,21,12.1387283236994,165,1497,8,20,9,1
+1,complete_legacy_11.42,196,21,10.7142857142857,179,1483,17,20,9,1
+2,current_12.71,178,24,13.4831460674157,168,1518,10,22,8,2
+2,complete_legacy_11.42,201,25,12.4378109452736,184,1502,17,23,7,2
+3,current_12.71,176,22,12.5,169,1509,7,21,10,1
+3,complete_legacy_11.42,198,22,11.1111111111111,181,1497,17,21,10,1

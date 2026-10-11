@@ -1,5 +1,7 @@
 # DDR逐样本恢复与原图核对
 
+TALL后续完整解析核验见`audit/20261011_tall_algorithm_history/`，12.71%已更正为11.421069%；最新图目录为`deliverables/20261011_lactylation_ddr_tall_verified/`。
+
 2026-10-11。当前合并图为`deliverables/20261011_lactylation_ddr_sample_rebuilt/`。本目录保存恢复脚本、原表证据、稳定UniProt membership以及核对结果。
 
 ## 核对结论

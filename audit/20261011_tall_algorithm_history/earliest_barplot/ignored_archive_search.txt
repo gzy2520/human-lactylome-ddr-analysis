@@ -1,0 +1,5 @@
+Root: /Users/gzy2520/Desktop/Research/kla
+Command: rg --files --hidden --no-ignore -g !.git/** -g !.worktrees/** -g !node_modules/**
+Enumerated files: 1686
+Matching archive/v1/July21 paths: 0
+

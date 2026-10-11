@@ -1,6 +1,6 @@
 # 乳酸化调控基因表达与 DDR 蛋白占比组合图
 
-当前逐样本重建版见 `../20261011_lactylation_ddr_sample_rebuilt/`。本目录保留此前组并集柱图及比较记录。
+当前逐样本重建版见 `../20261011_lactylation_ddr_tall_verified/`。本目录保留此前组并集柱图及比较记录。
 
 ## 图件
 

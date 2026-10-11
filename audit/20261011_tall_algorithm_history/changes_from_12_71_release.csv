@@ -1,0 +1,4 @@
+PXD,SampleGroup,Dataset,SampleID,ProteinCount_Previous,DdrProteinCount_Previous,Fraction_Previous,ProteinCount_Current,DdrProteinCount_Current,Fraction_Current,Changed
+PXD028488,TALL-104,Lactylome (Kla),TALL-NaLAC-enrichment-1.raw,173,21,12.1387283236994,196,21,10.7142857142857,TRUE
+PXD028488,TALL-104,Lactylome (Kla),TALL-NaLAC-enrichment-2.raw,178,24,13.4831460674157,201,25,12.4378109452736,TRUE
+PXD028488,TALL-104,Lactylome (Kla),TALL-NaLAC-enrichment-3.raw,176,22,12.5,198,22,11.1111111111111,TRUE

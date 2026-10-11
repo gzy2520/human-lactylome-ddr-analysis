@@ -1,0 +1,32 @@
+suppressPackageStartupMessages(library(data.table))
+r<-'deliverables/20261011_lactylation_ddr_tall_verified'; old<-'deliverables/20261011_lactylation_ddr'; out<-'audit/20261011_tall_algorithm_history'
+a<-fread(cmd=paste('gzip -dc',file.path(r,'inputs/ddr_protein_membership.csv.gz')));u<-fread(file.path(r,'tables/ddr_source_unit_values.csv'));s<-fread(file.path(r,'tables/ddr_mean_sem_62.csv'));v<-fread(file.path(r,'tables/original_sample_comparison.csv'))
+k<-c('PXD','SampleGroup','Dataset','SampleID');gg<-c('PXD','SampleGroup','Dataset')
+checks<-list();check<-function(n,pass,detail='')checks[[length(checks)+1L]]<<-data.table(Check=n,Pass=pass,Detail=detail)
+check('325 source units and 62 positions',nrow(u)==325&&nrow(s)==62&&uniqueN(u[,..gg])==62)
+check('Membership uniqueness',!anyDuplicated(a[,c(k,'BaseAccession'),with=FALSE]))
+g<-fread('data/publication_input/human_ddr_go_annotations.tsv');g<-g[(is.na(`TAXON ID`)|`TAXON ID`==9606)&`GENE PRODUCT DB`=='UniProtKB'&!grepl('(^|\\|)NOT($|\\|)',QUALIFIER)];ddr<-unique(sub('-[0-9]+$','',g[['GENE PRODUCT ID']]))
+check('DDR membership uses complete frozen non-NOT human GO IDs',all(a$IsDdr==(a$BaseAccession%in%ddr)))
+cnt<-a[,.(ActualTotal=.N,ActualDdr=sum(IsDdr)),by=k];z<-merge(u,cnt,by=k);check('All unit membership counts recompute',nrow(z)==325&&all(z$ProteinCount==z$ActualTotal&z$DdrProteinCount==z$ActualDdr));check('All fractions recompute',max(abs(z$Fraction-100*z$ActualDdr/z$ActualTotal))<1e-10)
+cs<-u[,.(N0=.N,Mean0=mean(Fraction),SD0=sd(Fraction),SEM0=sd(Fraction)/sqrt(.N)),by=gg];z<-merge(s,cs,by=gg); eq<-function(x,y) all((is.na(x)&is.na(y))|(!is.na(x)&!is.na(y)&abs(x-y)<1e-10));check('Means SD SEM recompute',all(z$N==z$N0)&&eq(z$Mean,z$Mean0)&&eq(z$SD,z$SD0)&&eq(z$SEM,z$SEM0));check('40 SEM plotted',sum(!is.na(s$PlotSEM))==40);check('Plotted errors use SEM',eq(s$PlotSEM,ifelse(s$SemEligible&s$N>1,s$SEM,NA_real_)));check('Singleton and model means have no errors',all(is.na(s[N==1|grepl('model',UnitTypes),PlotSEM])))
+cn<-u[,.(Cn=.N),by=c(gg,'Condition')];nr<-cn[,.(NoRep=all(Cn==1)&&.N>1),by=gg][NoRep==TRUE];zz<-merge(nr,s,by=gg);check('All distinct singleton conditions omit error',all(is.na(zz$PlotSEM)),paste(zz$SampleGroup,collapse=';'))
+o<-fread(file.path(old,'inputs/proteome_samples.csv'));o[PXD=='PXD028488'&SampleGroup=='TALL-104'&Dataset=='Lactylome (Kla)',SampleID:=paste0('TALL-NaLAC-enrichment-',sub('Sample ','',SampleID),'.raw')];q<-merge(o[,c(k,'ProteinCount','DdrProteinCount'),with=FALSE],u[,c(k,'ProteinCount','DdrProteinCount'),with=FALSE],by=k,suffixes=c('Old','New'));q[,Equal:=ProteinCountOld==ProteinCountNew&DdrProteinCountOld==DdrProteinCountNew];check('269/272 previous sample counts unchanged',nrow(q)==272&&sum(q$Equal)==269);check('Only TALL Kla three records corrected',all(q[Equal==FALSE,PXD=='PXD028488'&SampleGroup=='TALL-104'&Dataset=='Lactylome (Kla)'])&&nrow(q[Equal==FALSE])==3);check('Comparison table agrees with independent old join',nrow(v)==272&&sum(v$ExactCounts)==269)
+for(f in c('rna_samples.csv','selected_qsmooth_B.tsv.gz','hgnc_selected.tsv','hgnc_source.json','material_mapping_31.csv')){p<-file.path(r,'inputs',f);po<-file.path(old,'inputs',f);check(paste('RNA input byte-identical',f),unname(tools::md5sum(p))==unname(tools::md5sum(po)))}
+f<-'rna_values_28_references.csv.gz';nrna<-fread(cmd=paste('gzip -dc',file.path(r,'tables',f)));orna<-fread(cmd=paste('gzip -dc',file.path(old,'tables',f)));check('RNA plotted table value-identical',identical(nrna,orna));check('RNA table 12 genes x 1898 sample records',nrow(nrna)==12*1898&&uniqueN(nrna$ReferenceKey)==28)
+fwrite(rbindlist(checks),file.path(out,'final_delivery_validation.csv'));print(rbindlist(checks));fwrite(q[Equal==FALSE],file.path(out,'final_tall_changes.csv'));print(s[,.(Positions=.N,ErrorBars=sum(!is.na(PlotSEM))),by=.(UnitTypes,SemEligible)])
+# Compare final TALL membership directly with independently parsed raw evidence.
+z<-fread('audit/20261011_tall_algorithm_history/sample_comparison/corrected_colon_mapping_membership.csv')
+zz<-a[PXD=='PXD028488'&SampleGroup=='TALL-104'&Dataset=='Lactylome (Kla)',.(SampleID,BaseAccession,IsDdr)]
+z<-z[,.(SampleID,BaseAccession,IsDdr)]
+setorder(zz,SampleID,BaseAccession);setorder(z,SampleID,BaseAccession)
+check('Final TALL equals independent complete raw parser membership',nrow(z)==595&&identical(zz,z))
+prev<-fread('deliverables/20261011_lactylation_ddr_sample_rebuilt/tables/ddr_source_unit_values.csv')
+j<-merge(prev[,c(k,'ProteinCount','DdrProteinCount','Fraction'),with=FALSE],u[,c(k,'ProteinCount','DdrProteinCount','Fraction'),with=FALSE],by=k,suffixes=c('_Previous','_Current'))
+j[,Changed:=ProteinCount_Previous!=ProteinCount_Current|DdrProteinCount_Previous!=DdrProteinCount_Current|abs(Fraction_Previous-Fraction_Current)>1e-12]
+stopifnot(nrow(j)==325,sum(j$Changed)==3,all(j[Changed==TRUE,PXD=='PXD028488'&SampleGroup=='TALL-104'&Dataset=='Lactylome (Kla)']))
+fwrite(j[Changed==TRUE],file.path(out,'changes_from_12_71_release.csv'))
+
+check("Only three TALL records changed from previous release",nrow(j)==325&&sum(j$Changed)==3)
+fwrite(rbindlist(checks),file.path(out,"final_delivery_validation.csv"))
+
+stopifnot(all(rbindlist(checks)$Pass))

@@ -1,5 +1,7 @@
 # 现有样本 DDR 计算核查
 
+后续核验发现本版TALL的12.71%漏拆PEAKS多accession，完整解析均值为11.421069%。当前更正图见`deliverables/20261011_lactylation_ddr_tall_verified/`，算法对照见`audit/20261011_tall_algorithm_history/README.md`。本文件保留历史记录。
+
 2026-10-11。核查对象为 `deliverables/20261011_lactylation_ddr/inputs/proteome_samples.csv`，独立复算 TALL-104 乳酸化、PC-3M 乳酸化、ESCC 全蛋白组。DDR 注释取当前冻结 `human_ddr_go_annotations.tsv` 中人类 UniProtKB、非 NOT 注释，以去除 isoform 后的 UniProt accession 运算。逐样本去重，不以基因符号计数。
 
 ## 结论

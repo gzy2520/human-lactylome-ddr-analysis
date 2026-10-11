@@ -1,0 +1,2 @@
+GroupID,Dataset,UnitType,UnitCount,SourceSampleCount,ProteinCount,DdrProteinCount,Percent,SEM,SemEligible,Reason
+KLA31_05,Lactylome (Kla),quantification_panel,1,3,853,29,3.39976553341149,,FALSE,Author quantifiable panel has processed positive values in all three columns; original per-sample detection mask unavailable

@@ -1,0 +1,25 @@
+SourceFile,Field,UniqueN,Values
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TPLa/La (K)Sites.txt,Amino acid,1,K
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TPLa/La (K)Sites.txt,Potential contaminant,2, | +
+/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,Amino acid,1,K
+/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,Potential contaminant,2, | +
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S1] F1: Sample, HSP1_1",3,Not Found | Peak Found | High
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S2] F2: Sample, HSP2_1",3,Not Found | Peak Found | High
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S3] F3: Sample, HSP3_1",3,Not Found | Peak Found | High
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S4] F4: Sample, HSP4_1",3,Not Found | Peak Found | High
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S5] F5: Sample, NSP1_1",3,High | Not Found | Peak Found
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S6] F6: Sample, NSP2_1",3,Not Found | High | Peak Found
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S7] F7: Sample, NSP3_1",3,Not Found | High | Peak Found
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,"Found in Sample: [S8] F8: Sample, NSP4_1",3,Not Found | High | Peak Found
+/Users/gzy2520/Desktop/Research/kla/data/PXD063047/search_results/extracted/combined/txt/La (K)Sites.txt,Amino acid,1,K
+/Users/gzy2520/Desktop/Research/kla/data/PXD063047/search_results/extracted/combined/txt/La (K)Sites.txt,Potential contaminant,2, | +
+/Users/gzy2520/Desktop/Research/kla/data/PXD064912/supplementary/europepmc/mmc1.xlsx,PTM.ModificationTitle,1,lactylation
+/Users/gzy2520/Desktop/Research/kla/data/PXD064912/supplementary/europepmc/mmc1.xlsx,PTM.SiteAA,1,K
+/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,R.FileName,10,XB08700B1DPLa_NAT1_S2-A1_1_11218 | XB08700B1DPLa_NAT2_S2-A2_1_11219 | XB08700B1DPLa_NAT3_S2-A3_1_11220 | XB08700B1DPLa_NAT4_S2-A4_1_11221 | XB08700B1DPLa_NAT5_S2-A5_1_11222 | XB08700B1DPLa_PCa1_S2-A6_1_11224 | XB08700B1DPLa_PCa2_S2-A7_1_11225 | XB08700B1DPLa_PCa3_S2-A8_1_11226 | XB08700B1DPLa_PCa4_S2-A9_1_11227 | XB08700B1DPLa_PCa5_S2-A10_1_11228
+/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,R.Condition,10,NAT1 | NAT2 | NAT3 | NAT4 | NAT5 | PCa1 | PCa2 | PCa3 | PCa4 | PCa5
+/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,R.Replicate,1,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,PTM.ModificationTitle,3,Carbamidomethyl (C) | L-Lac(K) | Oxidation (M)
+/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,PTM.SiteAA,3,C | K | M
+PXD075377/search_results/extracted/2-Basic_analysis/MS_identified_information.txt,Amino acid,1,K
+/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Amino acid,1,K
+/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,Potential contaminant,2, | +

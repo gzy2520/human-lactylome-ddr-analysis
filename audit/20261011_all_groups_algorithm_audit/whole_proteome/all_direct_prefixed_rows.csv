@@ -1,0 +1,806 @@
+SourceFile,Sheet,Row,Field,Value,Reverse,PotentialContaminant
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,54,Protein IDs,CON__ENSEMBL:ENSBTAP00000001528;Q15811;Q9NZM3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,55,Protein IDs,CON__ENSEMBL:ENSBTAP00000006074,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,56,Protein IDs,CON__ENSEMBL:ENSBTAP00000024146,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,57,Protein IDs,CON__ENSEMBL:ENSBTAP00000031900,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,58,Protein IDs,CON__ENSEMBL:ENSP00000377550;P13646;CON__P13646-1;CON__P08730-1;P19012;CON__P19012;CON__P02533;CON__A2A4G1;CON__Q6IFX2;P02533;CON__P19001;CON__Q9D312;CON__P35900;CON__P08727;CON__Q8N1A0;CON__Q3ZAW8;Q8N1A0;P35900;CON__Q9Z2K1;P08727;CON__Q61782,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,59,Protein IDs,CON__P00761,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,60,Protein IDs,CON__P01966,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,61,Protein IDs,CON__P02070;P02100,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,62,Protein IDs,CON__P02768-1;P02768,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,63,Protein IDs,CON__P02769,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,64,Protein IDs,CON__P04258,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,65,Protein IDs,CON__P08729;CON__Q3KNV1;P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,66,Protein IDs,CON__P08779;P08779,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,67,Protein IDs,CON__P13645;P13645;CON__Q7Z3Y7;CON__P02535-1;Q7Z3Y7;CON__Q7Z3Y8;CON__Q2M2I5;Q7Z3Y8;Q2M2I5;CON__Q7Z3Z0;CON__Q148H6;Q7Z3Z0,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,68,Protein IDs,CON__P13647;P13647,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,69,Protein IDs,CON__P19013;P19013,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,70,Protein IDs,CON__P35908v2;CON__P35908;P35908;CON__Q6IFZ6;CON__Q7Z794;Q7Z794;CON__Q6NXH9;CON__Q9R0H5;CON__Q7RTS7;CON__Q32MB2;Q7RTS7;Q86Y46,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,71,Protein IDs,CON__Q05443,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,72,Protein IDs,CON__Q1RMN8,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,73,Protein IDs,CON__Q2UVX4,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,74,Protein IDs,CON__Q32PJ2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,75,Protein IDs,CON__Q3SX14,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,76,Protein IDs,CON__Q3SX28,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,77,Protein IDs,CON__Q5D862;Q5D862,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,78,Protein IDs,CON__Q5XQN5;CON__Q922U2;CON__Q8BGZ7;CON__P50446,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,79,Protein IDs,CON__Q86YZ3;Q86YZ3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,536,Protein IDs,P00734;CON__P00735,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,543,Protein IDs,P00747;CON__P06868;Q15195;Q02325,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,551,Protein IDs,P01008;CON__P41361,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,557,Protein IDs,P01031;CON__Q1A7A4,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,594,Protein IDs,P02452;CON__Q862S4,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,599,Protein IDs,P02545;REV__Q5VX52,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,602,Protein IDs,P02647;CON__P15497,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,603,Protein IDs,P02649;CON__Q03247,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,608,Protein IDs,P02671;CON__P02672,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,609,Protein IDs,P02675;CON__P02676,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,618,Protein IDs,P02748;CON__Q3MHN2;REV__Q4AC99;Q96BY6,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,619,Protein IDs,P02749;CON__P17690,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,623,Protein IDs,P02760;CON__P00978,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,625,Protein IDs,P02765;CON__P12763,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,627,Protein IDs,P02774;CON__Q3MHN5;CON__ENSEMBL:ENSBTAP00000018229;Q8TDJ6,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,630,Protein IDs,P02787;CON__Q2HJF0;CON__Q29443;CON__Q0IIK2,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,642,Protein IDs,P04003;CON__Q28065,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,643,Protein IDs,P04004;CON__Q3ZBS7,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,651,Protein IDs,P04114;CON__ENSEMBL:ENSBTAP00000032840,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,660,Protein IDs,P04264;CON__P04264,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,688,Protein IDs,P05156;CON__Q32PI4,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,701,Protein IDs,P05452;CON__Q2KIS7,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,703,Protein IDs,P05543;CON__Q9TT36,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,704,Protein IDs,P05546;CON__ENSEMBL:ENSBTAP00000018574,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,723,Protein IDs,P06744;CON__Q3ZBD7,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,753,Protein IDs,P07737;CON__P02584,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,766,Protein IDs,P07996;CON__Q28194,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,799,Protein IDs,P08670;P14136;CON__Q9DCV7;CON__Q14533;CON__Q7RTT2;CON__Q9NSB2;CON__Q61726;CON__Q6ISB0;CON__O43790;CON__Q6NT21;CON__P78385;CON__P78386;CON__Q8N1N4-2;Q9NSB2;P07196;Q8N1N4;P78386;Q14533;P78385;O43790;P07197,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,800,Protein IDs,P08697;CON__P28800,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,837,Protein IDs,P0C0L4;CON__ENSEMBL:ENSBTAP00000007350;CON__P01030,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,864,Protein IDs,P10643;CON__Q29RQ1,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,868,Protein IDs,P10909;CON__P17697,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,968,Protein IDs,P15169;CON__Q2KJ83,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,987,Protein IDs,P16219;REV__Q8WW52,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1050,Protein IDs,P19823;CON__Q9TRI1,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1051,Protein IDs,P19827;CON__Q0VCM5,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1120,Protein IDs,P23142;CON__ENSEMBL:ENSBTAP00000016046,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1313,Protein IDs,P35270;REV__Q16649,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1317,Protein IDs,P35527;CON__P35527,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1322,Protein IDs,P35579;REV__Q9UKV3,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1352,Protein IDs,P36955;CON__Q95121,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1434,Protein IDs,P43652;CON__REFSEQ:XP_585019,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1914,Protein IDs,P99999;CON__P62894,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1970,Protein IDs,Q04756;CON__ENSEMBL:ENSBTAP00000023055,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1986,Protein IDs,Q06033;CON__Q0V8M9,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,2006,Protein IDs,Q07954;REV__Q07954;O75581;O75197,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,2208,Protein IDs,Q14624;CON__Q3T052,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,2249,Protein IDs,Q15063;CON__Q2KJC7,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,2926,Protein IDs,Q92888;REV__Q9BZR6,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3070,Protein IDs,Q96PD5;CON__ENSEMBL:ENSBTAP00000016285,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3266,Protein IDs,Q9BZQ8;REV__Q9UHV5,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3540,Protein IDs,Q9NZM1;REV__P24752,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3887,Protein IDs,REV__A2RUB6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3888,Protein IDs,REV__A6NMK8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3889,Protein IDs,REV__A7E2U8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3890,Protein IDs,REV__CON__P07224,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3891,Protein IDs,REV__CON__Q3SZ57,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3892,Protein IDs,REV__O15037,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3893,Protein IDs,REV__O15439,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3894,Protein IDs,REV__O60437,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3895,Protein IDs,REV__O75110,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3896,Protein IDs,REV__O75460,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3897,Protein IDs,REV__O75688,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3898,Protein IDs,REV__O95714,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3899,Protein IDs,REV__O95918,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3900,Protein IDs,REV__O95983,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3901,Protein IDs,REV__O95985,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3902,Protein IDs,REV__P05546,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3903,Protein IDs,REV__P0C7V8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3904,Protein IDs,REV__P12111,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3905,Protein IDs,REV__P42356,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3906,Protein IDs,REV__P56937,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3907,Protein IDs,REV__P61247,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3908,Protein IDs,REV__Q01118,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3909,Protein IDs,REV__Q03181,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3910,Protein IDs,REV__Q07020,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3911,Protein IDs,REV__Q13107,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3912,Protein IDs,REV__Q14204,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3913,Protein IDs,REV__Q15283,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3914,Protein IDs,REV__Q16822,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3915,Protein IDs,REV__Q2VIQ3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3916,Protein IDs,REV__Q49A26,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3917,Protein IDs,REV__Q59H18,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3918,Protein IDs,REV__Q5CZC0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3919,Protein IDs,REV__Q5T9G4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3920,Protein IDs,REV__Q5VZ72,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3921,Protein IDs,REV__Q5W0B1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3922,Protein IDs,REV__Q6IC98,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3923,Protein IDs,REV__Q6IF99;REV__Q8NGX5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3924,Protein IDs,REV__Q6P1M3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3925,Protein IDs,REV__Q6R327,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3926,Protein IDs,REV__Q6TDU7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3927,Protein IDs,REV__Q6ZMW3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3928,Protein IDs,REV__Q6ZQQ6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3929,Protein IDs,REV__Q6ZVL6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3930,Protein IDs,REV__Q7Z745,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3931,Protein IDs,REV__Q86Y22,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3932,Protein IDs,REV__Q8IXF0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3933,Protein IDs,REV__Q8NEZ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3934,Protein IDs,REV__Q8NHV1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3935,Protein IDs,REV__Q92922;REV__Q8TAQ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3936,Protein IDs,REV__Q8TB24,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3937,Protein IDs,REV__Q8WXH0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3938,Protein IDs,REV__Q8WZ42,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3939,Protein IDs,REV__Q969V6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3940,Protein IDs,REV__Q96D96,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3941,Protein IDs,REV__Q96FA3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3942,Protein IDs,REV__Q96FC7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3943,Protein IDs,REV__Q96FV9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3944,Protein IDs,REV__Q96KR7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3945,Protein IDs,REV__Q96LU7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3946,Protein IDs,REV__Q96ME7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3947,Protein IDs,REV__Q96N46,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3948,Protein IDs,REV__Q96P71,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3949,Protein IDs,REV__Q96QE3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3950,Protein IDs,REV__Q99707,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3951,Protein IDs,REV__Q9BSQ5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3952,Protein IDs,REV__Q9BV47,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3953,Protein IDs,REV__Q9BYW2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3954,Protein IDs,REV__Q9H334,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3955,Protein IDs,REV__Q9H8G2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3956,Protein IDs,REV__Q9H9L3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3957,Protein IDs,REV__Q9HAV4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3958,Protein IDs,REV__Q9NSY1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3959,Protein IDs,REV__Q9NVF9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3960,Protein IDs,REV__Q9NVR0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3961,Protein IDs,REV__Q9NYZ3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3962,Protein IDs,REV__Q9NZJ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3963,Protein IDs,REV__Q9UKX2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3964,Protein IDs,REV__Q9ULS6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3965,Protein IDs,REV__Q9UPE1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3966,Protein IDs,REV__Q9UPS8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3967,Protein IDs,REV__Q9Y2E5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3968,Protein IDs,REV__Q9Y2G0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3969,Protein IDs,REV__Q9Y5C1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,54,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000001528;Q15811,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,55,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000006074,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,56,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000024146,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,57,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000031900,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,58,Majority protein IDs,CON__ENSEMBL:ENSP00000377550;P13646;CON__P13646-1;CON__P08730-1;P19012;CON__P19012;CON__P02533;CON__A2A4G1;CON__Q6IFX2;P02533,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,59,Majority protein IDs,CON__P00761,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,60,Majority protein IDs,CON__P01966,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,61,Majority protein IDs,CON__P02070;P02100,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,62,Majority protein IDs,CON__P02768-1;P02768,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,63,Majority protein IDs,CON__P02769,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,64,Majority protein IDs,CON__P04258,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,65,Majority protein IDs,CON__P08729;CON__Q3KNV1;P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,66,Majority protein IDs,CON__P08779;P08779,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,67,Majority protein IDs,CON__P13645;P13645,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,68,Majority protein IDs,CON__P13647;P13647,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,69,Majority protein IDs,CON__P19013;P19013,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,70,Majority protein IDs,CON__P35908v2;CON__P35908;P35908,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,71,Majority protein IDs,CON__Q05443,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,72,Majority protein IDs,CON__Q1RMN8,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,73,Majority protein IDs,CON__Q2UVX4,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,74,Majority protein IDs,CON__Q32PJ2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,75,Majority protein IDs,CON__Q3SX14,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,76,Majority protein IDs,CON__Q3SX28,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,77,Majority protein IDs,CON__Q5D862;Q5D862,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,78,Majority protein IDs,CON__Q5XQN5;CON__Q922U2;CON__Q8BGZ7;CON__P50446,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,79,Majority protein IDs,CON__Q86YZ3;Q86YZ3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,660,Majority protein IDs,P04264;CON__P04264,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,766,Majority protein IDs,P07996;CON__Q28194,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,968,Majority protein IDs,P15169;CON__Q2KJ83,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1120,Majority protein IDs,P23142;CON__ENSEMBL:ENSBTAP00000016046,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1317,Majority protein IDs,P35527;CON__P35527,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,1970,Majority protein IDs,Q04756;CON__ENSEMBL:ENSBTAP00000023055,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3887,Majority protein IDs,REV__A2RUB6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3888,Majority protein IDs,REV__A6NMK8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3889,Majority protein IDs,REV__A7E2U8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3890,Majority protein IDs,REV__CON__P07224,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3891,Majority protein IDs,REV__CON__Q3SZ57,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3892,Majority protein IDs,REV__O15037,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3893,Majority protein IDs,REV__O15439,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3894,Majority protein IDs,REV__O60437,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3895,Majority protein IDs,REV__O75110,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3896,Majority protein IDs,REV__O75460,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3897,Majority protein IDs,REV__O75688,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3898,Majority protein IDs,REV__O95714,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3899,Majority protein IDs,REV__O95918,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3900,Majority protein IDs,REV__O95983,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3901,Majority protein IDs,REV__O95985,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3902,Majority protein IDs,REV__P05546,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3903,Majority protein IDs,REV__P0C7V8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3904,Majority protein IDs,REV__P12111,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3905,Majority protein IDs,REV__P42356,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3906,Majority protein IDs,REV__P56937,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3907,Majority protein IDs,REV__P61247,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3908,Majority protein IDs,REV__Q01118,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3909,Majority protein IDs,REV__Q03181,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3910,Majority protein IDs,REV__Q07020,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3911,Majority protein IDs,REV__Q13107,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3912,Majority protein IDs,REV__Q14204,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3913,Majority protein IDs,REV__Q15283,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3914,Majority protein IDs,REV__Q16822,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3915,Majority protein IDs,REV__Q2VIQ3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3916,Majority protein IDs,REV__Q49A26,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3917,Majority protein IDs,REV__Q59H18,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3918,Majority protein IDs,REV__Q5CZC0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3919,Majority protein IDs,REV__Q5T9G4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3920,Majority protein IDs,REV__Q5VZ72,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3921,Majority protein IDs,REV__Q5W0B1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3922,Majority protein IDs,REV__Q6IC98,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3923,Majority protein IDs,REV__Q6IF99;REV__Q8NGX5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3924,Majority protein IDs,REV__Q6P1M3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3925,Majority protein IDs,REV__Q6R327,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3926,Majority protein IDs,REV__Q6TDU7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3927,Majority protein IDs,REV__Q6ZMW3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3928,Majority protein IDs,REV__Q6ZQQ6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3929,Majority protein IDs,REV__Q6ZVL6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3930,Majority protein IDs,REV__Q7Z745,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3931,Majority protein IDs,REV__Q86Y22,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3932,Majority protein IDs,REV__Q8IXF0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3933,Majority protein IDs,REV__Q8NEZ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3934,Majority protein IDs,REV__Q8NHV1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3935,Majority protein IDs,REV__Q92922;REV__Q8TAQ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3936,Majority protein IDs,REV__Q8TB24,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3937,Majority protein IDs,REV__Q8WXH0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3938,Majority protein IDs,REV__Q8WZ42,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3939,Majority protein IDs,REV__Q969V6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3940,Majority protein IDs,REV__Q96D96,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3941,Majority protein IDs,REV__Q96FA3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3942,Majority protein IDs,REV__Q96FC7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3943,Majority protein IDs,REV__Q96FV9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3944,Majority protein IDs,REV__Q96KR7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3945,Majority protein IDs,REV__Q96LU7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3946,Majority protein IDs,REV__Q96ME7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3947,Majority protein IDs,REV__Q96N46,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3948,Majority protein IDs,REV__Q96P71,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3949,Majority protein IDs,REV__Q96QE3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3950,Majority protein IDs,REV__Q99707,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3951,Majority protein IDs,REV__Q9BSQ5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3952,Majority protein IDs,REV__Q9BV47,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3953,Majority protein IDs,REV__Q9BYW2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3954,Majority protein IDs,REV__Q9H334,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3955,Majority protein IDs,REV__Q9H8G2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3956,Majority protein IDs,REV__Q9H9L3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3957,Majority protein IDs,REV__Q9HAV4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3958,Majority protein IDs,REV__Q9NSY1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3959,Majority protein IDs,REV__Q9NVF9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3960,Majority protein IDs,REV__Q9NVR0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3961,Majority protein IDs,REV__Q9NYZ3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3962,Majority protein IDs,REV__Q9NZJ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3963,Majority protein IDs,REV__Q9UKX2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3964,Majority protein IDs,REV__Q9ULS6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3965,Majority protein IDs,REV__Q9UPE1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3966,Majority protein IDs,REV__Q9UPS8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3967,Majority protein IDs,REV__Q9Y2E5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3968,Majority protein IDs,REV__Q9Y2G0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,3969,Majority protein IDs,REV__Q9Y5C1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,58,Protein IDs,CON__A2I7N1;CON__A2I7N0,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,59,Protein IDs,CON__A2I7N3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,60,Protein IDs,CON__ENSEMBL:ENSBTAP00000007350;CON__P01030,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,61,Protein IDs,CON__ENSEMBL:ENSBTAP00000024146;P20742,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,62,Protein IDs,CON__ENSEMBL:ENSBTAP00000024462,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,63,Protein IDs,CON__ENSEMBL:ENSBTAP00000024466,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,64,Protein IDs,CON__ENSEMBL:ENSBTAP00000032840,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,65,Protein IDs,CON__ENSEMBL:ENSBTAP00000034412,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,66,Protein IDs,CON__ENSEMBL:ENSBTAP00000037665,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,67,Protein IDs,CON__P00735;P00734,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,68,Protein IDs,CON__P00761,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,69,Protein IDs,CON__P01045-1;CON__Q2KJ62;CON__P01044-1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,70,Protein IDs,CON__P01966;P69905,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,71,Protein IDs,P02533;CON__P02533;CON__P08779;P08779;CON__A2A4G1;CON__Q3ZAW8;CON__Q9Z2K1;CON__Q61782;P35900;CON__Q9D312;CON__P35900;CON__O76015;CON__A2AB72;CON__Q9UE12;CON__Q14532;CON__O76013;CON__Q7Z3Y9;CON__A2A5Y0;CON__REFSEQ:XP_986630;CON__Q15323;CON__Q14525;CON__Q99456;CON__Q8N1A0;CON__O76014;O76015;Q7Z3Y9;O76013;Q8N1A0;O76014;Q14532;Q15323;Q14525;Q99456,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,72,Protein IDs,CON__P02662,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,73,Protein IDs,P02769;CON__P02769,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,74,Protein IDs,CON__P02777,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,75,Protein IDs,CON__P48668;CON__P04259;P48668;P04259;CON__P02538;P02538;CON__P13647;P13647;Q01546;CON__Q01546;CON__P07744;CON__Q7RTS7;Q7RTS7;CON__Q8N1N4-2;CON__Q7RTT2;Q8N1N4,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,76,Protein IDs,CON__P05784,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,77,Protein IDs,CON__P05787;P05787;CON__H-INV:HIT000292931;CON__Q9H552;CON__H-INV:HIT000016045;CON__P12035;P12035;CON__REFSEQ:XP_092267,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,78,Protein IDs,CON__P08729;CON__Q9DCV7;Q14CN4;CON__Q14CN4-1;CON__Q6ISB0;Q9NSB2;CON__Q9NSB2;Q3SY84;CON__Q3SY84;CON__Q14533;CON__Q6NT21;CON__P78385;CON__O43790;CON__Q61726;P78385;O43790;Q14533,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,79,Protein IDs,CON__P12763,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,80,Protein IDs,CON__P13645;P13645;CON__P02535-1;CON__Q148H6;CON__Q7Z3Y7;Q7Z3Y7;CON__Q7Z3Z0;CON__Q7Z3Y8;CON__Q2M2I5;Q7Z3Z0;Q7Z3Y8;Q2M2I5,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,81,Protein IDs,CON__P15497;P02647,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,82,Protein IDs,CON__P17690;P02749,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,83,Protein IDs,CON__P34955,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,84,Protein IDs,CON__P35527;P35527,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,85,Protein IDs,CON__P35908v2;CON__P35908;P35908;CON__Q7Z794;Q7Z794;CON__Q9R0H5,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,86,Protein IDs,CON__P41361;P01008,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,87,Protein IDs,CON__P78386;P78386,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,88,Protein IDs,CON__Q04695;Q04695;CON__Q9QWL7;CON__Q6IFX2;CON__Q9C075;CON__Q99PS0;Q9C075,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,89,Protein IDs,CON__Q05B55,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,90,Protein IDs,CON__Q0IIK2;CON__Q29443;P02788,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,91,Protein IDs,CON__Q0V8M9;Q06033,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,92,Protein IDs,CON__Q1RMK2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,93,Protein IDs,CON__Q1RMN8,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,94,Protein IDs,CON__Q28065;P04003,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,95,Protein IDs,CON__Q28107;P12259,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,96,Protein IDs,CON__Q28194;P07996,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,97,Protein IDs,CON__Q2KJF1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,98,Protein IDs,CON__Q2UVX4,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,99,Protein IDs,CON__Q3KNV1;P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,100,Protein IDs,CON__Q3SX09;CON__P02070;P69892;P69891;P02100,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,101,Protein IDs,CON__Q3SX28,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,102,Protein IDs,CON__Q3SZR3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,103,Protein IDs,CON__Q3SZV7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,104,Protein IDs,CON__Q3T052,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,105,Protein IDs,CON__Q3ZBD7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,106,Protein IDs,CON__Q3ZBS7;P04004,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,107,Protein IDs,Q6KB66;CON__Q6KB66-1;CON__Q0VBK2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,108,Protein IDs,CON__Q86YZ3;Q86YZ3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,109,Protein IDs,CON__Q9TTE1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,468,Protein IDs,O43929;CON__Q2YDI2,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,533,Protein IDs,O60763;REV__Q5VZ89,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,928,Protein IDs,P02795;P13640;CON__P67983;Q8N339;P80294;P04731,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,949,Protein IDs,P04264;CON__P04264,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,980,Protein IDs,P05783;CON__H-INV:HIT000015463;CON__Q92764;CON__Q497I4;Q92764,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,985,Protein IDs,P06396;CON__Q3SX14,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,1017,Protein IDs,P07737;CON__P02584,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,1392,Protein IDs,P23142;CON__ENSEMBL:ENSBTAP00000016046,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,1621,Protein IDs,P35579;REV__Q9UKV3;Q9UKX3;Q9Y623;P13533,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,2052,Protein IDs,P54707;REV__Q15772,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,2232,Protein IDs,P62328;CON__P21752,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,2470,Protein IDs,Q04637;REV__Q8NEG2,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,2485,Protein IDs,Q05682;REV__O75334;REV__Q13136,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,2865,Protein IDs,Q14789;REV__Q8N884,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,3021,Protein IDs,Q15811;CON__ENSEMBL:ENSBTAP00000001528,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,3865,Protein IDs,Q8IWB1;REV__Q96B96,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,4227,Protein IDs,Q8TD19;REV__Q9P0M6,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,4348,Protein IDs,Q8WY22;REV__Q96PE2,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,4458,Protein IDs,Q93009;REV__Q86YS3,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,4926,Protein IDs,Q99614;REV__Q9BYX2,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,5452,Protein IDs,Q9H4B7;CON__ENSEMBL:ENSBTAP00000025008,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,5962,Protein IDs,Q9NZ53;REV__Q9NZ53,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,5971,Protein IDs,Q9NZI8;REV__Q15833;Q15517,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6043,Protein IDs,Q9P2E9;REV__Q9P2M7,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6682,Protein IDs,REV__A4FU28;REV__Q8IX94;REV__P0CG41;REV__Q86UF2;REV__A4D2H0;REV__Q96PC5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6683,Protein IDs,REV__A7KAX9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6684,Protein IDs,REV__O76015;REV__CON__O76015,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6685,Protein IDs,REV__CON__P19001,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6686,Protein IDs,REV__O00512,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6687,Protein IDs,REV__Q99666;REV__O14715,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6688,Protein IDs,REV__O60343,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6689,Protein IDs,REV__O60486,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6690,Protein IDs,REV__O75131,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6691,Protein IDs,REV__O75417,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6692,Protein IDs,REV__P07910,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6693,Protein IDs,REV__P0DMN0;REV__P0DMM9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6694,Protein IDs,REV__P14543,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6695,Protein IDs,REV__P21817,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6696,Protein IDs,REV__P28340,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6697,Protein IDs,REV__P28370;REV__O60264,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6698,Protein IDs,REV__P35240,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6699,Protein IDs,REV__P35573,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6700,Protein IDs,REV__P36405,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6701,Protein IDs,REV__P42357,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6702,Protein IDs,REV__P46939,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6703,Protein IDs,REV__P55017,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6704,Protein IDs,REV__P87889;REV__P62684,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6705,Protein IDs,REV__P78371,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6706,Protein IDs,REV__Q01082,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6707,Protein IDs,REV__Q03001,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6708,Protein IDs,REV__Q0Z7S8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6709,Protein IDs,REV__Q12955,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6710,Protein IDs,REV__Q13683,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6711,Protein IDs,REV__Q14683,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6712,Protein IDs,REV__Q15413,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6713,Protein IDs,REV__Q16851,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6714,Protein IDs,REV__Q2M3M2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6715,Protein IDs,REV__Q5H9U9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6716,Protein IDs,REV__Q5TH69,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6717,Protein IDs,REV__Q5TI25,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6718,Protein IDs,REV__Q5VTH9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6719,Protein IDs,REV__Q68DQ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6720,Protein IDs,REV__Q6IBS0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6721,Protein IDs,REV__Q6NUQ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6722,Protein IDs,REV__Q6P2E9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6723,Protein IDs,REV__Q6PJ69,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6724,Protein IDs,REV__Q6UWF7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6725,Protein IDs,REV__Q7Z6J6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6726,Protein IDs,REV__Q7Z745,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6727,Protein IDs,REV__Q86VS8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6728,Protein IDs,REV__Q86WZ0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6729,Protein IDs,REV__Q8IVF4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6730,Protein IDs,REV__Q8IWJ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6731,Protein IDs,REV__Q8IZS8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6732,Protein IDs,REV__Q8N0Z3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6733,Protein IDs,REV__Q8NCT3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6734,Protein IDs,REV__Q8NE09,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6735,Protein IDs,REV__Q8NF50,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6736,Protein IDs,REV__Q8NGB4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6737,Protein IDs,REV__Q8TC59,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6738,Protein IDs,REV__Q8TD57,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6739,Protein IDs,REV__Q8WTQ7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6740,Protein IDs,REV__Q8WZ42,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6741,Protein IDs,REV__Q8WZ64,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6742,Protein IDs,REV__Q969P5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6743,Protein IDs,REV__Q96MW1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6744,Protein IDs,REV__Q96PZ0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6745,Protein IDs,REV__Q96Q89,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6746,Protein IDs,REV__Q96QU1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6747,Protein IDs,REV__Q99698,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6748,Protein IDs,REV__Q99996,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6749,Protein IDs,REV__Q9BTY7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6750,Protein IDs,REV__Q9BYV1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6751,Protein IDs,REV__Q9C0B5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6752,Protein IDs,REV__Q9H4B7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6753,Protein IDs,REV__Q9NQ29;REV__Q9Y383,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6754,Protein IDs,REV__Q9NVU7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6755,Protein IDs,REV__Q9NXZ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6756,Protein IDs,REV__Q9P2D7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6757,Protein IDs,REV__Q9P2Y5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6758,Protein IDs,REV__Q9UJX2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6759,Protein IDs,REV__Q9UKE5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6760,Protein IDs,REV__Q9UKZ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6761,Protein IDs,REV__Q9ULD9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6762,Protein IDs,REV__Q9UPN3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6763,Protein IDs,REV__Q9Y263,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6764,Protein IDs,REV__Q9Y289,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6765,Protein IDs,REV__Q9Y463,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6766,Protein IDs,REV__Q9Y4E8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,58,Majority protein IDs,CON__A2I7N1;CON__A2I7N0,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,59,Majority protein IDs,CON__A2I7N3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,60,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000007350;CON__P01030,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,61,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000024146,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,62,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000024462,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,63,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000024466,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,64,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000032840,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,65,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000034412,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,66,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000037665,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,67,Majority protein IDs,CON__P00735;P00734,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,68,Majority protein IDs,CON__P00761,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,69,Majority protein IDs,CON__P01045-1;CON__Q2KJ62;CON__P01044-1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,70,Majority protein IDs,CON__P01966,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,71,Majority protein IDs,P02533;CON__P02533;CON__P08779;P08779,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,72,Majority protein IDs,CON__P02662,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,73,Majority protein IDs,P02769;CON__P02769,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,74,Majority protein IDs,CON__P02777,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,75,Majority protein IDs,CON__P48668;CON__P04259;P48668;P04259;CON__P02538;P02538;CON__P13647;P13647;Q01546,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,76,Majority protein IDs,CON__P05784,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,77,Majority protein IDs,CON__P05787;P05787,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,78,Majority protein IDs,CON__P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,79,Majority protein IDs,CON__P12763,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,80,Majority protein IDs,CON__P13645;P13645,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,81,Majority protein IDs,CON__P15497,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,82,Majority protein IDs,CON__P17690,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,83,Majority protein IDs,CON__P34955,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,84,Majority protein IDs,CON__P35527;P35527,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,85,Majority protein IDs,CON__P35908v2;CON__P35908;P35908,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,86,Majority protein IDs,CON__P41361,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,87,Majority protein IDs,CON__P78386;P78386,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,88,Majority protein IDs,CON__Q04695;Q04695;CON__Q9QWL7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,89,Majority protein IDs,CON__Q05B55,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,90,Majority protein IDs,CON__Q0IIK2;CON__Q29443,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,91,Majority protein IDs,CON__Q0V8M9,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,92,Majority protein IDs,CON__Q1RMK2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,93,Majority protein IDs,CON__Q1RMN8,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,94,Majority protein IDs,CON__Q28065,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,95,Majority protein IDs,CON__Q28107,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,96,Majority protein IDs,CON__Q28194;P07996,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,97,Majority protein IDs,CON__Q2KJF1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,98,Majority protein IDs,CON__Q2UVX4,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,99,Majority protein IDs,CON__Q3KNV1;P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,100,Majority protein IDs,CON__Q3SX09,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,101,Majority protein IDs,CON__Q3SX28,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,102,Majority protein IDs,CON__Q3SZR3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,103,Majority protein IDs,CON__Q3SZV7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,104,Majority protein IDs,CON__Q3T052,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,105,Majority protein IDs,CON__Q3ZBD7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,106,Majority protein IDs,CON__Q3ZBS7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,107,Majority protein IDs,Q6KB66;CON__Q6KB66-1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,108,Majority protein IDs,CON__Q86YZ3;Q86YZ3,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,109,Majority protein IDs,CON__Q9TTE1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,928,Majority protein IDs,P02795;P13640;CON__P67983;Q8N339,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,949,Majority protein IDs,P04264;CON__P04264,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,985,Majority protein IDs,P06396;CON__Q3SX14,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,2232,Majority protein IDs,P62328;CON__P21752,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,3021,Majority protein IDs,Q15811;CON__ENSEMBL:ENSBTAP00000001528,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,5452,Majority protein IDs,Q9H4B7;CON__ENSEMBL:ENSBTAP00000025008,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6682,Majority protein IDs,REV__A4FU28;REV__Q8IX94;REV__P0CG41,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6683,Majority protein IDs,REV__A7KAX9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6684,Majority protein IDs,REV__O76015;REV__CON__O76015,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6685,Majority protein IDs,REV__CON__P19001,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6686,Majority protein IDs,REV__O00512,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6687,Majority protein IDs,REV__Q99666;REV__O14715,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6688,Majority protein IDs,REV__O60343,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6689,Majority protein IDs,REV__O60486,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6690,Majority protein IDs,REV__O75131,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6691,Majority protein IDs,REV__O75417,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6692,Majority protein IDs,REV__P07910,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6693,Majority protein IDs,REV__P0DMN0;REV__P0DMM9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6694,Majority protein IDs,REV__P14543,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6695,Majority protein IDs,REV__P21817,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6696,Majority protein IDs,REV__P28340,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6697,Majority protein IDs,REV__P28370;REV__O60264,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6698,Majority protein IDs,REV__P35240,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6699,Majority protein IDs,REV__P35573,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6700,Majority protein IDs,REV__P36405,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6701,Majority protein IDs,REV__P42357,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6702,Majority protein IDs,REV__P46939,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6703,Majority protein IDs,REV__P55017,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6704,Majority protein IDs,REV__P87889;REV__P62684,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6705,Majority protein IDs,REV__P78371,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6706,Majority protein IDs,REV__Q01082,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6707,Majority protein IDs,REV__Q03001,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6708,Majority protein IDs,REV__Q0Z7S8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6709,Majority protein IDs,REV__Q12955,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6710,Majority protein IDs,REV__Q13683,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6711,Majority protein IDs,REV__Q14683,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6712,Majority protein IDs,REV__Q15413,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6713,Majority protein IDs,REV__Q16851,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6714,Majority protein IDs,REV__Q2M3M2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6715,Majority protein IDs,REV__Q5H9U9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6716,Majority protein IDs,REV__Q5TH69,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6717,Majority protein IDs,REV__Q5TI25,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6718,Majority protein IDs,REV__Q5VTH9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6719,Majority protein IDs,REV__Q68DQ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6720,Majority protein IDs,REV__Q6IBS0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6721,Majority protein IDs,REV__Q6NUQ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6722,Majority protein IDs,REV__Q6P2E9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6723,Majority protein IDs,REV__Q6PJ69,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6724,Majority protein IDs,REV__Q6UWF7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6725,Majority protein IDs,REV__Q7Z6J6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6726,Majority protein IDs,REV__Q7Z745,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6727,Majority protein IDs,REV__Q86VS8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6728,Majority protein IDs,REV__Q86WZ0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6729,Majority protein IDs,REV__Q8IVF4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6730,Majority protein IDs,REV__Q8IWJ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6731,Majority protein IDs,REV__Q8IZS8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6732,Majority protein IDs,REV__Q8N0Z3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6733,Majority protein IDs,REV__Q8NCT3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6734,Majority protein IDs,REV__Q8NE09,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6735,Majority protein IDs,REV__Q8NF50,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6736,Majority protein IDs,REV__Q8NGB4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6737,Majority protein IDs,REV__Q8TC59,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6738,Majority protein IDs,REV__Q8TD57,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6739,Majority protein IDs,REV__Q8WTQ7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6740,Majority protein IDs,REV__Q8WZ42,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6741,Majority protein IDs,REV__Q8WZ64,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6742,Majority protein IDs,REV__Q969P5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6743,Majority protein IDs,REV__Q96MW1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6744,Majority protein IDs,REV__Q96PZ0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6745,Majority protein IDs,REV__Q96Q89,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6746,Majority protein IDs,REV__Q96QU1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6747,Majority protein IDs,REV__Q99698,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6748,Majority protein IDs,REV__Q99996,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6749,Majority protein IDs,REV__Q9BTY7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6750,Majority protein IDs,REV__Q9BYV1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6751,Majority protein IDs,REV__Q9C0B5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6752,Majority protein IDs,REV__Q9H4B7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6753,Majority protein IDs,REV__Q9NQ29;REV__Q9Y383,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6754,Majority protein IDs,REV__Q9NVU7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6755,Majority protein IDs,REV__Q9NXZ2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6756,Majority protein IDs,REV__Q9P2D7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6757,Majority protein IDs,REV__Q9P2Y5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6758,Majority protein IDs,REV__Q9UJX2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6759,Majority protein IDs,REV__Q9UKE5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6760,Majority protein IDs,REV__Q9UKZ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6761,Majority protein IDs,REV__Q9ULD9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6762,Majority protein IDs,REV__Q9UPN3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6763,Majority protein IDs,REV__Q9Y263,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6764,Majority protein IDs,REV__Q9Y289,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6765,Majority protein IDs,REV__Q9Y463,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,6766,Majority protein IDs,REV__Q9Y4E8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,45,Protein IDs,CON__ENSEMBL:ENSBTAP00000018574,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,46,Protein IDs,CON__ENSEMBL:ENSBTAP00000024146,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,47,Protein IDs,CON__ENSEMBL:ENSBTAP00000031900,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,48,Protein IDs,CON__ENSEMBL:ENSBTAP00000032840,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,49,Protein IDs,CON__ENSEMBL:ENSBTAP00000037665,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,50,Protein IDs,CON__O43790;CON__Q14533;O43790;Q14533;CON__Q6NT21;CON__P78385;CON__P78386;P78385;P78386;CON__Q61726;A6NCN2;CON__Q9NSB4;Q9NSB4,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,51,Protein IDs,CON__P00735,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,52,Protein IDs,CON__P00761,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,53,Protein IDs,CON__P01966;P69905,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,54,Protein IDs,CON__P02533;P02533;CON__Q6IFX2;CON__P19012;CON__A2A4G1;P19012;CON__Q61782;CON__ENSEMBL:ENSP00000377550;P13646;CON__P13646-1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,55,Protein IDs,CON__P02769;CON__P02768-1;P02768,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,56,Protein IDs,CON__P05784,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,57,Protein IDs,CON__P05787;P05787;CON__H-INV:HIT000292931;CON__Q9H552;CON__H-INV:HIT000016045;CON__P12035;CON__Q01546;P12035;CON__REFSEQ:XP_092267,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,58,Protein IDs,CON__P06868,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,59,Protein IDs,CON__P07744,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,60,Protein IDs,CON__P08729;CON__Q9DCV7;CON__Q14CN4-1;CON__Q6IME9;Q14CN4,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,61,Protein IDs,CON__P08779;P08779;CON__Q9Z2K1;CON__Q3ZAW8,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,62,Protein IDs,CON__P12763,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,63,Protein IDs,CON__P13645;P13645;CON__P02535-1;CON__Q7Z3Y7;Q7Z3Y7;CON__Q7Z3Z0;CON__Q7Z3Y8;CON__Q7Z3Y9;Q7Z3Z0;Q7Z3Y8;Q7Z3Y9,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,64,Protein IDs,CON__P15497;P02647,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,65,Protein IDs,CON__P34955,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,66,Protein IDs,CON__P35527;P35527,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,67,Protein IDs,CON__P35908v2;CON__P35908;P35908;CON__Q6IFZ6;CON__Q7Z794;Q7Z794;CON__Q9R0H5,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,68,Protein IDs,CON__P41361;P01008,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,69,Protein IDs,CON__Q03247;P02649,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,70,Protein IDs,CON__Q04695;Q04695,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,71,Protein IDs,CON__Q29443;CON__Q0IIK2;P02788,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,72,Protein IDs,CON__Q0V8M9;Q06033,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,73,Protein IDs,CON__Q14525;CON__Q9UE12;CON__Q15323;Q14525;Q15323;CON__O76011;CON__Q6NTB9;CON__O76009;CON__Q8IUT8;O76009;O76011,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,74,Protein IDs,CON__Q3KNV1;P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,75,Protein IDs,CON__Q3SX09;CON__P02070;P68871;P02042;P69892;P69891;P02100,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,76,Protein IDs,CON__Q3SX28;P07951,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,77,Protein IDs,CON__Q3SZV7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,78,Protein IDs,CON__Q3ZBD7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,79,Protein IDs,CON__Q3ZBS7;P04004,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,80,Protein IDs,CON__Q5XQN5;CON__Q922U2;CON__Q8BGZ7;CON__P50446,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,81,Protein IDs,Q6KB66;CON__Q6KB66-1;CON__Q0VBK2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,82,Protein IDs,CON__Q9N2I2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,402,Protein IDs,O43929;CON__Q2YDI2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,457,Protein IDs,O60763;REV__Q5VZ89,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,817,Protein IDs,P02452;CON__Q862S4,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,827,Protein IDs,P02795;P13640;CON__P67983;Q8N339;P80294;P04731,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,849,Protein IDs,P04259;CON__P48668;CON__P04259;CON__P02538;P48668;P02538;Q01546,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,850,Protein IDs,P04264;CON__P04264,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,885,Protein IDs,P05783;CON__H-INV:HIT000015463;CON__Q497I4;Q92764;CON__Q92764;CON__Q2M2I5;CON__Q14532;CON__REFSEQ:XP_986630;CON__O76014;CON__A2AB72;CON__O76013;CON__A2A5Y0;CON__O76015;O76013;O76015;O76014;Q14532;Q2M2I5,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,890,Protein IDs,P06396;CON__Q3SX14,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,922,Protein IDs,P07737;CON__P02584,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,936,Protein IDs,P07996;CON__Q28194,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,957,Protein IDs,P08670;P17661;P41219;CON__Q9NSB2;CON__Q6ISB0;P14136;Q9NSB2;CON__Q8N1N4-2;CON__Q7RTT2;Q8N1N4,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,1482,Protein IDs,P35579;REV__Q9UKV3;A7E2Y1,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,2194,Protein IDs,P99999;CON__P62894,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,2273,Protein IDs,Q04637;REV__Q8NEG2,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,2291,Protein IDs,Q05682;REV__O75334;REV__Q13136,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,2672,Protein IDs,Q15021;REV__Q02790,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,2792,Protein IDs,Q15811;CON__ENSEMBL:ENSBTAP00000001528,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,4031,Protein IDs,Q92888;REV__Q9BZR6,"",""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6002,Protein IDs,REV__A4D1S0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6003,Protein IDs,REV__B2RTY4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6004,Protein IDs,REV__CON__P19001,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6005,Protein IDs,REV__CON__P28800,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6006,Protein IDs,REV__O15015,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6007,Protein IDs,REV__O43396,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6008,Protein IDs,REV__O75131,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6009,Protein IDs,REV__O75343,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6010,Protein IDs,REV__O95602,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6011,Protein IDs,REV__P07510,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6012,Protein IDs,REV__P07910,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6013,Protein IDs,REV__P10606,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6014,Protein IDs,REV__P17041,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6015,Protein IDs,REV__P20742,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6016,Protein IDs,REV__P48378;REV__P48380;REV__P22670,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6017,Protein IDs,REV__P35579,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6018,Protein IDs,REV__P46459,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6019,Protein IDs,REV__P49454,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6020,Protein IDs,REV__Q00341,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6021,Protein IDs,REV__Q03701,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6022,Protein IDs,REV__Q10570,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6023,Protein IDs,REV__Q10587,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6024,Protein IDs,REV__Q12955,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6025,Protein IDs,REV__Q14331,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6026,Protein IDs,REV__Q15124,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6027,Protein IDs,REV__Q15166,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6028,Protein IDs,REV__Q4AC94,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6029,Protein IDs,REV__Q5JU00,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6030,Protein IDs,REV__Q7Z572,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6031,Protein IDs,REV__Q86UQ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6032,Protein IDs,REV__Q8IVF4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6033,Protein IDs,REV__Q8IWR0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6034,Protein IDs,REV__Q8IYS0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6035,Protein IDs,REV__Q8N2A0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6036,Protein IDs,REV__Q8N878,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6037,Protein IDs,REV__Q8N9W4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6038,Protein IDs,REV__Q8NCN5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6039,Protein IDs,REV__Q8NEG7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6040,Protein IDs,REV__Q8NGM8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6041,Protein IDs,REV__Q8TDG4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6042,Protein IDs,REV__Q8WWM9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6043,Protein IDs,REV__Q8WXH0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6044,Protein IDs,REV__Q8WZ64,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6045,Protein IDs,REV__Q96DY2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6046,Protein IDs,REV__Q96Q89,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6047,Protein IDs,REV__Q96RW7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6048,Protein IDs,REV__Q96T23,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6049,Protein IDs,REV__Q9BWH6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6050,Protein IDs,REV__Q9H2G2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6051,Protein IDs,REV__Q9HC10,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6052,Protein IDs,REV__Q9HCS2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6053,Protein IDs,REV__Q9NPB8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6054,Protein IDs,REV__Q9NQW8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6055,Protein IDs,REV__Q9NSK0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6056,Protein IDs,REV__Q9P209,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6057,Protein IDs,REV__Q9P2D3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6058,Protein IDs,REV__Q9P2G1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6059,Protein IDs,REV__Q9P2N5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6060,Protein IDs,REV__Q9P2S6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6061,Protein IDs,REV__Q9UHX1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6062,Protein IDs,REV__Q9UJ70,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6063,Protein IDs,REV__Q9Y263,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,45,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000018574,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,46,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000024146,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,47,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000031900,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,48,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000032840,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,49,Majority protein IDs,CON__ENSEMBL:ENSBTAP00000037665,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,50,Majority protein IDs,CON__O43790;CON__Q14533;O43790;Q14533;CON__Q6NT21;CON__P78385;CON__P78386;P78385;P78386;CON__Q61726;A6NCN2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,51,Majority protein IDs,CON__P00735,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,52,Majority protein IDs,CON__P00761,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,53,Majority protein IDs,CON__P01966,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,54,Majority protein IDs,CON__P02533;P02533,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,55,Majority protein IDs,CON__P02769,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,56,Majority protein IDs,CON__P05784,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,57,Majority protein IDs,CON__P05787;P05787,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,58,Majority protein IDs,CON__P06868,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,59,Majority protein IDs,CON__P07744,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,60,Majority protein IDs,CON__P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,61,Majority protein IDs,CON__P08779;P08779,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,62,Majority protein IDs,CON__P12763,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,63,Majority protein IDs,CON__P13645;P13645,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,64,Majority protein IDs,CON__P15497,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,65,Majority protein IDs,CON__P34955,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,66,Majority protein IDs,CON__P35527;P35527,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,67,Majority protein IDs,CON__P35908v2;CON__P35908;P35908,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,68,Majority protein IDs,CON__P41361,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,69,Majority protein IDs,CON__Q03247,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,70,Majority protein IDs,CON__Q04695;Q04695,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,71,Majority protein IDs,CON__Q29443;CON__Q0IIK2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,72,Majority protein IDs,CON__Q0V8M9;Q06033,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,73,Majority protein IDs,CON__Q14525;CON__Q9UE12;CON__Q15323;Q14525;Q15323;CON__O76011;CON__Q6NTB9;CON__O76009;CON__Q8IUT8;O76009;O76011,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,74,Majority protein IDs,CON__Q3KNV1;P08729,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,75,Majority protein IDs,CON__Q3SX09,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,76,Majority protein IDs,CON__Q3SX28;P07951,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,77,Majority protein IDs,CON__Q3SZV7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,78,Majority protein IDs,CON__Q3ZBD7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,79,Majority protein IDs,CON__Q3ZBS7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,80,Majority protein IDs,CON__Q5XQN5;CON__Q922U2;CON__Q8BGZ7,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,81,Majority protein IDs,Q6KB66;CON__Q6KB66-1,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,82,Majority protein IDs,CON__Q9N2I2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,402,Majority protein IDs,O43929;CON__Q2YDI2,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,827,Majority protein IDs,P02795;P13640;CON__P67983;Q8N339,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,849,Majority protein IDs,P04259;CON__P48668;CON__P04259;CON__P02538;P48668;P02538,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,850,Majority protein IDs,P04264;CON__P04264,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,890,Majority protein IDs,P06396;CON__Q3SX14,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,936,Majority protein IDs,P07996;CON__Q28194,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,2792,Majority protein IDs,Q15811;CON__ENSEMBL:ENSBTAP00000001528,"",+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6002,Majority protein IDs,REV__A4D1S0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6003,Majority protein IDs,REV__B2RTY4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6004,Majority protein IDs,REV__CON__P19001,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6005,Majority protein IDs,REV__CON__P28800,+,+
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6006,Majority protein IDs,REV__O15015,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6007,Majority protein IDs,REV__O43396,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6008,Majority protein IDs,REV__O75131,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6009,Majority protein IDs,REV__O75343,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6010,Majority protein IDs,REV__O95602,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6011,Majority protein IDs,REV__P07510,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6012,Majority protein IDs,REV__P07910,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6013,Majority protein IDs,REV__P10606,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6014,Majority protein IDs,REV__P17041,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6015,Majority protein IDs,REV__P20742,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6016,Majority protein IDs,REV__P48378;REV__P48380;REV__P22670,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6017,Majority protein IDs,REV__P35579,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6018,Majority protein IDs,REV__P46459,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6019,Majority protein IDs,REV__P49454,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6020,Majority protein IDs,REV__Q00341,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6021,Majority protein IDs,REV__Q03701,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6022,Majority protein IDs,REV__Q10570,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6023,Majority protein IDs,REV__Q10587,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6024,Majority protein IDs,REV__Q12955,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6025,Majority protein IDs,REV__Q14331,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6026,Majority protein IDs,REV__Q15124,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6027,Majority protein IDs,REV__Q15166,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6028,Majority protein IDs,REV__Q4AC94,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6029,Majority protein IDs,REV__Q5JU00,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6030,Majority protein IDs,REV__Q7Z572,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6031,Majority protein IDs,REV__Q86UQ4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6032,Majority protein IDs,REV__Q8IVF4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6033,Majority protein IDs,REV__Q8IWR0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6034,Majority protein IDs,REV__Q8IYS0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6035,Majority protein IDs,REV__Q8N2A0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6036,Majority protein IDs,REV__Q8N878,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6037,Majority protein IDs,REV__Q8N9W4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6038,Majority protein IDs,REV__Q8NCN5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6039,Majority protein IDs,REV__Q8NEG7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6040,Majority protein IDs,REV__Q8NGM8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6041,Majority protein IDs,REV__Q8TDG4,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6042,Majority protein IDs,REV__Q8WWM9,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6043,Majority protein IDs,REV__Q8WXH0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6044,Majority protein IDs,REV__Q8WZ64,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6045,Majority protein IDs,REV__Q96DY2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6046,Majority protein IDs,REV__Q96Q89,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6047,Majority protein IDs,REV__Q96RW7,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6048,Majority protein IDs,REV__Q96T23,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6049,Majority protein IDs,REV__Q9BWH6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6050,Majority protein IDs,REV__Q9H2G2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6051,Majority protein IDs,REV__Q9HC10,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6052,Majority protein IDs,REV__Q9HCS2,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6053,Majority protein IDs,REV__Q9NPB8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6054,Majority protein IDs,REV__Q9NQW8,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6055,Majority protein IDs,REV__Q9NSK0,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6056,Majority protein IDs,REV__Q9P209,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6057,Majority protein IDs,REV__Q9P2D3,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6058,Majority protein IDs,REV__Q9P2G1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6059,Majority protein IDs,REV__Q9P2N5,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6060,Majority protein IDs,REV__Q9P2S6,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6061,Majority protein IDs,REV__Q9UHX1,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6062,Majority protein IDs,REV__Q9UJ70,+,""
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,6063,Majority protein IDs,REV__Q9Y263,+,""

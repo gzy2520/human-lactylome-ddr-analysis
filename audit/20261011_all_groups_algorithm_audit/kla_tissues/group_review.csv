@@ -1,0 +1,13 @@
+GroupID,Samples,Mean,SD,SEM,AllOldParserMatch,AllNewParserMatch,Added,Removed,Dataset,Status,Recommendation,Evidence
+KLA31_01,3,4.96046523174698,0.00618113511551439,0.00356868002283968,TRUE,TRUE,0,0,Lactylome (Kla),统计对象变化,保留RCT reporter通道检出；说明相对于全鉴定union缩小到可定量检出蛋白；纠正___1/2/3技术重复注释,tendon_channel_scope.csv: legacy571/30; 6通道正reporter union464/23；107蛋白均无正reporter
+KLA31_02,6,6.16345552041518,1.255125574353,0.512402870047086,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_03,4,4.22002809376971,0.254345391143553,0.127172695571777,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_04,4,5.19638119591474,0.538908600410669,0.269454300205335,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_05,3,3.39976553341149,0,0,TRUE,TRUE,0,0,Lactylome (Kla),源表不能恢复原始检出,用作者quantification_panel 29/853=3.3997655334%；不以3个相同检出集合估计样本SEM；保留SourceSampleCount=3元数据,S3为2579 quantifiable Class I位点panel；各列全正值，同一最小值重复73/70/1279；原论文至少2重复检出而非全部3重复
+KLA31_06,3,3.91457040951552,0.655056128606727,0.378196832185408,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_07,3,3.10947960085891,0.563852540137491,0.325540415831634,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_08,5,6.56314388222574,0.138549658798649,0.0619612910666361,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_09,1,6.36619718309859,,,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_10,6,6.99822154070126,1.59337753013317,0.650493652740401,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_11,5,6.78562333732777,0.0543132363829865,0.0242896177260745,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv
+KLA31_12,1,6.72969966629588,,,TRUE,TRUE,0,0,Lactylome (Kla),原表复算一致,保留当前每样本数值及现有观察单位,独立原表解析与当前membership逐键一致；详见source_evidence.csv

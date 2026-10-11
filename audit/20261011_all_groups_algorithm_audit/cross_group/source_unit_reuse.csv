@@ -1,0 +1,15 @@
+Dataset,SourceFile,SampleID,DisplayPositions,Groups,FractionVariants
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec1,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec2,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec3,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec4,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec1,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec2,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec3,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec4,2,KLA31_09;KLA31_12,2
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,amostra1,2,KLA31_27;KLA31_28,1
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,amostra3,2,KLA31_27;KLA31_28,1
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,amostra4,2,KLA31_27;KLA31_28,1
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt,PXD030304_HCT-116_00diz,2,KLA31_14;KLA31_15,1
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt,PXD030304_HCT-116_00dkr,2,KLA31_14;KLA31_15,1
+Whole proteome,/Users/gzy2520/Desktop/Research/kla/data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt,PXD030304_HCT-116_00mxq,2,KLA31_14;KLA31_15,1

@@ -1,0 +1,201 @@
+PXD,SampleGroup,SampleID,ProteinCount,DdrProteinCount,SourceFile,SampleClass,Fraction
+PXD033146,pathological rotator cuff tendon,RCT1,3574,140,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,replicate,3.91717963066592
+PXD033146,pathological rotator cuff tendon,RCT2,3574,140,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,replicate,3.91717963066592
+PXD033146,pathological rotator cuff tendon,RCT3,3574,140,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,replicate,3.91717963066592
+PXD046800,hypertrophic scar,HSP1,1899,75,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,3.94944707740916
+PXD046800,hypertrophic scar,HSP2,1680,70,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,4.16666666666667
+PXD046800,hypertrophic scar,HSP3,1871,74,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,3.95510422234099
+PXD046800,hypertrophic scar,HSP4,2017,80,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,3.96628656420426
+PXD046800,adjacent skin,NSP1,1986,82,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,4.12890231621349
+PXD046800,adjacent skin,NSP2,1958,81,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,4.13687436159346
+PXD046800,adjacent skin,NSP3,1963,83,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,4.22822210901681
+PXD046800,adjacent skin,NSP4,1900,78,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,4.10526315789474
+PXD050470,human hippocampus,H072,6082,219,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,replicate,3.60078921407432
+PXD050470,human hippocampus,H081,6082,219,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,replicate,3.60078921407432
+PXD050470,human hippocampus,H187,6082,219,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,replicate,3.60078921407432
+PXD064912,human sperm,L1,8400,327,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,3.89285714285714
+PXD064912,human sperm,L2,8427,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.0939836240655
+PXD064912,human sperm,L3,8713,360,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.13175714449673
+PXD064912,human sperm,L4,8604,358,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.16085541608554
+PXD064912,human sperm,L5,8364,321,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,3.83787661406026
+PXD064912,human sperm,L6,8668,350,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.03784033225658
+PXD064912,human sperm,L7,8497,335,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,3.94256796516418
+PXD064912,human sperm,L8,8708,343,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,3.93890675241158
+PXD064912,human sperm,L9,8554,355,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.150105213935
+PXD064912,human sperm,L10,8240,333,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.04126213592233
+PXD064912,human sperm,L11,8566,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.02755078216204
+PXD064912,human sperm,L12,8560,349,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.07710280373832
+PXD064912,human sperm,L13,8511,350,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.11232522617789
+PXD064912,human sperm,L14,8291,326,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,3.93197443010493
+PXD064912,human sperm,L15,8375,333,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,3.97611940298508
+PXD064912,human sperm,L16,8488,339,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,3.99387370405278
+PXD064912,human sperm,L17,8254,344,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,4.16767627816816
+PXD064912,human sperm,N1,8730,361,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.13516609392898
+PXD064912,human sperm,N2,8627,347,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.02225570882114
+PXD064912,human sperm,N3,8307,335,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.03274346936319
+PXD064912,human sperm,N4,8446,324,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,3.83613544873313
+PXD064912,human sperm,N5,8545,336,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,3.93212404915155
+PXD064912,human sperm,N6,8651,349,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.03421569760721
+PXD064912,human sperm,N7,8411,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.10177148971585
+PXD064912,human sperm,N8,8423,341,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.04843879852784
+PXD064912,human sperm,N9,8520,340,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,3.9906103286385
+PXD064912,human sperm,N10,8613,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.00557297109021
+PXD064912,human sperm,N11,8527,338,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,3.96387944177319
+PXD064912,human sperm,N12,8557,343,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.00841416384247
+PXD064912,human sperm,N13,8371,337,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,4.02580336877315
+PXD064912,human sperm,N14,8629,336,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,3.89384633213582
+PXD064912,human sperm,N15,8524,333,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,3.90661661191929
+PXD064912,human sperm,N16,8530,337,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,3.95076201641266
+PXD066054,BPH,NAT1,7916,396,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.00252652854977
+PXD066054,BPH,NAT2,7805,393,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.03523382447149
+PXD066054,BPH,NAT3,7929,399,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.03216042376088
+PXD066054,BPH,NAT4,7937,398,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.0144891016757
+PXD066054,BPH,NAT5,7768,390,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.02059732234809
+PXD066054,prostate cancer,PCa1,7760,398,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.12886597938144
+PXD066054,prostate cancer,PCa2,7213,366,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.07417163454873
+PXD066054,prostate cancer,PCa3,7791,406,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.21114106019766
+PXD066054,prostate cancer,PCa4,7675,387,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.04234527687296
+PXD066054,prostate cancer,PCa5,7833,395,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,5.04276777735223
+PXD075377,adjacent liver,Non-rec1,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,4.56363208656787
+PXD075377,adjacent liver,Non-rec2,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,4.56363208656787
+PXD075377,adjacent liver,Non-rec3,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,4.56363208656787
+PXD075377,adjacent liver,Non-rec4,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,4.56363208656787
+PXD075377,adjacent liver,Rec1,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,4.56363208656787
+PXD075377,adjacent liver,Rec2,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,4.56363208656787
+PXD075377,adjacent liver,Rec3,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,4.56363208656787
+PXD075377,adjacent liver,Rec4,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,4.56363208656787
+PXD075377,HCC,Non-rec1,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,5.22359290670779
+PXD075377,HCC,Non-rec2,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,5.22359290670779
+PXD075377,HCC,Non-rec3,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,5.22359290670779
+PXD075377,HCC,Non-rec4,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,5.22359290670779
+PXD075377,HCC,Rec1,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,5.22359290670779
+PXD075377,HCC,Rec2,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,5.22359290670779
+PXD075377,HCC,Rec3,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,5.22359290670779
+PXD075377,HCC,Rec4,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,5.22359290670779
+PXD066351,HCT116 control and Roseburia co-culture,NC116,8075,504,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,control,6.24148606811146
+PXD066351,HCT116 control and Roseburia co-culture,R116,8048,499,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,Roseburia co-culture,6.20029821073559
+PXD028488,TALL-104,Sample 1,3109,220,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,replicate,7.07623029913155
+PXD028488,TALL-104,Sample 2,3176,215,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,replicate,6.76952141057935
+PXD028488,TALL-104,Sample 3,3110,210,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,replicate,6.7524115755627
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep1,6069,406,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,WT,6.68973471741638
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep2,5938,398,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,WT,6.70259346581341
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep3,5970,400,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,WT,6.70016750418761
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep1,5921,411,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT1 KO,6.94139503462253
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep2,5955,399,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT1 KO,6.70025188916877
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep3,6005,406,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT1 KO,6.76103247293922
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep1,6036,418,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT3 KO,6.92511597084162
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep2,6099,416,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT3 KO,6.82079029349074
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep3,6078,419,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT3 KO,6.8937150378414
+PXD028737,HMC3,H0,5422,387,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,normoxia,7.13758760604943
+PXD028737,HMC3,H24,5946,412,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,hypoxia,6.92902791792802
+PXD058534,pretreated HK-2,amostra1,4684,298,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,6.36208368915457
+PXD058534,pretreated HK-2,amostra3,4597,286,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,6.22144877093757
+PXD058534,pretreated HK-2,amostra4,4764,299,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,6.27623845507977
+PXD078736,HK-2 control and mannitol,amostra1,4684,298,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,6.36208368915457
+PXD078736,HK-2 control and mannitol,amostra3,4597,286,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,6.22144877093757
+PXD078736,HK-2 control and mannitol,amostra4,4764,299,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,6.27623845507977
+PXD070007,glioblastoma stem cells,G2907,6966,442,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.3451047947172
+PXD070007,glioblastoma stem cells,G3028,6877,439,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.38359749890941
+PXD070007,glioblastoma stem cells,G3264,6870,436,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.34643377001456
+PXD070007,glioblastoma stem cells,GSC23,6928,451,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.50981524249423
+PXD070007,glioblastoma stem cells,MES28,6947,456,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.56398445372103
+PXD070007,glioblastoma stem cells,RKI,7228,452,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.25345877144438
+PXD070007,neural stem cells,ENSA,6915,442,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.39190166305134
+PXD070007,neural stem cells,HMP1,6887,444,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,6.44692899666037
+PXD073311,HUVEC control and Pg infection,A0h_1,7645,499,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,A0h control,6.52714192282538
+PXD073311,HUVEC control and Pg infection,A0h_2,7640,500,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,A0h control,6.54450261780105
+PXD073311,HUVEC control and Pg infection,A0h_3,7637,503,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,A0h control,6.58635589891319
+PXD064038,MEC and NEC ESCC groups,ESCC-001T,4956,275,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.54882970137208
+PXD064038,MEC and NEC ESCC groups,ESCC-002T,4955,275,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.54994954591322
+PXD064038,MEC and NEC ESCC groups,ESCC-006T,5275,280,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.30805687203791
+PXD064038,MEC and NEC ESCC groups,ESCC-009T,5269,280,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.31410134750427
+PXD064038,MEC and NEC ESCC groups,ESCC-010T,5273,280,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.31007016878437
+PXD064038,MEC and NEC ESCC groups,ESCC-019T,5356,286,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.33980582524272
+PXD064038,MEC and NEC ESCC groups,ESCC-035T,4693,268,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.71063285744726
+PXD064038,MEC and NEC ESCC groups,ESCC-040T,5063,284,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.60932253604582
+PXD064038,MEC and NEC ESCC groups,ESCC-041T,5055,283,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59841740850643
+PXD064038,MEC and NEC ESCC groups,ESCC-044T,4454,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56802873821284
+PXD064038,MEC and NEC ESCC groups,ESCC-049T,4456,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56552962298025
+PXD064038,MEC and NEC ESCC groups,ESCC-017T,4451,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.63918220624579
+PXD064038,MEC and NEC ESCC groups,ESCC-055T,4453,247,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.54682236694363
+PXD064038,MEC and NEC ESCC groups,ESCC-057T,4460,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56053811659193
+PXD064038,MEC and NEC ESCC groups,ESCC-059T,4461,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.55929163864604
+PXD064038,MEC and NEC ESCC groups,ESCC-063T,5253,294,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59680182752713
+PXD064038,MEC and NEC ESCC groups,ESCC-065T,5256,295,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.61263318112633
+PXD064038,MEC and NEC ESCC groups,ESCC-066T,5258,295,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.61049828832256
+PXD064038,MEC and NEC ESCC groups,ESCC-082T,5415,303,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59556786703601
+PXD064038,MEC and NEC ESCC groups,ESCC-086T,5417,303,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59350193834226
+PXD064038,MEC and NEC ESCC groups,ESCC-075T,5000,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.14
+PXD064038,MEC and NEC ESCC groups,ESCC-078T,5000,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.14
+PXD064038,MEC and NEC ESCC groups,ESCC-092T,5002,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.13794482207117
+PXD064038,MEC and NEC ESCC groups,ESCC-069T,4554,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.62143170838823
+PXD064038,MEC and NEC ESCC groups,ESCC-072T,4555,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.62019758507135
+PXD064038,MEC and NEC ESCC groups,ESCC-003T,4955,274,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.52976791120081
+PXD064038,MEC and NEC ESCC groups,ESCC-004T,4957,274,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.52753681662296
+PXD064038,MEC and NEC ESCC groups,ESCC-005T,4953,274,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.53200080759136
+PXD064038,MEC and NEC ESCC groups,ESCC-011T,5273,280,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.31007016878437
+PXD064038,MEC and NEC ESCC groups,ESCC-013T,5361,285,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.31617235590375
+PXD064038,MEC and NEC ESCC groups,ESCC-020T,5368,285,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.30923994038748
+PXD064038,MEC and NEC ESCC groups,ESCC-029T,4686,268,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.71916346564234
+PXD064038,MEC and NEC ESCC groups,ESCC-032T,4696,270,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.74957410562181
+PXD064038,MEC and NEC ESCC groups,ESCC-037T,4692,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.77578857630009
+PXD064038,MEC and NEC ESCC groups,ESCC-024T,5056,284,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.61708860759494
+PXD064038,MEC and NEC ESCC groups,ESCC-028T,5056,284,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.61708860759494
+PXD064038,MEC and NEC ESCC groups,ESCC-043T,4452,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.57053009883199
+PXD064038,MEC and NEC ESCC groups,ESCC-046T,4456,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56552962298025
+PXD064038,MEC and NEC ESCC groups,ESCC-050T,4457,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56428090643931
+PXD064038,MEC and NEC ESCC groups,ESCC-051T,4457,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56428090643931
+PXD064038,MEC and NEC ESCC groups,ESCC-007T,4450,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.64044943820225
+PXD064038,MEC and NEC ESCC groups,ESCC-018T,4454,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.63538392456219
+PXD064038,MEC and NEC ESCC groups,ESCC-021T,4455,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.6341189674523
+PXD064038,MEC and NEC ESCC groups,ESCC-027T,4452,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.63791554357592
+PXD064038,MEC and NEC ESCC groups,ESCC-052T,4458,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56303275011216
+PXD064038,MEC and NEC ESCC groups,ESCC-056T,4460,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56053811659193
+PXD064038,MEC and NEC ESCC groups,ESCC-061T,4456,247,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.54308797127469
+PXD064038,MEC and NEC ESCC groups,ESCC-062T,4454,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56802873821284
+PXD064038,MEC and NEC ESCC groups,ESCC-053T,5256,295,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.61263318112633
+PXD064038,MEC and NEC ESCC groups,ESCC-058T,5254,294,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59573658165208
+PXD064038,MEC and NEC ESCC groups,ESCC-068T,5255,294,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59467174119886
+PXD064038,MEC and NEC ESCC groups,ESCC-074T,5411,303,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59970430604325
+PXD064038,MEC and NEC ESCC groups,ESCC-083T,5415,302,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.57710064635272
+PXD064038,MEC and NEC ESCC groups,ESCC-084T,5416,303,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59453471196455
+PXD064038,MEC and NEC ESCC groups,ESCC-090T,5411,302,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.58122343374607
+PXD064038,MEC and NEC ESCC groups,ESCC-080T,4998,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.14205682272909
+PXD064038,MEC and NEC ESCC groups,ESCC-091T,4998,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.14205682272909
+PXD064038,MEC and NEC ESCC groups,ESCC-094T,5002,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.13794482207117
+PXD064038,MEC and NEC ESCC groups,ESCC-067T,4556,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.61896400351185
+PXD064038,MEC and NEC ESCC groups,ESCC-076T,4555,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.62019758507135
+PXD064038,MEC and NEC ESCC groups,ESCC-087T,4553,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.62266637381946
+PXD064038,MEC and NEC ESCC groups,ESCC-008T,5275,280,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.30805687203791
+PXD064038,MEC and NEC ESCC groups,ESCC-015T,5362,286,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.33383066020142
+PXD064038,MEC and NEC ESCC groups,ESCC-016T,5370,288,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.36312849162011
+PXD064038,MEC and NEC ESCC groups,ESCC-023T,4690,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.77825159914712
+PXD064038,MEC and NEC ESCC groups,ESCC-031T,4696,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.77086882453152
+PXD064038,MEC and NEC ESCC groups,ESCC-033T,4695,270,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.75079872204473
+PXD064038,MEC and NEC ESCC groups,ESCC-036T,4693,270,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.75324952056254
+PXD064038,MEC and NEC ESCC groups,ESCC-042T,5064,284,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.60821484992101
+PXD064038,MEC and NEC ESCC groups,ESCC-034T,5056,282,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.57753164556962
+PXD064038,MEC and NEC ESCC groups,ESCC-038T,5063,284,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.60932253604582
+PXD064038,MEC and NEC ESCC groups,ESCC-039T,5064,284,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.60821484992101
+PXD064038,MEC and NEC ESCC groups,ESCC-045T,4457,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56428090643931
+PXD064038,MEC and NEC ESCC groups,ESCC-022T,4457,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56428090643931
+PXD064038,MEC and NEC ESCC groups,ESCC-026T,4457,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56428090643931
+PXD064038,MEC and NEC ESCC groups,ESCC-012T,4454,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.63538392456219
+PXD064038,MEC and NEC ESCC groups,ESCC-014T,4455,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.6341189674523
+PXD064038,MEC and NEC ESCC groups,ESCC-025T,4453,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.63664944980912
+PXD064038,MEC and NEC ESCC groups,ESCC-030T,4451,251,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.63918220624579
+PXD064038,MEC and NEC ESCC groups,ESCC-047T,4456,246,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.52064631956912
+PXD064038,MEC and NEC ESCC groups,ESCC-054T,4460,248,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.56053811659193
+PXD064038,MEC and NEC ESCC groups,ESCC-048T,5254,294,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59573658165208
+PXD064038,MEC and NEC ESCC groups,ESCC-060T,5258,294,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59147965005706
+PXD064038,MEC and NEC ESCC groups,ESCC-064T,5257,294,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59254327563249
+PXD064038,MEC and NEC ESCC groups,ESCC-079T,5413,303,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59763532237207
+PXD064038,MEC and NEC ESCC groups,ESCC-088T,5415,303,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59556786703601
+PXD064038,MEC and NEC ESCC groups,ESCC-089T,5412,303,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.59866962305987
+PXD064038,MEC and NEC ESCC groups,ESCC-077T,4998,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.14205682272909
+PXD064038,MEC and NEC ESCC groups,ESCC-081T,5003,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.13691784929043
+PXD064038,MEC and NEC ESCC groups,ESCC-093T,5001,257,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.13897220555889
+PXD064038,MEC and NEC ESCC groups,ESCC-070T,4553,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.62266637381946
+PXD064038,MEC and NEC ESCC groups,ESCC-071T,4553,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.62266637381946
+PXD064038,MEC and NEC ESCC groups,ESCC-073T,4552,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.62390158172232
+PXD064038,MEC and NEC ESCC groups,ESCC-085T,4556,256,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,tumor_sample,5.61896400351185

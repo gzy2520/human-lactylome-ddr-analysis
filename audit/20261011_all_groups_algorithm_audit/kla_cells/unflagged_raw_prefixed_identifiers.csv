@@ -1,0 +1,26 @@
+SourceFile,DataRow,Column,RawAccession,AnyExclusionFlag,Reverse,PotentialContaminant,Protein,Proteins,SiteId,IdentificationCtr1,IdentificationCtr2
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_pairing/combined/combined/txt/La(K)Sites.txt,1887,Protein,REV__Q14093,False,,,REV__Q14093,Q14093,1885,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_pairing/combined/combined/txt/La(K)Sites.txt,421,Proteins,P05783;CON__H-INV:HIT000015463,False,,,P05783,P05783;CON__H-INV:HIT000015463,419,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_pairing/combined/combined/txt/La(K)Sites.txt,422,Proteins,P05783;CON__P05784,False,,,P05783,P05783;CON__P05784,420,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_pairing/combined/combined/txt/La(K)Sites.txt,423,Proteins,P05783;CON__P05784,False,,,P05783,P05783;CON__P05784,421,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_pairing/combined/combined/txt/La(K)Sites.txt,1887,Leading proteins,REV__Q14093,False,,,REV__Q14093,Q14093,1885,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,8238,Protein,REV__O14732,False,,,REV__O14732,Q9Y6V7,8236,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,1095,Proteins,P05783;CON__H-INV:HIT000015463,False,,,P05783,P05783;CON__H-INV:HIT000015463,1093,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,1116,Proteins,P06744;CON__Q3ZBD7,False,,,P06744,P06744;CON__Q3ZBD7,1114,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,8238,Leading proteins,REV__O14732,False,,,REV__O14732,Q9Y6V7,8236,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD058534/search_results/extracted_pairing/txt/La (K)Sites.txt,2589,Protein,REV__Q14093,False,,,REV__Q14093,Q14093,2587,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD058534/search_results/extracted_pairing/txt/La (K)Sites.txt,645,Proteins,P07737;CON__P02584,False,,,P07737,P07737;CON__P02584,643,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD058534/search_results/extracted_pairing/txt/La (K)Sites.txt,2589,Leading proteins,REV__Q14093,False,,,REV__Q14093,Q14093,2587,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,867,Proteins,P05783;CON__H-INV:HIT000015463,False,,,P05783,P05783;CON__H-INV:HIT000015463,865,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,911,Proteins,P06744;CON__Q3ZBD7,False,,,P06744,P06744;CON__Q3ZBD7,909,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,958,Proteins,P07737;CON__P02584,False,,,P07737,P07737;CON__P02584,956,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,2542,Proteins,P99999;CON__P62894,False,,,P99999,P99999;CON__P62894,2540,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,2544,Proteins,P99999;CON__P62894,False,,,P99999,P99999;CON__P62894,2542,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD078013/search_results/proteinGroups.txt,617,Protein IDs,P06744;CON__Q3ZBD7,False,,,,,615,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD078013/search_results/proteinGroups.txt,631,Protein IDs,P07437;A6NNZ2;CON__ENSEMBL:ENSBTAP00000025008;Q9H4B7,False,,,,,629,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD078013/search_results/proteinGroups.txt,635,Protein IDs,P07737;CON__P02584,False,,,,,633,,
+/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,1969,Protein,REV__Q14093,False,,,REV__Q14093,Q14093,1967,By MS/MS,By MS/MS
+/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,451,Proteins,P05783;CON__H-INV:HIT000015463,False,,,P05783,P05783;CON__H-INV:HIT000015463,449,By MS/MS,
+/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,452,Proteins,P05783;CON__P05784,False,,,P05783,P05783;CON__P05784,450,By MS/MS,By MS/MS
+/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,453,Proteins,P05783;CON__P05784,False,,,P05783,P05783;CON__P05784,451,,By MS/MS
+/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,1969,Leading proteins,REV__Q14093,False,,,REV__Q14093,Q14093,1967,By MS/MS,By MS/MS

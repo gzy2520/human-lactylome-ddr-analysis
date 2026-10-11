@@ -1,0 +1,23 @@
+SourceFile,Sheet,Column,Rows,Positive,Zero,Negative,Nonfinite,UniqueNumeric,Minimum,Maximum
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,proteinGroups valid rows,Reporter intensity corrected 1,3709,3336,373,0,0,3289,0,11057000
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,proteinGroups valid rows,Reporter intensity corrected 2,3709,3336,373,0,0,3298,0,11350000
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,proteinGroups valid rows,Reporter intensity corrected 3,3709,3336,373,0,0,3293,0,11155000
+/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,Sheet1;skip=5,Intensity_H072,6082,6082,0,0,0,5900,0.00262465560808778,920.557861328125
+/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,Sheet1;skip=5,Intensity_H081,6082,6082,0,0,0,5903,0.00262465560808778,636.908935546875
+/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,Sheet1;skip=5,Intensity_H187,6082,6082,0,0,0,5419,0.00262465560808778,1080.78051757813
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Non-rec1,4254,4254,0,0,0,1,1,1
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Non-rec2,4254,4254,0,0,0,4249,0.132783770561218,72.8463745117188
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Non-rec3,4254,4254,0,0,0,4251,0.0114333443343639,100
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Non-rec4,4254,4254,0,0,0,4250,0.0352639593183994,58.4279708862305
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Rec1,4254,4254,0,0,0,4251,0.0666267871856689,65.1988220214844
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Rec2,4254,4254,0,0,0,4250,0.00999999977648258,85.9857864379883
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Rec3,4254,4254,0,0,0,4250,0.0491843298077583,55.5407752990723
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Rec4,4254,4254,0,0,0,4242,0.0130992103368044,100
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Non-rec1,5198,5198,0,0,0,1,1,1
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Non-rec2,5198,5198,0,0,0,5181,0.00999999977648258,82.8982620239258
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Non-rec3,5198,5198,0,0,0,5185,0.0916636064648628,72.6376266479492
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Non-rec4,5198,5198,0,0,0,5185,0.00999999977648258,72.9703826904297
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Rec1,5198,5198,0,0,0,5184,0.00999999977648258,57.8408813476563
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Rec2,5198,5198,0,0,0,5185,0.125804379582405,39.4295349121094
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Rec3,5198,5198,0,0,0,5186,0.0918477401137352,52.3854217529297
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Rec4,5198,5198,0,0,0,5185,0.0510681681334972,40.4958648681641

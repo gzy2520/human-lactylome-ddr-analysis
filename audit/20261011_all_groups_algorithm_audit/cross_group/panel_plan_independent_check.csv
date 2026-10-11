@@ -1,0 +1,5 @@
+GroupID,Dataset,SourceObservationN,SourceObservationIDs,DistinctTotal,DistinctDDR,DistinctFraction,ProteinCount,DdrProteinCount,Fraction
+KLA31_05,Lactylome (Kla),3,H072;H081;H187,1,1,1,853,29,3.39976553341149
+KLA31_05,Whole proteome,3,H072;H081;H187,1,1,1,6082,219,3.60078921407432
+KLA31_09,Whole proteome,8,Non-rec1;Non-rec2;Non-rec3;Non-rec4;Rec1;Rec2;Rec3;Rec4,1,1,1,4251,194,4.56363208656787
+KLA31_12,Whole proteome,8,Non-rec1;Non-rec2;Non-rec3;Non-rec4;Rec1;Rec2;Rec3;Rec4,1,1,1,5188,271,5.22359290670779

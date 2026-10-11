@@ -1,0 +1,4 @@
+Check,Pass
+31 RNA counts derived from unique SampleID,True
+62 DDR labels match source-unit counts,True
+4 processed panels explicitly labeled,True

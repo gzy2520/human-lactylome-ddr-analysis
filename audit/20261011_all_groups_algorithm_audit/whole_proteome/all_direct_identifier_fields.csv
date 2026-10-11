@@ -1,0 +1,66 @@
+SourceFile,Sheet,Field,Rows,PrefixedRows
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Protein IDs,3969,161
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Majority protein IDs,3969,115
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Peptide counts (razor+unique),3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Protein names,3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Number of proteins,3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Razor + unique peptides,3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Unique + razor sequence coverage [%],3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Reverse,3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Potential contaminant,3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,table,Peptide is razor,3969,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,table,Proteins Unique Sequence ID,2348,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,table,Protein FDR Confidence: Combined,2348,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,table,Accession,2348,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,table,# Protein Groups,2348,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,Sheet1,Protein accession,6082,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,table,PG.ProteinAccessions,10464,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,table,PG.ProteinDescriptions,10464,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,table,PG.ProteinNames,10464,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,table,PG.ProteinGroups,8105,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,ANTs,Accession,4254,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,CISs,Accession,5198,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,table,PG.ProteinGroups,7987,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,table,Protein Group,4023,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,table,Protein ID,4023,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,table,Accession,4023,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Protein IDs,6766,161
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Majority protein IDs,6766,143
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Peptide counts (razor+unique),6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Protein names,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Number of proteins,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides SIRT1KO_pro_rep1,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides SIRT1KO_pro_rep2,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides SIRT1KO_pro_rep3,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides SIRT3KO_pro_rep1,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides SIRT3KO_pro_rep2,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides SIRT3KO_pro_rep3,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides WT_pro_rep1,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides WT_pro_rep2,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Razor + unique peptides WT_pro_rep3,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Unique + razor sequence coverage [%],6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Reverse,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Potential contaminant,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,table,Peptide is razor,6766,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Protein IDs,6063,118
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Majority protein IDs,6063,107
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Peptide counts (razor+unique),6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Protein names,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Number of proteins,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Razor + unique peptides,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Razor + unique peptides H0,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Razor + unique peptides H24,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Unique + razor sequence coverage [%],6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Reverse,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Potential contaminant,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,table,Peptide is razor,6063,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,table,PG.ProteinGroups,4826,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,Annotation_Combine,Protein accession,8741,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,Annotation_Combine,Protein description,8741,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,table,Protein.Group,7744,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,table,Protein.Ids,7744,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,table,Protein.Names,7744,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,table,First.Protein.Description,7744,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,ESCC,Protein accession,9402,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,ESCC,Protein description,9402,0

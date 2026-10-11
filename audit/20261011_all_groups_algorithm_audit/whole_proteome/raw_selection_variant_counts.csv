@@ -1,0 +1,9 @@
+Group,Variant,Rows,ProteinCount,DdrCount,Fraction,SourceFile
+tendon,all_valid_identified_rows,3709,3984,154,3.86546184738956,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+tendon,any_positive_selected_samples,3336,3574,140,3.91717963066592,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+tendon,positive_channels_4_5_6,3336,3574,140,3.91717963066592,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+tendon,positive_channels_1_2_3_4_5_6,3336,3574,140,3.91717963066592,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt
+HepG2,all_valid_identified_rows,6588,6772,450,6.64500886001181,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt
+HepG2,any_positive_selected_samples,6529,6713,448,6.67361835245047,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt
+sperm,all_valid_identified_rows,10464,10680,461,4.31647940074906,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv
+sperm,any_positive_selected_samples,9309,9492,385,4.05604719764012,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv

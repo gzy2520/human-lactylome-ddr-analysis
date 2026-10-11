@@ -1,0 +1,67 @@
+GroupID,Dataset,N,UnitTypes,UnitMark,CountLabel
+KLA31_01,Lactylome (Kla),3,source_sample,"",n=3
+KLA31_01,Whole proteome,3,source_sample,"",n=3
+KLA31_02,Lactylome (Kla),6,source_sample,"",n=6
+KLA31_02,Whole proteome,1,single_source_profile,"",n=1
+KLA31_03,Lactylome (Kla),4,source_sample,"",n=4
+KLA31_03,Whole proteome,4,source_sample,"",n=4
+KLA31_04,Lactylome (Kla),4,source_sample,"",n=4
+KLA31_04,Whole proteome,4,source_sample,"",n=4
+KLA31_05,Lactylome (Kla),1,processed_matrix,p,"1
+panel"
+KLA31_05,Whole proteome,1,processed_matrix,p,"1
+panel"
+KLA31_06,Lactylome (Kla),3,source_sample,"",n=3
+KLA31_06,Whole proteome,1,single_source_profile,"",n=1
+KLA31_07,Lactylome (Kla),3,source_sample,"",n=3
+KLA31_07,Whole proteome,33,source_sample,"",n=33
+KLA31_08,Lactylome (Kla),5,source_sample,"",n=5
+KLA31_08,Whole proteome,5,source_sample,"",n=5
+KLA31_09,Lactylome (Kla),1,tissue_sample,"",n=1
+KLA31_09,Whole proteome,1,processed_matrix,p,"1
+panel"
+KLA31_10,Lactylome (Kla),6,source_sample,"",n=6
+KLA31_10,Whole proteome,94,source_sample,"",n=94
+KLA31_11,Lactylome (Kla),5,source_sample,"",n=5
+KLA31_11,Whole proteome,5,source_sample,"",n=5
+KLA31_12,Lactylome (Kla),1,tissue_sample,"",n=1
+KLA31_12,Whole proteome,1,processed_matrix,p,"1
+panel"
+KLA31_25,Lactylome (Kla),1,technical_sourceunit,"",n=1
+KLA31_25,Whole proteome,1,qc_source_pool,q,n=1q
+KLA31_26,Lactylome (Kla),2,source_sample,"",n=2
+KLA31_26,Whole proteome,2,source_sample,"",n=2
+KLA31_27,Lactylome (Kla),1,single_sample,"",n=1
+KLA31_27,Whole proteome,3,source_sample,"",n=3
+KLA31_28,Lactylome (Kla),6,source_sample,"",n=6
+KLA31_28,Whole proteome,3,source_sample,"",n=3
+KLA31_29,Lactylome (Kla),1,source_sample,"",n=1
+KLA31_29,Whole proteome,1,single_source_profile,"",n=1
+KLA31_30,Lactylome (Kla),2,model,m,n=2m
+KLA31_30,Whole proteome,2,model,m,n=2m
+KLA31_31,Lactylome (Kla),6,sample,"",n=6
+KLA31_31,Whole proteome,3,source_sample,"",n=3
+KLA31_13,Lactylome (Kla),1,source_sample,"",n=1
+KLA31_13,Whole proteome,3,technical_preparation,t,n=3t
+KLA31_14,Lactylome (Kla),1,single_sample,"",n=1
+KLA31_14,Whole proteome,3,technical_preparation,t,n=3t
+KLA31_15,Lactylome (Kla),1,technical_sourceunit,"",n=1
+KLA31_15,Whole proteome,3,technical_preparation,t,n=3t
+KLA31_16,Lactylome (Kla),2,single_sample_per_condition,"",n=2
+KLA31_16,Whole proteome,2,source_sample,"",n=2
+KLA31_17,Lactylome (Kla),3,source_sample,"",n=3
+KLA31_17,Whole proteome,3,source_sample,"",n=3
+KLA31_18,Lactylome (Kla),9,source_sample,"",n=9
+KLA31_18,Whole proteome,9,source_sample,"",n=9
+KLA31_19,Lactylome (Kla),3,source_sample,"",n=3
+KLA31_19,Whole proteome,3,technical_preparation,t,n=3t
+KLA31_20,Lactylome (Kla),1,source_sample,"",n=1
+KLA31_20,Whole proteome,3,technical_preparation,t,n=3t
+KLA31_21,Lactylome (Kla),1,source_sample,"",n=1
+KLA31_21,Whole proteome,3,technical_preparation,t,n=3t
+KLA31_22,Lactylome (Kla),3,source_sample,"",n=3
+KLA31_22,Whole proteome,2,sample,"",n=2
+KLA31_23,Lactylome (Kla),6,model,m,n=6m
+KLA31_23,Whole proteome,6,model,m,n=6m
+KLA31_24,Lactylome (Kla),4,sample,"",n=4
+KLA31_24,Whole proteome,3,technical_preparation,t,n=3t

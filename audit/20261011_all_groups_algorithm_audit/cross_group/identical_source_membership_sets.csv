@@ -1,0 +1,10 @@
+PXD,SampleGroup,Dataset,N,SampleIDs
+PXD050470,human hippocampus,Lactylome (Kla),3,H072;H081;H187
+PXD033146,pathological rotator cuff tendon,Lactylome (Kla),2,RCT2;RCT3
+PXD033146,pathological rotator cuff tendon,Whole proteome,3,RCT1;RCT2;RCT3
+PXD050470,human hippocampus,Whole proteome,3,H072;H081;H187
+PXD075377,adjacent liver,Whole proteome,8,Non-rec1;Non-rec2;Non-rec3;Non-rec4;Rec1;Rec2;Rec3;Rec4
+PXD075377,HCC,Whole proteome,8,Non-rec1;Non-rec2;Non-rec3;Non-rec4;Rec1;Rec2;Rec3;Rec4
+PXD064038,MEC and NEC ESCC groups,Whole proteome,2,ESCC-046T;ESCC-049T
+PXD064038,MEC and NEC ESCC groups,Whole proteome,5,ESCC-022T;ESCC-026T;ESCC-045T;ESCC-050T;ESCC-051T
+PXD064038,MEC and NEC ESCC groups,Whole proteome,2,ESCC-067T;ESCC-085T

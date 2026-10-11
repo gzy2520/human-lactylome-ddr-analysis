@@ -1,0 +1,45 @@
+GroupID,SampleID,SelectedSourceRows,Total,DDR,Percent,CurrentTotal,CurrentDDR,OldParserExact,NewParserExact,Added,Removed,Criterion
+KLA31_01,RCT1,995,463,23,4.96760259179266,463,23,TRUE,TRUE,0,0,Kla site table; RCT reporter channel positive across multiplicity columns; global localization >0
+KLA31_01,RCT2,998,464,23,4.95689655172414,464,23,TRUE,TRUE,0,0,Kla site table; RCT reporter channel positive across multiplicity columns; global localization >0
+KLA31_01,RCT3,997,464,23,4.95689655172414,464,23,TRUE,TRUE,0,0,Kla site table; RCT reporter channel positive across multiplicity columns; global localization >0
+KLA31_02,PTB340,363,266,15,5.6390977443609,266,15,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_02,PTB342,376,262,21,8.01526717557252,262,21,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_02,PTB344,273,199,13,6.53266331658292,199,13,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_02,PTB346,489,335,21,6.26865671641791,335,21,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_02,PTB364,522,346,22,6.35838150289017,346,22,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_02,PTB372,377,264,11,4.16666666666667,264,11,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_03,HSP1,1028,336,13,3.86904761904762,336,13,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_03,HSP2,872,298,13,4.36241610738255,298,13,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_03,HSP3,970,315,14,4.44444444444444,315,14,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_03,HSP4,1011,333,14,4.2042042042042,333,14,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_04,NSP1,1612,484,28,5.78512396694215,484,28,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_04,NSP2,1328,401,22,5.48628428927681,401,22,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_04,NSP3,1243,392,18,4.59183673469388,392,18,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_04,NSP4,1198,386,19,4.92227979274611,386,19,TRUE,TRUE,0,0,lactyl-modified PD peptide groups; detected sample category other than Not Found
+KLA31_05,H072,2579,853,29,3.39976553341149,853,29,TRUE,TRUE,0,0,S3 Kla sites with protein positions and positive sample intensity
+KLA31_05,H081,2579,853,29,3.39976553341149,853,29,TRUE,TRUE,0,0,S3 Kla sites with protein positions and positive sample intensity
+KLA31_05,H187,2579,853,29,3.39976553341149,853,29,TRUE,TRUE,0,0,S3 Kla sites with protein positions and positive sample intensity
+KLA31_06,Con_1,291,205,9,4.39024390243902,205,9,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_06,Con_2,334,215,9,4.18604651162791,215,9,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_06,Con_3,371,221,7,3.16742081447964,221,7,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_07,Rep 1,486,203,5,2.46305418719212,203,5,TRUE,TRUE,0,0,author Kla PTM table; K; sample site probability >0
+KLA31_07,Rep 2,474,208,7,3.36538461538462,208,7,TRUE,TRUE,0,0,author Kla PTM table; K; sample site probability >0
+KLA31_07,Rep 3,448,200,7,3.5,200,7,TRUE,TRUE,0,0,author Kla PTM table; K; sample site probability >0
+KLA31_08,NAT1,7402,2091,140,6.69536107125777,2091,140,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_08,NAT2,7224,1978,133,6.72396359959555,1978,133,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_08,NAT3,7254,1979,129,6.51844365841334,1979,129,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_08,NAT4,7343,2040,131,6.42156862745098,2040,131,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_08,NAT5,7328,2029,131,6.45638245441104,2029,131,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_09,patient1_Control,4892,1775,113,6.36619718309859,1775,113,TRUE,TRUE,0,0,Kla site table; one tissue channel positive intensity and localization >0
+KLA31_10,MEC_1,1815,820,65,7.92682926829268,820,65,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_10,MEC_2,1816,794,61,7.68261964735516,794,61,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_10,MEC_3,1657,838,79,9.4272076372315,838,79,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_10,NEC_1,1020,464,26,5.60344827586207,464,26,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_10,NEC_2,1052,483,27,5.59006211180124,483,27,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_10,NEC_3,1381,573,33,5.75916230366492,573,33,TRUE,TRUE,0,0,Kla site table; sample localization >0; exclude reverse/contaminant/site-only rows
+KLA31_11,PCa1,7326,2028,137,6.75542406311637,2028,137,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_11,PCa2,7062,1877,127,6.76611614278103,1877,127,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_11,PCa3,7322,2052,141,6.87134502923977,2052,141,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_11,PCa4,7328,2035,137,6.73218673218673,2035,137,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_11,PCa5,7409,2102,143,6.80304471931494,2102,143,TRUE,TRUE,0,0,"condition-specific L-Lac(K), K, PTM site probability >0"
+KLA31_12,patient1_HCC,4872,1798,121,6.72969966629588,1798,121,TRUE,TRUE,0,0,Kla site table; one tissue channel positive intensity and localization >0

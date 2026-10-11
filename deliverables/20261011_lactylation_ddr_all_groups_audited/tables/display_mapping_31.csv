@@ -1,0 +1,32 @@
+ReferenceKey,GroupID,Samples,SharedReference,RowOrder,PXD,SampleGroup,Category,KlaLabelEn,RNALabel,PlotLabel,CategoryOrder,X
+tendon_nondiabetic,KLA31_01,3,FALSE,1,PXD033146,pathological rotator cuff tendon,normal_tissue,Pathological rotator-cuff tendon,Tendon (non-diabetic),Rotator cuff tendon,1,1
+GTEx_v8_Lung,KLA31_02,578,FALSE,2,PXD036307,normal human lung,normal_tissue,Normal human lung tissue,Lung (GTEx),Lung,1,2
+GSE181540_HS_input,KLA31_03,3,FALSE,3,PXD046800,hypertrophic scar,normal_tissue,Hypertrophic scar tissue,Hypertrophic scar input,Hypertrophic scar,1,3
+GSE181540_adjacent_NS_input,KLA31_04,3,FALSE,4,PXD046800,adjacent skin,normal_tissue,Adjacent skin tissue,Adjacent skin input,Adjacent skin,1,4
+GTEx_v8_Hippocampus,KLA31_05,197,FALSE,5,PXD050470,human hippocampus,normal_tissue,Human hippocampus tissue,Hippocampus (GTEx),Hippocampus,1,5
+GSE114691_control_placenta,KLA31_06,21,FALSE,6,PXD063047,normal pregnancy placenta,normal_tissue,Normal-pregnancy placenta,Placenta control,Placenta,1,6
+sperm_GroupI,KLA31_07,4,FALSE,7,PXD064912,human sperm,normal_tissue,Human sperm,Sperm (group I),Sperm,1,7
+GSE132714_BPH,KLA31_08,18,FALSE,8,PXD066054,BPH,normal_tissue,Benign prostatic hyperplasia tissue,BPH (medicated cohort),BPH,1,8
+TCGA_LIHC_normal,KLA31_09,50,FALSE,9,PXD075377,adjacent liver,normal_tissue,Adjacent liver tissue,Adjacent liver (TCGA),Adjacent liver,1,9
+TCGA_ESCA_ESCC,KLA31_10,95,FALSE,10,PXD064038,MEC and NEC ESCC groups,cancer_tissue,ESCC MEC/NEC groups,ESCC (TCGA),ESCC,2,10
+TCGA_PRAD_primary,KLA31_11,501,FALSE,11,PXD066054,prostate cancer,cancer_tissue,Prostate cancer tissue,Prostate cancer (TCGA),Prostate cancer,2,11
+TCGA_LIHC_primary,KLA31_12,371,FALSE,12,PXD075377,HCC,cancer_tissue,HCC tissue,HCC (TCGA),HCC,2,12
+GSE203529_HEK293T_WT,KLA31_25,3,FALSE,28,PXD028488,HEK293T,normal_cells,HEK293T cells,HEK293T WT,HEK293T,3,13
+GSE275256_HMC3_vehicle,KLA31_26,3,FALSE,29,PXD028737,HMC3,normal_cells,HMC3 cells (normoxia and hypoxia),HMC3 vehicle,HMC3,3,14
+HK2_untreated,KLA31_27,3,TRUE,30,PXD058534,pretreated HK-2,normal_cells,HK-2 cells (IR-CM treated),HK-2 untreated,HK-2 (pretreated)*,3,15
+HK2_untreated,KLA31_28,3,TRUE,31,PXD078736,HK-2 control and mannitol,normal_cells,HK-2 cells (normoxia and hypoxia-reoxygenation),HK-2 untreated,HK-2 (ctr/man)*,3,16
+GSE103520_MCF10A_control,KLA31_29,3,FALSE,32,PXD060185,MCF10A,normal_cells,MCF10A cells,MCF10A control,MCF10A,3,17
+GSE119834_NSC,KLA31_30,8,FALSE,33,PXD070007,neural stem cells,normal_cells,Neural stem-cell models,NSC reference,Neural stem cells,3,18
+HUVEC_untreated,KLA31_31,4,FALSE,34,PXD073311,HUVEC control and Pg infection,normal_cells,HUVECs (control and P. gingivalis infection),HUVEC untreated,HUVEC,3,19
+MCF7_DMSO7d,KLA31_13,3,FALSE,14,PXD060185,MCF7,cancer_cells,MCF7 cells,MCF7 DMSO 7d,MCF7,4,20
+HCT116_control,KLA31_14,3,TRUE,15,PXD028488,HCT116,cancer_cells,HCT116 cells,HCT116 control,HCT116 (PXD028488)*,4,21
+HCT116_control,KLA31_15,3,TRUE,16,PXD053474,HCT116,cancer_cells,HCT116 cells (subcellular fractions),HCT116 control,HCT116 (PXD053474)*,4,22
+HCT116_control,KLA31_16,3,TRUE,17,PXD066351,HCT116 control and Roseburia co-culture,cancer_cells,HCT116 cells (control and Roseburia co-culture),HCT116 control,HCT116 (Roseburia)*,4,23
+GSE163787_TALL104,KLA31_17,1,FALSE,18,PXD028488,TALL-104,cancer_cells,TALL-104 cells (sodium lactate),TALL-104,TALL-104,4,24
+HepG2_DMSO24h,KLA31_18,3,FALSE,19,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,cancer_cells,"HepG2 cells (WT, SIRT1 KO and SIRT3 KO)",HepG2 DMSO 24h,HepG2,4,25
+GSE171750_A549_untreated,KLA31_19,3,FALSE,20,PXD054919,A549,cancer_cells,A549 cells,A549 untreated,A549,4,26
+MDAMB468_DMSO7d,KLA31_20,3,FALSE,21,PXD060185,MDA-MB-468,cancer_cells,MDA-MB-468 cells,MDA-MB-468 DMSO 7d,MDA-MB-468,4,27
+GSE283812_T47D_vehicle,KLA31_21,4,FALSE,22,PXD060185,T-47D,cancer_cells,T-47D cells,T-47D vehicle,T-47D,4,28
+PC3M_DMSO,KLA31_22,3,FALSE,23,PXD063266,PC-3M,cancer_cells,PC-3M cells,PC-3M DMSO,PC-3M,4,29
+GSE266884_MES28_vector_control,KLA31_23,4,FALSE,24,PXD070007,glioblastoma stem cells,cancer_cells,Glioblastoma stem-cell models,MES28 vector control,Glioblastoma stem cells,4,30
+RKO_DMSO,KLA31_24,3,FALSE,25,PXD078013,RKO WT and GSK3B KO,cancer_cells,RKO cells (WT and GSK3B KO),RKO DMSO,RKO,4,31

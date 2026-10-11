@@ -1,0 +1,7 @@
+GroupID,PXD,SampleGroup,SampleID,Proteins,DDR,Percent,ProteinCount,DdrProteinCount,Fraction,UnitType,Condition,DeltaProteins,DeltaDDR,DeltaPercent
+KLA31_28,PXD078736,HK-2 control and mannitol,ctr_1,961,105,10.9261186264308,962,105,10.9147609147609,source_sample,control,-1,0,0.0113577116699019
+KLA31_28,PXD078736,HK-2 control and mannitol,ctr_2,951,103,10.830704521556257,952,103,10.8193277310924,source_sample,control,-1,0,0.0113767904638564
+KLA31_28,PXD078736,HK-2 control and mannitol,ctr_3,955,105,10.99476439790576,955,105,10.9947643979058,source_sample,control,0,0,-4.085620730620576e-14
+KLA31_28,PXD078736,HK-2 control and mannitol,man_1,533,56,10.50656660412758,533,56,10.5065666041276,source_sample,mannitol,0,0,-2.131628207280301e-14
+KLA31_28,PXD078736,HK-2 control and mannitol,man_2,536,54,10.07462686567164,536,54,10.0746268656716,source_sample,mannitol,0,0,4.085620730620576e-14
+KLA31_28,PXD078736,HK-2 control and mannitol,man_3,526,54,10.26615969581749,526,54,10.2661596958175,source_sample,mannitol,0,0,-8.881784197001252e-15

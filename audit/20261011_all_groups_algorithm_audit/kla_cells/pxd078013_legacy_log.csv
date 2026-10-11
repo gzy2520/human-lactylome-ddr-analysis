@@ -1,0 +1,5 @@
+PXD,Source,Reason,Count,Detail
+PXD078013,data/PXD078013/search_results/evidence.txt,evidence_without_positive_LaK,46838,
+PXD078013,data/PXD078013/search_results/evidence.txt,reverse_or_contaminant,719,
+PXD078013,data/PXD078013/search_results/evidence.txt,positive_LaK_without_site_ID,405,
+PXD078013,data/PXD078013/search_results/evidence.txt,proteinGroups_site_without_positive_evidence,6,

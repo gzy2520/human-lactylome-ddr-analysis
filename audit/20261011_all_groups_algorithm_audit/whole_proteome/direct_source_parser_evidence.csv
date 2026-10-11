@@ -1,0 +1,401 @@
+Mode,PXD,SampleGroup,SampleID,SourceFile,InputValues,ColonValues,PipeValues,MultipleGroupValues,ContaminantTokens,OldCount,CorrectedCount,Added,Removed,TenCharCount
+original,PXD033146,pathological rotator cuff tendon,RCT1,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,3336,0,0,162,0,3574,3574,"","",30
+original,PXD033146,pathological rotator cuff tendon,RCT2,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,3336,0,0,162,0,3574,3574,"","",30
+original,PXD033146,pathological rotator cuff tendon,RCT3,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,3336,0,0,162,0,3574,3574,"","",30
+original,PXD046800,hypertrophic scar,HSP1,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1899,0,0,0,0,1899,1899,"","",12
+original,PXD046800,hypertrophic scar,HSP2,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1680,0,0,0,0,1680,1680,"","",7
+original,PXD046800,hypertrophic scar,HSP3,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1871,0,0,0,0,1871,1871,"","",9
+original,PXD046800,hypertrophic scar,HSP4,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,2017,0,0,0,0,2017,2017,"","",10
+original,PXD046800,adjacent skin,NSP1,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1986,0,0,0,0,1986,1986,"","",10
+original,PXD046800,adjacent skin,NSP2,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1958,0,0,0,0,1958,1958,"","",11
+original,PXD046800,adjacent skin,NSP3,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1963,0,0,0,0,1963,1963,"","",10
+original,PXD046800,adjacent skin,NSP4,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1900,0,0,0,0,1900,1900,"","",10
+original,PXD050470,human hippocampus,H072,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,6082,0,0,0,0,6082,6082,"","",6
+original,PXD050470,human hippocampus,H081,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,6082,0,0,0,0,6082,6082,"","",6
+original,PXD050470,human hippocampus,H187,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,6082,0,0,0,0,6082,6082,"","",6
+original,PXD064912,human sperm,L1,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8270,0,0,66,0,8400,8400,"","",48
+original,PXD064912,human sperm,L2,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8285,0,0,69,0,8427,8427,"","",48
+original,PXD064912,human sperm,L3,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8555,0,0,73,0,8713,8713,"","",57
+original,PXD064912,human sperm,L4,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8444,0,0,74,0,8604,8604,"","",52
+original,PXD064912,human sperm,L5,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8222,0,0,68,0,8364,8364,"","",49
+original,PXD064912,human sperm,L6,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8528,0,0,69,0,8668,8668,"","",44
+original,PXD064912,human sperm,L7,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8356,0,0,69,0,8497,8497,"","",52
+original,PXD064912,human sperm,L8,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8577,0,0,70,0,8708,8708,"","",49
+original,PXD064912,human sperm,L9,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8415,0,0,69,0,8554,8554,"","",53
+original,PXD064912,human sperm,L10,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8113,0,0,66,0,8240,8240,"","",48
+original,PXD064912,human sperm,L11,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8431,0,0,72,0,8566,8566,"","",49
+original,PXD064912,human sperm,L12,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8419,0,0,69,0,8560,8560,"","",51
+original,PXD064912,human sperm,L13,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8370,0,0,69,0,8511,8511,"","",51
+original,PXD064912,human sperm,L14,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8146,0,0,71,0,8291,8291,"","",52
+original,PXD064912,human sperm,L15,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8240,0,0,68,0,8375,8375,"","",42
+original,PXD064912,human sperm,L16,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8335,0,0,70,0,8488,8488,"","",51
+original,PXD064912,human sperm,L17,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8125,0,0,64,0,8254,8254,"","",47
+original,PXD064912,human sperm,N1,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8567,0,0,78,0,8730,8730,"","",53
+original,PXD064912,human sperm,N2,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8490,0,0,70,0,8627,8627,"","",44
+original,PXD064912,human sperm,N3,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8164,0,0,69,0,8307,8307,"","",42
+original,PXD064912,human sperm,N4,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8308,0,0,71,0,8446,8446,"","",45
+original,PXD064912,human sperm,N5,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8418,0,0,65,0,8545,8545,"","",45
+original,PXD064912,human sperm,N6,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8495,0,0,71,0,8651,8651,"","",48
+original,PXD064912,human sperm,N7,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8283,0,0,67,0,8411,8411,"","",44
+original,PXD064912,human sperm,N8,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8275,0,0,71,0,8423,8423,"","",50
+original,PXD064912,human sperm,N9,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8406,0,0,66,0,8520,8520,"","",41
+original,PXD064912,human sperm,N10,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8493,0,0,66,0,8613,8613,"","",41
+original,PXD064912,human sperm,N11,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8394,0,0,69,0,8527,8527,"","",47
+original,PXD064912,human sperm,N12,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8430,0,0,68,0,8557,8557,"","",43
+original,PXD064912,human sperm,N13,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8228,0,0,71,0,8371,8371,"","",51
+original,PXD064912,human sperm,N14,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8487,0,0,69,0,8629,8629,"","",48
+original,PXD064912,human sperm,N15,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8387,0,0,70,0,8524,8524,"","",42
+original,PXD064912,human sperm,N16,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8397,0,0,66,0,8530,8530,"","",48
+original,PXD066054,BPH,NAT1,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7808,0,0,93,0,7916,7916,"","",33
+original,PXD066054,BPH,NAT2,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7697,0,0,93,0,7805,7805,"","",34
+original,PXD066054,BPH,NAT3,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7820,0,0,94,0,7929,7929,"","",32
+original,PXD066054,BPH,NAT4,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7831,0,0,92,0,7937,7937,"","",30
+original,PXD066054,BPH,NAT5,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7665,0,0,89,0,7768,7768,"","",26
+original,PXD066054,prostate cancer,PCa1,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7659,0,0,85,0,7760,7760,"","",25
+original,PXD066054,prostate cancer,PCa2,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7113,0,0,84,0,7213,7213,"","",32
+original,PXD066054,prostate cancer,PCa3,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7685,0,0,90,0,7791,7791,"","",23
+original,PXD066054,prostate cancer,PCa4,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7578,0,0,83,0,7675,7675,"","",29
+original,PXD066054,prostate cancer,PCa5,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7732,0,0,86,0,7833,7833,"","",25
+original,PXD075377,adjacent liver,Non-rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,adjacent liver,Non-rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,adjacent liver,Non-rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,adjacent liver,Non-rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,adjacent liver,Rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,adjacent liver,Rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,adjacent liver,Rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,adjacent liver,Rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+original,PXD075377,HCC,Non-rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD075377,HCC,Non-rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD075377,HCC,Non-rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD075377,HCC,Non-rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD075377,HCC,Rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD075377,HCC,Rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD075377,HCC,Rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD075377,HCC,Rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+original,PXD066351,HCT116 control and Roseburia co-culture,NC116,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,7933,0,0,87,0,8075,8075,"","",8
+original,PXD066351,HCT116 control and Roseburia co-culture,R116,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,7911,0,0,87,0,8048,8048,"","",8
+original,PXD028488,TALL-104,Sample 1,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,3109,0,3109,0,0,3109,3109,"","",2
+original,PXD028488,TALL-104,Sample 2,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,3176,0,3176,0,0,3176,3176,"","",2
+original,PXD028488,TALL-104,Sample 3,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,3110,0,3110,0,0,3110,3110,"","",2
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep1,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5902,0,0,120,0,6069,6069,"","",3
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep2,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5776,0,0,118,0,5938,5938,"","",3
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep3,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5801,0,0,125,0,5970,5970,"","",3
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep1,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5760,0,0,117,0,5921,5921,"","",4
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep2,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5800,0,0,115,0,5955,5955,"","",3
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep3,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5842,0,0,119,0,6005,6005,"","",4
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep1,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5872,0,0,121,0,6036,6036,"","",2
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep2,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5938,0,0,118,0,6099,6099,"","",4
+original,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep3,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5919,0,0,117,0,6078,6078,"","",3
+original,PXD028737,HMC3,H0,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,5271,0,0,116,0,5422,5422,"","",5
+original,PXD028737,HMC3,H24,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,5771,0,0,135,0,5946,5946,"","",10
+original,PXD058534,pretreated HK-2,amostra1,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4589,0,0,70,0,4684,4684,"","",7
+original,PXD058534,pretreated HK-2,amostra3,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4514,0,0,63,0,4597,4597,"","",7
+original,PXD058534,pretreated HK-2,amostra4,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4670,0,0,75,0,4764,4764,"","",8
+original,PXD078736,HK-2 control and mannitol,amostra1,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4589,0,0,70,0,4684,4684,"","",7
+original,PXD078736,HK-2 control and mannitol,amostra3,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4514,0,0,63,0,4597,4597,"","",7
+original,PXD078736,HK-2 control and mannitol,amostra4,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4670,0,0,75,0,4764,4764,"","",8
+original,PXD070007,glioblastoma stem cells,G2907,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6966,0,0,0,0,6966,6966,"","",1
+original,PXD070007,glioblastoma stem cells,G3028,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6877,0,0,0,0,6877,6877,"","",0
+original,PXD070007,glioblastoma stem cells,G3264,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6870,0,0,0,0,6870,6870,"","",1
+original,PXD070007,glioblastoma stem cells,GSC23,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6928,0,0,0,0,6928,6928,"","",0
+original,PXD070007,glioblastoma stem cells,MES28,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6947,0,0,0,0,6947,6947,"","",1
+original,PXD070007,glioblastoma stem cells,RKI,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,7228,0,0,0,0,7228,7228,"","",2
+original,PXD070007,neural stem cells,ENSA,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6915,0,0,0,0,6915,6915,"","",0
+original,PXD070007,neural stem cells,HMP1,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6887,0,0,0,0,6887,6887,"","",1
+original,PXD073311,HUVEC control and Pg infection,A0h_1,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,7567,0,0,48,0,7645,7645,"","",5
+original,PXD073311,HUVEC control and Pg infection,A0h_2,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,7558,0,0,51,0,7640,7640,"","",4
+original,PXD073311,HUVEC control and Pg infection,A0h_3,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,7564,0,0,45,0,7637,7637,"","",3
+corrected,PXD033146,pathological rotator cuff tendon,RCT1,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,3336,0,0,162,0,3574,3574,"","",30
+corrected,PXD033146,pathological rotator cuff tendon,RCT2,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,3336,0,0,162,0,3574,3574,"","",30
+corrected,PXD033146,pathological rotator cuff tendon,RCT3,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,3336,0,0,162,0,3574,3574,"","",30
+corrected,PXD046800,hypertrophic scar,HSP1,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1899,0,0,0,0,1899,1899,"","",12
+corrected,PXD046800,hypertrophic scar,HSP2,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1680,0,0,0,0,1680,1680,"","",7
+corrected,PXD046800,hypertrophic scar,HSP3,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1871,0,0,0,0,1871,1871,"","",9
+corrected,PXD046800,hypertrophic scar,HSP4,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,2017,0,0,0,0,2017,2017,"","",10
+corrected,PXD046800,adjacent skin,NSP1,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1986,0,0,0,0,1986,1986,"","",10
+corrected,PXD046800,adjacent skin,NSP2,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1958,0,0,0,0,1958,1958,"","",11
+corrected,PXD046800,adjacent skin,NSP3,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1963,0,0,0,0,1963,1963,"","",10
+corrected,PXD046800,adjacent skin,NSP4,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,1900,0,0,0,0,1900,1900,"","",10
+corrected,PXD050470,human hippocampus,H072,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,6082,0,0,0,0,6082,6082,"","",6
+corrected,PXD050470,human hippocampus,H081,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,6082,0,0,0,0,6082,6082,"","",6
+corrected,PXD050470,human hippocampus,H187,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,6082,0,0,0,0,6082,6082,"","",6
+corrected,PXD064912,human sperm,L1,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8270,0,0,66,0,8400,8400,"","",48
+corrected,PXD064912,human sperm,L2,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8285,0,0,69,0,8427,8427,"","",48
+corrected,PXD064912,human sperm,L3,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8555,0,0,73,0,8713,8713,"","",57
+corrected,PXD064912,human sperm,L4,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8444,0,0,74,0,8604,8604,"","",52
+corrected,PXD064912,human sperm,L5,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8222,0,0,68,0,8364,8364,"","",49
+corrected,PXD064912,human sperm,L6,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8528,0,0,69,0,8668,8668,"","",44
+corrected,PXD064912,human sperm,L7,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8356,0,0,69,0,8497,8497,"","",52
+corrected,PXD064912,human sperm,L8,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8577,0,0,70,0,8708,8708,"","",49
+corrected,PXD064912,human sperm,L9,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8415,0,0,69,0,8554,8554,"","",53
+corrected,PXD064912,human sperm,L10,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8113,0,0,66,0,8240,8240,"","",48
+corrected,PXD064912,human sperm,L11,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8431,0,0,72,0,8566,8566,"","",49
+corrected,PXD064912,human sperm,L12,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8419,0,0,69,0,8560,8560,"","",51
+corrected,PXD064912,human sperm,L13,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8370,0,0,69,0,8511,8511,"","",51
+corrected,PXD064912,human sperm,L14,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8146,0,0,71,0,8291,8291,"","",52
+corrected,PXD064912,human sperm,L15,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8240,0,0,68,0,8375,8375,"","",42
+corrected,PXD064912,human sperm,L16,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8335,0,0,70,0,8488,8488,"","",51
+corrected,PXD064912,human sperm,L17,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8125,0,0,64,0,8254,8254,"","",47
+corrected,PXD064912,human sperm,N1,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8567,0,0,78,0,8730,8730,"","",53
+corrected,PXD064912,human sperm,N2,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8490,0,0,70,0,8627,8627,"","",44
+corrected,PXD064912,human sperm,N3,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8164,0,0,69,0,8307,8307,"","",42
+corrected,PXD064912,human sperm,N4,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8308,0,0,71,0,8446,8446,"","",45
+corrected,PXD064912,human sperm,N5,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8418,0,0,65,0,8545,8545,"","",45
+corrected,PXD064912,human sperm,N6,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8495,0,0,71,0,8651,8651,"","",48
+corrected,PXD064912,human sperm,N7,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8283,0,0,67,0,8411,8411,"","",44
+corrected,PXD064912,human sperm,N8,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8275,0,0,71,0,8423,8423,"","",50
+corrected,PXD064912,human sperm,N9,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8406,0,0,66,0,8520,8520,"","",41
+corrected,PXD064912,human sperm,N10,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8493,0,0,66,0,8613,8613,"","",41
+corrected,PXD064912,human sperm,N11,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8394,0,0,69,0,8527,8527,"","",47
+corrected,PXD064912,human sperm,N12,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8430,0,0,68,0,8557,8557,"","",43
+corrected,PXD064912,human sperm,N13,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8228,0,0,71,0,8371,8371,"","",51
+corrected,PXD064912,human sperm,N14,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8487,0,0,69,0,8629,8629,"","",48
+corrected,PXD064912,human sperm,N15,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8387,0,0,70,0,8524,8524,"","",42
+corrected,PXD064912,human sperm,N16,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,8397,0,0,66,0,8530,8530,"","",48
+corrected,PXD066054,BPH,NAT1,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7808,0,0,93,0,7916,7916,"","",33
+corrected,PXD066054,BPH,NAT2,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7697,0,0,93,0,7805,7805,"","",34
+corrected,PXD066054,BPH,NAT3,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7820,0,0,94,0,7929,7929,"","",32
+corrected,PXD066054,BPH,NAT4,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7831,0,0,92,0,7937,7937,"","",30
+corrected,PXD066054,BPH,NAT5,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7665,0,0,89,0,7768,7768,"","",26
+corrected,PXD066054,prostate cancer,PCa1,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7659,0,0,85,0,7760,7760,"","",25
+corrected,PXD066054,prostate cancer,PCa2,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7113,0,0,84,0,7213,7213,"","",32
+corrected,PXD066054,prostate cancer,PCa3,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7685,0,0,90,0,7791,7791,"","",23
+corrected,PXD066054,prostate cancer,PCa4,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7578,0,0,83,0,7675,7675,"","",29
+corrected,PXD066054,prostate cancer,PCa5,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,7732,0,0,86,0,7833,7833,"","",25
+corrected,PXD075377,adjacent liver,Non-rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,adjacent liver,Non-rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,adjacent liver,Non-rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,adjacent liver,Non-rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,adjacent liver,Rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,adjacent liver,Rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,adjacent liver,Rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,adjacent liver,Rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,4254,0,0,0,0,4251,4251,"","",2
+corrected,PXD075377,HCC,Non-rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD075377,HCC,Non-rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD075377,HCC,Non-rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD075377,HCC,Non-rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD075377,HCC,Rec1,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD075377,HCC,Rec2,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD075377,HCC,Rec3,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD075377,HCC,Rec4,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,5198,0,0,0,0,5188,5188,"","",0
+corrected,PXD066351,HCT116 control and Roseburia co-culture,NC116,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,7933,0,0,87,0,8075,8075,"","",8
+corrected,PXD066351,HCT116 control and Roseburia co-culture,R116,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,7911,0,0,87,0,8048,8048,"","",8
+corrected,PXD028488,TALL-104,Sample 1,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,3109,0,3109,0,0,3109,3109,"","",2
+corrected,PXD028488,TALL-104,Sample 2,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,3176,0,3176,0,0,3176,3176,"","",2
+corrected,PXD028488,TALL-104,Sample 3,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,3110,0,3110,0,0,3110,3110,"","",2
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep1,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5902,0,0,120,0,6069,6069,"","",3
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep2,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5776,0,0,118,0,5938,5938,"","",3
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_pro_rep3,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5801,0,0,125,0,5970,5970,"","",3
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep1,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5760,0,0,117,0,5921,5921,"","",4
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep2,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5800,0,0,115,0,5955,5955,"","",3
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_pro_rep3,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5842,0,0,119,0,6005,6005,"","",4
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep1,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5872,0,0,121,0,6036,6036,"","",2
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep2,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5938,0,0,118,0,6099,6099,"","",4
+corrected,PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_pro_rep3,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,5919,0,0,117,0,6078,6078,"","",3
+corrected,PXD028737,HMC3,H0,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,5271,0,0,116,0,5422,5422,"","",5
+corrected,PXD028737,HMC3,H24,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,5771,0,0,135,0,5946,5946,"","",10
+corrected,PXD058534,pretreated HK-2,amostra1,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4589,0,0,70,0,4684,4684,"","",7
+corrected,PXD058534,pretreated HK-2,amostra3,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4514,0,0,63,0,4597,4597,"","",7
+corrected,PXD058534,pretreated HK-2,amostra4,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4670,0,0,75,0,4764,4764,"","",8
+corrected,PXD078736,HK-2 control and mannitol,amostra1,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4589,0,0,70,0,4684,4684,"","",7
+corrected,PXD078736,HK-2 control and mannitol,amostra3,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4514,0,0,63,0,4597,4597,"","",7
+corrected,PXD078736,HK-2 control and mannitol,amostra4,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,4670,0,0,75,0,4764,4764,"","",8
+corrected,PXD070007,glioblastoma stem cells,G2907,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6966,0,0,0,0,6966,6966,"","",1
+corrected,PXD070007,glioblastoma stem cells,G3028,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6877,0,0,0,0,6877,6877,"","",0
+corrected,PXD070007,glioblastoma stem cells,G3264,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6870,0,0,0,0,6870,6870,"","",1
+corrected,PXD070007,glioblastoma stem cells,GSC23,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6928,0,0,0,0,6928,6928,"","",0
+corrected,PXD070007,glioblastoma stem cells,MES28,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6947,0,0,0,0,6947,6947,"","",1
+corrected,PXD070007,glioblastoma stem cells,RKI,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,7228,0,0,0,0,7228,7228,"","",2
+corrected,PXD070007,neural stem cells,ENSA,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6915,0,0,0,0,6915,6915,"","",0
+corrected,PXD070007,neural stem cells,HMP1,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,6887,0,0,0,0,6887,6887,"","",1
+corrected,PXD073311,HUVEC control and Pg infection,A0h_1,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,7567,0,0,48,0,7645,7645,"","",5
+corrected,PXD073311,HUVEC control and Pg infection,A0h_2,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,7558,0,0,51,0,7640,7640,"","",4
+corrected,PXD073311,HUVEC control and Pg infection,A0h_3,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,7564,0,0,45,0,7637,7637,"","",3
+original,PXD064038,MEC and NEC ESCC groups,ESCC-001T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4956,0,0,0,0,4956,4956,"","",1
+original,PXD064038,MEC and NEC ESCC groups,ESCC-002T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4955,0,0,0,0,4955,4955,"","",1
+original,PXD064038,MEC and NEC ESCC groups,ESCC-006T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5275,0,0,0,0,5275,5275,"","",4
+original,PXD064038,MEC and NEC ESCC groups,ESCC-009T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5269,0,0,0,0,5269,5269,"","",4
+original,PXD064038,MEC and NEC ESCC groups,ESCC-010T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5273,0,0,0,0,5273,5273,"","",4
+original,PXD064038,MEC and NEC ESCC groups,ESCC-019T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5356,0,0,0,0,5356,5356,"","",2
+original,PXD064038,MEC and NEC ESCC groups,ESCC-035T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4693,0,0,0,0,4693,4693,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-040T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5063,0,0,0,0,5063,5063,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-041T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5055,0,0,0,0,5055,5055,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-044T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-049T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-017T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4451,0,0,0,0,4451,4451,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-055T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4453,0,0,0,0,4453,4453,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-057T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,0,0,0,0,4460,4460,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-059T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4461,0,0,0,0,4461,4461,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-063T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5253,0,0,0,0,5253,5253,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-065T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5256,0,0,0,0,5256,5256,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-066T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5258,0,0,0,0,5258,5258,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-082T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,0,0,0,0,5415,5415,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-086T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5417,0,0,0,0,5417,5417,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-075T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5000,0,0,0,0,5000,5000,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-078T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5000,0,0,0,0,5000,5000,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-092T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5002,0,0,0,0,5002,5002,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-069T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4554,0,0,0,0,4554,4554,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-072T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4555,0,0,0,0,4555,4555,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-003T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4955,0,0,0,0,4955,4955,"","",1
+original,PXD064038,MEC and NEC ESCC groups,ESCC-004T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4957,0,0,0,0,4957,4957,"","",1
+original,PXD064038,MEC and NEC ESCC groups,ESCC-005T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4953,0,0,0,0,4953,4953,"","",1
+original,PXD064038,MEC and NEC ESCC groups,ESCC-011T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5273,0,0,0,0,5273,5273,"","",4
+original,PXD064038,MEC and NEC ESCC groups,ESCC-013T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5361,0,0,0,0,5361,5361,"","",2
+original,PXD064038,MEC and NEC ESCC groups,ESCC-020T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5368,0,0,0,0,5368,5368,"","",2
+original,PXD064038,MEC and NEC ESCC groups,ESCC-029T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4686,0,0,0,0,4686,4686,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-032T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4696,0,0,0,0,4696,4696,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-037T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4692,0,0,0,0,4692,4692,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-024T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,0,0,0,0,5056,5056,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-028T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,0,0,0,0,5056,5056,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-043T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4452,0,0,0,0,4452,4452,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-046T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-050T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-051T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-007T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4450,0,0,0,0,4450,4450,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-018T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-021T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4455,0,0,0,0,4455,4455,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-027T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4452,0,0,0,0,4452,4452,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-052T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4458,0,0,0,0,4458,4458,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-056T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,0,0,0,0,4460,4460,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-061T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-062T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-053T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5256,0,0,0,0,5256,5256,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-058T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5254,0,0,0,0,5254,5254,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-068T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5255,0,0,0,0,5255,5255,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-074T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5411,0,0,0,0,5411,5411,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-083T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,0,0,0,0,5415,5415,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-084T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5416,0,0,0,0,5416,5416,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-090T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5411,0,0,0,0,5411,5411,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-080T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,0,0,0,0,4998,4998,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-091T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,0,0,0,0,4998,4998,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-094T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5002,0,0,0,0,5002,5002,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-067T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4556,0,0,0,0,4556,4556,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-076T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4555,0,0,0,0,4555,4555,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-087T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,0,0,0,0,4553,4553,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-008T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5275,0,0,0,0,5275,5275,"","",4
+original,PXD064038,MEC and NEC ESCC groups,ESCC-015T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5362,0,0,0,0,5362,5362,"","",2
+original,PXD064038,MEC and NEC ESCC groups,ESCC-016T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5370,0,0,0,0,5370,5370,"","",2
+original,PXD064038,MEC and NEC ESCC groups,ESCC-023T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4690,0,0,0,0,4690,4690,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-031T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4696,0,0,0,0,4696,4696,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-033T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4695,0,0,0,0,4695,4695,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-036T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4693,0,0,0,0,4693,4693,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-042T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5064,0,0,0,0,5064,5064,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-034T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,0,0,0,0,5056,5056,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-038T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5063,0,0,0,0,5063,5063,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-039T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5064,0,0,0,0,5064,5064,"","",14
+original,PXD064038,MEC and NEC ESCC groups,ESCC-045T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-022T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-026T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-012T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-014T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4455,0,0,0,0,4455,4455,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-025T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4453,0,0,0,0,4453,4453,"","",10
+original,PXD064038,MEC and NEC ESCC groups,ESCC-030T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4451,0,0,0,0,4451,4451,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-047T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-054T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,0,0,0,0,4460,4460,"","",11
+original,PXD064038,MEC and NEC ESCC groups,ESCC-048T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5254,0,0,0,0,5254,5254,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-060T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5258,0,0,0,0,5258,5258,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-064T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5257,0,0,0,0,5257,5257,"","",17
+original,PXD064038,MEC and NEC ESCC groups,ESCC-079T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5413,0,0,0,0,5413,5413,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-088T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,0,0,0,0,5415,5415,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-089T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5412,0,0,0,0,5412,5412,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-077T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,0,0,0,0,4998,4998,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-081T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5003,0,0,0,0,5003,5003,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-093T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5001,0,0,0,0,5001,5001,"","",18
+original,PXD064038,MEC and NEC ESCC groups,ESCC-070T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,0,0,0,0,4553,4553,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-071T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,0,0,0,0,4553,4553,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-073T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4552,0,0,0,0,4552,4552,"","",12
+original,PXD064038,MEC and NEC ESCC groups,ESCC-085T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4556,0,0,0,0,4556,4556,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-001T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4956,0,0,0,0,4956,4956,"","",1
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-002T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4955,0,0,0,0,4955,4955,"","",1
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-006T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5275,0,0,0,0,5275,5275,"","",4
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-009T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5269,0,0,0,0,5269,5269,"","",4
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-010T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5273,0,0,0,0,5273,5273,"","",4
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-019T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5356,0,0,0,0,5356,5356,"","",2
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-035T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4693,0,0,0,0,4693,4693,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-040T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5063,0,0,0,0,5063,5063,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-041T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5055,0,0,0,0,5055,5055,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-044T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-049T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-017T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4451,0,0,0,0,4451,4451,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-055T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4453,0,0,0,0,4453,4453,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-057T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,0,0,0,0,4460,4460,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-059T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4461,0,0,0,0,4461,4461,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-063T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5253,0,0,0,0,5253,5253,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-065T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5256,0,0,0,0,5256,5256,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-066T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5258,0,0,0,0,5258,5258,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-082T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,0,0,0,0,5415,5415,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-086T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5417,0,0,0,0,5417,5417,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-075T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5000,0,0,0,0,5000,5000,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-078T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5000,0,0,0,0,5000,5000,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-092T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5002,0,0,0,0,5002,5002,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-069T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4554,0,0,0,0,4554,4554,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-072T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4555,0,0,0,0,4555,4555,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-003T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4955,0,0,0,0,4955,4955,"","",1
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-004T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4957,0,0,0,0,4957,4957,"","",1
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-005T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4953,0,0,0,0,4953,4953,"","",1
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-011T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5273,0,0,0,0,5273,5273,"","",4
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-013T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5361,0,0,0,0,5361,5361,"","",2
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-020T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5368,0,0,0,0,5368,5368,"","",2
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-029T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4686,0,0,0,0,4686,4686,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-032T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4696,0,0,0,0,4696,4696,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-037T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4692,0,0,0,0,4692,4692,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-024T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,0,0,0,0,5056,5056,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-028T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,0,0,0,0,5056,5056,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-043T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4452,0,0,0,0,4452,4452,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-046T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-050T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-051T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-007T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4450,0,0,0,0,4450,4450,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-018T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-021T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4455,0,0,0,0,4455,4455,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-027T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4452,0,0,0,0,4452,4452,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-052T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4458,0,0,0,0,4458,4458,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-056T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,0,0,0,0,4460,4460,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-061T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-062T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-053T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5256,0,0,0,0,5256,5256,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-058T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5254,0,0,0,0,5254,5254,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-068T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5255,0,0,0,0,5255,5255,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-074T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5411,0,0,0,0,5411,5411,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-083T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,0,0,0,0,5415,5415,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-084T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5416,0,0,0,0,5416,5416,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-090T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5411,0,0,0,0,5411,5411,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-080T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,0,0,0,0,4998,4998,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-091T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,0,0,0,0,4998,4998,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-094T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5002,0,0,0,0,5002,5002,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-067T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4556,0,0,0,0,4556,4556,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-076T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4555,0,0,0,0,4555,4555,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-087T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,0,0,0,0,4553,4553,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-008T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5275,0,0,0,0,5275,5275,"","",4
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-015T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5362,0,0,0,0,5362,5362,"","",2
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-016T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5370,0,0,0,0,5370,5370,"","",2
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-023T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4690,0,0,0,0,4690,4690,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-031T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4696,0,0,0,0,4696,4696,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-033T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4695,0,0,0,0,4695,4695,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-036T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4693,0,0,0,0,4693,4693,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-042T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5064,0,0,0,0,5064,5064,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-034T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,0,0,0,0,5056,5056,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-038T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5063,0,0,0,0,5063,5063,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-039T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5064,0,0,0,0,5064,5064,"","",14
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-045T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-022T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-026T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,0,0,0,0,4457,4457,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-012T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,0,0,0,0,4454,4454,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-014T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4455,0,0,0,0,4455,4455,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-025T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4453,0,0,0,0,4453,4453,"","",10
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-030T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4451,0,0,0,0,4451,4451,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-047T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,0,0,0,0,4456,4456,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-054T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,0,0,0,0,4460,4460,"","",11
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-048T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5254,0,0,0,0,5254,5254,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-060T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5258,0,0,0,0,5258,5258,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-064T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5257,0,0,0,0,5257,5257,"","",17
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-079T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5413,0,0,0,0,5413,5413,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-088T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,0,0,0,0,5415,5415,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-089T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5412,0,0,0,0,5412,5412,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-077T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,0,0,0,0,4998,4998,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-081T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5003,0,0,0,0,5003,5003,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-093T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5001,0,0,0,0,5001,5001,"","",18
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-070T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,0,0,0,0,4553,4553,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-071T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,0,0,0,0,4553,4553,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-073T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4552,0,0,0,0,4552,4552,"","",12
+corrected,PXD064038,MEC and NEC ESCC groups,ESCC-085T,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4556,0,0,0,0,4556,4556,"","",12

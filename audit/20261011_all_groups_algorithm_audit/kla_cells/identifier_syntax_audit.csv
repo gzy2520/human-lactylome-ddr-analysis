@@ -1,0 +1,16 @@
+PXD,SampleGroup,SourceRecords,DistinctRawIDStrings,ColonRecords,SemicolonRecords,CommaRecords,PipeRecords,IsoformRecords,PrefixedReverseOrContaminantRecords,IdentifierParserChangedRecords
+PXD028737,HMC3,4842,1386,2,371,0,0,0,5,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,31999,2565,2,1231,0,0,0,3,0
+PXD054919,A549,8922,1220,0,0,0,0,0,0,0
+PXD058534,pretreated HK-2,5336,2078,0,305,0,0,0,1,0
+PXD060185,MCF10A,2012,947,0,0,0,0,0,0,0
+PXD060185,MCF7,2925,1236,0,0,0,0,0,0,0
+PXD060185,MDA-MB-468,4102,1613,0,0,0,0,0,0,0
+PXD060185,T-47D,3076,1301,0,0,0,0,0,0,0
+PXD063266,PC-3M,1194,384,0,0,0,0,0,0,0
+PXD066351,HCT116 control and Roseburia co-culture,15739,2398,0,0,0,0,0,0,0
+PXD070007,glioblastoma stem cells,21698,2564,0,0,0,0,0,0,0
+PXD070007,neural stem cells,5654,1527,0,0,0,0,0,0,0
+PXD073311,HUVEC control and Pg infection,34324,1881,0,221,0,0,0,0,0
+PXD078013,RKO WT and GSK3B KO,3824,1217,0,198,0,0,0,0,0
+PXD078736,HK-2 control and mannitol,11140,1249,0,0,0,0,0,0,0

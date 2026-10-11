@@ -1,0 +1,6 @@
+Check,Pass
+All RNA points within axes,TRUE
+All 62 source-mean DDR fractions and error bars within axes,TRUE
+Mean lines equal original RNA means,TRUE
+31 material positions retained,TRUE
+Source-unit records match summarized N,TRUE

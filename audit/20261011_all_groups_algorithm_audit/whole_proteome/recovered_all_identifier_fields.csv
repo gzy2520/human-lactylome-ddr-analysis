@@ -1,0 +1,42 @@
+Source,Field,Rows,Colon,Pipe,PrefixRows,TenCharIds
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Protein IDs,10015,1176,0,259,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Majority protein IDs,10015,462,0,229,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Peptide counts (razor+unique),10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Number of proteins,10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Razor + unique peptides,10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Razor + unique peptides P013163,10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Unique + razor sequence coverage [%],10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Reverse,10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Potential contaminant,10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/lung/P013163_lung_proteinGroups.txt,Peptide is razor,10015,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Protein IDs,8578,1100,0,222,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Majority protein IDs,8578,445,0,194,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Peptide counts (razor+unique),8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Number of proteins,8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Razor + unique peptides,8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Razor + unique peptides P013680,8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Unique + razor sequence coverage [%],8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Reverse,8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Potential contaminant,8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD010154/search_results/extracted_healthy_tissues/placenta/P013680_placenta_proteinGroups.txt,Peptide is razor,8578,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD030304/search_results/ProCan-DepMapSanger_peptide_counts_per_protein_per_sample.txt,protein-column header accession before ;symbol,8498,0,0,0,15
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Protein IDs,3513,15,0,104,1009
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Majority protein IDs,3513,12,0,98,716
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Peptide counts (razor+unique),3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Protein names,3513,7,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Number of proteins,3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Razor + unique peptides,3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Razor + unique peptides 1st,3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Razor + unique peptides 2nd,3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Unique + razor sequence coverage [%],3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Reverse,3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Potential contaminant,3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD022005/search_results/txt_proteomics.zip!proteinGroups.txt,Peptide is razor,3513,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Acetyl (Protein N-term),79095,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Proteins,79095,74894,0,5408,2361
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Leading Proteins,79095,3563,0,4575,88
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Leading Razor Protein,79095,2650,0,3584,82
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Protein Names,79095,127,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Reverse,79095,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Contaminant,79095,0,0,0,0
+/Users/gzy2520/Desktop/Research/kla/data/PXD002400/search_results/msms.zip!evidence.txt MCF10A rows,Protein group IDs,79095,0,0,0,0

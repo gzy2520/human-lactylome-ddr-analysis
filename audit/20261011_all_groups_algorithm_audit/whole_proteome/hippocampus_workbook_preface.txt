@@ -1,0 +1,13 @@
+# A tibble: 4 × 2
+  ...1                                              
+  <chr>                                             
+1 Table S4. Identified proteins in human hippocampi.
+2 Descriptions of Column Names:                     
+3 Protein accession                                 
+4 Intensity_H072  Intensity_H081  Intensity_H0187   
+  ...2                                                                     
+  <chr>                                                                    
+1 <NA>                                                                     
+2 <NA>                                                                     
+3 Protein accession number in the database used for search                 
+4 Relative quantitative values of intensity for three biological replicates

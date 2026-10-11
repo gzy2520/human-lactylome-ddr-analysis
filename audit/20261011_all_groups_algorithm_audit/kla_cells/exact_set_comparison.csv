@@ -1,0 +1,55 @@
+PXD,SampleGroup,SampleID,OnlyIndependent,OnlyCurrent,ExactSet
+PXD028488,HCT116,HCT116_1,,,True
+PXD028488,HEK293T,HEK293T_technical_merged,,,True
+PXD028488,TALL-104,TALL-NaLAC-enrichment-1.raw,,,True
+PXD028488,TALL-104,TALL-NaLAC-enrichment-2.raw,,,True
+PXD028488,TALL-104,TALL-NaLAC-enrichment-3.raw,,,True
+PXD028737,HMC3,H0,,Q14093,False
+PXD028737,HMC3,H24,,Q14093,False
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_rep1,,,True
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_rep2,,,True
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT1KO_rep3,,,True
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_rep1,,Q9Y6V7,False
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_rep2,,Q9Y6V7,False
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,SIRT3KO_rep3,,,True
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_rep1,,,True
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_rep2,,,True
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,WT_rep3,,,True
+PXD053474,HCT116,HCT116_technical_merged,,,True
+PXD054919,A549,A549-1,,,True
+PXD054919,A549,A549-2,,,True
+PXD054919,A549,A549-3,,,True
+PXD058534,pretreated HK-2,HK2,,Q14093,False
+PXD060185,MCF10A,C,,,True
+PXD060185,MCF7,A,,,True
+PXD060185,MDA-MB-468,B,,,True
+PXD060185,T-47D,D,,,True
+PXD063266,PC-3M,1,,,True
+PXD063266,PC-3M,2,,,True
+PXD063266,PC-3M,3,,,True
+PXD066351,HCT116 control and Roseburia co-culture,NC116,,,True
+PXD066351,HCT116 control and Roseburia co-culture,R116,,,True
+PXD070007,glioblastoma stem cells,G2907,,,True
+PXD070007,glioblastoma stem cells,G3028,,,True
+PXD070007,glioblastoma stem cells,G3264,,,True
+PXD070007,glioblastoma stem cells,GSC23,,,True
+PXD070007,glioblastoma stem cells,MES28,,,True
+PXD070007,glioblastoma stem cells,RKI,,,True
+PXD070007,neural stem cells,ENSA,,,True
+PXD070007,neural stem cells,HMP1,,,True
+PXD073311,HUVEC control and Pg infection,A0h_1,,,True
+PXD073311,HUVEC control and Pg infection,A0h_2,,,True
+PXD073311,HUVEC control and Pg infection,A0h_3,,,True
+PXD073311,HUVEC control and Pg infection,A6h_1,,,True
+PXD073311,HUVEC control and Pg infection,A6h_2,,,True
+PXD073311,HUVEC control and Pg infection,A6h_3,,,True
+PXD078013,RKO WT and GSK3B KO,sg737_1,,,True
+PXD078013,RKO WT and GSK3B KO,sg737_2,,,True
+PXD078013,RKO WT and GSK3B KO,sg_1,,,True
+PXD078013,RKO WT and GSK3B KO,sg_2,,,True
+PXD078736,HK-2 control and mannitol,ctr_1,,Q14093,False
+PXD078736,HK-2 control and mannitol,ctr_2,,Q14093,False
+PXD078736,HK-2 control and mannitol,ctr_3,,,True
+PXD078736,HK-2 control and mannitol,man_1,,,True
+PXD078736,HK-2 control and mannitol,man_2,,,True
+PXD078736,HK-2 control and mannitol,man_3,,,True

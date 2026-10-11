@@ -1,0 +1,92 @@
+          PXD                             SampleGroup                 SampleID
+       <char>                                  <char>                   <char>
+ 1: PXD075377                          adjacent liver         patient1_Control
+ 2: PXD075377                                     HCC             patient1_HCC
+ 3: PXD058534                         pretreated HK-2                      HK2
+ 4: PXD066351 HCT116 control and Roseburia co-culture                    NC116
+ 5: PXD066351 HCT116 control and Roseburia co-culture                     R116
+ 6: PXD070007                 glioblastoma stem cells                    G2907
+ 7: PXD070007                 glioblastoma stem cells                    G3028
+ 8: PXD070007                 glioblastoma stem cells                    G3264
+ 9: PXD070007                 glioblastoma stem cells                    GSC23
+10: PXD070007                 glioblastoma stem cells                    MES28
+11: PXD070007                 glioblastoma stem cells                      RKI
+12: PXD070007                       neural stem cells                     ENSA
+13: PXD070007                       neural stem cells                     HMP1
+14: PXD073311          HUVEC control and Pg infection                    A0h_1
+15: PXD073311          HUVEC control and Pg infection                    A0h_2
+16: PXD073311          HUVEC control and Pg infection                    A0h_3
+17: PXD073311          HUVEC control and Pg infection                    A6h_1
+18: PXD073311          HUVEC control and Pg infection                    A6h_2
+19: PXD073311          HUVEC control and Pg infection                    A6h_3
+20: PXD078013                     RKO WT and GSK3B KO                  sg737_1
+21: PXD078013                     RKO WT and GSK3B KO                     sg_1
+22: PXD078013                     RKO WT and GSK3B KO                     sg_2
+23: PXD078013                     RKO WT and GSK3B KO                  sg737_2
+24: PXD028488                                  HCT116                 HCT116_1
+25: PXD028488                                 HEK293T HEK293T_technical_merged
+26: PXD053474                                  HCT116  HCT116_technical_merged
+          PXD                             SampleGroup                 SampleID
+       <char>                                  <char>                   <char>
+                       UnitType KlaProteinCount KlaDdrProteinCount
+                         <char>           <int>              <int>
+ 1:               tissue_sample            1775                113
+ 2:               tissue_sample            1798                121
+ 3:               single_sample            2164                220
+ 4: single_sample_per_condition            2394                252
+ 5: single_sample_per_condition            2319                243
+ 6:                       model            1647                168
+ 7:                       model            1558                159
+ 8:                       model            1262                131
+ 9:                       model            1628                179
+10:                       model            1556                170
+11:                       model            1751                165
+12:                       model            1414                160
+13:                       model            1080                135
+14:                      sample            1880                178
+15:                      sample            1862                178
+16:                      sample            1844                178
+17:                      sample            1855                177
+18:                      sample            1851                177
+19:                      sample            1841                173
+20:                      sample             904                 89
+21:                      sample            1053                 98
+22:                      sample            1116                 97
+23:                      sample             751                 77
+24:               single_sample             240                 30
+25:        technical_sourceunit             438                 44
+26:        technical_sourceunit             590                 65
+                       UnitType KlaProteinCount KlaDdrProteinCount
+                         <char>           <int>              <int>
+    KlaDdrFractionPercentage
+                       <num>
+ 1:                 6.366197
+ 2:                 6.729700
+ 3:                10.166359
+ 4:                10.526316
+ 5:                10.478655
+ 6:                10.200364
+ 7:                10.205392
+ 8:                10.380349
+ 9:                10.995086
+10:                10.925450
+11:                 9.423187
+12:                11.315417
+13:                12.500000
+14:                 9.468085
+15:                 9.559613
+16:                 9.652928
+17:                 9.541779
+18:                 9.562399
+19:                 9.397067
+20:                 9.845133
+21:                 9.306743
+22:                 8.691756
+23:                10.252996
+24:                12.500000
+25:                10.045662
+26:                11.016949
+    KlaDdrFractionPercentage
+                       <num>
+Annotation differences among frozen members: 0 
+Outside frozen membership: 0 

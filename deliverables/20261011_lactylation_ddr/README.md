@@ -1,5 +1,7 @@
 # 乳酸化调控基因表达与 DDR 蛋白占比组合图
 
+当前逐样本重建版见 `../20261011_lactylation_ddr_sample_rebuilt/`。本目录保留此前组并集柱图及比较记录。
+
 ## 图件
 
 `Combined_RNA_DDR.pdf` 包含四页，均采用中间材料横轴、上方 RNA 箱线图、下方 DDR 占比柱状图：

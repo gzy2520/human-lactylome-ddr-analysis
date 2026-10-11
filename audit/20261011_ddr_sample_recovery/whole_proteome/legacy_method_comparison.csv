@@ -1,0 +1,4 @@
+PXD,SampleGroup,Method,ProteinCount,DdrProteinCount,DifferenceFromRecommended,Explanation
+PXD036307,normal human lung,legacy_ENSP_IsDdr_propagation,12358,606,71,Legacy any-DDR ENSP boolean propagated to all mapped accessions; recommended classifies each UniProt directly against frozen GO
+PXD063047,normal pregnancy placenta,legacy_ENSP_IsDdr_propagation,10847,502,68,Legacy any-DDR ENSP boolean propagated to all mapped accessions; recommended classifies each UniProt directly against frozen GO
+PXD060185,MCF10A,legacy_6char_UniProt_regex,4839,242,-81,Legacy regex excluded valid 10-character UniProt IDs; recommended retains all valid leading-razor stable IDs

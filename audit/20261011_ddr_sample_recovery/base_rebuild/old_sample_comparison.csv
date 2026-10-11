@@ -1,0 +1,173 @@
+PXD,SampleGroup,Dataset,SampleID,OldProteins,OldDDR,ProteinCount,DdrProteinCount,SourceFile,SampleClass,ObservationType,DdrFractionPercentage,ProteinDelta,DDRDelta
+PXD028488,TALL-104,Lactylome (Kla),Sample 1,1662,29,1662,114,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv,replicate,sample,6.85920577617329,0,85
+PXD028488,TALL-104,Lactylome (Kla),Sample 2,1686,30,1686,112,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv,replicate,sample,6.6429418742586,0,82
+PXD028488,TALL-104,Lactylome (Kla),Sample 3,1678,31,1678,117,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv,replicate,sample,6.97258641239571,0,86
+PXD028488,TALL-104,Whole proteome,Sample 1,3109,220,3109,220,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,replicate,sample,7.07623029913155,0,0
+PXD028488,TALL-104,Whole proteome,Sample 2,3176,215,3176,215,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,replicate,sample,6.76952141057935,0,0
+PXD028488,TALL-104,Whole proteome,Sample 3,3110,210,3110,210,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,replicate,sample,6.7524115755627,0,0
+PXD028737,HMC3,Lactylome (Kla),H0,1277,144,1277,144,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_pairing/combined/combined/txt/La(K)Sites.txt,normoxia,sample,11.2764291307753,0,0
+PXD028737,HMC3,Lactylome (Kla),H24,1087,124,1087,124,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_pairing/combined/combined/txt/La(K)Sites.txt,hypoxia,sample,11.4075436982521,0,0
+PXD028737,HMC3,Whole proteome,H0,5422,387,5422,387,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,normoxia,sample,7.13758760604943,0,0
+PXD028737,HMC3,Whole proteome,H24,5946,412,5946,412,/Users/gzy2520/Desktop/Research/kla/data/PXD028737/search_results/extracted_reference/txt/proteinGroups.txt,hypoxia,sample,6.92902791792802,0,0
+PXD033146,pathological rotator cuff tendon,Lactylome (Kla),RCT1,463,23,463,23,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TPLa/La (K)Sites.txt,replicate,sample,4.96760259179266,0,0
+PXD033146,pathological rotator cuff tendon,Lactylome (Kla),RCT2,464,23,464,23,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TPLa/La (K)Sites.txt,replicate,sample,4.95689655172414,0,0
+PXD033146,pathological rotator cuff tendon,Lactylome (Kla),RCT3,464,23,464,23,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TPLa/La (K)Sites.txt,replicate,sample,4.95689655172414,0,0
+PXD033146,pathological rotator cuff tendon,Whole proteome,RCT1,3574,140,3574,140,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,replicate,sample,3.91717963066592,0,0
+PXD033146,pathological rotator cuff tendon,Whole proteome,RCT2,3574,140,3574,140,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,replicate,sample,3.91717963066592,0,0
+PXD033146,pathological rotator cuff tendon,Whole proteome,RCT3,3574,140,3574,140,/Users/gzy2520/Desktop/Research/kla/data/PXD033146/search_results/extracted_pairing/search_result-HA119TQ/proteinGroups.txt,replicate,sample,3.91717963066592,0,0
+PXD036307,normal human lung,Lactylome (Kla),PTB340,266,15,266,15,/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,replicate,sample,5.6390977443609,0,0
+PXD036307,normal human lung,Lactylome (Kla),PTB342,262,21,262,21,/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,replicate,sample,8.01526717557252,0,0
+PXD036307,normal human lung,Lactylome (Kla),PTB344,199,13,199,13,/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,replicate,sample,6.53266331658292,0,0
+PXD036307,normal human lung,Lactylome (Kla),PTB346,335,21,335,21,/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,replicate,sample,6.26865671641791,0,0
+PXD036307,normal human lung,Lactylome (Kla),PTB364,346,22,346,22,/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,replicate,sample,6.35838150289017,0,0
+PXD036307,normal human lung,Lactylome (Kla),PTB372,264,11,264,11,/Users/gzy2520/Desktop/Research/kla/data/PXD036307/search_results/extracted/txt/La (K)Sites.txt,replicate,sample,4.16666666666667,0,0
+PXD046800,adjacent skin,Lactylome (Kla),NSP1,484,28,484,28,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,5.78512396694215,0,0
+PXD046800,adjacent skin,Lactylome (Kla),NSP2,401,22,401,22,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,5.48628428927681,0,0
+PXD046800,adjacent skin,Lactylome (Kla),NSP3,392,18,392,18,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,4.59183673469388,0,0
+PXD046800,adjacent skin,Lactylome (Kla),NSP4,386,19,386,19,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,4.92227979274611,0,0
+PXD046800,adjacent skin,Whole proteome,NSP1,1986,82,1986,82,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,4.12890231621349,0,0
+PXD046800,adjacent skin,Whole proteome,NSP2,1958,81,1958,81,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,4.13687436159346,0,0
+PXD046800,adjacent skin,Whole proteome,NSP3,1963,83,1963,83,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,4.22822210901681,0,0
+PXD046800,adjacent skin,Whole proteome,NSP4,1900,78,1900,78,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,4.10526315789474,0,0
+PXD046800,hypertrophic scar,Lactylome (Kla),HSP1,336,13,336,13,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,3.86904761904762,0,0
+PXD046800,hypertrophic scar,Lactylome (Kla),HSP2,298,13,298,13,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,4.36241610738255,0,0
+PXD046800,hypertrophic scar,Lactylome (Kla),HSP3,315,14,315,14,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,4.44444444444444,0,0
+PXD046800,hypertrophic scar,Lactylome (Kla),HSP4,333,14,333,14,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB001_Lacty_PeptideGroups.txt,replicate,sample,4.2042042042042,0,0
+PXD046800,hypertrophic scar,Whole proteome,HSP1,1899,75,1899,75,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,3.94944707740916,0,0
+PXD046800,hypertrophic scar,Whole proteome,HSP2,1680,70,1680,70,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,4.16666666666667,0,0
+PXD046800,hypertrophic scar,Whole proteome,HSP3,1871,74,1871,74,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,3.95510422234099,0,0
+PXD046800,hypertrophic scar,Whole proteome,HSP4,2017,80,2017,80,/Users/gzy2520/Desktop/Research/kla/data/PXD046800/search_results/HFX2_LFQ_QB002_Proteins.txt,replicate,sample,3.96628656420426,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT1KO_rep1,1825,212,1825,212,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,SIRT1 KO,sample,11.6164383561644,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT1KO_rep2,1885,218,1885,218,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,SIRT1 KO,sample,11.5649867374005,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT1KO_rep3,1708,197,1708,197,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,SIRT1 KO,sample,11.5339578454333,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT3KO_rep1,1831,214,1831,214,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,SIRT3 KO,sample,11.6876024030584,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT3KO_rep2,1596,188,1596,188,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,SIRT3 KO,sample,11.7794486215539,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT3KO_rep3,1898,223,1898,223,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,SIRT3 KO,sample,11.7492096944152,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),WT_rep1,1222,144,1222,144,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,WT,sample,11.7839607201309,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),WT_rep2,1191,140,1191,140,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,WT,sample,11.7548278757347,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),WT_rep3,1339,158,1339,158,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/Lactyl_K_Sites.txt,WT,sample,11.7998506348021,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT1KO_pro_rep1,5921,411,5921,411,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT1 KO,sample,6.94139503462253,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT1KO_pro_rep2,5955,399,5955,399,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT1 KO,sample,6.70025188916877,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT1KO_pro_rep3,6005,406,6005,406,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT1 KO,sample,6.76103247293922,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT3KO_pro_rep1,6036,418,6036,418,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT3 KO,sample,6.92511597084162,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT3KO_pro_rep2,6099,416,6099,416,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT3 KO,sample,6.82079029349074,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT3KO_pro_rep3,6078,419,6078,419,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,SIRT3 KO,sample,6.8937150378414,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,WT_pro_rep1,6069,406,6069,406,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,WT,sample,6.68973471741638,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,WT_pro_rep2,5938,398,5938,398,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,WT,sample,6.70259346581341,0,0
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,WT_pro_rep3,5970,400,5970,400,/Users/gzy2520/Desktop/Research/kla/data/PXD050147/search_results/SIRT_proteinGroups.txt,WT,sample,6.70016750418761,0,0
+PXD050470,human hippocampus,Lactylome (Kla),H072,853,29,853,29,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0005-tables3.xlsx,replicate,sample,3.39976553341149,0,0
+PXD050470,human hippocampus,Lactylome (Kla),H081,853,29,853,29,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0005-tables3.xlsx,replicate,sample,3.39976553341149,0,0
+PXD050470,human hippocampus,Lactylome (Kla),H187,853,29,853,29,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0005-tables3.xlsx,replicate,sample,3.39976553341149,0,0
+PXD050470,human hippocampus,Whole proteome,H072,6082,219,6082,219,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,replicate,sample,3.60078921407432,0,0
+PXD050470,human hippocampus,Whole proteome,H081,6082,219,6082,219,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,replicate,sample,3.60078921407432,0,0
+PXD050470,human hippocampus,Whole proteome,H187,6082,219,6082,219,/Users/gzy2520/Desktop/Research/kla/data/PXD050470/supplementary/prca2331-sup-0006-tables4.xlsx,replicate,sample,3.60078921407432,0,0
+PXD054919,A549,Lactylome (Kla),A549-1,1150,110,1150,110,/Users/gzy2520/Desktop/Research/kla/data/PXD054919/supplementary/41419_2025_8113_MOESM2_ESM.xlsx,replicate,sample,9.56521739130435,0,0
+PXD054919,A549,Lactylome (Kla),A549-2,1202,115,1202,115,/Users/gzy2520/Desktop/Research/kla/data/PXD054919/supplementary/41419_2025_8113_MOESM2_ESM.xlsx,replicate,sample,9.56738768718802,0,0
+PXD054919,A549,Lactylome (Kla),A549-3,1206,115,1206,115,/Users/gzy2520/Desktop/Research/kla/data/PXD054919/supplementary/41419_2025_8113_MOESM2_ESM.xlsx,replicate,sample,9.53565505804312,0,0
+PXD058534,pretreated HK-2,Whole proteome,amostra1,4684,298,4684,298,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,sample,6.36208368915457,0,0
+PXD058534,pretreated HK-2,Whole proteome,amostra3,4597,286,4597,286,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,sample,6.22144877093757,0,0
+PXD058534,pretreated HK-2,Whole proteome,amostra4,4764,299,4764,299,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,sample,6.27623845507977,0,0
+PXD060185,MCF10A,Lactylome (Kla),C,947,115,947,115,/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,single,sample,12.1436114044351,0,0
+PXD060185,MCF7,Lactylome (Kla),A,1235,132,1235,132,/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,single,sample,10.6882591093117,0,0
+PXD060185,MDA-MB-468,Lactylome (Kla),B,1612,196,1612,196,/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,single,sample,12.1588089330025,0,0
+PXD060185,T-47D,Lactylome (Kla),D,1301,159,1301,159,/Users/gzy2520/Desktop/Research/kla/data/PXD060185/search_results/RESULT/combined/txt/La (K)Sites.txt,single,sample,12.2213681783244,0,0
+PXD063047,normal pregnancy placenta,Lactylome (Kla),Con_1,205,9,205,9,/Users/gzy2520/Desktop/Research/kla/data/PXD063047/search_results/extracted/combined/txt/La (K)Sites.txt,replicate,sample,4.39024390243902,0,0
+PXD063047,normal pregnancy placenta,Lactylome (Kla),Con_2,215,9,215,9,/Users/gzy2520/Desktop/Research/kla/data/PXD063047/search_results/extracted/combined/txt/La (K)Sites.txt,replicate,sample,4.18604651162791,0,0
+PXD063047,normal pregnancy placenta,Lactylome (Kla),Con_3,221,7,221,7,/Users/gzy2520/Desktop/Research/kla/data/PXD063047/search_results/extracted/combined/txt/La (K)Sites.txt,replicate,sample,3.16742081447964,0,0
+PXD063266,PC-3M,Lactylome (Kla),1,348,41,348,41,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,replicate,sample,11.7816091954023,0,0
+PXD063266,PC-3M,Lactylome (Kla),2,145,24,145,24,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,replicate,sample,16.551724137931,0,0
+PXD063266,PC-3M,Lactylome (Kla),3,216,28,216,28,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,replicate,sample,12.962962962963,0,0
+PXD064912,human sperm,Lactylome (Kla),Rep 1,203,5,203,5,/Users/gzy2520/Desktop/Research/kla/data/PXD064912/supplementary/europepmc/mmc1.xlsx,replicate,sample,2.46305418719212,0,0
+PXD064912,human sperm,Lactylome (Kla),Rep 2,208,7,208,7,/Users/gzy2520/Desktop/Research/kla/data/PXD064912/supplementary/europepmc/mmc1.xlsx,replicate,sample,3.36538461538462,0,0
+PXD064912,human sperm,Lactylome (Kla),Rep 3,200,7,200,7,/Users/gzy2520/Desktop/Research/kla/data/PXD064912/supplementary/europepmc/mmc1.xlsx,replicate,sample,3.5,0,0
+PXD064912,human sperm,Whole proteome,L1,8400,327,8400,327,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,3.89285714285714,0,0
+PXD064912,human sperm,Whole proteome,L10,8240,333,8240,333,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.04126213592233,0,0
+PXD064912,human sperm,Whole proteome,L11,8566,345,8566,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.02755078216204,0,0
+PXD064912,human sperm,Whole proteome,L12,8560,349,8560,349,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.07710280373832,0,0
+PXD064912,human sperm,Whole proteome,L13,8511,350,8511,350,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.11232522617789,0,0
+PXD064912,human sperm,Whole proteome,L14,8291,326,8291,326,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,3.93197443010493,0,0
+PXD064912,human sperm,Whole proteome,L15,8375,333,8375,333,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,3.97611940298508,0,0
+PXD064912,human sperm,Whole proteome,L16,8488,339,8488,339,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,3.99387370405278,0,0
+PXD064912,human sperm,Whole proteome,L17,8254,344,8254,344,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.16767627816816,0,0
+PXD064912,human sperm,Whole proteome,L2,8427,345,8427,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.0939836240655,0,0
+PXD064912,human sperm,Whole proteome,L3,8713,360,8713,360,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.13175714449673,0,0
+PXD064912,human sperm,Whole proteome,L4,8604,358,8604,358,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.16085541608554,0,0
+PXD064912,human sperm,Whole proteome,L5,8364,321,8364,321,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,3.83787661406026,0,0
+PXD064912,human sperm,Whole proteome,L6,8668,350,8668,350,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.03784033225658,0,0
+PXD064912,human sperm,Whole proteome,L7,8497,335,8497,335,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,3.94256796516418,0,0
+PXD064912,human sperm,Whole proteome,L8,8708,343,8708,343,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,3.93890675241158,0,0
+PXD064912,human sperm,Whole proteome,L9,8554,355,8554,355,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,L sperm,sample,4.150105213935,0,0
+PXD064912,human sperm,Whole proteome,N1,8730,361,8730,361,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.13516609392898,0,0
+PXD064912,human sperm,Whole proteome,N10,8613,345,8613,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.00557297109021,0,0
+PXD064912,human sperm,Whole proteome,N11,8527,338,8527,338,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,3.96387944177319,0,0
+PXD064912,human sperm,Whole proteome,N12,8557,343,8557,343,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.00841416384247,0,0
+PXD064912,human sperm,Whole proteome,N13,8371,337,8371,337,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.02580336877315,0,0
+PXD064912,human sperm,Whole proteome,N14,8629,336,8629,336,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,3.89384633213582,0,0
+PXD064912,human sperm,Whole proteome,N15,8524,333,8524,333,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,3.90661661191929,0,0
+PXD064912,human sperm,Whole proteome,N16,8530,337,8530,337,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,3.95076201641266,0,0
+PXD064912,human sperm,Whole proteome,N2,8627,347,8627,347,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.02225570882114,0,0
+PXD064912,human sperm,Whole proteome,N3,8307,335,8307,335,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.03274346936319,0,0
+PXD064912,human sperm,Whole proteome,N4,8446,324,8446,324,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,3.83613544873313,0,0
+PXD064912,human sperm,Whole proteome,N5,8545,336,8545,336,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,3.93212404915155,0,0
+PXD064912,human sperm,Whole proteome,N6,8651,349,8651,349,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.03421569760721,0,0
+PXD064912,human sperm,Whole proteome,N7,8411,345,8411,345,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.10177148971585,0,0
+PXD064912,human sperm,Whole proteome,N8,8423,341,8423,341,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,4.04843879852784,0,0
+PXD064912,human sperm,Whole proteome,N9,8520,340,8520,340,/Users/gzy2520/Desktop/Research/kla/data/PXD066517/search_results/20240275.tsv,N sperm,sample,3.9906103286385,0,0
+PXD066054,BPH,Lactylome (Kla),NAT1,2091,140,2091,140,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.69536107125777,0,0
+PXD066054,BPH,Lactylome (Kla),NAT2,1978,133,1978,133,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.72396359959555,0,0
+PXD066054,BPH,Lactylome (Kla),NAT3,1979,129,1979,129,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.51844365841334,0,0
+PXD066054,BPH,Lactylome (Kla),NAT4,2040,131,2040,131,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.42156862745098,0,0
+PXD066054,BPH,Lactylome (Kla),NAT5,2029,131,2029,131,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.45638245441104,0,0
+PXD066054,BPH,Whole proteome,NAT1,7916,396,7916,396,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.00252652854977,0,0
+PXD066054,BPH,Whole proteome,NAT2,7805,393,7805,393,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.03523382447149,0,0
+PXD066054,BPH,Whole proteome,NAT3,7929,399,7929,399,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.03216042376088,0,0
+PXD066054,BPH,Whole proteome,NAT4,7937,398,7937,398,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.0144891016757,0,0
+PXD066054,BPH,Whole proteome,NAT5,7768,390,7768,390,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.02059732234809,0,0
+PXD066054,prostate cancer,Lactylome (Kla),PCa1,2028,137,2028,137,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.75542406311637,0,0
+PXD066054,prostate cancer,Lactylome (Kla),PCa2,1877,127,1877,127,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.76611614278103,0,0
+PXD066054,prostate cancer,Lactylome (Kla),PCa3,2052,141,2052,141,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.87134502923977,0,0
+PXD066054,prostate cancer,Lactylome (Kla),PCa4,2035,137,2035,137,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.73218673218673,0,0
+PXD066054,prostate cancer,Lactylome (Kla),PCa5,2102,143,2102,143,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/PLa/XB08700B1DPLa_-PTMSiteReport.tsv,replicate,sample,6.80304471931494,0,0
+PXD066054,prostate cancer,Whole proteome,PCa1,7760,398,7760,398,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.12886597938144,0,0
+PXD066054,prostate cancer,Whole proteome,PCa2,7213,366,7213,366,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.07417163454873,0,0
+PXD066054,prostate cancer,Whole proteome,PCa3,7791,406,7791,406,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.21114106019766,0,0
+PXD066054,prostate cancer,Whole proteome,PCa4,7675,387,7675,387,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.04234527687296,0,0
+PXD066054,prostate cancer,Whole proteome,PCa5,7833,395,7833,395,/Users/gzy2520/Desktop/Research/kla/data/PXD066054/search_results/extracted/DA/Protein_Quant.tsv,replicate,sample,5.04276777735223,0,0
+PXD066351,HCT116 control and Roseburia co-culture,Whole proteome,NC116,8075,504,8075,504,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,control,sample,6.24148606811146,0,0
+PXD066351,HCT116 control and Roseburia co-culture,Whole proteome,R116,8048,499,8048,499,/Users/gzy2520/Desktop/Research/kla/data/PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,Roseburia co-culture,sample,6.20029821073559,0,0
+PXD070007,glioblastoma stem cells,Whole proteome,G2907,6966,442,6966,442,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.3451047947172,0,0
+PXD070007,glioblastoma stem cells,Whole proteome,G3028,6877,439,6877,439,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.38359749890941,0,0
+PXD070007,glioblastoma stem cells,Whole proteome,G3264,6870,436,6870,436,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.34643377001456,0,0
+PXD070007,glioblastoma stem cells,Whole proteome,GSC23,6928,451,6928,451,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.50981524249423,0,0
+PXD070007,glioblastoma stem cells,Whole proteome,MES28,6947,456,6947,456,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.56398445372103,0,0
+PXD070007,glioblastoma stem cells,Whole proteome,RKI,7228,452,7228,452,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.25345877144438,0,0
+PXD070007,neural stem cells,Whole proteome,ENSA,6915,442,6915,442,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.39190166305134,0,0
+PXD070007,neural stem cells,Whole proteome,HMP1,6887,444,6887,444,/Users/gzy2520/Desktop/Research/kla/data/PXD069969/search_results/SA206LQB1_Annotation.xlsx,model,sample,6.44692899666037,0,0
+PXD073311,HUVEC control and Pg infection,Whole proteome,A0h_1,7645,499,7645,499,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,A0h control,sample,6.52714192282538,0,0
+PXD073311,HUVEC control and Pg infection,Whole proteome,A0h_2,7640,500,7640,500,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,A0h control,sample,6.54450261780105,0,0
+PXD073311,HUVEC control and Pg infection,Whole proteome,A0h_3,7637,503,7637,503,/Users/gzy2520/Desktop/Research/kla/data/PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,A0h control,sample,6.58635589891319,0,0
+PXD075377,HCC,Whole proteome,Non-rec1,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,5.22359290670779,0,0
+PXD075377,HCC,Whole proteome,Non-rec2,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,5.22359290670779,0,0
+PXD075377,HCC,Whole proteome,Non-rec3,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,5.22359290670779,0,0
+PXD075377,HCC,Whole proteome,Non-rec4,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,5.22359290670779,0,0
+PXD075377,HCC,Whole proteome,Rec1,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,5.22359290670779,0,0
+PXD075377,HCC,Whole proteome,Rec2,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,5.22359290670779,0,0
+PXD075377,HCC,Whole proteome,Rec3,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,5.22359290670779,0,0
+PXD075377,HCC,Whole proteome,Rec4,5188,271,5188,271,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,5.22359290670779,0,0
+PXD075377,adjacent liver,Whole proteome,Non-rec1,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,4.56363208656787,0,0
+PXD075377,adjacent liver,Whole proteome,Non-rec2,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,4.56363208656787,0,0
+PXD075377,adjacent liver,Whole proteome,Non-rec3,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,4.56363208656787,0,0
+PXD075377,adjacent liver,Whole proteome,Non-rec4,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Non-rec,sample,4.56363208656787,0,0
+PXD075377,adjacent liver,Whole proteome,Rec1,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,4.56363208656787,0,0
+PXD075377,adjacent liver,Whole proteome,Rec2,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,4.56363208656787,0,0
+PXD075377,adjacent liver,Whole proteome,Rec3,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,4.56363208656787,0,0
+PXD075377,adjacent liver,Whole proteome,Rec4,4251,194,4251,194,/Users/gzy2520/Desktop/Research/kla/data/PXD065775/search_results/20170330_01-24_patients_iTRAQ.xlsx,Rec,sample,4.56363208656787,0,0
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),ctr_1,962,105,962,105,/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,control,sample,10.9147609147609,0,0
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),ctr_2,952,103,952,103,/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,control,sample,10.8193277310924,0,0
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),ctr_3,955,105,955,105,/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,control,sample,10.9947643979058,0,0
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),man_1,533,56,533,56,/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,mannitol,sample,10.5065666041276,0,0
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),man_2,536,54,536,54,/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,mannitol,sample,10.0746268656716,0,0
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),man_3,526,54,526,54,/Users/gzy2520/Desktop/Research/kla/data/PXD078736/search_results/txt/La(K)Sites.txt,mannitol,sample,10.2661596958175,0,0
+PXD078736,HK-2 control and mannitol,Whole proteome,amostra1,4684,298,4684,298,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,sample,6.36208368915457,0,0
+PXD078736,HK-2 control and mannitol,Whole proteome,amostra3,4597,286,4597,286,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,sample,6.22144877093757,0,0
+PXD078736,HK-2 control and mannitol,Whole proteome,amostra4,4764,299,4764,299,/Users/gzy2520/Desktop/Research/kla/data/PXD072220/search_results/HK-2_Spectronaut-report_PG_Quantity.txt,untreated control,sample,6.27623845507977,0,0

@@ -1,0 +1,15 @@
+PXD,SampleGroup,Condition,UnitType,N,Mean,SD,SEM
+PXD075377,adjacent liver,Control,tissue_sample,1,6.36619718309859,,
+PXD075377,HCC,HCC,tissue_sample,1,6.72969966629588,,
+PXD058534,pretreated HK-2,pretreated HK-2,single_sample,1,10.1663585951941,,
+PXD066351,HCT116 control and Roseburia co-culture,control,single_sample_per_condition,1,10.5263157894737,,
+PXD066351,HCT116 control and Roseburia co-culture,Roseburia co-culture,single_sample_per_condition,1,10.4786545924968,,
+PXD070007,glioblastoma stem cells,glioblastoma stem cells,model,6,10.354971182706,0.574514841128234,
+PXD070007,neural stem cells,neural stem cells,model,2,11.9077086280057,0.837626491150967,
+PXD073311,HUVEC control and Pg infection,A0h control,sample,3,9.56020894729357,0.0924230945285795,0.0533604985054136
+PXD073311,HUVEC control and Pg infection,A6h Pg infection,sample,3,9.5004148302201,0.0900938567264392,0.0520157124333413
+PXD078013,RKO WT and GSK3B KO,GSK3B KO,sample,2,10.0490643743445,0.288402878331185,0.2039316309817
+PXD078013,RKO WT and GSK3B KO,GSK3B WT,sample,2,8.9992494562387,0.43486103091995,0.30749318383727
+PXD028488,HCT116,HCT116,single_sample,1,12.5,,
+PXD028488,HEK293T,HEK293T,technical_sourceunit,1,10.0456621004566,,
+PXD053474,HCT116,HCT116,technical_sourceunit,1,11.0169491525424,,

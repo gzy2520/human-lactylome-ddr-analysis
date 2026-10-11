@@ -1,0 +1,116 @@
+Case,SampleID,Method,SourceFile,ProteinCount,DdrProteinCount,FractionPercentage
+TALL_Kla_corrected,TALL-NaLAC-enrichment-1.raw,K(+72.02) peptide and Lac PTM; union over PSMs,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,175,22,12.5714285714286
+TALL_Kla_corrected,TALL-NaLAC-enrichment-2.raw,K(+72.02) peptide and Lac PTM; union over PSMs,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,184,25,13.5869565217391
+TALL_Kla_corrected,TALL-NaLAC-enrichment-3.raw,K(+72.02) peptide and Lac PTM; union over PSMs,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,182,23,12.6373626373626
+TALL_enrichment_all_proteins,Sample 1,positive area without Kla restriction,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv,1662,114,6.85920577617329
+TALL_enrichment_all_proteins,Sample 2,positive area without Kla restriction,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv,1686,112,6.6429418742586
+TALL_enrichment_all_proteins,Sample 3,positive area without Kla restriction,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv,1678,117,6.97258641239571
+PC3M_Kla_localization,1,localized site probability >0,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,348,41,11.7816091954023
+PC3M_Kla_intensity,1,localized site probability >0 and intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,329,40,12.1580547112462
+PC3M_Kla_localization,2,localized site probability >0,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,145,24,16.551724137931
+PC3M_Kla_intensity,2,localized site probability >0 and intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,139,23,16.5467625899281
+PC3M_Kla_localization,3,localized site probability >0,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,216,28,12.962962962963
+PC3M_Kla_intensity,3,localized site probability >0 and intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD063266/search_results/LactylSites.xlsx,198,27,13.6363636363636
+ESCC_proteome,ESCC-001T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4956,275,5.54882970137208
+ESCC_proteome,ESCC-002T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4955,275,5.54994954591322
+ESCC_proteome,ESCC-006T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5275,280,5.30805687203791
+ESCC_proteome,ESCC-009T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5269,280,5.31410134750427
+ESCC_proteome,ESCC-010T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5273,280,5.31007016878437
+ESCC_proteome,ESCC-019T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5356,286,5.33980582524272
+ESCC_proteome,ESCC-035T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4693,268,5.71063285744726
+ESCC_proteome,ESCC-040T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5063,284,5.60932253604582
+ESCC_proteome,ESCC-041T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5055,283,5.59841740850643
+ESCC_proteome,ESCC-044T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,248,5.56802873821284
+ESCC_proteome,ESCC-049T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,248,5.56552962298025
+ESCC_proteome,ESCC-017T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4451,251,5.63918220624579
+ESCC_proteome,ESCC-055T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4453,247,5.54682236694363
+ESCC_proteome,ESCC-057T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,248,5.56053811659193
+ESCC_proteome,ESCC-059T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4461,248,5.55929163864604
+ESCC_proteome,ESCC-063T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5253,294,5.59680182752713
+ESCC_proteome,ESCC-065T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5256,295,5.61263318112633
+ESCC_proteome,ESCC-066T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5258,295,5.61049828832256
+ESCC_proteome,ESCC-082T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,303,5.59556786703601
+ESCC_proteome,ESCC-086T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5417,303,5.59350193834226
+ESCC_proteome,ESCC-075T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5000,257,5.14
+ESCC_proteome,ESCC-078T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5000,257,5.14
+ESCC_proteome,ESCC-092T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5002,257,5.13794482207117
+ESCC_proteome,ESCC-069T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4554,256,5.62143170838823
+ESCC_proteome,ESCC-072T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4555,256,5.62019758507135
+ESCC_proteome,ESCC-003T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4955,274,5.52976791120081
+ESCC_proteome,ESCC-004T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4957,274,5.52753681662296
+ESCC_proteome,ESCC-005T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4953,274,5.53200080759136
+ESCC_proteome,ESCC-011T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5273,280,5.31007016878437
+ESCC_proteome,ESCC-013T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5361,285,5.31617235590375
+ESCC_proteome,ESCC-020T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5368,285,5.30923994038748
+ESCC_proteome,ESCC-029T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4686,268,5.71916346564234
+ESCC_proteome,ESCC-032T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4696,270,5.74957410562181
+ESCC_proteome,ESCC-037T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4692,271,5.77578857630009
+ESCC_proteome,ESCC-024T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,284,5.61708860759494
+ESCC_proteome,ESCC-028T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,284,5.61708860759494
+ESCC_proteome,ESCC-043T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4452,248,5.57053009883199
+ESCC_proteome,ESCC-046T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,248,5.56552962298025
+ESCC_proteome,ESCC-050T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,248,5.56428090643931
+ESCC_proteome,ESCC-051T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,248,5.56428090643931
+ESCC_proteome,ESCC-007T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4450,251,5.64044943820225
+ESCC_proteome,ESCC-018T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,251,5.63538392456219
+ESCC_proteome,ESCC-021T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4455,251,5.6341189674523
+ESCC_proteome,ESCC-027T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4452,251,5.63791554357592
+ESCC_proteome,ESCC-052T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4458,248,5.56303275011216
+ESCC_proteome,ESCC-056T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,248,5.56053811659193
+ESCC_proteome,ESCC-061T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,247,5.54308797127469
+ESCC_proteome,ESCC-062T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,248,5.56802873821284
+ESCC_proteome,ESCC-053T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5256,295,5.61263318112633
+ESCC_proteome,ESCC-058T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5254,294,5.59573658165208
+ESCC_proteome,ESCC-068T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5255,294,5.59467174119886
+ESCC_proteome,ESCC-074T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5411,303,5.59970430604325
+ESCC_proteome,ESCC-083T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,302,5.57710064635272
+ESCC_proteome,ESCC-084T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5416,303,5.59453471196455
+ESCC_proteome,ESCC-090T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5411,302,5.58122343374607
+ESCC_proteome,ESCC-080T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,257,5.14205682272909
+ESCC_proteome,ESCC-091T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,257,5.14205682272909
+ESCC_proteome,ESCC-094T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5002,257,5.13794482207117
+ESCC_proteome,ESCC-067T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4556,256,5.61896400351185
+ESCC_proteome,ESCC-076T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4555,256,5.62019758507135
+ESCC_proteome,ESCC-087T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,256,5.62266637381946
+ESCC_proteome,ESCC-008T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5275,280,5.30805687203791
+ESCC_proteome,ESCC-015T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5362,286,5.33383066020142
+ESCC_proteome,ESCC-016T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5370,288,5.36312849162011
+ESCC_proteome,ESCC-023T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4690,271,5.77825159914712
+ESCC_proteome,ESCC-031T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4696,271,5.77086882453152
+ESCC_proteome,ESCC-033T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4695,270,5.75079872204473
+ESCC_proteome,ESCC-036T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4693,270,5.75324952056254
+ESCC_proteome,ESCC-042T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5064,284,5.60821484992101
+ESCC_proteome,ESCC-034T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5056,282,5.57753164556962
+ESCC_proteome,ESCC-038T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5063,284,5.60932253604582
+ESCC_proteome,ESCC-039T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5064,284,5.60821484992101
+ESCC_proteome,ESCC-045T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,248,5.56428090643931
+ESCC_proteome,ESCC-022T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,248,5.56428090643931
+ESCC_proteome,ESCC-026T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4457,248,5.56428090643931
+ESCC_proteome,ESCC-012T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4454,251,5.63538392456219
+ESCC_proteome,ESCC-014T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4455,251,5.6341189674523
+ESCC_proteome,ESCC-025T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4453,251,5.63664944980912
+ESCC_proteome,ESCC-030T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4451,251,5.63918220624579
+ESCC_proteome,ESCC-047T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4456,246,5.52064631956912
+ESCC_proteome,ESCC-054T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4460,248,5.56053811659193
+ESCC_proteome,ESCC-048T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5254,294,5.59573658165208
+ESCC_proteome,ESCC-060T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5258,294,5.59147965005706
+ESCC_proteome,ESCC-064T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5257,294,5.59254327563249
+ESCC_proteome,ESCC-079T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5413,303,5.59763532237207
+ESCC_proteome,ESCC-088T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5415,303,5.59556786703601
+ESCC_proteome,ESCC-089T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5412,303,5.59866962305987
+ESCC_proteome,ESCC-077T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4998,257,5.14205682272909
+ESCC_proteome,ESCC-081T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5003,257,5.13691784929043
+ESCC_proteome,ESCC-093T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,5001,257,5.13897220555889
+ESCC_proteome,ESCC-070T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,256,5.62266637381946
+ESCC_proteome,ESCC-071T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4553,256,5.62266637381946
+ESCC_proteome,ESCC-073T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4552,256,5.62390158172232
+ESCC_proteome,ESCC-085T,ESCC T sample raw intensity >0,/Users/gzy2520/Desktop/Research/kla/data/PXD065830/supplementary/Dataset1.xlsx,4556,256,5.61896400351185
+TALL_Kla_peptide_area,Sample 1,K(+72.02) peptide; Lac PTM; sample peptide Area >0,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/protein-peptides.csv,184,20,10.8695652173913
+TALL_Kla_peptide_area,Sample 2,K(+72.02) peptide; Lac PTM; sample peptide Area >0,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/protein-peptides.csv,190,22,11.5789473684211
+TALL_Kla_peptide_area,Sample 3,K(+72.02) peptide; Lac PTM; sample peptide Area >0,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/protein-peptides.csv,195,22,11.2820512820513
+TALL_Kla_legacy_mapping,TALL-NaLAC-enrichment-1.raw,PSM -10lgP>=20; Lac; matching peptide-protein mapping; frozen legacy parser criteria,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,173,21,12.1387283236994
+TALL_Kla_AScore20,TALL-NaLAC-enrichment-1.raw,legacy mapping plus at least one Lac AScore>=20,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,139,15,10.7913669064748
+TALL_Kla_legacy_mapping,TALL-NaLAC-enrichment-2.raw,PSM -10lgP>=20; Lac; matching peptide-protein mapping; frozen legacy parser criteria,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,178,24,13.4831460674157
+TALL_Kla_AScore20,TALL-NaLAC-enrichment-2.raw,legacy mapping plus at least one Lac AScore>=20,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,147,20,13.6054421768708
+TALL_Kla_legacy_mapping,TALL-NaLAC-enrichment-3.raw,PSM -10lgP>=20; Lac; matching peptide-protein mapping; frozen legacy parser criteria,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,176,22,12.5
+TALL_Kla_AScore20,TALL-NaLAC-enrichment-3.raw,legacy mapping plus at least one Lac AScore>=20,/Users/gzy2520/Desktop/Research/kla/data/PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,143,18,12.5874125874126

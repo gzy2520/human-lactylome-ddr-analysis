@@ -1,0 +1,211 @@
+PXD,RelativePath,Bytes
+PXD028488,PXD028488/metadata/articles/2022_cyclic_immonium.pdf,2129121
+PXD028488,PXD028488/metadata/dataset_metadata.csv,610
+PXD028488,PXD028488/metadata/file_inventory.csv,22474
+PXD028488,PXD028488/search_results/Enrichment-Search files/BV2-Enrichment-Search files/DB search psm.csv,27282
+PXD028488,PXD028488/search_results/Enrichment-Search files/BV2-Enrichment-Search files/PSM ions.csv,433693
+PXD028488,PXD028488/search_results/Enrichment-Search files/BV2-Enrichment-Search files/protein-peptides.csv,1080941
+PXD028488,PXD028488/search_results/Enrichment-Search files/BV2-Enrichment-Search files/proteins.csv,217578
+PXD028488,PXD028488/search_results/Enrichment-Search files/HCT116-Enrichment-Search files/DB search psm.csv,2085529
+PXD028488,PXD028488/search_results/Enrichment-Search files/HCT116-Enrichment-Search files/PSM ions.csv,1990005
+PXD028488,PXD028488/search_results/Enrichment-Search files/HCT116-Enrichment-Search files/PXD028488_HCT116-Enrichment-Search files_Kla_sites.csv,1719
+PXD028488,PXD028488/search_results/Enrichment-Search files/HCT116-Enrichment-Search files/PXD028488_HCT116-Enrichment-Search files_Kla_sites_DDR_intersect.csv,621
+PXD028488,PXD028488/search_results/Enrichment-Search files/HCT116-Enrichment-Search files/protein-peptides.csv,1924322
+PXD028488,PXD028488/search_results/Enrichment-Search files/HCT116-Enrichment-Search files/proteins.csv,295645
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD24-Search files/DB search psm.csv,50929
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD24-Search files/PSM ions.csv,1126026
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD24-Search files/protein-peptides.csv,1480211
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD24-Search files/proteins.csv,237975
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD28-Search files/DB search psm.csv,52203
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD28-Search files/PSM ions.csv,1238290
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD28-Search files/protein-peptides.csv,1589027
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD28-Search files/proteins.csv,249262
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD32-Search files/DB search psm.csv,54751
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD32-Search files/PSM ions.csv,1323941
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD32-Search files/protein-peptides.csv,1610755
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD32-Search files/proteins.csv,257435
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD36-Search files/DB search psm.csv,51056
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD36-Search files/PSM ions.csv,1244230
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD36-Search files/protein-peptides.csv,1531387
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD36-Search files/proteins.csv,244492
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD40-Search files/DB search psm.csv,43958
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD40-Search files/PSM ions.csv,1037035
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD40-Search files/protein-peptides.csv,1412047
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-HCD40-Search files/proteins.csv,230191
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/DB search psm.csv,8503067
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/DDR_from_HEK293T_enrich_allHCD_intersect.csv,393
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/HEK293T_enrich_allHCD_Kla_sites.csv,1570
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/PSM ions.csv,167818333
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/PXD028488_HEK293T-Enrichment-all HCD-Search files_Kla_sites.csv,1858
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/PXD028488_HEK293T-Enrichment-all HCD-Search files_Kla_sites_DDR_intersect.csv,465
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/protein-peptides.csv,2946151
+PXD028488,PXD028488/search_results/Enrichment-Search files/HEK293T-Enrichment-all HCD-Search files/proteins.csv,449236
+PXD028488,PXD028488/search_results/Enrichment-Search files/RAW-Enrichment-Search files/DB search psm.csv,31904
+PXD028488,PXD028488/search_results/Enrichment-Search files/RAW-Enrichment-Search files/PSM ions.csv,558373
+PXD028488,PXD028488/search_results/Enrichment-Search files/RAW-Enrichment-Search files/protein-peptides.csv,1102552
+PXD028488,PXD028488/search_results/Enrichment-Search files/RAW-Enrichment-Search files/proteins.csv,205960
+PXD028488,PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/DB search psm.csv,183581
+PXD028488,PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/PSM ions.csv,3715097
+PXD028488,PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/PXD028488_TALL-NALAC-Search files_Kla_sites.csv,1552
+PXD028488,PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/PXD028488_TALL-NALAC-Search files_Kla_sites_DDR_intersect.csv,496
+PXD028488,PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/protein-peptides.csv,2515202
+PXD028488,PXD028488/search_results/Enrichment-Search files/TALL-NALAC-Search files/proteins.csv,379218
+PXD028488,PXD028488/search_results/Enrichment-Search files.zip,25386186
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/BV2-Nonenrichment-Search files/DB search psm.csv,4617499
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/BV2-Nonenrichment-Search files/PSM ions.csv,2824921
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/BV2-Nonenrichment-Search files/protein-peptides.csv,3403744
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/BV2-Nonenrichment-Search files/proteins.csv,467595
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HCT116-Nonenrichment-Search files/PSM ions.csv,3016712
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HCT116-Nonenrichment-Search files/protein-peptides.csv,5151034
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HCT116-Nonenrichment-Search files/proteins.csv,587380
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD24-Search files/DB search psm.csv,6508824
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD24-Search files/PSM ions.csv,4753988
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD24-Search files/protein-peptides.csv,4577967
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD24-Search files/proteins.csv,517249
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD28-Search files/DB search psm.csv,6647543
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD28-Search files/PSM ions.csv,4621078
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD28-Search files/protein-peptides.csv,4666343
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD28-Search files/proteins.csv,527352
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD32-Search files/DB search psm.csv,6609183
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD32-Search files/PSM ions.csv,4187049
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD32-Search files/protein-peptides.csv,4635392
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD32-Search files/proteins.csv,516095
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD36-Search files/DB search psm.csv,4499120
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD36-Search files/PSM ions.csv,2540894
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD36-Search files/protein-peptides.csv,3169229
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD36-Search files/proteins.csv,400496
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD40-Search files/DB search psm.csv,5824817
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD40-Search files/PSM ions.csv,3160722
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD40-Search files/protein-peptides.csv,4201869
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/HEK293T-Nonenrichment-HCD40-Search files/proteins.csv,474999
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/RAW-Nonenrichment-Search files/DB search psm.csv,5296529
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/RAW-Nonenrichment-Search files/PSM ions.csv,2895139
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/RAW-Nonenrichment-Search files/protein-peptides.csv,3874308
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/RAW-Nonenrichment-Search files/proteins.csv,497511
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/DB search psm.csv,18962259
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/PSM ions.csv,9627147
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/protein-peptides.csv,6818776
+PXD028488,PXD028488/search_results/Nonenrichment-Search files/TALL-Nonenrichment-Search files/proteins.csv,731988
+PXD028488,PXD028488/search_results/Nonenrichment-Search files.zip,34256400
+PXD053474,PXD053474/metadata/articles/2024_subcellular_lactylation.pdf,7677960
+PXD053474,PXD053474/metadata/dataset_metadata.csv,492
+PXD053474,PXD053474/metadata/file_inventory.csv,25932
+PXD053474,PXD053474/search_results/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files.zip,5434218
+PXD053474,PXD053474/search_results/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files.zip,32215786
+PXD053474,PXD053474/search_results/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files.zip,16874812
+PXD053474,PXD053474/search_results/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files.zip,66944173
+PXD053474,PXD053474/search_results/download_manifest.csv,1021
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Cytoplasm-Lactylation-Fraction-DDA/peptide.csv,1741456
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Cytoplasm-Lactylation-Fraction-DDA/protein-peptides.csv,2161200
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Cytoplasm-Lactylation-Fraction-DDA/proteins.csv,468758
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Membrane-Lactylation-Fraction-DDA/peptide.csv,748868
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Membrane-Lactylation-Fraction-DDA/protein-peptides.csv,952983
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Membrane-Lactylation-Fraction-DDA/proteins.csv,283896
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Mitochondrion-Lactylation-Fraction-DDA/peptide.csv,1149866
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Mitochondrion-Lactylation-Fraction-DDA/protein-peptides.csv,1450803
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Mitochondrion-Lactylation-Fraction-DDA/proteins.csv,358251
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Nucleus-Lactylation-Fraction-DDA/peptide.csv,1336849
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Nucleus-Lactylation-Fraction-DDA/protein-peptides.csv,1704520
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Nucleus-Lactylation-Fraction-DDA/proteins.csv,262895
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Whole-cell-lysates-Lactylation-Fraction-DDA/peptide.csv,1661292
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Whole-cell-lysates-Lactylation-Fraction-DDA/protein-peptides.csv,2108044
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Whole-cell-lysates-Lactylation-Fraction-DDA/proteins.csv,541609
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Whole-cell-lysates-Lactylation-NOFraction-DDA/peptide.csv,1158910
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Whole-cell-lysates-Lactylation-NOFraction-DDA/protein-peptides.csv,1462481
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DDA-Search-files/Subcellular-Enriched-DDA-Search files/Whole-cell-lysates-Lactylation-NOFraction-DDA/proteins.csv,382093
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Cytoplasm-Lactylation-Fraction-DIA/Cytoplasm-Lactylation-DIA-ptm-site__Report.tsv,7099801
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Cytoplasm-Lactylation-Fraction-DIA/Cytoplasm-Lactylation-DIA-standard_Report.tsv,64951298
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Membrane-Lactylation-Fraction-DIA/Membrane-Lactylation-DIA-ptm-site_Report.tsv,2295483
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Membrane-Lactylation-Fraction-DIA/Membrane-Lactylation-DIA-standard_Report.tsv,20063515
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Mitochondrion-Lactylation-Fraction-DIA/Mitochondria-Lactylation-DIA-ptm-site_Report.tsv,5001752
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Mitochondrion-Lactylation-Fraction-DIA/Mitochondria-Lactylation-DIA-standard_Report.tsv,47343367
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Nucleus-Lactylation-Fraction-DIA/Nucleus-Lactylation-DIA-ptm-site_Report.tsv,6527092
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Nucleus-Lactylation-Fraction-DIA/Nucleus-Lactylation-DIA-standard_Report.tsv,50712593
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Whole-cell-lysates-Lactylation-Fraction-DIA/Whole-cell-Lactylation-DIA-Standard_Report.tsv,54528995
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Whole-cell-lysates-Lactylation-Fraction-DIA/Whole-cell-Lactylation-DIA-ptm-site_Report.tsv,6291552
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Whole-cell-lysates-Lactylation-NOFraction-DIA/Whole-cell-Lactylation-DIA-NoFrac-ptm-site_Report.tsv,2026747
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Enriched-DIA-Search-files/Subcellular-Enriched-DIA-Search files/Whole-cell-lysates-Lactylation-NOFraction-DIA/Whole-cell-Lactylation-DIA-NoFrac-standard_Report.tsv,17065890
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Cytoplasm-DDA-input/peptide.csv,4880880
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Cytoplasm-DDA-input/protein-peptides.csv,5926554
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Cytoplasm-DDA-input/proteins.csv,938782
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Membrane-DDA-input/peptide.csv,5849616
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Membrane-DDA-input/protein-peptides.csv,7320220
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Membrane-DDA-input/proteins.csv,1065730
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Mitochondrion-DDA-input/peptide.csv,4058820
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Mitochondrion-DDA-input/protein-peptides.csv,4966386
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Mitochondrion-DDA-input/proteins.csv,827929
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Nucleus-DDA-input/peptide.csv,4180427
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Nucleus-DDA-input/protein-peptides.csv,5131483
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Nucleus-DDA-input/proteins.csv,812222
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Whole-cell-lysates-DDA-input/peptide.csv,5105533
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Whole-cell-lysates-DDA-input/protein-peptides.csv,6208606
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DDA-Search-files/Subcellular-Unenriched-DDA-Search files/Whole-cell-lysates-DDA-input/proteins.csv,1048863
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Cytoplasm-DIA-input/Cytoplasm-DIA-input-ptm-site_Report.tsv,12089594
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Cytoplasm-DIA-input/Cytoplasm-DIA-input-standard_Report.tsv,101140509
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Membrane-DIA-input/Membrane-DIA-input-ptm-site_Report.tsv,14641771
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Membrane-DIA-input/Membrane-DIA-input-standard_Report.tsv,134259364
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Mitochondrion-DIA-input/Mitochondria-DIA-input-ptm-site_Report.tsv,11163104
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Mitochondrion-DIA-input/Mitochondria-DIA-input-standard_Report.tsv,90031939
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Nucleus-DIA-input/Nucleus-DIA-input-ptm-site_Report.tsv,11057972
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Nucleus-DIA-input/Nucleus-DIA-input-standard_Report.tsv,87689702
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Whole-cell-lysates-DIA-input/Whole-cell-DIA-input-ptm-site_Report.tsv,13025629
+PXD053474,PXD053474/search_results/extracted/Subcellular-Whole-cell-lysates-Unenriched-DIA-Search-files/Subcellular-Unenriched-DIA-Search files/Whole-cell-lysates-DIA-input/Whole-cell-DIA-input-standard-Report.tsv,110832080
+PXD053474,PXD053474/supplementary/js4c00366_si_002.xlsx,6249261
+PXD053474,PXD053474/supplementary/js4c00366_si_003.xlsx,99512
+PXD058534,PXD058534/metadata/checksum.txt,248
+PXD058534,PXD058534/metadata/pairing_download_manifest.csv,652
+PXD058534,PXD058534/search_results/extracted_pairing/txt/La (K)Sites.txt,3476415
+PXD058534,PXD058534/search_results/extracted_pairing/txt/Oxidation (M)Sites.txt,137945
+PXD058534,PXD058534/search_results/extracted_pairing/txt/allPeptides.txt,5082429
+PXD058534,PXD058534/search_results/extracted_pairing/txt/evidence.txt,4011004
+PXD058534,PXD058534/search_results/extracted_pairing/txt/matchedFeatures.txt,0
+PXD058534,PXD058534/search_results/extracted_pairing/txt/modificationSpecificPeptides.txt,1694880
+PXD058534,PXD058534/search_results/extracted_pairing/txt/msms.txt,13294645
+PXD058534,PXD058534/search_results/extracted_pairing/txt/parameters.txt,3438
+PXD058534,PXD058534/search_results/extracted_pairing/txt/pasefMsmsScans.txt,18775969
+PXD058534,PXD058534/search_results/extracted_pairing/txt/peptides.txt,2070291
+PXD058534,PXD058534/search_results/extracted_pairing/txt/proteinGroups.txt,796088
+PXD058534,PXD058534/search_results/extracted_pairing/txt/summary.txt,1541
+PXD058534,PXD058534/search_results/txt.zip,13897657
+PXD066351,PXD066351/metadata/pairing_download_manifest.csv,2306
+PXD066351,PXD066351/search_results/XB01472B1DA-DIA_result.tsv,17826125
+PXD066351,PXD066351/search_results/XB01472B1DA-MSstats_Input.tsv,313406348
+PXD066351,PXD066351/search_results/XB01472B1DA-Protein_Quant.tsv,346625
+PXD066351,PXD066351/search_results/XB01472B1DPAc-DIA_result.csv,2889410
+PXD066351,PXD066351/search_results/XB01472B1DPAc-MSstats_Input.csv,5663092
+PXD066351,PXD066351/search_results/XB01472B1DPLa-DIA_result.csv,7325417
+PXD066351,PXD066351/search_results/XB01472B1DPLa-MSstats_Input.csv,8224983
+PXD070007,PXD070007/metadata/pairing_download_manifest.csv,439
+PXD070007,PXD070007/search_results/SA206LPLaB1_Annotation.xlsx,3678158
+PXD073311,PXD073311/metadata/pairing_download_manifest.csv,793
+PXD073311,PXD073311/search_results/IPX0015307001_Database_search_result.zip,6040690
+PXD073311,PXD073311/search_results/IPX0015307003_Database_search_result.zip,1542002
+PXD073311,PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pg_matrix.tsv,621751
+PXD073311,PXD073311/search_results/extracted_pairing/IPX0015307001_Database_search_result/Database_search_result/report.pr_matrix.tsv,15901802
+PXD073311,PXD073311/search_results/extracted_pairing/IPX0015307003_Database_search_result/Database_search_result/report.pg_matrix.tsv,372795
+PXD073311,PXD073311/search_results/extracted_pairing/IPX0015307003_Database_search_result/Database_search_result/report.pr_matrix.tsv,3889183
+PXD075377,PXD075377/metadata/dataset_metadata.csv,1988
+PXD075377,PXD075377/metadata/download_manifest.csv,799
+PXD075377,PXD075377/metadata/extracted_file_inventory.csv,1247
+PXD075377,PXD075377/metadata/proxi_detail.json,6311
+PXD075377,PXD075377/metadata/repository_file_manifest.csv,904
+PXD075377,PXD075377/search_results/4-Differentially_expressed_protein.zip,292897078
+PXD075377,PXD075377/search_results/extracted/1-Report_document/table/ident_summary.txt,145
+PXD075377,PXD075377/search_results/extracted/2-Basic_analysis/MS_identified_information.txt,1122642
+PXD075377,PXD075377/search_results/extracted/2-Basic_analysis/MS_identified_information.xlsx,3446558
+PXD075377,PXD075377/search_results/extracted/2-Basic_analysis/sample.txt,48
+PXD075377,PXD075377/search_results/extracted/3-Functional_annotation/Annotation_combine.txt,49764847
+PXD075377,PXD075377/search_results/extracted/3-Functional_annotation/Annotation_combine.xlsx,5552822
+PXD075377,PXD075377/search_results/extracted/4-Differentially_expressed_protein/T-test_analysis/Differentially_annot.xlsx,2771063
+PXD075377,PXD075377/search_results/extracted/4-Differentially_expressed_protein/T-test_analysis/Differentially_expressed_statistics.xlsx,1986788
+PXD078013,PXD078013/metadata/XA01366LPLa.sdrf.tsv,1681
+PXD078013,PXD078013/metadata/checksum.txt,1050
+PXD078013,PXD078013/metadata/dataset_metadata.csv,417
+PXD078013,PXD078013/metadata/file_inventory.csv,1365
+PXD078013,PXD078013/raw/XA01366LPLa_sg737_1_Slot1-18_1_6105.d.zip,584191664
+PXD078013,PXD078013/raw/XA01366LPLa_sg737_2_Slot1-19_1_6107.d.zip,577450946
+PXD078013,PXD078013/raw/XA01366LPLa_sg_1_Slot1-16_1_6101.d.zip,745742169
+PXD078013,PXD078013/raw/XA01366LPLa_sg_2_Slot1-17_1_6103.d.zip,640594072
+PXD078013,PXD078013/search_results/evidence.txt,31022313
+PXD078013,PXD078013/search_results/peptides.txt,7405716
+PXD078013,PXD078013/search_results/proteinGroups.txt,2756767

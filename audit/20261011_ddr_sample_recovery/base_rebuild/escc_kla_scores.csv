@@ -1,0 +1,7 @@
+PXD,SampleGroup,Dataset,SampleID,SourceFile,UnitType,Condition,ProteinCount,DdrProteinCount,DdrFractionPercentage
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),MEC_1,/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,source_sample,MEC,820,65,7.92682926829268
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),MEC_2,/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,source_sample,MEC,794,61,7.68261964735516
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),MEC_3,/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,source_sample,MEC,838,79,9.4272076372315
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),NEC_1,/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,source_sample,NEC,464,26,5.60344827586207
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),NEC_2,/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,source_sample,NEC,483,27,5.59006211180124
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),NEC_3,/Users/gzy2520/Desktop/Research/kla/data/PXD064038/search_results/extracted_pairing/txt/txt/La (K)Sites.txt,source_sample,NEC,573,33,5.75916230366492

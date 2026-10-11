@@ -1,0 +1,78 @@
+PXD,SampleGroup,Dataset,Condition,ConditionN
+PXD036307,normal human lung,Lactylome (Kla),replicate,6
+PXD046800,hypertrophic scar,Lactylome (Kla),replicate,4
+PXD046800,adjacent skin,Lactylome (Kla),replicate,4
+PXD050470,human hippocampus,Lactylome (Kla),replicate,3
+PXD063047,normal pregnancy placenta,Lactylome (Kla),replicate,3
+PXD064912,human sperm,Lactylome (Kla),replicate,3
+PXD066054,BPH,Lactylome (Kla),replicate,5
+PXD066054,prostate cancer,Lactylome (Kla),replicate,5
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),WT,3
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT1 KO,3
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Lactylome (Kla),SIRT3 KO,3
+PXD054919,A549,Lactylome (Kla),replicate,3
+PXD060185,MCF7,Lactylome (Kla),single,1
+PXD060185,MDA-MB-468,Lactylome (Kla),single,1
+PXD060185,T-47D,Lactylome (Kla),single,1
+PXD060185,MCF10A,Lactylome (Kla),single,1
+PXD063266,PC-3M,Lactylome (Kla),replicate,3
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),control,3
+PXD078736,HK-2 control and mannitol,Lactylome (Kla),mannitol,3
+PXD028737,HMC3,Lactylome (Kla),normoxia,1
+PXD028737,HMC3,Lactylome (Kla),hypoxia,1
+PXD033146,pathological rotator cuff tendon,Lactylome (Kla),replicate,3
+PXD033146,pathological rotator cuff tendon,Whole proteome,replicate,3
+PXD046800,hypertrophic scar,Whole proteome,replicate,4
+PXD046800,adjacent skin,Whole proteome,replicate,4
+PXD050470,human hippocampus,Whole proteome,replicate,3
+PXD064912,human sperm,Whole proteome,L sperm,17
+PXD064912,human sperm,Whole proteome,N sperm,16
+PXD066054,BPH,Whole proteome,replicate,5
+PXD066054,prostate cancer,Whole proteome,replicate,5
+PXD075377,adjacent liver,Whole proteome,Non-rec,4
+PXD075377,adjacent liver,Whole proteome,Rec,4
+PXD075377,HCC,Whole proteome,Non-rec,4
+PXD075377,HCC,Whole proteome,Rec,4
+PXD066351,HCT116 control and Roseburia co-culture,Whole proteome,control,1
+PXD066351,HCT116 control and Roseburia co-culture,Whole proteome,Roseburia co-culture,1
+PXD028488,TALL-104,Whole proteome,replicate,3
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,WT,3
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT1 KO,3
+PXD050147,HepG2 WT and SIRT1 or SIRT3 KO,Whole proteome,SIRT3 KO,3
+PXD028737,HMC3,Whole proteome,normoxia,1
+PXD028737,HMC3,Whole proteome,hypoxia,1
+PXD058534,pretreated HK-2,Whole proteome,untreated control,3
+PXD078736,HK-2 control and mannitol,Whole proteome,untreated control,3
+PXD070007,glioblastoma stem cells,Whole proteome,model,6
+PXD070007,neural stem cells,Whole proteome,model,2
+PXD073311,HUVEC control and Pg infection,Whole proteome,A0h control,3
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),MEC,3
+PXD064038,MEC and NEC ESCC groups,Lactylome (Kla),NEC,3
+PXD028488,TALL-104,Lactylome (Kla),NaLAC,3
+PXD064038,MEC and NEC ESCC groups,Whole proteome,ESCC tumor tissue,94
+PXD075377,adjacent liver,Lactylome (Kla),Control,1
+PXD075377,HCC,Lactylome (Kla),HCC,1
+PXD058534,pretreated HK-2,Lactylome (Kla),pretreated HK-2,1
+PXD066351,HCT116 control and Roseburia co-culture,Lactylome (Kla),control,1
+PXD066351,HCT116 control and Roseburia co-culture,Lactylome (Kla),Roseburia co-culture,1
+PXD070007,glioblastoma stem cells,Lactylome (Kla),glioblastoma stem cells,6
+PXD070007,neural stem cells,Lactylome (Kla),neural stem cells,2
+PXD073311,HUVEC control and Pg infection,Lactylome (Kla),A0h control,3
+PXD073311,HUVEC control and Pg infection,Lactylome (Kla),A6h Pg infection,3
+PXD078013,RKO WT and GSK3B KO,Lactylome (Kla),GSK3B KO,2
+PXD078013,RKO WT and GSK3B KO,Lactylome (Kla),GSK3B WT,2
+PXD028488,HCT116,Lactylome (Kla),HCT116,1
+PXD028488,HEK293T,Lactylome (Kla),HEK293T,1
+PXD053474,HCT116,Lactylome (Kla),HCT116,1
+PXD028488,HCT116,Whole proteome,source material,3
+PXD028488,HEK293T,Whole proteome,source material,1
+PXD036307,normal human lung,Whole proteome,source material,1
+PXD053474,HCT116,Whole proteome,source material,3
+PXD054919,A549,Whole proteome,source material,3
+PXD060185,MCF10A,Whole proteome,source material,1
+PXD060185,MCF7,Whole proteome,source material,3
+PXD060185,MDA-MB-468,Whole proteome,source material,3
+PXD060185,T-47D,Whole proteome,source material,3
+PXD063047,normal pregnancy placenta,Whole proteome,source material,1
+PXD063266,PC-3M,Whole proteome,source material,2
+PXD078013,RKO WT and GSK3B KO,Whole proteome,source material,3

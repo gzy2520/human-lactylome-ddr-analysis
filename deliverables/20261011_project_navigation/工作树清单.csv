@@ -1,0 +1,22 @@
+﻿路径,HEAD,分支,已锁定,存在,实际路径,工作区状态
+/Users/gzy2520/Desktop/Research/kla,aa195c6576c1fac82dee41ed64995bf6b42c207c,refs/heads/add_data,False,True,/Users/gzy2520/Desktop/Research/kla,"M AI_HANDOFF_CURRENT.md
+ M README.md
+ M docs/MATCHED_RNASEQ_REFERENCE_CATALOG_31.md
+?? audit/
+?? manuscript/"
+/Users/gzy2520/.codex/worktrees/709f/kla,8ea180aee7a72751548155a2ac320f8e6bc8f0d3,detached,False,True,/Users/gzy2520/.codex/worktrees/709f/kla,"?? ""reanalysis/reports/Kla_DDR_\347\273\204\344\274\232\346\261\207\346\212\245_2026-08-09.pptx""
+?? ""reanalysis/reports/Kla_DDR_\347\273\204\344\274\232\346\261\207\346\212\245_2026-08-09.pptx.inspect.ndjson""
+?? ""reanalysis/reports/Kla_DDR_\347\273\204\344\274\232\346\261\207\346\212\245_2026-08-09_QA.txt"""
+/Users/gzy2520/.codex/worktrees/cd42/kla31-rnaseq-20260912,ca269d65c345422421f0f7501b4c1fb1af3b44b0,refs/heads/gzy/sample-rna-fraction-20260925,False,True,/Users/gzy2520/.codex/worktrees/cd42/kla31-rnaseq-20260912,
+/Users/gzy2520/.codex/worktrees/ea7b/kla,aa195c6576c1fac82dee41ed64995bf6b42c207c,detached,False,True,/Users/gzy2520/.codex/worktrees/ea7b/kla,"M AI_HANDOFF_CURRENT.md
+ M README.md
+ M docs/MATCHED_RNASEQ_REFERENCE_CATALOG_31.md
+?? audit/
+?? manuscript/"
+/Users/gzy2520/Desktop/Research/kla/.worktrees/kla31-rnaseq-20260912,35416b698d9ce49e1b6a00f7820c25b5900ef49d,refs/heads/research/kla31-rnaseq-20260912,False,True,/Users/gzy2520/Desktop/Research/kla/.worktrees/kla31-rnaseq-20260912,?? deliverables/20261011_project_navigation/
+/Users/gzy2520/orca/workspaces/.orca-preparing/60368-0f71ff99-312f-482f-b843-5479b051a51f,bc02d1d866465505083f5018d482820c6eba5be5,detached,True,True,/Users/gzy2520/orca/workspaces/.orca-preparing/60368-0f71ff99-312f-482f-b843-5479b051a51f,
+/Users/gzy2520/orca/workspaces/kla/data_research,92d37c2aff332dad79d9a514fdb8d6f04b9cc88f,refs/heads/data_research,False,True,/Users/gzy2520/orca/workspaces/kla/data_research,
+/Users/gzy2520/orca/workspaces/kla/figure_refine,a2f9eb7f561f41a82a3e76bd8ee4ba0ab1705a31,refs/heads/gzy2520/figure_refine,False,True,/Users/gzy2520/orca/workspaces/kla/figure_refine,
+/Users/gzy2520/orca/workspaces/kla/figure_refine-fork,c349c7f0befe36019da41e7b360286be238dabe9,refs/heads/figure_refine-fork,False,True,/Users/gzy2520/orca/workspaces/kla/figure_refine-fork,
+/Users/gzy2520/orca/workspaces/kla/research-kla31-rnaseq-20260912-2,1a90bcbe7b55fcbcb569166c234d10579adb9322,refs/heads/research/kla31-rnaseq-20260912-2,False,True,/Users/gzy2520/orca/workspaces/kla/research-kla31-rnaseq-20260912-2,
+/Users/gzy2520/orca/workspaces/kla/research-kla31-rnaseq-20260912-fork,fd3ace5ab4907f5ad8d030c45e6af6bd72fd208a,refs/heads/research-kla31-rnaseq-20260912-fork,False,True,/Users/gzy2520/orca/workspaces/kla/research-kla31-rnaseq-20260912-fork,

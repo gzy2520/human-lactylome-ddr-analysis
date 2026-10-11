@@ -9,7 +9,7 @@ import zipfile
 
 root=Path(__file__).resolve().parents[2]
 out=root/'outputs/20261008_figure_selection_no_statistics'
-dest=Path('/Users/gzy2520/Desktop/乳酸化选图包_无统计标注_20261008')
+dest=Path('/Users/gzy2520/Desktop/Research/kla/results/交付文件/乳酸化选图包_无统计标注_20261008')
 dest.mkdir(exist_ok=True)
 plan=list(csv.DictReader((root/'audit/20261008_figure_selection_no_statistics/render_plan.csv').open()))
 mapping={r['Stem']:out/'figures'/r['Stem'] for r in plan}

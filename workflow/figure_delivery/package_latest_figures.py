@@ -8,7 +8,7 @@ import shutil
 
 root = Path(__file__).resolve().parents[2]
 out = root / 'outputs/20261006_figures_latest'
-dest = Path('/Users/gzy2520/Desktop/乳酸化全部图片_当前版本_20261006')
+dest = Path('/Users/gzy2520/Desktop/Research/kla/results/交付文件/乳酸化全部图片_当前版本_20261006')
 dest.mkdir(exist_ok=True)
 manifest, decisions = [], []
 

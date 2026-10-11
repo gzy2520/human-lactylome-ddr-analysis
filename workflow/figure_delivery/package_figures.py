@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil,csv,hashlib,json
 root=Path(__file__).resolve().parents[2]
 out=root/'outputs/20261004_all_figures'
-dest=Path('/Users/gzy2520/Desktop/乳酸化全部图片_20261004')
+dest=Path('/Users/gzy2520/Desktop/Research/kla/results/交付文件/乳酸化全部图片_20261004')
 dest.mkdir(exist_ok=True)
 manifest=[]
 def collect(source,label,exclude=()):

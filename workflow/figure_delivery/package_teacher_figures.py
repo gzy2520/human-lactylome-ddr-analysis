@@ -4,7 +4,7 @@ import csv, hashlib, shutil, json
 
 root=Path(__file__).resolve().parents[2]
 out=root/'outputs/20261006_teacher_figures'
-dest=Path('/Users/gzy2520/Desktop/乳酸化全部图片_无网格与统计标注_20261006')
+dest=Path('/Users/gzy2520/Desktop/Research/kla/results/交付文件/乳酸化全部图片_无网格与统计标注_20261006')
 dest.mkdir(exist_ok=True)
 previous=root/'outputs/20261006_figures_latest/selected_figure_manifest.csv'
 records=list(csv.DictReader(previous.open(encoding='utf-8-sig')))

@@ -1,0 +1,10 @@
+Check,Pass
+31 display columns,TRUE
+28 unique RNA references,TRUE
+1898 unique RNA sample IDs,TRUE
+12 unique stable Ensembl IDs,TRUE
+272 sample-level protein rows,TRUE
+Protein fraction reconstruction,TRUE
+Original LDHA/B values preserved,TRUE
+RNA values finite,TRUE
+Shared references expanded only for display,TRUE

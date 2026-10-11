@@ -1,6 +1,6 @@
 Check,Pass
 All RNA points within axes,TRUE
-All DDR means and SEM within axes,TRUE
+All 62 group DDR fractions within axes,TRUE
 Mean lines equal original RNA means,TRUE
 31 material positions retained,TRUE
 272 protein observations retained,TRUE

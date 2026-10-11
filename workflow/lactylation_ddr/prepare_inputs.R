@@ -4,11 +4,13 @@ release <- 'deliverables/20261011_lactylation_ddr'
 out <- file.path(release, 'inputs')
 dir.create(out, recursive=TRUE, showWarnings=FALSE)
 paths <- c(
+ GroupSummary='data/publication_input/group_summary_31.csv',
  RNA='outputs/20260919_repair_qsmooth/matrices/qsmooth_B_full_log2tpm.tsv.gz',
  Samples='outputs/20260919_expression_corrected/group_sample_qc.csv',
  Mapping='outputs/20260920_lactate_metabolism/tables/rna_proteome_mapping_31.csv',
  Proteome='corrected_final_result_20260905_sample_only/Corrected_Data/sample_only_inputs/figure1_sample_boxplot_values.csv',
  OriginalLDH='outputs/20260920_lactate_metabolism/tables/sample_gene_expression.csv.gz')
+file.copy(paths[['GroupSummary']],file.path(out,'group_summary_31.csv'),overwrite=TRUE)
 h <- fread(file.path(out,'hgnc_selected.tsv'))
 stopifnot(nrow(h)==12,all(h$status=='Approved'),!anyDuplicated(h$ensembl_gene_id))
 b <- fread(cmd=paste('gzip -dc',shQuote(paths[['RNA']])));setnames(b,1,'Ensembl')

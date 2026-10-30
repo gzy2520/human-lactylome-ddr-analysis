@@ -7,11 +7,11 @@
 - 七通路：BER、NER、MMR、FA、HR、AEJ、NHEJ，每通路72个样本，每样本同时保留Pro、Inh。
 - 总计1311个数值。四类依次为非肿瘤组织、肿瘤组织、正常细胞系、癌细胞系。
 
-主工作簿为`GraphPad_图a_b及七通路_逐点数据_20261030.xlsx`。图a及通路采用Grouped布局：四类为列组，组内每个子列对应一个观测，行分别为Whole/Kla或Pro/Inh。图b为四列Column表。空白位置保持为空，保留实际零值。`逐点明细`提供单元格位置、样本标识、来源及计数分子分母。
+主工作簿为`GraphPad_图a_b及七通路_逐点数据_20261030.xlsx`，仅保留9张纯数据表及必要行列标签，采用默认单元格格式，不含说明页或明细页。图a及通路采用Grouped布局：四类为列组，组内每个子列对应一个观测，行分别为Whole/Kla或Pro/Inh。图b为四列Column表。空白位置保持为空，保留实际零值。目录内独立CSV保留单元格位置、样本标识、来源及计数分子分母。
 
 图a数值为DDR检出蛋白数除以该来源观测的检出蛋白数，再乘100；通路数值为通路Pro或Inh蛋白数除以该样本Kla-DDR蛋白数，再乘100。图b直接使用历史源表的`ProliferationMedian`：每RNA样本对196个G2M_CHECKPOINT基因的log2(qsmooth TPM+0.5)取均值，再按历史GroupID取样本中位数。
 
-`source_snapshot/`保留三份作图源CSV。比例与通路来源为`corrected_final_result_20260905_sample_only/Corrected_Data/sample_only_inputs/`；增殖得分来源为`outputs/20260917_delivery_31group/rna/`。源文件SHA256列在工作簿使用说明中。
+`source_snapshot/`保留三份作图源CSV。比例与通路来源为`corrected_final_result_20260905_sample_only/Corrected_Data/sample_only_inputs/`；增殖得分来源为`outputs/20260917_delivery_31group/rna/`。提取脚本将源文件SHA256记录在中间JSON中。
 
 复现步骤（在项目根目录执行，Python与Node路径按运行环境指定）：
 
